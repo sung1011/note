@@ -5,10 +5,9 @@ code note
 
 ```
 ├── README.md
-├── dict.md
 ├── main
 │   ├── related //引用
-│   ├── res
+│   ├── res //图片资源
 │   │   └── gpm
 │   │   └── ...
 │   ├── src //代码实例
@@ -16,7 +15,7 @@ code note
 │   │   └── php_design_patterns
 │   │   └── ...
 │   ├── git.md
-│   ├── word.md
+│   ├── dict.md
 │   └── go.md
 │   └── ...
 ├── main.md //主目录
