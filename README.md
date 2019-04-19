@@ -16,8 +16,9 @@ code note
 │   │   ├── php
 │   │   └── php_design_patterns
 │   │   └── ...
-│   ├── svn.md
+│   ├── git.md
 │   ├── word.md
-│   └── yac.md
-├── main.md
-└── self-code.md
+│   └── go.md
+│   └── ...
+├── main.md //主目录
+└── self.md
