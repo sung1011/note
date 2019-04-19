@@ -6,7 +6,7 @@ code note
 ```
 ├── README.md
 ├── main
-│   ├── related //引用
+│   ├── related #引用
 │   ├── res //图片资源
 │   │   └── gpm
 │   │   └── ...
