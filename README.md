@@ -3,6 +3,7 @@ code note
 
 ## content struct
 
+```
 ├── README.md
 ├── dict.md
 ├── main
@@ -20,3 +21,4 @@ code note
 │   └── ...
 ├── main.md `主目录`
 └── self.md
+```
