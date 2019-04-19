@@ -7,7 +7,7 @@
 | KSE                           | 程序线程与内核线程对应关系 | kernel space entity
 | OOM                           | 称之为内存溢出           | out of memory
 | [LF CRLF](related/lf_crlf.md) | 回车换行
-| [OOP](main/oop.md)            | 面向对象                   | object-oriented programming
+| [OOP](oop.md)            | 面向对象                   | object-oriented programming
 | concurrency                   | 并发
 | correspond                    | 符合，一致；相应；通信
 | crc                           | 循环冗余校验码             | Cyclic Redundancy Check
