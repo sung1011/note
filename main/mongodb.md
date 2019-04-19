@@ -59,7 +59,7 @@
 | secondary  | O    | X    | O    | 同步      | O           | O    | 常规的seconday     |
 | Priority=0 | O    | X    | O    | 同步      | X           | O    | -                  |
 | Hidden     | X    | X    | O    | 同步      | X           | O    | Priority=0，不可见 |
-| Delayed    | X    | X    | O    | 同步     | X           | O    | 为Hidden，延迟同步 |
+| Delayed    | X    | X    | O    | 同步     | X           | O    | 为Hidden，延迟同步 |
 | Arbiter    | X    | X    | O    | X         | X           | O    | Priority=0，无数据 |
 | vote=0     | O    | X    | X    | 同步      | O           | O    | 不能投票           |
 
