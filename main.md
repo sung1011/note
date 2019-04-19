@@ -39,9 +39,8 @@
 - safe
     - [DDoS](main/ddos.md)
 - other
+    - [dict](main/dict.md)
     - github
     - markdown
     - [anti cheat 防作弊](main/anti_cheat.md)
-    - english reading
-    - [word](main/word.md)
     - [exp](main/exp.md)
