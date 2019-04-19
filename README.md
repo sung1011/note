@@ -2,17 +2,15 @@
 code note
 
 ## content struct
-`src` 代码实例
-`res` 资源
-`related` 相关摘抄
 
 ├── README.md
 ├── dict.md
 ├── main
+│   ├── related `引用`
 │   ├── res
 │   │   └── gpm
 │   │   └── ...
-│   ├── src
+│   ├── src `代码实例`
 │   │   ├── php
 │   │   └── php_design_patterns
 │   │   └── ...
@@ -20,5 +18,5 @@ code note
 │   ├── word.md
 │   └── go.md
 │   └── ...
-├── main.md //主目录
+├── main.md `主目录`
 └── self.md
