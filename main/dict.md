@@ -9,7 +9,7 @@
 | Robust                        | 鲁棒性，健壮性
 | [LF CRLF](related/lf_crlf.md) | 回车换行
 | concurrency                   | 并发
-| correspond                    | 符合,一致;相应;通信
+| correspond                    | 符合，一致；相应；通信
 | crc                           | 循环冗余校验码             | Cyclic Redundancy Check
 | lagged                        | 滞后，延迟
 | [OOP](main/oop.md)            | 面向对象                   | object-oriented programming
