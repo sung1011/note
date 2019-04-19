@@ -31,6 +31,8 @@
 - 最后当然就是避免直接操作或调用其它模块或类（内容耦合）；如果模块间必须存在耦合，原则上尽量使用数据耦合，少用控制耦合， 
 - 限制公共耦合的范围，避免使用内容耦合。
 
+---
+
 ## 设计原则: (SOLID)
 
 #### 单一职责原则SRP(Single Responsibility Principle)：
@@ -73,38 +75,41 @@
     - 当我们设计类之间的依赖关系时，可以使用DIP原则来判断这种依赖是否符合DIP原则。 DIP原则和LSP原则相辅相成：DIP原则用于指导抽象出接口或者抽象类，而LSP原则指导从接口或者抽象类派生出新的子类。
 ```
 一句话概括:
-    - 单一职责原则告诉我们实现类要职责单一；
-    - 里氏替换原则告诉我们不要破坏继承体系；
-    - 依赖倒置原则告诉我们要面向接口编程；
-    - 接口隔离原则告诉我们在设计接口的时候要精简单一；
-    - 而开闭原则他告诉我们要对扩展开放，对修改关闭。
+    - 单一职责原则: 实现类要职责单一；
+    - 里氏替换原则: 不要破坏继承体系；
+    - 依赖倒置原则: 要面向接口编程；
+    - 接口隔离原则: 在设计接口的时候要精简单一；
+    - 而开闭原则他: 要对扩展开放，对修改关闭。
 ```
+
+---
+
 ## 设计模式:(23种)
 
-- 创建型模式：
-    - [简单工厂simple_factory](src/php_design_patterns/simple_factory/simple_factory.php)
-    - [工厂方法模式factory_method](src/php_design_patterns/factory_method/factory_method.php)
-    - [抽象工厂模式abstract_factory](src/php_design_patterns/abstract_factory/abstract_factory.php)
-    - [单例模式singleton](src/php_design_patterns/singleton/mysql_singleton.php)
-    - [建造者模式builder](src/php_design_patterns/builder/builder.php)   
-    - [原型模式prototype](src/php_design_patterns/prototype/prototype.php)  
-- 结构型模式：
-    - [适配器模式adapter](src/php_design_patterns/adapter/adapter.php)
-    - [桥接模式bridge](src/php_design_patterns/bridge/bridge.php)
-    - [合成模式composite1](src/php_design_patterns/composite/composite.php) 
-    - [装饰器模式decorator](src/php_design_patterns/decorator/decorator.php)
-    - [门面模式facade](src/php_design_patterns/facade/facade.php)
-    - [代理模式proxy](src/php_design_patterns/proxy/proxy.php)
-    - [享元模式flyweight](src/php_design_patterns/flyweight/flyweight.php)
-- 行为型模式：
-    - [策略模式strategy](src/php_design_patterns/strategy/strategy.php)
-    - [模板方法模式template_method](src/php_design_patterns/template_method/template_method.php)
-    - [观察者模式observer](src/php_design_patterns/observer/observer.php)
-    - [迭代器模式decorator](src/php_design_patterns/decorator/decorator.php)
-    - [责任链模式responsibility_chain](src/php_design_patterns/responsibility_chain/responsibility_chain.php)
-    - [命令模式command](src/php_design_patterns/command/command.php)
-    - [备忘录模式memento](src/php_design_patterns/memento/memento.php)
-    - [状态模式state](src/php_design_patterns/state/state.php)
-    - [访问者模式visitor](src/php_design_patterns/visitor/visitor.php)
-    - [中介者模式mediator](src/php_design_patterns/mediator/mediator.php)
-    - [解释器模式interpreter](src/php_design_patterns/interpreter/interpreter.php)
+### 创建型模式：
+- [简单工厂simple_factory](src/php_design_patterns/simple_factory/simple_factory.php)
+- [工厂方法模式factory_method](src/php_design_patterns/factory_method/factory_method.php)
+- [抽象工厂模式abstract_factory](src/php_design_patterns/abstract_factory/abstract_factory.php)
+- [单例模式singleton](src/php_design_patterns/singleton/mysql_singleton.php)
+- [建造者模式builder](src/php_design_patterns/builder/builder.php)   
+- [原型模式prototype](src/php_design_patterns/prototype/prototype.php)  
+### 结构型模式：
+- [适配器模式adapter](src/php_design_patterns/adapter/adapter.php)
+- [桥接模式bridge](src/php_design_patterns/bridge/bridge.php)
+- [合成模式composite1](src/php_design_patterns/composite/composite.php) 
+- [装饰器模式decorator](src/php_design_patterns/decorator/decorator.php)
+- [门面模式facade](src/php_design_patterns/facade/facade.php)
+- [代理模式proxy](src/php_design_patterns/proxy/proxy.php)
+- [享元模式flyweight](src/php_design_patterns/flyweight/flyweight.php)
+### 行为型模式：
+- [策略模式strategy](src/php_design_patterns/strategy/strategy.php)
+- [模板方法模式template_method](src/php_design_patterns/template_method/template_method.php)
+- [观察者模式observer](src/php_design_patterns/observer/observer.php)
+- [迭代器模式decorator](src/php_design_patterns/decorator/decorator.php)
+- [责任链模式responsibility_chain](src/php_design_patterns/responsibility_chain/responsibility_chain.php)
+- [命令模式command](src/php_design_patterns/command/command.php)
+- [备忘录模式memento](src/php_design_patterns/memento/memento.php)
+- [状态模式state](src/php_design_patterns/state/state.php)
+- [访问者模式visitor](src/php_design_patterns/visitor/visitor.php)
+- [中介者模式mediator](src/php_design_patterns/mediator/mediator.php)
+- [解释器模式interpreter](src/php_design_patterns/interpreter/interpreter.php)
