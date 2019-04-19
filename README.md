@@ -60,10 +60,10 @@ code note
     - ci/cd
 - safe
     - [DDoS](main/ddos.md)
+    - [anti cheat 防作弊](main/anti_cheat.md)
 - other
     - [dict](main/dict.md)
     - github
     - markdown
-    - [anti cheat 防作弊](main/anti_cheat.md)
     - [exp](main/exp.md)
     - blog

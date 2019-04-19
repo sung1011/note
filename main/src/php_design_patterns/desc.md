@@ -1,4 +1,4 @@
-# Php_Design_Patterns #
+# Php_Design_Patterns
 学习理解设计模式，记录PHP关于23种设计模式的使用,欢迎star  
 
 设计模式分为：创建型模式， 结构型模式，行为型模式等23种设计模式。 

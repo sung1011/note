@@ -12,26 +12,6 @@
 - 刚上线时，注意db实例放到不同机器。(replica自制分片(没用mongos)机制要合理)
 - 分级记录bug list
 - db数据提前考虑数据过期(如活动数据)
-- php redis lock
-```php
-# 多重锁示例
-if(!lock1()){
-    throw '...';
-}
-if(!lock2()){
-    unlock1()
-    throw '...';
-}
-try {
-    # do something
-} catch () {
-    throw '...';
-} finally {
-    unlock1()
-    unlock2()
-}
-
-```
 
 ## linux
 - 大页面和透明大页

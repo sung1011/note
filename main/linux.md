@@ -18,10 +18,6 @@
 
 ## crontab
 
-## related
-[文件描述符](related/文件描述符.md)  
-[关于网络IO中的同步、异步、阻塞、非阻塞](related/关于网络IO中的同步、异步、阻塞、非阻塞.md)
-
 ## Makefile
 
 ## cmd
@@ -48,3 +44,7 @@
 ### 其他
 - grep, awk, top, ps, tar, ln
 - telnet, lsof, scp, ssh, vim
+
+## related
+[文件描述符](related/文件描述符.md)  
+[关于网络IO中的同步、异步、阻塞、非阻塞](related/关于网络IO中的同步、异步、阻塞、非阻塞.md)
