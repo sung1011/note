@@ -1,15 +1,6 @@
 # main
 
-## goto
-- 批量删除匹配的rediskey（如: 删除所有keys *tklock*）
-- kakura
-- rabbitmq
-- mongodb运维操作
-- redis运维操作
-- vms与灰度
-- 抓包
-
-## 目录
+## 目录 directory
 
 - basic
     - [algorithm 数据结构与算法](main/algorithm.md)

@@ -1,6 +1,6 @@
 # word
 
-- [LF CRLF](main/lf_crlf)
+- [LF CRLF](related/lf_crlf.md)
 - OOM: out of memory的简称，称之为内存溢出。
 - CAS: compare and swap
 - KSE: kernel space entity 程序线程与内核线程对应关系

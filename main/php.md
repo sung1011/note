@@ -43,9 +43,9 @@
             - __autoload()
             - spl_autoload_register()
 - 后期静态绑定
-    - [ex1](src/late_static_bindings1.php)
-    - [ex2](src/late_static_bindings2.php)
-    - [ex3](src/late_static_bindings3.php)
+    - [ex1](src/php/late_static_bindings1.php)
+    - [ex2](src/php/late_static_bindings2.php)
+    - [ex3](src/php/late_static_bindings3.php)
 - 接口
     - 接口是类的模板, 实现某接口就必须实现接口中定义的所有方法
     - 接口中所有方法的访问控制必须public
