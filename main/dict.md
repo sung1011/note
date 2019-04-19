@@ -1,6 +1,6 @@
 
 # dict
-| !                             | interpretation                                          
+| !                             | interpretation                                         | full
 | ---                           | ---                                                     
 | CAS                           | compare and swap                                        
 | CSP                           | communicating sequential processes 依赖通道完成通信实体 
@@ -12,7 +12,7 @@
 | correspond                    | 符合,一致;相应;通信                                     
 | crc                           | 循环冗余校验码(Cyclic Redundancy Check)                 
 | lagged                        | 滞后，延迟                                              
-| object-oriented programming   | 面向对象                                                
+| [OOP](main/oop.md)   | 面向对象  | object-oriented programming                                              
 | parallellism                  | 并行                                                    
 | redundancy                    | 冗余                                                    
 | utility                       | 实用程序                                                
