@@ -17,3 +17,4 @@
 | robust                        | 鲁棒性，健壮性
 | utility                       | 实用程序
 | split brain                   | 脑裂
+| multiplexer | 复用器
