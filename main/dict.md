@@ -19,3 +19,5 @@
 | split brain                   | 脑裂
 | multiplexer | 复用器
 | BDD                           | 行为驱动开发  | Behavior-driven development
+| ROA | 面向资源架构 | Resource Oriented Architecture 
+| SOA| 面向服务架构 | Service Oriented Architecture
