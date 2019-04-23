@@ -116,6 +116,14 @@ func TestFoo(t *testing.T) {
 - [表组测试](src/go/testing/foo_test.go)
 - [accert 断言](src/go/testing/foo_test.go)
 - [mock 模拟](src/go/testing/foo_test.go)
+- [基准测试](src/go/testing/foo_test.go)
+- [BDD]()
+
+---
+## reflect 反射
+- `reflect.TypeOf()`
+- `reflect.ValueOf()`
+- `reflect.DeepEqual(x, y interface{})` 比较map, slice
 
 ---
 

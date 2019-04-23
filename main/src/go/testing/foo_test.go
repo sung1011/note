@@ -69,16 +69,18 @@ func mockServer() *httptest.Server {
 	return httptest.NewServer(http.HandlerFunc(sendJSON))
 }
 
+//基准测试
 func BenchmarkConcatStringByAdd(b *testing.B) {
 
 	elems := []string{"1", "2", "3", "4", "5"}
-	b.ResetTimer()
+	b.ResetTimer() //测试片段开始
 	for i := 0; i < b.N; i++ {
 		StrAppend(elems...)
 	}
-	b.StopTimer()
+	b.StopTimer() //测试片段结束
 }
 
+//基准测试
 func BenchmarkConcatStringByBytesBuffer(b *testing.B) {
 	elems := []string{"1", "2", "3", "4", "5"}
 	b.ResetTimer()

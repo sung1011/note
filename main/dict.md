@@ -18,3 +18,4 @@
 | utility                       | 实用程序
 | split brain                   | 脑裂
 | multiplexer | 复用器
+| BDD                           | 行为驱动开发  | Behavior-driven development
