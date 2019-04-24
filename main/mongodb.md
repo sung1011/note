@@ -2,8 +2,6 @@
 
 ## 日常命令 cmd
 
----
-
 ## index 索引  
 ### 原理
 - btree和hash
@@ -26,21 +24,15 @@
     - db.setProfilingLevel(1, 100); // 0 不开启 1 开启慢查询 2 记录所有
 - explain分析索引
 
----
-
 ## aggregation 聚合
 - 阶段操作符
     - $count, $project, $match, $group, $sort, $limit, $unwind
 - db.mycol.aggregate([{group: {_id: 'sex', personCount: {$sum: 1}}}])
 
----
-
 ## sync 同步  
 - initial sync 全量同步
 - oplog 增量同步
     - Primary上的写操作完成后，会向特殊的local.oplog.rs特殊集合写入一条oplog，Secondary不断的从Primary取新的oplog并应用
-
----
 
 ## replica set 副本集 
 ### 节点
@@ -104,11 +96,9 @@
                 - Secondary上有单独的线程，当oplog的最新时间戳发生更新时，就会向Primary发送replSetUpdatePosition命令更新自己的oplog时间戳。(即：)
             3. 当Primary发现有足够多的节点oplog时间戳已经满足条件了，向客户端进行应答。
 
----
 
 ## mongos (router)
 
----
 
 ## shard 分片
 ### 组成
@@ -134,7 +124,6 @@
 - hash
 - ranged
 
----
 
 ## capped collection
 - 定义
@@ -145,7 +134,7 @@
     - capped collection不能被shard.
     - 可以在创建capped collection时指定collection中能够存放的最大文档数。
 
----
+## 备份回档
 
 ## 实战
 - 输出全部结果
