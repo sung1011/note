@@ -133,6 +133,8 @@
     - 使用natual ordering可以有效地检索最近插入的元素，因为capped collection能够保证自然排序就是插入的顺序。
     - capped collection不能被shard.
     - 可以在创建capped collection时指定collection中能够存放的最大文档数。
+- 实现
+    - oplog
 
 ## 备份回档
 
