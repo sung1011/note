@@ -21,3 +21,4 @@
 | ROA                           | 面向资源架构               | Resource Oriented Architecture
 | SOA                           | 面向服务架构               | Service Oriented Architecture
 | IDFA                          | iOS手机唯一标识符          |
+| REPL | 交互式解释器 | Read Eval Print Loop 

@@ -43,7 +43,7 @@ code note
     - [go](main/go.md)
     - [php](main/php.md)
     - python
-    - nodejs
+    - [nodejs](main/nodejs.md)
     - java
     - shell
     - lua
