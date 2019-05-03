@@ -26,19 +26,19 @@
 ## 模块
 
 ## 异步io
-事件循环
-观察者
-请求对象
-执行回调
+事件循环  
+观察者  
+请求对象  
+执行回调  
 
 ![asyncio](res/asyncio.png)  
 
 ## 异步编程
 ### 方式
-[回调地狱](src/nodejs/callbackhell.js)
-[Promise](src/nodejs/promise.js)
-[Generator](src/nodejs/generator.js)
-[async/await](src/nodejs/async.js)
+[回调地狱](src/nodejs/callbackhell.js)  
+[Promise](src/nodejs/promise.js)  
+[Generator](src/nodejs/generator.js)  
+[async/await](src/nodejs/async.js)  
 
 ### 异步并发控制
 原因
