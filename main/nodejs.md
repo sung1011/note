@@ -8,9 +8,16 @@
 
 ## 缺点
 异常处理  
+- 回调函数会在下一个事件循环中(Tick)才会被取出执行，而try/catch只能捕获当前当前事件循环中的异常。  
+- 约定一般异常作为回调函数的第一个实参传回`async(function(err, result){  })`  
+
 嵌套太深  
-没有sleep  
+
+阻塞代码  
+- 单线程导致sleep会阻塞所有任务  
+
 多线程编程  
+
 异步转同步  
 
 ## 模块
@@ -18,6 +25,7 @@
 ## 异步io
 
 ## 异步编程
+### 方式
 [回调地狱](src/nodejs/callbackhell.js)
 [Promise](src/nodejs/promise.js)
 [Generator](src/nodejs/generator.js)
