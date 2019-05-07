@@ -11,3 +11,9 @@
 - 1英文字符(word,字符) = 2byte;[ASCII, Unicode, UTF-8]
 - 1中文字符 = 2byte(B) [ASCII,Unicode];
 - 1中文字符 = 3byte(B) [UTF-8];
+
+## 进制
+B（Binary)二进制，
+O（Octal）八进制， 
+D（Decimal）十进制，
+H（Hexadecimal）十六进制
