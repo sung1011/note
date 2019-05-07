@@ -22,3 +22,7 @@
 | SOA                           | 面向服务架构               | Service Oriented Architecture
 | IDFA                          | iOS手机唯一标识符          |
 | REPL | 交互式解释器 | Read Eval Print Loop 
+|Braces / curly brackets |大括号 | { }
+|square brackets / brackets |方括号| [ ]
+|angled brackets |尖括号| < >
+|parentheses |圆括号| ( )
