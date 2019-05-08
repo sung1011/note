@@ -26,3 +26,5 @@
 |square brackets / brackets |方括号| [ ]
 |angled brackets |尖括号| < >
 |parentheses |圆括号| ( )
+|explicit | 具体的 |
+|verbose | 啰嗦的 |
