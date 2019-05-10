@@ -28,3 +28,4 @@
 |parentheses |圆括号| ( )
 |explicit | 具体的 |
 |verbose | 啰嗦的 |
+|IPC|进程间通信|Inter-Process Communication
