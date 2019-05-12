@@ -55,8 +55,8 @@ code note
     - [distributed](main/distributed.md)
 - deploy
     - [linux](main/linux.md)
-    - docker
-    - kubernetes
+    - [docker](main/docker.md)
+    - [kubernetes](main/kubernetes.md)
     - ci/cd
 - safe
     - [DDoS](main/ddos.md)
