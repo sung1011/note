@@ -8,8 +8,10 @@ kubernetes api
 controller manager  
 scheduler  
 etcd  
+
+kubelet  
   
-### 工作节点 worker  
+### 工作节点 node  
 kubelet  
 kube-proxy  
 容器  
@@ -34,3 +36,4 @@ Pod是Kubernetes创建或部署的最小/最简单的基本单位，一个Pod代
 ### StatefulSets
 ### Ingress
 ### GC
+pod
