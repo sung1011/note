@@ -7,8 +7,10 @@ kubernetes api
 controller manager  
 scheduler  
 etcd  
+
+kubelet  
   
-### 工作节点 worker  
+### 工作节点 node  
 kubelet  
 kube-proxy  
-容器  
+pod
