@@ -36,4 +36,3 @@ Pod是Kubernetes创建或部署的最小/最简单的基本单位，一个Pod代
 ### StatefulSets
 ### Ingress
 ### GC
-pod
