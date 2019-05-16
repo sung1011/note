@@ -35,3 +35,5 @@ awk '条件 动作' 文件名
   
 ## if语句  
 `awk -F ':' '{if ($1 > "m") print $1; else print "---"}' demo.txt`  
+
+[更多](related/awk.md)
