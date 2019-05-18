@@ -1,71 +1,7 @@
-# kubernetes  
+# k8s YAML
 
-## 优点
-简化应用部署
-高效利用硬件
-健康检查自我修复
-自动扩容
-
-## 架构  
-  
-### 控制面板 master  
-kubernetes api  
-controller manager  
-scheduler  
-etcd  
-  
-### 工作节点 node  
-kubelet  
-kube-proxy  
-容器  
-
-### 核心组件
-etcd保存了整个集群的状态；
-apiserver提供了资源操作的唯一入口，并提供认证、授权、访问控制、API注册和发现等机制；
-controller manager负责维护集群的状态，比如故障检测、自动扩展、滚动更新等；
-scheduler负责资源的调度，按照预定的调度策略将Pod调度到相应的机器上；
-kubelet负责维护容器的生命周期，同时也负责Volume（CVI）和网络（CNI）的管理；
-Container runtime负责镜像管理以及Pod和容器的真正运行（CRI）；
-kube-proxy负责为Service提供cluster内部的服务发现和负载均衡；
-
-### Add-ons组件
-kube-dns负责为整个集群提供DNS服务
-Ingress Controller为服务提供外网入口
-Heapster提供资源监控
-Dashboard提供GUI
-Federation提供跨可用区的集群
-Fluentd-elasticsearch提供集群日志采集、存储与查询
-
-## 概念
-### Pod
-Pod是Kubernetes创建或部署的最小/最简单的基本单位，一个Pod代表集群上正在运行的一个进程。
-#### 共享资源
-PID命名空间：Pod中的不同应用程序可以看到其他应用程序的进程ID；
-网络命名空间：Pod中的多个容器能够访问同一个IP和端口范围；
-IPC命名空间：Pod中的多个容器能够使用SystemV IPC或者POSIX消息队列进行通信；
-UTS命名空间：Pod中的多个容器共享一个主机名；
-Volumes（共享存储卷）：Pod中的各个容器可以访问在Pod级别定义的Volumes。
-
-### Nodes
-### Namespaces
-### Labels & Selectors
-### Annoatations
-
-### 对象
-### 组件
-### Names
-### Volume
-### Master-Node通信
-### Replication Controller (rc)
-### Replica Sets (rs)
-### Service
-### Deployment
-### StatefulSets
-### Ingress
-### GC
-
-### API yaml
-```
+## POD
+```yaml
 # yaml格式的pod定义文件完整内容：
 apiVersion: v1       #必选，版本号，例如v1
 kind: Pod       #必选，Pod

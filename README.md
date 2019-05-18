@@ -56,7 +56,7 @@ web
 deploy
 - [linux](main/linux.md)
 - [docker](main/docker.md)
-- [kubernetes](main/kubernetes.md)
+- [kubernetes](main/k8s.md)
 - ci/cd
 safe
 - [DDoS](main/ddos.md)
