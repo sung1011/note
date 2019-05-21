@@ -19,6 +19,12 @@ commit
 tag
 - tag用于给某个上述类型的对象指配一个便于开发者记忆的名字, 通常用于某次commit。
 
+## 概念
+### 分离头指针 HEAD detached
+基于一个commit的操作(非分支，非tag)  
+可创建commit, branch  
+修改后最终若不创建branch，将被回收丢弃  
+
 ## cmd
 catfile 调试对象信息
 - -t    查看对象类型
@@ -33,9 +39,30 @@ mv  移动文件
 
 log
 - --oneline 一行
-- -\<num\>, -n \<num\>
+- -< num >, -n < num >
 - --all
 - --graph
+
+diff
+- HEAD~3
+- HEAD^^^
+- < commit1 > < commit2 >
+
+branch
+- -d, -D
+
+commit
+- --amend
+- -m, --message < msg >
+
+rebase
+- p, pick   use commit
+- r, reword use commit, but edit the commit message
+- e, edit   use commit, but stop for amending
+- s, squash use commit, but meld into previous commit
+- f, fixup  like "squash", but discard this commit's log message
+- x, exec   run command (the rest of the line) using shell
+- d, drop   remove commit
 
 ## gitk
 git图形界面工具
