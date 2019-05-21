@@ -64,6 +64,7 @@ safe
 other
 - [dict](main/dict.md)
 - github
+- [licenses](main/licenses.md)
 - markdown
 - [exp](main/exp.md)
 - blog

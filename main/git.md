@@ -25,44 +25,58 @@ tag
 可创建commit, branch  
 修改后最终若不创建branch，将被回收丢弃  
 
+### --
+指定文件
+
 ## cmd
-catfile 调试对象信息
+### catfile 调试对象信息
 - -t    查看对象类型
 - -s    查看对象size
 - -p    查看对象内容
 
-help
+### help
 - -w --web
 
-mv  移动文件
+### mv  移动文件
 - 一般重命名大小写时用。 # 另外可通过配置使大小写敏感`git config core.ignorecase false`
 
-log
+### log
 - --oneline 一行
 - -< num >, -n < num >
 - --all
 - --graph
 
-diff
+### diff
 - HEAD~3
 - HEAD^^^
 - < commit1 > < commit2 >
+- --cached HEAD与暂存区比较
 
-branch
+### branch
 - -d, -D
 
-commit
+### commit
 - --amend
 - -m, --message < msg >
 
-rebase
-- p, pick   use commit
-- r, reword use commit, but edit the commit message
-- e, edit   use commit, but stop for amending
-- s, squash use commit, but meld into previous commit
-- f, fixup  like "squash", but discard this commit's log message
-- x, exec   run command (the rest of the line) using shell
-- d, drop   remove commit
+### checkout
+- -b
+- -- < filename > 丢弃工作区该文件的修改
+
+### reset
+- --soft    reset only HEAD
+- --mixed   reset HEAD and index    *default
+- --hard    reset HEAD, index and working tree
+
+### rebase
+- -i, --interactive 交互rebase:
+  - p, pick   use commit
+  - r, reword use commit, but edit the commit message
+  - e, edit   use commit, but stop for amending
+  - s, squash use commit, but meld into previous commit
+  - f, fixup  like "squash", but discard this commit's log message
+  - x, exec   run command (the rest of the line) using shell
+  - d, drop   remove commit
 
 ## gitk
 git图形界面工具
@@ -79,7 +93,7 @@ revert
 - `git checkout {commit_id} && git checkout -b {new_branch_name}`
 
 回溯指定版本、回溯n个版本 git reset --hard
-- `git reset --hard[^回退上一版本|^^回退上两个版本|~n回退上n个版本| commit_id回退到某一版本] && git push --force`
+- `git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push --force`
 
 ---
 
