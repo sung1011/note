@@ -143,22 +143,22 @@ Memory-mapped file
 - 请求方发起后，返回做其他任务，等待服务方通知
 
 ### 实例
-select多路复用 [同步非阻塞]
+select多路复用 [ 同步非阻塞 ]
 - 主动轮询遍历fd集合的事件状态
 - 采用一个1024数组存储状态，最多同时检查1024。
 
-poll多路复用 [同步非阻塞]
+poll多路复用 [ 同步非阻塞 ]
 - 主动轮询链表(采用链表避免数组长度限制),其他同select
 
-epoll多路复用 [同步非阻塞]  
+epoll多路复用 [ 同步非阻塞 ]  
 - 主动轮询链表，设备就绪后执行回调将就绪的fd事件放入链表。
 - 只要判断就绪链表是否空，而不用遍历整个fb，提高cpu性能。
 - kqueue: FreeBSD系统的epoll
 
-信号驱动 (SIGIO) [同步非阻塞]
+信号驱动 (SIGIO) [ 同步非阻塞 ]
 - 主动轮询链表，设备就绪后信号通知将就绪fd事件放入链表。
 
-aio [异步非阻塞]
+aio [ 异步非阻塞 ]
 - io完成后，信号通知或者回调线程
 
 
@@ -167,10 +167,10 @@ aio [异步非阻塞]
 ## Makefile
 
 ## cmd
-[awk](awk.md)
+[ awk ](awk.md)
 - 某列求和 `awk -F "\t" '{sum+=$1}END{print sum}'`
 
-[grep](related/grep.md)
+[ grep ](ref/grep.md)
 
 du
 - 文件大小 `du -sh * | sort -n`
@@ -185,14 +185,14 @@ fuser
 - 查看占用端口的进程 `fuser -n tcp 9000`
 
 ### HugePage 透明大页
-- [hugepage](related/hugepage.md)
+- [ hugepage ](ref/hugepage.md)
 
 ### 其他
 - grep, awk, top, ps, tar, ln
 - telnet, lsof, scp, ssh, vim
 
 ## 实战
-### [平衡负载](loadAverage.md)
+### [ 平衡负载 ](loadAverage.md)
 
 
 ### 内存分配和多线程原理
@@ -209,8 +209,8 @@ fuser
 3) 协程能保留上一次调用时的状态，每次过程重入时，就相当于进入上一次调用的状态
 
 
-## related
-[awk](related/awk.md)
-[文件描述符](related/文件描述符.md)  
-[关于网络IO中的同步、异步、阻塞、非阻塞](related/关于网络IO中的同步、异步、阻塞、非阻塞.md)
-[select、poll、epoll、同步、异步之间的区别总结](https://blog.csdn.net/lsgqjh/article/details/65629609)
+## ref
+[ awk ](ref/awk.md)
+[ 文件描述符 ](ref/文件描述符.md)  
+[ 关于网络IO中的同步、异步、阻塞、非阻塞 ](ref/关于网络IO中的同步、异步、阻塞、非阻塞.md)
+[ select、poll、epoll、同步、异步之间的区别总结 ](https://blog.csdn.net/lsgqjh/article/details/65629609)

@@ -1,8 +1,8 @@
 # kubernetes  
 
-## [API](k8sAPI.md)
+## [ API ](k8sAPI.md)
 
-## [API yaml](k8sYAML.md)
+## [ API yaml ](k8sYAML.md)
 
 ## 优点
 简化应用部署  
@@ -11,19 +11,19 @@
 自动扩容  
 
 ## 架构  
-![](res/k8sarch.png)
+![  ](res/k8sarch.png)
 ### 控制面板 master  
 kubernetes api  
 controller manager  
 scheduler  
 etcd  
-![](res/k8smaster.png)
+![  ](res/k8smaster.png)
 
 ### 工作节点 node  
 kubelet  
 kube-proxy  
 容器  
-![](res/k8snode.png)
+![  ](res/k8snode.png)
 
 ### 核心组件
 etcd保存了整个集群的状态；  
@@ -50,7 +50,7 @@ Fluentd-elasticsearch提供集群日志采集、存储与查询
 生态系统：在接口层之上的庞大容器集群管理调度的生态系统，可以划分为两个范畴  
 - Kubernetes外部：日志、监控、配置管理、CI、CD、Workflow、FaaS、OTS应用、ChatOps等
 - Kubernetes内部：CRI、CNI、CVI、镜像仓库、Cloud Provider、集群自身的配置和管理等
-![k8slayer](res/k8slayer.jpg)
+![ k8slayer ](res/k8slayer.jpg)
 
 ## Pod
 Pod是Kubernetes创建或部署的最小/最简单的基本单位，一个Pod代表集群上正在运行的一个进程。  

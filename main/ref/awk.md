@@ -3,8 +3,8 @@
 awk是行处理器: 相比较屏幕处理的优点，在处理庞大文件时不会出现内存溢出或是处理缓慢的问题，通常用来格式化文本信息
 awk处理过程: 依次对每一行进行处理，然后输出
 awk命令形式:
-awk [-F|-f|-v] ‘BEGIN{} //{command1; command2} END{}’ file
- [-F|-f|-v]   大参数，-F指定分隔符，-f调用脚本，-v定义变量 var=value
+awk [ -F|-f|-v ] ‘BEGIN{} //{command1; command2} END{}’ file
+ [ -F|-f|-v ]   大参数，-F指定分隔符，-f调用脚本，-v定义变量 var=value
 '  '          引用代码块
 BEGIN   初始化代码块，在对每一行进行处理之前，初始化代码，主要是引用全局变量，设置FS分隔符
 //           匹配代码块，可以是字符串或正则表达式
@@ -29,12 +29,12 @@ RS       输入的记录分隔符， 默认为换行符(即文本是按一行一
 &&　     逻辑与
 ||             逻辑或
 +            匹配时表示1个或1个以上
-/[0-9][0-9]+/   两个或两个以上数字
-/[0-9][0-9]*/    一个或一个以上数字
+/[ 0-9 ][ 0-9 ]+/   两个或两个以上数字
+/[ 0-9 ][ 0-9 ]*/    一个或一个以上数字
 FILENAME 文件名
 OFS      输出字段分隔符， 默认也是空格，可以改为制表符等
 ORS        输出的记录分隔符，默认为换行符,即处理结果也是一行一行输出到屏幕
--F'[:#/]'   定义三个分隔符
+-F'[ :#/ ]'   定义三个分隔符
  
 print & $0
 print 是awk打印指定内容的主要命令
@@ -84,7 +84,7 @@ awk '!/mysql/{print $0}' /etc/passwd                  //输出不匹配mysql的�
 awk '/mysql|mail/{print}' /etc/passwd
 awk '!/mysql|mail/{print}' /etc/passwd
 awk -F: '/mail/,/mysql/{print}' /etc/passwd         //区间匹配
-awk '/[2][7][7]*/{print $0}' /etc/passwd               //匹配包含27为数字开头的行，如27，277，2777...
+awk '/[ 2 ][ 7 ][ 7 ]*/{print $0}' /etc/passwd               //匹配包含27为数字开头的行，如27，277，2777...
 awk -F: '$1~/mail/{print $1}' /etc/passwd           //$1匹配指定内容才显示
 awk -F: '{if($1~/mail/) print $1}' /etc/passwd     //与上面相同
 awk -F: '$1!~/mail/{print $1}' /etc/passwd          //不匹配
@@ -171,8 +171,8 @@ awk -F: 'BEGIN{i=1} {while(i<NF) print NF,$i,i++}' /etc/passwd
 7 /root 6
  
 数组
-netstat -anp|awk 'NR!=1{a[$6]++} END{for (i in a) print i,"\t",a[i]}'
-netstat -anp|awk 'NR!=1{a[$6]++} END{for (i in a) printf "%-20s %-10s %-5s \n", i,"\t",a[i]}'
+netstat -anp|awk 'NR!=1{a[ $6 ]++} END{for (i in a) print i,"\t",a[ i ]}'
+netstat -anp|awk 'NR!=1{a[ $6 ]++} END{for (i in a) printf "%-20s %-10s %-5s \n", i,"\t",a[ i ]}'
 9523                               1     
 9929                               1     
 LISTEN                            6     
@@ -189,12 +189,12 @@ awk -F: '{print $1,$2,$3,$4,$5}' OFS='\t' helloworld.sh                 //输出
 awk -F: '{print NR,$1,$2,$3,$4,$5}' OFS='\t' helloworld.sh           //制表符分隔输出前5个字段，并打印行号
  
 应用2
-awk -F'[:#]' '{print NF}'  helloworld.sh                                                  //指定多个分隔符: #，输出每行多少字段
-awk -F'[:#]' '{print $1,$2,$3,$4,$5,$6,$7}' OFS='\t' helloworld.sh   //制表符分隔输出多字段
+awk -F'[ :# ]' '{print NF}'  helloworld.sh                                                  //指定多个分隔符: #，输出每行多少字段
+awk -F'[ :# ]' '{print $1,$2,$3,$4,$5,$6,$7}' OFS='\t' helloworld.sh   //制表符分隔输出多字段
  
 应用3
-awk -F'[:#/]' '{print NF}' helloworld.sh                                               //指定三个分隔符，并输出每行字段数
-awk -F'[:#/]' '{print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12}' helloworld.sh     //制表符分隔输出多字段
+awk -F'[ :#/ ]' '{print NF}' helloworld.sh                                               //指定三个分隔符，并输出每行字段数
+awk -F'[ :#/ ]' '{print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12}' helloworld.sh     //制表符分隔输出多字段
  
 应用4
 计算/home目录下，普通文件的大小，使用KB作为单位
@@ -203,21 +203,21 @@ ls -l|awk 'BEGIN{sum=0} !/^d/{sum+=$5} END{print "total size is:",int(sum/1024),
  
 应用5
 统计netstat -anp 状态为LISTEN和CONNECT的连接数量分别是多少
-netstat -anp|awk '$6~/LISTEN|CONNECTED/{sum[$6]++} END{for (i in sum) printf "%-10s %-6s %-3s \n", i," ",sum[i]}'
+netstat -anp|awk '$6~/LISTEN|CONNECTED/{sum[ $6 ]++} END{for (i in sum) printf "%-10s %-6s %-3s \n", i," ",sum[ i ]}'
  
 应用6
 统计/home目录下不同用户的普通文件的总数是多少？
-ls -l|awk 'NR!=1 && !/^d/{sum[$3]++} END{for (i in sum) printf "%-6s %-5s %-3s \n",i," ",sum[i]}'   
+ls -l|awk 'NR!=1 && !/^d/{sum[ $3 ]++} END{for (i in sum) printf "%-6s %-5s %-3s \n",i," ",sum[ i ]}'   
 mysql        199 
 root           374 
 统计/home目录下不同用户的普通文件的大小总size是多少？
-ls -l|awk 'NR!=1 && !/^d/{sum[$3]+=$5} END{for (i in sum) printf "%-6s %-5s %-3s %-2s \n",i," ",sum[i]/1024/1024,"MB"}'
+ls -l|awk 'NR!=1 && !/^d/{sum[ $3 ]+=$5} END{for (i in sum) printf "%-6s %-5s %-3s %-2s \n",i," ",sum[ i ]/1024/1024,"MB"}'
  
 应用7
 输出成绩表
 awk 'BEGIN{math=0;eng=0;com=0;printf "Lineno.   Name    No.    Math   English   Computer    Total\n";printf "------------------------------------------------------------\n"}{math+=$3; eng+=$4; com+=$5;printf "%-8s %-7s %-7s %-7s %-9s %-10s %-7s \n",NR,$1,$2,$3,$4,$5,$3+$4+$5} END{printf "------------------------------------------------------------\n";printf "%-24s %-7s %-9s %-20s \n","Total:",math,eng,com;printf "%-24s %-7s %-9s %-20s \n","Avg:",math/NR,eng/NR,com/NR}' test0
 
-[root@localhost home]# cat test0 
+[ root@localhost home ]# cat test0 
 Marry   2143 78 84 77
 Jack    2321 66 78 45
 Tom     2122 48 77 71

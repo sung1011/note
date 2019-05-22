@@ -20,15 +20,18 @@ tag
 - tag用于给某个上述类型的对象指配一个便于开发者记忆的名字, 通常用于某次commit。
 
 ## 概念
+### HEAD    头指针
+### ^   父
+### ^^^ 父父父
+### ~3  父父父
+### --  指定文件
+
 ### 分离头指针 HEAD detached
 基于一个commit的操作(非分支，非tag)  
 可创建commit, branch  
 修改后最终若不创建branch，将被回收丢弃  
 
-### --
-指定文件
-
-## cmd
+## 常用命令 cmd
 ### catfile 调试对象信息
 - -t    查看对象类型
 - -s    查看对象size
@@ -47,8 +50,7 @@ tag
 - --graph
 
 ### diff
-- HEAD~3
-- HEAD^^^
+- HEAD~3, - HEAD^^^
 - < commit1 > < commit2 >
 - --cached HEAD与暂存区比较
 
@@ -107,22 +109,15 @@ config.php:     表示忽略当前路径的 config.php 文件
 /mtk/do.c       表示过滤某个具体文件
 fd1/*           忽略目录 fd1 下的全部内容；注意，不管是根目录下的 /fd1/ 目录，还是某个子目录 /child/fd1/ 目录，都会被忽略；
 
-## 版本撤销
+## 实战
+### 版本撤销
 revert
-- 提交一个与指定commit内容相反的commit
-- 若在主分支revert一个功能分支， 则该功能分支无法重新merge到主分支， 可以用cherry-pick。
+- 提交一个与指定commit内容相反的commit。
+- 若在主分支revert一个功能分支，则该功能分支无法重新merge到主分支，可以用cherry-pick。
 
----
-
-## 版本回溯
-回溯指定版本 git checkout
+### 版本回滚
+回滚指定版本 git checkout; 以新建分支回滚
 - `git checkout {commit_id} && git checkout -b {new_branch_name}`
 
-回溯指定版本、回溯n个版本 git reset --hard
-- `git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push --force`
-
----
-
-## 版本整合
-rebase
-- 在未合并的分支, 合并分支中的多个commit为一个commit。
+回滚指定版本、n个版本 git reset --hard; 以主分支回滚
+- `git reset --hard [ ^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本 ] && git push --force`

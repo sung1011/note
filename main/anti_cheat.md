@@ -1,4 +1,4 @@
 # anti cheat
 
-## related
-[反作弊](related/anti_cheat.md)
+## ref
+[ 反作弊 ](ref/anti_cheat.md)

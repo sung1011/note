@@ -54,9 +54,9 @@ opcache.huge_code_pages=1
 
 （1）查看是否启用透明大页。
 
-[root@venus153 ~]# cat  /sys/kernel/mm/transparent_hugepage/enabled 
-[always] madvise never
-使用命令查看时，如果输出结果为[always]表示透明大页启用了，[never]表示透明大页禁用。
+[ root@venus153 ~ ]# cat  /sys/kernel/mm/transparent_hugepage/enabled 
+[ always ] madvise never
+使用命令查看时，如果输出结果为[ always ]表示透明大页启用了，[ never ]表示透明大页禁用。
 
 （2）关闭透明大页。
 

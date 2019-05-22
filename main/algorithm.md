@@ -1,4 +1,4 @@
 # algorithm
 
-## related
-[数据结构](related/datastruct.md)
+## ref
+[ 数据结构 ](ref/datastruct.md)

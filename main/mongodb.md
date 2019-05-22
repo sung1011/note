@@ -27,7 +27,7 @@
 ## aggregation 聚合
 - 阶段操作符
     - $count, $project, $match, $group, $sort, $limit, $unwind
-- db.mycol.aggregate([{group: {_id: 'sex', personCount: {$sum: 1}}}])
+- db.mycol.aggregate([ {group: {_id: 'sex', personCount: {$sum: 1}}} ])
 
 ## sync 同步  
 - initial sync 全量同步

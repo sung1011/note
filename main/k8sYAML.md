@@ -16,12 +16,12 @@ spec:         #必选，Pod中容器的详细定义
   containers:      #必选，Pod中容器列表
   - name: string     #必选，容器名称
     image: string    #必选，容器的镜像名称
-    imagePullPolicy: [Always | Never | IfNotPresent] #获取镜像的策略 Alawys表示下载镜像 IfnotPresent表示优先使用本地镜像，否则下载镜像，Nerver表示仅使用本地镜像
-    command: [string]    #容器的启动命令列表，如不指定，使用打包时使用的启动命令
-    args: [string]     #容器的启动命令参数列表
+    imagePullPolicy: [ Always | Never | IfNotPresent ] #获取镜像的策略 Alawys表示下载镜像 IfnotPresent表示优先使用本地镜像，否则下载镜像，Nerver表示仅使用本地镜像
+    command: [ string ]    #容器的启动命令列表，如不指定，使用打包时使用的启动命令
+    args: [ string ]     #容器的启动命令参数列表
     workingDir: string     #容器的工作目录
     volumeMounts:    #挂载到容器内部的存储卷配置
-    - name: string     #引用pod定义的共享存储卷的名称，需用volumes[]部分定义的的卷名
+    - name: string     #引用pod定义的共享存储卷的名称，需用volumes[  ]部分定义的的卷名
       mountPath: string    #存储卷在容器内mount的绝对路径，应少于512字符
       readOnly: boolean    #是否为只读模式
     ports:       #需要暴露的端口库号列表
@@ -41,7 +41,7 @@ spec:         #必选，Pod中容器的详细定义
         memory: string     #内存清楚，容器启动的初始可用数量
     livenessProbe:     #对Pod内个容器健康检查的设置，当探测无响应几次后将自动重启该容器，检查方法有exec、httpGet和tcpSocket，对一个容器只需设置其中一种方法即可
       exec:      #对Pod容器内检查方式设置为exec方式
-        command: [string]  #exec方式需要制定的命令或脚本
+        command: [ string ]  #exec方式需要制定的命令或脚本
       httpGet:       #对Pod内个容器健康检查方法设置为HttpGet，需要制定Path、port
         path: string
         port: number
@@ -59,7 +59,7 @@ spec:         #必选，Pod中容器的详细定义
        failureThreshold: 0
        securityContext:
          privileged:false
-    restartPolicy: [Always | Never | OnFailure]#Pod的重启策略，Always表示一旦不管以何种方式终止运行，kubelet都将重启，OnFailure表示只有Pod以非0退出码退出才重启，Nerver表示不再重启该Pod
+    restartPolicy: [ Always | Never | OnFailure ]#Pod的重启策略，Always表示一旦不管以何种方式终止运行，kubelet都将重启，OnFailure表示只有Pod以非0退出码退出才重启，Nerver表示不再重启该Pod
     nodeSelector: obeject  #设置NodeSelector表示将该Pod调度到包含这个label的node上，以key：value的格式指定
     imagePullSecrets:    #Pull镜像时使用的secret名称，以key：secretkey格式指定
     - name: string
