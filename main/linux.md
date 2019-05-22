@@ -192,7 +192,7 @@ fuser
 - telnet, lsof, scp, ssh, vim
 
 ## 实战
-### [平衡负载](loadBalancing.md)
+### [平衡负载](loadAverage.md)
 
 
 ### 内存分配和多线程原理
