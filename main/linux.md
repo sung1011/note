@@ -192,6 +192,9 @@ fuser
 - telnet, lsof, scp, ssh, vim
 
 ## 实战
+### [平衡负载](loadBalancing.md)
+
+
 ### 内存分配和多线程原理
 ### 协程，线程，进程的区别?
 进程多与线程比较  
