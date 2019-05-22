@@ -25,12 +25,9 @@ code note
 ## 目录 directory  
   
 ### basic  
+[ cryptography 加密 ](main/cryptography.md)  
 [ algorithm 数据结构与算法 ](main/algorithm.md)  
 [ complexity 复杂度 ](main/complexity.md)  
-[ net 网络 ](main/net.md)  
-[ scale 单位换算 ](main/scale.md)  
-[ cryptography ](main/cryptography.md)  
-[ oop ](main/oop.md)  
   
 ### version control  
 [ git ](main/git.md)  
@@ -48,15 +45,23 @@ etcd
 python  
 [ nodejs ](main/nodejs.md)  
 java  
-shell  
+bash  
 lua  
+
+### protocal
+[ protocal ](main/protocal.md)  
+ascii
+[ scale 单位换算 ](main/scale.md)  
   
 ### web  
-[ protocal ](main/protocal.md)  
 [ nginx ](main/nginx.md)  
-[ load balance ](main/load_balance.md)  
 [ message queue ](main/mq.md)  
+[ load balance ](main/load_balance.md)  
+[ net 网络 ](main/net.md)  
+
+### concept
 [ distributed ](main/distributed.md)  
+[ oop ](main/oop.md)  
   
 ### deploy  
 [ linux ](main/linux.md)  
