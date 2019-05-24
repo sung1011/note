@@ -80,6 +80,8 @@ __wakeup()
 - 调用: 反序列化 `unserialize()`  
 __set_state()  
 - 调用: 导出时`var_export()`  
+
+### [ 异常处理 ](phpException.md)
   
   
 ## 配置  
