@@ -11,7 +11,7 @@ array
 slice   
 map  
 chan  
----  
+
 ## cmd  
 `build   `    compile packages and dependencies  
 `clean   `    remove object files and cached files  
@@ -29,11 +29,8 @@ chan
 `tool    `    run specified go tool  
 `version `    print Go version  
 `vet     `    report likely mistakes in packages  
----  
   
 ## 接口  
-  
----   
   
 ## 并发   
 ### go并发与并行  
@@ -97,8 +94,6 @@ P：Processor的简称，逻辑处理器，主要作用是管理G对象（每个
   
 ![ G-P-M ](res/gpm)  
   
----  
-  
 ## unittest 单元测试 & benchmark 基准测试  
 ### cmd 命令  
 `go test` 测试  
@@ -137,18 +132,15 @@ func TestFoo(t *testing.T) {
 [ 基准测试 ](src/go/testing/foo_test.go)  
 [ BDD ]()  
   
----  
 ## reflect 反射  
 `reflect.TypeOf()`  
 `reflect.ValueOf()`  
 `reflect.DeepEqual(x, y interface{})` 比较map, slice  
   
----  
   
 ## 标准库  
 ### [ 文档 ](https://studygolang.com/pkgdoc)  
   
----  
   
 ## go翻墙  
 ### Require  
@@ -167,7 +159,6 @@ export https_proxy=$http_proxy
 ```  
 curl -sL -k -vv www.google.com  
 ```  
----   
 
 ## GC
   
