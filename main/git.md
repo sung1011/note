@@ -88,6 +88,7 @@ tag
 git图形界面工具
 
 ## .gitignore 文件
+```
 *.a             表示忽略所有 .a 结尾的文件
 !lib.a          表示但lib.a除外
 /TODO           表示仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
@@ -108,6 +109,7 @@ config.php:     表示忽略当前路径的 config.php 文件
 *.zip           表示过滤所有.zip文件
 /mtk/do.c       表示过滤某个具体文件
 fd1/*           忽略目录 fd1 下的全部内容；注意，不管是根目录下的 /fd1/ 目录，还是某个子目录 /child/fd1/ 目录，都会被忽略；
+```
 
 ## 实战
 ### 版本撤销
