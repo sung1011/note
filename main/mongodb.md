@@ -71,14 +71,14 @@ optime
 多数派连接  
 -  一个member要成为primary，它必须与“多数派”的其他members建立连接，如果未能与足够多的member建立连接，事实上它本身也无法被选举为primary；多数派参考的是“总票数”，而不是member的个数，因为我们可以给每个member设定不同的“票数”。假设复制集内投票成员数量为N，则大多数为 N/2 + 1。  
 
-### 读设置 Read Preference  
+### 读策略 Read Preference  
 primary(默认)： 所有读请求发到Primary  
 primaryPreferred： Primary优先，如果Primary不可达，请求Secondary  
 secondary： 所有的读请求都发到secondary  
 secondaryPreferred：Secondary优先，当所有Secondary不可达时，请求Primary  
 nearest：读请求发送到最近的可达节点上（通过ping探测得出最近的节点）  
 
-### 写设置 Write Concern   
+### 写策略 Write Concern   
 非应答写入  
 - MongoDB不对客户端进行应答，驱动会检查套接字，网络错误等。  
 - {writeConcern:{w:0}}  
