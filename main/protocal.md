@@ -1,23 +1,23 @@
 # protocal
 
 ## cookie, session, token
----
-## websocket
+
+## websocket  
 单个 TCP 连接上进行全双工通讯的协议  
-建立连接基于http握手
----
-## udp
+建立连接基于http握手  
+
+## udp  
 简单轻量  
 流模式与数据模式  
 可能丢包  
----
+
 ## tcp
 标志位  
 - SYN(建立联机) 、 ACK(确认) 、 PSH(传送) 、 FIN(f结束) 、 RST(重置) 、 URG(紧急) 、 Sequence number(顺序号码) 、 Acknowledge number(确认号码)
----
+
 ## http, http1.1, http2, https(ssl)
 ### request
-状态行
+#### 状态行
 - request method
     - get, post, head, put, delete, connect, options, trace
 - request URI
@@ -29,22 +29,23 @@
         - 多路复用(多重请求)(二进制分帧)、流优先级、服务器推送、头部压缩、应用层协商协议
     - HTTPS
         - ssl原理, CA证书, 签名, 公钥, 私钥, 对称秘钥...
-状态头
+#### 状态头
 - Accept-Encoding
 - Authorization
 - Cookie
 - Content-Length
 - Content-Type
 - User-Agent
-状态体
+#### 状态体
+
 ### response
-响应行
-#### response version
+#### 响应行
+##### response version
 - HTTP/1.0
 - HTTP/1.1
 - HTTP/2.0
 - HTTPS
-#### status code
+##### status code
 - 100   (继续) 请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分,正在等待其余部分。    
 - 101   (切换协议) 请求者已要求服务器切换协议,服务器已确认并准备切换。
 - 200   (成功)  服务器已成功处理了请求。 通常,这表示服务器提供了请求的网页。   
@@ -93,30 +94,31 @@ Set-Cookie
 #### 响应体  
 
 ### 通讯流程
-三次握手
-- 流程
-    - C->S: syn seq=j // 在吗
-    - S->C: ack j+1, syn seq=k // ok, 在
-        - S: syn_recv
-    - C->S: ack k+1 // ok, 建立连接吧
-        - C: syn_send
-        - C: established
-        - S: established
-- 意义: 当第一次握手出现网络延迟， 第二次握手依然会正常响应， 这时第三次握手就会被抛弃，服务端没收到第三次握手就不会建立连接。反之，若无第三次握手，服务端在第二次握手就开始建立客户端已经认为过期抛弃的连接， 浪费资源。
+#### 三次握手
+流程
+- C->S: syn seq=j // 在吗
+- S->C: ack j+1, syn seq=k // ok, 在
+    - S: syn_recv
+- C->S: ack k+1 // ok, 建立连接吧
+    - C: syn_send
+    - C: established
+    - S: established
+意义: 当第一次握手出现网络延迟， 第二次握手依然会正常响应， 这时第三次握手就会被抛弃，服务端没收到第三次握手就不会建立连接。反之，若无第三次握手，服务端在第二次握手就开始建立客户端已经认为过期抛弃的连接， 浪费资源。
 
-四次挥手
-- 流程:
-    - C->S: fin seq=i // 我要关了
-    - S->C: ack i+1 // ok, 等下, 我还没发完呢
-        - S: close_wait
-        - C: fin_wait1
-    - S->C: fin seq=j // (发完了)我关了, 你也关吧
-        - S: last_wait
-        - C: fin_wait2
-    - C->S: ack j+1 // ok, 我也关了, 并且轮询几下检测是否真断了。
-        - C: time_wait
-        - C: closed
-        - S: closed
-- 意义: 第二，三次挥手的意义在于，服务端可能不会立即关闭socket，故只能先回复一个ack确认。
-- 意义: 第四次挥手会进入time_wait状态， 重发几次以确认服务端是否已经断开。
+#### 四次挥手
+流程:
+- C->S: fin seq=i // 我要关了
+- S->C: ack i+1 // ok, 等下, 我还没发完呢
+    - S: close_wait
+    - C: fin_wait1
+- S->C: fin seq=j // (发完了)我关了, 你也关吧
+    - S: last_wait
+    - C: fin_wait2
+- C->S: ack j+1 // ok, 我也关了, 并且轮询几下检测是否真断了。
+    - C: time_wait
+    - C: closed
+    - S: closed
+意义: 第二，三次挥手的意义在于，服务端可能不会立即关闭socket，故只能先回复一个ack确认。
+意义: 第四次挥手会进入time_wait状态， 重发几次以确认服务端是否已经断开。
+
 ## OAuth2
