@@ -62,11 +62,9 @@ volatile-ttl: 回收在过期集合的键，并且优先回收存活时间（TTL
 ### 复制AOF过期
 slaves不会独立处理过期（会等到master执行DEL命令）。
   
-## 持久化方案  
+## RBD  
 
-### RBD  
-
-#### sync (主从)  
+### sync (主从)  
 意义  
 - 全量同步快照  
 
@@ -75,7 +73,7 @@ slaves不会独立处理过期（会等到master执行DEL命令）。
 - 主服务器需要将自己生成的RDB文件发送给从服务器，这个发送操作会耗费主从服务器大量的网络资源（带宽和流量），并对主服务器响应命令请求的时间产生影响；   
 - 接收到RDB文件的从服务器需要载入主服务器发来的RDB文件，并且在载入期间，从服务器会因为阻塞而没办法处理命令请求。  
 
-#### psync1 (>=2.8) (主从)  
+### psync1 (>=2.8) (主从)  
 意义  
 - 尝试进行部分重同步。   
 
@@ -88,7 +86,7 @@ slaves不会独立处理过期（会等到master执行DEL命令）。
 - 服务器的随机标识符 runid  
 - 复制偏移量replication offset  
 
-#### psync2 (>=4.0) (主从)  
+### psync2 (>=4.0) (主从)  
 意义: psync1需要满足runid && offset双重条件， 因而在 1.slave因故重启，master runid和offset都丢失时， psync1失效。 2. 故障切换后，新的slave需进行全量重同步。psync2以上问题做了优化。  
 
 流程:  
@@ -102,28 +100,28 @@ slaves不会独立处理过期（会等到master执行DEL命令）。
 - master_repl_offset: master偏移量  
 - second_repl_offset: 上次主实例repid1和复制偏移量；用于兄弟实例或级联复制，主库故障切换psync.  
 
-#### 快照 save SNAPSHOTTING (被动)  
+### 快照 save SNAPSHOTTING (被动)  
 配置  
 - save 900 1 #在900秒(15分钟)之后，如果至少有1个key发生变化，则dump内存快照。  
 - save 300 10 #在300秒(5分钟)之后，如果至少有10个key发生变化，则dump内存快照。  
 - save 60 10000 #在60秒(1分钟)之后，如果至少有10000个key发生变化，则dump内存快照。  
 
-### AOF  
+## AOF  
 
-#### append of file (被动)  
-##### 意义  
+### append of file (被动)  
+#### 意义  
 追加写命令  
 
-##### 流程  
+#### 流程  
 redis会将每一个收到的写命令都通过write函数追加到文件中(默认是 appendonly.aof)。  
 
-##### 配置  
+#### 配置  
 appendonly yes              //启用aof持久化方式  
 #appendfsync always      //每次收到写命令就立即强制写入磁盘，最慢的，但是保证完全的持久化，不推荐使用  
 appendfsync everysec     //每秒钟强制写入磁盘一次，在性能和持久化方面做了很好的折中，推荐  
 #appendfsync no    //完全依赖os，性能最好,持久化没保证  
 
-##### 优化  
+#### AOF rewrite  
 bgrewriteaof  
 - 意义  
     - 为了压缩aof的持久化文件(aof文件是可读的 + 保存了全部写操作 所以体积会很大)。  
