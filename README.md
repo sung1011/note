@@ -24,11 +24,6 @@ code note
   
 ## 目录 directory  
   
-### basic  
-[ cryptography 加密 ](main/cryptography.md)  
-[ algorithm 数据结构与算法 ](main/algorithm.md)  
-[ complexity 复杂度 ](main/complexity.md)  
-  
 ### version control  
 [ git ](main/git.md)  
 [ svn ](main/svn.md)  
@@ -50,7 +45,7 @@ lua
 
 ### protocal
 [ protocal ](main/protocal.md)  
-ascii
+ascii  
 [ scale 单位换算 ](main/scale.md)  
   
 ### web  
@@ -72,6 +67,11 @@ ci/cd
 ### safe  
 [ DDoS ](main/ddos.md)  
 [ anti cheat 防作弊 ](main/anti_cheat.md)  
+
+### basic  
+[ cryptography 加密 ](main/cryptography.md)  
+[ algorithm 数据结构与算法 ](main/algorithm.md)  
+[ complexity 复杂度 ](main/complexity.md)  
   
 ### other  
 [ dict ](main/dict.md)  
