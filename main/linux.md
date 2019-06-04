@@ -161,7 +161,7 @@ aio [ 异步非阻塞 ]
 ## crontab  
 ## Makefile  
 ## cmd  
-[ awk ](awk.md)  
+[ awk ](src/cmd/awk.md)  
 - 某列求和 `awk -F "\t" '{sum+=$1}END{print sum}'`  
   
 [ grep ](ref/grep.md)  
