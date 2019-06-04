@@ -18,7 +18,7 @@ iostat
 mpstat: 查看每个cpu性能指标，平均指标 `mpstat -P ALL 5`  
 pidstat: 进程性能分析工具。查看进程cpu,mem,io,ctx switch `pidstat -u 5`  
 cpu核数: grep -c 'model name' /proc/cpuinfo  
-stress: 
+stress:  `yum install -y epel-release; yum install -y stress`
 - --cpu cpu压测选项，
 - -i io压测选项，
 - -c 进程数压测选项，
