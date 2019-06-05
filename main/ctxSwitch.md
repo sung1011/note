@@ -32,9 +32,20 @@ CPU在不同的任务之前切换需要保存任务的运行资源记录：CPU�
 对于同一个CPU来说，中断处理比进程拥有更高的优先级  
 
 ## 实战
+### sysbench    多线程基准测试工具，一般用来评估不同系统参数下DB负载情况。
+`sysbench --threads=10 --timeout=300 threads run`
+
 ### [ vmstat ](src/cmd/vmstat.md) `vmstat 5`
-### pidstat: `pidstat -w 5`
+
+### pidstat: `pidstat -wt 5`
 - cswch     自愿上下文切换，指进程无法获取所需资源，导致上下文切换。如IO，内存等系统资源不足，进而自愿上下文切换。
 - nvcswch   非自愿上下文切换，指进程由于时间片已到等原因，被系统强制调度，进而发生上下文切换。
 
-### sysbench    多线程基准测试工具，一般用来评估不同系统参数下DB负载情况。
+### /proc/interrupts    观察中断类型(变化最大的)
+`watch -d "cat /proc/interrupts"`
+```
+        CPU0    CPU1
+...
+RES:    2403249 575911  Rescheduling    interrupts #RES是重调度中断
+...
+```
