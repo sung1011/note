@@ -1,25 +1,42 @@
 # 僵尸进程 不可中断进程
 
 ## 进程状态
-R Running/Runnalbe: 正在运行，或在队列中的进程  
-D Disk Sleep: 不可中断 Uninterruptible sleep (usually IO)  
+`R Running/Runnalbe` 正在运行，或在队列中的进程  
+`D Disk Sleep` 不可中断 Uninterruptible sleep (usually IO)  
 - 进程正在跟硬件交互，交互过程不允许其他进程或中断打断
-S Interruptible Sleep: 处于可中断休眠状态  
+
+`S Interruptible Sleep` 处于可中断休眠状态  
 - 因等待某事件而被挂起，事件发生时会被唤醒
-Z Zombie: 僵尸进程  
+
+`Z Zombie` 僵尸进程  
 - 进程已经结束，但父进程尚未回收它。
-I Idle: 空闲状态 不可中断睡眠睡眠的内核线程。  
+
+`I Idle` 空闲状态 不可中断睡眠睡眠的内核线程。  
 - 对于某些内核线程来说，有可能并没有任何负载。主要与D区分。
 - D状态进程会导致平均负载（loadAverage）升高，而I状态进程不会。
-T 停止或被追踪  
+
+`T` 停止或被追踪  
 - SIGSTOP信号使进程暂停，SIGCONT信号使进程恢复运行。 如:fg
-s 包含子进程  
-l 多线程，克隆线程 multi-threaded (using CLONE_THREAD, like NPTL pthreads do)  
-< 高优先级  
-N 低优先级  
-L 有些页被锁进内存  
-\+ 位于后台的进程组  
-W 进入内存交换（从内核2.6开始无效）  
-X 死掉的进程  
+
+`s` 包含子进程  
+`l` 多线程，克隆线程 multi-threaded (using CLONE_THREAD, like NPTL pthreads do)  
+`<` 高优先级  
+`N` 低优先级  
+`L` 有些页被锁进内存  
+`+` 位于前台的进程组  
+`W` 进入内存交换（从内核2.6开始无效）  
+`X` 死掉的进程  
 
 ## 僵尸进程
+### 概念
+原: 进程退出时，内核释放该进程所有的资源，如:打开的文件，占用的内存; 当一个进程创建了子进程，父进程无法预知子进程何时结束，若由于父进程繁忙，来不及wait，子进程就结束了，会丢失子进程结束时的状态信息。   
+现: 进程退出时，保留一些信息，如:进程号pid,退出状态,运行时间等。这些保留的信息直到进程通过调用wait/waitpid时才会释放。  
+故: 如果没有调用wait/waitpid，那么保留的信息就不会释放。这种进程就是僵尸进程。  
+
+### 情景
+僵尸1: 子进程先结束，父进程运行中 ---- 但是并未调用wait/waitpid。（父进程wait之前，算是僵尸进程）
+僵尸2: 父进程先结束，子进程运行中 ---- OS会扫描所有进程寻找刚刚结束的父进程的子进程，若有，由init接管成为它的父进程。(init回收之前，算是僵尸进程，比较短暂)  
+僵尸3: 子进程先结束，父进程运行中，但没调用wait就被异常终止 ---- 子进程被init接管成为它的父进程。(init回收之前，算是僵尸进程)  
+
+## 实战
+[ dstat ](src/cmd/dstat.md)
