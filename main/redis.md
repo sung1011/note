@@ -190,7 +190,7 @@ Master最好不要做任何持久化工作，如RDB内存快照和AOF日志文�
   
 ## 实战
 scan所有  
-删除匹配到的key  
+删除匹配到的key  `redis-cli keys *something* | xargs redis-cli del`
 hotkey
 
 ## ref
