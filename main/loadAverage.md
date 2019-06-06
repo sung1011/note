@@ -12,7 +12,7 @@
 平衡负载高可能由cpu计算密集，io密集，cpu wait导致  
 通过观察io与cpu使用率分析负载来源
 
-## 调试
+## 实战
 ### uptime  
 ### sysstat套件
 ### iostat  

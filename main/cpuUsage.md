@@ -16,6 +16,21 @@ guest (guest): 通过虚拟化运行其他操作系统的时间，即运行虚�
 guest_nice (gnice): 低优先级运行虚拟机的时间。  
 
 ## 实战
-perf `perf top -g -p < pid >`
+### perf `perf top -g -p < pid >`
 
-/boot/config -> CONFIG_HZ 节拍率:每秒触发中断次数
+### perf record -g; 等待x秒后ctrl+c ; perf report
+
+### /boot/config -> CONFIG_HZ 节拍率:每秒触发中断次数
+
+### pstree 查看父进程
+
+### execsnoop 分析短时进程
+> https://github.com/brendangregg/perf-tools
+
+### CPU使用率高，但找不到高CPU的进程
+#### 场景
+CPU总占用很高，但用top, pidstat等常规工具找不到高cpu应用
+#### 思路
+进程在不停崩溃重启。
+进程是短时进程，如:在其他应用内部调用exec。
+
