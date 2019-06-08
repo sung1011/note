@@ -52,7 +52,7 @@ java
 ### concept
 [ distributed ](main/distributed.md)  
 [ oop ](main/oop.md)  
-[ cryptography 加密 ](main/cryptography.md)  
+[ cryptography 加密 ](main/crypt.md)  
   
 ### deploy  
 [ linux ](main/linux.md)  
