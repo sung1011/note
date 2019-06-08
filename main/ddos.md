@@ -3,7 +3,7 @@
 ## 类型: DDOS攻击主要分为三类：流量型攻击；连接型攻击；特殊协议缺陷。
 
 ### Ip lood
-### Syn Flood
+### [ Syn Flood ](synFlood.md)
 ### Udp 反射 Flood
 ### Dns Query Flood
 ### Dns Reply Flood

@@ -45,7 +45,7 @@ http {
 `upstream`	upstream模块实现反向代理的功能，将真正的请求转发到后端服务器上，并从后端服务器上读取响应，发回客户端。upstream模块是一种特殊的handler，只不过响应内容不是真正由自己产生的，而是从后端服务器上读取的。  
 `load-balancer`	负载均衡模块，实现特定的算法，在众多的后端服务器中，选择一个服务器出来作为某个请求的转发服务器。  
 
-## 作用域/指令上下文
+## 作用域/指令上下文 (httpmod)
 `main`	nginx在运行时与具体业务功能（比如http服务或者email服务代理）无关的一些参数，比如工作进程数，运行的身份等。  
 `http`  与提供http服务相关的一些配置参数。例如：是否使用keepalive啊，是否使用gzip进行压缩等。  
 `server`	http服务上支持若干虚拟主机。每个虚拟主机一个对应的server配置项，配置项里面包含该虚拟主机相关的配置。在提供mail服务的代理时，也可以建立若干server.每个server通过监听的地址来区分。  
@@ -54,3 +54,4 @@ http {
 
 ## ref
 [ doc ](http://nginx.org/en/docs/beginners_guide.html#conf_structure)
+[ measurement ](http://nginx.org/en/docs/syntax.html)

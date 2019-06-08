@@ -35,6 +35,8 @@ change 重构
 
 ## [ 配置语法 ](nginxConfigGrammer.md)
 
+## [ signal ](nginxSignal.md) 
+
 
 ## nginx负载均衡的算法
 轮询（默认）  
@@ -57,9 +59,9 @@ url_hash (第三方)
 - 当某一个worker accept成功，会创建nginx对连接的封装，即ngx_connection_t结构体
 - 根据事件调用相应的事件处理模块，如http模块与客户端进行数据的交换
 - nginx或客户端来主动关掉连接。(一般客户端主动， 超时的话nginx主动)
-## 防DDOS
-- ngx_http_limit_req_module 限制每秒请求数
-- ngx_http_limit_conn_module 限制ip连接数
-- geo, map 给上游（如lvs, haproxy）设置白名单
+
 ## 惊群
 - 同一个时刻只能有唯一一个worker子进程监听web端口，此时新连接事件只能唤醒唯一正在监听端口的worker子进程。采用锁，互斥量实现。
+
+## 实战
+### [ modules ](nginxModules.md)

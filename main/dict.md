@@ -29,3 +29,5 @@
 |explicit | 具体的 |
 |verbose | 啰嗦的 |
 |IPC|进程间通信|Inter-Process Communication
+|RCU | 读副本 改上锁 | Read-Copy Update |
+|BPS|每秒收发字节数|byte per second|
