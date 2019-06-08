@@ -56,6 +56,7 @@ TFTP简单文件传输协议
 SNMP简单网络管理协议  
   
 ## 6 表示层     
+[ SSL/TLS ](SSL_TLS.md)  
 DECnet NSP  
 LPP 轻量级表示协议  
 NBSSN NetBIOS会话服务协议  
@@ -63,7 +64,6 @@ XDP外部数据表示协议
 IPX  
   
 ## 5 会话层     
-[ TLS/SSL ](TLS-SSL.md)  
 DAP目录访问协议  
 LDAP轻量级目录访问协议  
 RPC远程过程调用协议  
