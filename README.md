@@ -34,29 +34,25 @@ code note
 [ yac ](main/yac.md)  
 etcd  
   
-### language  
+### programming language  
 [ go ](main/go.md)  
 [ php ](main/php.md)  
-python  
 [ nodejs ](main/nodejs.md)  
-java  
+python  
 bash  
 lua  
-
-### protocal
-[ protocal ](main/protocal.md)  
-ascii  
-[ scale 单位换算 ](main/scale.md)  
+java  
   
 ### web  
+[ protocal ](main/protocal.md)  
 [ nginx ](main/nginx.md)  
 [ message queue ](main/mq.md)  
 [ load balance ](main/load_balance.md)  
-[ net 网络 ](main/net.md)  
 
 ### concept
 [ distributed ](main/distributed.md)  
 [ oop ](main/oop.md)  
+[ cryptography 加密 ](main/cryptography.md)  
   
 ### deploy  
 [ linux ](main/linux.md)  
@@ -69,7 +65,8 @@ ci/cd
 [ anti cheat 防作弊 ](main/anti_cheat.md)  
 
 ### basic  
-[ cryptography 加密 ](main/cryptography.md)  
+[ ascii ](main/ascii.md)  
+[ scale 单位换算 ](main/scale.md)  
 [ algorithm 数据结构与算法 ](main/algorithm.md)  
 [ complexity 复杂度 ](main/complexity.md)  
   
