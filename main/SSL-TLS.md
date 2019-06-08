@@ -13,13 +13,13 @@
 ## [ Certificate(CA 证书) ](CA.md)
 
 ## 组成
-记录层
-握手层
+记录层  
+握手层  
 - 握手协议 (handshake protocol)
 - 更改加密规范协议 (change cipher spec protocol)
 - 应用数据协议 (application data protocol)
 - 和警告协议 (alert protocol)  
-![ TLSmodel ](res/TLSmodel)
+![ TLSmodel ](res/TLS-model)
 
 ## 记录层
 ### 分片 (Fragmentation)
