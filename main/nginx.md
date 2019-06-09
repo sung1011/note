@@ -18,25 +18,21 @@
 - 热部署
 - BSD许可证
 
-## 版本
-### version
-mainline 当前开发。如：nginx-1.17.0 (奇数)
-stable 稳定。如：nginx-1.16.0 (偶数)
-legacy 遗产。如：nignx-1.14.0, nginx-1.12.0, nginx-1.10.0 (即，非最新的stable)
+## [ 版本 ](nginx-version.md)
 
-### changes
-feature 特性
-bugfix 修复
-change 重构
+## [ 编译安装 ](nginx-compile.md)
 
-## [ 编译安装 ](nginxCompile.md)
+## [ 文件 ](nginx-file.md)
 
-## [ 组成 ](nginxFile.md)
+## [ 配置语法 ](nginx-configGrammer.md)
 
-## [ 配置语法 ](nginxConfigGrammer.md)
+## [ signal ](nginx-signal.md) 
 
-## [ signal ](nginxSignal.md) 
+## [ openresty ](nginx-openresty.md)
 
+## [ 架构 ](nginx-arch.md)
+
+### [ modules ](nginx-modules.md)
 
 ## nginx负载均衡的算法
 轮询（默认）  
@@ -64,4 +60,6 @@ url_hash (第三方)
 - 同一个时刻只能有唯一一个worker子进程监听web端口，此时新连接事件只能唤醒唯一正在监听端口的worker子进程。采用锁，互斥量实现。
 
 ## 实战
-### [ modules ](nginxModules.md)
+### https
+`./configure ... --with-http_ssl_module` 必要SSL模块
+`certbot --nginx --nginx-server-root=< nginx.conf.path >` certbot协助配置证书
