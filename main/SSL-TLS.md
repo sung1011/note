@@ -25,7 +25,7 @@
 ### 分片 (Fragmentation)
 ### 记录压缩和解压缩 (Record compression and decompression)
 ### 空或标准流加密 (Null or standard stream cipher)
-### CBC 块加密 (分组加密)
+### CBC 块加密 ([ 分组加密 ](cryptMode.md))
 ### 记录有效载荷保护 (Record payload protection)
 ### 密钥计算 (Key calculation)
 
