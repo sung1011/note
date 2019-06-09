@@ -1,6 +1,7 @@
 # nginx modules
 
 ## 类型 - 结构划分
+![ img ](res/nginx-modules.jpeg)
 核心模块：HTTP模块、EVENT模块和MAIL模块  
 基础模块：HTTP Access模块、HTTP FastCGI模块、HTTP Proxy模块和HTTP Rewrite模块，  
 第三方模块：HTTP Upstream Request Hash模块、Notice模块和HTTP Access Key模块。  
@@ -41,7 +42,3 @@ proxy_cache_path /tmp/nginxcache;
 proxy_cache mykey;  
 proxy_cache_key $host$url$is_args$args;  
 proxy_cache_valid 200 302 302 1d;  
-
-## ref
-[ 深入NGINX：我们如何设计它的性能和扩展性 ](https://www.cnblogs.com/chenjfblog/p/8715580.html)
-[ 理解nginx工作原理 ](https://www.jianshu.com/p/6215e5d24553)

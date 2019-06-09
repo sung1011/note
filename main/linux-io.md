@@ -45,3 +45,5 @@ epoll多路复用 [ 同步非阻塞 ]
 aio [ 异步非阻塞 ]  
 - io完成后，信号通知或者回调线程  
   
+## ref
+[ IO多路复用的三种机制Select，Poll，Epoll ](https://www.jianshu.com/p/397449cadc9a)

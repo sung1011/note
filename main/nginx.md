@@ -1,22 +1,6 @@
 # nginx
 
-## 用途：
-- 静态资源
-- API服务
-- 反向代理(用于HTTP、HTTPS、SMTP、POP3和IMAP协议)
-
-## 优缺点:
-优点：
-- 跨平台、配置简单：在核心代码都使用了与操作系统无关的代码实现
-- 高性能：非阻塞、高并发连接：处理2-3万并发连接数，官方监测能支持5万并发
-- 高可用：复杂均衡, 内置健康检查
-- 节约内存：3万并发连接下，开启10个nginx才占150M内存，Nginx采取了分阶段资源分配技术
-- 节约宽带：支持GZIP压缩，可以添加浏览器本地缓存
-- 稳定性高：用于反向代理，宕机的概率微乎其微
-- nginx处理静态文件好,耗费内存少
-- 扩展性高
-- 热部署
-- BSD许可证
+## [ 概述 ](nginx-overview.md)
 
 ## [ 版本 ](nginx-version.md)
 
@@ -28,11 +12,11 @@
 
 ## [ signal ](nginx-signal.md) 
 
-## [ openresty ](nginx-openresty.md)
-
 ## [ 架构 ](nginx-arch.md)
 
 ### [ modules ](nginx-modules.md)
+
+## [ openresty ](nginx-openresty.md)
 
 ## nginx负载均衡的算法
 轮询（默认）  
@@ -63,3 +47,8 @@ url_hash (第三方)
 ### https
 `./configure ... --with-http_ssl_module` 必要SSL模块
 `certbot --nginx --nginx-server-root=< nginx.conf.path >` certbot协助配置证书
+
+## ref
+[ nginx平台初探(100%) ](http://tengine.taobao.org/book/chapter_02.html#nginx)
+[ 深入NGINX：我们如何设计它的性能和扩展性 ](https://www.cnblogs.com/chenjfblog/p/8715580.html)
+[ 理解nginx工作原理 ](https://www.jianshu.com/p/6215e5d24553)
