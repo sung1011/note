@@ -26,8 +26,6 @@ Nginx 的 worker 进程，包括 核心 和 功能性模块 ， 核心模块 负
 2. 主进程通过 fork() 函数产生 worker 子进程 ，每个子进程执行一个 for 循环来实现 Nginx 服务器对事件的接收和处理 。
 3. 进程间通讯(master-worker, worker-worker)通过管道
 
-> **master先建立好需要listen的socket（listenfd）**之后，然后再fork出多个worker。所有worker进程的listenfd会在新连接到来时变得可读，**所有worker进程抢占accept_mutex**，抢到互斥锁的那个进程**注册listenfd读事件**，在读事件里调用accept接受该连接。以保证只有一个进程处理该连接。
-
 ## 实战
 推荐worker**进程数与CPU内核数一致**。避免了进程之间竞争CPU资源和进程切换的开销
 
