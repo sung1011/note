@@ -6,7 +6,7 @@
 [ AES-128-GCM ](AES.md) 密码 对称算法-强度128-分组模式(对称加密)  
 [ SHA256 ](SHA.md) MAC或PRF签名HASH算法(散列)  
 
-> TLS = TLS ECDHE RSA WITH AES 128 GCM SHA256
+> Cipher Suite : TLS ECDHE RSA WITH AES 128 GCM SHA256
 
 ![ ssltls ](res/ssltls)
 
