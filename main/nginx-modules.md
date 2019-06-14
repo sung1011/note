@@ -12,6 +12,42 @@ Handlers（处理器模块）：此类模块直接处理请求，并进行输出
 Filters （过滤器模块）：此类模块主要对其他处理器模块输出的内容进行修改操作，最后由Nginx输出。  
 Proxies （代理类模块）：此类模块是Nginx的HTTP Upstream之类的模块，这些模块主要与后端一些服务比如FastCGI等进行交互，实现服务代理和负载均衡等功能。  
 
+## 源码
+```
+# nginx/src/
+|-- core    # 框架核心
+|-- event
+    |-- modules     # 基础模块 + 第三方模块
+    |   |-- ngx_devpoll_module.c
+    |   |-- ngx_epoll_module.c
+    |   |-- ngx_eventport_module.c
+    |   |-- ngx_kqueue_module.c
+    |   |-- ngx_poll_module.c
+    |   |-- ngx_select_module.c
+    |   |-- ngx_win32_poll_module.c
+    |   `-- ngx_win32_select_module.c
+    |-- ngx_event.c     # 核心模块 优先执行
+    |-- ngx_event.h
+    |-- ngx_event_accept.c
+    |-- ngx_event_connect.c
+    |-- ngx_event_connect.h
+    |-- ngx_event_openssl.c
+    |-- ngx_event_openssl.h
+    |-- ngx_event_openssl_stapling.c
+    |-- ngx_event_pipe.c
+    |-- ngx_event_pipe.h
+    |-- ngx_event_posted.c
+    |-- ngx_event_posted.h
+    |-- ngx_event_timer.c
+    |-- ngx_event_timer.h
+    `-- ngx_event_udp.c
+|-- http
+|-- mail
+|-- misc
+|-- os
+`-- stream
+```
+
 ## 实战
 ### 压缩
 #### ngx_http_gzip_module
