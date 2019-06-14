@@ -2,7 +2,7 @@
 
 ## 类型 - 结构划分
 ![ img ](res/nginx-modules.jpeg)
-核心模块：HTTP模块、EVENT模块和MAIL模块  
+核心模块：HTTP、EVENT、MAIL、STEAM  
 基础模块：HTTP Access模块、HTTP FastCGI模块、HTTP Proxy模块和HTTP Rewrite模块，  
 第三方模块：HTTP Upstream Request Hash模块、Notice模块和HTTP Access Key模块。  
 

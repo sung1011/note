@@ -26,6 +26,13 @@ Nginx 的 worker 进程，包括 核心 和 功能性模块 ， 核心模块 负
 2. 主进程通过 fork() 函数产生 worker 子进程 ，每个子进程执行一个 for 循环来实现 Nginx 服务器对事件的接收和处理 。
 3. 每个worker一个线程，用户态完成切换，避免OS进程间切换损耗（如apache）。
 
+## 交互
+### 外界 - master/worker 进程交互
+### master - worker 进程交互
+### worker - worker 进程交互
+### worker - master 进程交互
+### oldmaster - newmaster 进程交互
+
 ## 实战
 推荐worker**进程数与CPU内核数一致**。避免了进程之间竞争CPU资源和进程切换的开销
 

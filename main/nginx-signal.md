@@ -19,13 +19,6 @@
 `CHID` 当独立关闭worker(`kill -TERM < worker >`)时，worker向master发送`SIGCHID`信号，worker进入Zombie状态，master收到信号后处理该worker。  
 `ALRM` 每个worker为避免长时间阻塞OS调用，通过alarm系统调用和`SIGALRM`信号实现秒级定时器。
 
-## 交互
-### 外界 - master/worker 进程交互
-### master - worker 进程交互
-### worker - worker 进程交互
-### worker - master 进程交互
-### oldmaster - newmaster 进程交互
-
 ## 实战
 ## HUP / reload
 ![ img ](res/nginx-reload.png)
