@@ -44,7 +44,7 @@
 - 关闭
 
 ### kqueue
-FreeBSD系统的epoll  
+FreeBSD系统的epoll  
   
 ### 信号驱动 (SIGIO) [ 同步非阻塞 ]  
 主动轮询链表，设备就绪后信号通知将就绪fd事件放入链表。  
