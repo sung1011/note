@@ -67,6 +67,7 @@ ci/cd
 ### basic  
 [ ascii ](main/ascii.md)  
 [ scale 单位换算 ](main/scale.md)  
+[ data structure 数据结构 ](main/data-structure.md)
 [ algorithm 数据结构与算法 ](main/algorithm.md)  
 [ complexity 复杂度 ](main/complexity.md)  
   
