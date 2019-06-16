@@ -44,14 +44,14 @@ lua
 java  
   
 ### web  
-[ protocal ](main/protocal.md)  
+[ protocal 协议 ](main/protocal.md)  
 [ nginx ](main/nginx.md)  
-[ message queue ](main/mq.md)  
-[ load balance ](main/load_balance.md)  
+[ message queue 消息队列 ](main/mq.md)  
+[ load balance 负载均衡 ](main/load_balance.md)  
 
 ### concept
-[ distributed ](main/distributed.md)  
-[ oop ](main/oop.md)  
+[ distributed 分布式 ](main/distributed.md)  
+[ oop 面向对象 ](main/oop.md)  
 [ cryptography 加密 ](main/crypt.md)  
   
 ### deploy  
@@ -67,7 +67,7 @@ ci/cd
 ### basic  
 [ ascii ](main/ascii.md)  
 [ scale 单位换算 ](main/scale.md)  
-[ data structure 数据结构 ](main/data-structure.md)
+[ data structure 数据结构 ](main/data-struct.md)
 [ algorithm 数据结构与算法 ](main/algorithm.md)  
 [ complexity 复杂度 ](main/complexity.md)  
   
@@ -77,4 +77,4 @@ ci/cd
 gitlab  
 [ licenses ](main/licenses.md)  
 markdown  
-[ exp ](main/exp.md)  
+[ exp 经验 ](main/exp.md)  

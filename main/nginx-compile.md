@@ -35,6 +35,7 @@
 --prefix 安装路径  
 --with-xxx 指定添加模块 （默认不添加）  
 --without-xxx 指定去除模块 （默认会添加）  
+--with-xxx=dynamic 指定添加动态模块 (默认不添加)(使用时需在.conf中引用`load_module modules/xxx.so`)
 ```
 
 2. 编译 `make` 

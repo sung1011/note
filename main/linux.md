@@ -147,6 +147,7 @@ fuser
 ### [ CPU使用率 ](cpuUsage.md)
 ### [ 不可中断和僵尸进程 ](uninterrupt.md)
 ### [ 中断 ](interrupt.md)
+### coredump
   
   
 ### 内存分配和多线程原理  

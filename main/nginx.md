@@ -20,6 +20,8 @@
 
 ## [ 进程间通信 ](nginx-process-communicate.md)
 
+## [ 容器 ](nginx-container.md)
+
 ## nginx负载均衡的算法
 轮询（默认）  
 weight  
