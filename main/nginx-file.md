@@ -29,7 +29,7 @@
 │   └── nginx.pid                    # pid文件，Nginx进程启动后，会把所有进程的ID号写到此文件
 ├── proxy_temp                       # 临时目录
 ├── sbin                             # Nginx命令目录
-│   └── nginx                        # Nginx的启动命令
+│   └── nginx                        # Nginx的可执行文件
 ├── scgi_temp                        # 临时目录
 └── uwsgi_temp                       # 临时目录
 ```

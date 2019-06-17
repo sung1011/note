@@ -14,13 +14,13 @@
 
 ## [ modules ](nginx-modules.md)
 
-## [ openresty ](nginx-openresty.md)
-
 ## [ 流程 ](nginx-process.md)
 
 ## [ 进程间通信 ](nginx-process-communicate.md)
 
 ## [ 容器 ](nginx-container.md)
+
+## [ openresty ](nginx-openresty.md)
 
 ## nginx负载均衡的算法
 轮询（默认）  
@@ -29,16 +29,14 @@ ip_hash
 fair (第三方) 按响应速度  
 url_hash (第三方)  
 
-## 事件处理机制
-多进程单线程异步非阻塞事件处理机制：运用了io多路复用epoll模型
-
-## 为什么不多线程
+## 实战
+### 为什么不多线程
 每个worker采用单线程来异步非阻塞处理请求(epoll)，不会为每个请求分配cpu和内存资源，节省资源，同时也减少CPU的上下文切换。
 
-## 实战
-### https
-`./configure ... --with-http_ssl_module` 必要SSL模块  
-`certbot --nginx --nginx-server-root=< nginx.conf.path >` certbot协助配置证书  
+### [ 负载均衡 ](load-balance.md)
+
+### C10k问题
+(webserver apache)当创建的进程或线程多了，数据拷贝频繁（缓存I/O、内核将数据拷贝到用户进程空间、阻塞，进程/线程上下文切换消耗大）。
 
 ## ref
 [ nginx平台初探(100%) ](http://tengine.taobao.org/book/chapter_02.html#nginx)

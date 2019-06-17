@@ -43,5 +43,10 @@
 
 3. 安装 `make install`  
 
+## 实战
+### https
+`./configure ... --with-http_ssl_module` 必要SSL模块  
+`certbot --nginx --nginx-server-root=< nginx.conf.path >` certbot协助配置证书  
+
 ## ref
 [ doc ](http://nginx.org/en/docs/install.html)
