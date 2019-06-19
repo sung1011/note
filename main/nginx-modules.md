@@ -88,9 +88,10 @@ proxy_cache_valid 200 302 302 1d;
 http.header.x-forwarded-for: 经过的ip的集合 如[115.204.33.1, 1.1.1.1]
 http.header.x-real-ip: 用户ip 如115.204.33.1
 
-### return 返回
+### rewrite 重写
 #### ngx_rewrite_module
 阶段: server rewrite, rewrite
+##### rewrite
 ##### return
 return 444 "body msg";
 ##### error_page 重定向错误码处理的地址
@@ -107,3 +108,19 @@ error_page 444 /err.html
 - 检查目录是否存在 -d !-d
 - 检查文件 目录 软连是否存在 -e !-e
 - 检查是否可执行文件 -x !-x
+
+### limit 限流
+#### http_limit_req_module 限制并发请求数
+阶段: pre_access  
+算法: leaky bucket  突发流量限定为恒定流量, 故响应可能变慢, 超流量返回错误。
+指令: limit_req_zone, limit_req, limit_req_log_level, limit_req_status
+范围:  
+- all worker (基于共享内存)  
+- 进入pre_access前不生效  
+#### http_limit_conn_module 限制并发连接数
+阶段: pre_access  
+指令: limit_conn_zone, limit_conn, limit_conn_log_level, limit_conn_status  
+范围:   
+- all worker (基于共享内存)  
+- 进入pre_access前不生效  
+- 限制的有效性取决于key的设定， key一般用客户端ip (取真实客户端ip依赖realip模块)  
