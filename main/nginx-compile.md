@@ -28,6 +28,18 @@
 
 ## 编译安装
 ### 步骤
+0. 依赖
+`yum install gcc gcc-c++ automake pcre pcre-devel zlip zlib-devel openssl openssl-devel`  
+```
+gcc为GNU Compiler Collection的缩写，可以编译C和C++源代码等，它是GNU开发的C和C++以及其他很多种语言 的编译器（最早的时候只能编译C，后来很快进化成一个编译多种语言的集合，如Fortran、Pascal、Objective-C、Java、Ada、 Go等。）
+　　gcc 在编译C++源代码的阶段，只能编译 C++ 源文件，而不能自动和 C++ 程序使用的库链接（编译过程分为编译、链接两个阶段，注意不要和可执行文件这个概念搞混，相对可执行文件来说有三个重要的概念：编译（compile）、链接（link）、加载（load）。源程序文件被编译成目标文件，多个目标文件连同库被链接成一个最终的可执行文件，可执行文件被加载到内存中运行）。因此，通常使用 g++ 命令来完成 C++ 程序的编译和连接，该程序会自动调用 gcc 实现编译。
+　　gcc-c++也能编译C源代码，只不过把会把它当成C++源代码，后缀为.c的，gcc把它当作是C程序，而g++当作是c++程序；后缀为.cpp的，两者都会认为是c++程序，注意，虽然c++是c的超集，但是两者对语法的要求是有区别的。
+　　automake是一个从Makefile.am文件自动生成Makefile.in的工具。为了生成Makefile.in，automake还需用到perl，由于automake创建的发布完全遵循GNU标准，所以在创建中不需要perl。libtool是一款方便生成各种程序库的工具。
+　　pcre pcre-devel：在Nginx编译需要 PCRE(Perl Compatible Regular Expression)，因为Nginx 的Rewrite模块和HTTP 核心模块会使用到PCRE正则表达式语法。
+　　zlip zlib-devel：nginx启用压缩功能的时候，需要此模块的支持。
+　　openssl openssl-devel：开启SSL的时候需要此模块的支持。
+```
+
 1. 配置 `./configure --prefix=<path>`
 - objs目录存放临时文件
 - ./configure --help  查看配置参数
@@ -50,3 +62,4 @@
 
 ## ref
 [ doc ](http://nginx.org/en/docs/install.html)
+[ Nginx安装 ](http://www.nginx.cn/install)
