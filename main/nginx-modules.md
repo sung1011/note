@@ -78,3 +78,32 @@ proxy_cache_path /tmp/nginxcache;
 proxy_cache mykey;  
 proxy_cache_key $host$url$is_args$args;  
 proxy_cache_valid 200 302 302 1d;  
+
+### 获取客户端ip
+#### ngx_realip_module
+阶段: postread  
+功能: 修改客户端地址$remote_addr  
+变量: realip_remote_addr, realip_remote_port  
+指令: set_real_ip_from, real_ip_header, real_ip_recursive  
+http.header.x-forwarded-for: 经过的ip的集合 如[115.204.33.1, 1.1.1.1]
+http.header.x-real-ip: 用户ip 如115.204.33.1
+
+### return 返回
+#### ngx_rewrite_module
+阶段: server rewrite, rewrite
+##### return
+return 444 "body msg";
+##### error_page 重定向错误码处理的地址
+error_page 444 /err.html
+
+### if 条件
+#### ngx_rewrite_module
+阶段: server rewrite, rewrite
+条件表达:
+- 检查变量是否空或为0
+- 将变量与字符串做比较 = !=
+- 支持正则
+- 检查文件是否存在 -f !-f
+- 检查目录是否存在 -d !-d
+- 检查文件 目录 软连是否存在 -e !-e
+- 检查是否可执行文件 -x !-x
