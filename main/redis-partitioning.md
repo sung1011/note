@@ -19,12 +19,12 @@ foobar -> R1
 - [ 一致性哈希 DHT ](algo-DHT.md)
 
 ## 实现
-### 客户端分区  
+### 1. 客户端分区  
 客户端就已经决定数据会被存储到哪个redis节点或者从哪个redis节点读取。  
 #### 客户端
 https://redis.io/clients  
 
-### 代理分区  
+### 2. 代理分区  
 意味着客户端将请求发送给代理，然后代理决定去哪个节点写数据或者读数据。(twemproxy)  
 #### twemproxy
 ##### twemproxy优点  
@@ -36,7 +36,7 @@ https://redis.io/clients
 自身单端口实例的压力  
 (同普遍缺点)
 
-### 查询路由(Query routing)  
+### 3. 查询路由(Query routing)  
 客户端随机地请求任意一个redis实例，然后由Redis将请求转发给正确的Redis节点。  
 #### redis cluster
 http://www.redis.cn/topics/cluster-tutorial.html  
