@@ -9,17 +9,13 @@
 ## [ 过期 ](redis-expire.md)
 ## [ LRU缓存 ](redis-lru-cache.md)
 ## 事务
-## 分区 partitioning
+## [ 分区/集群 ](redis-partitioning.md)
 ## 分布式锁 distribution lock
 ## key事件通知 Redis keyspace notifications
 ## 创建二级索引 Creating secondary indexes with Redis
 ## 配置
 ## 复制 replication
-
 ## [ 持久化 ](redis-persistence.md)
-
-## [ 集群 ](redis-cluster.md)
-
 ## 管理
 ## 安全
 ## 加密
@@ -65,7 +61,7 @@ memcache:
 - 100k以上数据，内存使用率更高。
 - 适合做缓存
   
-## 经验  
+## 经验（待归类）  
 key名尽量短，但也要保障可读性  
 尽可能使用散列表（hashes）节约内存  
 Master最好不要做任何持久化工作，如RDB内存快照和AOF日志文件  
