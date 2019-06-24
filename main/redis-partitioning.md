@@ -27,6 +27,7 @@ https://redis.io/clients
 ### 2. 代理分区  
 意味着客户端将请求发送给代理，然后代理决定去哪个节点写数据或者读数据。(twemproxy)  
 #### twemproxy
+`https://github.com/twitter/twemproxy`
 ##### twemproxy优点  
 轻量快速可报警  
 支持redis,memcache;支持pipelinling;支持多个哈希算法  
