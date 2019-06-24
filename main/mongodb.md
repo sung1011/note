@@ -31,7 +31,7 @@ explain分析索引
 阶段操作符  
 - $count, $project, $match, $group, $sort, $limit, $unwind  
   
-db.mycol.aggregate([ {group: {_id: 'sex', personCount: {$sum: 1}}} ])  
+`db.mycol.aggregate([ {group: {_id: 'sex', personCount: {$sum: 1}}} ])`  
   
 ## sync 同步    
 initial sync 全量同步  
@@ -62,12 +62,15 @@ Secondary
 ### 选举因素:  
 健康监测  
 - 节点间心跳  
+
 节点优先级  
 - 投票给优先级最高的节点  
 - 优先级为0的节点不会主动发起选举  
 - 当Primary发现有优先级更高Secondary，并且该Secondary的数据落后在10s内，则Primary会主动降级，让优先级更高的Secondary有成为Primary的机会。  
+
 optime  
 - 拥有最新optime（最近一条oplog的时间戳）的节点才能被选为主。  
+
 多数派连接  
 -  一个member要成为primary，它必须与“多数派”的其他members建立连接，如果未能与足够多的member建立连接，事实上它本身也无法被选举为primary；多数派参考的是“总票数”，而不是member的个数，因为我们可以给每个member设定不同的“票数”。假设复制集内投票成员数量为N，则大多数为 N/2 + 1。  
 
@@ -79,22 +82,20 @@ secondaryPreferred：Secondary优先，当所有Secondary不可达时，请求Pr
 nearest：读请求发送到最近的可达节点上（通过ping探测得出最近的节点）  
 
 ### 写策略 Write Concern   
-非应答写入  
+非应答写入Unacknowledged  - `{writeConcern:{w:0}}`  
 - MongoDB不对客户端进行应答，驱动会检查套接字，网络错误等。  
-- {writeConcern:{w:0}}  
-应答写入(默认)  
+
+应答写入Acknowledged(默认)  - `{writeConcern:{w:1}}`  
 - MongoDB会在收到写入操作并且确认该操作在内存中应用后进行应答，但不会确认数据是否已写入磁盘;同时允许客户端捕捉网络、重复key等等错误  
-- {writeConcern:{w:1}}  
-应答写入+journal写入  
-- 确认写操作已经写入journal日志(持久化)之后应答客户端，必须允许了日志功能，才能生效。  
+
+应答写入+journal写入Journaled  - `{writeConcern:{w:1, j:true}}`  
+- 确认写操作已经写入journal日志(持久化)之后应答客户端，必须允许开启日志功能，才能生效。  
 - 写入journal操作必须等待直到下次提交日志时完成写入  
 - 提供通过journal来进行数据恢复  
-- {writeConcern:{w:1, j:true}}  
-副本集应答写入   
+
+副本集应答写入Replica Acknowledged   - `{writeConcern:{w:2, wtimeout:5000}}`  - `{writeConcern:{w:majority, wtimeout:5000}}`  
 - 对于使用副本集的场景，缺省情况下仅仅从主(首选)节点进行应答  
 - 可修改应答情形为特定数目或者majority(写到大多数)来保证数据的可靠  
-- {writeConcern:{w:2, wtimeout:5000}}  
-- {writeConcern:{w:majority, wtimeout:5000}}  
    - primary是如何确认数据已成功写入大多数节点的？:   
        1. 从节点及时地拉取数据: 阻塞拉取  
            - 从拉取主的oplog时， 为了第一时间拉取，find命令支持一个awaitData的选项，当find没有任何符合条件的文档时，并不立即返回，而是等待最多maxTimeMS(默认为2s)时间看是否有新的符合条件的数据，如果有就返回。  
