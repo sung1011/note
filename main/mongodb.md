@@ -2,7 +2,7 @@
   
 ## 日常命令 cmd  
   
-## index 索引    
+## [ index 索引 ](mongodb-index.md)
 ### 原理  
 btree和hash  
   
@@ -58,6 +58,8 @@ Secondary
 | Delayed    | X    | X    | O    | 同步     | X           | O    | 为Hidden，延迟同步 |  
 | Arbiter    | X    | X    | O    | X         | X           | O    | Priority=0，无数据 |  
 | vote=0     | O    | X    | X    | 同步      | O           | O    | 不能投票           |  
+
+> 客户端一般会保持连接多个实例（主从从从选...都有连接），以确保主挂后可以从其他实例拿到最新的副本集状态，进而连接到新的主节点。(若只连接主， 主跪了，客户端便不能得到任务服务)  
   
 ### 选举因素:  
 健康监测  
@@ -82,17 +84,21 @@ secondaryPreferred：Secondary优先，当所有Secondary不可达时，请求Pr
 nearest：读请求发送到最近的可达节点上（通过ping探测得出最近的节点）  
 
 ### 写策略 Write Concern   
+![ img ](res/mongodb-writeconcern-w0.png)  
 非应答写入Unacknowledged  - `{writeConcern:{w:0}}`  
 - MongoDB不对客户端进行应答，驱动会检查套接字，网络错误等。  
 
+![ img ](res/mongodb-writeconcern-w1.png)  
 应答写入Acknowledged(默认)  - `{writeConcern:{w:1}}`  
 - MongoDB会在收到写入操作并且确认该操作在内存中应用后进行应答，但不会确认数据是否已写入磁盘;同时允许客户端捕捉网络、重复key等等错误  
 
+![ img ](res/mongodb-writeconcern-w1j1.png)  
 应答写入+journal写入Journaled  - `{writeConcern:{w:1, j:true}}`  
 - 确认写操作已经写入journal日志(持久化)之后应答客户端，必须允许开启日志功能，才能生效。  
 - 写入journal操作必须等待直到下次提交日志时完成写入  
 - 提供通过journal来进行数据恢复  
 
+![ img ](res/mongodb-writeconcern-wm.png)  
 副本集应答写入Replica Acknowledged   - `{writeConcern:{w:2, wtimeout:5000}}`  - `{writeConcern:{w:majority, wtimeout:5000}}`  
 - 对于使用副本集的场景，缺省情况下仅仅从主(首选)节点进行应答  
 - 可修改应答情形为特定数目或者majority(写到大多数)来保证数据的可靠  
@@ -105,7 +111,6 @@ nearest：读请求发送到最近的可达节点上（通过ping探测得出最
   
   
 ## mongos (router)  
-  
   
 ## shard 分片  
 ### 组成  
