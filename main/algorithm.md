@@ -11,9 +11,9 @@
 回溯  
 动态规划  
 字符串匹配算法  
-bitmap
-布隆
-[ 一致性哈希 DHT ](algo-DHT.md)
+bitmap  
+布隆  
+[ 一致性哈希 DHT ](algo-DHT.md)  
 
 ## ref
 [ 算法 ](https://cloud.tencent.com/developer/article/1101517)

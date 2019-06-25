@@ -142,11 +142,11 @@ fuser
 - telnet, lsof, scp, ssh, vim  
   
 ## 实战  
-### [ 平衡负载 ](loadAverage.md)  
-### [ ctx switch - CPU上下文切换 ](ctxSwitch.md)
-### [ CPU使用率 ](cpuUsage.md)
-### [ 不可中断和僵尸进程 ](uninterrupt.md)
-### [ 中断 ](interrupt.md)
+### [ 平衡负载 ](linux-loadAverage.md)  
+### [ ctx switch - CPU上下文切换 ](linux-ctxSwitch.md)
+### [ CPU使用率 ](linux-cpuUsage.md)
+### [ 不可中断和僵尸进程 ](linux-uninterrupt.md)
+### [ 中断 ](linux-interrupt.md)
 ### coredump
   
   

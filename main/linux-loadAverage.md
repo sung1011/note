@@ -1,15 +1,19 @@
-# 平衡负载 load average
-处于可运行状态(running/runnable) 和 不可中断状态(uninterruptible sleep/disk sleep)的进程数
+# 平均负载 load average
+
+处于可运行状态(running/runnable) 和 不可中断状态(uninterruptible sleep/disk sleep)的平均进程数，即平均活跃进程。
 即包含`正在使用cpu`的进程， `等待cpu计算`的进程， `等待I/O`的进程
 
-## 平衡负载 & CPU使用率
-| status | 平衡负载 | CPU使用率 |
+## 取值
+值大于cpu个数时超载， 超载不应超过70%。
+
+## 平均负载 & CPU使用率
+| status | 平均负载 | CPU使用率 |
 | --- | --- | --- |
 |CPU密集 | uuu | uuu |
 |I/O密集 | uuu | u |
 |大量CPU等待调度| uuu | uu |
 
-平衡负载高可能由cpu计算密集，io密集，cpu wait导致  
+平均负载高可能由cpu计算密集，io密集，cpu wait导致  
 通过观察io与cpu使用率分析负载来源
 
 ## 实战

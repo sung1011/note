@@ -124,3 +124,39 @@ error_page 444 /err.html
 - all worker (基于共享内存)  
 - 进入pre_access前不生效  
 - 限制的有效性取决于key的设定， key一般用客户端ip (取真实客户端ip依赖realip模块)  
+
+### access 认证
+#### http_access_module 限制ip
+阶段: access
+指令: alow, deny
+#### http_auth_basic_module 限制用户名密码
+阶段： access
+指令: auth_basic, auth_basic_user_file
+工具: 密码文件生成依赖httpd-tools库, `htpasswd -c < file > -b < username > < password >`
+#### http_auth_request_module 向上游服务验证用户名密码
+阶段: access
+指令: auth_request, auth_request_set
+原理: 向上游服务转发请求，若上游返回200则验证通过，否则验证失败。
+#### ngx_http_core_module
+指令: satisfy all|any
+原理: all全部放行才放行，any任一放行就放行
+实例:  
+```
+location / {
+    satisfy any; 任一满足即可。如访问以下ip 或 密码验证正确
+    allow 192.168.1.0/32;
+    deny  all;
+    auth_basic           "closed site";
+    auth_basic_user_file conf/htpasswd;
+}
+```  
+
+### pre_content
+#### ngx_http_try_file_module 试图访问多个url路径，若文件都不存在则返回最后一个url或者code
+阶段: pre_content
+指令: try_file
+#### ngx_http_mirror_module 流量拷贝，处理请求时，生成子请求访问其他服务，但不处理其返回值。
+阶段: pre_content
+指令: mirror, mirror_request_body
+
+

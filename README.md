@@ -47,7 +47,7 @@ java
 [ protocal 协议 ](main/protocal.md)  
 [ nginx ](main/nginx.md)  
 [ message queue 消息队列 ](main/mq.md)  
-[ load balance 负载均衡 ](main/load_balance.md)  
+[ load balance 负载均衡 ](main/load-balance.md)  
 
 ### concept
 [ distributed 分布式 ](main/distributed.md)  

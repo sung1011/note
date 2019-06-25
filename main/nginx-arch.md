@@ -22,9 +22,10 @@ Nginx的worker进程，包括核心和功能性模块，核心模块负责维持
 ## 进程模型
 ### master / worker 多进程模型
 ![ img ](res/nginx-proc.png)
+![ img ](res/nginx-proc-handle.png)
 1. 主程序 Master process 启动后，通过一个 for 循环来接收和处理外部信号  
 2. 主进程通过 fork() 函数产生 worker 子进程 ，每个子进程执行一个 for 循环来实现 Nginx 服务器对事件的接收和处理 。
-3. 每个worker一个线程，用户态完成切换，避免OS进程间切换损耗（如apache）。
+3. 每个worker一个线程，用户态完成切换（协程），避免OS进程间切换损耗（如apache）。
 
 ## 交互
 ### 外界 - master/worker 进程交互
