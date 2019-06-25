@@ -31,3 +31,4 @@
 |IPC|进程间通信|Inter-Process Communication
 |RCU | 读副本 改上锁 | Read-Copy Update |
 |BPS|每秒收发字节数|byte per second|
+|VIP|虚拟IP地址|
