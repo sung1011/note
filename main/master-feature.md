@@ -15,12 +15,10 @@ dynamicTask
 ## battle
 战斗服方案流程 复盘与计算战力
 
-## mongodb
-
 ## redis
 
 ## mongodb
-mongo写入慢 wj -> w1
+写入慢 wj -> w1
 
 ## other
 技术选型

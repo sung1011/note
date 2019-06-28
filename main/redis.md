@@ -14,7 +14,7 @@
 ## key事件通知 Redis keyspace notifications
 ## 创建二级索引 Creating secondary indexes with Redis
 ## 配置
-## 复制 replication
+## [ 复制 ](redis-replication.md)
 ## [ 持久化 ](redis-persistence.md)
 ## 管理
 ## 安全
