@@ -72,7 +72,7 @@ ci/cd
 [ complexity 复杂度 ](main/complexity.md)  
   
 ### other  
-[ tool ](main/tool.md)
+[ tool ](main/tool.md)  
 [ dict ](main/dict.md)  
 [ github ](main/github.md)  
 gitlab  

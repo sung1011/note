@@ -25,13 +25,6 @@
 
 ## [ openresty ](nginx-openresty.md)
 
-## nginx负载均衡的算法
-轮询（默认）  
-weight  
-ip_hash  
-fair (第三方) 按响应速度  
-url_hash (第三方)  
-
 ## 实战
 ### 为什么不多线程
 每个worker采用单线程来异步非阻塞处理请求(epoll)，不会为每个请求分配cpu和内存资源，节省资源，同时也减少CPU的上下文切换。

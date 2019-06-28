@@ -11,19 +11,19 @@
 自动扩容  
 
 ## 架构  
-![  ](res/k8sarch.png)
+![ img ](res/k8sarch.png)
 ### 控制面板 master  
+![ img ](res/k8smaster.png)
 kubernetes api  
 controller manager  
 scheduler  
 etcd  
-![  ](res/k8smaster.png)
 
 ### 工作节点 node  
+![ img ](res/k8snode.png)
 kubelet  
 kube-proxy  
 容器  
-![  ](res/k8snode.png)
 
 ### 核心组件
 etcd保存了整个集群的状态；  
@@ -52,7 +52,7 @@ Fluentd-elasticsearch提供集群日志采集、存储与查询
 - Kubernetes内部：CRI、CNI、CVI、镜像仓库、Cloud Provider、集群自身的配置和管理等
 ![ k8slayer ](res/k8slayer.jpg)
 
-## Pod
+## Pod
 Pod是Kubernetes创建或部署的最小/最简单的基本单位，一个Pod代表集群上正在运行的一个进程。  
 ### 共享资源  
 PID命名空间：Pod中的不同应用程序可以看到其他应用程序的进程ID；  
