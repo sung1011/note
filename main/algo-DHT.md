@@ -3,35 +3,35 @@
 ## 实现
 ### 结构
 1. 我们把全量的缓存空间当做一个环形存储结构。环形空间总共分成2^32个缓存区，在Redis中则是把缓存key分配到16384个slot。  
-![ img ](res/dht-1.png)  
+![img](res/dht-1.png)  
 2. 每一个缓存key都可以通过Hash算法转化为一个32位的二进制数，也就对应着环形空间的某一个缓存区。我们把所有的缓存key映射到环形空间的不同位置。  
-![ img ](res/dht-2.png)  
+![img](res/dht-2.png)  
 3. 我们的每一个缓存节点（Shard）也遵循同样的Hash算法，比如利用IP做Hash，映射到环形空间当中。  
-![ img ](res/dht-3.png)  
+![img](res/dht-3.png)  
 4. 如何让key和节点对应起来呢？很简单，每一个key的顺时针方向最近节点，就是key所归属的存储节点。所以图中key1存储于node1，key2，key3存储于node2，key4存储于node3。  
-![ img ](res/dht-4.png)  
+![img](res/dht-4.png)  
 
 ### 增加节点
 1. 当缓存集群的节点有所增加的时候，整个环形空间的映射仍然会保持一致性哈希的顺时针规则，所以有一小部分key的归属会受到影响。  
-![ img ](res/dht-5.png)  
+![img](res/dht-5.png)  
 2. 有哪些key会受到影响呢？图中加入了新节点node4，处于node1和node2之间，按照顺时针规则，从node1到node4之间的缓存不再归属于node2，而是归属于新节点node4。因此受影响的key只有key2。  
-![ img ](res/dht-6.png)  
+![img](res/dht-6.png)  
 最终把key2的缓存数据从node2迁移到node4，就形成了新的符合一致性哈希规则的缓存结构  
 
 ### 删除节点 
 1. 当缓存集群的节点需要删除的时候（比如节点挂掉），整个环形空间的映射同样会保持一致性哈希的顺时针规则，同样有一小部分key的归属会受到影响。  
-![ img ](res/dht-7.png)  
+![img](res/dht-7.png)  
 2. 有哪些key会受到影响呢？图中删除了原节点node3，按照顺时针规则，原本node3所拥有的缓存数据就需要“托付”给node3的顺时针后继节点node1。因此受影响的key只有key4。  
-![ img ](res/dht-8.png)  
+![img](res/dht-8.png)  
 最终把key4的缓存数据从node3迁移到node1，就形成了新的符合一致性哈希规则的缓存结构。  
 
 ### 虚拟节点  
 1. 节点过少，容易出现所有key归为同一节点的情况  
-![ img ](res/dht-9.png)  
+![img](res/dht-9.png)  
 2. 引入虚拟节点的概念，将原先的物理节点映射出N个子节点。使节点相对均衡。  
    1. 原`hash(192.168.1.109) -> node1`  
    2. 现`hash(192.168.1.109#1) -> node1-1`, `hash(192.168.1.109#2) -> node1-2`  
-![ img ](res/dht-10.png)  
+![img](res/dht-10.png)  
 由于虚拟节点数量较多，缓存key与虚拟节点的映射关系也变得相对均衡了。  
 
 ## 判定算法好坏

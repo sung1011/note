@@ -6,7 +6,7 @@
 
 ## 队列
 
-## [ 哈希表 ](nginx-hash.md)
+## [哈希表](nginx-hash.md)
 
 ## 红黑树
 

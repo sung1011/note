@@ -39,5 +39,5 @@ http {
 ```
 
 ## ref
-[ doc ](http://nginx.org/en/docs/beginners_guide.html#conf_structure)
-[ measurement ](http://nginx.org/en/docs/syntax.html)
+[doc](http://nginx.org/en/docs/beginners_guide.html#conf_structure)
+[measurement](http://nginx.org/en/docs/syntax.html)

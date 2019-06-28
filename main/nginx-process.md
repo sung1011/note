@@ -10,11 +10,11 @@
 ## 锁占用时间过长
 
 ## 处理请求header的流程
-![ img ](res/nginx-begin.png)
-![ img ](res/nginx-header-handle.png)
+![img](res/nginx-begin.png)
+![img](res/nginx-header-handle.png)
 
 ## 处理请求流程
-![ img ](res/nginx-process.png)
+![img](res/nginx-process.png)
 1. nginx在启动时，会解析配置文件，得到需要监听的端口与ip地址，然后在nginx的master进程里面  
 2. 初始化好这个监控的socket，再进行listen  
 3. fork出多个子进程(worker)出来,  worker会竞争accept_mutex新的连接  
@@ -39,8 +39,8 @@
 
 
 ## 相同阶段模块执行顺序
-![ img ](res/nginx-proc-sort.png)
+![img](res/nginx-proc-sort.png)
 1. 同阶段中模块执行顺序与 `ngx_module_names[] = {}`数组的顺序相反。
 2. 某些模块执行成功，可能直接跳到下一阶段。
 
-## [ 实战 ](nginx-modules.md)
+## [实战](nginx-modules.md)

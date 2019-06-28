@@ -30,4 +30,4 @@
 - 登录其他设备如何踢人
 - 如何统计在线时间
 
-## [ master ](master-feature.md)
+## [master](master-feature.md)

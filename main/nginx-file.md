@@ -34,4 +34,4 @@
 └── uwsgi_temp                       # 临时目录
 ```
 ## ref
-[ doc ](http://nginx.org/en/docs/configure.html)
+[doc](http://nginx.org/en/docs/configure.html)

@@ -33,5 +33,5 @@ filename: FILENAME
 extension: EXTENSION   
 
 ## ref
-[ help ](https://help.github.com/en)  
-[ help search ](https://help.github.com/en/categories/searching-for-information-on-github)
+[help](https://help.github.com/en)  
+[help search](https://help.github.com/en/categories/searching-for-information-on-github)

@@ -27,14 +27,14 @@
 请求方发起后，返回做其他任务，等待服务方通知  
   
 ## 实例  
-### select多路复用 [ 同步非阻塞 ]  
+### select多路复用 [同步非阻塞]  
 主动轮询遍历fd集合的事件状态  
 采用一个1024数组存储状态，最多同时检查1024。  
   
-### poll多路复用 [ 同步非阻塞 ]  
+### poll多路复用 [同步非阻塞]  
 主动轮询链表(采用链表避免数组长度限制),其他同select(依然遍历全部链接，看哪个链接有请求数据)  
   
-### epoll多路复用 [ 同步非阻塞 ]  
+### epoll多路复用 [同步非阻塞]  
 通过epoll_ctl注册文件描述符fd，一旦该fd就绪，内核就会采用类似callback的回调机制来激活该fd, epoll_wait便可以收到通知。设备就绪后执行回调将就绪(活跃)的fd事件放入链表，主动轮询链表。只要判断就绪链表是否空，而不用遍历整个fb，提高cpu性能。  
 利用mmap()文件映射内存加速与内核空间的消息传递，减少mmap复制开销，通过内核与用户空间共享内存方式来实现事件就绪消息传递的。  
 没有最大并发链接数限制。
@@ -50,12 +50,12 @@
 ### kqueue
 FreeBSD系统的epoll  
   
-### 信号驱动 (SIGIO) [ 同步非阻塞 ]  
+### 信号驱动 (SIGIO) [同步非阻塞]  
 主动轮询链表，设备就绪后信号通知将就绪fd事件放入链表。  
   
-### aio [ 异步非阻塞 ]  
+### aio [异步非阻塞]  
 io完成后，信号通知或者回调线程  
   
 ## ref
-[ IO多路复用的三种机制Select，Poll，Epoll ](https://www.jianshu.com/p/397449cadc9a)
-[ 聊聊IO多路复用之select、poll、epoll详解 ](https://my.oschina.net/xianggao/blog/663655)
+[IO多路复用的三种机制Select，Poll，Epoll](https://www.jianshu.com/p/397449cadc9a)
+[聊聊IO多路复用之select、poll、epoll详解](https://my.oschina.net/xianggao/blog/663655)

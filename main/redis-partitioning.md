@@ -16,7 +16,7 @@ foobar -> 93024922 by crc32
 93024922 -> 1 by 93024922%3
 foobar -> R1
 ```
-- [ 一致性哈希 DHT ](algo-DHT.md)
+- [一致性哈希 DHT](algo-DHT.md)
 
 ## 实现
 ### 1. 客户端分区  
@@ -55,4 +55,4 @@ http://www.redis.cn/topics/cluster-spec.html
 为防止以后的扩容，最好的办法就是一开始就启动较多实例(即便只有一台机器)。
 
 ## ref
-[ 分区：怎样将数据分布到多个redis实例 ](http://www.redis.cn/topics/partitioning.html)
+[分区：怎样将数据分布到多个redis实例](http://www.redis.cn/topics/partitioning.html)

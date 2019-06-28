@@ -21,7 +21,7 @@
 
 ## 实战
 ## HUP / reload
-![ img ](res/nginx-reload.png)
+![img](res/nginx-reload.png)
 1. 向master发送`HUP`
 2. master校验配置语法。同`nginx -t`
 3. (若配置需要)master打开新端口
@@ -37,7 +37,7 @@
 6. 退出进程
 
 ### 热部署
-![ img ](res/nginx-hotupd.png)
+![img](res/nginx-hotupd.png)
 1. 移出老nginx二进制，移入新nginx二进制文件。(注意备份)
 2. 平滑升级: `kill -USR2 < old master >` 新老master,work都在运行，老nginx不处理新请求，并不再监听80端口。
 3. master修改pid文件。`mv pid pid.oldbin`(以下操作老master，都用到这个pid.oldbin)

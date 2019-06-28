@@ -39,7 +39,7 @@
 僵尸3: 子进程先结束，父进程运行中，但没调用wait就被异常终止 ---- 子进程被init接管成为它的父进程。(init回收之前，算是僵尸进程)  
 
 ## 实战
-### [ dstat ](src/cmd/dstat.md)
+### [dstat](src/cmd/dstat.md)
 
 ### waitio高（cpu使用率高，平均负载高），有D进程，Z进程。
 1. 优先排查是否磁盘IO。工具dstat，pidstat

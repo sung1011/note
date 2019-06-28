@@ -10,9 +10,9 @@
 1 物理层    
   
 ## 7 应用层  
-[ HTTP ](HTTP.md)  
-[ HTTPS ](HTTPS.md)  
-[ websocket ](websocket.md)  
+[HTTP](HTTP.md)  
+[HTTPS](HTTPS.md)  
+[websocket](websocket.md)  
 OAuth2  
 cookie, session, token  
 FTP 文件传输协议  
@@ -56,7 +56,7 @@ TFTP简单文件传输协议
 SNMP简单网络管理协议  
   
 ## 6 表示层     
-[ SSL/TLS ](SSL-TLS.md)  
+[SSL/TLS](SSL-TLS.md)  
 DECnet NSP  
 LPP 轻量级表示协议  
 NBSSN NetBIOS会话服务协议  
@@ -73,7 +73,7 @@ NeTBIOS
 IPX  
   
 ## 4 传输层     
-[ TCP ](TCP.md)  
+[TCP](TCP.md)  
 UDP    
 XOT 基于tcp之上的X协议  
 Van Jacobson 压缩TCP协议  
@@ -132,4 +132,4 @@ IEEE 802.2
 Ethernet v.2  
 Internetwork  
   
-![ OSI ](res/OSI.jpg)  
+![OSI](res/OSI.jpg)  

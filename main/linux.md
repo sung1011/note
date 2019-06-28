@@ -111,17 +111,17 @@ Memory-mapped file
   
 套接字  
   
-## [ io模型 ](linux-io.md)
+## [io模型](linux-io.md)
   
 ## crontab  
 
 ## Makefile  
 
 ## cmd  
-[ awk ](src/cmd/awk.md)  
+[awk](src/cmd/awk.md)  
 - 某列求和 `awk -F "\t" '{sum+=$1}END{print sum}'`  
   
-[ grep ](ref/grep.md)  
+[grep](ref/grep.md)  
   
 du  
 - 文件大小 `du -sh * | sort -n`  
@@ -136,17 +136,17 @@ fuser
 - 查看占用端口的进程 `fuser -n tcp 9000`  
   
 ### HugePage 透明大页  
-- [ hugepage ](ref/hugepage.md)  
+- [hugepage](ref/hugepage.md)  
 ### 其他  
 - grep, awk, top, ps, tar, ln  
 - telnet, lsof, scp, ssh, vim  
   
 ## 实战  
-### [ 平衡负载 ](linux-loadAverage.md)  
-### [ ctx switch - CPU上下文切换 ](linux-ctxSwitch.md)
-### [ CPU使用率 ](linux-cpuUsage.md)
-### [ 不可中断和僵尸进程 ](linux-uninterrupt.md)
-### [ 中断 ](linux-interrupt.md)
+### [平衡负载](linux-loadAverage.md)  
+### [ctx switch - CPU上下文切换](linux-ctxSwitch.md)
+### [CPU使用率](linux-cpuUsage.md)
+### [不可中断和僵尸进程](linux-uninterrupt.md)
+### [中断](linux-interrupt.md)
 
 ### coredump
   
@@ -165,7 +165,7 @@ fuser
   
   
 ## ref  
-[ awk ](ref/awk.md)  
-[ 文件描述符 ](ref/文件描述符.md)    
-[ 关于网络IO中的同步、异步、阻塞、非阻塞 ](ref/关于网络IO中的同步、异步、阻塞、非阻塞.md)  
-[ select、poll、epoll、同步、异步之间的区别总结 ](https://blog.csdn.net/lsgqjh/article/details/65629609)  
+[awk](ref/awk.md)  
+[文件描述符](ref/文件描述符.md)    
+[关于网络IO中的同步、异步、阻塞、非阻塞](ref/关于网络IO中的同步、异步、阻塞、非阻塞.md)  
+[select、poll、epoll、同步、异步之间的区别总结](https://blog.csdn.net/lsgqjh/article/details/65629609)  

@@ -61,5 +61,5 @@ gcc为GNU Compiler Collection的缩写，可以编译C和C++源代码等，它�
 `certbot --nginx --nginx-server-root=< nginx.conf.path >` certbot协助配置证书  
 
 ## ref
-[ doc ](http://nginx.org/en/docs/install.html)
-[ Nginx安装 ](http://www.nginx.cn/install)
+[doc](http://nginx.org/en/docs/install.html)
+[Nginx安装](http://www.nginx.cn/install)

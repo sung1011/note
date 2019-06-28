@@ -122,4 +122,4 @@ revert
 - `git checkout {commit_id} && git checkout -b {new_branch_name}`
 
 回滚指定版本、n个版本 git reset --hard; 以主分支回滚
-- `git reset --hard [ ^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本 ] && git push --force`
+- `git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push --force`

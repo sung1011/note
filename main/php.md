@@ -7,7 +7,7 @@
   
 ## 面向对象 OOP  
   
-### [ 概念 ](oop.md)  
+### [概念](oop.md)  
 ### 对象  
 生成: 类的实例化  
 组成: 属性 方法  
@@ -43,9 +43,9 @@ parent: 父类
     - __autoload()  
     - spl_autoload_register()  
 ### 后期静态绑定  
-[ ex1 ](src/php/late_static_bindings1.php)  
-[ ex2 ](src/php/late_static_bindings2.php)  
-[ ex3 ](src/php/late_static_bindings3.php)  
+[ex1](src/php/late_static_bindings1.php)  
+[ex2](src/php/late_static_bindings2.php)  
+[ex3](src/php/late_static_bindings3.php)  
 ### 接口  
 接口是类的模板, 实现某接口就必须实现接口中定义的所有方法  
 接口中所有方法的访问控制必须public  
@@ -81,7 +81,7 @@ __wakeup()
 __set_state()  
 - 调用: 导出时`var_export()`  
 
-### [ 异常处理 ](phpException.md)
+### [异常处理](phpException.md)
   
   
 ## 配置  
@@ -108,7 +108,7 @@ error_reporting
     - 内存消耗 = max_children * max_requests; 静态进程内存消耗  
     - 内存消耗 = max_spare_servers * max_requests; 动态进程内存消耗  
     - rlimit_files = 1024; 文件打开描述符的rlimit限制, 默认系统值（ulimit -n）(一般要跟系统的同步更改)  
-    - 覆盖ini: php_admin_value 如 php_admin_value[ memory_limit ] = 128M; php_admin_value[ date.timezone ] = Asia/Shanghai  
+    - 覆盖ini: php_admin_value 如 php_admin_value[memory_limit] = 128M; php_admin_value[date.timezone] = Asia/Shanghai  
   
 ## 实战  
   
@@ -175,4 +175,4 @@ extension
 
   
 ### exp  
-[ 锁 ](src/php/php_redis_lock.php)  
+[锁](src/php/php_redis_lock.php)  

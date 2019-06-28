@@ -2,15 +2,15 @@
 
 ## SSL (Secure Sockets Layer) / TLS (Transport Layer Security)
 ### 概念
-[ RSA ](RSA.md) 秘钥交换, 身份验证(非对称加密)  
-[ AES-128-GCM ](AES.md) 密码 对称算法-强度128-分组模式(对称加密)  
-[ SHA256 ](SHA.md) MAC或PRF签名HASH算法(散列)  
+[RSA](RSA.md) 秘钥交换, 身份验证(非对称加密)  
+[AES-128-GCM](AES.md) 密码 对称算法-强度128-分组模式(对称加密)  
+[SHA256](SHA.md) MAC或PRF签名HASH算法(散列)  
 
 > Cipher Suite : TLS ECDHE RSA WITH AES 128 GCM SHA256
 
-![ ssltls ](res/ssltls)
+![ssltls](res/ssltls)
 
-## [ Certificate(CA 证书) ](CA.md)
+## [Certificate(CA 证书)](CA.md)
 
 ## 组成
 记录层  
@@ -19,13 +19,13 @@
 - 更改加密规范协议 (change cipher spec protocol)
 - 应用数据协议 (application data protocol)
 - 和警告协议 (alert protocol)  
-![ TLSmodel ](res/TLS-model)
+![TLSmodel](res/TLS-model)
 
 ## 记录层
 ### 分片 (Fragmentation)
 ### 记录压缩和解压缩 (Record compression and decompression)
 ### 空或标准流加密 (Null or standard stream cipher)
-### CBC 块加密 ([ 分组加密 ](cryptMode.md))
+### CBC 块加密 ([分组加密](cryptMode.md))
 ### 记录有效载荷保护 (Record payload protection)
 ### 密钥计算 (Key calculation)
 
@@ -45,10 +45,10 @@
 13. Finished – 服务器做好加密通讯的准备。
 14. Encrypted/DecryptedData – **双方使用客户端密钥，通过对称加密算法对通讯内容进行加密。**
 15. ClosedConnection – 通讯结束后，任何一方发出断开 SSL 连接的消息。
-![ TLS ](res/TLS.png)
+![TLS](res/TLS.png)
 
 ## 实战
 openssl是TLS、SSL协议的开源实现
 
 ## ref
-[ TLS详解 ](https://www.codercto.com/a/24035.html)
+[TLS详解](https://www.codercto.com/a/24035.html)

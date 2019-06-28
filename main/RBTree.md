@@ -4,7 +4,7 @@
 一种特殊的二叉查找树（防止线性二叉树）。红黑树的每个节点上都有存储位表示节点的颜色，可以是红(Red)或黑(Black)。
 
 ## 特性
-![ img ](res/rbtree.png)
+![img](res/rbtree.png)
 1. 每个节点或者是黑色，或者是红色。
 2. 根节点是黑色。
 3. 每个叶子节点（NIL）是黑色。 [注意：这里叶子节点，是指为空(NIL或NULL)的叶子节点！]
@@ -47,4 +47,4 @@
 多种情况...
 
 ## ref
-[ wiki ](https://zh.wikipedia.org/wiki/%E7%BA%A2%E9%BB%91%E6%A0%91)
+[wiki](https://zh.wikipedia.org/wiki/%E7%BA%A2%E9%BB%91%E6%A0%91)

@@ -48,4 +48,4 @@ RCU  Read-Copy Update锁
 1. 查看系统资源，可知ksoftirqd/0占用较大
 2. `watch -d "cat /proc/softirqs"`，可知NET_RX较频繁
 3. `sar -n DEV 1`，分析PPS, BPS，可知是接收大量的小包有问题。
-4. `tcpdump -i eth0 -n tcp port 80`, 可知Flags[ S ]表示这些都是syn包
+4. `tcpdump -i eth0 -n tcp port 80`, 可知Flags[S]表示这些都是syn包

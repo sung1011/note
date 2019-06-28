@@ -92,7 +92,7 @@ P：Processor的简称，逻辑处理器，主要作用是管理G对象（每个
 - 运行时系统加入epoll机制(针对Linux系统)，当某一个Goroutine在进行网络IO操作时，如果网络IO未就绪，就将其该Goroutine封装一下，放入epoll的等待队列中，当前G挂起，与其关联的M可以继续运行其他G。当相应的网络IO就绪后，Go运行时系统会将等待网络IO就绪的G从epoll就绪队列中取出（主要在两个地方从epoll中获取已网络IO就绪的G列表，一是sysmon监控线程中，二是自旋的M中），再由调度器将它们像普通的G一样分配给各个M去执行。  
   
   
-![ G-P-M ](res/gpm)  
+![G-P-M](res/gpm)  
   
 ## unittest 单元测试 & benchmark 基准测试  
 ### cmd 命令  
@@ -104,7 +104,7 @@ P：Processor的简称，逻辑处理器，主要作用是管理G对象（每个
 ### 约定  
 框架: go内置testing包  
 文件: `*_test.go`；与被测试代码放在同一个包  
-函数: 名称格式`Test[ ^a-z ]`；参数格式`*testing.T`  
+函数: 名称格式`Test[^a-z]`；参数格式`*testing.T`  
 ### 样例  
 目录  
 ```  
@@ -126,11 +126,11 @@ func TestFoo(t *testing.T) {
 }  
 ```  
 ### 方式  
-[ 表组测试 ](src/go/testing/foo_test.go)  
-[ accert 断言 ](src/go/testing/foo_test.go)  
-[ mock 模拟 ](src/go/testing/foo_test.go)  
-[ 基准测试 ](src/go/testing/foo_test.go)  
-[ BDD ]()  
+[表组测试](src/go/testing/foo_test.go)  
+[accert 断言](src/go/testing/foo_test.go)  
+[mock 模拟](src/go/testing/foo_test.go)  
+[基准测试](src/go/testing/foo_test.go)  
+[BDD]()  
   
 ## reflect 反射  
 `reflect.TypeOf()`  
@@ -139,7 +139,7 @@ func TestFoo(t *testing.T) {
   
   
 ## 标准库  
-### [ 文档 ](https://studygolang.com/pkgdoc)  
+### [文档](https://studygolang.com/pkgdoc)  
   
   
 ## go翻墙  
@@ -163,4 +163,4 @@ curl -sL -k -vv www.google.com
 ## GC
   
 ## ref  
-[ slice底层实现 ](https://blog.csdn.net/lengyuezuixue/article/details/81197691)  
+[slice底层实现](https://blog.csdn.net/lengyuezuixue/article/details/81197691)  

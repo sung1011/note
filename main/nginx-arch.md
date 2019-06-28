@@ -1,8 +1,8 @@
 # nginx arch
 
 ## 架构
-![ img ](res/nginx-arch.png)
-![ img ](res/nginx-inner.png)
+![img](res/nginx-arch.png)
+![img](res/nginx-inner.png)
 
 ### 主进程
 Nginx启动时，会生成两种类型的进程，一个是主进程（ master ），一个（ windows版本的目前只有一个）或多个工作进程（ worker ）。 主进程并不处理网络请求，主要负责调度工作进程 ，也就是图示的3项： 加载配置、启动工作进程及非停升级。所以，Nginx启动以后，查看操作系统的进程列表，我们就能看到至少有两个Nginx进程。
@@ -21,8 +21,8 @@ Nginx的worker进程，包括核心和功能性模块，核心模块负责维持
 
 ## 进程模型
 ### master / worker 多进程模型
-![ img ](res/nginx-proc.png)
-![ img ](res/nginx-proc-handle.png)
+![img](res/nginx-proc.png)
+![img](res/nginx-proc-handle.png)
 1. 主程序 Master process 启动后，通过一个 for 循环来接收和处理外部信号  
 2. 主进程通过 fork() 函数产生 worker 子进程 ，每个子进程执行一个 for 循环来实现 Nginx 服务器对事件的接收和处理 。
 3. 每个worker一个线程，用户态完成切换（协程），避免OS进程间切换损耗（如apache）。

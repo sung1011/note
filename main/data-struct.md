@@ -12,7 +12,7 @@
 B树  
 B+树  
 B-树
-[ 红黑树 ](RBTree.md)
+[红黑树](RBTree.md)
 
 ## ref
-[ 数据结构 ](ref/data-struct.md)
+[数据结构](ref/data-struct.md)

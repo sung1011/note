@@ -49,4 +49,4 @@ LGPL是GPL的一个为主要为类库使用设计的开源协议。和GPL要求�
 
 GPL/LGPL都保障原作者的知识产权，避免有人利用开源代码复制并开发类似的产品
 
-![  ](res/free_software_licenses.png)
+![](res/free_software_licenses.png)
