@@ -15,7 +15,7 @@ len
 ### 双向链表
 
 head  
-node {data, prev, next(last指向null)}  
+node {data, prev, next(last指向null)}  
 len  
 
 ### 循环链表
@@ -57,7 +57,7 @@ len
 
 #### 尾部删除 O(n)
 
-1. 倒数第二的next指向null
+1. 倒数第二的next指向null
 
 #### 头部删除 O(1)
 
@@ -65,7 +65,7 @@ len
 
 #### 中间删除 O(n)
 
-1. 要删除节点i前置节点的next指向i的下一节点
+1. 要删除节点i前置节点的next指向i的下一节点
 
 ## 特点
 
