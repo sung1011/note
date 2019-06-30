@@ -1,6 +1,7 @@
 # algorithm
 
-## 
+## 分类
+
 递归  
 排序  
 二分查找  
@@ -16,4 +17,5 @@ bitmap
 [一致性哈希 DHT](algo-DHT.md)  
 
 ## ref
+
 [算法](https://cloud.tencent.com/developer/article/1101517)
