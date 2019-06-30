@@ -2,9 +2,27 @@
 
 ## 概念
 
-非连续，非顺序(随机存储)的有若干节点组成。
+非连续，非顺序(随机离散存储)的有若干节点组成。
 
 ## 结构
+
+### 单向链表
+
+head  
+node {data, next(last指向null)}
+len  
+
+### 双向链表
+
+head  
+node {data, prev, next(last指向null)}  
+len  
+
+### 循环链表
+
+head  
+node {data, prev, next(last指向head)}  
+len  
 
 ## 类别
 
@@ -34,8 +52,6 @@
 2. 新节点的next指针指向前置节点的next指针原先指向的节点。
 
 ### 改 O(n)
-
-略
 
 ### 删
 

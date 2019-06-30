@@ -3,7 +3,7 @@
 ## 分类
 
 [数组](ds-array.md)  
-[链表](ds-link-list.md)
+[链表](ds-link-list.md)  
 栈  
 队列  
 散列表  
