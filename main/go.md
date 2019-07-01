@@ -1,6 +1,7 @@
 # go  
   
 ## basic  
+
 bool  
 int  
 float  
@@ -8,11 +9,12 @@ string
 struct  
 ptr  
 array  
-slice   
+slice  
 map  
 chan  
 
 ## cmd  
+
 `build   `    compile packages and dependencies  
 `clean   `    remove object files and cached files  
 `doc     `    show documentation for package or symbol  
@@ -32,16 +34,23 @@ chan
   
 ## 接口  
   
-## 并发   
+## 并发  
+
 ### go并发与并行  
+
 并发 concurrency: 关注任务切分  
 并行 parallelism: 关注同时执行  
+
 ### 并发模型
+
 channel  
 sync  
 context  
+
 ### 设计  
+
 #### 线程模型  
+
 实现: 
 - 混合型线程模型  
 
@@ -60,16 +69,23 @@ context
   - 用户线程与KSE是多对多关系(M:N), 这种实现综合了前两种模型的优点，为一个进程中创建多个KSE，并且线程可以与不同的KSE在运行时进行动态关联，当某个KSE由于其上工作的线程的阻塞操作被内核调度出CPU时，当前与其关联的其余用户线程可以重新与其他KSE建立关联关系。当然这种动态关联机制的实现很复杂，也需要用户自己去实现，这算是它的一个缺点吧。Go语言中的并发就是使用的这种实现方式，Go为了实现该模型自己实现了一个运行时调度器来负责Go中的"线程"与KSE的动态关联。此模型有时也被称为 两级线程模型，即用户调度器实现用户线程到KSE的“调度”，内核调度器实现KSE到CPU上的调度。  
 
 #### 设计思想  
+
 不要以共享内存的方式来通信，相反，要通过通信来共享内存。(Do not communicate by sharing memory; instead, share memory by communicating.)  
+
 #### 设计模型  
+
 CSP: CSP并发模型  communicating sequential processes  
+
 #### 设计实现  
+
 G：Goroutine的简称，上面用go关键字加函数调用的代码就是创建了一个G对象，是对一个要并发执行的任务的封装，也可以称作用户态线程。属于用户级资源，对OS透明，具备轻量级，可以大量创建，上下文切换成本低等特点。  
 
 M：Machine的简称，在linux平台上是用clone系统调用创建的，其与用linux pthread库创建出来的线程本质上是一样的，都是利用系统调用创建出来的OS线程实体。M的作用就是执行G中包装的并发任务。Go运行时系统中的调度器的主要职责就是将G公平合理的安排到多个M上去执行。其属于OS资源，可创建的数量上也受限了OS，通常情况下G的数量都多于活跃的M的。  
 
 P：Processor的简称，逻辑处理器，主要作用是管理G对象（每个P都有一个G队列），并为G在M上的运行提供本地化资源。  
+
 #### 调度过程  
+
 单M  
 - 单P绑定单M, 顺序执行G  
 
@@ -91,30 +107,36 @@ P：Processor的简称，逻辑处理器，主要作用是管理G对象（每个
 - 将标准库中的网络库全部封装为非阻塞形式，防止其阻塞底层的M并导致内核调度器切换上下文带来的系统开销。  
 - 运行时系统加入epoll机制(针对Linux系统)，当某一个Goroutine在进行网络IO操作时，如果网络IO未就绪，就将其该Goroutine封装一下，放入epoll的等待队列中，当前G挂起，与其关联的M可以继续运行其他G。当相应的网络IO就绪后，Go运行时系统会将等待网络IO就绪的G从epoll就绪队列中取出（主要在两个地方从epoll中获取已网络IO就绪的G列表，一是sysmon监控线程中，二是自旋的M中），再由调度器将它们像普通的G一样分配给各个M去执行。  
   
-  
 ![G-P-M](res/gpm)  
   
 ## unittest 单元测试 & benchmark 基准测试  
+
 ### cmd 命令  
+
 `go test` 测试  
 `go test -v` 测试详情  
 `go test -cover` 覆盖率  
 `go test -bench=.` 基准测试  
 `go test -bench=. -benchmem` 基准测试详情  
+
 ### 约定  
+
 框架: go内置testing包  
 文件: `*_test.go`；与被测试代码放在同一个包  
 函数: 名称格式`Test[^a-z]`；参数格式`*testing.T`  
+
 ### 样例  
+
 目录  
-```  
+```bash
 ├── main.go  
 └── somepackage  
     ├── foo.go          被测试文件  
     └── foo_test.go     单测文件  
-```  
+```
+
 文件  
-```go  
+```go
 package somepackage  
   
 import (  
@@ -125,42 +147,44 @@ func TestFoo(t *testing.T) {
     T.log(123)  
 }  
 ```  
+
 ### 方式  
+
 [表组测试](src/go/testing/foo_test.go)  
 [accert 断言](src/go/testing/foo_test.go)  
 [mock 模拟](src/go/testing/foo_test.go)  
 [基准测试](src/go/testing/foo_test.go)  
-[BDD]()  
+BDD  
   
 ## reflect 反射  
+
 `reflect.TypeOf()`  
 `reflect.ValueOf()`  
-`reflect.DeepEqual(x, y interface{})` 比较map, slice  
-  
+`reflect.DeepEqual(x, y interface{})` 比较map, slice   
   
 ## 标准库  
+
 ### [文档](https://studygolang.com/pkgdoc)  
   
-  
 ## go翻墙  
+
 ### Require  
+
 shadowsocks: 翻墙    
 polipo: socks5协议转http/https代理    
   
 ### configuration  
+
 查看shadowsocks的http代理监听端口(1087), 并设置环境变量    
-```  
+
+```bash
 export http_proxy="http://127.0.0.1:1087"  
 export https_proxy=$http_proxy  
-```  
-用完不需要的时候记得注释掉...  
-  
-### test  
-```  
-curl -sL -k -vv www.google.com  
 ```  
 
 ## GC
   
-## ref  
+## ref
+
 [slice底层实现](https://blog.csdn.net/lengyuezuixue/article/details/81197691)  
+

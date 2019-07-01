@@ -3,13 +3,17 @@
 ## 日常命令 cmd  
   
 ## [index 索引](mongodb-index.md)
+
 ### 原理  
+
 btree和hash  
   
 ### 场景  
+
 读多写少  
   
 ### 类型  
+
 Single Field Index 单字段索引：  
 Compound Index 复合索引：多字段联合索引，注意顺序（a,b,c创建复合索引，查a,b时索引有效，查b，c时索引无效）  
 Multikey Index 多key索引： 数组值索引  
@@ -21,25 +25,31 @@ Text Index 文本索引：能解决快速文本查找的需求，比如有一个
 - TTL索引： 指定数据失效时间  
 - partial index 部分索引： 只针对符合某个特定条件的文档建立索引  
 - sparse index 稀疏索引： 只针对存在索引字段的文档建立索引，可看做是部分索引的一种特殊情况  
+
 ### 优化  
+
 开启profiling慢查询，找到需要优化的请求  
 - db.setProfilingLevel(1, 100); // 0 不开启 1 开启慢查询 2 记录所有  
   
 explain分析索引  
   
 ## aggregation 聚合  
+
 阶段操作符  
 - $count, $project, $match, $group, $sort, $limit, $unwind  
   
 `db.mycol.aggregate([{group: {_id: 'sex', personCount: {$sum: 1}}}])`  
   
 ## sync 同步    
+
 initial sync 全量同步  
 oplog 增量同步  
 - Primary上的写操作完成后，会向特殊的local.oplog.rs特殊集合写入一条oplog，Secondary不断的从Primary取新的oplog并应用  
   
 ## replica set 副本集   
+
 ### 节点  
+
 Primary  
 Secondary  
 - Secondary: 普通从节点，可被选为主节点，以下都是特殊从节点。  
@@ -62,6 +72,7 @@ Secondary
 > 客户端一般会保持连接多个实例（主从从从选...都有连接），以确保主挂后可以从其他实例拿到最新的副本集状态，进而连接到新的主节点。(若只连接主， 主跪了，客户端便不能得到任务服务)  
   
 ### 选举因素:  
+
 健康监测  
 - 节点间心跳  
 
@@ -77,6 +88,7 @@ optime
 -  一个member要成为primary，它必须与“多数派”的其他members建立连接，如果未能与足够多的member建立连接，事实上它本身也无法被选举为primary；多数派参考的是“总票数”，而不是member的个数，因为我们可以给每个member设定不同的“票数”。假设复制集内投票成员数量为N，则大多数为 N/2 + 1。  
 
 ### 读策略 Read Preference  
+
 primary(默认)： 所有读请求发到Primary  
 primaryPreferred： Primary优先，如果Primary不可达，请求Secondary  
 secondary： 所有的读请求都发到secondary  
@@ -84,6 +96,7 @@ secondaryPreferred：Secondary优先，当所有Secondary不可达时，请求Pr
 nearest：读请求发送到最近的可达节点上（通过ping探测得出最近的节点）  
 
 ### 写策略 Write Concern   
+
 ![img](res/mongodb-writeconcern-w0.png)  
 非应答写入Unacknowledged  - `{writeConcern:{w:0}}`  
 - MongoDB不对客户端进行应答，驱动会检查套接字，网络错误等。  
@@ -113,7 +126,9 @@ nearest：读请求发送到最近的可达节点上（通过ping探测得出最
 ## mongos (router)  
   
 ## shard 分片  
+
 ### 组成  
+
 config  
 - 用来保存数据，保证数据的高可用性和一致性。可以是一个单独的mongod实例，也可以是一个副本集。在生产环境下Shard一般是一个Replica Set，以防止该数据片的单点故障。可以将所有shard的副本集放在一个服务器多个mongodb实例中。  
   
@@ -125,37 +140,47 @@ shards
 - 用来保存数据，保证数据的高可用性和一致性。可以是一个单独的mongod实例，也可以是一个副本集。在生产环境下Shard一般是一个Replica Set，以防止该数据片的单点故障。可以将所有shard的副本集放在一个服务器多个mongodb实例中。  
   
 ### 分片键 Shard keys  
+
 ### 优点  
+
 读写方面： sharding将读写负载均匀到各个shard，且workload上限可以通过水平扩展来增加。  
 扩容方面： 每个shard保存一部分数据，可以通过增加shards来扩容。  
 高可用方面： 即便某个shard不可用了，整个集群也可以对外提供服务，只不过访问down掉的shard会报"Connection refused"的错误。而且MongoDB3.2以后可以为每个shard都配置副本集（replica set），这样保证最大程度的高可用性。  
+
 ### 缺点  
+
 数据量较少时不建议使用sharding，毕竟读写都要经过一层路由会有性能损耗，直接表现就是ips和qps会降低。  
+
 ### 额外  
+
 sharding集群不支持一些常规的单实例方法，如group()，可以使用mapReduce()或者aggregate()中的group来替代，因此建议从一开始学习就直接使用aggregate(),这种写法较为简单明了，且统一化易于识别。  
 对于没有用到shard key的查询，路由进行全集群广播（broadcast operation），对每个shard都查一遍进行scatter/gather，此时效率会很低。  
+
 ### 策略  
+
 hash  
 ranged  
   
-  
-## capped collection  
+## capped collection
+
 定义  
 - Capped Collection是性能出色的有着固定大小的集合，以LRU（least Recently Used，最近最少使用）规则和插入顺序执行age-out（老化移出）处理，自动维护集合中对象的插入顺序。多用以日志归档。  
   
 Notice  
-- 如果写比读多，最好不要在上面创建索引；  
+- 如果写比读多，最好不要在上面创建索引
 - 使用natual ordering可以有效地检索最近插入的元素，因为capped collection能够保证自然排序就是插入的顺序。  
 - capped collection不能被shard.  
 - 可以在创建capped collection时指定collection中能够存放的最大文档数。  
   
 实现  
-- oplog  
+- oplog
   
 ## 备份回档  
   
 ## 实战  
-输出全部结果  
+
+### 输出全部结果
+
 ```js  
 // dump.js  
 var c = db.coll.find({status:1}).limit(5)  
@@ -165,20 +190,23 @@ while(c.hasNext()) {
 //mongo 127.0.0.1:27017/db1 dump.js> result.js  
 ```  
   
-查询最后插入的数据  
+### 查询最后插入的数据
+
 ```js  
 db.coll.find().limit(1).sort({$natural:-1})  
 db.coll.find().skip(db.coll.count()-1).forEach(printjson)  
 ```  
   
-查询文档的keys  
+### 查询文档的keys
+
 ```js  
 for(var key in db.coll.findOne({_id:"xxx"})) {print (key)}  
 ```  
   
-查询内嵌embedded文档的keys TODO  
+### 查询内嵌embedded文档的keys TODO  
   
-doc size  
+### doc size
+
 ```js  
 Object.bsonsize(db.coll.findOne({type:"auto"}))  
-```  
+```
