@@ -1,6 +1,7 @@
 # k8s YAML
 
 ## POD
+
 ```yaml
 # yaml格式的pod定义文件完整内容：
 apiVersion: v1       #必选，版本号，例如v1

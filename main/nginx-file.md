@@ -1,13 +1,14 @@
 # nginx目录组成
 
 ## 目录结构
-```
+
+```tree
 ├── client_body_temp
 ├── conf                             # Nginx所有配置文件的目录
 │   ├── fastcgi.conf                 # fastcgi相关参数的配置文件
 │   ├── fastcgi.conf.default         # fastcgi.conf的原始备份文件
 │   ├── fastcgi_params               # fastcgi的参数文件
-│   ├── fastcgi_params.default       
+│   ├── fastcgi_params.default
 │   ├── koi-utf
 │   ├── koi-win
 │   ├── mime.types                   # 媒体类型
@@ -33,5 +34,7 @@
 ├── scgi_temp                        # 临时目录
 └── uwsgi_temp                       # 临时目录
 ```
+
 ## ref
+
 [doc](http://nginx.org/en/docs/configure.html)

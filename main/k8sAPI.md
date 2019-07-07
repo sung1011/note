@@ -1,9 +1,11 @@
 # k8s API
 
 ## syntax
+
 kubectl [command] [TYPE] [NAME] [flags]
 
 ## Operations
+
 | Operation      | Syntax                                                                                                                                    | Description                                                                                            |
 | ---            | ---                                                                                                                                       | ---                                                                                                    |
 | annotate       | kubectl annotate (-f FILENAME \                                                                                                           | TYPE NAME \                                                                                            | TYPE/NAME) KEY_1=VAL_1 ... KEY_N=VAL_N [--overwrite] [--all] [--resource-version=version] [flags]  | Add or update the annotations of one or more resources.                                                        |
@@ -33,6 +35,7 @@ kubectl [command] [TYPE] [NAME] [flags]
 | scale          | kubectl scale (-f FILENAME \                                                                                                              | TYPE NAME \                                                                                            | TYPE/NAME) --replicas=COUNT [--resource-version=version] [--current-replicas=count] [flags]        | Update the size of the specified replication controller.                                                       |
 | stop           | kubectl stop                                                                                                                              | Deprecated: Instead, see kubectl delete.                                                               |
 | version        | kubectl version [--client] [flags]                                                                                                        | Display the Kubernetes version running on the client and server.                                       |                                                                                                    |
+
 ## Resource types
 
 | Resource Name                   | Short Names | API Group                    | Namespaced | Resource Kind                  |
@@ -84,49 +87,56 @@ kubectl [command] [TYPE] [NAME] [flags]
 | storageclasses                  | sc          | storage.k8s.io               | false      | StorageClass                   |
 | volumeattachments               |             | storage.k8s.io               | false      | VolumeAttachment               |
 
-
 ## 实例
-### alias
-> alias ks=kubectl
 
 ### create
+
 `k8s create -f <k8s yaml file>`
 
 ### get
+
 `ks get <any>`
 `ks get all`
 
 ### logs
+
 `ks logs <pod name>`
 `ks logs <pod name> -c <container name>`
 
 ### label
+
 `ks get po -l app=ui,rel=beta` get
 `ks label node <node name> gpu=true` set
 
 ### annotate
+
 `ks annotate pod <pod name> foo=bar`
 
 ### namespace
+
 `ks create ns <namespace name>`
 `ks get po -n <namespace name>`
 `ks delete ns <namespace name>`
 
 ### delete
+
 `ks delete po <pod name>`
 `ks delete po -l <label key=val>`
 `ks delete po --all`
 `ks delete all --all`
 
 ### replicationcontroller
+
 `ks scale rc <rc name> --replicas=10`
 `ks delete rc <rc name>` 删除rc并且删除pod
 `ks delete rc <rc name> --cascade=false` 删除rc但不删除pod
 
 ### exec
+
 `ks exec <pod name> -- curl -s http://10.111.249.153`
 
 ### debug
+
 `ks get po <pod name> -o yaml` 获取pod yaml
 `ks describe <any>`
 `ks edit <any>`
