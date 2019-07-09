@@ -19,7 +19,7 @@ code note
 │   ├── dict.md  
 │   └── go.md  
 │   └── ...  
-├── main.md             主目录  
+├── README.md             主目录  
 └── self.md  
 ```  
   

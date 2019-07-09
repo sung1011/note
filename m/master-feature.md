@@ -2,31 +2,38 @@
 
 ## 概况
 
-## kakura
-
-## rabbitmq
-
-流量肖峰
-
 ## backend
 
 ![img](master-cron.png)
+
 crontab方案  
+
+- machine \* cpunum * section
+
+优化
+
+1. 每个PHP进程去redis中自增一个key，获得自己的处理id
+2. 选择一个优化比例，暂定 25
+3. id 对 25 取余
+4. 区服id对 25 取余
+5. 如果两个取余结果不同，跳过该区服
+6. 如果两个取余结果相同，按照现有的逻辑处理。
+
 dynamicTask  
-serviceId --- sdk_source  
 自动匹配战斗  
 
-- process_control_timeout --- quit信号的超时时间，超过该时间会在 `process_control_timeout+1` 后terminat。设置不合理，则reload会导致terminat。建议值同 `request_terminate_timeout` 
+- process_control_timeout (phpfpm.conf) --- quit信号的超时时间，超过该时间会在 `process_control_timeout+1` 后terminat。设置不合理，则reload会导致terminat。建议值同 `request_terminate_timeout`
 - max_execution_time (php.ini) --- Fatal Error; 不包含system()，sleep()等系统调用，数据库处理时间，比较鸡肋
-- request_terminate_timeout --- 502Bad Gateway; 包含请求的一切时间; 会与 `max_execution_time` 同时生效，谁先到达谁起作用。
+- request_terminate_timeout (phpfpm.conf) --- 502Bad Gateway; 包含请求的一切时间; 会与 `max_execution_time` 同时生效，谁先到达谁起作用。
 
 问题
 
-1. 缺少秒级定时任务（非阻塞）
+1. 缺少秒级定时器服务
 
 ## battle
 
 ![img](master-abaddon.png)
+
 战斗服方案流程 复盘与计算战力
 
 1. 不支持扫荡 --- 生成多个种子，抽其中一场校验 or 生成多个种子，全部进行校验
@@ -46,9 +53,12 @@ serviceId --- sdk_source
 ## redis
 
 ![img](master-twemproxy.png)  
+
 twemproxy  
 分片aof导致损坏 -> rdb还原 --- 数据一致性  
 集群变单例，master做aof，rewrite失败 -> 改slave做aof --- 备份都在slave做  
+
+![img](master-codis.png)
 
 1. 无法平滑扩容缩容
     1.1 Codis: zookeeper + 一致性哈希
@@ -56,8 +66,9 @@ twemproxy
 ## mongodb
 
 ![img](master-mongodb-replica.png)  
+
 replica  
-写入慢 wj -> w1  
+写入慢 wm -> w1  
 增量回档失败 -> 全量回档 --- 全量备份周期优化  
 数据库连接问题  
 
@@ -65,15 +76,6 @@ replica
 
 1. 无法自动换主。
 2. 难以应对单服用户量激增。
-
-## other
-
-技术选型
-
-## bug
-
-福利号数据清空  
-道具流向追踪  
 
 ## exp
 
@@ -87,8 +89,8 @@ replica
 
 ## method
 
-网
-复
+交叉
+复习
 
 ## github
 
