@@ -1,6 +1,7 @@
 # complexity
 
 ## 时间复杂度
+
 常数阶O(1)  
 对数阶O(logn)  
 线性阶O(n)  

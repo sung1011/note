@@ -1,6 +1,7 @@
 # github
 
 ## search for repositories
+
 in:readme  
 in:name  
 in:description  
@@ -19,6 +20,7 @@ is:public
 is:private  
 
 ## search code
+
 in:file  
 in:path  
 user: USERNAME  
@@ -30,8 +32,9 @@ path: PATH/TO/DIRECTORY
 language: LANGUAGE  
 size: n  
 filename: FILENAME  
-extension: EXTENSION   
+extension: EXTENSION  
 
 ## ref
+
 [help](https://help.github.com/en)  
 [help search](https://help.github.com/en/categories/searching-for-information-on-github)

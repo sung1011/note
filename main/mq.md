@@ -1,7 +1,9 @@
 # mq
 
 ## rabbitmq
+
 ### 应用
+
 - queue
 - work queues
 - publish/subscribe
@@ -10,6 +12,7 @@
 - RPC
 
 ## redis
+
 - stream
 
 ## rocketMq
