@@ -1,4 +1,5 @@
 # dict
+
 | !                             | interpretation             | full                               |
 | ---                           | ---                        | ---                                |
 | CAS                           |                            | compare and swap                   |
@@ -21,7 +22,7 @@
 | ROA                           | 面向资源架构               | Resource Oriented Architecture
 | SOA                           | 面向服务架构               | Service Oriented Architecture
 | IDFA                          | iOS手机唯一标识符          |
-| REPL | 交互式解释器 | Read Eval Print Loop 
+| REPL | 交互式解释器 | Read Eval Print Loop
 |Braces / curly brackets |大括号 | { }
 |square brackets / brackets |方括号| [ ]
 |angled brackets |尖括号| < >
