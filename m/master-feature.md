@@ -55,8 +55,9 @@ dynamicTask
 ![img](master-twemproxy.png)  
 
 twemproxy  
-分片aof导致损坏 -> rdb还原 --- 数据一致性  
-集群变单例，master做aof，rewrite失败 -> 改slave做aof --- 备份都在slave做  
+
+1. 分片aof导致损坏 -> rdb还原 --- 数据一致性  
+2. 集群变单例，master做aof，rewrite失败 -> 改slave做aof --- 备份都在slave做  
 
 ![img](master-codis.png)
 
