@@ -6,8 +6,7 @@
 
 那么到底什么是异步、非阻塞，它们的原理是什么，它们之间又有什么区别呢？其实在很多情况下，异步与非阻塞(同步与阻塞)表示的是同一个意思，但是在特定的上下文环境中，它们含义又十分不同。再具体讲它们的区别之前，先介绍一下上下文背景。
 
-一、上下文背景
--------
+## 一、上下文背景
 
 我们所遇到的这些场景大部分都是当用户进程（或线程）在进行网络IO时即进行Socket读写时遇到的，所以本文讨论的上下文背景是基于Linux环境下的network IO。先介绍一下其中我们最常见的五种IO：
 
@@ -16,19 +15,17 @@
     3.  IO multiplexing
     4.  signal driven IO
     5.  asynchronous IO
-    
 
 由于signal driven IO在实际中并不常用，所以我这只提及剩下的四种IO Model。
 
 再说一下IO发生时涉及的对象和步骤。对于一个network IO (这里我们以read举例)，它会涉及到两个系统对象，一个是调用这个IO的进程(或线程)，另一个就是系统内核(kernel)。当一个read操作发生时，它会经历两个阶段：
 
-1.  等待数据准备`(Waiting for the data to be ready)`
-2.  将数据从内核拷贝到进程中 `(Copying the data from the kernel to the process)`
+1. 等待数据准备`(Waiting for the data to be ready)`
+2. 将数据从内核拷贝到进程中 `(Copying the data from the kernel to the process)`
 
 记住这两点很重要，因为这些IO Model的区别就是在两个阶段上各有不同的情况。
 
-二、各种IO介绍
---------
+## 二、各种IO介绍
 
 ### 2.1 blocking IO
 
@@ -42,7 +39,6 @@
     1. 线程是有内存开销的，1个线程可能需要512K（或2M）存放栈，那么1000个线程就要512M（或2G）内存
     2. 线程的切换开销和很大，因为线程切换时需要保持当前线程上下文信息，当大量时间花在上下文切换的时候，分配给真正的操作的CPU就要少很多
     3. 一个cpu所支持的线程数量时有限的（因为上面两个原因），一般来说线程的数量级在几百个左右就已经很大了
-    
 
 为了解决block IO存在的问题，就引入了no-blocking IO概念。
 
@@ -72,8 +68,7 @@ linux下的asynchronous IO其实用得很少。先看一下它的流程：
 ![这里写图片描述](https://img-blog.csdn.net/20161010175157114)  
 用户进程发起read操作之后，立刻就可以开始去做其它的事。而另一方面，从kernel的角度，当它受到一个asynchronous read之后，首先它会立刻返回，所以不会对用户进程产生任何block。然后，kernel会等待数据准备完成，然后将数据拷贝到用户内存，当这一切都完成之后，kernel会给用户进程发送一个signal，告诉它read操作完成了。
 
-三、各种IO之间的区别
------------
+## 三、各种IO之间的区别
 
 到目前为止，已经将四个IO Model都介绍完了。现在回过头来回答最初的那几个问题：blocking和non-blocking的区别在哪，synchronous IO和asynchronous IO的区别在哪。
 
@@ -81,13 +76,11 @@ blocking vs non-blocking，这个问题很简单，前面的介绍中其实已�
 
     1. blocking IO 会在wait和copy阶段都会阻塞进程
     2. non-blocking IO 在wait阶段会立即返回不会阻塞进程，而在copy阶段仍会阻塞进程copy数据
-    
 
 在说明synchronous IO和asynchronous IO的区别之前，需要先给出两者的定义。Stevens给出的定义（其实是POSIX的定义）是这样子的：
 
     1. synchronous I/O：IO操作过程中进程会被阻塞，直到IO操作完成
     2. asynchronous I/O：IO操作过程中进程不会被阻塞，操作系统帮你完成IO操作之后直接返回给你
-    
 
 按照这个定义，在网络IO层面，同步异步相对于阻塞非阻塞是一个更加宏观的概念，之前所述的阻塞IO，非阻塞IO，IO多路复用都属于同步IO，因为它们在内核copy数据阶段都会阻塞进程。而异步IO则不一样，当进程发起IO 操作之后，就直接返回再也不理睬了，直到操作系统内核发送一个信号，告诉进程说操作系统IO已经完成，在这整个过程中，进程完全没有被阻塞。
 
