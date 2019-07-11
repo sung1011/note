@@ -25,7 +25,9 @@ dynamicTask
 - process_control_timeout (phpfpm.conf) --- quit信号的超时时间，超过该时间会在 `process_control_timeout+1` 后terminat。设置不合理，则reload会导致terminat。建议值同 `request_terminate_timeout`
 - max_execution_time (php.ini) --- Fatal Error; 不包含system()，sleep()等系统调用，数据库处理时间，比较鸡肋
 - request_terminate_timeout (phpfpm.conf) --- 502Bad Gateway; 包含请求的一切时间; 会与 `max_execution_time` 同时生效，谁先到达谁起作用。
-- nginx, php-fpm高并发? fpm尽量多？
+  - nginx超时 ?
+  - php fork, php-fpm fork ?
+  - nginx, php-fpm高并发? fpm尽量多？
 
 问题
 
@@ -44,8 +46,9 @@ dynamicTask
 
 限制
 
-1. luajit内存限制
-2. luapool多版本回收问题
+1. luajit内存限制 --- pool = jit * n < 1G
+2. luapool多版本回收问题 --- 新版本
+3. fight_server_error --- jit超时
 
 问题
 
@@ -56,22 +59,23 @@ dynamicTask
 ![img](master-twemproxy.png)  
 
 twemproxy  
-分片aof导致损坏 -> rdb还原 --- 数据一致性  
-集群变单例，master做aof，rewrite失败 -> 改slave做aof --- 备份都在slave做  
+
+1. 分片aof导致损坏 -> rdb还原 --- 数据一致性  
+2. 集群变单例，master做aof，rewrite失败 -> 改slave做aof --- 备份都在slave做  
 
 ![img](master-codis.png)
 
 1. 无法平滑扩容缩容
-    1.1 Codis: zookeeper + 一致性哈希
 
 ## mongodb
 
 ![img](master-mongodb-replica.png)  
 
 replica  
-写入慢 wm -> w1  
-增量回档失败 -> 全量回档 --- 全量备份周期优化  
-数据库连接问题  
+
+1. 写入慢 wm -> w1  
+2. 增量回档失败 -> 全量回档 --- 全量备份周期优化, 用mongo还原redis排行榜  
+3. 单连数据库master问题  
 
 问题
 
