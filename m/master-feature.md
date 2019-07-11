@@ -25,6 +25,7 @@ dynamicTask
 - process_control_timeout (phpfpm.conf) --- quit信号的超时时间，超过该时间会在 `process_control_timeout+1` 后terminat。设置不合理，则reload会导致terminat。建议值同 `request_terminate_timeout`
 - max_execution_time (php.ini) --- Fatal Error; 不包含system()，sleep()等系统调用，数据库处理时间，比较鸡肋
 - request_terminate_timeout (phpfpm.conf) --- 502Bad Gateway; 包含请求的一切时间; 会与 `max_execution_time` 同时生效，谁先到达谁起作用。
+- nginx, php-fpm高并发? fpm尽量多？
 
 问题
 

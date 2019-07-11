@@ -231,3 +231,7 @@ extension
 ### exp  
 
 [锁](src/php/php_redis_lock.php)  
+
+### ref
+
+[Fpm启动机制及流程分析———详细](http://www.mamicode.com/info-detail-2625546.html)
