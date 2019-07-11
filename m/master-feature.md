@@ -48,7 +48,7 @@ dynamicTask
 
 1. luajit内存限制 --- pool = jit * n < 1G
 2. luapool多版本回收问题 --- 新版本
-3. fight_server_error --- jit
+3. fight_server_error --- jit超时
 
 问题
 
