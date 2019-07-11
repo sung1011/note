@@ -66,7 +66,6 @@ twemproxy
 ![img](master-codis.png)
 
 1. 无法平滑扩容缩容
-    1.1 Codis: zookeeper + 一致性哈希
 
 ## mongodb
 

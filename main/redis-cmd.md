@@ -1,16 +1,25 @@
 # redis命令
 
-## 组
-### cluster
-### connection
-### geo
-### hash
-### hyperloglog
-### keys
-### lists
-### pub/sub
-### scripting
-### server
+## cluster
+
+## connection
+
+## geo
+
+## hash
+
+## hyperloglog
+
+## keys
+
+## lists
+
+## pub/sub
+
+## scripting
+
+## server
+
 bgrewriteaof
 bgsave  
 client kill  
@@ -51,11 +60,16 @@ slowlog
 sync  
 time  
 
-### sets
-### sorted sets
-### streams
-### strings
-### transactions
+## sets
+
+## sorted sets
+
+## streams
+
+## strings
+
+## transactions
+
 multi  
 exec  
 watch  
