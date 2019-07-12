@@ -59,6 +59,7 @@ java
 [distributed 分布式](main/distributed.md)  
 [oop 面向对象](main/oop.md)  
 [cryptography 加密](main/crypt.md)  
+[splite brain 脑裂](main/splite-brain.md)
   
 ### deploy  
 
