@@ -2,6 +2,8 @@
 
 ## 概况
 
+架构说明，模块缺陷，源码解析，经验分享
+
 ## backend
 
 ![img](master-cron.png)
