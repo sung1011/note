@@ -12,7 +12,7 @@
 
 1. chat服务 --- kakura的尴尬全服聊天
 2. match服务
-3. vms统一并且高效 --- 横向
+3. vms统一并且高效 --- 横向支撑
 
 ## backend
 
@@ -31,11 +31,11 @@ crontab方案
 5. 如果两个取余结果不同，跳过该区服
 6. 如果两个取余结果相同，按照现有的逻辑处理。
 
-progress
+progress  
 dynamicTask  
 匹配战斗  
 
-- match服务
+- 独立的match服务
 - kakura
 - fork
 - sleep
@@ -43,15 +43,16 @@ dynamicTask
 问题
 
 - 超时 ?
-  - process_control_timeout (phpfpm.conf) --- quit信号的超时时间，超过该时间会在 `process_control_timeout+1` 后terminat。设置不合理，则reload会导致terminat。建议值同 `request_terminate_timeout`
   - max_execution_time (php.ini) --- Fatal Error; 不包含system()，sleep()等系统调用，数据库处理时间，比较鸡肋
-  - request_terminate_timeout (phpfpm.conf) --- 502Bad Gateway; 包含请求的一切时间; 会与 `max_execution_time` 同时生效，谁先到达谁起作用。
+  - request_terminate_timeout (phpfpm.conf) --- 502 Bad Gateway; 包含请求的一切时间; 会与 `max_execution_time` 同时生效，谁先到达谁起作用。
+  - fastcgi_read_timeout(nginx.conf) --- 504 Gateway timeout; FastCGI服务器的响应超时时间。
+  - process_control_timeout (phpfpm.conf) --- quit信号的超时时间，超过该时间会在 `process_control_timeout+1` 后terminat。设置不合理，则reload会导致terminat。建议值同 `request_terminate_timeout`
+  - 其他
+    - fastcgi_connect_timeout --- 连接到后端fastcgi超时时间
+    - fastcgi_send_timeout --- 向fastcgi请求超时时间
 - php fork, php-fpm fork ?
-- nginx, php-fpm高并发? fpm尽量多？
-
-问题
-
-1. 缺少秒级定时器服务
+- nginx, php-fpm 高并发 ?
+- php-fpm worker 尽量多 ?
 
 ## battle
 
@@ -86,6 +87,7 @@ twemproxy
 问题
 
 1. 无法平滑扩容缩容
+2. 缺少管理 --- 过期条件, 大key监控
 
 ![img](master-codis.png)
 
@@ -98,6 +100,7 @@ replica
 1. 写入慢 wm -> w1  
 2. 增量回档失败 -> 全量回档 --- 全量备份周期优化, 用mongo还原redis排行榜  
 3. 单连数据库master问题  
+4. 缺少管理 --- 过期条件，大key监控
 
 问题
 
@@ -113,6 +116,7 @@ replica
 单元测试 - 开发效率与单元测试取舍  
 代码互审 - merge request  
 错误监控 - 日常监控错误  
+版本发布 - 冲掉hotfix, 审核服重复用serviceId。
 
 ## method
 
