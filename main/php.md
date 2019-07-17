@@ -124,48 +124,10 @@ __set_state()
   
 ## 配置  
 
-### php配置(php.ini)  
+### [php.ini](php-ini.md)
 
-max_execution_time; 报出Fatal Error; 不包含system()，sleep()等系统调用，数据库处理时间，比较鸡肋。
-max_execution_time = 30  
-memory_limit = 8388608 (8M)  
-disable_functions = "" 禁用函数，多个由逗号隔开  
-error_reporting  
+### [php-fpm](php-fpm.md)
 
-- Deprecated最低级别错误，程序继续执行  
-- Notice 通知级别的错误 如直接使用未声明变量，程序继续执行  
-- Warning 警告级别的错误，可能得不到想要的结果, 程序继续执行  
-- Fatal error  致命级别错误致命级别错误，程序不往下执行  
-- Parse error 语法解析错误，最高级别错误，连其他错误信息也不呈现出来  
-- E_USER_相关错误 用户设置的相关错误  
-
-### php-fpm配置  
-
-pm = static; 静态进程 (固定分配，减少额外资源消耗，但有进程切换消耗; memory_limit * max_children < 物理机内存; 可尽量多以满足高并发)  
-
-- pm.max_children = 300; 静态方式下开启的php-fpm进程数量  
-
-pm = dynamic; 动态进程(一定范围内控制空闲worker数量; 有额外内存开销)  
-
-- pm.start_servers = 20; 动态方式下的起始php-fpm进程数量  
-- pm.max_children = 300; 动态方式下开启的最大php-fpm进程数量  
-- pm.min_spare_servers = 5; 闲置子进程最小数量， 再小就fork  
-- pm.max_spare_servers = 35; 闲置子进程最大数量， 再大就kill  
-
-pm = ondemand; 按需分配进程（一定范围内，定时删除空闲worker，直到只剩master；内存友好，不适合流量突发情况）  
-
-- pm.max_children = 300;
-- pm.process_idle_timeout = 10s;
-
-pm.max_requests = 10240; 每个worker处理多少个请求后会重启该线程 // 由于内存泄漏，泄漏的内存会累计，重启以归还内存  
-
-- 内存消耗 = max_children * memory_limit; 静态进程内存消耗  
-- 内存消耗 = max_spare_servers * memory_limit; 动态进程内存消耗  
-
-rlimit_files = 1024; 文件打开描述符的rlimit限制, 默认系统值（ulimit -n）(一般要跟系统的同步更改)  
-request_terminate_timeout (phpfpm.conf) 超时会报502Bad Gateway; 包含请求的一切时间; 会与 `max_execution_time` 同时生效，谁先到达谁起作用。  
-覆盖ini: php_admin_value 如 php_admin_value[memory_limit] = 128M; php_admin_value[date.timezone] = Asia/Shanghai  
-  
 ## 实战  
   
 ### 初级  
@@ -209,37 +171,6 @@ PHP中创建多线程、多进程有哪些方式？互斥信号该如何实现�
 写代码来解决多进程/线程同时读写一个文件  
 PHP的的这种弱类型变量是怎么实现的？  
 垃圾回收  
-
-## 配置项
-
-base
-
-- 慢查询  
-  - request_slowlog_timeout = 1 慢查询条件  
-  - slowlog = "" 慢查询log目录  
-- 执行时间  
-  - request_terminate_timeout = 30s  
-
-extension  
-
-- opcache  
-  - opcache.enable=1  
-  - opcache.memory_consumption=128; OPcache共享内存存储大小。用于存储预编译的opcode  
-  - opcache.interned_strings_buffer=8; 字符串驻留的内存量（相同字符串指向同一地址 以节约内存）  
-  - opcache.max_accelerated_files=4000; 利用opcache缓存的文件数（需大于你的项目中的所有PHP文件的总和）(find . -type f -print | grep php | wc -l)  
-  - opcache.revalidate_freq=600 设置缓存的过期时间（单位是秒）,为0的话每次都要检查  
-  - opcache.validate_timestamps=0 opcache检测php代码变更，并重新编译生成opcode的时间间隔(dev=0 online=default)  
-  - opcache.fast_shutdown=1 php7.2已删除（推荐=1）  
-  - opcache.file_cache=/tmp  
-- yac  
-  - yac.enable=1  
-  - yac.keys_memory_size = 32M  
-  - yac.values_memory_size = 128M  
-  - yac.compress_threshold = -1  
-- snappy 字符串压缩（压缩率约50%）  
-- xdebug  
-
-传值, 引用传值  
 
 ### exp  
 

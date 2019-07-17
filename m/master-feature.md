@@ -70,11 +70,10 @@ dynamicTask
    - fastcgi_read_timeout(nginx.conf) --- `504 Gateway timeout`; FastCGI服务器的响应超时时间。
    - process_control_timeout (phpfpm.conf) --- quit信号的超时时间，超过该时间会在 `process_control_timeout+1` 后terminat。设置不合理，则reload会导致terminat。建议值同 `request_terminate_timeout`
    - 其他
-     - fastcgi_connect_timeout --- 连接到后端fastcgi超时时间
-     - fastcgi_send_timeout --- 向fastcgi请求超时时间
+     - fastcgi_connect_timeout(nginx.conf) --- 连接到后端fastcgi超时时间
+     - fastcgi_send_timeout(nginx.conf) --- 向fastcgi请求超时时间
 2. php fork, php-fpm fork ?
-3. nginx, php-fpm 高并发 ?
-4. php-fpm worker 尽量多 ?
+3. php-fpm worker 尽量多 ?
 
 ---
 
