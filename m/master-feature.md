@@ -4,6 +4,15 @@
 
 架构说明，模块缺陷，源码解析，经验分享
 
+## fw
+
+![img](master-fw.png)
+
+问题
+
+1. chat, match服
+2. vms统一并且高效
+
 ## backend
 
 ![img](master-cron.png)
@@ -21,9 +30,9 @@ crontab方案
 5. 如果两个取余结果不同，跳过该区服
 6. 如果两个取余结果相同，按照现有的逻辑处理。
 
+progress
 dynamicTask  
 自动匹配战斗  
-progress
 
 - process_control_timeout (phpfpm.conf) --- quit信号的超时时间，超过该时间会在 `process_control_timeout+1` 后terminat。设置不合理，则reload会导致terminat。建议值同 `request_terminate_timeout`
 - max_execution_time (php.ini) --- Fatal Error; 不包含system()，sleep()等系统调用，数据库处理时间，比较鸡肋
@@ -49,9 +58,9 @@ progress
 
 限制
 
-1. luajit内存限制 --- pool = jit * n < 1G
-2. luapool多版本回收问题 --- 新版本
-3. fight_server_error --- jit超时
+1. luajit内存限制 --- luaMaxMem \* poolSize * script < 1024M  --- 51.2M * 8 * n < 1024M
+2. luapool多版本回收问题 --- 新版本 maxCallCount, luaMaxMem
+3. fight_server_error --- jit超时 maxWaitMillis
 
 问题
 
