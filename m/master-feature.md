@@ -10,8 +10,9 @@
 
 问题
 
-1. chat, match服
-2. vms统一并且高效
+1. chat服务 --- kakura的尴尬全服聊天
+2. match服务
+3. vms统一并且高效 --- 横向
 
 ## backend
 
@@ -32,14 +33,21 @@ crontab方案
 
 progress
 dynamicTask  
-自动匹配战斗  
+匹配战斗  
 
-- process_control_timeout (phpfpm.conf) --- quit信号的超时时间，超过该时间会在 `process_control_timeout+1` 后terminat。设置不合理，则reload会导致terminat。建议值同 `request_terminate_timeout`
-- max_execution_time (php.ini) --- Fatal Error; 不包含system()，sleep()等系统调用，数据库处理时间，比较鸡肋
-- request_terminate_timeout (phpfpm.conf) --- 502Bad Gateway; 包含请求的一切时间; 会与 `max_execution_time` 同时生效，谁先到达谁起作用。
-  - nginx超时 ?
-  - php fork, php-fpm fork ?
-  - nginx, php-fpm高并发? fpm尽量多？
+- match服务
+- kakura
+- fork
+- sleep
+
+问题
+
+- 超时 ?
+  - process_control_timeout (phpfpm.conf) --- quit信号的超时时间，超过该时间会在 `process_control_timeout+1` 后terminat。设置不合理，则reload会导致terminat。建议值同 `request_terminate_timeout`
+  - max_execution_time (php.ini) --- Fatal Error; 不包含system()，sleep()等系统调用，数据库处理时间，比较鸡肋
+  - request_terminate_timeout (phpfpm.conf) --- 502Bad Gateway; 包含请求的一切时间; 会与 `max_execution_time` 同时生效，谁先到达谁起作用。
+- php fork, php-fpm fork ?
+- nginx, php-fpm高并发? fpm尽量多？
 
 问题
 
@@ -75,9 +83,11 @@ twemproxy
 1. 分片aof导致损坏 -> rdb还原 --- 数据一致性  
 2. 集群变单例，master做aof，rewrite失败 -> 改slave做aof --- 备份都在slave做  
 
-![img](master-codis.png)
+问题
 
 1. 无法平滑扩容缩容
+
+![img](master-codis.png)
 
 ## mongodb
 
