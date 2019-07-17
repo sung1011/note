@@ -12,7 +12,7 @@
 
 ### 问题
 
-1. chat服务 --- kakura的尴尬全服聊天
+1. chat服务 --- kakura的尴尬 全服聊天
 2. match服务
 3. vms统一并且高效 --- 横向支撑
 
@@ -26,9 +26,15 @@ crontab方案
 
 - machine \* cpunum * section
 
+`50 * 8 * 100 = 40000`
+
 ### 优化
 
-#### 流程
+#### cpunum优化
+
+固定2
+
+#### 加锁区服数量优化
 
 1. 每个PHP进程去redis中自增一个key，获得自己的处理id
 2. 选择一个优化比例，暂定 25
@@ -38,12 +44,12 @@ crontab方案
 6. 如果两个取余结果相同，按照现有的逻辑处理。 `if a == b; run()`
 
 `50 * 2 * 100 = 10000` -> `50 * 2 * (100/25) = 400`
-`50 * 2 * 1000 = 100000` -> `50 * 2 * (1000/25) = 4000`  
 
 #### 可靠性
 
-`50 * 2 >= 25`  
-`50 * 2 * (1 - x) >= 25; x = 0.75` 即75%挂了(正常13/50 挂了37/50)扔可用。
+`13 * 2 > 25` 即：机器数 * 2 > 优化系数; 若小于25，一些sec会不执行。
+`50 * 2 >= 25` 即id必须大于25。
+`50 * 2 * (1 - x) >= 25; x = 0.75` 即75%挂了(13/50正常 37/50挂了)扔可用。
 
 ### 应用
 
@@ -58,17 +64,17 @@ dynamicTask
 
 ### backend问题
 
-- 超时 ?
-  - max_execution_time (php.ini) --- Fatal Error; 不包含system()，sleep()等系统调用，数据库处理时间，比较鸡肋
-  - request_terminate_timeout (phpfpm.conf) --- 502 Bad Gateway; 包含请求的一切时间; 会与 `max_execution_time` 同时生效，谁先到达谁起作用。
-  - fastcgi_read_timeout(nginx.conf) --- 504 Gateway timeout; FastCGI服务器的响应超时时间。
-  - process_control_timeout (phpfpm.conf) --- quit信号的超时时间，超过该时间会在 `process_control_timeout+1` 后terminat。设置不合理，则reload会导致terminat。建议值同 `request_terminate_timeout`
-  - 其他
-    - fastcgi_connect_timeout --- 连接到后端fastcgi超时时间
-    - fastcgi_send_timeout --- 向fastcgi请求超时时间
-- php fork, php-fpm fork ?
-- nginx, php-fpm 高并发 ?
-- php-fpm worker 尽量多 ?
+1. 超时 ?
+   - max_execution_time (php.ini) --- `Fatal Error`; 不包含system()，sleep()等系统调用，数据库处理时间，比较鸡肋
+   - request_terminate_timeout (phpfpm.conf) --- `502 Bad Gateway`; 包含请求的一切时间; 会与 `max_execution_time` 同时生效，谁先到达谁起作用。
+   - fastcgi_read_timeout(nginx.conf) --- `504 Gateway timeout`; FastCGI服务器的响应超时时间。
+   - process_control_timeout (phpfpm.conf) --- quit信号的超时时间，超过该时间会在 `process_control_timeout+1` 后terminat。设置不合理，则reload会导致terminat。建议值同 `request_terminate_timeout`
+   - 其他
+     - fastcgi_connect_timeout --- 连接到后端fastcgi超时时间
+     - fastcgi_send_timeout --- 向fastcgi请求超时时间
+2. php fork, php-fpm fork ?
+3. nginx, php-fpm 高并发 ?
+4. php-fpm worker 尽量多 ?
 
 ---
 
@@ -105,7 +111,7 @@ twemproxy
 1. 无法平滑扩容缩容
 2. 缺少管理 --- 过期条件, 大key监控
 
-![img](master-codis.png)
+<!-- ![img](master-codis.png) -->
 
 ---
 
