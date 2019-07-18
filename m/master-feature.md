@@ -24,15 +24,13 @@
 
 crontab方案  
 
-- machine \* cpunum * section
-
-`50 * 8 * 100 = 40000`
+machine \* cpunum * section 如: `50 * 8 * 100 = 40000`
 
 ### 优化
 
 #### cpunum优化
 
-固定2
+固定2 如: `50 * 2 * 100 = 10000`
 
 #### 加锁区服数量优化
 
@@ -47,14 +45,13 @@ crontab方案
 
 #### 可靠性
 
-`13 * 2 > 25` 即：机器数 * 2 > 优化系数; 若小于25，一些sec会不执行。
-`50 * 2 >= 25` 即id必须大于25。
+`13 * 2 > 25` 即：机器数 * 2 > 优化系数; id必须大于25，若小于25，一些sec会不执行。
 `50 * 2 * (1 - x) >= 25; x = 0.75` 即75%挂了(13/50正常 37/50挂了)扔可用。
 
 ### 应用
 
-progress  
-dynamicTask  
+progress  --- `kv k=taskId v=timestamp`
+dynamicTask --- `zset score=time member=val`  
 匹配战斗  
 
 - 独立的match服务
