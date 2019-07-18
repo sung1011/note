@@ -69,8 +69,8 @@ dynamicTask --- `zset score=time member=val`
    - 其他
      - fastcgi_connect_timeout(nginx.conf) --- 连接到后端fastcgi超时时间
      - fastcgi_send_timeout(nginx.conf) --- 向fastcgi请求超时时间
-2. php fork, php-fpm fork ?
-3. php-fpm worker 尽量多 ?
+2. php-fpm worker 尽量多 ?
+3. php fork, php-fpm fork ?
 
 ---
 
