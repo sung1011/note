@@ -57,7 +57,7 @@ dynamicTask --- `zset score=time member=val`
 - 独立的match服务
 - kakura
 - fork
-- sleep
+- sleep --- fsockopen
 
 ### backend问题
 
@@ -82,13 +82,13 @@ dynamicTask --- `zset score=time member=val`
 
 1. 不支持扫荡 --- 生成多个种子，抽其中一场校验 or 生成多个种子，全部进行校验
 2. 战斗服bug数值溢出, 影响伤害排行类活动 --- backend校验
-3. get打弱者, fight打强者, 战斗服进行打弱者的校验。 --- 以fight的强者 覆盖 get的弱者(只适合npc) 或 校验对手标记id
+3. get打弱者, fight打强者, 战斗服进行打弱者的校验。 --- 校验对手标记
 4. get一次, fight多次, 战斗服以get的数据进行校验, get那次胜利则后面的多次fight都胜利。 --- 传递战斗数据给战斗服后，从redis中删除get的数据
 
 ### battle问题
 
 1. luajit内存限制 --- `luaMaxMem * poolSize * script < 1024M` --- `51.2M * 8 * n < 1024M`。
-2. luapool多版本回收问题 --- 新版本 `maxCallCount`, `luaMaxMem` 即缺少过期销毁机制。
+2. luapool多版本回收问题 --- 新版本 `maxCallCount`, `luaMaxMem` 缺少过期销毁机制。
 3. fight_server_error --- jit超时 `maxWaitMillis`。
 
 ---
