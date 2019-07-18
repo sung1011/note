@@ -232,3 +232,7 @@ for(var key in db.coll.findOne({_id:"xxx"})) {print (key)}
 ```js  
 Object.bsonsize(db.coll.findOne({type:"auto"}))  
 ```
+
+## issue
+
+### 单个doc 16M限制

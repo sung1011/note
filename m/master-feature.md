@@ -45,12 +45,12 @@ machine \* cpunum * section 如: `50 * 8 * 100 = 40000`
 
 #### 可靠性
 
-`13 * 2 > 25` 即：机器数 * 2 > 优化系数; id必须大于25，若小于25，一些sec会不执行。
+`13 * 2 > 25` 即：机器数 * 2 > 优化系数; id必须大于25，若小于25，一些sec会不执行。  
 `50 * 2 * (1 - x) >= 25; x = 0.75` 即75%挂了(13/50正常 37/50挂了)扔可用。
 
 ### 应用
 
-progress  --- `kv k=taskId v=timestamp`
+progress  --- `kv k=taskId v=timestamp`  
 dynamicTask --- `zset score=time member=val`  
 匹配战斗  
 
@@ -120,7 +120,7 @@ twemproxy
 1. 写入慢 --- Write Preference wm -> w1
 2. 增量回档失败 -> 全量回档 --- 全量备份周期优化
 3. 无法自动换主 单连数据库master问题 ? --- client get
-4. 缺少管理 --- 过期条件，大key监控
+4. 缺少管理 --- 过期条件，大doc监控
 5. 难以应对单服用户量激增。 --- sharding, Read Preference  
 
 ---
