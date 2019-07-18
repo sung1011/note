@@ -57,7 +57,7 @@ dynamicTask --- `zset score=time member=val`
 - 独立的match服务
 - kakura
 - fork
-- sleep --- fsockopen
+- sleep
 
 ### backend问题
 
@@ -88,8 +88,8 @@ dynamicTask --- `zset score=time member=val`
 ### battle问题
 
 1. luajit内存限制 --- `luaMaxMem * poolSize * script < 1024M` --- `51.2M * 8 * n < 1024M`。
-2. luapool多版本回收问题 --- 新版本 `maxCallCount`, `luaMaxMem` 缺少过期销毁机制。
-3. fight_server_error --- jit超时 `maxWaitMillis`。
+2. 多版本回收问题 --- 新版本 `maxCallCount`, `luaMaxMem` 缺少过期销毁机制。
+3. fight_server_error --- luajit超时 `maxWaitMillis`。
 
 ---
 
@@ -106,8 +106,6 @@ twemproxy
 
 1. 无法平滑扩容缩容
 2. 缺少管理 --- 过期条件, 大key监控
-
-<!-- ![img](master-codis.png) -->
 
 ---
 
@@ -134,13 +132,13 @@ twemproxy
 单元测试 - 开发效率与单元测试取舍  
 代码互审 - merge request  
 错误监控 - 日常监控错误  
-版本发布 - 冲掉hotfix, 审核服重复用serviceId, 上架未删ver令online玩家进audit等
+版本发布 - 冲掉hotfix, 审核服重复用serviceId, 上架未删ver令online玩家进audit等  
 
 ---
 
 ## method
 
-交叉
+交叉  
 复习
 
 ---
