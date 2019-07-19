@@ -57,7 +57,30 @@ dynamicTask --- `zset score=time member=val`
 - 独立的match服务
 - kakura
 - fork
-- sleep
+- sleep 抢到锁后，向本地nginx请求，重新分配worker进行间隔性sleep处理，阻塞该worker。
+
+```markdown
+# 方案a
+php-fpm pool www pm=static; listen=9000; pm.max_children = 200
+200个worker中的其中一部分sleep()阻塞方式处理match任务。
+
+优点
+accept的worker不会处理其他任务，200个worker足以满足
+
+缺点
+随着`os内存、单worker内存上限、crontab调度方式`的调整，最差可能出现worker全部阻塞的情况。
+
+# 方案b
+php-fpm开两个pool www和match
+- www(默认)   处理游戏逻辑 `pm=static; listen=9000; pm.max_children = <200`
+- match 专门处理匹配 `pm=dynamic / ondemand; listen=9001; pm.max_children = 200-www的pm.max_children`
+
+优点
+保障了游戏逻辑不受影响阻塞的影响
+
+缺点
+占用了部分www的资源
+```
 
 ### backend问题
 
@@ -140,9 +163,3 @@ twemproxy
 
 交叉  
 复习
-
----
-
-## github
-
-`https://github.com/sung1011/note`
