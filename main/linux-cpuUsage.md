@@ -27,9 +27,7 @@ guest_nice (gnice): 低优先级运行虚拟机的时间。
 
 ### pstree 查看父进程
 
-### execsnoop 分析短时进程
-
-> https://github.com/brendangregg/perf-tools
+### [execsnoop 分析短时进程](https://github.com/brendangregg/perf-tools)
 
 ### CPU使用率高，但找不到高CPU的进程
 

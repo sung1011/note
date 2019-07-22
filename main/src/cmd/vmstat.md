@@ -22,4 +22,3 @@ us: 用户进程执行时间(user time)
 sy: 系统进程执行时间(system time)  
 id: 空闲时间(包括IO等待时间)  
 wa: 等待IO时间  
-

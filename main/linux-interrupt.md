@@ -40,7 +40,7 @@
 ### 软中断内核线程
 
 `ksoftirqd/< CPU编号 >` 如：ksoftirqd/0, ksoftirqd/1 ...  
-`ps aux|grep softirq` 查看内核线程 (名字在[]中，一般是内核线程)
+`ps aux|grep softirq` 查看内核线程 (名字在`[]`中，一般是内核线程)
 
 ### /proc/interrupts 硬中断运行情况
 

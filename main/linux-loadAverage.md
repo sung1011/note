@@ -1,22 +1,21 @@
 # 平均负载 load average
 
-处于可运行状态(running/runnable) 和 不可中断状态(uninterruptible sleep/disk sleep)的平均进程数，即平均活跃进程。
-即包含`正在使用cpu`的进程， `等待cpu计算`的进程， `等待I/O`的进程
+平均活跃进程数
+
+- 处于可运行状态(running/runnable)的平均进程数，即：`正被cpu计算`和`等待cpu计算`的进程。
+- 不可中断状态(uninterruptible sleep/disk sleep)的平均进程数，即：`等待I/O`的进程
 
 ## 取值
 
-值大于cpu个数时超载， 超载不应超过70%。
+值大于cpu个数时超载， 超载不应超过100%。(如：2核 平均负载4)
 
 ## 平均负载 & CPU使用率
 
-| status | 平均负载 | CPU使用率 |
-| --- | --- | --- |
-|CPU密集 | uuu | uuu |
-|I/O密集 | uuu | u |
-|大量CPU等待调度| uuu | uu |
-
-平均负载高可能由cpu计算密集，io密集，cpu wait导致  
-通过观察io与cpu使用率分析负载来源
+| status | 平均负载 | CPU使用率 | 指标 |
+| --- | --- | --- | --- |
+|CPU密集 | uuu | uuu | `load average high` && `%usr 100%` && `%iowait 0%`
+|大量CPU等待调度| uuu | uu | `load average high` && `%usr 100%` && `%iowait 80%` && `running high`
+|I/O密集 | uuu | u | `load average high` && `%usr 40%` && `%iowait 80%`
 
 ## 实战
 

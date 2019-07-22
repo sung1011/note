@@ -51,7 +51,7 @@
 
 ### [dstat](src/cmd/dstat.md)
 
-### waitio高（cpu使用率高，平均负载高），有D进程，Z进程。
+### waitio高（cpu使用率高，平均负载高），有D进程，Z进程
 
 1. 优先排查是否磁盘IO。工具dstat，pidstat
 2. 等待IO过程不可中断，D状态的进程更可疑

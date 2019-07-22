@@ -103,8 +103,8 @@ Memory-mapped file
   
 ### 内容  
 
-同一进程中的多条线程将共享该进程中的全部系统资源，如虚拟地址空间，文件描述符和信号处理等等。    
-但同一进程中的多个线程有各自的调用栈（call stack），自己的寄存器环境（register context），自己的线程本地存储（thread-local storage）。 
+同一进程中的多条线程将共享该进程中的全部系统资源，如虚拟地址空间，文件描述符和信号处理等等。  
+但同一进程中的多个线程有各自的调用栈（call stack），自己的寄存器环境（register context），自己的线程本地存储（thread-local storage）。
 
 ### 状态
 
@@ -174,15 +174,7 @@ fuser
   
 ## 实战  
 
-### [平衡负载](linux-loadAverage.md)  
-
-### [ctx switch - CPU上下文切换](linux-ctxSwitch.md)
-
-### [CPU使用率](linux-cpuUsage.md)
-
-### [不可中断和僵尸进程](linux-uninterrupt.md)
-
-### [中断](linux-interrupt.md)
+### [cpu](linux-cpu.md)
 
 ### coredump
   
@@ -205,6 +197,6 @@ fuser
 ## ref  
 
 [awk](ref/awk.md)  
-[文件描述符](ref/文件描述符.md)    
+[文件描述符](ref/文件描述符.md)  
 [关于网络IO中的同步、异步、阻塞、非阻塞](ref/关于网络IO中的同步、异步、阻塞、非阻塞.md)  
 [select、poll、epoll、同步、异步之间的区别总结](https://blog.csdn.net/lsgqjh/article/details/65629609)  
