@@ -29,7 +29,11 @@
 
 ### [pidstat](src/cmd/pidstat.md): 进程性能分析工具。查看进程cpu,mem,io,ctx switch `pidstat -u 5`  
 
-### cpu核数: grep -c 'model name' /proc/cpuinfo  
+### cpu核数
+
+- 物理cpu数 (physical id): 主板上CPU数量 `grep 'physical id' /proc/cpuinfo|sort|uniq|wc -l`
+- cpu核数 (cpu cores): 单块物理CPU芯片组的数量 `grep 'cpu cores' /proc/cpuinfo|uniq|awk -F ':' '{print $2}'`
+- 逻辑cpu数(processer 0-n): 物理CPU数×每颗核数 `cat /proc/cpuinfo| grep "processor"|wc -l`
 
 ### stress
 
