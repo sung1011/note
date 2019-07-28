@@ -8,17 +8,15 @@
 
 ## [配置语法](nginx-config-grammer.md)
 
-## [signal](nginx-signal.md)
+## [信号 signal](nginx-signal.md)
 
 ## [架构](nginx-arch.md)
 
 ## [流程](nginx-process.md)
 
-## [modules](nginx-modules.md)
+## [模块 modules](nginx-modules.md)
 
-## 连接池
-
-## 内存池
+## [内存池](nginx-pool.md)
 
 ## [进程间通信](nginx-process-communicate.md)
 

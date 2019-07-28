@@ -14,7 +14,7 @@ Handlers（处理器模块）：此类模块直接处理请求，并进行输出
 Filters （过滤器模块）：此类模块主要对其他处理器模块输出的内容进行修改操作，最后由Nginx输出。  
 Proxies （代理类模块）：此类模块是Nginx的HTTP Upstream之类的模块，这些模块主要与后端一些服务比如FastCGI等进行交互，实现服务代理和负载均衡等功能。  
 
-## 源码
+## 目录
 
 ```tree
 # nginx/src/
@@ -51,6 +51,15 @@ Proxies （代理类模块）：此类模块是Nginx的HTTP Upstream之类的模
 `-- stream
 ```
 
+## 数据结构
+
+ngx_module_t 模块  
+ngx_command_t 指令  
+
+## 方法
+
+ngx_xxx_merge_conf 合并配置  
+
 ## 实战
 
 ### 压缩
@@ -80,8 +89,8 @@ geo, map 给上游（如lvs, haproxy）设置白名单
 ### proxy && cache
 
 模块: ngx_http_proxy_module
-配置
-proxy_pass       http://localhost:8000;  
+配置:  
+proxy_pass       <http://localhost:8000;>  
 proxy_set_header Host      $host;  
 proxy_set_header X-Real-IP $remote_addr;  
 
@@ -92,18 +101,18 @@ proxy_cache_valid 200 302 302 1d;
 
 ### 获取客户端ip
 
-模块: ngx_realip_module
+模块: ngx_realip_module  
 阶段: postread  
 功能: 修改客户端地址$remote_addr  
 变量: realip_remote_addr, realip_remote_port  
 指令: set_real_ip_from, real_ip_header, real_ip_recursive  
-http.header.x-forwarded-for: 经过的ip的集合 如[115.204.33.1, 1.1.1.1]
-http.header.x-real-ip: 用户ip 如115.204.33.1
+http.header.x-forwarded-for: 经过的ip的集合 如[115.204.33.1, 1.1.1.1]  
+http.header.x-real-ip: 用户ip 如115.204.33.1  
 
 ### rewrite 重写
 
-模块: ngx_rewrite_module
-阶段: server rewrite, rewrite
+模块: ngx_rewrite_module  
+阶段: server rewrite, rewrite  
 
 #### return
 
@@ -134,8 +143,8 @@ error_page 444 /err.html
 
 模块: http_limit_req_module  
 阶段: pre_access  
-算法: leaky bucket  突发流量限定为恒定流量, 故响应可能变慢, 超流量返回错误。
-指令: limit_req_zone, limit_req, limit_req_log_level, limit_req_status
+算法: leaky bucket  突发流量限定为恒定流量, 故响应可能变慢, 超流量返回错误。  
+指令: limit_req_zone, limit_req, limit_req_log_level, limit_req_status  
 范围:  
 
 - all worker (基于共享内存)  
@@ -157,28 +166,28 @@ error_page 444 /err.html
 #### 限制ip
 
 模块: http_access_module  
-阶段: access
-指令: alow, deny
+阶段: access  
+指令: alow, deny  
 
 #### 限制用户名密码
 
 模块: http_auth_basic_module  
-阶段： access
-指令: auth_basic, auth_basic_user_file
-工具: 密码文件生成依赖httpd-tools库, `htpasswd -c < file > -b < username > < password >`
+阶段: access  
+指令: auth_basic, auth_basic_user_file  
+工具: 密码文件生成依赖httpd-tools库, `htpasswd -c < file > -b < username > < password >`  
 
 #### 向上游服务验证用户名密码
 
 模块: http_auth_request_module  
-阶段: access
-指令: auth_request, auth_request_set
-原理: 向上游服务转发请求，若上游返回200则验证通过，否则验证失败。
+阶段: access  
+指令: auth_request, auth_request_set  
+原理: 向上游服务转发请求，若上游返回200则验证通过，否则验证失败。  
 
 #### 配置条件
 
-模块: ngx_http_core_module
-指令: satisfy all|any
-原理: all全部放行才放行，any任一放行就放行
+模块: ngx_http_core_module  
+指令: satisfy all|any  
+原理: all全部放行才放行，any任一放行就放行  
 实例:  
 
 ```bash
@@ -196,11 +205,11 @@ location / {
 #### 试图访问多个url路径，若文件都不存在则返回最后一个url或者code
 
 模块: ngx_http_try_file_module  
-阶段: pre_content
-指令: try_file
+阶段: pre_content  
+指令: try_file  
 
 #### 流量拷贝，处理请求时，生成子请求访问其他服务，但不处理其返回值
 
 模块: ngx_http_mirror_module  
-阶段: pre_content
-指令: mirror, mirror_request_body
+阶段: pre_content  
+指令: mirror, mirror_request_body  
