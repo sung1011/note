@@ -261,3 +261,13 @@ command: sub_filter, sub_filter_last_modified, sub_filter_once, sub_filter_types
 
 module: ngx_http_addition_filter_module
 command: add_before_body, add_after_body, addition_types
+
+### referer模块 携带client信息以防盗链
+
+### map模块 按条件匹配设置某个新变量的值
+
+### split_clients模块 按百分比匹配设置某个新变量的值以A/B方案测试
+
+### geo模块 根据ip地址匹配设置新变量的值以区分不同地区的客户端请求
+
+### geoip模块 是geo的增强版
