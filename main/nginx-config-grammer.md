@@ -40,6 +40,20 @@ http {
 }
 ```
 
+## 变量
+
+### 数据结构
+
+```c
+variables_hash_bucket_size 变量名大小64B
+variables_hash_max_size 变量数量最大值1024个
+```
+
+### http_头部名字
+
+得到header中对应key的val 如 `curl localhost -H 'foo=bar'; $http_foo = bar`  
+预定义除外 如 `http_host, http_cookie, http_user_agent, http_referer, http_via, http_x_forwarded_for ...`  
+
 ## ref
 
 [doc](http://nginx.org/en/docs/beginners_guide.html#conf_structure)
