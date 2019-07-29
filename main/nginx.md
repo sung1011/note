@@ -24,13 +24,15 @@
 
 ## [openresty](nginx-openresty.md)
 
+## [负载均衡](nginx-load-balance.md)
+
 ## 实战
 
 ### 为什么不多线程
 
 每个worker采用单线程来异步非阻塞处理请求(epoll)，不会为每个请求分配cpu和内存资源，节省资源，同时也减少CPU的上下文切换。
 
-### [负载均衡](load-balance.md)
+### [负载均衡](load-proxy.md)
 
 ### C10k问题
 

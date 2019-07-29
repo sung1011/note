@@ -54,7 +54,7 @@ Proxies （代理类module）：此类module是Nginx的HTTP Upstream之类的mod
 ## 数据结构
 
 ngx_module_t module  
-ngx_command_t command  
+ngx_directives_t directives  
 
 ## 方法
 
@@ -105,7 +105,7 @@ module: ngx_realip_module
 stage: postread  
 功能: 修改客户端地址$remote_addr  
 变量: realip_remote_addr, realip_remote_port  
-command: set_real_ip_from, real_ip_header, real_ip_recursive  
+directives: set_real_ip_from, real_ip_header, real_ip_recursive  
 http.header.x-forwarded-for: 经过的ip的集合 如[115.204.33.1, 1.1.1.1]  
 http.header.x-real-ip: 用户ip 如115.204.33.1  
 
@@ -144,7 +144,7 @@ stage: server rewrite, rewrite
 module: http_limit_req_module  
 stage: pre_access  
 算法: leaky bucket  突发流量限定为恒定流量, 故响应可能变慢, 超流量返回错误。  
-command: limit_req_zone, limit_req, limit_req_log_level, limit_req_status  
+directives: limit_req_zone, limit_req, limit_req_log_level, limit_req_status  
 范围:  
 
 - all worker (基于共享内存)  
@@ -154,7 +154,7 @@ command: limit_req_zone, limit_req, limit_req_log_level, limit_req_status
 
 module: http_limit_conn_module  
 stage: pre_access  
-command: limit_conn_zone, limit_conn, limit_conn_log_level, limit_conn_status  
+directives: limit_conn_zone, limit_conn, limit_conn_log_level, limit_conn_status  
 范围:
 
 - all worker (基于共享内存)  
@@ -167,26 +167,26 @@ command: limit_conn_zone, limit_conn, limit_conn_log_level, limit_conn_status
 
 module: http_access_module  
 stage: access  
-command: alow, deny  
+directives: alow, deny  
 
 #### 限制用户名密码
 
 module: http_auth_basic_module  
 stage: access  
-command: auth_basic, auth_basic_user_file  
+directives: auth_basic, auth_basic_user_file  
 工具: 密码文件生成依赖httpd-tools库, `htpasswd -c < file > -b < username > < password >`  
 
 #### 向上游服务验证用户名密码
 
 module: http_auth_request_module  
 stage: access  
-command: auth_request, auth_request_set  
+directives: auth_request, auth_request_set  
 原理: 向上游服务转发请求，若上游返回200则验证通过，否则验证失败。  
 
 #### 配置条件
 
 module: ngx_http_core_module  
-command: satisfy all|any  
+directives: satisfy all|any  
 原理: all全部放行才放行，any任一放行就放行  
 实例:  
 
@@ -206,13 +206,13 @@ location / {
 
 module: ngx_http_try_file_module  
 stage: pre_content  
-command: try_file  
+directives: try_file  
 
 #### 流量拷贝，处理请求时，生成子请求访问其他服务，但不处理其返回值
 
 module: ngx_http_mirror_module  
 stage: pre_content  
-command: mirror, mirror_request_body  
+directives: mirror, mirror_request_body  
 
 ### content
 
@@ -228,13 +228,15 @@ module: ngx_http_concat
 stage: content  
 usage: `https://localhost/??a.js,b.css,res/c.js`  
 
+#### proxy_pass 反向代理
+
 ### log
 
 #### 日志
 
 module: ngx_http_log_module  
 stage: log  
-command: access_log, log_format, open_log_file_cache  
+directives: access_log, log_format, open_log_file_cache  
 
 - access_log 日志
   - buffer: 缓存大小超过设定  
@@ -255,12 +257,12 @@ command: access_log, log_format, open_log_file_cache
 #### 替换返回
 
 module: ngx_http_sub_filter_module
-command: sub_filter, sub_filter_last_modified, sub_filter_once, sub_filter_types
+directives: sub_filter, sub_filter_last_modified, sub_filter_once, sub_filter_types
 
 #### 前后添加返回 (添加的body内容为子请求的返回值)
 
 module: ngx_http_addition_filter_module
-command: add_before_body, add_after_body, addition_types
+directives: add_before_body, add_after_body, addition_types
 
 ### referer模块 携带client信息以防盗链
 
