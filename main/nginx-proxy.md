@@ -1,4 +1,4 @@
-# nginx 反向代理 缓存 负载均衡
+# nginx 反向代理 负载均衡
 
 ## 反向代理
 
@@ -31,12 +31,31 @@ directives:
 - client_max_body_size 检查header.content-length是否超限，超限制返回413
 - client_body_temp_path 请求body存储路径
 - client_body_in_file_only 请求的body是否存文件
-- client_body_timeout 读取body时间是否超限，超时返回408
+- client_header_timeout 读取header时间限制，超时返回408
+- client_body_timeout 读取body时间限制，超时返回408
 
 与上游建立连接
 
 - proxy_connect_timeout 与上游握手超时时间，超时返回502
-- proxy_next_upstream
+- proxy_next_upstream 遇到特定错误码时，将请求分发到下一台上游机器
+- proxy_socket_keepalive 与上游连接是否启动TCP keepalive
+- proxy_bind 修改与上游的TCP连接中的Source IP Address
+- proxy_ignore_client_abort 代理是否忽略客户端连接
+- proxy_send_timeout 向上游发送请求的超时时间(两次write期间计时)
+
+接收上游响应header
+
+- proxy_buffer_size 响应头大小限制，超出则`upstream sent too big header`
+- proxy_buffers 内存存放响应body的大小，超过则写入磁盘
+- proxy_buffering 是否接收完上游响应，再返回给客户端
+- proxy_max_temp_file_size 缓存文件大小
+- proxy_temp_file_write_size 缓存每次写入大小
+- proxy_temp_path 缓存路径
+- proxy_busy_buffers_size 及时响应客户端的大小（刚接收到n字节时就转发给客户端n字节）
+- proxy_read_timeout 接收上游响应的超时时间（两次write期间计时）
+- proxy_limit_rate 读取上游的速率
+- proxy_store_access 缓存文件权限，并持久化到指定位置
+- proxy_store 缓存文件root，并持久化到root位置
 
 ## 缓存
 

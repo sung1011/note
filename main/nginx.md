@@ -24,7 +24,7 @@
 
 ## [openresty](nginx-openresty.md)
 
-## [负载均衡](nginx-load-balance.md)
+## [反向代理 负载均衡](nginx-proxy.md)
 
 ## 实战
 
