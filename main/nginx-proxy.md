@@ -57,6 +57,19 @@ directives:
 - proxy_store_access 缓存文件权限，并持久化到指定位置
 - proxy_store 缓存文件root，并持久化到root位置
 
+处理上游响应header
+
+- proxy_ignore_headers 禁用某些上游响应头部
+- proxy_hide_header 隐藏某些上游响应头部 (以下为默认隐藏的头部)
+  - Date nginx发送响应头的时间，由ngx_http_header_filter_module填写
+  - Server nginx版本，由ngx_http_header_filter_module填写
+  - X-Pad apache为避免浏览器bug生成的头部，默认忽略
+  - X-Accel- 用于控制nginx行为的响应，不需要向客户端转发
+- proxy_pass_header 恢复proxy_hide_header隐藏的头部
+- proxy_cookie_domain 修改上游返回的cookie
+- proxy_cookie_path 替换上游返回的cookie
+- proxy_redirect 修改返回的location header
+
 ## 缓存
 
 ### 指令
