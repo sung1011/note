@@ -2,8 +2,30 @@
 
 ## 反向代理
 
-module: ngx_http_proxy_module  
-directives:
+### 流程
+
+1. proxy_pass (处理content阶段)
+   1. proxy_cache命中 [to 11. 发送响应header](_)
+2. 根据指令生成发往上游的http header和body
+3. proxy_request_buffering
+   1. on; 读取完整请求body
+   2. off; 边收边转发请求body
+4. 根据负载均衡策略选择上游服务
+5. 根据参数连接上游
+6. 发送请求body（边读边发）
+7. 处理并返回...
+8. 接收响应header
+9. 处理响应header
+10. proxy_buffering
+    1. on; 接收完整响应body
+    2. off; 边收边转发响应body
+11. 发送响应header
+12. 发送响应body（边读边发）
+13. proxy_cache
+    1. on; 响应body加入缓存
+14. 关闭连接 或 复用连接
+
+### 指令
 
 代理修改请求
 
@@ -37,13 +59,13 @@ directives:
 与上游建立连接
 
 - proxy_connect_timeout 与上游握手超时时间，超时返回502
-- proxy_next_upstream 遇到特定错误码时，将请求分发到下一台上游机器
+- proxy_next_upstream 遇到特定状态码时，将请求分发到下一台上游机器
 - proxy_socket_keepalive 与上游连接是否启动TCP keepalive
 - proxy_bind 修改与上游的TCP连接中的Source IP Address
 - proxy_ignore_client_abort 代理是否忽略客户端连接
 - proxy_send_timeout 向上游发送请求的超时时间(两次write期间计时)
 
-接收上游响应header
+接收上游响应header (缓存)
 
 - proxy_buffer_size 响应头大小限制，超出则`upstream sent too big header`
 - proxy_buffers 内存存放响应body的大小，超过则写入磁盘
@@ -69,12 +91,24 @@ directives:
 - proxy_cookie_domain 修改上游返回的cookie
 - proxy_cookie_path 替换上游返回的cookie
 - proxy_redirect 修改返回的location header
+- expires 缓存过期时间
 
-## 缓存
+### cache
 
-### 指令
+### cache流程
 
-proxy_buffering, proxy_buffer_size, proxy_busy_buffers_size, proxy_temp_path, proxy_max_temp_file_size
+TODO
+
+### cache指令
+
+- proxy_cache 缓存名
+- proxy_cache_path 缓存路径，淘汰策略等
+- proxy_cache_key 缓存生效的url关键词
+- proxy_cache_vailid 遇到特定状态码，缓存不同的时长
+- proxy_no_cache 参数为真时，不存入缓存
+- proxy_cache_bypass 参数为真时，有缓存但不使用该缓存内容
+- proxy_cache_convert_head 变更head方法为get方法
+- $upstream_cache_status 缓存状态变量
 
 ## 负载均衡
 

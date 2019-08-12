@@ -2,16 +2,28 @@
   
 ## basic  
 
-bool  
-int  
-float  
-string  
-struct  
-ptr  
-array  
-slice  
-map  
-chan  
+### 值类型
+
+变量直接存储值，内存通常在栈中分配，栈在函数调用完会被释放
+
+- bool  
+- int  
+- float  
+- string  
+- [struct](go-struct.md)  
+- [array](go-array.md)  
+- ptr  
+- interface
+- func
+- unsafe.Pointer
+
+### 引用类型
+
+变量存储的是一个地址，这个地址存储最终的值。内存通常在堆上分配，通过GC回收。
+
+- [slice](go-slice.md)  
+- [map](go-map.md)  
+- chan  
 
 ## cmd  
 
@@ -36,7 +48,7 @@ chan
   
 ## 并发  
 
-### go并发与并行  
+### 并发与并行  
 
 并发 concurrency: 关注任务切分  
 并行 parallelism: 关注同时执行  
@@ -177,22 +189,6 @@ BDD
 
 ### [文档](https://studygolang.com/pkgdoc)  
   
-## go翻墙  
-
-### Require  
-
-shadowsocks: 翻墙  
-polipo: socks5协议转http/https代理
-  
-### configuration  
-
-查看shadowsocks的http代理监听端口(1087), 并设置环境变量
-
-```bash
-export http_proxy="http://127.0.0.1:1087"  
-export https_proxy=$http_proxy  
-```  
-
 ## GC
   
 ## ref

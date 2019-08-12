@@ -8,12 +8,20 @@
 
 ### request
 
-#### 状态行
+#### 请求行
 
-- request method
-  - get, post, head, put, delete, connect, options, trace
-- request URI
-- request version
+- method
+  - GET
+  - HEAD: 只GET header
+  - POST: 提交表单；可能增，改数据。
+  - PUT: 提交并替换指定数据
+  - DELETE
+  - CONNECT: 预留
+  - OPTIONS: 查看服务器性能
+  - TRACE: debug
+  - PATCH: 局部PUT
+- URI
+- VERSION
   - HTTP/1.0
   - HTTP/1.1
     - 默认keep-alive, 减少握手开销; 可只发header, 节约带宽; 支持host域参数
@@ -22,7 +30,7 @@
   - HTTPS
     - ssl原理, CA证书, 签名, 公钥, 私钥, 对称秘钥...
 
-#### 状态头
+#### 请求头
 
 - Accept-Encoding
 - Authorization
@@ -30,8 +38,10 @@
 - Content-Length
 - Content-Type
 - User-Agent
+- If-None-Match: 客户端的ETag值，发给服务器以判定是否匹配服务器ETag
+- If-Modify-Since: 从某时间数据是否修改。(以时间维度判定cache有效性)
 
-#### 状态体
+#### 请求体
 
 ### response
 
@@ -88,10 +98,18 @@
 
 #### 响应头
 
-Content-Encoding  
-Content-Length  
-Expires  
-Set-Cookie  
+- Allow: 支持哪些request method
+- Content-Encoding  
+- Content-Length  
+- Content-Type
+- Expires  
+- Set-Cookie  
+- Date  
+- Expires
+- Location
+- Refresh
+- Last-Modified: 最后一次改动时间。无改动时返回304。 (以时间维度判定cache有效性)
+- ETag: 缓存的令牌
 
 #### 响应体  
 
