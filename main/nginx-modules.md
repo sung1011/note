@@ -292,4 +292,7 @@ module: ngx_http_proxy_module
 
 - HTTP/1.1 101 Web Socket Protocol Handshake
 
-### slice
+### slice 通过range协议，分解并缓存大的数据块
+
+module: http_slice_module  
+directives: slice
