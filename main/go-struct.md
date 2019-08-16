@@ -96,16 +96,17 @@ func (h *Horse) hello() { // 重载
     fmt.Println(h.name)
     fmt.Println(h.weight)
     fmt.Println(h.speak) // 可以访问horse的speak属性
-    fmt.Println(a.int) // 访问匿名字段
+    fmt.Println(h.int) // 访问匿名字段
 }
 
 func main() {
     bm_horse := &Horse{
-        Animal: &Animal{
+        Animal: &Animal{ // 结构体包含**嵌入字段**，类型名充当了嵌入字段的字段名
             name:   "baima",
             weight: 60,
         },
         speak: "neigh",
+        int: 1234, // 结构体包含**匿名字段**，类型名充当了匿名字段的字段名
     }
     bm_horse.hello()
 }
@@ -156,3 +157,5 @@ func main() {
 ```
 
 ## 函数func(recv) & 方法recv.Method()
+
+## [嵌套接口](go-interface.md#嵌入结构体)

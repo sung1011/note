@@ -273,3 +273,23 @@ directives: add_before_body, add_after_body, addition_types
 ### geo模块 根据ip地址匹配设置新变量的值以区分不同地区的客户端请求
 
 ### geoip模块 是geo的增强版
+
+### 即时清除cache
+
+module: ngx_cache_purge
+directives: proxy_cache_purge
+
+### 反向代理websocket
+
+module: ngx_http_proxy_module  
+请求:
+
+- proxy_http_version 1.1; // HTTP/1.1
+- proxy_set_header Connection "upgrade"; // Connection:keep-alive,Upgrade
+- proxy_set_header Upgrade $http_upgrade; // Upgrade: websocket
+
+响应行:
+
+- HTTP/1.1 101 Web Socket Protocol Handshake
+
+### slice

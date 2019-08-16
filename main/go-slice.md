@@ -63,3 +63,7 @@ copy(new_sl, old_sl) //新切片
 return new_sl //新切片返回值
 }
 ```
+
+## ref
+
+[slice底层实现](https://blog.csdn.net/lengyuezuixue/article/details/81197691)
