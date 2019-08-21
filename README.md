@@ -23,7 +23,7 @@ code note
 └── self.md  
 ```  
   
-## 目录 directory  
+## directory  
   
 ### version control  
 
@@ -80,6 +80,10 @@ ci/cd
 [data structure 数据结构](main/data-struct.md)  
 [algorithm 算法](main/algo.md)  
 [complexity 复杂度](main/complexity.md)  
+
+### action
+
+[spike 秒杀](main/spike.md)
   
 ### other  
 

@@ -224,3 +224,5 @@ command: upstream, server
 ## 实战
 
 ### [反向代理websocket](nginx-modules.md)
+
+### [打开文件的缓存](nginx-modules.md)

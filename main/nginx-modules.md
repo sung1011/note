@@ -222,7 +222,7 @@ directives: mirror, mirror_request_body
 
 #### autoindex 返回目录结构
 
-#### concat (第三方) 同时下载多个小文件
+#### concat (第三方) 同时请求/下载多个小文件
 
 module: ngx_http_concat  
 stage: content  
@@ -296,3 +296,12 @@ module: ngx_http_proxy_module
 
 module: http_slice_module  
 directives: slice
+
+### openfilecache 打开文件的缓存
+
+module: ngx_http_core_module
+directives: open_file_cache, open_file_cache_errors, open_file_cache_min_users, open_file_cache_valid
+
+- open_file_cache max=N [inactive=time]
+  - max 每个worker最多缓存多少个文件，超出LRU淘汰
+  - inactive 多少秒后没被访问，则淘汰

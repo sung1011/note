@@ -94,6 +94,8 @@ tag
 
 ### rebase
 
+注意: **不要在主分支操作**
+
 - -i, --interactive 交互rebase:
   - p, pick   use commit
   - r, reword use commit, but edit the commit message
@@ -102,6 +104,16 @@ tag
   - f, fixup  like "squash", but discard this commit's log message
   - x, exec   run command (the rest of the line) using shell
   - d, drop   remove commit
+
+- 变基 `git rebase master`
+- 变基并修改历史 `git rebase -i master`
+
+1. [master] git commit 12 // 12
+2. [master] git checkout -b feature; // 检出功能分支
+3. [master] git commit 34; // 1234
+4. [feature] git commit ab; // 12ab
+5. [feature] git rebase master; // 变基到master HEAD之后 // 1234ab
+6. [master] git merge feature; // 1234ab
 
 ### stash - Stash the changes in a dirty working directory away
 
@@ -144,7 +156,7 @@ fd1/*           忽略目录 fd1 下的全部内容；注意，不管是根目�
 revert
 
 - 提交一个与指定commit内容相反的commit。
-- 若在主分支revert一个功能分支，则该功能分支无法重新merge到主分支，可以用cherry-pick。
+- 若在主分支revert一个功能分支，则该功能分支无法重新merge到主分支，需要用cherry-pick。
 
 ### 版本回滚
 

@@ -69,3 +69,7 @@
  1. 会话率 ：单位时间内的处理的请求数
  2. 会话并发能力：并发处理能力
  3. 数据率：处理数据能力
+
+## ref
+
+[Nginx、HAProxy、LVS三者的优缺点](https://blog.csdn.net/qlj324513/article/details/81541282)
