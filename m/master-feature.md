@@ -122,7 +122,7 @@ php-fpm开两个pool www和match
 
 twemproxy  
 
-1. 分片aof损坏 -> rdb还原 --- mongodb还原redis排行榜保障数据一致性  
+1. 分片的aof损坏 -> rdb还原 --- mongodb还原redis排行榜保障数据一致性  
 2. 集群变单例，master做aof，rewrite失败 -> 改slave做aof --- 备份都在slave做  
 
 ### redis问题

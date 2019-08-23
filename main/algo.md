@@ -15,7 +15,8 @@
 bitmap  
 布隆  
 [一致性哈希 DHT](algo-DHT.md)  
-[共识算法 raft](raft.md)
+[共识算法 raft](algo-raft.md)
+[海盗分金币](algo-pirate-gold.md)
 
 ## ref
 

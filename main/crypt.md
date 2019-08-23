@@ -18,9 +18,9 @@
 
 ### 通用概念
 
-#### [填充](cryptPadding.md)
+#### [填充](crypt-padding.md)
 
-#### [分组模式](cryptMode.md)
+#### [分组模式](crypt-mode.md)
 
 ## 非对称
 

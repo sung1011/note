@@ -61,7 +61,7 @@ class ConcreteBuilder extends Builder
 }
  
 class Director
-{ //导演者
+{ // 导演者 也推荐链式操作
     public function __construct(Builder $builder)
     {
         $builder->buildPart1();

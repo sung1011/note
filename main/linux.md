@@ -176,6 +176,8 @@ fuser
 
 ### [cpu](linux-cpu.md)
 
+### [memeroy](linux-mem.md)
+
 ### coredump
   
 ### 内存分配和多线程原理  

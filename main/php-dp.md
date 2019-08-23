@@ -102,33 +102,39 @@
 
 ### 创建型模式
 
-- [简单工厂simple_factory](src/php_design_patterns/simple_factory/simple_factory.php)
-- [工厂方法模式factory_method](src/php_design_patterns/factory_method/factory_method.php)
-- [抽象工厂模式abstract_factory](src/php_design_patterns/abstract_factory/abstract_factory.php)
-- [单例模式singleton](src/php_design_patterns/singleton/mysql_singleton.php)
-- [建造者模式builder](src/php_design_patterns/builder/builder.php)
-- [原型模式prototype](src/php_design_patterns/prototype/prototype.php)  
+- [简单工厂simple_factory](src/php_design_patterns/simple_factory/simple_factory.php) 一个工厂类根据传入参数决定创建哪一种产品实例
+- [工厂方法模式factory_method](src/php_design_patterns/factory_method/factory_method.php) 定义一个用于创建对象的接口，让子类决定实例化那个类
+- [抽象工厂模式abstract_factory](src/php_design_patterns/abstract_factory/abstract_factory.php) 创建相关依赖对象家族，而无须指定具体类
+- [单例模式singleton](src/php_design_patterns/singleton/mysql_singleton.php) 确保一个类只有一个实例，提供一个全局访问点
+- [建造者模式builder](src/php_design_patterns/builder/builder.php) 封装一个复杂对象过程，按照步骤构建对象
+- [原型模式prototype](src/php_design_patterns/prototype/prototype.php) 通过复制现有实例创建新实例
 
 ### 结构型模式
 
-- [适配器模式adapter](src/php_design_patterns/adapter/adapter.php)
-- [桥接模式bridge](src/php_design_patterns/bridge/bridge.php)
-- [合成模式composite1](src/php_design_patterns/composite/composite.php)
-- [装饰器模式decorator](src/php_design_patterns/decorator/decorator.php)
-- [门面模式facade](src/php_design_patterns/facade/facade.php)
-- [代理模式proxy](src/php_design_patterns/proxy/proxy.php)
-- [享元模式flyweight](src/php_design_patterns/flyweight/flyweight.php)
+- [适配器模式adapter](src/php_design_patterns/adapter/adapter.php) 将一个类的方法或者接口转换成客户希望另一个接口
+- [桥接模式bridge](src/php_design_patterns/bridge/bridge.php) 将抽象部分与实现部分分离，使他们都可以独立进行变化
+- [合成模式composite1](src/php_design_patterns/composite/composite.php) 将对象组成成树形结构以表示“整体-部分”的层次结构
+- [装饰器模式decorator](src/php_design_patterns/decorator/decorator.php) 动态的给对象添加新的功能
+- [门面模式facade](src/php_design_patterns/facade/facade.php) 对外提供一个统一方法，用来访问子系统中一群接口
+- [代理模式proxy](src/php_design_patterns/proxy/proxy.php) 为其他对象提供一种代理以控制对这个对象的访问
+- [享元模式flyweight](src/php_design_patterns/flyweight/flyweight.php) 通过共享技术来有效支持大量细粒度的对象
 
 ### 行为型模式
 
-- [策略模式strategy](src/php_design_patterns/strategy/strategy.php)
-- [模板方法模式template_method](src/php_design_patterns/template_method/template_method.php)
-- [观察者模式observer](src/php_design_patterns/observer/observer.php)
-- [迭代器模式decorator](src/php_design_patterns/decorator/decorator.php)
-- [责任链模式responsibility_chain](src/php_design_patterns/responsibility_chain/responsibility_chain.php)
-- [命令模式command](src/php_design_patterns/command/command.php)
-- [备忘录模式memento](src/php_design_patterns/memento/memento.php)
-- [状态模式state](src/php_design_patterns/state/state.php)
-- [访问者模式visitor](src/php_design_patterns/visitor/visitor.php)
-- [中介者模式mediator](src/php_design_patterns/mediator/mediator.php)
-- [解释器模式interpreter](src/php_design_patterns/interpreter/interpreter.php)
+- [策略模式strategy](src/php_design_patterns/strategy/strategy.php) 定义一系列算法，把它们封装起来，并且使它们可以互相替换
+- [模板方法模式template_method](src/php_design_patterns/template_method/template_method.php) 定义一个算法结构，而将一些步骤延迟到子类实现
+- [观察者模式observer](src/php_design_patterns/observer/observer.php) 对象间一对多依赖关系，一个对象改变，依赖于它对象得到通知并更新
+- [迭代器模式decorator](src/php_design_patterns/decorator/decorator.php) 一种遍历访问容器对象中各个元素的方法，不暴露该对象内部结构
+- [责任链模式responsibility_chain](src/php_design_patterns/responsibility_chain/responsibility_chain.php) 将请求的发送者和接受者解耦，使得多个对象都有处理这个请求的机会
+- [命令模式command](src/php_design_patterns/command/command.php) 将命令请求封装成一个对象，可以将不同请求来进行参数化
+- [备忘录模式memento](src/php_design_patterns/memento/memento.php) 在不破坏封装前提下，保存对象内部状态
+- [状态模式state](src/php_design_patterns/state/state.php) 允许一个对象在其内部状态改变时改变它的行为
+- [访问者模式visitor](src/php_design_patterns/visitor/visitor.php) 在不改变数据结构的前提下，增加作用于一组元素对象新功能
+- [中介者模式mediator](src/php_design_patterns/mediator/mediator.php) 用一个中介对象来封装一系列对象交互
+- [解释器模式interpreter](src/php_design_patterns/interpreter/interpreter.php) 定义一个语言，定义它的文法的一种表示，并定义一个解释器
+
+## ref
+
+[如何通俗理解设计模式及其思想](https://blog.csdn.net/mq2553299/article/details/80962335)
+[Java设计模式：23种设计模式全面解析（超级详细）](http://c.biancheng.net/design_pattern/)
+[23种设计模式简单定义](https://www.jianshu.com/p/a7e5226d3f46)
