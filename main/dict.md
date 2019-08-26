@@ -19,6 +19,7 @@
 | VIP                        | 虚拟IP地址                 |
 | [LF CRLF](ref/lf-crlf.md)  | 回车换行                   |
 | OOP                        | 面向对象                   | object-oriented programming            |
+| multiplexing               | 多路复用                   |
 | angled brackets            | 尖括号                     | < >                                    |
 | annotations                | 注释                       |
 | binary-safe                | 二进制安全                 | 原始数据流不包含任何特殊的格式         |
@@ -49,3 +50,4 @@
 | verbose                    | 啰嗦的                     |
 | RSS                        | 常驻内存集合大小           | Resident Set Size                      |
 | VSZ                        | 虚拟内存大小               | Virtual Memory Size                    |
+| cow                        | 写时复制                   | copy on write                          |

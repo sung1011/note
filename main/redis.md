@@ -14,13 +14,13 @@
 
 ## [过期](redis-expire.md)
 
-## [LRU缓存](redis-lru-cache.md)
+## [LRU缓存淘汰策略](redis-cache-eliminate.md)
 
 ## 事务
 
 ## [分区/集群](redis-partitioning.md)
 
-## 分布式锁 distribution lock
+## [分布式锁 distribution lock](redis-distlock.md)
 
 ## key事件通知 Redis keyspace notifications
 
@@ -28,9 +28,11 @@
 
 ## 配置
 
-## [复制](redis-replication.md)
-
 ## [持久化](redis-persistence.md)
+
+## [RDB复制](redis-replication.md)
+
+## [线程](redis-thread.md)
 
 ## 管理
 
@@ -57,15 +59,7 @@
 排行榜  
 秒杀  
 分布式锁  
-  
-## 为何单进程单线程,如何提高cpu利用率
 
-非计算密集型io， 单进程简单易用  
-规避多线程或多进程的上下文切换消耗cpu  
-规避锁与死锁导致的性能损耗  
-多路复用io模型  
-开多个实例  
-  
 ## 定时器 `redis.c/serverCron`
 
 更新服务器的各类统计信息，比如时间、内存占用、数据库占用情况等。  
@@ -100,19 +94,11 @@ Master最好不要做任何持久化工作，如RDB内存快照和AOF日志文�
 
 ### scan所有  
 
+TODO
+
 ### 删除匹配到的key  
 
 `redis-cli keys *something* | xargs redis-cli del`  
-
-### hotkey
-
-1. a
-ad
-`adf`
-`adf`
-2. b
-adkfj
-3. c
 
 ### 从文件中执行命令(大量)
 

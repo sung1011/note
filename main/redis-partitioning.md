@@ -56,17 +56,18 @@ redis.do(command)
 
 ### 方案对比
 
-| - | cn | codis | twemproxy | cluster |
-| --- | --- | :---: | :---: | :---: |
-| resharding without restarting cluster |平滑分片 | o | x | o |
-| pipeline | 管道 | o | o| x |
-| hash tags for multi-key operations | 事务操作多key，key不同槽位，即不同节点，通过key的一部分进行hash，该部分称为hash tag | o | o | o |
-| multi-key operations while resharding | 分片时多key操作 | o | x | x |
-| Redis clients supporting | 客户端支持 | o | o | o |
+| -                                     | cn                  | codis | twemproxy | cluster |
+| ------------------------------------- | ------------------- | :---: | :-------: | :-----: |
+| resharding without restarting cluster | 平滑分片            |   o   |     x     |    o    |
+| pipeline                              | 管道                |   o   |     o     |    x    |
+| hash tags for multi-key operations    | 以hash tag操作多key |   o   |     o     |    o    |
+| multi-key operations while resharding | 分片时多key操作     |   o   |     x     |    x    |
+| Redis clients supporting              | 客户端支持          |   o   |     o     |    o    |
 
 ### hash tag
 
-a{bar}1, sun{bar}, {bar}xie, 识别{}作为reshard的key，将以上key分片到同一个实例。
+key不同槽位，即不同节点，通过key的一部分进行hash，该部分称为hash tag  
+`a{bar}1, sun{bar}, {bar}xie`, 识别{}作为reshard的key，将以上key分片到同一个实例。
 
 ### 预分片
 

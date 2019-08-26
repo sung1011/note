@@ -11,11 +11,11 @@
 
 ## 平均负载 & CPU使用率
 
-| status | 平均负载 | CPU使用率 | 指标 |
-| --- | --- | --- | --- |
-|CPU密集 | uuu | uuu | `load average high` && `%usr 100%` && `%iowait 0%`
-|大量CPU等待调度| uuu | uu | `load average high` && `%usr 100%` && `%iowait 80%` && `running high`
-|I/O密集 | uuu | u | `load average high` && `%usr 40%` && `%iowait 80%`
+| status          | 平均负载 | CPU使用率 | 指标                                                                  |
+| --------------- | -------- | --------- | --------------------------------------------------------------------- |
+| CPU密集         | uuu      | uuu       | `load average high` && `%usr 100%` && `%iowait 0%`                    |
+| 大量CPU等待调度 | uuu      | uu        | `load average high` && `%usr 100%` && `%iowait 80%` && `running high` |
+| I/O密集         | uuu      | u         | `load average high` && `%usr 40%` && `%iowait 80%`                    |
 
 ## 实战
 

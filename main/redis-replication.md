@@ -1,4 +1,4 @@
-# redis复制
+# redis RDB复制
 
 ## Sync (主从)
 
@@ -29,9 +29,18 @@
 - 服务器的随机标识符 runid  
 - 复制偏移量replication offset  
 
+问题: psync1需要满足runid && offset双重条件， 因而在
+
+1. slave因故重启，master runid和offset都丢失时， psync1失效。
+2. 故障切换后，新的slave需进行全量重同步。
+
+即**复制信息没有持久化**。psync2以上问题做了优化。  
+
 ## psync2 (>=4.0) (主从)  
 
-意义: psync1需要满足runid && offset双重条件， 因而在 1.slave因故重启，master runid和offset都丢失时， psync1失效。 2. 故障切换后，新的slave需进行全量重同步。psync2以上问题做了优化。  
+意义:
+
+在psync基础上，将复制信息记录在了RDB中以持久化。
 
 流程:  
 

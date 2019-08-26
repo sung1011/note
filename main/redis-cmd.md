@@ -14,51 +14,59 @@
 
 ## lists
 
+BLPOP
+BRPOP
+LSET key index value
+RPOPLPUSH source destination
+BRPOPLPUSH
+RPUSHX
+LINSERT key BEFORE|AFTER pivot value
+
 ## pub/sub
 
 ## scripting
 
 ## server
 
-bgrewriteaof
-bgsave  
-client kill  
-client list  
-client getname  
-client pause  
-client reply  
-client setname  
-client unblock  
-command  
-command count
-command getkeys  
-command info  
-config get  
-config resetstat  
-config rewrite  
-config set  
-dbsize  
-debug object  
-debug segfault  
-flushall  
-flushdb  
-info  
-lastsave  
-memory doctor  
-memory help  
-memory malloc-stats  
-memory purge  
-memory stats  
-memory usage  
-monitor  
-replicaof  
-role  
-save  
-shutdown  
-slaveof  
-slowlog  
-sync  
-time  
+BGREWRITEAOF
+BGSAVE  
+CLIENT KILL  
+CLIENT LIST  
+CLIENT GETNAME  
+CLIENT PAUSE  
+CLIENT REPLY  
+CLIENT SETNAME  
+CLIENT UNBLOCK  
+COMMAND  
+COMMAND COUNT
+COMMAND GETKEYS  
+COMMAND INFO  
+CONFIG GET  
+CONFIG RESETSTAT  
+CONFIG REWRITE  
+CONFIG SET  
+DBSIZE  
+DEBUG OBJECT  
+DEBUG SEGFAULT  
+FLUSHALL  
+FLUSHDB  
+INFO  
+LASTSAVE  
+MEMORY DOCTOR  
+MEMORY HELP  
+MEMORY MALLOC-STATS  
+MEMORY PURGE  
+MEMORY STATS  
+MEMORY USAGE  
+MONITOR  
+REPLICAOF  
+ROLE  
+SAVE  
+SHUTDOWN  
+SLAVEOF  
+SLOWLOG  
+SYNC  
+TIME  
 
 ## sets
 
@@ -70,8 +78,8 @@ time
 
 ## transactions
 
-multi  
-exec  
-watch  
-unwatch  
-discard  
+MULTI  
+EXEC  
+WATCH  
+UNWATCH  
+DISCARD  
