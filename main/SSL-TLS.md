@@ -1,7 +1,9 @@
-# SSL / TLS 
+# SSL / TLS
 
 ## SSL (Secure Sockets Layer) / TLS (Transport Layer Security)
+
 ### 概念
+
 [RSA](RSA.md) 秘钥交换, 身份验证(非对称加密)  
 [AES-128-GCM](AES.md) 密码 对称算法-强度128-分组模式(对称加密)  
 [SHA256](SHA.md) MAC或PRF签名HASH算法(散列)  
@@ -13,23 +15,33 @@
 ## [Certificate(CA 证书)](CA.md)
 
 ## 组成
+
 记录层  
 握手层  
+
 - 握手协议 (handshake protocol)
 - 更改加密规范协议 (change cipher spec protocol)
 - 应用数据协议 (application data protocol)
 - 和警告协议 (alert protocol)  
+
 ![TLSmodel](res/TLS-model)
 
 ## 记录层
+
 ### 分片 (Fragmentation)
+
 ### 记录压缩和解压缩 (Record compression and decompression)
+
 ### 空或标准流加密 (Null or standard stream cipher)
+
 ### CBC 块加密 ([分组加密](cryptMode.md))
+
 ### 记录有效载荷保护 (Record payload protection)
+
 ### 密钥计算 (Key calculation)
 
 ## 握手层
+
 1. ClientHello – 客户端发送所支持的 SSL/TLS 最高协议版本号和所支持的加密算法集合及压缩方法集合等信息给服务器端。
 2. ServerHello – 服务器端收到客户端信息后，选定双方都能够支持的 SSL/TLS 协议版本和加密方法及压缩方法，返回给客户端。
 3. （可选）SendCertificate – 服务器端**发送服务端证书给客户端(其中包含rsa.pub)。**
@@ -48,7 +60,9 @@
 ![TLS](res/TLS.png)
 
 ## 实战
+
 openssl是TLS、SSL协议的开源实现
 
 ## ref
+
 [TLS详解](https://www.codercto.com/a/24035.html)

@@ -100,7 +100,7 @@ TODO
 
 `redis-cli keys *something* | xargs redis-cli del`  
 
-### 从文件中执行命令(大量)
+### 从文件中执行命令(大量) --pipe
 
 1. 创建文件  
 `set myk12 v1`  

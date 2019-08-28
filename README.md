@@ -53,6 +53,7 @@ java
 [nginx](main/nginx.md)  
 [message queue 消息队列](main/mq.md)  
 [load balance 负载均衡](main/load-balance.md)  
+[spike 秒杀](main/spike.md)
 restfulAPI
 
 ### concept
@@ -81,16 +82,12 @@ ci/cd
 [algorithm 算法](main/algo.md)  
 [complexity 复杂度](main/complexity.md)  
 
-### action
-
-[spike 秒杀](main/spike.md)
-  
 ### other  
 
 [tool](main/tool.md)  
 [dict](main/dict.md)  
 [github](main/github.md)  
-gitlab  
 [licenses](main/licenses.md)  
-markdown  
 [exp 经验](main/exp.md)  
+gitlab  
+markdown  

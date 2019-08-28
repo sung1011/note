@@ -7,7 +7,7 @@ kubectl [command] [TYPE] [NAME] [flags]
 ## Operations
 
 | Operation      | Syntax                                                                                                                                    | Description                                                                                            |
-| ---            | ---                                                                                                                                       | ---                                                                                                    |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | annotate       | kubectl annotate (-f FILENAME \                                                                                                           | TYPE NAME \                                                                                            | TYPE/NAME) KEY_1=VAL_1 ... KEY_N=VAL_N [--overwrite] [--all] [--resource-version=version] [flags]  | Add or update the annotations of one or more resources.                                                        |
 | api-versions   | kubectl api-versions [flags]                                                                                                              | List the API versions that are available.                                                              |
 | apply          | kubectl apply -f FILENAME [flags]                                                                                                         | Apply a configuration change to a resource from a file or stdin.                                       |
@@ -39,7 +39,7 @@ kubectl [command] [TYPE] [NAME] [flags]
 ## Resource types
 
 | Resource Name                   | Short Names | API Group                    | Namespaced | Resource Kind                  |
-| ---                             | ---         | ---                          | ---        | ---                            |
+| ------------------------------- | ----------- | ---------------------------- | ---------- | ------------------------------ |
 | componentstatuses               | cs          |                              | false      | ComponentStatus                |
 | configmaps                      | cm          |                              | true       | ConfigMap                      |
 | endpoints                       | ep          |                              | true       | Endpoints                      |

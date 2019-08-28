@@ -1,5 +1,11 @@
 # linux  
   
+## [cpu](linux-cpu.md)
+
+## [memeroy](linux-mem.md)
+
+## disk
+
 ## 架构  
 
 ### 用户模式
@@ -15,14 +21,6 @@ C库（open、fopen、socket、exec、calloc等）
 内核（驱动程序、进程、网络、内存管理等）  
 硬件（处理器、内存、各种设备）  
   
-## 内存
-
-### 存储节点 node
-
-### 管理区 zone
-
-### 页面 page
-
 ## 进程  
 
 ### 概念  
@@ -93,7 +91,7 @@ Lottery Scheduling
 Message passing  
 Memory-mapped file  
 文件  
-套接字 socket  
+[套接字 socket](linux-socket.md)
   
 ## 线程 thread  
 
@@ -173,10 +171,6 @@ fuser
 - telnet, lsof, scp, ssh, vim  
   
 ## 实战  
-
-### [cpu](linux-cpu.md)
-
-### [memeroy](linux-mem.md)
 
 ### coredump
   

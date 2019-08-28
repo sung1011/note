@@ -72,7 +72,7 @@ spec:         #必选，Pod中容器的详细定义
         path: string     #Pod所在宿主机的目录，将被用于同期中mount的目录
       secret:      #类型为secret的存储卷，挂载集群与定义的secre对象到容器内部
         scretname: string  
-        items:     
+        items:
         - key: string
           path: string
       configMap:     #类型为configMap的存储卷，挂载预定义的configMap对象到容器内部
