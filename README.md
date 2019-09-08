@@ -61,7 +61,7 @@ restfulAPI
 
 [distributed 分布式](main/distributed.md)  
 [cryptography 加密](main/crypt.md)  
-[splite brain 脑裂](main/splite-brain.md)
+[splite brain 脑裂](main/splite-brain.md)  
 协程
   
 ### deploy  
