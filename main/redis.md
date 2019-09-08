@@ -1,4 +1,14 @@
-# redis
+# redis Remote Dictionary Server
+
+## string
+
+## list
+
+## hash
+
+## set
+
+## zset
 
 ## 版本
 
@@ -24,7 +34,7 @@
 
 ## key事件通知 Redis keyspace notifications
 
-## 创建二级索引 Creating secondary indexes with Redis
+## [创建二级索引 Creating secondary indexes with Redis](redis-secondary-index.md)
 
 ## 配置
 

@@ -34,6 +34,7 @@ code note
 
 [redis](main/redis.md)  
 [mongodb](main/mongodb.md)  
+<!-- [mysql](main/mysql.md)   -->
 [yac](main/yac.md)  
 etcd  
   
@@ -43,7 +44,7 @@ etcd
 [php](main/php.md)  
 [nodejs](main/nodejs.md)  
 python  
-bash  
+shell  
 lua  
 java  
   
@@ -53,7 +54,7 @@ java
 [nginx](main/nginx.md)  
 [message queue 消息队列](main/mq.md)  
 [load balance 负载均衡](main/load-balance.md)  
-[spike 秒杀](main/spike.md)
+[spike 秒杀](main/spike.md)  
 restfulAPI
 
 ### concept
@@ -61,6 +62,7 @@ restfulAPI
 [distributed 分布式](main/distributed.md)  
 [cryptography 加密](main/crypt.md)  
 [splite brain 脑裂](main/splite-brain.md)
+协程
   
 ### deploy  
 
@@ -76,11 +78,11 @@ ci/cd
 
 ### basic  
 
-[ascii](main/ascii.md)  
-[scale 单位换算](main/scale.md)  
+[complexity 复杂度](main/complexity.md)  
 [data structure 数据结构](main/data-struct.md)  
 [algorithm 算法](main/algo.md)  
-[complexity 复杂度](main/complexity.md)  
+[ascii](main/ascii.md)  
+[scale 单位换算](main/scale.md)  
 
 ### other  
 

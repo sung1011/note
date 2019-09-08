@@ -133,12 +133,13 @@ __set_state()
 ### 初级  
 
 array_map, array_column, array_filter  
+
 合并数组  
 
-- array_merge(),  
-- array_merge_recursive(),  
-- array_combine(),  
-- $arr1 + $arr2  
+- array_merge(),  // [1,2] [a,b] -> [1,2,a,b]
+- array_merge_recursive(),  //
+- array_combine(),  // [1,2] [a,b] -> [1=>a,2=>b]
+- $arr1 + $arr2  // [1,2], [a,b,c] -> [1,2,c]
 
 数组去重
 

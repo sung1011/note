@@ -24,7 +24,6 @@ type mapextra struct { // mapextra holds fields that are not present on all maps
     nextOverflow *bmap
 }
 
-
 type bmap struct { // A bucket for a Go map.
     tophash [bucketCnt]uint8
 }

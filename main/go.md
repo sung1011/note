@@ -23,7 +23,7 @@
 
 - [slice](go-slice.md)  
 - [map](go-map.md)  
-- chan  
+- [chan](go-chan.md)  
 
 ## [标准库](go-package.md)
 

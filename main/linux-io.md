@@ -117,3 +117,4 @@ io完成后，信号通知或者回调线程
 [IO多路复用的三种机制Select，Poll，Epoll](https://www.jianshu.com/p/397449cadc9a)
 [聊聊IO多路复用之select、poll、epoll详解](https://my.oschina.net/xianggao/blog/663655)
 [IO多路复用—由Redis的IO多路复用](https://blog.csdn.net/happy_wu/article/details/80052617)
+[select、poll、epoll之间的区别(搜狗面试)](https://www.cnblogs.com/aspirant/p/9166944.html)
