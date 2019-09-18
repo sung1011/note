@@ -121,6 +121,22 @@ TODO
 3. 导入
 `cat < file > | redis-cli --pipe`
 
+### 热点key
+
+#### 问题
+
+1. 流量
+2. 请求
+3. 易击穿、雪崩
+
+#### 方案
+
+### 雪崩
+
+### 击穿
+
+### 穿透
+
 ## ref
 
 [doc](http://www.redis.cn/documentation.html)  

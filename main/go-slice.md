@@ -23,7 +23,7 @@ fmt.Println(sl, len(sl), cap(sl)) //[2 3] len = 2 cap = 4
 
 ## nil切片 与 空切片
 
-nil 切片: `var nil_sl []int`  ptr为nil, len 0, cap 0
+nil 切片: `var nil_sl []int`  ptr为nil, len 0, cap 0  
 空 切片: `empty_sl := make([]int, 0)` ptr指向底层的空array, len 0, cap 0
 
 ## copy

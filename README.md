@@ -34,7 +34,7 @@ code note
 
 [redis](main/redis.md)  
 [mongodb](main/mongodb.md)  
-<!-- [mysql](main/mysql.md)   -->
+[mysql](main/mysql.md)  
 [yac](main/yac.md)  
 etcd  
   

@@ -39,7 +39,7 @@ m := make(map[string]int, cap)
 
 ## nil map 与 空 map
 
-nil map: `var nil_map map[string]int`
+nil map: `var nil_map map[string]int`  
 空 map: `empty_map := map[string]int{}`, `empty_map := make(map[string]int)`
 
 ## 返回值 key是否存在
