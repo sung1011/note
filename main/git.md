@@ -151,6 +151,11 @@ fd1/*           忽略目录 fd1 下的全部内容；注意，不管是根目�
 
 ## 实战
 
+### 迁移
+
+1. `git clone --bare git://github.com/username/project.git` 克隆裸库(仅代码)
+2. `git push --mirror git@gitcafe.com/username/newproject.git` 推送到新地址
+
 ### 版本撤销
 
 revert
