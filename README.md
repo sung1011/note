@@ -69,7 +69,7 @@ restfulAPI
 [linux](main/linux.md)  
 [docker](main/docker.md)  
 [kubernetes](main/k8s.md)  
-ci/cd  
+CI/CD  
   
 ### safe  
 
