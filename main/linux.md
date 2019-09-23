@@ -139,10 +139,10 @@ Memory-mapped file
 
 ## cmd  
 
+nc
+
 [awk](src/cmd/awk.md)  
 
-- 某列求和 `awk -F "\t" '{sum+=$1}END{print sum}'`  
-  
 [grep](ref/grep.md)  
   
 du  
@@ -164,11 +164,6 @@ fuser
 ### HugePage 透明大页  
 
 - [hugepage](ref/hugepage.md)  
-
-### 其他  
-
-- grep, awk, top, ps, tar, ln  
-- telnet, lsof, scp, ssh, vim  
   
 ## 实战  
 

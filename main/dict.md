@@ -63,3 +63,8 @@
 | serializable               | 串行化                         |
 | ACID                       | 原子性、一致性、隔离性、持久性 | Atomicity,Consistency,Isolation,Durability |
 | WAL                        | 先写log再写磁盘                | Write-Ahead Logging                        |
+| ICO                        | 首次代币发行                   | Initial Coin Offering                      |
+| hard-code                  | 硬编码                         |
+| seed-node                  | 种子节点                       |
+| peer list                  | 对等节点列表                   |
+| UPnP                       | 通用即插即用                   | Universal Plug and Play                    |
