@@ -1,14 +1,8 @@
 # redis Remote Dictionary Server
 
-## string
+## [数据结构](redis-data-struct.md)
 
-## list
-
-## hash
-
-## set
-
-## zset
+## [对象](redis-obj.md)
 
 ## 版本
 
@@ -141,3 +135,4 @@ TODO
 
 [doc](http://www.redis.cn/documentation.html)  
 [redisbook](http://redisbook.com)
+[Redis进阶不得不了解的内存优化细节](https://blog.csdn.net/belalds/article/details/81106853)
