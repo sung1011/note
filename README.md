@@ -43,6 +43,7 @@ etcd
 [go](main/go.md)  
 [php](main/php.md)  
 [nodejs](main/nodejs.md)  
+c  
 python  
 shell  
 lua  
