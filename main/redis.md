@@ -1,6 +1,6 @@
 # redis Remote Dictionary Server
 
-## [数据结构](redis-data-struct.md)
+## [编码](redis-encoding.md)
 
 ## [对象](redis-obj.md)
 
