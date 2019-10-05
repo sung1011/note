@@ -23,7 +23,7 @@ typedef struct zskiplist {
 // 跳跃表节点
 typedef struct zskiplistNode {
     sds ele;                            // 节点成员值(member)
-    double score;                       // 节点分值 默认节点间从小到大排列; 注意double类型
+    double score;                       // 节点分值 默认节点间从小到大排列; 注意double类型 即十进制15位精度。
     struct zskiplistNode *backward;     // 当前节点的前一个节点
     struct zskiplistLevel {             // 多层 其中每个元素是1层
         struct zskiplistNode *forward;      // 前进指针
@@ -71,3 +71,7 @@ typedef struct zskiplistNode {
 | zslLastInRange        | 给定分值范围，返回跳跃表中最后一个符合这个范围的节点。 | 平均 O(\log N) ，最坏 O(N) 。 N 为跳跃表长度。                    |
 | zslDeleteRangeByScore | 给定分值范围，删除跳跃表中所有在这个范围之内的节点。   | O(N) ， N 为被删除节点数量。                                      |
 | zslDeleteRangeByRank  | 给定排位范围，删除跳跃表中所有在这个范围之内的节点。   | O(N) ， N 为被删除节点数量。                                      |
+
+## issues
+
+如何保证member互斥的？

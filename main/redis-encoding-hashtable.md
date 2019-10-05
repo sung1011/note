@@ -118,3 +118,7 @@ d->ht[0].used >= d->ht[0].size && (dict_can_resize || d->ht[0].used/d->ht[0].siz
 | dictGetRandomKey | 随机返回一个键值对                 | O(1)   |
 | dictDelete       | 字典中删除给定键所对应键值对       | O(1)   |
 | dectRelease      | 释放给定字典，及字典中所有键值对   | O(N)   |
+
+## issues
+
+如何保证field互斥的？

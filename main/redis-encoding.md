@@ -8,11 +8,11 @@
 
 ## [字典 hashtable](redis-encoding-hashtable.md)
 
-## [跳跃表](redis-encoding-skiplist.md)
+## [跳跃表 skiplist](redis-encoding-skiplist.md)
 
-## [整数集合](redis-encoding-intset.md)
+## [整数集合 intset](redis-encoding-intset.md)
 
-## [压缩列表](redis-encoding-ziplist.md)
+## [压缩列表 ziplist](redis-encoding-ziplist.md)
 
 ## stream
 
