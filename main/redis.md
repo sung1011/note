@@ -98,7 +98,10 @@ Master最好不要做任何持久化工作，如RDB内存快照和AOF日志文�
 
 ### scan所有  
 
-TODO
+### 大key
+
+1. redis-cli --bigkeys  
+2. RDB
 
 ### 删除匹配到的key  
 

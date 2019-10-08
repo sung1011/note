@@ -5,6 +5,7 @@ OBJ_ENCODING_HT
 ## 作用于
 
 OBJ_HASH
+OBJ_SET
 
 ## source code
 
@@ -121,4 +122,5 @@ d->ht[0].used >= d->ht[0].size && (dict_can_resize || d->ht[0].used/d->ht[0].siz
 
 ## issues
 
-如何保证field互斥的？
+如何保证field互斥的？  
+random为啥O(1)？

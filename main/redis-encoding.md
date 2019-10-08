@@ -4,7 +4,9 @@
 
 ## [简单动态字符串 SDS (embstr && raw)](redis-encoding-sds.md)
 
-## [链表 list](redis-encoding-list.md)
+## [链表 linkedlist(废弃？)](redis-encoding-linkedlist.md)
+
+## [快速列表 quicklist](redis-encoding-quicklist.md)
 
 ## [字典 hashtable](redis-encoding-hashtable.md)
 

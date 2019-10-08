@@ -16,6 +16,8 @@
 2. 删除所有已经过期的keys。  
 3. 如果有多于25%的keys过期，重复步奏1.  
 
+> src/expire.c activeExpireCycle()
+
 ## 复制AOF过期
 
 slaves不会独立处理过期（会等到master执行DEL命令）。
