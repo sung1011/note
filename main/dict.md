@@ -71,3 +71,4 @@
 | literal                    | 字面量                         |
 | poll                       | 轮询                           |
 | populate                   | 填充                           |
+| IDL                        | 接口描述语言                   | interface description language             |
