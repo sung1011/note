@@ -136,3 +136,4 @@ TODO
 [doc](http://www.redis.cn/documentation.html)  
 [redisbook](http://redisbook.com)
 [Redis进阶不得不了解的内存优化细节](https://blog.csdn.net/belalds/article/details/81106853)
+[redis主体流程](https://www.jianshu.com/p/427cf97d7951)
