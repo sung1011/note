@@ -1,4 +1,4 @@
-# redis 编码 list
+# redis 编码 linkedlist 双端链表
 
 OBJ_ENCODING_LINKEDLIST
 
@@ -13,13 +13,6 @@ src/adlist
 ## 数据结构
 
 ```c
-// 节点
-typedef struct listNode {
-    struct listNode * prev; // 前置节点
-    struct listNode * next; // 后置节点
-    void *value; // 节点数据
-} listNode;
-
 // 链表
 typedef struct list {
     listNode *head; // 头节点
@@ -29,6 +22,13 @@ typedef struct list {
     void (*free)(void *ptr); // 节点释放函数
     int (*match)(void *ptr, void *key); // 节点值对比函数
 } list;
+
+// 节点
+typedef struct listNode {
+    struct listNode * prev; // 前置节点
+    struct listNode * next; // 后置节点
+    void *value; // 节点数据
+} listNode;
 ```
 
 ## 特性

@@ -69,3 +69,6 @@
 | peer list                  | 对等节点列表                   |
 | UPnP                       | 通用即插即用                   | Universal Plug and Play                    |
 | literal                    | 字面量                         |
+| poll                       | 轮询                           |
+| populate                   | 填充                           |
+| IDL                        | 接口描述语言                   | interface description language             |
