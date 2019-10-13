@@ -12,6 +12,8 @@ src/adlist
 
 ## 数据结构
 
+![img](res/redis-encoding-adlist.png)
+
 ```c
 // 链表
 typedef struct list {

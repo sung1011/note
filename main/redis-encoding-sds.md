@@ -13,6 +13,8 @@ src/sds
 
 ## 数据结构
 
+![img](res/redis-encoding-sds.png)
+
 ```c
 struct sds {
     uint?_t len; # 字符串长度，不包含终止字符空（\0）

@@ -8,6 +8,8 @@ OBJ_SET
 
 ## 数据结构
 
+![img](res/redis-encoding-intset.png)
+
 ```c
 typedef struct intset {
     uint32_t encoding;      // 编码方式; 数组元素的类型

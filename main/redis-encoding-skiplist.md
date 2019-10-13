@@ -12,6 +12,8 @@ src/server.h
 
 ## 数据结构
 
+![img](res/redis-encoding-skiplist.png)
+
 ```c
 // 跳跃表
 typedef struct zskiplist {

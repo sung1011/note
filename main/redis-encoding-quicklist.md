@@ -12,6 +12,8 @@ src/quicklist
 
 ## 数据结构
 
+![img](res/redis-encoding-quicklist.png)
+
 ```c
 // 快速列表
 typedef struct quicklist {

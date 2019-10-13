@@ -8,6 +8,8 @@ OBJ_ENCODING_RAW
 
 ### 实例
 
+![img](res/redis-strobj.png)
+
 ```c
 // int
 redisObject {

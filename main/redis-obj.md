@@ -2,6 +2,8 @@
 
 ## 数据结构
 
+![img](res/redis-keyspace.png)
+
 ```c
 // redis db对象
 typedef struct redisDb {
@@ -24,6 +26,10 @@ typedef struct redisObject {
     void *ptr; // 指向底[层数据结构](redis-data-struct.md)的指针
 } robj;
 ```
+
+## obj与encoding关系
+
+`ssize_t rdbSaveObjectType(rio *rdb, robj *o, robj *key)` # src/rdb.c
 
 ## [string对象](redis-obj-string.md)
 
