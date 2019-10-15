@@ -19,17 +19,25 @@ typedef struct redisDb {
 
 // redis值对象
 typedef struct redisObject {
-    unsigned type:4; // 类型
-    unsigned encoding:4; // 编码
+    unsigned type:4; // 类型 REDIS_STRING、REDIS_LIST、REDIS_SET、REDIS_ZSET、REDIS_HASH
+    unsigned encoding:4; // 编码 OBJ_ENCODING_xx(RAW、INT、HT、ZIPLIST、INTSET、SKIPLIST、EMBSTR、QUICKLIST、STREAM)
     unsigned lru:LRU_BITS; // 24bit
     int refcount; // 引用计数
-    void *ptr; // 指向底[层数据结构](redis-data-struct.md)的指针
+    void *ptr; // 指向底[层数据结构](redis-encoding.md)的指针
 } robj;
 ```
 
 ## obj与encoding关系
 
 `ssize_t rdbSaveObjectType(rio *rdb, robj *o, robj *key)` # src/rdb.c
+
+| redisObj | 短结构      | 长结构                |
+| -------- | ----------- | --------------------- |
+| string   | int、embstr | raw                   |
+| list     | ziplist     | linkedlist、quicklist |
+| hash     | ziplist     | hashtable             |
+| set      | intset      | hashtable             |
+| zset     | ziplist     | skiplist              |
 
 ## [string对象](redis-obj-string.md)
 

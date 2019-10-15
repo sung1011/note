@@ -1,10 +1,16 @@
 # redis
 
 1. server.c
-    1. redisServer
-    2. redisCommand
-    3. ht implementation
-    4. main()
+    1. Globals
+       1. redisServer
+       2. redisCommand
+    2. ht implementation
+    3. Cron
+    4. Server initialization
+    5. Commands lookup and execution
+    6. Shutdown
+    7. Commands
+    8. main
         1. initServerConfig()
         2. loadServerConfig()
         3. supervised || daemonize()
