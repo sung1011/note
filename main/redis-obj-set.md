@@ -2,8 +2,8 @@
 
 ## encoding
 
-OBJ_ENCODING_INTSET  
-OBJ_ENCODING_HT
+- [OBJ_ENCODING_INTSET](redis-encoding-intset.md)
+- [OBJ_ENCODING_HT](redis-encoding-hashtable.md)
 
 ### 实例
 

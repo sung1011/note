@@ -2,8 +2,8 @@
 
 ## encoding
 
-OBJ_ENCODING_ZIPLIST
-OBJ_ENCODING_SKIPLIST
+- [OBJ_ENCODING_ZIPLIST](redis-encoding-ziplist.md)
+- [OBJ_ENCODING_SKIPLIST](redis-encoding-skiplist.md)
 
 ### 实例
 

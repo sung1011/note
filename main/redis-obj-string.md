@@ -2,9 +2,9 @@
 
 ## encoding
 
-OBJ_ENCODING_INT  
-OBJ_ENCODING_EMBSTR  
-OBJ_ENCODING_RAW  
+- [OBJ_ENCODING_INT](redis-encoding-sds.md)
+- [OBJ_ENCODING_EMBSTR](redis-encoding-sds.md)
+- [OBJ_ENCODING_RAW](redis-encoding-sds.md)
 
 ### 实例
 

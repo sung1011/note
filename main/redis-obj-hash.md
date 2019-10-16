@@ -2,8 +2,8 @@
 
 ## encoding
 
-OBJ_ENCODING_ZIPLIST  
-OBJ_ENCODING_HT  
+- OBJ_ENCODING_ZIPLIST  
+- OBJ_ENCODING_HT  
 
 ### 实例
 

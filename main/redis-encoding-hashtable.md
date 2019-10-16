@@ -4,7 +4,7 @@ OBJ_ENCODING_HT
 
 ## 作用于
 
-OBJ_HASH
+OBJ_HASH  
 OBJ_SET
 
 ## source code

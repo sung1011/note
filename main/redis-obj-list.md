@@ -4,8 +4,8 @@ OBJ_LIST
 
 ## encoding
 
-OBJ_ENCODING_QUICKLIST  
-<!-- OBJ_ENCODING_ZIPLIST   -->
+- [OBJ_ENCODING_ZIPLIST](redis-encoding-ziplist.md)
+- [OBJ_ENCODING_QUICKLIST](redis-encoding-quicklist.md)
 <!-- OBJ_ENCODING_LINKEDLIST   -->
 
 ### 实例
