@@ -4,4 +4,4 @@
 
 HTTPS = [HTTP](HTTP.md) over [TLS](SSL-TLS.md)
 
-![HTTPS](res/HTTPS)
+![HTTPS](res/HTTPS-level)

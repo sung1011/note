@@ -72,3 +72,4 @@
 | poll                       | 轮询                           |
 | populate                   | 填充                           |
 | IDL                        | 接口描述语言                   | interface description language             |
+| RPC                        | 远程方法调用                   | Remote Procedure Call                      |

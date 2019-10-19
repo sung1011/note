@@ -140,7 +140,7 @@ Master最好不要做任何持久化工作，如RDB内存快照和AOF日志文�
 
 ## ref
 
-[doc](http://www.redis.cn/documentation.html)  
-[redisbook](http://redisbook.com)
-[Redis进阶不得不了解的内存优化细节](https://blog.csdn.net/belalds/article/details/81106853)
-[redis主体流程](https://www.jianshu.com/p/427cf97d7951)
+- [doc](http://www.redis.cn/documentation.html)  
+- [redisbook](http://redisbook.com)
+- [Redis进阶不得不了解的内存优化细节](https://blog.csdn.net/belalds/article/details/81106853)
+- [redis主体流程](https://www.jianshu.com/p/427cf97d7951)
