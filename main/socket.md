@@ -47,6 +47,16 @@ C 读取返回的数据read()。
 C 主动请求并关闭连接close()。  
 S 读取到关闭连接的请求read(), 进行关闭连接close()。  
 
+## 异常处理
+
+- 链路存活检测
+
+C定时发送心跳检测（一般是ping），S连续n次心跳没回应，则链路失效，C重新与S建立连接connect()。
+
+- 断连重试
+
+S宕机，C断线重连时需要等待固定时间再发起重连，避免S回收连接不及时，而C瞬间大量重连把连接数占满。
+
 ## ref
 
 [百度百科 socket](https://baike.baidu.com/item/%E5%A5%97%E6%8E%A5%E5%AD%97/9637606?fromtitle=socket&fromid=281150&fr=aladdin)
