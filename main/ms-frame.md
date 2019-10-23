@@ -15,7 +15,7 @@
 
 ## 内部通信协议
 
-[HTTP](HTTP.md)
+[HTTP](HTTP.md)  
 Dubbo  
 
 ## 序列化压缩
