@@ -85,6 +85,7 @@ tag
 
 - -b
 - -- < filename > 丢弃工作区该文件的修改
+- < hash > < filename > 检出指定commitid 的 指定文件
 
 ### reset
 
