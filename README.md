@@ -65,16 +65,15 @@ restfulAPI
 [splite brain 脑裂](main/splite-brain.md)  
 [blockchain 区块链](main/blockchain.md)  
 [中台](main/middle-end.md)  
-协程  
 [微服务](main/ms.md)  
-拓扑结构  
-  
+协程  
+
 ### deploy  
 
 [linux](main/linux.md)  
 [docker](main/docker.md)  
 [kubernetes](main/k8s.md)  
-CI/CD  
+[CI/CD](main/cicd.md)  
   
 ### safe  
 
