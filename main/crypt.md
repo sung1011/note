@@ -1,48 +1,30 @@
 # cryptography
 
+## 通用概念
+
+- **[填充](crypt-padding.md)**
+- **[分组模式](crypt-mode.md)**
+
 ## 对称
 
-### 场景
+- **RC**
 
-较大数据加密
+- **[AES](aes.md)** Advanced Encryption Standard 高级加密标准
 
-### 方式
+- **DES** Data Encryption Standard 数据加密算法
 
-#### RC
-
-#### [AES](aes.md)
-
-#### DES : Data Encryption Standard 数据加密算法
-
-#### 3DES
-
-### 通用概念
-
-#### [填充](crypt-padding.md)
-
-#### [分组模式](crypt-mode.md)
+- **3DES**
 
 ## 非对称
 
-### 非对称场景
-
-较小数据加密
-
-### 非对称方式
-
-#### [RSA](RSA.md)
-
-#### DSA
-
-#### ECC
+- **[RSA](RSA.md)**
+- **DSA**
+- **ECC**
 
 ## 散列 摘要算法
 
-### 散列方式
-
-#### MD5
-
-#### [SHA](SHA.md)
+- **MD5**
+- **[SHA](SHA.md)**
 
 ## ref
 
