@@ -8,7 +8,9 @@
 
 ### Ip lood
 
-### [Syn Flood](synFlood.md)
+### [Syn_Ack Flood](ddos-syn-ackflood.md)
+
+### [Ack Flood](ddos-ackflood.md)
 
 ### Udp 反射 Flood
 

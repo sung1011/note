@@ -25,19 +25,19 @@ oplog 增量同步
 
 ### 组成  
 
-config  
+- **config**  
 
-- 用来保存数据，保证数据的高可用性和一致性。可以是一个单独的mongod实例，也可以是一个副本集。在生产环境下Shard一般是一个Replica Set，以防止该数据片的单点故障。可以将所有shard的副本集放在一个服务器多个mongodb实例中。  
+用来保存数据，保证数据的高可用性和一致性。可以是一个单独的mongod实例，也可以是一个副本集。在生产环境下Shard一般是一个Replica Set，以防止该数据片的单点故障。可以将所有shard的副本集放在一个服务器多个mongodb实例中。  
   
-router  
+- **router**  
 
-- 路由就是mongos的实例，客户端直接连接mongos，由mongos把读写请求路由到指定的Shard上去。  
-- 一个Sharding集群，可以有一个mongos，也可以为每个App Server配置一个mongos以减轻路由压力。  
-- 注意这里的mongos并不要配置为rs，因为只是个路由，并不存储数据，配置多个mongos的意思是配置多个单独的mongos实例。  
+路由就是mongos的实例，客户端直接连接mongos，由mongos把读写请求路由到指定的Shard上去。  
+一个Sharding集群，可以有一个mongos，也可以为每个App Server配置一个mongos以减轻路由压力。  
+注意这里的mongos并不要配置为rs，因为只是个路由，并不存储数据，配置多个mongos的意思是配置多个单独的mongos实例。  
 
-shards  
+- **shards**  
 
-- 用来保存数据，保证数据的高可用性和一致性。可以是一个单独的mongod实例，也可以是一个副本集。在生产环境下Shard一般是一个Replica Set，以防止该数据片的单点故障。可以将所有shard的副本集放在一个服务器多个mongodb实例中。  
+用来保存数据，保证数据的高可用性和一致性。可以是一个单独的mongod实例，也可以是一个副本集。在生产环境下Shard一般是一个Replica Set，以防止该数据片的单点故障。可以将所有shard的副本集放在一个服务器多个mongodb实例中。  
   
 ### 分片键 Shard keys  
 
@@ -63,20 +63,18 @@ ranged
   
 ## capped collection
 
-定义  
+Capped Collection是性能出色的有着固定大小的集合，以LRU（least Recently Used，最近最少使用）规则和插入顺序执行age-out（老化移出）处理，自动维护集合中对象的插入顺序。多用以日志归档。  
 
-- Capped Collection是性能出色的有着固定大小的集合，以LRU（least Recently Used，最近最少使用）规则和插入顺序执行age-out（老化移出）处理，自动维护集合中对象的插入顺序。多用以日志归档。  
+### 注意
   
-Notice  
-
 - 如果写比读多，最好不要在上面创建索引
 - 使用natual ordering可以有效地检索最近插入的元素，因为capped collection能够保证自然排序就是插入的顺序。  
 - capped collection不能被shard.  
 - 可以在创建capped collection时指定collection中能够存放的最大文档数。  
   
-实现  
+### 实例  
 
-- oplog
+oplog
   
 ## 实战  
 
@@ -94,8 +92,8 @@ while(c.hasNext()) {
 ### 查询最后插入的数据
 
 ```js  
-db.coll.find().limit(1).sort({$natural:-1})  
 db.coll.find().skip(db.coll.count()-1).forEach(printjson)  
+db.coll.find().limit(1).sort({$natural:-1})  
 ```  
   
 ### 查询文档的keys

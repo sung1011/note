@@ -81,44 +81,22 @@ parent: 父类
 
 ### 魔术方法  
 
-__get()  
-__set()  
-__isset()  
-__unset()  
-__call()  
-
-- 调用: 调用不存在的方法  
-
-__callStatic()  
-
-- 调用: 调用不存在的静态方法  
-
-__construct()  
-__destruct()  
-__toString()  
-
-- 调用: 输出对象  
-
-__invoke()  
-
-- 调用: 把对象当函数执行  
-
-__clone()  
-
-- 调用: clone时  
-- 说明: `$obj2 = clone $obj1`会进行浅拷贝（即$obj2是$obj1的拷贝, 但$obj2中的属性若是一个对象$objHang, 其保存的是指针地址, 即$objHang是浅拷贝）， 而深拷贝需要__clone()魔术方法。用以$obj1调用clone时， 内部的handler。  
-
-__sleep()  
-
-- 调用: 序列化 `serialize()`  
-
-__wakeup()  
-
-- 调用: 反序列化 `unserialize()`  
-
-__set_state()  
-
-- 调用: 导出时`var_export()`  
+- __get()  
+- __set()  
+- __isset()  
+- __unset()  
+- __call() 调用不存在的方法  
+- __callStatic() 调用不存在的静态方法  
+- __construct()  
+- __destruct()  
+- __toString() 输出对象  
+- __invoke() 把对象当函数执行  
+- __clone()  
+  - 调用: clone时  
+  - 说明: `$obj2 = clone $obj1`会进行浅拷贝（即$obj2是$obj1的拷贝, 但$obj2中的属性若是一个对象$objHang, 其保存的是指针地址, 即`$objHang`是浅拷贝）， 而深拷贝需要__clone()魔术方法。用以`$obj1`调用clone时， 内部的handler。  
+- __sleep() 序列化 `serialize()`  
+- __wakeup() 反序列化 `unserialize()`  
+- __set_state() 导出时`var_export()`  
 
 ### [异常处理](phpException.md)
   
@@ -132,39 +110,55 @@ __set_state()
   
 ### 初级  
 
-array_map, array_column, array_filter  
+- map
+  - array_map
+  - array_column
+  - array_filter  
 
-合并数组  
+- 合并数组  
+  - array_merge(),  // [1,2] [a,b] -> [1,2,a,b]
+  - array_merge_recursive(),  //
+  - array_combine(),  // [1,2] [a,b] -> [1=>a,2=>b]
+  - $arr1 + $arr2  // [1,2], [a,b,c] -> [1,2,c]
 
-- array_merge(),  // [1,2] [a,b] -> [1,2,a,b]
-- array_merge_recursive(),  //
-- array_combine(),  // [1,2] [a,b] -> [1=>a,2=>b]
-- $arr1 + $arr2  // [1,2], [a,b,c] -> [1,2,c]
+- 数组去重
+  - array_unique()
+  - array_flip()  
 
-数组去重
+- 访问控制符
+  - private
+  - protect
+  - public  
 
-- array_unique()
-- array_flip()  
+- 包含
+  - require
+  - include  
 
-private, protect, public  
-require, include  
-static, global  
-$this, self, parent  
-常用的str, array操作函数  
+- 静态
+  - static
+  - global  
+
+- 访问
+  - $this
+  - self
+  - parent  
   
 ### 中级  
 
-魔术方法  
+- 魔术方法  
+  - __construct(), __destruct(), __call(), __get(), __set(), __isset(), __unset(), __toString(), __clone(), __autoload(), __sleep(), __wakeup(), __set_state(), __invoke()  
 
-- __construct(), __destruct(), __call(), __get(), __set(), __isset(), __unset(), __toString(), __clone(), __autoload(), __sleep(), __wakeup(), __set_state(), __invoke()  
-
+- php7为何比php5性能高
+  - 变量存储字节减小，减少内存占用，提升变量操作速度
+  - 改善数组结构，数组元素和hash映射表被分配在同一块内存里，降低了内存占用、提升了 cpu 缓存命中率
+  - 改进了函数的调用机制，通过优化参数传递的环节，减少了一些指令，提高执行效率
+  
 abstruct, interface  
 cgi, fastcgi, php-fpm, swoole  
 反射  
 迭代器原理  
 ioc (DI)  
-php7为何比php5性能高
-  
+
 ### 高级  
 
 字符串在手册中介绍，「PHP的字符串是二进制安全的」，这句话怎么理解，为什么是二进制安全？  --- php zval str数据结构`len + *val`; 不会将"abc \0 def"的`\0`错误的认为是结尾符而忽略后边的 def（而C语言会）  
@@ -187,3 +181,4 @@ PHP的的这种弱类型变量是怎么实现的？
 [PHP内核探索之变量（7）- 不平凡的字符串](https://blog.csdn.net/fvjuerh/article/details/68946281)
 [php下载大文件的方法](https://blog.csdn.net/dengjiexian123/article/details/53057593)
 [亿级用户 PC 主站的 PHP7 升级实践](https://www.infoq.cn/article/practice-of-PHP7-upgrade-for-the-PC-master-station)
+[phpfpm运行原理](https://blog.csdn.net/sinat_38804294/article/details/94393621)
