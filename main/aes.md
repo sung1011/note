@@ -16,7 +16,7 @@ AES采用分组密码体制，即AES加密会首先把明文切成一段一段�
 
 - Padding
 
-[填充](cryptPadding.md) AES支持`noPadding`, `pkcs5Padding`, `ISO10126Padding`
+[填充](crypt-padding.md) AES支持`noPadding`, `pkcs5Padding`, `ISO10126Padding`
 
 - 初始向量 IV
 
