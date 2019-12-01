@@ -12,8 +12,8 @@
 回溯  
 动态规划  
 字符串匹配算法  
-bitmap  
-布隆  
+[位图 bitmap](algo-bitmap.md)  
+[布隆 BloomFilter](algo-bloomfilter.md)  
 [一致性哈希 DHT](algo-DHT.md)  
 
 [共识算法 raft](algo-raft.md)

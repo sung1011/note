@@ -31,13 +31,13 @@ typedef struct redisObject {
 
 `ssize_t rdbSaveObjectType(rio *rdb, robj *o, robj *key)` # src/rdb.c
 
-| redisObj | 短结构      | 长结构                |
-| -------- | ----------- | --------------------- |
-| string   | int、embstr | raw                   |
-| list     | ziplist     | linkedlist、quicklist |
-| hash     | ziplist     | hashtable             |
-| set      | intset      | hashtable             |
-| zset     | ziplist     | skiplist              |
+| redisObj | 短结构           | 长结构                |
+| -------- | ---------------- | --------------------- |
+| string   | int、embstr(sds) | raw(sds)              |
+| list     | ziplist          | linkedlist、quicklist |
+| hash     | ziplist          | hashtable             |
+| set      | intset           | hashtable             |
+| zset     | ziplist          | skiplist              |
 
 ## [string对象](redis-obj-string.md)
 

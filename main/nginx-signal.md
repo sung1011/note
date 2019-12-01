@@ -59,4 +59,3 @@
 
 1. mv < log > < bak log >
 2. kill -USR1 < nginx master pid >
-3. 以上可放入crontab
