@@ -4,9 +4,21 @@
 
 基于TCP协议，属于OSI应用层的面向对象的超文本传输协议。
 
-### Request
+## 版本
 
-#### 请求行 line
+[HTTP/0.9](HTTP-0.9.md)
+
+[HTTP/1.0](HTTP-1.0.md)
+
+[HTTP/1.1](HTTP-1.1.md)
+
+[HTTP/2](HTTP-2.md)
+
+[HTTP/3](HTTP-3.md)
+
+## Request
+
+### 请求行 line
 
 - **METHOD**
   - GET: 获取数据
@@ -33,24 +45,9 @@
 - **VERSION**
   - HTTP/0.9
   - HTTP/1.0
-    - 新增HEAD、POST等方法
-    - 新增响应状态码，标记状态
-    - 新增协议版本号概念
-    - 新增header概念
-    - 传输数据不限于文本
   - HTTP/1.1
-    - 新增PUT、DELETE等方法
-    - 新增缓存管理和控制
-    - 允许持久连接，默认keep-alive，减少握手开销
-    - 允许响应数据分块（chunked）
-    - 支持host域参数
-  - HTTP/2.0
-    - 多路复用(多重请求)，并废除了1.1的管道
-    - 二进制分帧（不再纯文本）
-    - 流优先级
-    - 服务器主动推送
-    - 头部压缩(只传diff)
-  - HTTP/3.0
+  - HTTP/2
+  - HTTP/3
   - HTTPS
     - ssl原理
     - CA证书
@@ -59,7 +56,7 @@
     - 私钥
     - 对称秘钥
 
-#### 请求头 header
+### 请求头 header
 
 - Accept-Encoding
 - Authorization
@@ -70,25 +67,25 @@
 - If-None-Match: 客户端的ETag值，发给服务器以判定是否匹配服务器ETag
 - If-Modify-Since: 从某时间数据是否修改。(以时间维度判定cache有效性)
 
-#### 请求空行 CRLF
+### 请求空行 CRLF
 
-#### 请求体 entity/body
+### 请求体 entity/body
 
-### Response
+## Response
 
-#### 响应行
+### 响应行
 
 - **Resp VERSION**
   - HTTP/1.0
   - HTTP/1.1
-  - HTTP/2.0
-  - HTTP/3.0
+  - HTTP/2
+  - HTTP/3
 
 - **[status code](HTTP-statuscode.md)**
 
 - **status message**
 
-#### 响应头
+### 响应头
 
 - Allow: 支持哪些request method
 - Content-Encoding  
@@ -103,6 +100,11 @@
 - Last-Modified: 最后一次改动时间。无改动时返回304。 (以时间维度判定cache有效性)
 - ETag: 缓存的令牌
 
-#### 响应体  
+### 响应体  
 
-### [通讯流程 TCP](TCP.md)
+## [通讯流程 TCP](TCP.md)
+
+## ref
+
+[队头阻塞](https://cloud.tencent.com/developer/article/1509279)
+[HTTP历史演变](https://www.cnblogs.com/imstudy/p/9234124.html)
