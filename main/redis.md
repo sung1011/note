@@ -1,8 +1,8 @@
 # redis Remote Dictionary Server
 
-## [编码](redis-encoding.md)
-
 ## [对象](redis-obj.md)
+
+## [编码](redis-encoding.md)
 
 ## [版本](redis-version.md)
 

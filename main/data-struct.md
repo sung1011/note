@@ -8,11 +8,14 @@
 - 队列 Queue  
 - 散列表  
 - 堆 PriorityQueue(heap)  
-- 跳表  
+- 跳表 SkipList
 - 哈希表 HashTable  
 - 并查集 Disjoint Set  
 - 图  
 - 树 Tree
+- 平衡二叉树 AVL Tree  
+- 平衡多路查找树 B-Tree  
+- B+Tree
 - [红黑树](RBTree.md)  
 
 ## ref

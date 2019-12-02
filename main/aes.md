@@ -2,7 +2,7 @@
 
 ## 概念
 
-Advanced Encryption Standard 高级加密标准
+AES (Advanced Encryption Standard 高级加密标准) 采用分组密码体制，即AES加密会首先把明文切成一段一段的，而且每段数据的长度要求必须是**128位**16个字节，如果最后一段不够16个字节了，就需要用Padding来把这段数据填满16个字节，然后分别对每段数据进行加密，最后再把每段加密数据拼起来形成最终的密文。
 
 ## 参数
 
@@ -10,13 +10,9 @@ Advanced Encryption Standard 高级加密标准
 
 ## 组成
 
-- 分组密码体制
+- [填充 Padding](crypt-padding.md)
 
-AES采用分组密码体制，即AES加密会首先把明文切成一段一段的，而且每段数据的长度要求必须是**128位**16个字节，如果最后一段不够16个字节了，就需要用Padding来把这段数据填满16个字节，然后分别对每段数据进行加密，最后再把每段加密数据拼起来形成最终的密文。
-
-- Padding
-
-[填充](crypt-padding.md) AES支持`noPadding`, `pkcs5Padding`, `ISO10126Padding`
+AES支持`noPadding`, `pkcs5Padding`, `ISO10126Padding`
 
 - 初始向量 IV
 
@@ -28,7 +24,7 @@ AES加密时需要主动提供初始向量，而且只需要提供一个初始�
 AES要求密钥的长度可以是**128位**16个字节、**192位**或者**256位**，位数越高，加密强度自然越大，但效率降低。  
 每段数据加密使用的都是这一个密钥，密钥来源为随机生成。
 
-- 四种[加密分组模式](crypt-mode.md)
+- [加密分组模式](crypt-mode.md)
 
 ECB、CBC、CFB、OFB
 
