@@ -11,12 +11,32 @@
 ## 数据实例
 
 - 1英文字符(word,字符) = 2byte;[ASCII, Unicode, UTF-8]
-- 1中文字符 = 2byte(B) [ASCII,Unicode];
+- 1中文字符 = 2~4byte(B) [ASCII,Unicode];
 - 1中文字符 = 3byte(B) [UTF-8];
 
 ## 进制
 
-B（Binary)二进制，
-O（Octal）八进制，
-D（Decimal）十进制，
-H（Hexadecimal）十六进制
+- B（Binary)二进制
+  - 1011B = 11D
+- O（Octal）八进制
+- D（Decimal）十进制
+- H（Hexadecimal）十六进制
+
+## 时间
+
+- 秒s
+- 毫秒ms
+  - 1000ms = 1s
+- 微妙μs
+  - 1000μs = 1ms
+- 纳秒ns
+  - 1000ns = 1μs
+
+## 其他
+
+- 256 = 2^8
+- 65536 = 2^16
+- 4294967296 = 2^32
+- 1.84467441e19 = 2^64
+- 3.40282367e38 = 2^128
+- 1.15792089e77 = 2^256
