@@ -37,10 +37,33 @@ parent: 父类
 
 ### 引用  
 
-对象的引用相当于别名  
+对象的赋值，本身就是引用。
 
-- $obj1 = &$obj; unset($obj); $obj1也会被删除.  
-- $obj1 = $obj; unset($obj); $obj1依然存在.  
+```php
+$obj1 = &$obj; // 改为 `$obj1 = $obj;` 以下结果相同
+$obj->foo = 123;
+echo $obj1->foo; // 123
+unset($obj);
+echo $obj1->foo; // 123
+```
+
+变量的赋值
+
+```php
+$a = 1;
+$b = $a; // a b 指向同一个值
+$a = 2; // zend写时赋值 相当于新声明了$a
+echo $b; // 1
+```
+
+变量的引用
+
+```php
+$a = 1;
+$b = &$a; // a b 指向同一个地址
+$a = 2;
+echo $b; // 2
+```
 
 ### 命名空间 namespace  
 
@@ -182,3 +205,4 @@ PHP的的这种弱类型变量是怎么实现的？
 [php下载大文件的方法](https://blog.csdn.net/dengjiexian123/article/details/53057593)
 [亿级用户 PC 主站的 PHP7 升级实践](https://www.infoq.cn/article/practice-of-PHP7-upgrade-for-the-PC-master-station)
 [phpfpm运行原理](https://blog.csdn.net/sinat_38804294/article/details/94393621)
+[PHP传值和传引用区别](https://blog.csdn.net/chengjianghao/article/details/81507752)
