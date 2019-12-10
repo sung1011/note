@@ -14,7 +14,7 @@
 ...
 ```
 
-- hash(散列) 如：crc32
+- hash(散列) 如：crc32, redis cluster
 
 ```bash
 slot_num = 1024 // 槽
