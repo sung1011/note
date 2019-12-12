@@ -33,6 +33,7 @@
 | [LF CRLF](ref/lf-crlf.md)  | 回车换行                       |
 | angled brackets            | 尖括号                         | < >                                            |
 | annotations                | 注释                           |
+| ast                        | 抽象语法库                     | Abstract Syntax Tree                           |
 | binary-safe                | 二进制安全                     | 原始数据流不包含任何特殊的格式                 |
 | buffer                     | 缓冲                           | 写优化，一批小数据内存合并后写入磁盘           |
 | cache                      | 缓存                           | 读优化，磁盘数据读入内存，下次从内存读         |
