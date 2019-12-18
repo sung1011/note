@@ -1,7 +1,5 @@
 # note  
 
-code note  
-  
 ## struct  
   
 ```bash

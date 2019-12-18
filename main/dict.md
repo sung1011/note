@@ -77,3 +77,4 @@
 | utility                    | 实用工具                       |
 | utility                    | 实用程序                       |
 | verbose                    | 啰嗦的                         |
+| sentinel                   | 哨兵(意为解决/简化边界问题)    |

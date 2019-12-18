@@ -5,7 +5,7 @@
 - [数组 Array](ds-array.md)  
 - [链表 LinkedList](ds-linkedlist.md)  
 - [栈 Stack](ds-stack.md)  
-- 队列 Queue  
+- [队列 Queue](ds-queue.md)
 - 散列表  
 - 堆 PriorityQueue(heap)  
 - 跳表 SkipList
