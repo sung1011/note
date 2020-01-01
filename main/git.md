@@ -109,17 +109,30 @@ tag
 - 变基 `git rebase master`
 - 变基并修改历史 `git rebase -i master`
 
+```git
 1. [master] git commit 12 // 12
 2. [master] git checkout -b feature; // 检出功能分支
 3. [master] git commit 34; // 1234
 4. [feature] git commit ab; // 12ab
 5. [feature] git rebase master; // 变基到master HEAD之后 // 1234ab
 6. [master] git merge feature; // 1234ab
+```
+
+### revert
+
+提交一个与指定commit内容相反的commit。
+
+> 若在主分支revert一个功能分支，则该功能分支无法重新merge到主分支，需要用cherry-pick。
 
 ### stash - Stash the changes in a dirty working directory away
 
 - apply 弹出一个stash，并且保留记录
 - pop   弹出一个stash，不保留记录
+- show
+- branch
+- clear
+- list
+- drop
 
 ## gitk
 
@@ -157,19 +170,12 @@ fd1/*           忽略目录 fd1 下的全部内容；注意，不管是根目�
 1. `git clone --bare git://github.com/username/project.git` 克隆裸库(仅代码)
 2. `git push --mirror git@gitcafe.com/username/newproject.git` 推送到新地址
 
-### 撤销
-
-revert
-
-- 提交一个与指定commit内容相反的commit。
-- 若在主分支revert一个功能分支，则该功能分支无法重新merge到主分支，需要用cherry-pick。
-
 ### 回滚
 
-回滚指定版本 git checkout; 以新建分支回滚
+回滚指定版本 git checkout; 以新建分支回滚 (临时回滚)
 
 - `git checkout {commit_id} && git checkout -b {new_branch_name}`
 
-回滚指定版本、n个版本 git reset --hard; 以主分支回滚
+回滚指定版本、n个版本 git reset --hard; 以主分支回滚 (永久回滚)
 
 - `git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push --force`
