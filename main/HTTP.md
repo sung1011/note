@@ -20,54 +20,21 @@
 
 ## Request
 
-### 请求行 line
+```HTTP
+GET /hello?foo=bar HTTP/1.1
+Accept-Language: en-us,de;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 18
+Connection: Keep-Alive
 
-- **METHOD**
-  - GET: 获取数据
-  - HEAD: 只解析 header
-  - POST: 新增数据（也改数据）
-  - PUT: 修改数据
-  - DELETE: 删除数据
-  - CONNECT: 预留
-  - OPTIONS: 查看可用的方法
-  - TRACE: debug
-  - 扩展
-    - MKCOL
-    - COPY
-    - MOVE
-    - LOCK
-    - UNLOCK
-    - PATCH: 局部PUT
-- **URI**
-  - scheme
-  - host
-  - port
-  - path
-  - query
-- **VERSION**
-  - HTTP/0.9
-  - HTTP/1.0
-  - HTTP/1.1
-  - HTTP/2
-  - HTTP/3
-  - HTTPS
-    - ssl原理
-    - CA证书
-    - 签名
-    - 公钥
-    - 私钥
-    - 对称秘钥
+action=login&uid=4
 
-### 请求头 header
+```
 
-- Accept-Encoding
-- Authorization
-- Cookie
-- Content-Length
-- Content-Type
-- User-Agent
-- If-None-Match: 客户端的ETag值，发给服务器以判定是否匹配服务器ETag
-- If-Modify-Since: 从某时间数据是否修改。(以时间维度判定cache有效性)
+### [请求行 line](HTTP-req-line.md)
+
+### [请求头 header](HTTP-req-header.md)
 
 ### 请求空行 CRLF
 
@@ -75,32 +42,26 @@
 
 ## Response
 
-### 响应行
+```HTTP
+HTTP/1.1 200 OK
+Date: Sun, 15 Nov 2015 11:02:04 GMT
+Server: bfe/1.0.8.9
+Content-Length: 2605
+Content-Type: application/javascript
+Cache-Control: max-age=315360000
+Expires: Fri, 13 Jun 2025 09:54:00 GMT
+Content-Encoding: gzip
+Set-Cookie: H_PS_PSSID=2022_1438_1944_1788; path=/; domain=test.com
+Connection: keep-alive
 
-- **Resp VERSION**
-  - HTTP/1.0
-  - HTTP/1.1
-  - HTTP/2
-  - HTTP/3
+<html>
+<head><title> Index.html </title></head>
+</html>
+```
 
-- **[status code](HTTP-statuscode.md)**
+### [响应行 line](HTTP-resp-line.md)
 
-- **status message**
-
-### 响应头
-
-- Allow: 支持哪些request method
-- Content-Encoding  
-- Content-Length  
-- Content-Type
-- Expires  
-- Set-Cookie  
-- Date  
-- Expires
-- Location
-- Refresh
-- Last-Modified: 最后一次改动时间。无改动时返回304。 (以时间维度判定cache有效性)
-- ETag: 缓存的令牌
+### [响应头 header](HTTP-resp-header.md)
 
 ### 响应体  
 

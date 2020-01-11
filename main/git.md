@@ -78,7 +78,7 @@ tag
 
 ### commit
 
-- --amend
+- --amend 替换上一次提交的msg
 - -m, --message < msg >
 
 ### checkout
