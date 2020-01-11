@@ -34,7 +34,7 @@ action=login&uid=4
 
 ### [请求行 line](HTTP-req-line.md)
 
-### [请求头 header](HTTP-req-header.md)
+### [请求头 header](HTTP-header.md)
 
 ### 请求空行 CRLF
 
@@ -61,7 +61,7 @@ Connection: keep-alive
 
 ### [响应行 line](HTTP-resp-line.md)
 
-### [响应头 header](HTTP-resp-header.md)
+### [响应头 header](HTTP-header.md)
 
 ### 响应体  
 
