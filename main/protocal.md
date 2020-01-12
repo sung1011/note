@@ -43,13 +43,22 @@ UDP
 
 ### 3 网络层
 
-[IP](IP.md)
+[IP](IP.md)  
+ICMP 互联网控制信息协议 Internet Control Message Protocol  
+路由器 外网IP寻址，在多个路由器间计算最优路由路径，将数据送达指定主机。  
 
 ### 2 数据链路层
 
-ARP
+[ARP 地址解析协议 Address Resolution Protocol](ARP.md) IP-MAC映射  
+RARP  
+MAC 媒体访问控制 Medium Access Control  
+链路层地址 MAC地址 48位主机的物理地址，局域网内唯一。  
+交换机 内网MAC寻址，从第一次经由交换机的数据包中截取MAC地址并记录MAC-LAN口映射。  
 
 ### 1 物理层
+
+网线  
+集线器hub  
 
 ## 协议列表
 
@@ -107,7 +116,7 @@ DECnet NSP
 LPP 轻量级表示协议  
 NBSSN NetBIOS会话服务协议  
 XDP外部数据表示协议  
-IPX  
+IPX 网络分组交换协议  
   
 ### 5 会话层 列表
 
