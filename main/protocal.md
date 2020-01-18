@@ -44,7 +44,7 @@ UDP
 ### 3 网络层
 
 [IP](IP.md)  
-ICMP 互联网控制信息协议 Internet Control Message Protocol  
+[ICMP](ICMP.md) `ping` `Traceroute`  
 路由器 外网IP寻址，在多个路由器间计算最优路由路径，将数据送达指定主机。  
 
 ### 2 数据链路层
