@@ -79,3 +79,4 @@
 | verbose                    | 啰嗦的                         |
 | sentinel                   | 哨兵(意为解决/简化边界问题)    |
 | mtu                        | 最大传输单元                   | Maximum Transmission Unit                      |
+| NAT                        | 网络地址转换                   | Network Address Translation                    |
