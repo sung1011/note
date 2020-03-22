@@ -39,7 +39,10 @@ db.coll.find({"category": "action"}, {_id: 0, title: 1}) // projection 投影(�
 ```js
 db.coll.updateOne()
 db.coll.updateMany()
-db.coll.update()
+db.coll.update({_id:123}, {$inc: {"foo.bar.baz":3}})
+db.coll.update({_id:123}, {$set: {"address.uid5":"bj"}}) // 修改内嵌文档
+db.coll.update({_id:123}, {$set: {"address.1":"bj"}}) // 修改数组元素值
+db.coll.update({_id:123}, {$set: {"books.1.name":"haha"}}) // 修改数组元素内嵌文档的值
 ```
 
 ## remove
@@ -56,3 +59,12 @@ db.coll.remove({})
 db.coll.drop()
 db.dropDatabase()
 ```
+
+## aggregation 聚合  
+
+阶段操作符  
+
+- $count, $project, $match, $group, $sort, $limit, $unwind  
+  
+`db.mycol.aggregate([{group: {_id: 'sex', personCount: {$sum: 1}}}])`  
+ 
