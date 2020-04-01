@@ -76,3 +76,17 @@
 - 分段
   - accept-ranges
   - range
+
+- gzip
+  - 获取S端临时压缩的数据，在C端解压。
+    1. req header `Accept-Encoding: gzip` 表示客户端支持gzip
+    2. resp header `Content-Encoding: gzip` 服务器压缩数据、返回此响应头与压缩后的数据
+    3. 客户端（浏览器）收到该响应头，进行解压（流式）
+
+  - 获取S端已压缩的数据(如：上传时已经压缩过的文件)，在C端解压。
+    1. 不要带req header `Accept-Encoding: gzip` 发起普通请求
+    2. resp header `Content-Encoding: gzip` 返回此响应头与压缩后的数据，S端需要预先设定规则，划定哪些文件是gzip格式，返回此header。
+    3. 客户端（浏览器）收到该响应头，进行解压（流式）
+
+  - 压缩请求数据，发起请求
+    1. req header `Content-Encoding: gzip` 在C端代码进行压缩，带此header告知S端请求格式为gzip
