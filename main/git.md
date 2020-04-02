@@ -55,6 +55,10 @@ tag
 
 - -w --web
 
+### clone
+
+- --depth 深度。保留最新的n个commit，更前的commit嫁接(grafted)成一个整体
+
 ### mv  移动文件
 
 - 一般重命名大小写时用。 # 另外可通过配置使大小写敏感`git config core.ignorecase false`
