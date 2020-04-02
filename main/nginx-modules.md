@@ -69,6 +69,9 @@ module: ngx_http_gzip_module
 gzip            on;  
 gzip_min_length 1000;   #小于1k的文件不压缩  
 gzip_types      text/plain application/xml;  
+gzip_static     on;  #读取预先压缩的gz文件，免去临时压缩返回的资源消耗。
+
+> gzip_static on时nginx会读取xx文件时，优先判定是否存在xx.gz，存在则返回xx.gz
 
 ### 浏览文件
 

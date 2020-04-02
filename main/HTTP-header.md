@@ -76,3 +76,27 @@
 - 分段
   - accept-ranges
   - range
+
+- gzip
+
+  - 场景1：获取S端临时压缩的数据，在C端解压。
+    1. req header `Accept-Encoding: gzip` 表达C端支持gzip
+    2. resp header `Content-Encoding: gzip` S端压缩数据、返回此响应头与压缩后的数据
+       - resp header `Content-Length: 1234` 为压缩后的大小
+    3. 客户端（浏览器）收到该响应头，进行解压（流式）
+
+  - 场景2：获取S端已压缩的数据(如：上传时已经压缩过的文件)，在C端解压。
+    1. 不要带req header `Accept-Encoding: gzip` 发起普通请求
+    2. resp header `Content-Encoding: gzip` 返回此响应头与压缩后的数据，S端需要预先设定规则，划定哪些文件是gzip格式，返回此header。
+    3. C端（如：浏览器）收到该响应头，进行解压（流式）
+
+  - 场景3：压缩请求数据，发起请求
+    1. req header `Content-Encoding: gzip` 在C端代码进行压缩，带此header告知S端请求格式为gzip
+
+> 优点 压缩
+> 缺点 压缩与解压耗时耗CPU；
+> 原理 找到类似的字符串，并替换。所以对很多标签的代码文件压缩率高（xml, html）
+
+## ref
+
+`https://www.cnblogs.com/LO-ME/p/7377082.html`
