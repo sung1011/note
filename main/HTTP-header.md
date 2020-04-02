@@ -77,7 +77,7 @@
   - accept-ranges
   - range
 
-- gzip
+- GZIP (、ZLIB、DEFLATE)
 
   - 场景1：获取S端临时压缩的数据，在C端解压。
     1. req header `Accept-Encoding: gzip` 表达C端支持gzip
