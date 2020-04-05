@@ -45,7 +45,7 @@ Secondary
 | Arbiter    | X    | X    | O    | X         | X           | O    | Priority=0，无数据 |
 | vote=0     | O    | X    | X    | 同步      | O           | O    | 不能投票           |
 
-> 客户端一般会保持连接多个实例（主从从从选...都有连接），以确保主挂后可以从其他实例拿到最新的副本集状态，进而连接到新的主节点。(若只连接主，主跪了，客户端便不能得到任何服务)  
+> 客户端一般会保持连接多个实例（主从从从选...都有连接），以确保主挂后可以从其他实例拿到最新的副本集状态，进而连接到新的主节点。(若只连接主(readPref = Primary)，主跪了，客户端便不能得到任何服务)  
   
 ## 选举因素
 
@@ -67,44 +67,4 @@ Secondary
 
 - 一个member要成为primary，它必须与“多数派”的其他members建立连接，如果未能与足够多的member建立连接，事实上它本身也无法被选举为primary；多数派参考的是“总票数”，而不是member的个数，因为我们可以给每个member设定不同的“票数”。假设复制集内投票成员数量为N，则大多数为 N/2 + 1。  
 
-## 读策略 Read Preference  
-
-primary(默认)： 所有读请求发到Primary  
-primaryPreferred： Primary优先，如果Primary不可达，请求Secondary  
-secondary： 所有的读请求都发到secondary  
-secondaryPreferred：Secondary优先，当所有Secondary不可达时，请求Primary  
-nearest：读请求发送到最近的可达节点上（通过ping探测得出最近的节点）  
-
-## 写策略 Write Concern
-
-![img](res/mongodb-writeconcern-w0.png)  
-非应答写入Unacknowledged  - `{writeConcern:{w:0}}`  
-
-- MongoDB不对客户端进行应答，驱动会检查套接字，网络错误等。  
-
-![img](res/mongodb-writeconcern-w1.png)  
-
-应答写入Acknowledged(默认)  - `{writeConcern:{w:1}}`  
-
-- MongoDB会在收到写入操作并且确认该操作在内存中应用后进行应答，但不会确认数据是否已写入磁盘;同时允许客户端捕捉网络、重复key等等错误  
-
-![img](res/mongodb-writeconcern-w1j1.png)  
-
-应答写入+journal写入Journaled  - `{writeConcern:{w:1, j:true}}`  
-
-- 确认写操作已经写入journal日志(持久化)之后应答客户端，必须允许开启日志功能，才能生效。  
-- 写入journal操作必须等待直到下次提交日志时完成写入  
-- 提供通过journal来进行数据恢复  
-
-![img](res/mongodb-writeconcern-wm.png)  
-
-副本集应答写入Replica Acknowledged   - `{writeConcern:{w:2, wtimeout:5000}}`  - `{writeConcern:{w:majority, wtimeout:5000}}`  
-
-- 对于使用副本集的场景，缺省情况下仅仅从主(首选)节点进行应答  
-- 可修改应答情形为特定数目或者majority(写到大多数)来保证数据的可靠  
-  - primary是如何确认数据已成功写入大多数节点的？
-    1. 从节点及时地拉取数据: 阻塞拉取  
-       - 从拉取主的oplog时， 为了第一时间拉取，find命令支持一个awaitData的选项，当find没有任何符合条件的文档时，并不立即返回，而是等待最多maxTimeMS(默认为2s)时间看是否有新的符合条件的数据，如果有就返回。  
-    2. 主节点同步拉取状态: Secondary应用完oplog会向主报告最新进度  
-       - Secondary上有单独的线程，当oplog的最新时间戳发生更新时，就会向Primary发送replSetUpdatePosition命令更新自己的oplog时间戳。(即：)  
-    3. 当Primary发现有足够多的节点oplog时间戳已经满足条件了，向客户端进行应答。  
+## [事务](mongodb-transaction.md)

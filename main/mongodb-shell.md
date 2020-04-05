@@ -67,4 +67,10 @@ db.dropDatabase()
 - $count, $project, $match, $group, $sort, $limit, $unwind  
   
 `db.mycol.aggregate([{group: {_id: 'sex', personCount: {$sum: 1}}}])`  
- 
+
+## lock
+
+```js
+db.fsyncLock() // 锁住db写入 rs锁住不会报错，解锁后自动同步。
+db.fsyncUnlock() // 解锁db写入
+```

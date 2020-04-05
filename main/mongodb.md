@@ -15,6 +15,8 @@ oplog 增量同步
   
 ## [replica set 副本集](mongodb-relicset.md)
 
+## [transaction 事务](mongodb-transaction.md)
+
 ## [mongos shard 分片](mongodb-mongos.md)
 
 ## capped collection
@@ -132,7 +134,3 @@ TODO
 2. findAndModify 可以保证修改 与 返回结果（改前，改后都可以）这两个步骤是原子的
 3. findAndModify 若 upsert: true 并 无查询结果时, 并发状态下可能插入多个doc
 4. findAndModify 在分片集群中，查询必须包含分片key
-
-## ref
-
-[mongodb是如何实现ACID](https://blog.csdn.net/czq7511/article/details/77531903)
