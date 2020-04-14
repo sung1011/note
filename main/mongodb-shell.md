@@ -18,12 +18,13 @@
 ```js
 db.coll.insert({name: "foo"})
 db.coll.insertOne({name: "foo"})
-db.coll.insertMany([{name: "foo"}, {name: "bar"}, {name: "baz"}])
+db.coll.insertMany([{name: "foo"}, {name: "bar"}, {name: "baz"}]) // 比循环insert效率高很多
 ```
 
 ## find
 
 ```js
+db.coll.count({year: 1949}) // 效率低 会遍历
 db.coll.find({year: 1949})
 db.coll.find({year: 1949, title:"batman"})
 db.coll.find({$and: [{year: 1949}, {title: "batman"}]})

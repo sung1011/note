@@ -1,5 +1,21 @@
 # markdown 不常用格式
 
+## detail
+
+<details>
+<summary>Click here to see terminal history + debug info</summary>
+<pre>
+488 cd /opt/LLL/controller/laser/
+489 vi LLLSDLaserControl.c
+490 make
+491 make install
+492 ./sanity_check
+493 ./configure -o test.cfg
+494 vi test.cfg
+495 vi ~/last_will_and_testament.txt
+</pre>
+</details>
+
 ## 删除线
 
 被~~狠心删除~~的内容
