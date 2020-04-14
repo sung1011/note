@@ -1,6 +1,6 @@
 # markdown 不常用格式
 
-## detail
+## 细节折叠
 
 <details>
 <summary>Click here to see terminal history + debug info</summary>
@@ -70,7 +70,7 @@
 
 [^1]: "我是Markdown注脚1"
 
-## 高级连接
+## 连接引用
 
 网页链接[Google][1]  
 文件连接[自身文件][self]  
@@ -80,7 +80,7 @@
    [self]: markdown.md
    [p]: res/markdownlogo.png
 
-## 图片
+## 缩放图片
 
 <img src="res/markdownlogo.png" width=30%>
 
