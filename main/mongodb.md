@@ -13,11 +13,11 @@ oplog 增量同步
 
 - Primary上的写操作完成后，会向特殊的local.oplog.rs特殊集合写入一条oplog，Secondary不断的从Primary取新的oplog并应用  
   
-## [replica set 副本集](mongodb-relicset.md)
+## [replica set 复制集](mongodb-relicset.md)
+
+## [mongos shard 分片集群 (分片的复制集)](mongodb-mongos.md)
 
 ## [transaction 事务](mongodb-transaction.md)
-
-## [mongos shard 分片](mongodb-mongos.md)
 
 ## capped collection
 
@@ -29,6 +29,8 @@ Capped Collection是性能出色的有着固定大小的集合，以LRU（least 
 - 使用natual ordering可以有效地检索最近插入的元素，因为capped collection能够保证自然排序就是插入的顺序。  
 - capped collection不能被shard.  
 - 可以在创建capped collection时指定collection中能够存放的最大文档数。  
+
+### [change stream (变更追踪、触发器)](mongodb-changestream.md)
 
 ### 设计模式
 
