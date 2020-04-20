@@ -43,7 +43,7 @@ etcd
 [nodejs](main/nodejs.md)  
 c  
 python  
-shell  
+[shell](main/shell.md)  
 lua  
 java  
   
