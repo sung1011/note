@@ -21,12 +21,12 @@ sl := a[1:3]
 fmt.Println(sl, len(sl), cap(sl)) //[2 3] len = 2 cap = 4
 ```
 
-## nil切片 与 空切片
+## nil切片 & 空切片
 
 nil 切片: `var nil_sl []int`  ptr为nil, len 0, cap 0  
 空 切片: `empty_sl := make([]int, 0)` ptr指向底层的空array, len 0, cap 0
 
-## copy
+## 拷贝 copy
 
 ```go fake
 //go doc builtin copy
@@ -34,7 +34,7 @@ n := copy({1,2,3}, {111, 222, 333, 444}) //sl1 = {111, 222, 333}; n = 3
 n := copy({1,2,3}, {111, 222}) //sl1 = {111, 222, 3}; n = 2
 ```
 
-## append 与 扩容
+## append & 扩容
 
 向切片增加元素。  
 cap不足时，新建底层数组并扩容cap。  

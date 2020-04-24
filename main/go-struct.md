@@ -82,7 +82,7 @@ type Animal struct {
 type Horse struct {
     *Animal //组合, 内嵌
     speak string
-    int //匿名字段， 一个结构体 同类型只能有一个匿名字段
+    int //匿名字段
 }
 
 func (a *Animal) hello() {
@@ -92,11 +92,11 @@ func (a *Animal) hello() {
     // fmt.Println(a.int) // animal访问不到horse的匿名字段
 }
 
-func (h *Horse) hello() { // 重载
+func (h *Horse) hello() { // 重载 覆盖 Animal.hello()
     fmt.Println(h.name)
     fmt.Println(h.weight)
-    fmt.Println(h.speak) // 可以访问horse的speak属性
-    fmt.Println(h.int) // 访问匿名字段
+    fmt.Println(h.speak)
+    fmt.Println(h.int)
 }
 
 func main() {
@@ -106,9 +106,9 @@ func main() {
             weight: 60,
         },
         speak: "neigh",
-        int: 1234, // 结构体包含**匿名字段**，类型名充当了匿名字段的字段名
+        int: 1234,
     }
-    bm_horse.hello()
+    bm_horse.hello() // horse.hello()
 }
 ```
 

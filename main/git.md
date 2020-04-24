@@ -132,6 +132,7 @@ tag
 
 - apply 弹出一个stash，并且保留记录
 - pop   弹出一个stash，不保留记录
+- push  暂存一个stash
 - show
 - branch
 - clear

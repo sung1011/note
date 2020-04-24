@@ -32,25 +32,71 @@ type bmap struct { // A bucket for a Go map.
 ## 创建 初始化 访问
 
 ```go
-var m := map[string]int
-m := map[string]int{}
-m := make(map[string]int, cap)
+var m := map[string]int // nil map; panic if written to
+m := map[string]int{} // empty map
+m := make(map[string]int, cap) // empty map
 ```
-
-## nil map 与 空 map
-
-nil map: `var nil_map map[string]int`  
-空 map: `empty_map := map[string]int{}`, `empty_map := make(map[string]int)`
 
 ## 返回值 key是否存在
 
 ```go
 m := map[string]int{"a":1, "b":2}
 v1, exists1 := m["a"] // 1, true
-v2, exists2 := m["z"] // 0, false
+v2, exists2 := m["xxx"] // 0, false
 ```
 
 ## len(), cap(), delete()
+
+## 并发安全
+
+```go
+type RWMap struct {
+    m map[string]int
+    sync.RWMutex
+}
+func (r RWMap) Get(key string) int {
+    r.RLock()
+    defer r.RUnlock()
+    return r.m[key]
+}
+func (r RWMap) Set(key string, val int) {
+    r.Lock()
+    defer r.Unlock()
+    r.m[key] = val
+}
+```
+
+```go
+var sm sync.Map
+sm.Store(1, "a")
+if v,ok:=sm.Load(1);ok{
+    fmt.Println(v)
+}
+```
+
+## 拷贝
+
+```go
+originalMap := make(map[string]int)
+originalMap["one"] = 1
+originalMap["two"] = 2
+
+targetMap := make(map[string]int)
+
+for k, v := range originalMap {
+    targetMap[k] = v
+}
+```
+
+## 集合
+
+```go
+// 推荐结构 map[Type]struct{}
+sets := map[string]struct{} (
+    "x": {},
+    "y": {},
+)
+```
 
 ## 函数作为map的值
 
