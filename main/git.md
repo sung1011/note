@@ -25,82 +25,110 @@ tag
 
 - tag用于给某个上述类型的对象指配一个便于开发者记忆的名字, 通常用于某次commit。
 
-## 概念
+## 标记
 
-### HEAD    头指针
-
-### ^   父
-
-### ^^^ 父父父
-
-### ~3  父父父
-
-### --  指定文件
-
-### 分离头指针 HEAD detached
-
-基于一个commit的操作(非分支，非tag)  
-可创建commit, branch  
-修改后最终若不创建branch，将被回收丢弃  
+- HEAD 头指针
+- ^   父
+- ^^^ 父父父
+- ~3  父父父
+- --  指定文件
 
 ## 常用命令 cmd
 
 ### catfile 调试对象信息
 
-- -t    查看对象类型
-- -s    查看对象size
-- -p    查看对象内容
+```bash
+git catfile -t  # 查看对象类型
+git catfile -s  # 查看对象size
+git catfile -p  # 查看对象内容
+```
 
 ### help
 
-- -w --web
+```bash
+git help -w --web #
+```
 
 ### clone
 
-- --depth 深度。保留最新的n个commit，更前的commit嫁接(grafted)成一个整体
+```bash
+git clone --depth 10 # 深度。保留最新的n个commit，更前的commit嫁接(grafted)成一个整体
+```
 
 ### mv  移动文件
 
-- 一般重命名大小写时用。 # 另外可通过配置使大小写敏感`git config core.ignorecase false`
+```bash
+git mv a b # 一般重命名大小写时用。 另外可通过配置使大小写敏感`git config core.ignorecase false`
+```
 
 ### log
 
-- --oneline 一行
-- -< num >, -n < num >
-- --all
-- --graph
+```bash
+git log --oneline
+git log -< num >, -n < num >
+git log --all
+git log --graph
+```
 
 ### diff
 
-- HEAD~3, - HEAD^^^
-- < commit1 > < commit2 >
-- --cached HEAD与暂存区比较
+```bash
+git diff HEAD~3, - HEAD^^^
+git diff < commit1 > < commit2 >
+git diff --cached # HEAD与暂存区比较
+```
 
 ### branch
 
-- -d, -D
+```bash
+git branch -d -D
+git branch -v 展示HEAD，分支，commitID，message
+```
 
 ### commit
 
-- --amend 替换上一次提交的msg
-- -m, --message < msg >
+```bash
+git commit --amend 替换上一次提交的msg
+git commit -m, --message < msg >
+```
 
 ### checkout
 
-- -b
-- -- < filename > 丢弃工作区该文件的修改
-- < hash > < filename > 检出指定commitid 的 指定文件
+```bash
+git checkout -b # 基于当前分支新建分支
+git checkout -- < filename > # 丢弃工作区指定文件的修改
+git checkout . # 丢弃工作区当前文件夹的修改
+git checkout < commitID > # 检出某次commit。修改后新建分支来保存修改内容（分离头指针）。
+git checkout < commitID > < filename > # 检出指定commitid 的 指定文件
+```
 
 ### reset
 
-- --soft    reset only HEAD
-- --mixed   reset HEAD and index    *default
-- --hard    reset HEAD, index and working tree
+```bash
+git reset --soft  # reset only HEAD
+git reset --mixed # reset HEAD and index    *default
+git reset --hard  # reset HEAD, index and working tree
+```
+
+### merge
+
+```bash
+       D---E test
+      /
+ A---B---C---F--- master
+
+       D--------E
+      /          \
+ A---B---C---F----G---   test, master
+
+# 如何回滚？
+```
 
 ### rebase
 
 注意: **不要在主分支操作**
 
+```bash
 - -i, --interactive 交互rebase:
   - p, pick   use commit
   - r, reword use commit, but edit the commit message
@@ -109,11 +137,12 @@ tag
   - f, fixup  like "squash", but discard this commit's log message
   - x, exec   run command (the rest of the line) using shell
   - d, drop   remove commit
+```
 
 - 变基 `git rebase master`
 - 变基并修改历史 `git rebase -i master`
 
-```git
+```bash
 1. [master] git commit 12 // 12
 2. [master] git checkout -b feature; // 检出功能分支
 3. [master] git commit 34; // 1234
@@ -122,30 +151,46 @@ tag
 6. [master] git merge feature; // 1234ab
 ```
 
+### pull
+
+```bash
+get pull --rebase origin < 功能分支 > && git pull # git fetch + git rebase FETCH_HEAD
+
+       D---E test
+      /
+ A---B---C---F--- master
+
+ A---B---D---E---C‘---F‘---   test, master
+
+# 如何回滚？
+```
+
 ### revert
 
-提交一个与指定commit内容相反的commit。
+```bash
+git revert < commitID > # 提交一个与指定commit内容相反的commit。
+```
 
 > 若在主分支revert一个功能分支，则该功能分支无法重新merge到主分支，需要用cherry-pick。
 
 ### stash - Stash the changes in a dirty working directory away
 
-- apply 弹出一个stash，并且保留记录
-- pop   弹出一个stash，不保留记录
-- push  暂存一个stash
-- show
-- branch
-- clear
-- list
-- drop
+```bash
+git stash apply 弹出一个stash，并且保留记录
+git stash pop   弹出一个stash，不保留记录
+git stash push  暂存一个stash
+git stash show
+git stash branch
+git stash clear
+git stash list
+git stash drop
+```
 
-## gitk
-
-git图形界面工具
+## gitk git图形界面工具
 
 ## .gitignore 文件
 
-```bash
+```gitignore
 *.a             表示忽略所有 .a 结尾的文件
 !lib.a          表示但lib.a除外
 /TODO           表示仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
@@ -172,8 +217,10 @@ fd1/*           忽略目录 fd1 下的全部内容；注意，不管是根目�
 
 ### 迁移
 
-1. `git clone --bare git://github.com/username/project.git` 克隆裸库(仅代码)
-2. `git push --mirror git@gitcafe.com/username/newproject.git` 推送到新地址
+```bash
+git clone --bare git://github.com/username/project.git # 克隆裸库(仅代码)
+git push --mirror git@gitcafe.com/username/newproject.git # 推送到新地址
+```
 
 ### 回滚
 
@@ -184,3 +231,7 @@ fd1/*           忽略目录 fd1 下的全部内容；注意，不管是根目�
 回滚指定版本、n个版本 git reset --hard; 以主分支回滚 (永久回滚)
 
 - `git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push --force`
+
+### 当前分支
+
+current_branch=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
