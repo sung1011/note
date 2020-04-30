@@ -1,5 +1,7 @@
 # todo
 
+DNS nameserver
+
 ## proj
 
 - 服务器架构
