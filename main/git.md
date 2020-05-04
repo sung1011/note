@@ -148,11 +148,11 @@ git reset --hard  # reset HEAD, index and working tree
 # [topic] git rebase master topic
 # [topic] git rebase -i master // 变基并改变被移动的commit
 
-      A---B---C topic
+      A---B---C *topic
      /
 D---E---F---G master
 
-              'A'--'B'--'C' topic
+              'A'--'B'--'C' *topic
              /
 D---E---F---G master
 ```
@@ -165,17 +165,15 @@ D---E---F---G master
 # git pull = git fetch && git merge
        A---B---C master on origin
       /
- D---E---F---G master
-     ^
-     origin/master in your repository
+ D---E---F---G *master
+
+> E is origin/master in your repository
 
        A---B---C origin/master
       /         \
- D---E---F---G---H master
-                 ^
-                 origin/master in your repository
+ D---E---F---G---H *master
 
-> H's commit message is "Merge branch 'master' of < rep >"
+> H is origin/master in your repository && commit message is "Merge branch 'master' of < rep >"
 ```
 
 ### pull -r --rebase
@@ -184,20 +182,20 @@ D---E---F---G master
 # git pull --rebase = git fetch && git rebase FETCH_HEAD
 
 # [topic] get pull --rebase origin master
-      A---B---C topic
+      A---B---C *topic
      /
 D---E---F---G master
 
-              'A'--'B'--'C' topic
+              'A'--'B'--'C' *topic
              /
 D---E---F---G master
 
-# [master] get pull --rebase origin topic ?????
+# [master] get pull --rebase origin topic
       A---B---C topic
      /
-D---E---F---G master
+D---E---F---G *master
 
-D---E---A---B---C---'F'---'G' master
+D---E---A---B---C---'F'---'G' *master
 ```
 
 > 变基本质是将本分支commit向后移动，所以不要在master进行rebase。
@@ -274,3 +272,7 @@ git push --mirror git@gitcafe.com/username/newproject.git # 推送到新地址
 ### 当前分支
 
 current_branch=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
+
+### git push -f 找回
+
+TODO
