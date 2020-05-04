@@ -11,27 +11,29 @@ Remote：远程仓库
 
 blob
 
-- 每个blob代表一个（版本的）文件，blob只包含文件的数据，而忽略文件的其他元数据，如名字、路径、格式等。
+> 每个blob代表一个（版本的）文件，blob只包含文件的数据，而忽略文件的其他元数据，如名字、路径、格式等。
 
 tree
 
-- 每个tree代表了一个目录的信息，包含了此目录下的blobs，子目录（对应于子trees），文件名、路径等元数据。因此，对于有子目录的目录，git相当于存储了嵌套的trees。
+> 每个tree代表了一个目录的信息，包含了此目录下的blobs，子目录（对应于子trees），文件名、路径等元数据。因此，对于有子目录的目录，git相当于存储了嵌套的trees。
 
 commit
 
-- 每个commit记录了提交一个更新的所有元数据，如指向的tree，父commit，作者、提交者、提交日期、提交日志等。每次提交都指向一个tree对象，记录了当次提交时的目录信息。一个commit可以有多个（至少一个）父commits。
+> 每个commit记录了提交一个更新的所有元数据，如指向的tree，父commit，作者、提交者、提交日期、提交日志等。每次提交都指向一个tree对象，记录了当次提交时的目录信息。一个commit可以有多个（至少一个）父commits。
 
 tag
 
-- tag用于给某个上述类型的对象指配一个便于开发者记忆的名字, 通常用于某次commit。
+> tag用于给某个上述类型的对象指配一个便于开发者记忆的名字, 通常用于某次commit。
 
 ## 标记
 
-- HEAD 头指针
-- ^   父
-- ^^^ 父父父
-- ~3  父父父
-- --  指定文件
+```bash
+HEAD 头指针
+^   父
+^^^ 父父父
+~3  父父父
+--  指定文件
+```
 
 ## 常用命令 cmd
 
@@ -53,6 +55,12 @@ git help -w --web #
 
 ```bash
 git clone --depth 10 # 深度。保留最新的n个commit，更前的commit嫁接(grafted)成一个整体
+```
+
+### blame
+
+```bash
+git blame -b -w # 显示全文blame。 -b show commitID; -w ignore whitespace
 ```
 
 ### mv  移动文件
@@ -83,6 +91,8 @@ git diff --cached # HEAD与暂存区比较
 ```bash
 git branch -d -D
 git branch -v 展示HEAD，分支，commitID，message
+git branch --no-merged 获取未合入当前分支的分支
+git branch --merged 获取已合入当前分支的分支
 ```
 
 ### commit
@@ -113,57 +123,86 @@ git reset --hard  # reset HEAD, index and working tree
 ### merge
 
 ```bash
-       D---E test
+       A---B---C topic
       /
- A---B---C---F--- master
+ D---E---F---G master
 
-       D--------E
-      /          \
- A---B---C---F----G---   test, master
-
-# 如何回滚？
+       A---B---C topic
+      /         \
+ D---E---F---G---H master
 ```
+
+> 如何回滚?
 
 ### rebase
 
-注意: **不要在主分支操作**
-
 ```bash
-- -i, --interactive 交互rebase:
-  - p, pick   use commit
-  - r, reword use commit, but edit the commit message
-  - e, edit   use commit, but stop for amending
-  - s, squash use commit, but meld into previous commit
-  - f, fixup  like "squash", but discard this commit's log message
-  - x, exec   run command (the rest of the line) using shell
-  - d, drop   remove commit
+# 1. [master] git commit 12 // 12
+# 2. [master] git checkout -b topic; // 检出功能分支
+# 3. [master] git commit 34; // 1234
+# 4. [topic] git commit ab; // 12ab
+# 5. [topic] git rebase master; // 变基到master HEAD之后 // 1234ab
+# 6. [master] git merge topic; // 1234ab
+
+# [topic] git rebase master
+# [topic] git rebase master topic
+# [topic] git rebase -i master // 变基并改变被移动的commit
+
+      A---B---C topic
+     /
+D---E---F---G master
+
+              'A'--'B'--'C' topic
+             /
+D---E---F---G master
 ```
 
-- 变基 `git rebase master`
-- 变基并修改历史 `git rebase -i master`
-
-```bash
-1. [master] git commit 12 // 12
-2. [master] git checkout -b feature; // 检出功能分支
-3. [master] git commit 34; // 1234
-4. [feature] git commit ab; // 12ab
-5. [feature] git rebase master; // 变基到master HEAD之后 // 1234ab
-6. [master] git merge feature; // 1234ab
-```
+> 变基本质是将本分支commit向后移动，所以不要在master进行rebase。
 
 ### pull
 
 ```bash
-get pull --rebase origin < 功能分支 > && git pull # git fetch + git rebase FETCH_HEAD
-
-       D---E test
+# git pull = git fetch && git merge
+       A---B---C master on origin
       /
- A---B---C---F--- master
+ D---E---F---G master
+     ^
+     origin/master in your repository
 
- A---B---D---E---C‘---F‘---   test, master
+       A---B---C origin/master
+      /         \
+ D---E---F---G---H master
+                 ^
+                 origin/master in your repository
 
-# 如何回滚？
+> H's commit message is "Merge branch 'master' of < rep >"
 ```
+
+### pull -r --rebase
+
+```bash
+# git pull --rebase = git fetch && git rebase FETCH_HEAD
+
+# [topic] get pull --rebase origin master
+      A---B---C topic
+     /
+D---E---F---G master
+
+              'A'--'B'--'C' topic
+             /
+D---E---F---G master
+
+# [master] get pull --rebase origin topic ?????
+      A---B---C topic
+     /
+D---E---F---G master
+
+D---E---A---B---C---'F'---'G' master
+```
+
+> 变基本质是将本分支commit向后移动，所以不要在master进行rebase。
+>
+> 如何回滚?
 
 ### revert
 
@@ -173,7 +212,7 @@ git revert < commitID > # 提交一个与指定commit内容相反的commit。
 
 > 若在主分支revert一个功能分支，则该功能分支无法重新merge到主分支，需要用cherry-pick。
 
-### stash - Stash the changes in a dirty working directory away
+### stash
 
 ```bash
 git stash apply 弹出一个stash，并且保留记录
@@ -186,7 +225,7 @@ git stash list
 git stash drop
 ```
 
-## gitk git图形界面工具
+## gitk
 
 ## .gitignore 文件
 
