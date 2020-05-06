@@ -157,6 +157,8 @@ D---E---F---G master
 D---E---F---G master
 ```
 
+> 不要在master上变基已经push到远端的commit, 因为需要push -f
+
 ### pull
 
 ```bash
