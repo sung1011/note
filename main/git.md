@@ -157,8 +157,6 @@ D---E---F---G master
 D---E---F---G master
 ```
 
-> 变基本质是将本分支commit向后移动，所以不要在master进行rebase。
-
 ### pull
 
 ```bash
@@ -198,8 +196,6 @@ D---E---F---G *master
 D---E---A---B---C---'F'---'G' *master
 ```
 
-> 变基本质是将本分支commit向后移动，所以不要在master进行rebase。
->
 > 如何回滚?
 
 ### revert
