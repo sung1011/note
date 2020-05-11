@@ -123,6 +123,9 @@ git reset --hard  # reset HEAD, index and working tree
 ### merge
 
 ```bash
+git merge < branch >
+git merge --squash < branch > 创建一个单独的提交而不是做一次合并
+
        A---B---C topic
       /
  D---E---F---G master
@@ -144,9 +147,10 @@ git reset --hard  # reset HEAD, index and working tree
 # 5. [topic] git rebase master; // 变基到master HEAD之后 // 1234ab
 # 6. [master] git merge topic; // 1234ab
 
-# [topic] git rebase master
-# [topic] git rebase master topic
-# [topic] git rebase -i master // 变基并改变被移动的commit
+git rebase < 上游主分支 > < 分支 >
+
+[topic] git rebase master // 变基并自动改变被移动的commit
+[topic] git rebase -i master // 变基并交互式改变被移动的commit
 
       A---B---C *topic
      /
@@ -181,7 +185,7 @@ D---E---F---G master
 ```bash
 # git pull --rebase = git fetch && git rebase FETCH_HEAD
 
-# [topic] get pull --rebase origin master
+[topic] get pull --rebase origin master
       A---B---C *topic
      /
 D---E---F---G master
@@ -190,15 +194,11 @@ D---E---F---G master
              /
 D---E---F---G master
 
-# [master] get pull --rebase origin topic
-      A---B---C topic
-     /
-D---E---F---G *master
-
-D---E---A---B---C---'F'---'G' *master
 ```
 
 > 如何回滚?
+
+> 不要在master进行rebase操作，即以topic为基点变基master的commit，由于master不接受push -f，master变基前的commit不会消失。
 
 ### revert
 
