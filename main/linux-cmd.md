@@ -39,3 +39,21 @@
 ## mtr
 
 ## nsloopup
+
+## curl
+
+```bash
+# application/x-www-form-urlencoded
+curl localhost:3000/api/basic -X POST -d 'hello=world'
+
+# application/json
+curl localhost:3000/api/json -X POST -d '{"hello": "world"}' --header "Content-Type: application/json"
+
+# 文件内容作为要提交的数据
+curl localhost:3000/api/json -X POST -d @data.json --header "Content-Type: application/json" # json
+curl localhost:3000/api/basic -X POST -d @data.txt # x-www-from-urlencoded
+
+# multipart/form-data 上传文件
+curl localhost:3000/api/multipart -F raw=@raw.data -F hello=world
+
+```
