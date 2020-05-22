@@ -135,6 +135,7 @@
 
 ## ref
 
-[如何通俗理解设计模式及其思想](https://blog.csdn.net/mq2553299/article/details/80962335)
-[Java设计模式：23种设计模式全面解析（超级详细）](http://c.biancheng.net/design_pattern/)
-[23种设计模式简单定义](https://www.jianshu.com/p/a7e5226d3f46)
+- [如何通俗理解设计模式及其思想](https://blog.csdn.net/mq2553299/article/details/80962335)
+- [Java设计模式：23种设计模式全面解析（超级详细）](http://c.biancheng.net/design_pattern/)
+- [23种设计模式简单定义](https://www.jianshu.com/p/a7e5226d3f46)
+- https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design#toc-single-responsibility-principle

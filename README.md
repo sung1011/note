@@ -41,9 +41,9 @@ etcd
 [go](main/go.md)  
 [php](main/php.md)  
 [nodejs](main/nodejs.md)  
+[shell](main/shell.md)  
 c  
 python  
-[shell](main/shell.md)  
 lua  
 java  
   
@@ -97,4 +97,5 @@ restfulAPI
 [licenses](main/licenses.md)  
 [markdown](main/markdown.md)  
 [exp 经验](main/exp.md)  
+[keymaps](main/keymaps.md)
 gitlab  

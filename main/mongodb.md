@@ -2,7 +2,7 @@
 
 ## [概述](mongodb-overview.md)
   
-## [命令 cmd](mongodb-shell.md)
+## [命令 cmd](mongodb-cmd.md)
 
 ## [索引index](mongodb-index.md)
 
@@ -21,7 +21,7 @@ oplog 增量同步
 
 ## capped collection
 
-Capped Collection是性能出色的有着固定大小的集合，以LRU（least Recently Used，最近最少使用）规则和插入顺序执行age-out（老化移出）处理，自动维护集合中对象的插入顺序。多用以日志归档。  
+Capped Collection是性能出色的有着固定大小的集合，以LRU（Least Recently Used，最近最少使用）规则和插入顺序执行age-out（老化移出）处理，自动维护集合中对象的插入顺序。多用以日志归档。  
 
 ### 注意
   
@@ -91,48 +91,3 @@ db.coll.createIndex({"release.contry":1, "release.date":1})
   - 场景 网页计数，结果不需要准确的排行
   - 痛点 写入太频繁
   - 方案 间隔写入，每隔10或100次写入一次
-  
-## 实战  
-
-### 输出全部结果
-
-```js  
-// dump.js  
-var c = db.coll.find({status:1}).limit(5)  
-while(c.hasNext()) {  
-    printjson(c.next());  
-}  
-//mongo 127.0.0.1:27017/db1 dump.js> result.js  
-```  
-  
-### 查询最后插入的数据
-
-```js  
-db.coll.find().skip(db.coll.count()-1).forEach(printjson)  
-db.coll.find().limit(1).sort({$natural:-1})  
-```  
-  
-### 查询文档的keys
-
-```js  
-for(var key in db.coll.findOne({_id:"xxx"})) {print (key)}  
-```  
-  
-### 查询内嵌embedded文档的keys TODO  
-  
-### doc size
-
-```js  
-Object.bsonsize(db.coll.findOne({type:"auto"}))  
-```
-
-### 单个doc 16M限制
-
-TODO
-
-### update vs findAndModify
-
-1. update 可更新多个doc，但只保证单个doc原子性
-2. findAndModify 可以保证修改 与 返回结果（改前，改后都可以）这两个步骤是原子的
-3. findAndModify 若 upsert: true 并 无查询结果时, 并发状态下可能插入多个doc
-4. findAndModify 在分片集群中，查询必须包含分片key

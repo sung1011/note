@@ -71,12 +71,11 @@ db.coll.find({"category": "action"}, {_id: 0, title: 1}) // projection 投影(�
 ## update
 
 ```js
-db.coll.updateOne()
-db.coll.updateMany()
-db.coll.update({_id:123}, {$inc: {"foo.bar.baz":3}})
+db.coll.update({}, {$inc: {"foo.bar.baz":3}}, false, true) // 修改多个;另外变种方法 updateOne, updateMany
 db.coll.update({_id:123}, {$set: {"address.uid5":"bj"}}) // 修改内嵌文档
 db.coll.update({_id:123}, {$set: {"address.1":"bj"}}) // 修改数组元素值
 db.coll.update({_id:123}, {$set: {"books.1.name":"haha"}}) // 修改数组元素内嵌文档的值
+db.coll.update({_id:123}, {$unset: {"foo.bar.baz":1, "foo.bar.quz":1}}) // 删除多个内嵌
 ```
 
 ## remove
@@ -108,3 +107,56 @@ db.dropDatabase()
 db.fsyncLock() // 锁住db写入 rs锁住不会报错，解锁后自动同步。
 db.fsyncUnlock() // 解锁db写入
 ```
+  
+## 实战  
+
+### 执行脚本
+
+```bash
+mongo --quiet < a.js | grep abc
+```
+
+### 输出全部结果
+
+```js  
+// dump.js  
+var c = db.coll.find({status:1}).limit(5)  
+while(c.hasNext()) {  
+    printjson(c.next());  
+}  
+//mongo 127.0.0.1:27017/db1 dump.js> result.js  
+```  
+  
+### 查询最后插入的数据
+
+```js  
+db.coll.find().skip(db.coll.count()-1).forEach(printjson)  
+db.coll.find().limit(1).sort({$natural:-1})  
+```  
+  
+### 查询文档的keys
+
+```js  
+for(var key in db.coll.findOne({_id:"xxx"})) {print (key)}  
+```  
+  
+### 查询内嵌embedded文档的keys
+
+TODO
+  
+### doc size
+
+```js  
+Object.bsonsize(db.coll.findOne({type:"auto"}))  
+```
+
+### 单个doc 16M限制
+
+TODO
+
+### update vs findAndModify
+
+1. update 可更新多个doc，但只保证单个doc原子性
+2. findAndModify 可以保证修改 与 返回结果（改前，改后都可以）这两个步骤是原子的
+3. findAndModify 若 upsert: true 并 无查询结果时, 并发状态下可能插入多个doc
+4. findAndModify 在分片集群中，查询必须包含分片key
