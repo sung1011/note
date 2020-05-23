@@ -20,7 +20,7 @@ var_dump($value);
   
 ## 面向对象 OOP  
   
-### [设计模式](php-dp.md)  
+### [设计模式](oop.md)  
 
 ### 对象  
 
@@ -86,10 +86,10 @@ echo $b; // 2
 - 快捷导入 `use my\space\classA as ca`  
 - 调用  
   - 类 `new \my\space\classA()`  
-  - 别名类 `new ca()`  
+  - 别名类 `new ca()`  
   - 方法 `my\space\funcA()`  
   - 常量 `my\space\CONSTA`  
-  - 全局方法 `\funcG()`  
+  - 全局方法 `\funcG()`  
 - 自动加载  
   - __autoload()  
   - spl_autoload_register()  
@@ -181,30 +181,27 @@ echo $b; // 2
 ### 中级  
 
 - 魔术方法  
-  - __construct(), __destruct(), __call(), __get(), __set(), __isset(), __unset(), __toString(), __clone(), __autoload(), __sleep(), __wakeup(), __set_state(), __invoke()  
-
 - php7为何比php5性能高
   - 变量存储字节减小，减少内存占用，提升变量操作速度
   - 改善数组结构，数组元素和hash映射表被分配在同一块内存里，降低了内存占用、提升了 cpu 缓存命中率
   - 改进了函数的调用机制，通过优化参数传递的环节，减少了一些指令，提高执行效率
-  
-abstruct, interface  
-cgi, fastcgi, php-fpm, swoole  
-反射  
-迭代器原理  
-ioc (DI)  
+- abstruct, interface  
+- cgi, fastcgi, php-fpm, swoole  
+- 反射  
+- 迭代器原理  
+- ioc (DI)  
 
 ### 高级  
 
-字符串在手册中介绍，「PHP的字符串是二进制安全的」，这句话怎么理解，为什么是二进制安全？  --- php zval str数据结构`len + *val`; 不会将"abc \0 def"的`\0`错误的认为是结尾符而忽略后边的 def（而C语言会）  
-字符串连接符.，在内核中有哪些操作？多次.连接，是否会造成内存碎片过多？  --- 会
-PHP中使用多线程和多进程分别有哪些优缺点？  
-线上环境中，PHP进程偶尔会卡死（死锁），请问如何检测本质问题？  --- `https://blog.csdn.net/u010412301/article/details/52776584`
-PHP中创建多线程、多进程有哪些方式？互斥信号该如何实现？  --- `https://blog.csdn.net/ZHANG_TIMI/article/details/78342722`
-使用cUrl下载大文件时，占用内存太大，有没比较优化的方式？--- `curl_setopt($ch, CURLOPT_WRITEFUNCTION, function($ch ,$str) use (&$flag){})`  
-写代码来解决多进程/线程同时读写一个文件  --- `flock`
-PHP的的这种弱类型变量是怎么实现的？  
-垃圾回收  
+- 字符串在手册中介绍，「PHP的字符串是二进制安全的」，这句话怎么理解，为什么是二进制安全？  --- php zval str数据结构`len + *val`; 不会将"abc \0 def"的`\0`错误的认为是结尾符而忽略后边的 def（而C语言会）  
+- 字符串连接符.，在内核中有哪些操作？多次.连接，是否会造成内存碎片过多？  --- 会
+- PHP中使用多线程和多进程分别有哪些优缺点？  
+- 线上环境中，PHP进程偶尔会卡死（死锁），请问如何检测本质问题？  --- `https://blog.csdn.net/u010412301/article/details/52776584`
+- PHP中创建多线程、多进程有哪些方式？互斥信号该如何实现？  --- `https://blog.csdn.net/ZHANG_TIMI/article/details/78342722`
+- 使用cUrl下载大文件时，占用内存太大，有没比较优化的方式？--- `curl_setopt($ch, CURLOPT_WRITEFUNCTION, function($ch ,$str) use (&$flag){})`  
+- 写代码来解决多进程/线程同时读写一个文件  --- `flock`
+- PHP的的这种弱类型变量是怎么实现的？  
+- 垃圾回收  
 
 ### exp  
 
@@ -212,9 +209,9 @@ PHP的的这种弱类型变量是怎么实现的？
 
 ### ref
 
-[Fpm启动机制及流程分析———详细](http://www.mamicode.com/info-detail-2625546.html)
-[PHP内核探索之变量（7）- 不平凡的字符串](https://blog.csdn.net/fvjuerh/article/details/68946281)
-[php下载大文件的方法](https://blog.csdn.net/dengjiexian123/article/details/53057593)
-[亿级用户 PC 主站的 PHP7 升级实践](https://www.infoq.cn/article/practice-of-PHP7-upgrade-for-the-PC-master-station)
-[phpfpm运行原理](https://blog.csdn.net/sinat_38804294/article/details/94393621)
-[PHP传值和传引用区别](https://blog.csdn.net/chengjianghao/article/details/81507752)
+- [Fpm启动机制及流程分析———详细](http://www.mamicode.com/info-detail-2625546.html)
+- [PHP内核探索之变量（7）- 不平凡的字符串](https://blog.csdn.net/fvjuerh/article/details/68946281)
+- [php下载大文件的方法](https://blog.csdn.net/dengjiexian123/article/details/53057593)
+- [亿级用户 PC 主站的 PHP7 升级实践](https://www.infoq.cn/article/practice-of-PHP7-upgrade-for-the-PC-master-station)
+- [phpfpm运行原理](https://blog.csdn.net/sinat_38804294/article/details/94393621)
+- [PHP传值和传引用区别](https://blog.csdn.net/chengjianghao/article/details/81507752)
