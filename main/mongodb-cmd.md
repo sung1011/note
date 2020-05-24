@@ -86,6 +86,19 @@ db.coll.remove({time: {$lt: 2019}})
 db.coll.remove({})
 ```
 
+## index
+
+```js
+db.coll.createIndex({name: 1}) // 1 升序 2 降序; ensureIndex是别名
+db.coll.createIndex({name: 1}, {unique: true}) // 唯一索引
+db.coll.createIndex({gender: 1, joinTime: 1, age: 1}) // 复合索引 创建遵循ESR原则
+db.coll.createIndex({age: 1}, {partialFilterExpression: {age: {$get: 5}}}) // 索引部分创建 age大于5的才创建索引
+db.coll.createIndex({name: 1}, {background: 1}) // 后台创建 推荐创建索引时必须加此选项
+db.coll.getIndexes() // 查看集合索引; getIndexKeys()简化
+db.coll.dropIndex({joinTime: 1}) // 删除索引
+db.coll.find({age: {$gt: 20}}).explain(true) // 索引执行细节
+```
+
 ## drop
 
 ```js
