@@ -67,6 +67,8 @@ Connection: keep-alive
 
 ## [通讯流程 TCP](TCP.md)
 
+## [跨域 cors](HTTP-cors.md)
+
 ## ref
 
 [队头阻塞](https://cloud.tencent.com/developer/article/1509279)
