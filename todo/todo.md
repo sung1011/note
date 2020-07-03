@@ -123,6 +123,12 @@ DNS nameserver
 - 某玩家请求多
 - trace一次请求的所有log(不跨服务、跨服务)
 - 慢请求
+- pay记录过多如何处理
+- 支付校验都有啥
+
+- oncall dingding
+- release dingding
+- activity dingding
 
 ## code
 
