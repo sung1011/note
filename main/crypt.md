@@ -2,29 +2,37 @@
 
 ## 通用概念
 
-- **[填充](crypt-padding.md)**
-- **[分组模式](crypt-mode.md)**
+[填充](crypt-padding.md)
+
+[分组模式](crypt-mode.md)
 
 ## 对称
 
-- **RC**
+rc
 
-- **[AES](aes.md)** Advanced Encryption Standard 高级加密标准
+[aes](aes.md) Advanced Encryption Standard 高级加密标准
 
-- **DES** Data Encryption Standard 数据加密算法
+des Data Encryption Standard 数据加密算法
 
-- **3DES**
+3des
 
 ## 非对称
 
-- **[RSA](RSA.md)**
-- **DSA**
-- **ECC**
+[rsa](RSA.md)
+
+dsa
+
+ecc
 
 ## 散列 摘要算法
 
-- **MD5**
-- **[SHA](SHA.md)**
+md5
+
+[sha](SHA.md)
+
+## 编码
+
+base64
 
 ## ref
 
