@@ -40,9 +40,9 @@ HEAD 头指针
 ### catfile 调试对象信息
 
 ```bash
-git catfile -t  # 查看对象类型
-git catfile -s  # 查看对象size
-git catfile -p  # 查看对象内容
+git cat-file -t  # 查看对象类型
+git cat-file -s  # 查看对象size
+git cat-file -p  # 查看对象内容
 ```
 
 ### help
@@ -274,3 +274,7 @@ current_branch=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
 ### git push -f 找回
 
 TODO
+
+## ref
+
+[git book](https://git-scm.com/book/zh/v2/)
