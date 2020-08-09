@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>first js</title>
+    </head>
+
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <div id=app>
+            <div>{{msg}}</div>
+            <div :style=dr >{{msg}}</div>
+            <div v-html=tmpl ></div>
+            <button @click="s()">bbb</button>
+            <div>{{msgOther}}</div>
+            <div v-for="row in list">
+                <div v-if="row.age < 40">
+                    {{row.name}}
+                </div>
+                <div v-else :style=dr>
+                    {{row.name}}
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    msg: 1234,
+                    va: 'bbb',
+                    dr: 'color: brown',
+                    tmpl: '<a href="https://www.baidu.com">hahaha</a>',
+                    list: [{
+                        name: 'sunji',
+                        age: 30
+                    },{
+                        name: 'xiexin',
+                        age: 26
+                    },{
+                        name: 'sdm',
+                        age: 60
+                    }]
+                },
+                methods: {
+                    s: function () {
+                        this.msg = 'abc'
+                    }
+                },
+                watch: {
+                    msg: function (newVal, oldVal) {
+                        console.log(oldVal)
+                        console.log(newVal)
+                    }
+                },
+                computed: {
+                    msgOther: function () {
+                        return 'computed: ' + this.msg
+                    }
+                }
+            });
+
+        </script>
+
+    </body>
+</html>

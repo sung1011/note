@@ -49,6 +49,7 @@ java
   
 ### web  
 
+[OAuth](main/oauth.md)  
 [HTTP](main/HTTP.md)  
 [socket 套接字](main/socket.md)  
 [network 网络编程](main/network.md)  
@@ -61,7 +62,7 @@ restfulAPI
 
 ### concept
 
-[oop 面向对象](main/oop.md)
+[oop 面向对象](main/oop.md)  
 [distributed 分布式](main/distributed.md)  
 [cryptography 加密](main/crypt.md)  
 [splite brain 脑裂](main/splite-brain.md)  
@@ -98,5 +99,5 @@ restfulAPI
 [licenses](main/licenses.md)  
 [markdown](main/markdown.md)  
 [exp 经验](main/exp.md)  
-[keymaps](main/keymaps.md)
+[keymaps](main/keymaps.md)  
 gitlab  
