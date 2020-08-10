@@ -13,8 +13,6 @@ app
     第三方应用 app <--- protected resource --- 微信 res server // 资源服验证令牌，并提供资源
 ```
 
-## feature
-
 ## 类型
 
 - `授权码 authorization-code`
