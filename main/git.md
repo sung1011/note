@@ -60,7 +60,8 @@ git clone --depth 10 # 深度。保留最新的n个commit，更前的commit嫁�
 ### blame
 
 ```bash
-git blame -b -w # 显示全文blame。 -b show commitID; -w ignore whitespace
+git blame -b -w < file > # 显示全文blame。 -b show oid; -w ignore whitespace
+git blame -L 10,20 < file > # 按行范围进行blame
 ```
 
 ### mv  移动文件
@@ -90,7 +91,7 @@ git diff --cached # HEAD与暂存区比较
 
 ```bash
 git branch -d -D
-git branch -v 展示HEAD，分支，commitID，message
+git branch -v 展示HEAD，分支，oid，message
 git branch --no-merged 获取未合入当前分支的分支
 git branch --merged 获取已合入当前分支的分支
 ```
@@ -108,8 +109,9 @@ git commit -m, --message < msg >
 git checkout -b # 基于当前分支新建分支
 git checkout -- < filename > # 丢弃工作区指定文件的修改
 git checkout . # 丢弃工作区当前文件夹的修改
-git checkout < commitID > # 检出某次commit。修改后新建分支来保存修改内容（分离头指针）。
-git checkout < commitID > < filename > # 检出指定commitid 的 指定文件
+git checkout < oid > # 检出某次commit。修改后新建分支来保存修改内容（分离头指针）。
+git checkout < oid > < filename > # 检出指定oid 的 指定文件
+git checkout --orphan < new branch > # 新建0提交的分支，当前内容全部转为committed状态
 ```
 
 ### reset
@@ -203,7 +205,8 @@ D---E---F---G master
 ### revert
 
 ```bash
-git revert < commitID > # 提交一个与指定commit内容相反的commit。
+git revert < oid > # 提交一个与指定commit内容相反的commit。
+git revert -n < oid > # 内容相反的，但不提交
 ```
 
 > 若在主分支revert一个功能分支，则该功能分支无法重新merge到主分支，需要用cherry-pick。
@@ -220,6 +223,26 @@ git stash clear
 git stash list
 git stash drop
 ```
+
+### ls-files
+
+```bash
+git ls-files -m # 列出modified文件
+git ls-files -o # 列出Untracked文件
+git ls-files -d # 列出删除的文件
+```
+
+### clean
+
+```bash
+git clean -id # 交互询问删不删Untracked -d 和目录
+git clean -nd # -n 试图删除Untracked -d 和目录
+git clean -df # -f 直接删除Untracked文件; -d 和目录
+```
+
+### bundle
+
+TODO
 
 ## gitk
 
@@ -278,3 +301,4 @@ TODO
 ## ref
 
 [git book](https://git-scm.com/book/zh/v2/)
+[git tips](https://github.com/521xueweihan/git-tips)
