@@ -84,23 +84,32 @@ git log --graph
 ```bash
 git diff HEAD~3, - HEAD^^^
 git diff < commit1 > < commit2 >
-git diff --cached # HEAD与暂存区比较
+git diff --cached # 暂存区 与 HEAD 比较
 ```
 
 ### branch
 
 ```bash
-git branch -d -D
-git branch -v 展示HEAD，分支，oid，message
-git branch --no-merged 获取未合入当前分支的分支
-git branch --merged 获取已合入当前分支的分支
+git branch -vv # 展示HEAD，分支，oid，message
+git branch -d
+git branch --no-merged # 获取未合入当前分支的分支
+git branch --merged # 获取已合入当前分支的分支
+git branch --merged master # 获取已合入master的分支
+git branch -m < new-branch-name > # 分支重命名
 ```
 
 ### commit
 
 ```bash
-git commit --amend 替换上一次提交的msg
+git commit --amend # 替换上一次提交的msg
 git commit -m, --message < msg >
+```
+
+### push
+
+```bash
+git push -u origin < branch > # 关联分支。 当前 与 <branch>
+git push origin --delete < branch > # 删除远端分支
 ```
 
 ### checkout
@@ -108,9 +117,9 @@ git commit -m, --message < msg >
 ```bash
 git checkout -b # 基于当前分支新建分支
 git checkout -- < filename > # 丢弃工作区指定文件的修改
-git checkout . # 丢弃工作区当前文件夹的修改
+git checkout . # 丢弃工作区当前文件夹的 modified
 git checkout < oid > # 检出某次commit。修改后新建分支来保存修改内容（分离头指针）。
-git checkout < oid > < filename > # 检出指定oid 的 指定文件
+git checkout < oid > -- < filename > # 检出指定oid 的 指定文件
 git checkout --orphan < new branch > # 新建0提交的分支，当前内容全部转为committed状态
 ```
 
@@ -198,8 +207,7 @@ D---E---F---G master
 
 ```
 
-> 如何回滚?
-
+> 如何回滚?  
 > 不要在master进行rebase操作，即以topic为基点变基master的commit，由于master不接受push -f，master变基前的commit不会消失。
 
 ### revert
@@ -214,12 +222,14 @@ git revert -n < oid > # 内容相反的，但不提交
 ### stash
 
 ```bash
-git stash apply 弹出一个stash，并且保留记录
-git stash pop   弹出一个stash，不保留记录
-git stash push  暂存一个stash
+git stash -u    # 保存一个stash 包含untracked文件
+git stash save  # 保存一个stash
+git stash apply < stash@{n} > # 弹出一个stash，并且保留记录
+git stash pop   # 弹出一个stash，不保留记录
+git stash push  # 暂存一个stash
 git stash show
 git stash branch
-git stash clear
+git stash clear # 删除所有stash
 git stash list
 git stash drop
 ```
@@ -241,6 +251,27 @@ git clean -df # -f 直接删除Untracked文件; -d 和目录
 ```
 
 ### bundle
+
+TODO
+
+### remote
+
+```bash
+git remote add origin < remote-url > # 创建远程仓库
+git remote set-url origin < remote-url > # 修改远程仓库
+git remote show origin # 远端与本地分支的关系
+```
+
+### tag
+
+```bash
+git tag # 查看标签
+git tag -ln # 标签详情
+git tag < tag-name > # 创建标签
+git tag -d # 删除本地标签
+```
+
+### describe
 
 TODO
 
@@ -288,7 +319,7 @@ git push --mirror git@gitcafe.com/username/newproject.git # 推送到新地址
 
 回滚指定版本、n个版本 git reset --hard; 以主分支回滚 (永久回滚)
 
-- `git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push --force`
+- `git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push -f`
 
 ### 当前分支
 
