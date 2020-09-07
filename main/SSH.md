@@ -15,6 +15,13 @@
 ## 连接
 
 ```bash
+# 生成公钥
+ssh-keygen
+
+# 保存公钥到远端
+ssh user@host 'mkdir -p .ssh && cat >> .ssh/authorized_keys' < ~/.ssh/id_rsa.pub
+
+# ssh连接
 ssh user@host
 
 　　The authenticity of host 'host (12.18.429.21)' can't be established.
@@ -34,5 +41,8 @@ ssh -vt user@host # 调试
 
 ssh -p 1234 user@host # 指定端口
 
-ssh user@host 'mkdir -p .ssh && cat >> .ssh/authorized_keys' < ~/.ssh/id_rsa.pub # 保存公钥
 ```
+
+## ssh_config
+
+## sshd_config
