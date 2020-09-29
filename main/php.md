@@ -155,6 +155,7 @@ echo $b; // 2
   - array_merge_recursive(),  //
   - array_combine(),  // [1,2] [a,b] -> [1=>a,2=>b]
   - $arr1 + $arr2  // [1,2], [a,b,c] -> [1,2,c]
+  - $arr1 + $arr2  // [a => 6, z => 1], [a => 1, b => 2, c => 3] -> [a => 6, z => 1, b => 2, c => 3]
 
 - 数组去重
   - array_unique()

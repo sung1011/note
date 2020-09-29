@@ -161,6 +161,7 @@ git merge --squash < branch > 创建一个单独的提交而不是做一次合�
 git rebase < 上游主分支 > < 分支 >
 
 [topic] git rebase master // 变基并自动改变被移动的commit
+[topic] git rebase -i HEAD~20
 [topic] git rebase -i master // 变基并交互式改变被移动的commit
 
       A---B---C *topic

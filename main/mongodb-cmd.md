@@ -133,12 +133,16 @@ mongo --quiet < a.js | grep abc
 
 ```js  
 // dump.js  
-var c = db.coll.find({status:1}).limit(5)  
+var c = db.coll.find({ status:1 }, {}).limit(100)
 while(c.hasNext()) {  
     printjson(c.next());  
 }  
 //mongo 127.0.0.1:27017/db1 dump.js> result.js  
-```  
+
+var c = db.coll.find({ status:1 }, {}).limit(100); while(c.hasNext()) {  printjson(c.next()); }  
+```
+
+> 实质是拿到全部数据，然后遍历
   
 ### 查询最后插入的数据
 
