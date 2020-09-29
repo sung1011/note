@@ -330,6 +330,11 @@ current_branch=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
 
 TODO
 
+### 错误的分支merge
+
+- merge时会产生一个commit(a)，对这个commit进行revert操作(b)，当需要合并时，对revert(b)再次进行revert。
+- 被revert的内容无法再次被merge，需要 cherry-pick {commit} 或 checkout {branch} -- {文件}
+
 ## ref
 
 [git book](https://git-scm.com/book/zh/v2/)
