@@ -351,7 +351,7 @@ TODO
 
 ```bash
 # 正常情况下 dev 和 master 为平行关系，feature合入dev进行测试，合入master进行上线
- D---E--a-F--X-G---H---I---J dev # 比master多一些脏提交a,b
+ D---E--a-F--X-G---H---I---J dev # 比master多一些脏提交a
             /                 \
            X feature           \  # 错误的将带有feature(X)的dev合入master
           /                     \
