@@ -344,10 +344,10 @@ TODO
 
 3. 错误的将带有feature的dev合入到master, 并push
 
-   1. master撤销合并 `[master] git revert <merge commit> -m 1` -- master撤销dev的所有内容
-   2. master保留feature内容 `[master] git checkout <feature> -- <X files>; git add .;git commit` -- master还原feature内容(去除了X), master已正常
-   3. master合入dev `[dev] git merge master` -- 将revert带回dev，此时dev中的a被撤销了
-   4. 检出dev被撤销的文件 `[dev] git checkout <merge commit> -- <X files>; git add .; git commit` -- 还原出a, dev已正常
+   1. master撤销dev的所有内容 `[master] git revert <merge commit> -m 1`
+   2. master保留feature内容(但不保留dev的X) `[master] git checkout <feature> -- <X files>; git add .;git commit` -- master已正常
+   3. master合入dev(将revert带回dev) `[dev] git merge master` -- 此时dev中的a内容没有了
+   4. 检出dev被撤销的文件(还原出a内容) `[dev] git checkout <merge commit> -- <X files>; git add .; git commit` -- dev已正常
 
 ```bash
 # 正常情况下 dev 和 master 为平行关系，feature合入dev进行测试，合入master进行上线
