@@ -346,7 +346,7 @@ TODO
 
    1. master撤销dev的所有内容 `[master] git revert <merge commit> -m 1`
    2. master保留feature内容(但不保留dev的a) `[master] git checkout <feature> -- <X files>; git add .;git commit` -- master已正常
-   3. master合入dev(将revert带回dev) `[dev] git merge master` -- 此时dev中的a内容没有了
+   3. master合入dev(将revert带回dev) `[dev] git merge master` -- 此时dev中的a内容没有了, 期望dev有a
    4. 检出dev被撤销的文件(还原出a内容) `[dev] git checkout <merge commit> -- <X files>; git add .; git commit` -- dev已正常
 
 ```bash
