@@ -340,7 +340,7 @@ TODO
 
    1. 找到merge产生的commitID
    2. 撤销提交`[master] git revert <merge commit> -m 1` // 产生revert的commitID
-   3. 若需要取消上述撤销 `[master] git revert <revert commit> -m 1` 或 将feature的内容逐个cherry-pick到master
+   3. 若需要取消上述撤销 `[master] git revert <revert commit> -m 1` 或 将feature的内容逐个cherry-pick到master `[master] git cherry-pick <feature commit>`
 
 3. 错误的将带有feature的dev合入到master
 
