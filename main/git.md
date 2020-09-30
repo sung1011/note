@@ -351,11 +351,11 @@ TODO
 
 ```bash
 # 正常情况下 dev 和 master 为平行关系，feature合入dev进行测试，合入master进行上线
- D---E--a-F--X-G---H---I---J dev # 比master多一些脏提交a
-            /                 \
-           X feature           \  # 错误的将带有feature(X)的dev合入master
-          /                     \
- D---E---F---G---H---------------aX master # feature错误的合入master 并且 dev的a错误的合进了master
+ D-----E---X---F---a----- dev # 比master多一些脏提交a
+          /                 \
+         X feature           \  # 错误的将带有feature(X)的dev合入master
+        /                     \
+ D-----E---F------------------aX master # feature错误的合入master 并且 dev的a错误的合进了master
 ```
 
 ## ref
