@@ -355,10 +355,10 @@ TODO
             /                 \
            X feature           \  # 错误的将带有feature(X)的dev合入master
           /                     \
- D---E---F---G---H---------------abXY master # feature错误的合入master 并且 dev的a错误的合进了master
+ D---E---F---G---H---------------aX master # feature错误的合入master 并且 dev的a错误的合进了master
 ```
 
 ## ref
 
-[git book](https://git-scm.com/book/zh/v2/)
-[git tips](https://github.com/521xueweihan/git-tips)
+- [git book](https://git-scm.com/book/zh/v2/)
+- [git tips](https://github.com/521xueweihan/git-tips)
