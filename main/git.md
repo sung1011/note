@@ -339,7 +339,7 @@ TODO
 2. 错误的将feature合入master, 并push
 
    1. 找到merge产生的commitID
-   2. 撤销提交`[master] git revert <merge commit> -m 1` // 产生revert的commitID
+   2. 撤销提交 `[master] git revert <merge commit> -m 1` // 产生revert的commitID
    3. 若需要取消上述撤销 `[master] git revert <revert commit> -m 1` 或 将feature的内容逐个cherry-pick到master `[master] git cherry-pick <feature commit>`
 
 3. 错误的将带有feature的dev合入到master, 并push
@@ -348,15 +348,16 @@ TODO
    2. master保留feature内容(但不保留dev的a) `[master] git checkout <feature> -- <X files>; git add .;git commit` -- master已正常
    3. master合入dev(将revert带回dev) `[dev] git merge master` -- 此时dev中的a内容没有了, 期望dev有a
    4. 检出dev被撤销的文件(还原出a内容) `[dev] git checkout <merge commit> -- <X files>; git add .; git commit` -- dev已正常
+   5. 若dev中有其他feature，需要类似【4】把这些被撤销feature内容还原出来
 
-```bash
-# 正常情况下 dev 和 master 为平行关系，feature合入dev进行测试，合入master进行上线
- D-----E---X---F---a----- dev # 比master多一些脏提交a
-          /                 \
-         X feature           \  # 错误的将带有feature(X)的dev合入master
-        /                     \
- D-----E---F------------------aX master # feature错误的合入master 并且 dev的a错误的合进了master
-```
+   ```bash
+   # 正常情况下 dev 和 master 为平行关系，feature合入dev进行测试，合入master进行上线
+    D-----E---X---F---a----- dev # 比master多一些脏提交a
+             /                 \
+            X feature           \  # 错误的将带有feature(X)的dev合入master
+           /                     \
+    D-----E---F------------------Xa master # feature错误的合入master 并且 dev的a错误的合进了master
+   ```
 
 ## ref
 
