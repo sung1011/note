@@ -342,7 +342,7 @@ TODO
    2. 撤销提交`[master] git revert <merge commit> -m 1` // 产生revert的commitID
    3. 若需要取消上述撤销 `[master] git revert <revert commit> -m 1` 或 将feature的内容逐个cherry-pick到master `[master] git cherry-pick <feature commit>`
 
-3. 错误的将带有feature的dev合入到master
+3. 错误的将带有feature的dev合入到master, 并push
 
    1. 撤销合并 `[master] git revert <merge commit> -m 1`
    2. 检出feature修改(master要保留)的文件`[master] git checkout <feature> -- <X files>; git add .;git commit` -- master去除X, master已正常
