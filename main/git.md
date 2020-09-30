@@ -344,8 +344,8 @@ TODO
 
 3. 错误的将带有feature的dev合入到master, 并push
 
-   1. 撤销合并 `[master] git revert <merge commit> -m 1` -- master撤销dev的所有内容
-   2. 检出feature修改(master要保留)的文件`[master] git checkout <feature> -- <X files>; git add .;git commit` -- master还原feature内容(去除了X), master已正常
+   1. master撤销合并 `[master] git revert <merge commit> -m 1` -- master撤销dev的所有内容
+   2. master保留feature内容 `[master] git checkout <feature> -- <X files>; git add .;git commit` -- master还原feature内容(去除了X), master已正常
    3. master合入dev `[dev] git merge master` -- 将revert带回dev，此时dev中的a被撤销了
    4. 检出dev被撤销的文件 `[dev] git checkout <merge commit> -- <X files>; git add .; git commit` -- 还原出a, dev已正常
 
