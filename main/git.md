@@ -75,7 +75,7 @@ git mv a b # 一般重命名大小写时用。 另外可通过配置使大小写
 ```bash
 git log --oneline
 git log -< num >, -n < num >
-git log --all
+git log --all # 所有分支
 git log --graph
 ```
 
@@ -115,7 +115,7 @@ git push origin --delete < branch > # 删除远端分支
 ### checkout
 
 ```bash
-git checkout -b # 基于当前分支新建分支
+git checkout -b < new branch > < start_point > # 基于当前分支or某commit 来新建分支
 git checkout -- < filename > # 丢弃工作区指定文件的修改
 git checkout . # 丢弃工作区当前文件夹的 modified
 git checkout < oid > # 检出某次commit。修改后新建分支来保存修改内容（分离头指针）。
@@ -272,6 +272,8 @@ git tag < tag-name > # 创建标签
 git tag -d # 删除本地标签
 ```
 
+### gc
+
 ### describe
 
 TODO
@@ -314,13 +316,17 @@ git push --mirror git@gitcafe.com/username/newproject.git # 推送到新地址
 
 ### 回滚
 
-回滚指定版本 git checkout; 以新建分支回滚 (临时回滚)
+1. 回滚指定版本 git checkout; 以新建分支回滚 (临时回滚)
 
-- `git checkout {commit_id} && git checkout -b {new_branch_name}`
+   `git checkout {commit_id} && git checkout -b {new_branch_name}`
 
-回滚指定版本、n个版本 git reset --hard; 以主分支回滚 (永久回滚)
+2. 回滚指定版本、n个版本 git reset --hard; 以主分支回滚 (永久回滚)
 
-- `git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push -f`
+   `git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push -f`
+
+### 彻底删除某个大文件
+
+TODO
 
 ### 当前分支
 
