@@ -2,42 +2,52 @@
 
 ## 架构
 
-Workspace：工作区  
-Index / Stage：暂存区  
-Repository：仓库区（或本地仓库）  
-Remote：远程仓库  
+- Workspace：工作区  
+- Index / Stage：暂存区  
+- Repository：仓库区（或本地仓库）  
+- Remote：远程仓库  
 
 ## 对象类型
 
-blob
+- commit (or tag)
 
-> 每个blob代表一个（版本的）文件，blob只包含文件的数据，而忽略文件的其他元数据，如名字、路径、格式等。
-
-tree
-
-> 每个tree代表了一个目录的信息，包含了此目录下的blobs，子目录（对应于子trees），文件名、路径等元数据。因此，对于有子目录的目录，git相当于存储了嵌套的trees。
-
-commit
-
-> 每个commit记录了提交一个更新的所有元数据，如指向的tree，父commit，作者、提交者、提交日期、提交日志等。每次提交都指向一个tree对象，记录了当次提交时的目录信息。一个commit可以有多个（至少一个）父commits。
-
-tag
-
-> tag用于给某个上述类型的对象指配一个便于开发者记忆的名字, 通常用于某次commit。
-
-## 标记
+  每个commit记录了提交一个更新的所有元数据，如指向的tree，父commit，作者、提交者、提交日期、提交日志等。每次提交都指向一个tree对象，记录了当次提交时的目录信息。一个commit可以有多个（至少一个）父commits。
 
 ```bash
-HEAD 头指针
-^   父
-^^^ 父父父
-~3  父父父
---  指定文件
+# git cat-file < oid or tag >
+tree 8c14e08655a16ff642e8bc340aed6abcc24118d9  
+parent 7c7f1be90f15c921fbc1de65431a5245285cfd88  
+author sunji <sung1011@gmail.com> 1600173852 +0800  
+committer sunji <sung1011@gmail.com> 1600173852 +0800  
+
+"add phpinfo" # message
+```
+
+- tree
+
+  每个tree代表了一个目录的信息，包含了此目录下的blobs，子目录（对应于子trees），文件名、路径等元数据。因此，对于有子目录的目录，git相当于存储了嵌套的trees。
+
+```bash
+# git cat-file -p 8c14e08655a16ff642e8bc340aed6abcc24118d9
+040000 tree 4e28030f8c8691fd473e70c2df510df53640b733   .vscode
+040000 tree 8b12d6694b2da38afdd6cdb1507e12b77f972729   logs
+100644 blob ad24f56f441535daa342b4be1e36b6a510c2b000   README.md
+100644 blob 33b4f711f4fce3f6547b6db3919d98273cb8e692   phpinfo.php
+```
+
+- blob
+
+  每个blob代表一个（版本的）文件，blob只包含文件的数据，而忽略文件的其他元数据，如名字、路径、格式等。
+
+```php
+# git cat-file -p 33b4f711f4fce3f6547b6db3919d98273cb8e692
+<?php
+echo phpinfo();
 ```
 
 ## 常用命令 cmd
 
-### catfile 调试对象信息
+### cat-file 调试对象信息
 
 ```bash
 git cat-file -t  # 查看对象类型
@@ -118,7 +128,7 @@ git push origin --delete < branch > # 删除远端分支
 git checkout -b < new branch > < start_point > # 基于当前分支or某commit 来新建分支
 git checkout -- < filename > # 丢弃工作区指定文件的修改
 git checkout . # 丢弃工作区当前文件夹的 modified
-git checkout < oid > # 检出某次commit。修改后新建分支来保存修改内容（分离头指针）。
+git checkout < oid > # 检出某次commit。修改后新建分支来保存修改内容（分离头指针 detached HEAD）。
 git checkout < oid > -- < filename > # 检出指定oid 的 指定文件
 git checkout --orphan < new branch > # 新建0提交的分支，当前内容全部转为committed状态
 ```
@@ -145,8 +155,6 @@ git merge --squash < branch > 创建一个单独的提交而不是做一次合�
       /         \
  D---E---F---G---H master
 ```
-
-> 如何回滚?
 
 ### rebase
 
@@ -305,65 +313,17 @@ config.php:     表示忽略当前路径的 config.php 文件
 fd1/*           忽略目录 fd1 下的全部内容；注意，不管是根目录下的 /fd1/ 目录，还是某个子目录 /child/fd1/ 目录，都会被忽略；
 ```
 
-## 实战
-
-### 迁移
+### 标记
 
 ```bash
-git clone --bare git://github.com/username/project.git # 克隆裸库(仅代码)
-git push --mirror git@gitcafe.com/username/newproject.git # 推送到新地址
+HEAD 头指针
+^   父
+^^^ 父父父
+~3  父父父
+--  指定文件
 ```
 
-### 回滚
-
-1. 回滚指定版本 git checkout; 以新建分支回滚 (临时回滚)
-
-   `git checkout {commit_id} && git checkout -b {new_branch_name}`
-
-2. 回滚指定版本、n个版本 git reset --hard; 以主分支回滚 (永久回滚)
-
-   `git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push -f`
-
-### 彻底删除某个大文件
-
-TODO
-
-### 当前分支
-
-current_branch=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
-
-### git push -f 找回
-
-TODO
-
-### 错误的分支merge
-
-1. 错误的将feature合入master, 未push
-
-   1. 版本回退 `[master] git reset --hard origin/master`
-
-2. 错误的将feature合入master, 并push
-
-   1. 找到merge产生的commitID
-   2. 撤销提交 `[master] git revert <merge commit> -m 1` // 产生revert的commitID
-   3. 若需要取消上述撤销 `[master] git revert <revert commit> -m 1` 或 将feature的内容逐个cherry-pick到master `[master] git cherry-pick <feature commit>`
-
-3. 错误的将带有feature的dev合入到master, 并push
-
-   1. master撤销dev的所有内容 `[master] git revert <merge commit> -m 1`
-   2. master保留feature内容(但不保留dev的a) `[master] git checkout <feature> -- <X files>; git add .;git commit` -- master已正常
-   3. master合入dev(将revert带回dev) `[dev] git merge master` -- 此时dev中的a内容没有了, 期望dev有a
-   4. 检出dev被撤销的文件(还原出a内容) `[dev] git checkout <merge commit> -- <X files>; git add .; git commit` -- dev已正常
-   5. 若dev中有其他feature，需要类似【4】把这些被撤销feature内容还原出来
-
-   ```bash
-   # 正常情况下 dev 和 master 为平行关系，feature合入dev进行测试，合入master进行上线
-    D-----E---X---F---a----- dev # 比master多一些脏提交a
-             /                 \
-            X feature           \  # 错误的将带有feature(X)的dev合入master
-           /                     \
-    D-----E---F------------------Xa master # feature错误的合入master 并且 dev的a错误的合进了master
-   ```
+## [git实战](git-ex.md)
 
 ## ref
 
