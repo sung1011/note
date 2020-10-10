@@ -55,6 +55,12 @@ git cat-file -s  # 查看对象size
 git cat-file -p  # 查看对象内容
 ```
 
+### rev-list
+
+```bash
+git rev-list < oid1 >...< oid2 > # 两次提交之间的所有提交
+```
+
 ### help
 
 ```bash
@@ -93,8 +99,9 @@ git log --graph
 
 ```bash
 git diff HEAD~3, - HEAD^^^
-git diff < commit1 > < commit2 >
 git diff --cached # 暂存区 与 HEAD 比较
+git diff < commit1 > < commit2 >
+git diff < branch1 > < branch2 > -- < file >
 ```
 
 ### branch
