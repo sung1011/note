@@ -206,7 +206,7 @@ git remote show origin # 远端与本地分支的关系
 
 ### show
 
-### log :Inspection and Comparison
+### [log](#log)
 
 ### diff :Inspection and Comparison
 
@@ -384,7 +384,7 @@ git ls-files -d # 列出删除的文件
 ### rev-list
 
 ```bash
-git rev-list --objects --all # 获取所有对象 和 文件名 (commit, tree, blob)
+git rev-list --objects --all # 获取所有对象(反向) 和 文件名 (commit, tree, blob)
 git rev-list < oid1 >...< oid2 > # 两次提交之间的所有提交
 ```
 
