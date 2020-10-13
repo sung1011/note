@@ -190,7 +190,10 @@ D---E---F---G master
 ```bash
 git push -u origin < branch > # 关联分支。 当前 与 <branch>
 git push origin --delete < branch > # 删除远端分支
+git push -f --all # 强制推送到所有remote
 ```
+
+> push -f: 执行前需保证本地是最新(别人没再新的提交)
 
 ### remote
 
@@ -358,7 +361,11 @@ git clean -df # -f 直接删除Untracked文件; -d 和目录
 
 ### reflog
 
-### filter-branch
+### filter-branch 重写分支
+
+```bash
+git filter-branch --force --prune-empty --index-filter 'git rm -rf --cached --ignore-unmatch < file >' --tag-name-filter cat -- --all # 彻底删除某文件
+```
 
 ### instaweb
 
