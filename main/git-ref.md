@@ -20,8 +20,6 @@ git help -w --web #
 
 ### clone
 
-`git clone [<options>] [--] <repo> [<dir>]`
-
 ```bash
 git clone --depth 10 < repo > # 深度。保留最新的10个commit，更前的commit嫁接(grafted)成一个整体
 ```
@@ -229,8 +227,6 @@ git remote show origin # 远端与本地分支的关系
 
 ### cherry-pick
 
-`git cherry-pick [<options>] <commit-ish>...`
-
 ### [diff](#diff#1)
 
 ### rebase
@@ -433,8 +429,6 @@ git rev-list < oid1 >...< oid2 > # 两次提交之间的所有提交
 ### update-ref
 
 ### verify-pack 读取归档文件（idx）
-
-`git verify-pack [-v | --verbose] [-s | --stat-only] <pack>...`
 
 ```bash
 git verify-pack -v .git/objects/pack/pack-*.idx # 获取所有pack中的对象
