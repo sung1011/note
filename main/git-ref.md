@@ -20,6 +20,8 @@ git help -w --web #
 
 ### clone
 
+`git clone [<options>] [--] <repo> [<dir>]`
+
 ```bash
 git clone --depth 10 # 深度。保留最新的n个commit，更前的commit嫁接(grafted)成一个整体
 ```
