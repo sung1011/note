@@ -56,12 +56,55 @@ current_branch=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
     D-----E---F------------------Xa master # feature错误的合入master 并且 dev的a错误的合进了master
    ```
 
-## 彻底删除某个大文件
+### 查找大文件
 
-TODO
+```bash
+# 获取最大的5个blob
+git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -g -r | head -n5
+# 通过blob获取文件名
+git rev-list --objects --all | grep 33e65fc9089735578c9fd232637dde7d95db5d22
+```
+
+## 彻底删除某个文件（大文件、涉密文件）
+
+```bash
+git filter-branch --index-filter 'git rm --cached --ignore-unmatch < file >'
+
+rm -rf .git/refs/original
+git reflog expire --expire=now --all
+git fsck --full --unreachable
+git repack -A -d
+git gc --aggressive --prune=now
+git push --force
+```
 
 ## git push -f 找回
 
 TODO
+
+### .gitignore 文件
+
+```gitignore
+*.a             表示忽略所有 .a 结尾的文件
+!lib.a          表示但lib.a除外
+/TODO           表示仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
+build/          表示忽略 build/目录下的所有文件，过滤整个build文件夹；
+doc/*.txt       表示会忽略doc/notes.txt但不包括 doc/server/arch.txt
+
+bin/:           表示忽略当前路径下的bin文件夹，该文件夹下的所有内容都会被忽略，不忽略 bin 文件
+/bin:           表示忽略根目录下的bin文件
+/*.c:           表示忽略cat.c，不忽略 build/cat.c
+debug/*.obj:    表示忽略debug/io.obj，不忽略 debug/common/io.obj和tools/debug/io.obj
+**/foo:         表示忽略/foo,a/foo,a/b/foo等
+a/**/b:         表示忽略a/b, a/x/b,a/x/y/b等
+!/bin/run.sh    表示不忽略bin目录下的run.sh文件
+*.log:          表示忽略所有 .log 文件
+config.php:     表示忽略当前路径的 config.php 文件
+
+/mtk/           表示过滤整个文件夹
+*.zip           表示过滤所有.zip文件
+/mtk/do.c       表示过滤某个具体文件
+fd1/*           忽略目录 fd1 下的全部内容；注意，不管是根目录下的 /fd1/ 目录，还是某个子目录 /child/fd1/ 目录，都会被忽略；
+```
 
 ## [git note](git.md)
