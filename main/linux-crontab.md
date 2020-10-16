@@ -3,10 +3,18 @@
 ## cmd
 
 ```bash
-# /etc/crontab
+# /etc/crontab or -e 临时编辑(到内存)
+
+# 环境
 SHELL=/bin/bash
-PATH=/sbin:/bin:/usr/sbin:/usr/bin # 环境变量
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
 HOME=/User/sunji # 执行脚本的主目录
+
+# 示例
+HOME=/User/sunji1
+* * * * * a.sh
+HOME=/User/sunji2
+* * * * * b.sh
 
 # For details see man 4 crontabs
 
@@ -19,6 +27,7 @@ HOME=/User/sunji # 执行脚本的主目录
 # |  |  |  |  |
 # *  *  *  *  * user-name  command to be executed
 
+# 示例
 30 21 * * * /usr/local/etc/rc.d/lighttpd restart       #每晚的21:30重启apache。
 45 4 1,10,22 * * /usr/local/etc/rc.d/lighttpd restart  #每月1、10、22日的4 : 45重启apache。
 10 1 * * 6,0 /usr/local/etc/rc.d/lighttpd restart      #每周六、周日的1 : 10重启apache
@@ -37,7 +46,7 @@ HOME=/User/sunji # 执行脚本的主目录
 42 4 1 * * root run-parts /etc/cron.monthly //每月去执行/etc/cron.monthly内的脚本
 ```
 
-## params
+## options
 
 ```bash
 -e　编辑该用户的计时器设置,如果不指定用户，则表示编辑当前用户的crontab文件
