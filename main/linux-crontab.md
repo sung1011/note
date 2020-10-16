@@ -58,6 +58,9 @@ HOME=/User/sunji2
 0 4 1 jan * /usr/local/etc/rc.d/lighttpd restart       #一月一号的4点重启apache
 */30 * * * * /usr/sbin/ntpdate 210.72.145.44           #每半小时同步一下时间
 
+# 超时kill 与 锁
+* * * * * timeout -s SIGINT 100 flock -xn /tmp/lock /path/to/php /path/to/file
+
 # run-parts 执行文件夹内所有
 01 * * * * root run-parts /etc/cron.hourly //每小时执行/etc/cron.hourly内的脚本
 02 4 * * * root run-parts /etc/cron.daily //每天执行/etc/cron.daily内的脚本
