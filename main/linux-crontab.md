@@ -2,9 +2,11 @@
 
 ## config
 
-- `/etc/crontab` # 系统级。一般不要动, 改完无需重载服务
-- `/etc/cron.d/` # 系统级。全局计划任务时可改, 改完无需重载服务
+- `/etc/crontab` # 系统级。一般不要动
+- `/etc/cron.d/` # 系统级。全局计划任务时可改
 - `/var/spool/cron/<user>` # 用户级。可用 crontab -l, -e等进行操作。(crontab < file >会复写这个文件)
+
+> 以上配置修改后，都不必重载服务即生效
 
 ## crontab
 
