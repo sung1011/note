@@ -4,7 +4,7 @@
 
 - `/etc/crontab` # 系统级。一般不要动
 - `/etc/cron.d/` # 系统级。全局计划任务时可改
-- `/var/spool/cron/<user>` # 用户级。可用 crontab -l, -e等进行操作。(crontab < file >会复写这个文件)
+- `/var/spool/cron/<user>` # 用户级。可用 crontab -l, -e等进行操作。
 
 > 以上配置修改后，都不必重载服务即生效
 
@@ -17,7 +17,7 @@
 -r　删除某个用户的crontab文件，如果不指定用户，则默认删除当前用户的crontab文件。
 -i  在删除用户的crontab文件时给确认提示。
 -u user 用来设定某个用户的crontab服务，例如，“-u ixdba”表示设定ixdba用户的crontab服务，此参数一般有root用户来运行。
-file file是命令文件的名字,表示将file做为crontab的任务列表文件并载入crontab (/var/spool/cron/)。
+file file是命令文件的名字,表示将file做为crontab的任务列表文件并载入crontab (覆盖到/var/spool/cron/)。
 ```
 
 ## cmd
