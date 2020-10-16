@@ -3,7 +3,7 @@
 ## config
 
 - `/etc/crontab` # 系统级。一般不要动
-- `/etc/cron.d/` # 系统级。全局计划任务时可改
+- `/etc/cron.d/` # 系统级。全局计划任务时可以增改这个
 - `/var/spool/cron/<user>` # 用户级。可用 crontab -l, -e等进行操作。
 
 > 以上配置修改后，都不必重载服务即生效
@@ -31,9 +31,9 @@ HOME=/User/sunji # 执行脚本的主目录
 
 # 示例
 HOME=/User/sunji1
-* * * * * a.sh
+* * * * * a.sh # /User/sunji1/a.sh
 HOME=/User/sunji2
-* * * * * b.sh
+* * * * * b.sh # /User/sunji2/b.sh
 
 # For details see man 4 crontabs
 
