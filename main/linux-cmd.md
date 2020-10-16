@@ -11,6 +11,12 @@
 ```bash
 du -sh * | sort -n # 文件大小
 ```
+
+## sort
+
+```bash
+sort -nr -k4 # 以第四列进行数值倒序排序 (不加-n是按ascii)
+```
   
 ## lsof  
 
