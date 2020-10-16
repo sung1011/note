@@ -2,9 +2,9 @@
 
 ## 加载
 
-- /etc/crontab # 系统级 (一般不要动, 改完无需重载服务)
-- /etc/cron.d/ # 系统级 (全局计划任务时可改, 改完无需重载服务)
-- /var/spool/cron # 用户级 可用 crontab -l, -e等进行操作。
+- `/etc/crontab` # 系统级 (一般不要动, 改完无需重载服务)
+- `/etc/cron.d/` # 系统级 (全局计划任务时可改, 改完无需重载服务)
+- `/var/spool/cron` # 用户级 可用 crontab -l, -e等进行操作。
 
 ## cmd
 
