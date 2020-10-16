@@ -80,6 +80,6 @@ systemctl disable crond    #禁止开机自动启动
 /sbin/service crond stop     #关闭服务
 /sbin/service crond restart  #重启服务
 /sbin/service crond reload   #重新载入配置
-ntsysv                       #查看crontab服务是否已设置为开机启动
+ntsysv                       #查看crontab服务是否已设置为开机启动（用方向键和tab操作）
 chkconfig –level 35 crond on #开机自动启动
 ```
