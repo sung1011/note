@@ -62,7 +62,7 @@ current_branch=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
 # 获取最大的5个blob
 git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -g -r | head -n5
 # 通过blob获取文件名
-git rev-list --objects --all | grep 33e65fc9089735578c9fd232637dde7d95db5d22
+git rev-list --objects --all | grep < oid(blob) >
 ```
 
 ## 彻底删除某个文件（大文件、涉密文件）
@@ -78,7 +78,17 @@ git gc --aggressive --prune=now
 git push --force
 ```
 
+## 导出某次commit的文件
+
+```bash
+git diff-tree -r --no-commit-id --name-only < oid(commit) > | xargs tar -rf mycommit.tar
+```
+
 ## git push -f 找回
+
+TODO
+
+## 获取tree被哪些commit引用了
 
 TODO
 

@@ -414,7 +414,8 @@ git ls-files -d # 列出删除的文件
 ### rev-list
 
 ```bash
-git rev-list --objects --all # 获取所有对象(反向) 和 文件名 (commit, tree, blob)
+git rev-list --objects --all # 获取所有对象(commit, tree, blob) 及blob对应的文件, tree对应的目录 (commit 和 tree快照对应的数据第二列显示null);
+git rev-list --objects < oid(tree) > # 获取快照中所有内容(oid, file)
 git rev-list < oid1 >...< oid2 > # 两次提交之间的所有提交
 ```
 
@@ -431,7 +432,7 @@ git rev-list < oid1 >...< oid2 > # 两次提交之间的所有提交
 ### verify-pack 读取归档文件（idx）
 
 ```bash
-git verify-pack -v .git/objects/pack/pack-*.idx # 获取所有pack中的对象
+git verify-pack -v .git/objects/pack/pack-*.idx # 获取所有pack中的对象详细信息; commit对应的基础tree不会显示
 git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -g -r | head -n5 # 获取最大的5个对象
 ```
 
