@@ -129,6 +129,10 @@ DNS nameserver
 - oncall dingding
 - release dingding
 - activity dingding
+- 如何管道标准错误（而非标准输出） `http://www.dovov.com/854.html`
+- git ref `https://www.php.cn/manual/view/35099.html`
+- why the design `https://draveness.me/whys-the-design/`
+- ssh `http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html`
 
 ## code
 
