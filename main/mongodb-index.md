@@ -13,14 +13,16 @@
 
 1. **Single Field Index 单字段索引**
 
-2. **Compound Index 复合索引** 多字段联合索引，注意顺序（a,b,c创建复合索引，查a,b时索引有效，查b，c时索引无效）  
+2. **Compound Index 复合索引** 多字段联合索引，注意顺序（a,b,c创建复合索引，查a,b时索引有效，查b，c时索引无效）
 
-   - 顺序: ESR原则
+   - 查找顺序: ESR原则
      - E equal 精确放前面
      - S sort 排序放中间
        - R range 范围放最后
 
-   > 如 `db.coll.find({gender: F, age:{$gte: 18}}).sort(joinTime: 1)` 建立 `{gender:1, joinTime:1, age:1}` 的联合索引最佳。
+   > 如 `db.coll.find({gender: F, age:{$gte: 18}}).sort(joinTime: 1)` 建立 `{gender:1, joinTime:1, age:1}` 的联合索引最佳。  
+   >  
+   > `db.coll.createIndex({a:1, b:1, c:1})` 包含 {a}, {a, b}, {a, b, c} 所以建立索引的顺序很重要
 
 3. Multikey Index 多key索引 数组值索引  
 
@@ -35,7 +37,7 @@
 
 7. 额外索引属性  
 
-   - unique index 唯一索引  
+   - unique index 唯一值索引  
    - TTL索引： 指定数据失效时间  
    - partial index 部分索引： 只针对符合某个特定条件的文档建立索引  
    - sparse index 稀疏索引： 只针对存在索引字段的文档建立索引，可看做是部分索引的一种特殊情况  
@@ -68,8 +70,8 @@ db.coll.find({name:"xx"}).explain(true)
 - key
 - datapage
 - covered query 覆盖查询。需要查询的字段都在索引中。
-- ixscan 索引扫描
-- collscan 集合扫描
+- ixscan 索引扫描 # stats.children.type
+- collscan 集合扫描 # stats.children.type
 - big O notation 时间复杂度
 - selectivity 过滤性。
   

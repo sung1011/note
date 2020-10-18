@@ -11,6 +11,7 @@
 回溯  
 动态规划  
 字符串匹配算法  
+[雪花 snowflake](algo-snowflake.md)
 [位图 bitmap](algo-bitmap.md)  
 [布隆 BloomFilter](algo-bloomfilter.md)  
 哈希  
