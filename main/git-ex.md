@@ -88,7 +88,7 @@ git diff-tree -r --no-commit-id --name-only < oid(commit) > | xargs tar -rf myco
 
 TODO
 
-## 获取tree被哪些commit引用了
+## 获取指定tree/blob被哪些commit引用了
 
 TODO
 
