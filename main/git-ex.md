@@ -84,10 +84,6 @@ git push --force
 git diff-tree -r --no-commit-id --name-only < oid(commit) > | xargs tar -rf mycommit.tar
 ```
 
-## git push -f 找回
-
-TODO
-
 ## 获取指定tree/blob被哪些commit引用了
 
 TODO
