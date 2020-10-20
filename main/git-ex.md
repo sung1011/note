@@ -78,6 +78,12 @@ git gc --aggressive --prune=now
 git push --force
 ```
 
+## 哪些分支包含指定commit
+
+```bash
+git branch --contains < commitid >
+```
+
 ## 导出某次commit的文件
 
 ```bash
