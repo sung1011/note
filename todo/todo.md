@@ -178,3 +178,32 @@
 - 批量文件改名 前缀 后缀 匹配  
 - dotfile  
 - ssh 秘钥管理 IP列表管理  
+
+## other
+
+```go
+// matcher为副本
+matcher, exists := matchers[feed.Type]
+
+// v为副本
+for _, v := range feeds {
+
+}
+
+// chan传递副本
+
+// 不在函数中做错误处理, 而是用返回err代替throw
+func foo() (string, error) {
+  v, err := bar();
+  if err != nil {
+    return "", err
+  }
+  return v, nil;
+}
+
+// 如果一个接口类型只包含一个方法，那类型名需要以er结尾 ex: Reader, Writer, Matcher...
+type Matcher interface {
+  Search(feed *Feed, searchTerm string) ([]*Result, error)
+}
+
+```
