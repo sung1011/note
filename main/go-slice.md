@@ -2,8 +2,12 @@
 
 ## 数据结构
 
-slice: `ptr`指向底层array第一个元素地址, `len`, `cap`  
-array: {0:0, 1:0, 2:0, 3:0 ...}  
+- `ptr` 底层array被切的第一个元素地址 (切口)
+- `len` 切出的可用元素个数
+- `cap` 切出的可用+不可用元素个数 (从切口到array结尾的个数)
+
+> 可用: 可获取(`sl[4]`)，可赋值(`sl[4] = xxx`)  
+> 不可用: 代表不可获取和直接赋值; 可用来继续切(`sl[3:10]`)，或通过append赋值和扩容
 
 ## 创建 初始化 访问
 
@@ -11,43 +15,93 @@ array: {0:0, 1:0, 2:0, 3:0 ...}
 sl := make([]int, 5)
 sl := make([]int, 3, 5)
 sl := []int{30, 50, 20}
+sl := []string{99: "foo"} // 100个元素
 ```
 
 ## 数组 与 切片
 
 ```go
-a := [...]int{1, 2, 3, 4, 5}
-sl := a[1:3]
-fmt.Println(sl, len(sl), cap(sl)) //[2 3] len = 2 cap = 4
+
+arr := [...]string{"a", "b", "c", "d", "e"}
+
+sl := arr[1:3] //[b, c] len=(3-1); cap=(5-1)
+
+sl2 := sl[1:3] //[c d] len=(3-1); cap=(4-1)
+// 索引3 限制cap
+sl3 := arr[2:3:3] // [c] len=(3-2); cap=(3-2)
 ```
+
+## 赋值
+
+```go
+// 切片赋值，会同步修改底层数组的元素值。
+arr := [...]string{"a", "b", "c", "d"}
+sl := arr[2:] // [c d]
+sl[0] = "ccc" // arr=[a b ccc]
+```
+
+## append 增长/扩容
+
+```go
+sl := make([]string, 1, 4); //[] len=1; cap=4
+
+// cap足够时 增长: 增加可用元素 & 同步修改底层数组的元素值。  len++
+sl1 := append(sl, []string{"a", "b", "c"}...) // ["" a b c] len=4 cap=4; sl&sl1共享底层arr
+
+// cap不足时 扩容: 新建底层数组(cap倍增)。  len++ cap+++++
+sl2 := append(sl1, "x") // ["" a b c x] len=5 cap=8; sl2新建了底层arr
+```
+
+> append的扩容机制: cap < 1000时翻倍扩cap； cap >= 1000 每次扩cap25%
 
 ## nil切片 & 空切片
 
-nil 切片: `var nil_sl []int`  ptr为nil, len 0, cap 0  
-空 切片: `empty_sl := make([]int, 0)` ptr指向底层的空array, len 0, cap 0
+- nil 切片
+
+  `var sl []int`  ptr为nil, len 0, cap 0  
+
+- 空 切片
+
+  `sl := make([]int, 0)` ptr有值（指向底层的空array）, len 0, cap 0
 
 ## 拷贝 copy
 
-```go fake
-//go doc builtin copy
+```go
+// 仅覆盖值 && 不改变len, cap
 n := copy({1,2,3}, {111, 222, 333, 444}) //sl1 = {111, 222, 333}; n = 3
 n := copy({1,2,3}, {111, 222}) //sl1 = {111, 222, 3}; n = 2
 ```
 
-## append & 扩容
-
-向切片增加元素。  
-cap不足时，新建底层数组并扩容cap。  
-cap足够时，会改变底层数组元素值。  
-
-```go
-{1, 2, 3, 4} := append({1, 2}, 3, 4)
-{1, 2, 3, 4} := append({1, 2}, {3, 4}...)
-```
+> go doc builtin copy
 
 ## 作为参数
 
-slice{ptr, len, cap}的副本, 值传递给函数作为参数
+slice{*ptr, len, cap}的副本, 值传递给函数作为参数
+
+## 迭代
+
+```go
+// v是每个元素的副本
+// 循环内修改引用类型(如slice) sl[i] 会同步修改循环内的v
+// 循环内修改非引用类型(如array) sl[i] 不会同步修改循环内的v
+// 修改循环内v 不会同步修改sl
+sl = {a b c}
+for i, v := range sl {
+    if i == 0 {
+        sl[1] = "xxx";
+    }
+    if i == 1 {
+        // array [a b c]
+        // slice [a xxx c]
+        fmt.Println(v);
+    }
+}
+
+// for
+for i := 0; i < len(sl); i++ {
+
+}
+```
 
 ## 内存GC
 
