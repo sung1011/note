@@ -16,6 +16,7 @@ sl := make([]int, 5)
 sl := make([]int, 3, 5)
 sl := []int{30, 50, 20}
 sl := []string{99: "foo"} // 100个元素
+var sl []int
 ```
 
 ## 数组 与 切片
@@ -76,17 +77,19 @@ n := copy({1,2,3}, {111, 222}) //sl1 = {111, 222, 3}; n = 2
 
 ## 作为参数
 
-slice{*ptr, len, cap}的副本, 值传递给函数作为参数
+直接传递; 引用传参
+
+> slice{*ptr, len, cap}的副本值(很小，包含指向实际数据的指针)作为传递给函数作为参数。
 
 ## 迭代
 
 ```go
-// v是每个元素的副本
+// v是每个元素的副本， v实质是items的副本在迭代
 // 循环内修改引用类型(如slice) sl[i] 会同步修改循环内的v
-// 循环内修改非引用类型(如array) sl[i] 不会同步修改循环内的v
+// 循环内修改值类型(如array) sl[i] 不会同步修改循环内的v
 // 修改循环内v 不会同步修改sl
-sl = {a b c}
-for i, v := range sl {
+items = {a b c}
+for i, v := range items {
     if i == 0 {
         sl[1] = "xxx";
     }
@@ -120,4 +123,4 @@ return new_sl //新切片返回值
 
 ## ref
 
-[slice底层实现](https://blog.csdn.net/lengyuezuixue/article/details/81197691)
+`https://blog.csdn.net/lengyuezuixue/article/details/81197691`

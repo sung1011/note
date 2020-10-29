@@ -32,10 +32,14 @@ type bmap struct { // A bucket for a Go map.
 ## 创建 初始化 访问
 
 ```go
-var m := map[string]int // nil map; panic if written to
-m := map[string]int{} // empty map
-m := make(map[string]int, cap) // empty map
+m := map[string]int{"red": 1, "green": 2, "blue": 3} // len=3; 常用
+m := make(map[string]int, 10) // empty map; len=0; cap=10 常用
+
+m := map[string]int{} // empty map; prt=xxx len=0 cap=0; 可append
+var m = map[string]int // nil ptr map; panic if written to -- 没啥意义，基本不可用，不能赋值和append
 ```
+
+> map有cap的概念，但无法使用cap()
 
 ## 返回值 key是否存在
 
@@ -45,7 +49,11 @@ v1, exists1 := m["a"] // 1, true
 v2, exists2 := m["xxx"] // 0, false
 ```
 
-## len(), cap(), delete()
+## 作为参数
+
+直接传递； 引用传参
+
+> map的副本值(很小，包含指向实际数据的指针)作为传递给函数作为参数。
 
 ## 并发安全
 

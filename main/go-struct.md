@@ -18,7 +18,12 @@ s.Age = 18
 
 sp := new(Student) // 初始化
 
-sp := &Student{Name:"Sam", "Age":18} // 初始化 与new等效
+sp := &Student{ // 初始化 与new等效
+    Name    :"Sam",
+    Age     :18,
+}
+
+sp := &Student{"Sam", 18} // 初始化 顺序很重要
 ```
 
 ![img](res/go-struct-assign.jpg)
@@ -31,14 +36,19 @@ sp := &Student{Name:"Sam", "Age":18} // 初始化 与new等效
 
 ## 参数传递
 
-### 问题
+一般传递其指针 &struct
 
-1. 函数内部无法修改传递给函数的原始struct，它修改的是拷贝后的副本。
-2. 副本可能很大。
+## 基于基础类型的新类型
 
-### 解决
+```go
+type Duration int64
 
-一般struct作为参数时，传递的都是引用/指针( &struct )
+var i int64
+i = 100
+j := i // 最后一行赋值编译会报错 `j := Duration(i)` 需要改为强转类型，才能编译通过
+var dur Duration
+dur = j
+```
 
 ## 构造器（一个函数根据数据结构返回这个数据结构的一个实例对象） & 工厂方法
 
@@ -60,7 +70,7 @@ type Animal struct {
     father *Animal // 同类扩展
 }
 
-bm_horse := &Animal{
+bm_horse := &Animal{ // 马 和 ta的爸爸
     name: "baima",
     weight: 60,
     father: &Animal{

@@ -7,12 +7,12 @@
 变量直接存储值，内存通常在栈中分配，栈在函数调用完会被释放
 
 - bool  
-- int  
+- [int](go-int.md)
 - float  
 - string  
-- [struct](go-struct.md)  
-- [array](go-array.md)  
 - ptr  
+- [array](go-array.md)  
+- [struct](go-struct.md)  
 - [interface](go-interface.md)
 - func
 - unsafe.Pointer
