@@ -38,6 +38,25 @@ sp := &Student{"Sam", 18} // 初始化 顺序很重要
 
 一般传递其指针 &struct
 
+## 方法
+
+```go
+type User {
+    name string
+}
+// 指针接收者 修改类型本身
+func (u *User) changeName() {
+    u.name = "xx"
+}
+// 值接收者 修改类型的副本
+func (u User) changeName() User {
+    u.name = "xx"
+    return u
+}
+```
+
+> func(recv) 函数; recv.Method() 方法
+
 ## 基于基础类型的新类型
 
 ```go
@@ -165,7 +184,5 @@ func main() {
     fmt.Println(tn.Tag.Get("size")) // 30
 }
 ```
-
-## 函数func(recv) & 方法recv.Method()
 
 ## [嵌套接口](go-interface.md#嵌入结构体)
