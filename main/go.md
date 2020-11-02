@@ -13,8 +13,6 @@
 - ptr  
 - [array](go-array.md)  
 - [struct](go-struct.md)  
-- [interface](go-interface.md)
-- func
 - unsafe.Pointer
 
 ### 引用类型
@@ -24,6 +22,8 @@
 - [slice](go-slice.md)  
 - [map](go-map.md)  
 - [chan](go-chan.md)  
+- [interface](go-interface.md)
+- func
 
 ## [标准库](go-package.md)
 

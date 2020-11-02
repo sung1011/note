@@ -43,13 +43,14 @@ sp := &Student{"Sam", 18} // 初始化 顺序很重要
 ```go
 type User {
     name string
+    school *schoolInfo // 当期望 不随User变化而变化，使用指针
 }
 // 指针接收者 修改类型本身
-func (u *User) changeName() {
+func (u *User) changeName() { // u 或 &u 调用都可以
     u.name = "xx"
 }
 // 值接收者 修改类型的副本
-func (u User) changeName() User {
+func (u User) changeName() User { // u 或 &u 调用都可以
     u.name = "xx"
     return u
 }
@@ -104,37 +105,37 @@ bm_horse := &Animal{ // 马 和 ta的爸爸
 
 ```go
 type Animal struct {
-    name   string
-    weight int
+    Name   string
+    Weight int
 }
 
 type Horse struct {
     *Animal //组合, 内嵌
-    speak string
+    Speak string
     int //匿名字段
 }
 
 func (a *Animal) hello() {
-    fmt.Println(a.name)
-    fmt.Println(a.weight)
-    //fmt.Println(a.speak) // animal访问不到horse的字段， 即便是horse实例
+    fmt.Println(a.Name)
+    fmt.Println(a.Weight)
+    //fmt.Println(a.Speak) // animal访问不到horse的字段， 即便是horse实例
     // fmt.Println(a.int) // animal访问不到horse的匿名字段
 }
 
 func (h *Horse) hello() { // 重载 覆盖 Animal.hello()
-    fmt.Println(h.name)
-    fmt.Println(h.weight)
-    fmt.Println(h.speak)
+    fmt.Println(h.Name)
+    fmt.Println(h.Weight)
+    fmt.Println(h.Speak)
     fmt.Println(h.int)
 }
 
 func main() {
     bm_horse := &Horse{
         Animal: &Animal{ // 结构体包含**嵌入字段**，类型名充当了嵌入字段的字段名
-            name:   "baima",
-            weight: 60,
+            Name:   "baima",
+            Weight: 60,
         },
-        speak: "neigh",
+        Speak: "neigh",
         int: 1234,
     }
     bm_horse.hello() // horse.hello()
@@ -186,3 +187,9 @@ func main() {
 ```
 
 ## [嵌套接口](go-interface.md#嵌入结构体)
+
+## 未公开类型的公开字段
+
+```go
+
+```
