@@ -123,4 +123,4 @@ mf[2] = func() string{ return "20" }
 
 ## ref
 
-[剖析golang map的实现](https://www.jianshu.com/p/092d4a746620)
+`https://www.jianshu.com/p/092d4a746620` 剖析golang map的实现

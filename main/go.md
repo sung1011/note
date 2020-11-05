@@ -29,10 +29,12 @@
 
 ## [并发](go-concurrent.md)
 
+## 并发模式
+
 ## [test](go-test.md)
 
 ## GC
   
 ## ref
 
-[标准库](https://studygolang.com/pkgdoc)  
+`https://studygolang.com/pkgdoc` 标准库
