@@ -163,4 +163,4 @@ switch x.(type) {
 
 ## ref
 
-`https://blog.51cto.com/9291927/2130244` Go语言开发（五）、Go语言面向接口
+[Go语言开发（五）、Go语言面向接口](https://blog.51cto.com/9291927/2130244)
