@@ -31,6 +31,10 @@
 
 ## 并发模式
 
+- runner
+- pool
+- work
+
 ## [test](go-test.md)
 
 ## GC
