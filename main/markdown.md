@@ -80,6 +80,32 @@
    [self]: markdown.md
    [p]: res/markdownlogo.png
 
+## 代码块对比
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr>
+   <td>
+
+```go
+// 应该足以满足任何情况！
+c := make(chan int, 64)
+```
+
+   </td>
+   <td>
+
+```go
+// 大小：1
+c := make(chan int, 1) // 或者
+// 无缓冲 channel，大小为 0
+c := make(chan int)
+```
+
+   </td>
+</tr>
+</tbody></table>
 ## 缩放图片
 
 <img src="res/markdownlogo.png" width=30%>
