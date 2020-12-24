@@ -36,17 +36,6 @@
 [yac](main/yac.md)  
 etcd  
   
-### programming language  
-
-[go](main/go.md)  
-[php](main/php.md)  
-[nodejs](main/nodejs.md)  
-[shell](main/shell.md)  
-c  
-python  
-lua  
-java  
-  
 ### web  
 
 [OAuth](main/oauth.md)  
@@ -91,6 +80,17 @@ restfulAPI
 [ascii](main/ascii.md)  
 [scale 单位换算](main/scale.md)  
 
+### programming language  
+
+[go](main/go.md)  
+[php](main/php.md)  
+[nodejs](main/nodejs.md)  
+[shell](main/shell.md)  
+c  
+python  
+lua  
+java  
+  
 ### other  
 
 [tool](main/tool.md)  
