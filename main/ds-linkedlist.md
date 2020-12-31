@@ -7,7 +7,8 @@
 ## 特点
 
 - 非连续
-- 增删O(1), 查改O(n)
+- 快 insert delete O(1)
+- 慢 find O(n)
 
 ## 结构
 
