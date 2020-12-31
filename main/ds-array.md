@@ -25,12 +25,11 @@
 
 ## 操作
 
-- `find` head + n * size
+- `find`
 
-  - `随机访问 O(1)`
+  - `随机访问 O(1)` head + n * size
   - `二分查找 O(log n)`
-
-- `lookup O(n)`
+  - `lookup O(n)`
 
 - `insert`
 

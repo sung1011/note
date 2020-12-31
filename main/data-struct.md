@@ -18,6 +18,8 @@
 
 - [位图 Bitmap](ds-bitmap.md)
 
+      数据映射为bit数组，只存0或1
+
 - [布隆 bloom filter]
 
 - [堆 PriorityQueue(heap)]
