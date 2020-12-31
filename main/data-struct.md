@@ -12,7 +12,7 @@
 
 - [栈 Stack](ds-stack.md)  
 - [队列 Queue](ds-queue.md)
-- [散列表](ds-hash.md)
+- [散列表 Hash](ds-hash.md)
 - 堆 PriorityQueue(heap)  
 - 跳表 SkipList
 
