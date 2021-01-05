@@ -32,11 +32,17 @@
 
 - `insert` 预分配
 
+## 压缩
+
+- RLE run length encoding
+- gzip
+- lzo
+
 ## 实战
 
+- [布隆 bloom filter](algo-bloomfilter.md)
 - linux inode
 - linux 磁盘块
-- bloom filter
 - id是否存在
 - URL是否已经被抓取
 - `某个数字x是否在40e个不重复整数中(数字最大不超40e)`

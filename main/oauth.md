@@ -2,7 +2,7 @@
 
 OAuth 引入了一个授权层，用来分离两种不同的角色：`第三方应用(app)`和`资源所有者(user)`。user同意以后，`资源服务器(res server)`可以向第三方应用颁发令牌。第三方应用通过令牌，去请求数据。
 
-## key
+## members
 
 - `Third-party application` 第三方应用程序(app、web-a)，又称"客户端"（client）但也可能是app的server。 --- 第三方app
 - `User Agent` 用户代理。 --- 浏览器
