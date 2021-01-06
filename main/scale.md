@@ -8,6 +8,9 @@
 - 1GB(Gigabyte，吉字节，十亿字节，又称“千兆”) = 1024MB = 2^30 B;
 - 1TB(Terabyte，万亿字节，太字节) = 1024GB = 2^40 B;
 
+int32范围的bitmap，2^32/8/1024/1024 = 512M空间
+int64范围的bitmap，2^64/8/1024/1024 = 2.2T空间
+
 ## 数据实例
 
 - 1英文字符(word,字符) = 2byte;[ASCII, Unicode, UTF-8]

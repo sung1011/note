@@ -12,21 +12,19 @@
 
 ## 结构
 
-```bash
-SKIP_LIST {
-    NODE head; # 表头
-    int level; # 层级
-}
+    SKIP_LIST {
+        NODE head; # 表头
+        int level; # 层级
+    }
 
-NODE {
-    data; # 数据
+    NODE {
+        data; # 数据
 
-    # 每个元素表示该层下一个node的地址
-    # next[1]是第1层的下一个node地址，next[2]是第2层的下一个node地址...
-    # null表示末尾
-    NODE []next; # 节点
-}
-```
+        # 每个元素表示该层下一个node的地址
+        # next[1]是第1层的下一个node地址，next[2]是第2层的下一个node地址...
+        # null表示末尾
+        NODE []next; # 节点
+    }
 
 ## 操作
 

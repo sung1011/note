@@ -50,6 +50,8 @@
 
 - [红黑树](ds-rbtree.md)  
 
+- [倒排索引 inverted index](ds-inverted-index.md)
+
 ## ref
 
 [数据结构](ref/data-struct.md)
