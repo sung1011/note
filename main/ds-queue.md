@@ -1,6 +1,6 @@
 # 队列 queue
 
-FIFO
+    FIFO数组或链表
 
 ## 操作
 

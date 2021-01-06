@@ -34,7 +34,10 @@
 
 ## 压缩
 
+- RBM roaring bitmap
 - RLE run length encoding
+- WAH Word Aligned Hybrid Compression Scheme
+- Concise Compressed ‘n’ Composable Integer Set
 - gzip
 - lzo
 

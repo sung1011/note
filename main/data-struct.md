@@ -12,13 +12,19 @@
 
 - [栈 Stack](ds-stack.md)  
 
+      先进后出的数组或链表
+
 - [队列 Queue](ds-queue.md)
+
+      先进先出的数组或链表
 
 - [哈希 Hash](ds-hash.md)
 
+      对象转为数字，作为数组下标。
+
 - [位图 Bitmap](ds-bitmap.md)
 
-      数据映射为bit数组，只存0或1
+      数据映射为bit数组，只存0或1。
 
 - [堆 PriorityQueue(heap)]
 
@@ -34,17 +40,17 @@
 
 - [二叉树]
 
-      每个节点 <= 2个子节点
+      每个节点 <= 2个子节点。
 
 - [二叉检索树 Binary Search Tree (二叉排序树 Binary Sorted Tree)]
 
-      各节点值不同，左 < 根 < 右
+      各节点值不同，左 < 根 < 右。
 
 - [平衡二叉树 AVL Tree]
 
 - [平衡多路查找树 B-Tree](ds-b-tree.md)
 
-      自平衡，可拥有 > 2个子节点
+      自平衡，可拥有 > 2个子节点。
 
 - [B+Tree]
 
