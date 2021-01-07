@@ -33,7 +33,7 @@
 
 [雪花 snowflake](algo-snowflake.md)
 
-[位图 bitmap](algo-bitmap.md)  
+[位图 bitmap](ds-bitmap.md)  
 
 [布隆 BloomFilter](algo-bloomfilter.md)  
 哈希  

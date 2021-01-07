@@ -32,27 +32,27 @@
 
       多重索引的有序链表。
 
-- [并查集 Disjoint Set]
-
-- [树 Tree]
+- [树 Tree](ds-tree.md)
 
       由多个节点组成，具有层次关系。
 
-- [二叉树]
+- [二叉树](ds-binary-tree.md)
 
       每个节点 <= 2个子节点。
 
-- [二叉检索树 Binary Search Tree (二叉排序树 Binary Sorted Tree)]
+- [二叉检索树 Binary Search Tree / 二叉排序树 Binary Sorted Tree](ds-binary-search-tree.md)
 
       各节点值不同，左 < 根 < 右。
 
-- [平衡二叉树 AVL Tree]
+- [平衡二叉树 AVL Tree](ds-AVL-tree.md)
 
-- [平衡多路查找树 B-Tree](ds-b-tree.md)
+      自平衡（左右层级差不会大于1）
 
-      自平衡，可拥有 > 2个子节点。
+- [B-树 平衡多路查找树 B-Tree](ds-b-tree.md)
 
-- [B+Tree]
+      可拥有 > 2个子节点。
+
+- [B+树 B+Tree]
 
 - [红黑树](ds-rbtree.md)  
 

@@ -88,6 +88,15 @@ O(n)
     ![img](res/merge-sort-col2.png)
     ![img](res/merge-sort-col3.png)
 
-- `预先组合`
+- `预先联合`
+
+      若 a ∩ b ∩ c 经常查询，可以预先将a_b_c作为key，交集的结果作为值记录在[倒排索引](ds-inverted-index.md)的posting list ，查询时直接查询。
+
+    ![img](res/merge-sort-op3.png)
 
 - `缓存加速`
+
+      多个`预先联合`+LRU （least recently used）
+      一个简单LRU: 链表head插入缓存元素，tail淘汰元素；为了快速查询，在向链表head插入元素的同时，也向哈希插入key，对应的value是链表中这个节点的地址。
+
+    ![img](res/merge-sort-op4.png)

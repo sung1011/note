@@ -36,4 +36,4 @@
 
 ## ref
 
-[深入理解Redis跳跃表的基本实现和特性](https://juejin.cn/post/6893072817206591496)
+- [深入理解Redis跳跃表的基本实现和特性](https://juejin.cn/post/6893072817206591496)

@@ -64,6 +64,9 @@
       第二个bitmap存储是否再次出现
       两个bitmap做位运算得到结果
 
+- 用户标签  
+- 用户标签交集 -- 位运算
+
 ## ref
 
 [什么是bitmap](https://www.jianshu.com/p/6e2285c85295)
