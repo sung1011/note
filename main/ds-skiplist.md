@@ -28,11 +28,11 @@
 
 ## 操作
 
-- `查 O(log n)`
+- `find O(log n)`
 
-- `增 O(log n)`
+- `insert O(log n)`
 
-- `删 O(log n)`
+- `delete O(log n)`
 
 ## ref
 

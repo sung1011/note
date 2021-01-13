@@ -50,9 +50,12 @@
 
 - [B-树 平衡多路查找树 B-Tree](ds-b-tree.md)
 
-      可拥有 > 2个子节点。
+      可拥有 k个key k+1个阶/路/子节点 m/2 <= k <= m-1 。
 
-- [B+树 B+Tree]
+- [B+树 B+Tree](ds-b+tree.md)
+
+      中间节点不存储value(数据)，只存储key(索引)，value都在叶子节点里。
+      每个叶子节点都有兄弟叶子的指针
 
 - [红黑树](ds-rbtree.md)  
 
