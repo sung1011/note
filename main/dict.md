@@ -1,6 +1,6 @@
 # dict
 
-| !                          | interpretation                 | full                                           |
+| !                          | interpretation                 | ex                                             |
 | -------------------------- | ------------------------------ | ---------------------------------------------- |
 | ACID                       | 原子性、一致性、隔离性、持久性 | Atomicity,Consistency,Isolation,Durability     |
 | BDD                        | 行为驱动开发                   | Behavior-driven development                    |
@@ -75,9 +75,29 @@
 | square brackets / brackets | 方括号                         | [ ]                                            |
 | suspended                  | 暂停                           |
 | utility                    | 实用工具                       |
-| utility                    | 实用程序                       |
 | verbose                    | 啰嗦的                         |
 | sentinel                   | 哨兵(意为解决/简化边界问题)    |
 | mtu                        | 最大传输单元                   | Maximum Transmission Unit                      |
 | NAT                        | 网络地址转换                   | Network Address Translation                    |
 | RTP                        | return to player               |
+| hold back                  | 退缩                           |
+| basement                   | 地下室                         |
+| stoop                      | 弯腰                           |
+| vertical                   | 垂直                           |
+| liquor                     | 酒                             |
+| bastards                   | 禽兽                           |
+| fortress                   | 堡垒                           |
+| garrsion                   | 驻军，驻守                     |
+| massacre                   | 屠杀                           |
+| set out                    | 出发，启程                     |
+| incompetence               | 无能                           |
+| snack                           |零食
+|firewood | 柴火
+|fists | 拳头
+| heretic | 异教徒
+| slight | 轻微
+| taboo | 禁令，禁忌，忌讳
+| screw | 螺旋
+| loose| 枪
+| dominate| 支配，主宰，统治
+| captive | 俘虏

@@ -20,10 +20,6 @@
 
 - `稀疏` 存少量的大数字却需要 len 很长的bitmap。解决方案 Roaring BitMap
 
-## 结构
-
-    []bit
-
 ## 操作
 
 - `find O(1)`

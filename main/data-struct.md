@@ -32,6 +32,10 @@
 
       多重索引的有序链表。
 
+- [倒排索引 inverted index](ds-inverted-index.md)
+
+      根据关键内容（tag）找key。
+
 - [树 Tree](ds-tree.md)
 
       由多个节点组成，具有层次关系。
@@ -58,8 +62,6 @@
       每个叶子节点都有兄弟叶子的指针
 
 - [红黑树](ds-rbtree.md)  
-
-- [倒排索引 inverted index](ds-inverted-index.md)
 
 ## ref
 
