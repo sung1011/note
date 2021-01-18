@@ -91,13 +91,25 @@
 | massacre                   | 屠杀                           |
 | set out                    | 出发，启程                     |
 | incompetence               | 无能                           |
-| snack                           |零食
-|firewood | 柴火
-|fists | 拳头
-| heretic | 异教徒
-| slight | 轻微
-| taboo | 禁令，禁忌，忌讳
-| screw | 螺旋
-| loose| 枪
-| dominate| 支配，主宰，统治
-| captive | 俘虏
+| snack                      | 零食                           |
+| firewood                   | 柴火                           |
+| fists                      | 拳头                           |
+| heretic                    | 异教徒                         |
+| slight                     | 轻微                           |
+| taboo                      | 禁令，禁忌，忌讳               |
+| screw                      | 螺旋                           |
+| loose                      | 枪                             |
+| dominate                   | 支配，主宰，统治               |
+| captive                    | 俘虏                           |
+| devoured                   | 吞噬                           |
+| mighty                     | 威武，维达，强势               |
+| tragedy                    | 悲剧                           |
+| strike                     | 侵袭，撞击，罢工               |
+| over-run                   | 泛滥                           |
+| pillar                     | 柱                             |
+| rubble                     | 瓦力，乌合之众                 |
+| depart                     | 分离，离开                     |
+| stubborn                   | 固执，顽固                     |
+| crisis                     | 危机，风波                     |
+| dedicate                   | 奉献，贡献                     |
+| relieve                    | 缓解，解除，救济               |
