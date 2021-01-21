@@ -54,6 +54,8 @@
 
 - [LSM Log Structured Merge](ds-LSM.md)
 
+      先写内存，数据写满后，逐层滚动地归并合并写入磁盘。
+
 - [B-树 平衡多路查找树 B-Tree](ds-b-tree.md)
 
       可拥有 k个key k+1个阶/路/子节点 m/2 <= k <= m-1。
