@@ -1,4 +1,4 @@
-# 二叉搜索树 binary search tree
+# 二叉搜索树 binary search tree / 二叉排序树 Binary Sorted Tree
 
 ![img](res/ds-binary-search-tree.png)
 

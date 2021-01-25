@@ -26,7 +26,11 @@
 
       数据映射为bit数组，只存0或1。
 
-- [堆 PriorityQueue(heap)]
+- [堆 PriorityQueue(heap)](ds-heap.md)
+
+      数组形式的二叉树
+      最大堆: 父节点 > 子节点，子节点无序
+      最小堆: 父节点 < 子节点，子节点无序
 
 - [跳表 SkipList](ds-skiplist.md)
 
@@ -40,11 +44,11 @@
 
       由多个节点组成，具有层次关系。
 
-- [二叉树](ds-binary-tree.md)
+- [二叉树 Binary Tree](ds-binary-tree.md)
 
-      每个节点 <= 2个子节点。
+      每个节点拥有0~2个子节点。
 
-- [二叉检索树 Binary Search Tree / 二叉排序树 Binary Sorted Tree](ds-binary-search-tree.md)
+- [二叉检索树 Binary Search Tree](ds-binary-search-tree.md)
 
       各节点值不同，左 < 根 < 右。
 
@@ -66,6 +70,8 @@
       每个叶子节点都有兄弟叶子的指针。
 
 - [红黑树](ds-rbtree.md)  
+
+      不严格控制左、右子树层级差，但再平衡时效率更高。
 
 ## ref
 
