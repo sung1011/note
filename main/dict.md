@@ -62,7 +62,7 @@
 | crap                      | 掷骰子；废物                         |
 | crisis                    | 危机，风波                           |
 | criteria                  | 标准                                 |
-| dedicate                  | 奉献，贡献                           |
+| dedicate                  | 奉献，贡献                           | dedeicate my heart
 | depart                    | 分离，离开                           |
 | deplet                    | 耗尽                                 |
 | deserting                 | 抛弃，背弃，叛离                     |
@@ -156,3 +156,18 @@
 | vanish                    | 消失，冰释                           |
 | verbose                   | 啰嗦的                               |
 | vertical                  | 垂直                                 |
+| tenacious | 顽强
+| grape | 葡萄，葡萄弹 grape-shot
+| cannon| 大炮 artillery
+| slime | 粘液，软泥
+| pamper | 宠惯
+| corpse| 尸体
+| encounter | 遭遇，领教 suffer
+| frazzle | 磨破
+| clown | 小丑，滑稽 buffoon，胡闹 run wild
+| hold-out | 挺住 endure，抵抗 resist
+| obliging | 体贴，随和 easygoing，合适 affable
+| wretch | 不幸的人
+| evacuation | 疏散
+| freeloader | 不速之客
+| bequeath | 遗赠
