@@ -61,7 +61,6 @@ db.coll.count({year: 1949}) // 效率低 会遍历
 db.coll.find({year: 1949})
 db.coll.find({year: 1949, title:"batman"})
 db.coll.find({$and: [{year: 1949}, {title: "batman"}]})
-db.coll.find({$and: [{year: 1949}, {title: "batman"}]})
 db.coll.find({title: /^bat/i})
 db.coll.find({title: {$regex: /^bat/i})
 db.coll.find({"from.country": "China"})
