@@ -193,3 +193,10 @@ func main() {
 ```go
 
 ```
+
+## 空 struct{}{}
+
+1. 不占用内存
+2. 地址不变
+
+`https://www.cnblogs.com/myuniverse/p/11595043.html`
