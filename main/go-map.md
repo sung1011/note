@@ -44,16 +44,16 @@ var m = map[string]int // nil ptr map; panic if written to -- 没啥意义，基
 ## 返回值 key是否存在
 
 ```go
-m := map[string]int{"a":1, "b":2}
-v1, exists1 := m["a"] // 1, true
+m := map[string]int{"a":99, "b":22}
+v1, exists1 := m["a"] // 99, true
 v2, exists2 := m["xxx"] // 0, false
 ```
 
 ## 作为参数
 
-直接传递； 引用传参
+直接传递
 
-> map的副本值(很小，包含指向实际数据的指针)作为传递给函数作为参数。
+> map的副本值(很小，包含指向实际数据的指针)作为参数传递给函数。
 
 ## 并发安全
 

@@ -38,7 +38,7 @@ sl3 := arr[2:3:3] // [c] len=(3-2); cap=(3-2)
 // 切片赋值，会同步修改底层数组的元素值。
 arr := [...]string{"a", "b", "c", "d"}
 sl := arr[2:] // [c d]
-sl[0] = "ccc" // arr=[a b ccc]
+sl[0] = "ccc" // arr=[a b ccc, d]
 ```
 
 ## append 增长/扩容
@@ -65,21 +65,21 @@ sl2 := append(sl1, "x") // ["" a b c x] len=5 cap=8; sl2新建了底层arr
 
   `sl := make([]int, 0)` ptr有值（指向底层的空array）, len 0, cap 0
 
-## 拷贝 copy
+## 拷贝 copy(dst, src)
 
 ```go
 // 仅覆盖值 && 不改变len, cap
-n := copy({1,2,3}, {111, 222, 333, 444}) //sl1 = {111, 222, 333}; n = 3
-n := copy({1,2,3}, {111, 222}) //sl1 = {111, 222, 3}; n = 2
+n := copy([]int{1,2,3}, []int{666, 777, 888, 999}) //sl1 = {666, 777, 888};999 = 3
+n := copy([]int{1,2,3}, []int{666, 777}) //sl1 = {666, 777, 3}; n = 2
 ```
 
 > go doc builtin copy
 
 ## 作为参数
 
-直接传递; 引用传参
+直接传递
 
-> slice{*ptr, len, cap}的副本值(很小，包含指向实际数据的指针)作为传递给函数作为参数。
+> slice{*ptr, len, cap}的副本值(很小，包含指向实际数据的指针)作为参数传递给函数。
 
 ## 迭代
 
@@ -88,7 +88,7 @@ n := copy({1,2,3}, {111, 222}) //sl1 = {111, 222, 3}; n = 2
 // 循环内修改引用类型(如slice) sl[i] 会同步修改循环内的v
 // 循环内修改值类型(如array) sl[i] 不会同步修改循环内的v
 // 修改循环内v 不会同步修改sl
-items = {a b c}
+items = []string{"a", "b", "c"} //或 items = [...]string{"a", "b", "c"}
 for i, v := range items {
     if i == 0 {
         sl[1] = "xxx";
