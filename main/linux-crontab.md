@@ -58,6 +58,8 @@ HOME=/User/sunji2
 0 4 1 jan * /usr/local/etc/rc.d/lighttpd restart       #一月一号的4点重启apache
 */30 * * * * /usr/sbin/ntpdate 210.72.145.44           #每半小时同步一下时间
 
+# */40 会在10:00,10:40,11:00,11:40执行, 即 整除等于0的所有时间执行
+
 # 超时kill 与 锁
 * * * * * timeout -s SIGINT 100 flock -xn /tmp/lock /path/to/php /path/to/file
 
