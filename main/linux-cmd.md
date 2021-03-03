@@ -1,5 +1,7 @@
 # linux命令
 
+## cloc
+
 ## nc
 
 ## [awk](src/cmd/awk.md)  
