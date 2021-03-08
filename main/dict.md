@@ -182,3 +182,51 @@
 | crumble                   | 崩溃collapse,弄碎,瓦解,崩塌        |
 | ragged                    | 破烂tattered,褴褛,粗糙mat,敝shabby |
 | engage                    | 从事,雇佣hire,玩弄play,约定promise |
+| vanguard                  | 前锋advance-guard                  |
+| rearguard                 | 后卫                               |
+| episode                   | 插曲                               |
+| decimate                  | 毁灭                               |
+| blunt                     | 钝的                               |
+| haste                     | 匆忙                               |
+| snatch                    | 抢夺                               |
+| descendant                | 后代                               |
+| auction                   | 拍卖                               |
+| intrusion                 | 侵扰                               |
+| cabin                     | 小屋,船舱,机舱,客舱                |
+| consultation              | 会诊,咨询,参考reference            |
+| brat                      | 小子,罩衫smock                     |
+| miracle                   | 奇迹                               |
+| instant                   | 瞬间,片刻,即刻                     |
+| trembling                 | 颤抖                               |
+| stab                      | 刺,捅,戳poke                       |
+| resemble                  | 类似,相似                          |
+| evac                      | 疏散evacuation                     |
+| populace                  | 民众                               |
+| replenish                 | 补充supplement/make-up             |
+| hole-up                   | 躲藏,蛰伏hibernate                 |
+| grasp                     | 掌握,领会                          |
+| clash                     | 冲突conflict                       |
+| sentimental               | 婆婆妈妈,感情用事                  |
+| coward                    | 懦夫                               |
+| decisive                  | 决定性,果断,紧要critical           |
+| banish                    | 放逐exile,驱遣get-rid-of           |
+| before-long               | 不久后,很快就                      |
+| slight                    | 轻微,细微subtle                    |
+| fury                      | 愤怒,暴怒                          |
+| duck                      | 躲避,鸭子                          |
+| quarter                   | 刻moment,四分之一,驻防garrison     | 总部headqquarter                                     |
+| charge                    | 冲锋,指控accuse,记账               |
+| lurch                     | 困境plight                         |
+| invade                    | 入侵inrupt                         |
+| chase                     | 追逐,追求pursue                    |
+| swarm                     | 人群crowd                          | is warming蜂拥而至                                   |
+| rampage                   | 乱闹,发怒rage                      |
+| vital                     | 重要important,活力energetic        | vital spot至关重要的地方                             |
+| tap                       | 偷听eavesdrop,敲击beat             |
+| eliminate                 | 消灭,清除                          |
+| immense                   | 巨大huge,广大vast                  |
+| blaze                     | 炽flame,毁,熠glow                  | blaze a path开辟一条道路                             |
+| desperately               | 拼命地                             |
+| devour                    | 吞食,噬bite                        |
+| breach                    | 裂口gap,冲破                       |
+| recapture                 | 夺回,收复recover                   |
