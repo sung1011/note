@@ -38,7 +38,7 @@ etcd
   
 ### web  
 
-[OAuth](main/oauth.md)  
+[authorize](main/auth.md)
 [HTTP](main/HTTP.md)  
 [socket 套接字](main/socket.md)  
 [network 网络编程](main/linux-network.md)  

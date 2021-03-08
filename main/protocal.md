@@ -122,9 +122,10 @@
   
 ### 5 会话层 列表
 
-    RPC远程过程调用协议  
+    RPC 远程过程调用协议  
+    SSO single sign-on
+    LDAP Lightweight Directory Access Protocol 轻量级目录访问协议  
     DAP目录访问协议  
-    LDAP轻量级目录访问协议  
     VINES NETRPC  
     VFRP  
     NeTBIOS  
