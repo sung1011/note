@@ -182,3 +182,16 @@
 | crumble                   | 崩溃collapse,弄碎,瓦解,崩塌        |
 | ragged                    | 破烂tattered,褴褛,粗糙mat,敝shabby |
 | engage                    | 从事,雇佣hire,玩弄play,约定promise |
+| prey                      | 猎物,掠夺plunder                   |
+| delicate                  | 精巧,娇嫩,秀气,柔弱                |
+| inveterate                | 根深蒂固ingrained                  |
+| eccentric                 | 古怪,乖僻                          |
+| stunning                  | 艳glamorous,荧fluorescent          |
+| recapture                 | 夺回                               |
+| desperate                 | 殊死,危机critical                  |
+| boulder                   | 圆石头,漂砾                        |
+| predicament               | 困境plight                         |
+| seal                      | 封住,封口,查封                     |
+| suicide                   | 自杀                               |
+| dispute                   | 争端,纷争                          |
+| twist                     | 扭曲,拧巴,拧screw                  |
