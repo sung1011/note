@@ -90,7 +90,6 @@ originalMap["one"] = 1
 originalMap["two"] = 2
 
 targetMap := make(map[string]int)
-
 for k, v := range originalMap {
     targetMap[k] = v
 }
@@ -110,15 +109,45 @@ sets := map[string]struct{} (
 
 ```go
 // map_func := map[KEY_TYPE]func() RETURN_TYPE {......}
-mf := map[int]func() int{
-    1: func() int {return 10},
-    2: func() int {return 20},
+mf := map[int]func()int{
+    1: func() int { return 10 },
+    2: func() int { return 20 },
 }
 
 // map_func := make(map[KEY_TYPE]func() RETURN_TYPE)
-mf := make(map[int]func() string)
-mf[1] = func() string{ return "10" }
-mf[2] = func() string{ return "20" }
+mf := make(map[int]func()string)
+mf[1] = func() string{ return "aaa" }
+mf[2] = func() string{ return "bbb" }
+```
+
+## 排序
+
+```go
+// 根据key排序
+func sortKey(mp map[string]int) {
+   var newMp = make([]string, 0)
+   for k, _ := range mp {
+      newMp = append(newMp, k)
+   }
+   sort.Strings(newMp)
+   for _, v := range newMp {
+      fmt.Println("根据key排序后的新集合》》   key:", v, "    value:", mp[v])
+   }
+}
+
+// 根据value排序
+func sortValue(mp map[string]int) {
+   var newMp = make([]int, 0)
+   var newMpKey = make([]string, 0)
+   for oldk, v := range mp {
+      newMp = append(newMp, v)
+      newMpKey = append(newMpKey, oldk)
+   }
+   sort.Ints(newMp)
+   for k, v := range newMp {
+      fmt.Println("根据value排序后的新集合》》  key:", newMpKey[k], "    value:", v)
+   }
+}
 ```
 
 ## ref
