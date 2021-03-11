@@ -45,7 +45,7 @@ type User {
     name string
     school *schoolInfo // 当期望 不随User变化而变化，使用指针
 }
-// 指针接收者 修改类型本身
+// 指针接收者 修改类型本身 
 func (u *User) changeName() { // 不论用 u 或 &u 调用,都是拷贝指针,方法内部访问的和修改的都是原始的实例数据结构
     u.name = "xx"
 }
@@ -56,6 +56,7 @@ func (u User) changeName() User { // 不论用u 或 &u 调用,都是拷贝整个
 }
 ```
 
+> 一般用指针接收者  
 > func(recv) 函数; recv.Method() 方法
 
 ## 基于基础类型的新类型
