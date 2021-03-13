@@ -27,6 +27,8 @@
 - [HTTPS](HTTPS.md)  
 - [websocket](websocket.md)  
 - [SSH Secure Shell](SSH.md)
+- [cookie](cookie.md)
+- [session](session.md)
 - telnet
 
 ### 6 表示层
@@ -70,7 +72,9 @@
     HTTPS  
     websocket  
     OAuth2  
-    cookie, session, token  
+    token  
+    cookie
+    session
     FTP 文件传输协议  
     SMTP 简单邮件传输协议  
     TELNET TCP/IP终端仿真协议  
