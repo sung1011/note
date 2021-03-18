@@ -114,7 +114,7 @@
 | poll                      | 轮询                                              |
 | populate                  | 填充                                              |
 | possession                | 所有权,所有物                                     |
-| precedent                 | 先例,前例                                         |
+| precedent                 | 先例,前例                                         | unprecedent史无前例                                  |
 | read-committed            | 读已提交                                          |
 | read-uncommitted          | 读未提交                                          |
 | recruit                   | 招募enlist,征募                                   |
@@ -260,7 +260,7 @@
 | vain                      | 虚妄blank,空虚,无意义                             |
 | overwhelming              | 压倒性的                                          | overwhelming strength压倒性的力量                    |
 | insignificant             | 微不足道negligible,琐细trivial,渺茫vague          |
-| drawn                     | 拔出的                                            | drawn-to被吸引到                                     |
+| drawn                     | 拔出的                                            | drawn-to被吸引到, drawn-sword                        |
 | pile                      | 一堆,桩,垛                                        |
 | croak                     | 嘶哑;发牢骚complain                               |
 | fuse                      | 融合;导火线                                       |
@@ -323,3 +323,21 @@
 | scuffle                   | 打架                                              |
 | imitate                   | 模仿simulate,仿照follow                           |
 | not-even-close            | 差远了                                            |
+| impeccable                | 无可挑剔的                                        |
+| carve                     | 雕刻                                              |
+| instinct                  | 直觉                                              |
+| proficient                | 精通                                              |
+| wittedness                | 机智                                              |
+| bandwagon                 | 潮流                                              |
+| hypothetical              | 假想的                                            |
+| confess                   | 承认                                              |
+| contagious                | 传染性                                            | contagious-disease                                   |
+| puke                      | 呕吐vomit                                         |
+| intestine                 | 肠道                                              |
+| mop-up                    | 扫荡                                              |
+| dungeon                   | 地牢jail                                          |
+| custody                   | 拘留detention                                     |
+| guardianship              | 监护                                              |
+| amnesia                   | 健忘症                                            |
+| conclusion                | 结论                                              |
+| trastic                   | 过激的                                            |
