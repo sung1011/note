@@ -74,7 +74,7 @@
 | dumb                      | 哑,说不出话来                                     | scary dumb                                           |
 | dummy                     | 假的,虚拟的,伪指令                                |
 | evacuate                  | 撤离,疏散,肃清                                    |
-| exhaust                   | 排气,耗尽,排出                                    |
+| exhaust                   | 耗尽,排气,排出                                    |
 | expedition                | 远征,征战                                         |
 | explicit                  | 具体的                                            |
 | exterminate               | 歼灭,剿灭,毁灭                                    |
@@ -248,6 +248,7 @@
 | predicate                 | 谓语;断言assert,断定为                            | predicated-on取决于                                  |
 | spilling                  | 溢出                                              |
 | enormous                  | 巨大的huge                                        |
+| dispose                   | 处置,部署deploy,摆布manipulate                    |
 | disposable                | 一次性的                                          |
 | sibling                   | 兄弟姐妹                                          |
 | impostor                  | 骗子cheat,冒牌                                    |
@@ -278,7 +279,7 @@
 | eloquent                  | 雄辩                                              |
 | rile-up                   | 激怒                                              |
 | truce                     | 休战,停战armistice                                |
-| the heck                  | 到底,究竟                                         | what-the-heck-are-you-doing                          |
+| the-heck                  | 到底,究竟                                         | what-the-heck-are-you-doing                          |
 | palm                      | 手掌,托                                           |
 | compensate                | 补偿,赔偿                                         |
 | deed                      | 契约,作为                                         | good-deed善举                                        |
@@ -341,3 +342,31 @@
 | amnesia                   | 健忘症                                            |
 | conclusion                | 结论                                              |
 | trastic                   | 过激的                                            |
+| sanctuary                 | 避难所refuge                                      |
+| expedition                | 远征,考察,征战campaign                            |
+| sealed                    | 密封                                              |
+| propaganda                | 宣传                                              |
+| shackle                   | 脚镣fetter,束缚                                   |
+| sneer                     | 嘲笑,冷笑                                         |
+| pledged                   | 宣誓,誓要                                         |
+| tribunal                  | 法庭court                                         |
+| inevitably                | 不可避免地                                        |
+| regard                    | 看待treat,视为                                    |
+| chiefly                   | 主要,多半                                         |
+| martyr                    | 烈士                                              |
+| circumvented              | 规避                                              |
+| pest                      | 害虫                                              |
+| induct                    | 诱导                                              |
+| scratch                   | 刮,挠,蹭rub                                       |
+| permanently               | 永久constantly                                    |
+| plunging                  | 暴跌,扎进                                         |
+| ruin                      | 废墟,毁灭                                         |
+| divine                    | 神圣的,占卜,预言predict                           |
+| comprehend                | 理解,领会,懂得                                    |
+| leisurely                 | 悠闲的, 从容的                                    |
+| dissect                   | 解剖,剖析analyze                                  |
+| formidable                | 强大,艰巨,可怕                                    |
+| persecute                 | 迫害                                              |
+| inquiry                   | 疑问doubt,问询                                    |
+| resent                    | 怨恨                                              |
+| restraint                 | 克制,限制                                         |
