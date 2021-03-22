@@ -330,7 +330,7 @@
 | proficient                | 精通                                              |
 | wittedness                | 机智                                              |
 | bandwagon                 | 潮流                                              |
-| hypothetical              | 假想的                                            |
+| hypothesis                | 假设suppose,假想presumption,臆测conjecture        |
 | confess                   | 承认                                              |
 | contagious                | 传染性                                            | contagious-disease                                   |
 | puke                      | 呕吐vomit                                         |
@@ -369,4 +369,30 @@
 | persecute                 | 迫害                                              |
 | inquiry                   | 疑问doubt,问询                                    |
 | resent                    | 怨恨                                              |
-| restraint                 | 克制,限制                                         |
+| restrain                  | 克制,限制                                         |
+| charming                  | 迷人,优雅elegant,旖旎enchanting                   |
+| facility                  | 设施,便利convenience,灵巧dexterity                |
+| rookie                    | 军队中的菜鸟                                      |
+| cocky                     | 骄傲自大                                          |
+| chaperon                  | 伴侣                                              |
+| blather                   | 废话nonsense,胡说bullshit                         |
+| quake                     | 颤栗termbling,发抖shaking                         |
+| an-any-rate               | 好歹anyhow                                        |
+| rein-in                   | 放慢                                              |
+| notorious                 | 恶名昭著                                          |
+| thug                      | 暴徒,恶棍villain                                  |
+| paralyzed                 | 瘫痪,发呆benumbed                                 |
+| prod                      | 刺stab                                            | 刺探prodding                                         |
+| seething                  | 沸腾aboil                                         |
+| agenda                    | 议程,待办事项                                     |
+| snare                     | 圈套trap,牢笼cage,陷阱                            |
+| lethargic                 | 昏昏欲睡comatose                                  |
+| frisky                    | 活泼的,闹腾的                                     |
+| slaughter                 | 宰杀,屠杀butcher                                  |
+| dominate                  | 主宰dictate,支配allocate                          | 占主导地位,主流predominate                           |
+| eccentric                 | 怪人wack                                          |
+| haven                     | 避风港                                            |
+| sake-of                   | 为了                                              |
+| speculate                 | 推测conjecture,猜测                               |
+| culprit                   | 罪魁祸首                                          |
+| premeditated              | 有预谋的                                          |
