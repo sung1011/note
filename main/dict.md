@@ -244,7 +244,7 @@
 | recapture                 | 夺回,收复recover                                  |
 | placing                   | 竖立establishment                                 |
 | contact                   | 接触touch,联系                                    |
-| casualties                | 伤亡                                              |
+| casualties                | 伤亡人数                                          |
 | predicate                 | 谓语;断言assert,断定为                            | predicated-on取决于                                  |
 | spilling                  | 溢出                                              |
 | enormous                  | 巨大的huge                                        |
@@ -396,3 +396,22 @@
 | speculate                 | 推测conjecture,猜测                               |
 | culprit                   | 罪魁祸首                                          |
 | premeditated              | 有预谋的                                          |
+| worn                      | 破旧,筋疲力尽exhausted                            |
+| blow                      | 打击strike,灾难catastrophe,不幸unfortunately      |
+| maneuver                  | 调动muster,机动maneuvering,演习manoeuvre          |
+| division                  | 分配,部门,除法                                    |
+| excursion                 | 远足hike,交游outing,短途旅行                      |
+| nevertheless              | 尽管如此,虽说                                     |
+| battalion                 | 营                                                |
+| chronic                   | 慢性的,长期的                                     |
+| mortality                 | 死亡                                              |
+| dismal                    | 惨淡,暗淡dim,阴郁gloomy                           |
+| reiterate                 | 重申                                              |
+| flinch                    | 退缩,畏缩shrink                                   |
+| formation                 | 编队,队形                                         |
+| wagon                     | 运输车,补给车                                     |
+| intact                    | 完好,原封,完整                                    |
+| invasive                  | 侵入性的,侵犯的                                   |
+| peg                       | 钉住,销子pin                                      |
+| swat                      | 扑打beat,拍打pat                                  |
+| appraise                  | 评价evaluate,鉴定identify,估价estimate            |
