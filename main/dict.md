@@ -147,7 +147,7 @@
 | suffocate                 | 窒息,憋                                           |
 | suspended                 | 暂停                                              |
 | sustain                   | 支持 support,承受 bear/endure,支撑                |
-| taboo                     | 禁令,禁忌,忌讳                                    |
+| taboo                     | 禁令ban,禁忌prohibition,忌讳                      |
 | territory                 | 领土,领域                                         |
 | tedy                      | 悲剧                                              |
 | utility                   | 实用工具                                          |
@@ -287,7 +287,7 @@
 | aptitude                  | 材,能力倾向                                       | natural-aptitude天赋                                 |
 | dangle                    | 悬hang,吊挂着                                     |
 | hips                      | 臀部                                              |
-| bait                      | 饵                                                |
+| bait                      | 饵lure                                            |
 | quiver                    | 颤动,颤抖tremble                                  |
 | fancy                     | 花哨                                              |
 | stiffen                   | 硬化,使变硬harden                                 |
@@ -415,3 +415,17 @@
 | peg                       | 钉住,销子pin                                      |
 | swat                      | 扑打beat,拍打pat                                  |
 | appraise                  | 评价evaluate,鉴定identify,估价estimate            |
+| devise                    | 设计,发明                                         |
+| scout                     | 侦查reconnaissance                                |
+| semi                      | 半                                                | 半圆semicircle                                       |
+| perimeter                 | 周长                                              |
+| prolong                   | 延长extend,拖延deplay                             |
+| extremely                 | 极其,非常,万分                                    |
+| outwitte                  | 胜过                                              |
+| obstacle                  | 障碍barrier                                       |
+| ensue                     | 随后                                              |
+| lure                      | 诱饵bait                                          |
+| tactics                   | 策略ploy,权谋trickery                             |
+| flank                     | 侧翼,侧面,腹部abdomen                             |
+| lousy                     | 糟糕disgusting                                    |
+| annihilate                | 歼灭wipe-out,覆没capsize                          |
