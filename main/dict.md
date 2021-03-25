@@ -429,3 +429,19 @@
 | flank                     | 侧翼,侧面,腹部abdomen                             |
 | lousy                     | 糟糕disgusting                                    |
 | annihilate                | 歼灭wipe-out,覆没capsize                          |
+| squeeze                   | 挤碎crush,压榨                                    |
+| relay                     | 中继,接力,中转transmit                            |
+| pulp                      | 纸浆,果肉flesh,化成纸浆                           |
+| bust                      | 摔碎,胸围                                         |
+| chops                     | 脸颊                                              | bust-my-chops打脸                                    |
+| hood                      | 兜帽burban,引擎罩                                 |
+| fawn                      | 讨好ingratiate,巴结make-up-to,谄媚toady           |
+| creep                     | 爬行crawl,蔓延spread                              |
+| harsh                     | 残酷的grim,苛刻bitter,严峻severe                  |
+| wind                      | 缠绕twine,蜿蜒meander,风                          |
+| withdraw                  | 收回retake,撤回recal,撤离evacuate,吊销revoke      |
+| reckless                  | 蛮干foolhardy,鲁莽rash                            |
+| nape                      | 颈背scruffy                                       |
+| precisely                 | 恰恰exactly,精确,就是                             |
+| manipulate                | 操作operate,摆布decorate                          |
+| trample                   | 践踏tread,蹂躏ravage,踹kick                       |
