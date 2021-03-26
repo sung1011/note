@@ -146,7 +146,7 @@
 | stubborn                  | 固执,顽固                                         |
 | suffocate                 | 窒息,憋                                           |
 | suspended                 | 暂停                                              |
-| sustain                   | 支持 support,承受 bear/endure,支撑                |
+| sustain                   | 支持support,承受 bear/endure,持续                 |
 | taboo                     | 禁令ban,禁忌prohibition,忌讳                      |
 | territory                 | 领土,领域                                         |
 | tedy                      | 悲剧                                              |
@@ -434,14 +434,27 @@
 | pulp                      | 纸浆,果肉flesh,化成纸浆                           |
 | bust                      | 摔碎,胸围                                         |
 | chops                     | 脸颊                                              | bust-my-chops打脸                                    |
-| hood                      | 兜帽burban,引擎罩                                 |
-| fawn                      | 讨好ingratiate,巴结make-up-to,谄媚toady           |
-| creep                     | 爬行crawl,蔓延spread                              |
-| harsh                     | 残酷的grim,苛刻bitter,严峻severe                  |
-| wind                      | 缠绕twine,蜿蜒meander,风                          |
-| withdraw                  | 收回retake,撤回recal,撤离evacuate,吊销revoke      |
+| hood                      | 兜帽 burban,引擎罩                                |
+| fawn                      | 讨好 ingratiate,巴结 make-up-to,谄媚 toady        |
+| creep                     | 爬行 crawl,蔓延spread                             |
+| harsh                     | 残酷的 grim,苛刻 bitter,严峻 severe               |
+| wind                      | 缠绕 twine,蜿蜒 meander,风                        |
+| withdraw                  | 收回 retake,撤回 recal,撤离 evacuate,吊销 revoke  |
 | reckless                  | 蛮干foolhardy,鲁莽rash                            |
-| nape                      | 颈背scruffy                                       |
-| precisely                 | 恰恰exactly,精确,就是                             |
-| manipulate                | 操作operate,摆布decorate                          |
-| trample                   | 践踏tread,蹂躏ravage,踹kick                       |
+| nape                      | 颈背 scruffy                                      |
+| precisely                 | 恰恰 exactly,精确,就是                            |
+| manipulate                | 操作 operate,摆布 decorate                        |
+| trample                   | 践踏 tread,蹂躏ravage,踹kick                      |
+| detached                  | 分离的,超然的                                     |
+| jaw                       | 下巴,颚,颌                                        | jaws-of-death虎口                                    |
+| plot                      | 阴谋 conspiracy,情节 circumstance,筹划 scheme     |
+| vicinity                  | 附近 vicinage,邻近 adjacency                      |
+| affinity                  | 亲和力,近似 approximation                         |
+| devastate                 | 摧残 ruin,毁坏 blemish,蹂躏 ravage                |
+| penetrate                 | 渗透, 穿透 infiltrate, 贯穿 seep                  |
+| spine                     | 脊柱 spinal, 脊椎骨 vertebra                      |
+| vegetation                | 植被,植物                                         |
+| whine                     | 抱怨holler,呜咽whimper                            |
+| novelty                   | 新奇的                                            |
+| subordinate               | 下属underling                                     |
+| gallop                    | 驰骋,奔腾surge                                    |
