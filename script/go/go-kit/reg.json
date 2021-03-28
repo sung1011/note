@@ -1,0 +1,10 @@
+{
+    "ID": "k",
+    "Name": "k",
+    "Address": "192.168.1.13",
+    "Port": 8001,
+    "Check": {
+        "HTTP": "http://192.168.1.13:8001/health",
+        "Interval": "5s"
+    }
+}

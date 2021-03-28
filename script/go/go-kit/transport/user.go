@@ -7,14 +7,10 @@ import (
 	"net/http"
 	"scr/go-kit/endpoint"
 	"strconv"
-
-	"github.com/gorilla/mux"
 )
 
 func DecUserReq(ctx context.Context, r *http.Request) (interface{}, error) {
-	vars := mux.Vars(r)
-	uid, _ := vars["uid"]
-	// uid := r.URL.Query().Get("uid")
+	uid := r.URL.Query().Get("uid")
 	if uid == "" {
 		return nil, errors.New("must params uid")
 	}

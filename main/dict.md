@@ -458,3 +458,5 @@
 | novelty                   | 新奇的                                            |
 | subordinate               | 下属underling                                     |
 | gallop                    | 驰骋,奔腾surge                                    |
+| OCR                       | 光学字符识别                                      | Optical-Character-Recognition                        |
+| consult                   | 请教,咨询,参考reference                           |
