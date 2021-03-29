@@ -25,12 +25,10 @@ func RegService() error {
 	reg.Name = "kkk"
 	reg.Address = "192.168.1.13"
 	reg.Port = 8001
-
-	check := consulapi.AgentServiceCheck{}
-	check.HTTP = "http://192.168.1.13:8001/health"
-	check.Interval = "5s"
-	reg.Check = &check
-
+	reg.Check = &consulapi.AgentServiceCheck{
+		HTTP:     "http://192.168.1.13:8001/health",
+		Interval: "5s",
+	}
 	return ConsulClient.Agent().ServiceRegister(&reg)
 }
 
