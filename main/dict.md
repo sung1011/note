@@ -462,3 +462,5 @@
 | consult                   | 请教,咨询,参考reference                           |
 | outcome                   | 产物,结果consequence                              |
 | lizard                    | 蜥蜴                                              |
+berserk | 疯的bats,发狂的bughouse
+inflicted | 造成的,加以 | self-inflicted自己作
