@@ -1,0 +1,18 @@
+@C=user
+@uid=98
+# local
+@host = 127.0.0.1:8001
+
+# dev-a /mnt/htdocs/farm
+# @host = ff2-test.socialgamenet.com
+
+# dev/ha /mnt/htdocs/ha-h5/devA/
+# @host = ff2-h5.socialgamenet.com
+
+@publicTest = http://{{host}}/{{C}}/?uid={{uid}}
+@contentType = application/json
+@run=GET {{publicTest}}
+
+###
+
+{{run}}

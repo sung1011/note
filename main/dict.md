@@ -404,7 +404,7 @@
 | nevertheless              | 尽管如此,虽说                                     |
 | battalion                 | 营                                                |
 | chronic                   | 慢性的,长期的                                     |
-| mortality                 | 死亡                                              |
+| mortal                    | 致命fatal,凡人                                    | mortal-enemy死敌                                     |
 | dismal                    | 惨淡,暗淡dim,阴郁gloomy                           |
 | reiterate                 | 重申                                              |
 | flinch                    | 退缩,畏缩shrink                                   |
@@ -462,5 +462,33 @@
 | consult                   | 请教,咨询,参考reference                           |
 | outcome                   | 产物,结果consequence                              |
 | lizard                    | 蜥蜴                                              |
-berserk | 疯的bats,发狂的bughouse
-inflicted | 造成的,加以 | self-inflicted自己作
+| berserk                   | 疯的bats,发狂的bughouse                           |
+| inflicted                 | 造成的,加以                                       | self-inflicted自己作                                 |
+| twitches                  | 抽搐convulsion,抽筋cramp                          |
+| gut                       | 直觉,胆量gallbladder,肠子                         |
+| fledged                   | 羽翼未丰,雏鸟                                     |
+| scenario                  | 情形,设想,脚本                                    |
+| sprout                    | 萌芽bud,发芽germinate                             |
+| stuck                     | 卡住                                              |
+| give-off                  | 发出                                              |
+| phenomenon                | 现象                                              |
+| jeopardize                | 危害endanger,妨害impair                           |
+| flatten                   | 扁平,打倒subvert                                  |
+| tether                    | 系绳,拘束restrict                                 |
+| eastimate                 | 估计reckon,评估appraise,预估forecast              | unsereastimate低估                                   |
+| immobilize                | 固定                                              |
+| let-down                  | 辜负disappoint,放下lay-down,降低reduce            |
+| cargo                     | 货物freight,船货                                  |
+| objective                 | 目标purpose,意图intention,客观的                  |
+| divert                    | 转移shift,挪动misappropriate                      | divert-attention                                     |
+| narrow                    | 缩小shrink,狭窄cramped                            |
+| envision                  | 预见,预料                                         |
+| write-off                 | 抹杀obliterate,报销wipe-out                       |
+| rigid                     | 死板stiff,硬性inflexible,严格strict               |
+| joints                    | 关节articulation,臼mortar                         |
+| overlay                   | 覆盖overcast,罩子deck                             |
+| detonate                  | 起爆,发火                                         |
+| sever                     | 断绝cut-off,分离detach                            |
+| rattle                    | 嘎嘎声,响环                                       | death-rattle垂死挣扎                                 |
+| startled                  | 惊愕scared,惊悚frightened                         |
+| commence                  | 开始,着手                                         |

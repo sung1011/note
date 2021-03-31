@@ -13,6 +13,11 @@ type User struct {
 }
 
 func (u *User) GetName(uid int64) string {
+	if uid == 99 {
+		u.Name = "tickles"
+	} else {
+		u.Name = "nobody"
+	}
 	return u.Name
 }
 
