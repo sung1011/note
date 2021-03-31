@@ -66,7 +66,7 @@
 | deplet                    | 耗尽                                              |
 | deserting                 | 抛弃,背弃,叛离                                    |
 | devoured                  | 吞噬                                              |
-| dictate                   | 主宰,dominate                                     |                                                      |
+| dictate                   | 主宰dominate                                      |                                                      |
 | dirty read                | 脏读                                              |
 | disband                   | 解散                                              |
 | dominate                  | 支配,主宰,统治                                    |
@@ -146,7 +146,7 @@
 | stubborn                  | 固执,顽固                                         |
 | suffocate                 | 窒息,憋                                           |
 | suspended                 | 暂停                                              |
-| sustain                   | 支持support,承受 bear/endure,持续                 |
+| sustain                   | 支持support,承受endure,持续                       |
 | taboo                     | 禁令ban,禁忌prohibition,忌讳                      |
 | territory                 | 领土,领域                                         |
 | tedy                      | 悲剧                                              |
@@ -155,21 +155,21 @@
 | verbose                   | 啰嗦的,冗余的                                     |
 | vertical                  | 垂直                                              |
 | tenacious                 | 顽强                                              |
-| grape                     | 葡萄,葡萄弹 grape-shot                            |
-| cannon                    | 大炮 artillery                                    |
+| grape                     | 葡萄,葡萄弹grape-shot                             |
+| cannon                    | 大炮artillery                                     |
 | slime                     | 粘液,软泥                                         |
 | pamper                    | 宠惯                                              |
 | corpse                    | 尸体                                              |
-| encounter                 | 遭遇,领教 suffer                                  |
+| encounter                 | 遭遇,领教suffer                                   |
 | frazzle                   | 磨破                                              |
-| clown                     | 小丑,滑稽 buffoon,胡闹 run wild                   |
+| clown                     | 小丑,滑稽buffoon,胡闹run-wild                     |
 | hold-out                  | 挺住 endure,抵抗 resist                           |
-| obliging                  | 体贴,随和 easygoing,合适 affable                  |
+| obliging                  | 体贴,随和easygoing,合适affable                    |
 | wretch                    | 不幸的人                                          |
 | evacuation                | 疏散                                              |
 | freeloader                | 不速之客                                          |
 | bequeath                  | 遗赠                                              |
-| scrap                     | 碎屑,碎片 fragment                                |
+| scrap                     | 碎屑,碎片fragment                                 |
 | pandemic                  | 大流行病                                          |
 | stick                     | 粘,棍,杆pole                                      |
 | bulwark                   | 堡fort,壁wall,堡垒fortress                        |
@@ -214,7 +214,7 @@
 | resemble                  | 类似,相似                                         |
 | evac                      | 疏散evacuation                                    |
 | populace                  | 民众                                              |
-| replenish                 | 补充supplement/make-up                            |
+| replenish                 | 补充supplement,重新充实make-up,续订refill         |
 | hole-up                   | 躲藏,蛰伏hibernate                                |
 | grasp                     | 掌握,领会                                         |
 | clash                     | 冲突conflict                                      |
@@ -492,3 +492,8 @@
 | rattle                    | 嘎嘎声,响环                                       | death-rattle垂死挣扎                                 |
 | startled                  | 惊愕scared,惊悚frightened                         |
 | commence                  | 开始,着手                                         |
+| troop                     | 部队force,队伍contingent                          |
+| council                   | 评议会,政务会                                     |
+| bluster                   | 气焰arrogance,吓唬swash                           |
+| stroll                    | 溜达saunter,闲逛visit,漫步wander                  |
+| carcass                   | 尸体                                              |
