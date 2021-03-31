@@ -21,10 +21,11 @@ func init() {
 
 func RegService() error {
 	reg := consulapi.AgentServiceRegistration{}
-	reg.ID = "kkk"
-	reg.Name = "kkk"
+	reg.ID = "k1"
+	reg.Name = "kkk1"
 	reg.Address = "10.0.88.142"
 	reg.Port = 8001
+	reg.Tags = []string{"primary"}
 	reg.Check = &consulapi.AgentServiceCheck{
 		HTTP:     "http://10.0.88.142:8001/health",
 		Interval: "5s",
