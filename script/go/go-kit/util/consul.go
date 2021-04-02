@@ -2,7 +2,9 @@ package util
 
 import (
 	"log"
+	"strconv"
 
+	"github.com/google/uuid"
 	consulapi "github.com/hashicorp/consul/api"
 )
 
@@ -19,20 +21,34 @@ func init() {
 	ConsulClient = client
 }
 
+var SvcName string
+var SvcPort string
+var SvcID string
+var SvcAddress string
+
 func RegService() error {
 	reg := consulapi.AgentServiceRegistration{}
-	reg.ID = "k1"
-	reg.Name = "kkk1"
-	reg.Address = "10.0.88.142"
-	reg.Port = 8001
+	SvcID = genSvcID()
+	SvcAddress = "192.168.1.13"
+	// SvcAddress = "127.0.0.1"
+
+	reg.ID = SvcID
+	reg.Name = SvcName
+	reg.Address = SvcAddress
+	sp, _ := strconv.Atoi(SvcPort)
+	reg.Port = sp
 	reg.Tags = []string{"primary"}
 	reg.Check = &consulapi.AgentServiceCheck{
-		HTTP:     "http://10.0.88.142:8001/health",
+		HTTP:     "http://" + SvcAddress + ":" + SvcPort + "/health",
 		Interval: "5s",
 	}
 	return ConsulClient.Agent().ServiceRegister(&reg)
 }
 
 func UnregService() error {
-	return ConsulClient.Agent().ServiceDeregister("kkk")
+	return ConsulClient.Agent().ServiceDeregister(SvcID)
+}
+
+func genSvcID() string {
+	return uuid.New().String()
 }
