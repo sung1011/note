@@ -120,6 +120,7 @@
 | recruit                   | 招募enlist,征募                                   |
 | redundancy                | 冗余                                              |
 | reel                      | 卷volume,卷轴scroll                               |
+| rein                      | 缰绳bridle                                        |
 | reinforce                 | 接应,增员                                         |
 | relieve                   | 缓解,安心,解除,救济                               |
 | repeatable-read           | 可重复读                                          |
@@ -128,7 +129,7 @@
 | restriction               | 限制                                              |
 | return-source             | 回源,cache失效去数据源获取                        |
 | robust                    | 鲁棒性,健壮性                                     |
-| rubble                    | 瓦力,乌合之众                                     |
+| rubble                    | 瓦砾debris,乌合之众mob                            |
 | screw                     | 螺旋                                              |
 | sentinel                  | 哨兵(意为解决/简化边界问题)                       |
 | serializable              | 串行化                                            |
@@ -160,7 +161,7 @@
 | slime                     | 粘液,软泥                                         |
 | pamper                    | 宠惯                                              |
 | corpse                    | 尸体                                              |
-| encounter                 | 遭遇,领教suffer                                   |
+| encounter                 | 遭遇befall,领教suffer                             |
 | frazzle                   | 磨破                                              |
 | clown                     | 小丑,滑稽buffoon,胡闹run-wild                     |
 | hold-out                  | 挺住 endure,抵抗 resist                           |
@@ -397,7 +398,7 @@
 | culprit                   | 罪魁祸首                                          |
 | premeditated              | 有预谋的                                          |
 | worn                      | 破旧,筋疲力尽exhausted                            |
-| blow                      | 打击strike,灾难catastrophe,不幸unfortunately      |
+| blow                      | 打击strike,灾难catastrophe,不幸unfortunately      | serious-blow沉重打击                                 |
 | maneuver                  | 调动muster,机动maneuvering,演习manoeuvre          |
 | division                  | 分配,部门,除法                                    |
 | excursion                 | 远足hike,交游outing,短途旅行                      |
@@ -447,16 +448,16 @@
 | trample                   | 践踏 tread,蹂躏ravage,踹kick                      |
 | detached                  | 分离的,超然的                                     |
 | jaw                       | 下巴,颚,颌                                        | jaws-of-death虎口                                    |
-| plot                      | 阴谋 conspiracy,情节 circumstance,筹划 scheme     |
-| vicinity                  | 附近 vicinage,邻近 adjacency                      |
-| affinity                  | 亲和力,近似 approximation                         |
-| devastate                 | 摧残 ruin,毁坏 blemish,蹂躏 ravage                |
-| penetrate                 | 渗透, 穿透 infiltrate, 贯穿 seep                  |
-| spine                     | 脊柱 spinal, 脊椎骨 vertebra                      |
+| plot                      | 阴谋conspiracy,情节circumstance,筹划 scheme       |
+| vicinity                  | 附近vicinage,邻近adjacency                        |
+| affinity                  | 亲和力,近似approximation                          |
+| devastate                 | 摧残ruin,毁坏blemish,蹂躏ravage                   |
+| penetrate                 | 渗透,穿透infiltrate,贯穿seep                      |
+| spine                     | 脊柱spinal,脊椎骨vertebra                         |
 | vegetation                | 植被,植物                                         |
 | whine                     | 抱怨holler,呜咽whimper                            |
 | novelty                   | 新奇的                                            |
-| subordinate               | 下属underling                                     |
+| subordinate               | 下属underling,从属                                |
 | gallop                    | 驰骋,奔腾surge                                    |
 | OCR                       | 光学字符识别                                      | Optical-Character-Recognition                        |
 | consult                   | 请教,咨询,参考reference                           |
@@ -497,3 +498,36 @@
 | bluster                   | 气焰arrogance,吓唬swash                           |
 | stroll                    | 溜达saunter,闲逛visit,漫步wander                  |
 | carcass                   | 尸体                                              |
+| deduce                    | 推断infer,臆测speculate                           |
+| emerge                    | 出现arise,呈现appear,涌现surge                    |
+| blend                     | 混入mingle,搅和spoil,合成synthesize               |
+| conserve                  | 保留preserve,保全rescue,养护maintain,保守的       |
+| confront                  | 对抗antagonize,面对face                           |
+| overwhelm                 | 压制overpower,覆没capsize,镇压squelch             |
+| coordinate                | 协作consort,配合assort,坐标                       |
+| filthy                    | 污秽foul,肮脏nasty                                |
+| kidnap                    | 绑架,劫持hijack,拐骗                              |
+| crush                     | 挤压smash,征服conquer                             |
+| fuss                      | 大惊小怪haggle,计较dispute,瞎忙fidget             |
+| erode                     | 侵蚀corrode,腐蚀corrode,蚀eclipse                 |
+| custody                   | 保管storage,拘留detention,保护aegis               |
+| sway                      | 摇摆swing,晃动rock                                |
+| worship                   | 崇拜adore,供奉enshrine                            |
+| military                  | 军事,军用,军方                                    | military-police宪兵                                  |
+| escort                    | 护送convoy,押解detain                             |
+| botch                     | 烂透了,搞砸了                                     |
+| essential                 | 基本上,本质,必要                                  |
+| outfit                    | 套装,配备allocate                                 |
+| carriage                  | 运送conveyance,马车,体态posture                   |
+| absurd                    | 荒诞fantastic,荒谬ridiculous,荒唐preposterous     |
+| shred                     | 撕碎lacerate,切碎                                 |
+| ambush                    | 伏击,埋伏                                         |
+| stomp                     | 脚,踩                                             |
+| put-it-broadly            | 概括的说,大致上讲                                 |
+| sneak                     | 潜行                                              | sneak-out偷偷溜走                                    |
+| decoy                     | 诱饵                                              |
+| pinpoint                  | 查明ascertain                                     |
+| surmise                   | 推测conjecture,臆测speculate                      |
+| scapegoat                 | 替罪羊,替身substitute                             |
+| suspect                   | 怀疑doubt,可疑                                    |
+| well-being                | 顺遂prosperity,顺利smoothness,福利welfare         |

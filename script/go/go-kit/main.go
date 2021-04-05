@@ -13,6 +13,8 @@ import (
 	"scr/go-kit/util"
 	"syscall"
 
+	"github.com/go-kit/kit/log"
+	kitlog "github.com/go-kit/kit/log"
 	kithttp "github.com/go-kit/kit/transport/http"
 	"github.com/julienschmidt/httprouter"
 	"golang.org/x/time/rate"
@@ -33,9 +35,18 @@ func main() {
 		w.Header().Set("Content-Type", "application/json")
 		w.Write([]byte(`{"status":"ok"}`))
 	})
+
 	limiter := rate.NewLimiter(1, 3)
+
+	var logger kitlog.Logger
+	logger = log.NewLogfmtLogger(os.Stdout)
+	logger = log.WithPrefix(logger, "tickles", "v1.0")
+	logger = log.With(logger, "TIME", log.DefaultTimestampUTC)
+	logger = log.With(logger, "CALLER", log.DefaultCaller)
+
 	ep := endpoint.GenUserEndPoint(&service.User{})
 	ep = endpoint.RateLimit(limiter)(ep)
+	ep = endpoint.Log(logger)(ep)
 	op := []kithttp.ServerOption{
 		kithttp.ServerErrorEncoder(util.ErrEnc),
 	}

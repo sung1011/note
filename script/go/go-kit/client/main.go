@@ -42,7 +42,7 @@ func PickOne() {
 }
 
 func Direct() {
-	tgt, err := url.Parse("http://127.0.0.1:8002")
+	tgt, err := url.Parse("http://127.0.0.1:8001")
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)

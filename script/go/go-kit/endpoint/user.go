@@ -6,6 +6,8 @@ import (
 	"scr/go-kit/util"
 	"time"
 
+	kitlog "github.com/go-kit/kit/log"
+
 	"github.com/go-kit/kit/endpoint"
 	"golang.org/x/time/rate"
 )
@@ -17,6 +19,16 @@ type UserReq struct {
 
 type UserResp struct {
 	Name string `json:"name"`
+}
+
+func Log(logger kitlog.Logger) endpoint.Middleware {
+	return func(next endpoint.Endpoint) endpoint.Endpoint {
+		return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+			r := request.(UserReq)
+			logger.Log("uid", r.Uid)
+			return next(ctx, request)
+		}
+	}
 }
 
 func RateLimit(l *rate.Limiter) endpoint.Middleware {
