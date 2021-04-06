@@ -6,4 +6,4 @@
 
 ## [OAuth](oauth.md)
 
-## [JWT]
+## [JWT](JWT.md)
