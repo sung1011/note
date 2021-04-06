@@ -531,3 +531,21 @@
 | scapegoat                 | 替罪羊,替身substitute                             |
 | suspect                   | 怀疑doubt,可疑                                    |
 | well-being                | 顺遂prosperity,顺利smoothness,福利welfare         |
+| shamble                   | 乱七八糟,一片狼藉                                 |
+| fervent                   | 热切earnest,火热enthusiastic,慷慨beefy            |
+| toss                      | 抛fling,折腾get-down                              |
+| measly                    | 轻率的                                            |
+| malice                    | 恶意spite,怨恨resentment                          |
+| cling                     | 执着perseverance,贪恋hate-to-leave,依偎snuggle    |
+| alcoholic                 | 酒鬼inebriate,酒精性的                            |
+| vile                      | 卑劣的execrable,恶劣的disgusting,肮脏的nasty      |
+| wreck                     | 破坏undermine,摧毁smash,摧残devastate             |
+| damp                      | 潮湿moist,润湿                                    |
+| unilateral                | 单方面one-sided,单边,片面lopsided                 |
+| otmost                    | 最大努力,极pole                                   |
+| demise                    | 消亡,禅让,遗赠bequeath                            |
+| detain                    | 扣留arrest,看押take-into-custody                  |
+| conspire                  | 密谋,同谋plot                                     |
+| midget                    | 侏儒dwarf,矮人pygmy                               |
+| prodigy                   | 神童                                              |
+| rub                       | 擦                                                | rubber橡皮                                           |
