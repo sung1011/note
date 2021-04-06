@@ -28,8 +28,9 @@
 3. C通过HTTP header每个请求将`JWT`传递给服务端
 4. S对`JWT`验签, 并获取payload信息
 
-> HTTP-header: `Authorization: Bearer {JWT}`  
 > 白话: S发给C一段密文, 只有S能解开, 过程只依赖一个共同的secretKey, 不需要依赖额外数据.
+>
+> HTTP-header: `Authorization: Bearer {JWT}`  
 
 ## 构成
 
@@ -52,7 +53,7 @@ header = base64(data) // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
 
 ### payload 载荷
 
-传递一些非敏感信息
+CS共享一些非敏感信息(C端轻易可解密)
 
 ```js
 {
@@ -77,7 +78,9 @@ payload = base64(data) // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
 ```
 
 > 实际就是预定义声明 和 自定义声明  
+>
 > JWT默认不加密, 所以payload中不要存敏感信息  
+>
 > 也可以将生成JWT再加密一层
 
 ### signature 签名
@@ -92,4 +95,4 @@ hashMethod = header.alg // HMACSHA256
 signature = base64UrlEncode(hashMethod(data, key)); // TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
 ```
 
-> key 可以是对称加密秘钥, 也可以是非对称加密的公钥+私钥
+> key 可以是对称加密秘钥, 也可以是非对称加密的公钥+私钥, 决定于加密算法
