@@ -557,6 +557,21 @@
 | yerown                    | 臭名昭著                                          |
 | streak                    | 痕迹footprint,条纹stripe,线条line                 |
 | thickskin                 | 厚脸皮                                            |
-evaporate | 蒸发,破灭blight,跑flee
-as-things-stand | 就目前情况而言
-petrified  | 石化的,发呆的benumb
+| evaporate                 | 蒸发,破灭blight,跑flee                            |
+| as-things-stand           | 就目前情况而言                                    |
+| petrified                 | 石化的,发呆的benumb                               |
+| logistics                 | 后勤                                              |
+| torch                     | 火炬                                              |
+| improvised                | 即兴创作                                          |
+| wrack                     | 残骸                                              |
+| delusion                  | 幻想                                              |
+| pious                     | 虔诚的devout,尽责的                               |
+| gaze                      | 目光vision,凝视stare,注目revet                    |
+| grip                      | 握住grasp,抱着clasp,抓住tackle,把手knob           |
+| pour                      | 浇灌irrigate,倾注collapse                         |
+| putrid                    | 腐烂的gangrenous,腐败的cankered                   |
+| torture                   | 拷打flog,刑法penal-code,煎熬torment               |
+| flock                     | 堆swarm,群herd                                    |
+| firm                      | 坚定staunch,公司corporation                       |
+| covenant                  | 盟约league,圣约,合约contract                      |
+| concede                   | 承认recognize,退让fall-back                       |
