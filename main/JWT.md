@@ -96,3 +96,36 @@ signature = base64UrlEncode(hashMethod(data, key)); // TJVA95OrM7E2cBab30RMHrHDc
 ```
 
 > key 可以是对称加密秘钥, 也可以是非对称加密的公钥+私钥, 决定于加密算法
+
+## code
+
+```go
+package main
+
+import (
+   "github.com/dgrijalva/jwt-go"
+)
+
+type JWTClaims struct {
+   Foo string `json:"foo"`
+   UID int `json:"uid"`
+
+   jwt.StandardClaims
+}
+
+func genToken() (string, error) {
+   claims := JWTClaims{
+      Foo: "bar",
+      UID: 654,
+
+      StandardClaims: jwt.StandardClaims{
+         Issuer:    "sunji",
+         ExpiresAt: 3600,
+      },
+   }
+   key := []byte("secret_key_in_server")
+   signMethod := jwt.GetSigningMethod("HS256")
+   token := jwt.NewWithClaims(signMethod, claims)
+   return token.SignedString(key) // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJ1aWQiOjY1NCwiZXhwIjozNjAwLCJpc3MiOiJzdW5qaSJ9._ckmHA0u6szAZqvij_hlJiSMP1O1fgYXxtfTEkFfp4U
+}
+```

@@ -20,10 +20,13 @@ import (
 	"golang.org/x/time/rate"
 )
 
+// consul
 // docker run -d --name=cs -p=8500:8500 consul agent -server -bootstrap -ui -client 0.0.0.0
 // -bootstrap 指定自己为leader, 而不需要选举
 // -ui 启动一个内置的web页面
 // -client 指定客户端可以访问的IP, 0.0.0.0任意访问, 否则默认本机访问
+
+// server
 
 func main() {
 	flag.StringVar(&util.SvcName, "name", "", "service name")
