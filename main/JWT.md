@@ -103,8 +103,12 @@ signature = base64UrlEncode(hashMethod(data, key)); // TJVA95OrM7E2cBab30RMHrHDc
 package main
 
 import (
+   "fmt"
+   "log"
    "github.com/dgrijalva/jwt-go"
 )
+
+var secretKey = []byte("secret_key_in_server")
 
 type JWTClaims struct {
    Foo string `json:"foo"`
@@ -123,9 +127,20 @@ func genToken() (string, error) {
          ExpiresAt: 3600,
       },
    }
-   key := []byte("secret_key_in_server")
    signMethod := jwt.GetSigningMethod("HS256")
    token := jwt.NewWithClaims(signMethod, claims)
-   return token.SignedString(key) // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJ1aWQiOjY1NCwiZXhwIjozNjAwLCJpc3MiOiJzdW5qaSJ9._ckmHA0u6szAZqvij_hlJiSMP1O1fgYXxtfTEkFfp4U
+   return token.SignedString(secretKey) // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJ1aWQiOjY1NCwiZXhwIjozNjAwLCJpc3MiOiJzdW5qaSJ9._ckmHA0u6szAZqvij_hlJiSMP1O1fgYXxtfTEkFfp4U
 }
+
+func parseToken(tokenString string) {
+   token, _ := jwt.ParseWithClaims(tokenString, &JWTClaims{}, func(token *jwt.Token) (interface{}, error) {
+      return secretKey, nil
+   })
+   if cl, ok := token.Claims.(*JWTClaims); ok && token.Valid {
+      fmt.Printf("uid: %v, foo: %v", cl.UID, cl.Foo) // uid: 654, foo: bar
+   } else {
+      log.Fatal(err)
+   }
+}
+
 ```

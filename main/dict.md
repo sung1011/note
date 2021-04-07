@@ -525,7 +525,7 @@
 | stomp                     | 脚,踩                                             |
 | put-it-broadly            | 概括的说,大致上讲                                 |
 | sneak                     | 潜行                                              | sneak-out偷偷溜走                                    |
-| decoy                     | 诱饵                                              |
+| decoy                     | 诱饵bait                                          |
 | pinpoint                  | 查明ascertain                                     |
 | surmise                   | 推测conjecture,臆测speculate                      |
 | scapegoat                 | 替罪羊,替身substitute                             |
@@ -549,3 +549,11 @@
 | midget                    | 侏儒dwarf,矮人pygmy                               |
 | prodigy                   | 神童                                              |
 | rub                       | 擦                                                | rubber橡皮                                           |
+| breach                    | 裂口cleft,突破口gap,违反                          |
+| assess                    | 评估evaluate,考核,征收levy                        |
+| disperse                  | 分散scatter,驱散break-up,散开spread               |
+| discretion                | 慎重caution,高低,酌情                             |
+| terrain                   | 地形topography,地势relief,形式circumstances       |
+| yerown                    | 臭名昭著                                          |
+| streak                    | 痕迹footprint,条纹stripe,线条line                 |
+| thickskin                 | 厚脸皮                                            |
