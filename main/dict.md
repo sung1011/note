@@ -446,7 +446,7 @@
 | precisely                 | 恰恰 exactly,精确,就是                            |
 | manipulate                | 操作 operate,摆布 decorate                        |
 | trample                   | 践踏 tread,蹂躏ravage,踹kick                      |
-| detached                  | 分离的,超然的                                     |
+| detach                    | 分离dissociate,脱离divorce,超然                   |
 | jaw                       | 下巴,颚,颌                                        | jaws-of-death虎口                                    |
 | plot                      | 阴谋conspiracy,情节circumstance,筹划 scheme       |
 | vicinity                  | 附近vicinage,邻近adjacency                        |
@@ -557,3 +557,6 @@
 | yerown                    | 臭名昭著                                          |
 | streak                    | 痕迹footprint,条纹stripe,线条line                 |
 | thickskin                 | 厚脸皮                                            |
+evaporate | 蒸发,破灭blight,跑flee
+as-things-stand | 就目前情况而言
+petrified  | 石化的,发呆的benumb
