@@ -351,7 +351,7 @@
 | sneer                     | 嘲笑,冷笑                                         |
 | pledged                   | 宣誓,誓要                                         |
 | tribunal                  | 法庭court                                         |
-| inevitably                | 不可避免地                                        |
+| inevitabl                 | 不可避免,必然certain                              |
 | regard                    | 看待treat,视为                                    |
 | chiefly                   | 主要,多半                                         |
 | martyr                    | 烈士                                              |
@@ -393,7 +393,7 @@
 | dominate                  | 主宰dictate,支配allocate                          | 占主导地位,主流predominate                           |
 | eccentric                 | 怪人wack                                          |
 | haven                     | 避风港                                            |
-| sake-of                   | 为了                                              |
+| sake                      | 目的                                              | sake-of目的                                          |
 | speculate                 | 推测conjecture,猜测                               |
 | culprit                   | 罪魁祸首                                          |
 | premeditated              | 有预谋的                                          |
@@ -435,20 +435,20 @@
 | pulp                      | 纸浆,果肉flesh,化成纸浆                           |
 | bust                      | 摔碎,胸围                                         |
 | chops                     | 脸颊                                              | bust-my-chops打脸                                    |
-| hood                      | 兜帽 burban,引擎罩                                |
-| fawn                      | 讨好 ingratiate,巴结 make-up-to,谄媚 toady        |
-| creep                     | 爬行 crawl,蔓延spread                             |
-| harsh                     | 残酷的 grim,苛刻 bitter,严峻 severe               |
-| wind                      | 缠绕 twine,蜿蜒 meander,风                        |
-| withdraw                  | 收回 retake,撤回 recal,撤离 evacuate,吊销 revoke  |
+| hood                      | 兜帽burban,引擎罩                                 |
+| fawn                      | 讨好ingratiate,巴结make-up-to,谄媚toady           |
+| creep                     | 爬行crawl,蔓延spread                              |
+| harsh                     | 残酷的grim,苛刻bitter,严峻severe                  |
+| wind                      | 缠绕twine,蜿蜒meander,风                          |
+| withdraw                  | 收回retake,撤回recal,撤离evacuate,吊销revoke      |
 | reckless                  | 蛮干foolhardy,鲁莽rash                            |
-| nape                      | 颈背 scruffy                                      |
-| precisely                 | 恰恰 exactly,精确,就是                            |
-| manipulate                | 操作 operate,摆布 decorate                        |
-| trample                   | 践踏 tread,蹂躏ravage,踹kick                      |
+| nape                      | 颈背scruffy                                       |
+| precisely                 | 恰恰exactly,精确,就是                             |
+| manipulate                | 操作operate,摆布decorate                          |
+| trample                   | 践踏tread,蹂躏ravage,踹kick                       |
 | detach                    | 分离dissociate,脱离divorce,超然                   |
 | jaw                       | 下巴,颚,颌                                        | jaws-of-death虎口                                    |
-| plot                      | 阴谋conspiracy,情节circumstance,筹划 scheme       |
+| plot                      | 阴谋conspiracy,情节circumstance,筹划scheme        |
 | vicinity                  | 附近vicinage,邻近adjacency                        |
 | affinity                  | 亲和力,近似approximation                          |
 | devastate                 | 摧残ruin,毁坏blemish,蹂躏ravage                   |
@@ -575,3 +575,7 @@
 | firm                      | 坚定staunch,公司corporation                       |
 | covenant                  | 盟约league,圣约,合约contract                      |
 | concede                   | 承认recognize,退让fall-back                       |
+| fled                      | 逃跑flee,逃走breeze                               |
+| detour                    | 绕道bypass,弯路roundabout                         |
+| hooligan                  | 流氓gangster,恶棍villain                          |
+| victim                    | 受害者casualty,牺牲者                             |
