@@ -144,7 +144,7 @@
 | stoop                     | 弯腰                                              |
 | strike                    | 侵袭,撞击,罢工                                    |
 | stronghold                | 据点,堡垒                                         |
-| stubborn                  | 固执,顽固                                         |
+| stubborn                  | 固执obstinate,顽固persistent                                         |
 | suffocate                 | 窒息,憋                                           |
 | suspended                 | 暂停                                              |
 | sustain                   | 支持support,承受endure,持续                       |
@@ -579,3 +579,11 @@
 | detour                    | 绕道bypass,弯路roundabout                         |
 | hooligan                  | 流氓gangster,恶棍villain                          |
 | victim                    | 受害者casualty,牺牲者                             |
+| moron|白痴,变态pervert
+maim|残废,致残
+fracture|骨折,断裂rupture
+conduct | 执行,引导channel,指挥
+fume | 烟opium,熏,臭味fumes
+snail | 蜗牛 | snail's pace蜗牛的步伐
+literally | 字面上的,确实,真的
+expell| 驱逐banish,开除expel

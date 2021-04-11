@@ -1,0 +1,16 @@
+syntax="proto3";
+
+// path(leate one slash /); package-name
+option go_package = "./;service"; 
+
+message ProdRequest {
+    int32 id = 1;
+}
+
+message ProdResponse {
+    int32 stock = 1;
+}
+
+service ProdService {
+    rpc GetProdStock(ProdRequest) returns ( ProdResponse );
+}
