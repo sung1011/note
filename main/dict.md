@@ -144,7 +144,7 @@
 | stoop                     | 弯腰                                              |
 | strike                    | 侵袭,撞击,罢工                                    |
 | stronghold                | 据点,堡垒                                         |
-| stubborn                  | 固执obstinate,顽固persistent                                         |
+| stubborn                  | 固执obstinate,顽固persistent                      |
 | suffocate                 | 窒息,憋                                           |
 | suspended                 | 暂停                                              |
 | sustain                   | 支持support,承受endure,持续                       |
@@ -193,7 +193,7 @@
 | predicament               | 困境plight                                        |
 | seal                      | 封住,封口,查封                                    |
 | suicide                   | 自杀                                              |
-| dispute                   | 争端,纷争                                         |
+| dispute                   | 争端dissention,纷争controversy                    |
 | twist                     | 扭曲,拧巴,拧screw                                 |
 | vanguard                  | 前锋advance-guard                                 |
 | rearguard                 | 后卫                                              |
@@ -393,7 +393,7 @@
 | dominate                  | 主宰dictate,支配allocate                          | 占主导地位,主流predominate                           |
 | eccentric                 | 怪人wack                                          |
 | haven                     | 避风港                                            |
-| sake                      | 目的                                              | sake-of目的                                          |
+| sake                      | 目的,原因                                         | sake-of目的                                          |
 | speculate                 | 推测conjecture,猜测                               |
 | culprit                   | 罪魁祸首                                          |
 | premeditated              | 有预谋的                                          |
@@ -542,7 +542,7 @@
 | wreck                     | 破坏undermine,摧毁smash,摧残devastate             |
 | damp                      | 潮湿moist,润湿                                    |
 | unilateral                | 单方面one-sided,单边,片面lopsided                 |
-| otmost                    | 最大努力,极pole                                   |
+| utmost                    | 最大努力,极pole                                   |
 | demise                    | 消亡,禅让,遗赠bequeath                            |
 | detain                    | 扣留arrest,看押take-into-custody                  |
 | conspire                  | 密谋,同谋plot                                     |
@@ -579,11 +579,24 @@
 | detour                    | 绕道bypass,弯路roundabout                         |
 | hooligan                  | 流氓gangster,恶棍villain                          |
 | victim                    | 受害者casualty,牺牲者                             |
-| moron|白痴,变态pervert
-maim|残废,致残
-fracture|骨折,断裂rupture
-conduct | 执行,引导channel,指挥
-fume | 烟opium,熏,臭味fumes
-snail | 蜗牛 | snail's pace蜗牛的步伐
-literally | 字面上的,确实,真的
-expell| 驱逐banish,开除expel
+| moron                     | 白痴,变态pervert                                  |
+| maim                      | 残废,致残                                         |
+| fracture                  | 骨折,断裂rupture                                  |
+| conduct                   | 执行,引导channel,指挥                             |
+| fume                      | 烟opium,熏,臭味fumes                              |
+| snail                     | 蜗牛                                              | snail's pace蜗牛的步伐                               |
+| literally                 | 字面上的,确实,真的                                |
+| expell                    | 驱逐banish,开除expel                              |
+| in-line-to                | 符合                                              |
+| descendent                | 后代,子孙,后裔                                    |
+| nuisance                  | 累赘encumbrance,讨厌人的                          |
+| reveal                    | 表明indicate,透露disclose,暴露exposs              |
+| saint                     | 圣人sage                                          |
+| smash                     | 摧毁wreck,粉碎crush,扣杀                          |
+| scramble                  | 争夺contest,抢rush,拼凑rig-up                     |
+| trove                     | 寻宝                                              |
+| comatose                  | 昏睡lethargic,昏迷                                |
+| as-if                     | 仿佛,好像,似乎,犹如                               |
+| deceive                   | 欺骗spoof,蒙骗hoodwink                            |
+| confine                   | 局限limit,管制control                             |
+| traitor                   | 叛徒turncoat                                      |
