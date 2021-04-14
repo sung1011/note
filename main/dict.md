@@ -98,7 +98,7 @@
 | liquor                    | 酒                                                |
 | literal                   | 字面量                                            |
 | loose                     | 枪                                                |
-| massacre                  | 屠杀                                              |
+| massacre                  | 屠杀slaughter,杀戮                                |
 | mighty                    | 威武,维达,强势                                    |
 | multiplexer               | 复用器                                            |
 | multiplexing              | 多路复用                                          |
@@ -155,7 +155,6 @@
 | vanish                    | 消失eliminate,冰释disappear                       |
 | verbose                   | 啰嗦的,冗余的                                     |
 | vertical                  | 垂直                                              |
-| tenacious                 | 顽强                                              |
 | grape                     | 葡萄,葡萄弹grape-shot                             |
 | cannon                    | 大炮artillery                                     |
 | slime                     | 粘液,软泥                                         |
@@ -172,7 +171,7 @@
 | bequeath                  | 遗赠                                              |
 | scrap                     | 碎屑,碎片fragment                                 |
 | pandemic                  | 大流行病                                          |
-| stick                     | 粘,棍,杆pole                                      |
+| stick                     | 粘,棍,杆pole;stuck                                |
 | bulwark                   | 堡fort,壁wall,堡垒fortress                        |
 | regular                   | 定期,规则,通常general                             |
 | tenacious                 | 顽强,韧性tough                                    |
@@ -182,7 +181,7 @@
 | crumble                   | 崩溃collapse,弄碎,瓦解,崩塌                       |
 | ragged                    | 破烂tattered,褴褛,粗糙mat,敝shabby                |
 | engage                    | 从事,雇佣hire,玩弄play,约定promise                |
-| prey                      | 猎物,掠夺plunder                                  |
+| prey                      | 猎物quarry,掠夺plunder                            |
 | delicate                  | 精巧,娇嫩,秀气,柔弱                               |
 | inveterate                | 根深蒂固ingrained                                 |
 | eccentric                 | 古怪,乖僻                                         |
@@ -470,7 +469,6 @@
 | fledged                   | 羽翼未丰,雏鸟                                     |
 | scenario                  | 情形,设想,脚本                                    |
 | sprout                    | 萌芽bud,发芽germinate                             |
-| stuck                     | 卡住                                              |
 | give-off                  | 发出                                              |
 | phenomenon                | 现象                                              |
 | jeopardize                | 危害endanger,妨害impair                           |
@@ -601,3 +599,26 @@
 | confine                   | 局限limit,管制control                             |
 | traitor                   | 叛徒turncoat                                      |
 | lop                       | 砍,掉                                             |
+| vomit                     | 呕吐spit                                          |
+| brute                     | 蛮力domestic,兽性barbarity,无礼bearish            |
+| tackle                    | 逮捕arrest,抓住grip,器具utensil                   |
+| crotch                    | 裆部,叉柱                                         |
+| yank                      | 猛拉,猛拽                                         |
+| snap                      | 折断bend,谩骂swear,乱射,临时interim               |
+| diaper                    | 尿布napkin                                        |
+| bedridden                 | 卧床不起bedfast                                   |
+| incapacitate              | 丧失能力,失效,弄坏blemish                         | capacity容量,才能                                    |
+| tore                      | 撕扯tear,撕毁break-off                            |
+| ration                    | 配给allotment,口粮                                |
+| bully                     | 恶霸,欺负take-advantage-of                        |
+| sting                     | 吝啬的,蜇伤                                       |
+| hive                      | 蜂巢honeycomb                                     |
+| ignorant                  | 无知clueless,茫然                                 |
+| commend                   | 表彰exalt,嘉奖cite                                |
+| repent                    | 悔改,忏悔confess                                  |
+| preach                    | 宣讲sermon,传教,说教                              |
+| beam                      | 光束,发光glow                                     | your eyes were beaming like kids                     |
+| loiter                    | 游荡drift,闲混                                    |
+| muisance                  | 讨厌的,累赘encumbrance                            |
+| scatter                   | 疏散,散开disperse                                 |
+| hostile                   | 敌对的adverse,有敌意                              |
