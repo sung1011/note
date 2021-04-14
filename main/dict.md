@@ -152,7 +152,7 @@
 | territory                 | 领土,领域                                         |
 | tedy                      | 悲剧                                              |
 | utility                   | 实用工具                                          |
-| vanish                    | 消失,冰释                                         |
+| vanish                    | 消失eliminate,冰释disappear                       |
 | verbose                   | 啰嗦的,冗余的                                     |
 | vertical                  | 垂直                                              |
 | tenacious                 | 顽强                                              |
@@ -356,7 +356,7 @@
 | chiefly                   | 主要,多半                                         |
 | martyr                    | 烈士                                              |
 | circumvented              | 规避                                              |
-| pest                      | 害虫,毒物toxic                                              |
+| pest                      | 害虫,毒物toxic                                    |
 | induct                    | 诱导                                              |
 | scratch                   | 刮,挠,蹭rub                                       |
 | permanently               | 永久constantly                                    |
@@ -477,7 +477,7 @@
 | flatten                   | 扁平,打倒subvert                                  |
 | tether                    | 系绳,拘束restrict                                 |
 | eastimate                 | 估计reckon,评估appraise,预估forecast              | unsereastimate低估                                   |
-| immobilize                | 固定,稳住                                              |
+| immobilize                | 固定,稳住                                         |
 | let-down                  | 辜负disappoint,放下lay-down,降低reduce            |
 | cargo                     | 货物freight,船货                                  |
 | objective                 | 目标purpose,意图intention,客观的                  |
@@ -600,3 +600,4 @@
 | deceive                   | 欺骗spoof,蒙骗hoodwink                            |
 | confine                   | 局限limit,管制control                             |
 | traitor                   | 叛徒turncoat                                      |
+| lop                       | 砍,掉                                             |
