@@ -690,3 +690,23 @@
 | stink                     | 腐臭rancidity,臭气reek                            |
 | crack                     | 裂痕flaw,崩裂burst                                | crack-down严厉打击                                   |
 | disguise                  | 伪装camouflage,掩饰conceal                        |
+| perish                    | 灭亡die-out,陨灭succumb                           |
+| deflect                   | 偏转,打歪,使偏                                    |
+| contradict                | 矛盾,抵触clash,驳斥refute                         |
+| speck                     | 斑点                                              |
+| legit                     | 合法的affirmed                                    |
+| enact                     | 制定                                              |
+| coup                      | 政变,砰然一击,翻倒tumble                          |
+| mass                      | 大多数,群众                                       |
+| agitate                   | 激荡surge,搅拌stir,煽动incite                     |
+| brigade                   | 旅,队fleet                                        |
+| insidious                 | 阴险sinister,隐秘sly                              |
+| underhand                 | 不足的                                            |
+| take-for-granted          | 认为理所当然                                      |
+| backwoods                 | 偏远地区                                          |
+| snuffed                   | 消灭                                              |
+| misguided                 | 误导,误入歧途                                     |
+| stain                     | 弄脏foul,玷污tarnish                              |
+| keel-over                 | 昏倒                                              |
+| testicle                  | 睾丸                                              |
+| enthrone                  | 登基ascend                                        |

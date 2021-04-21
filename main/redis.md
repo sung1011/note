@@ -12,6 +12,8 @@
 
 ## 发布订阅 pub sub
 
+## [stream](redis-stream.md)
+
 ## lua脚本
 
 ## [内存优化](redis-mem-optimization.md)
