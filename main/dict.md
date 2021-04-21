@@ -436,7 +436,7 @@
 | chops                     | 脸颊                                              | bust-my-chops打脸                                    |
 | hood                      | 兜帽burban,引擎罩                                 |
 | fawn                      | 讨好ingratiate,巴结make-up-to,谄媚toady           |
-| creep                     | 爬行crawl,蔓延spread                              |
+| creep                     | 爬行crawl,蔓延spread,异样                         |
 | harsh                     | 残酷的grim,苛刻bitter,严峻severe                  |
 | wind                      | 缠绕twine,蜿蜒meander,风                          |
 | withdraw                  | 收回retake,撤回recal,撤离evacuate,吊销revoke      |
@@ -641,3 +641,28 @@
 | rash                      | 轻率slapdash,鲁莽reckless,皮疹measles             |
 | look-into                 | 调查inquire-into,追究investigate                  |
 | prohibit                  | 禁止proscribe,阻止deter,不准forbid                |
+| vague                     | 模糊blur,弥漫,隐约faint                           |
+| stripe                    | 条纹                                              |
+| stripping                 | 剥夺deprive,扒dig-up                              |
+| antsy                     | 热情的                                            |
+| underline                 | 强调emphasize,底线,使突出                         |
+| lucrative                 | 划算的cost-effective,有利可图的                   |
+| in-sort-of                | 某种程度上                                        |
+| verge                     | 边缘periphery                                     |
+| fortify                   | 驻守garrison,强化                                 |
+decree | 法令edict,诏书rescript
+buy-time|争取时间
+preposterous | 荒谬absurd,荒唐loose
+forfeit | 丧失lose,弃权abstain
+gallow | 绞刑架
+hoist|提起elevate,升起uprising
+bureaucrat | 官僚,老爷lord
+regime|政权
+cull | 剔除,淘汰
+riot | 暴动revolt,骚乱disturbance
+prosperity | 繁荣thrift,景气economic-boom,昌盛flourishing
+exalted| 崇高的exorbitant
+aristocracy | 贵族noble
+faction | 阵营camp,派别school
+rebellion | 叛乱riot,暴动uprising
+grief | 悲痛sorrow

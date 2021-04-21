@@ -82,6 +82,12 @@ git rev-list --objects --all | grep < oid(blob) >
 ## 彻底删除某个文件（大文件、涉密文件）
 
 ```bash
+git filter-branch --force --index-filter \
+  "git rm --cached --ignore-unmatch < file >" \
+  --prune-empty --tag-name-filter cat -- --all
+```
+
+```bash
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch < file >'
 
 rm -rf .git/refs/original
