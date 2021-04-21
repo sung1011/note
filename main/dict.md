@@ -532,7 +532,7 @@
 | well-being                | 顺遂prosperity,顺利smoothness,福利welfare         |
 | shamble                   | 乱七八糟,一片狼藉                                 |
 | fervent                   | 热切earnest,火热enthusiastic,慷慨beefy            |
-| toss                      | 抛fling,折腾get-down                              |
+| toss                      | 抛fling,折腾get-down,甩swing                      |
 | measly                    | 轻率的                                            |
 | malice                    | 恶意spite,怨恨resentment                          |
 | cling                     | 执着perseverance,贪恋hate-to-leave,依偎snuggle    |
@@ -650,19 +650,43 @@
 | in-sort-of                | 某种程度上                                        |
 | verge                     | 边缘periphery                                     |
 | fortify                   | 驻守garrison,强化                                 |
-decree | 法令edict,诏书rescript
-buy-time|争取时间
-preposterous | 荒谬absurd,荒唐loose
-forfeit | 丧失lose,弃权abstain
-gallow | 绞刑架
-hoist|提起elevate,升起uprising
-bureaucrat | 官僚,老爷lord
-regime|政权
-cull | 剔除,淘汰
-riot | 暴动revolt,骚乱disturbance
-prosperity | 繁荣thrift,景气economic-boom,昌盛flourishing
-exalted| 崇高的exorbitant
-aristocracy | 贵族noble
-faction | 阵营camp,派别school
-rebellion | 叛乱riot,暴动uprising
-grief | 悲痛sorrow
+| decree                    | 法令edict,诏书rescript                            |
+| buy-time                  | 争取时间                                          |
+| preposterous              | 荒谬absurd,荒唐loose                              |
+| forfeit                   | 丧失lose,弃权abstain                              |
+| gallow                    | 绞刑架                                            |
+| hoist                     | 提起elevate,升起uprising                          |
+| bureaucrat                | 官僚,老爷lord                                     |
+| regime                    | 政权                                              |
+| cull                      | 剔除,淘汰                                         |
+| riot                      | 暴动revolt,骚乱disturbance                        |
+| prosperity                | 繁荣thrift,景气economic-boom,昌盛flourishing      |
+| exalted                   | 崇高的exorbitant                                  |
+| aristocracy               | 贵族noble                                         |
+| faction                   | 阵营camp,派别school                               |
+| rebellion                 | 叛乱riot,暴动uprising                             |
+| grief                     | 悲痛sorrow                                        |
+| patrol                    | 巡逻                                              |
+| contaminate               | 污染pollute,污蔑slander                           |
+| barrack                   | 军营military-camp                                 |
+| surplus                   | 过剩excess,剩余overage                            |
+| deteriorate               | 恶化exacerbate,变质                               |
+| turmoil                   | 动荡unrest,动乱upheaval                           |
+| compromise                | 妥协,折中,和解                                    |
+| distract                  | 转移divert,分散注意力                             |
+| upbringing                | 领养,抚育                                         |
+| scold                     | 责骂rebuke,泼妇shrew                              |
+| mansion                   | 府prefecture,大厦edifice                          |
+| mandatory                 | 强制的                                            |
+| fire-and-forget           | 射而不理                                          |
+| gloomy                    | 阴沉dismal,暗淡faint                              |
+| moblit                    | 流氓                                              |
+| sketch                    | 草图draft,素描                                    |
+| in-no-time                | 立刻                                              |
+| logs                      | 原木crude,木头timber                              |
+| miserable                 | 悲惨tragic,辛酸bitter,忧愁anxious                 |
+| ritual                    | 仪式rite,礼仪etiquette                            |
+| whiff                     | 吹气puff                                          |
+| stink                     | 腐臭rancidity,臭气reek                            |
+| crack                     | 裂痕flaw,崩裂burst                                | crack-down严厉打击                                   |
+| disguise                  | 伪装camouflage,掩饰conceal                        |
