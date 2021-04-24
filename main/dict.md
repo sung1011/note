@@ -159,7 +159,7 @@
 | cannon                    | 大炮artillery                                     |
 | slime                     | 粘液,软泥                                         |
 | pamper                    | 宠惯                                              |
-| corpse                    | 尸体                                              |
+| corpse                    | 尸体corpus                                        |
 | encounter                 | 遭遇befall,领教suffer                             |
 | frazzle                   | 磨破                                              |
 | clown                     | 小丑,滑稽buffoon,胡闹run-wild                     |
@@ -262,7 +262,7 @@
 | overwhelming              | 压倒性的                                          | overwhelming strength压倒性的力量                    |
 | insignificant             | 微不足道negligible,琐细trivial,渺茫vague          |
 | drawn                     | 拔出的                                            | drawn-to被吸引到, drawn-sword                        |
-| pile                      | 一堆,桩,垛                                        |
+| pile                      | 一堆mass,桩pale,垛buttress                        |
 | croak                     | 嘶哑;发牢骚complain                               |
 | fuse                      | 融合;导火线                                       |
 | revel                     | 狂欢,陶醉                                         |
@@ -731,3 +731,36 @@
 | outcast                   | 流浪者                                            |
 | squash                    | 压扁squeeze,压缩                                  |
 | hideout                   | 藏身之处,避难hideaway,巢穴                        |
+| testimony                 | 见证witness,证词,证据proof                        |
+| doom                      | 厄运adversity                                     |
+| wander                    | 徘徊hover,漫步stroll                              |
+| flegel                    | 绒毛                                              |
+| dissolve                  | 溶解,解散disband                                  |
+| undertaker                | 承办人                                            |
+| coffin                    | 棺材casket                                        |
+| husk                      | 沙哑                                              |
+| falter                    | 衰退decline,颤抖tremble                           |
+| stalking                  | 缠扰                                              |
+| casket                    | 棺材coffin,匣子cassette                           |
+| rodent                    | 啮齿动物                                          |
+| stench                    | 恶臭                                              |
+| saloon                    | 轿车                                              |
+| shrimp                    | 虾crayfish,小虾                                   |
+| hearse                    | 灵车,殡车                                         |
+| irredeemable              | 无可救药,不可挽回                                 |
+| ultra                     | 极端主义,过度的exceeding                          |
+| patron                    | 顾客customer,赞助人                               |
+| remanant                  | 剩余的                                            |
+| extensive                 | 广泛的widespread,大规模broad-scale                |
+| cub                       | 年轻人,幼兽                                       |
+| hitch                     | 打住,拴住,钩住                                    |
+| muster                    | 鼓起plump,调动shift                               |
+| out-of-action             | 失灵                                              |
+| remorse                   | 悔恨repentance,怜悯pity                           |
+| jog                       | 慢跑jogging,漫步stroll                            |
+| fiction                   | 小说novel,虚构小说                                |
+| slander                   | 诽谤defamation,诋毁                               |
+| condolence                | 慰问,哀悼                                         |
+| squeal                    | 尖叫                                              |
+| attest                    | 作证,证明,认证approve                             |
+| colleague                 | 同事,合作者                                       |
