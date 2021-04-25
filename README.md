@@ -34,7 +34,9 @@
 - [mongodb](main/mongodb.md)  
 - [mysql](main/mysql.md)  
 - [yac](main/yac.md)  
+- ELK
 - etcd  
+- [database实战](main/database.md)
   
 ### web  
 
@@ -59,6 +61,8 @@
 - [middle end 中台](main/middle-end.md)  
 - [micro server 微服务](main/ms.md)  
 - 协程  
+- GUID
+- 幂等
 
 ### deploy  
 
