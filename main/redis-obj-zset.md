@@ -37,4 +37,4 @@ redisObject {
 | skiplist | 元素值字符长度 > 64B 或 len > 128   |
 | ziplist  | 元素值字符长度 <= 64B && len <= 128 |
 
-> 条件可通过配置修改 **list-max-ziplist-value**、**list-max-ziplist-entries**
+> 条件可通过配置修改 `list-max-ziplist-value`、`list-max-ziplist-entries`

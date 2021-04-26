@@ -4,7 +4,7 @@
 
 > released 2012
 
-1. **服务端支持Lua脚本。**
+1. `服务端支持Lua脚本。`
 2. 去掉虚拟内存相关功能。
 3. 放开对客户端连接数的硬编码限制。
 4. 键的过期时间支持毫秒。
@@ -24,7 +24,7 @@
 
 1. 添加部分主从复制的功能，在一定程度上降低了由于网络问题，造成频繁全量复制生成RDB对系统造成的压力。
 2. 尝试性的支持IPv6.
-3. **可以通过config set命令设置maxclients。**
+3. `可以通过config set命令设置maxclients。`
 4. 可以用bind命令绑定多个IP地址。
 5. Redis设置了明显的进程名，方便使用ps命令查看系统进程。
 6. config rewrite命令可以将config set持久化到Redis配置文件中。
@@ -35,7 +35,7 @@
 
 > released 2015.4.1
 
-1. **Redis Cluster：Redis的官方分布式实现。**
+1. `Redis Cluster：Redis的官方分布式实现。`
 2. 全新的embedded string对象编码结果，优化小对象内存访问，在特定的工作负载下载速度大幅提升。
 3. LRU算法大幅提升。
 4. migrate连接缓存，大幅提升键迁移的速度。
@@ -53,7 +53,7 @@
 1. 添加GEO相关功能。
 2. SDS在速度和节省空间上都做了优化。
 3. 支持用upstart或者systemd管理Redis进程。
-4. **新的List编码类型：quicklist。**
+4. `新的List编码类型：quicklist。`
 5. 从节点读取过期数据保证一致性。
 6. 添加了hstrlen命令。
 7. 增强了debug命令，支持了更多的参数。
@@ -72,8 +72,8 @@
 > released 2016.12.02
 
 1. 提供了模块系统，方便第三方开发者拓展Redis的功能。
-2. **PSYNC2.0：优化了之前版本中，主从节点切换必然引起全量复制的问题。**
-3. **提供了新的缓存剔除算法：LFU（Last Frequently Used） ，并对已有算法进行了优化。**
+2. `PSYNC2.0：优化了之前版本中，主从节点切换必然引起全量复制的问题。`
+3. `提供了新的缓存剔除算法：LFU（Last Frequently Used） ，并对已有算法进行了优化。`
 4. 提供了非阻塞del和flushall/flushdb功能，有效解决删除了bigkey可能造成的Redis阻塞。
 5. 提供了memory命令，实现对内存更为全面的监控统计。
 6. 提供了交互数据库功能，实现Redis内部数据库的数据置换。
@@ -84,7 +84,7 @@
 
 > released 2018.05.29
 
-1. **新的流数据类型(Stream data type)**
+1. `新的流数据类型(Stream data type)`
 2. 新的 Redis 模块 API：定时器、集群和字典 API(Timers, Cluster and Dictionary APIs)
 3. RDB 增加 LFU 和 LRU 信息
 4. 集群管理器从 Ruby (redis-trib.rb) 移植到了redis-cli 中的 C 语言代码

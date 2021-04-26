@@ -32,4 +32,4 @@ redisObject {
 | ht       | 元素值非整数 或 len > 512  |
 | intset   | 元素值为整数 && len <= 512 |
 
-> 条件可通过配置修改**list-max-intset-entries**
+> 条件可通过配置修改`list-max-intset-entries`

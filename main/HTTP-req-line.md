@@ -4,7 +4,7 @@
 GET /hello?foo=bar HTTP/1.1
 ```
 
-## **METHOD**
+## METHOD
 
 - GET: 获取数据
 - HEAD: 只解析 header
@@ -22,7 +22,7 @@ GET /hello?foo=bar HTTP/1.1
   - UNLOCK
   - PATCH: 局部PUT
 
-## **URI**
+## URI
 
 - scheme
 - host
@@ -30,7 +30,7 @@ GET /hello?foo=bar HTTP/1.1
 - path
 - query
 
-## **VERSION**
+## VERSION
 
 - HTTP/0.9
 - HTTP/1.0

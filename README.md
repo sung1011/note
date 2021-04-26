@@ -62,7 +62,6 @@
 - [micro server 微服务](main/ms.md)  
 - 协程  
 - GUID
-- 幂等
 
 ### deploy  
 

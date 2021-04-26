@@ -11,9 +11,9 @@
 
 ## 类型  
 
-1. **Single Field Index 单字段索引**
+1. `Single Field Index 单字段索引`
 
-2. **Compound Index 复合索引** 多字段联合索引，注意顺序（a,b,c创建复合索引，查a,b时索引有效，查b，c时索引无效）
+2. `Compound Index 复合索引` 多字段联合索引，注意顺序（a,b,c创建复合索引，查a,b时索引有效，查b，c时索引无效）
 
    - 查找顺序: ESR原则
      - E equal 精确放前面

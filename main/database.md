@@ -25,6 +25,17 @@ redis
 >
 > 大规模项目需要注意redis单点问题
 
+## 请求无序?
+
+redis
+
+1. 请求头中带有seqID参数
+2. S的redis中保存seqID
+3. S只接收seqID(C) == seqID(S)的请求
+4. S处理请求后,将S的seqID+=1
+5. seqID(C) > seqID(S)的请求被暂存起来,等待后续处理
+6. seqID(C) < seqID(S)的请求直接抛弃
+
 ## ABA修改?
 
 > issue: ABA即先将某字段设置为a, 然后设置为b, 由于网络原因a没有正常返回导致客户端重试了a的请求, 导致最终字段值为a (期望b)
@@ -37,10 +48,17 @@ redis
 >
 > 对应SQL: `update <table> set <field>=<value>, ver=ver+1 where ver = 6`  
 
-## schema不固定
+## schema不固定?
 
 > issue: 不同的商品有不同的属性, 比如电脑: 内存 硬盘 CPU; 汽车: 车型, 发动机; 衣服: 颜色, 款式... 但需要抽象出一个商品属性表
 
 1. [MongoDB](mongodb.md)
 2. [Mysql-json](mysql.md)
 3. elasticSearch dynamic field mappings
+
+## 浏览器存储?
+
+- [Cookie](cookie.md)
+- LocalStorage
+- SessionStorage
+- IndexedDB

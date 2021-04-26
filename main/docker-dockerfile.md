@@ -71,14 +71,14 @@ ENTRYPOINT command param1 param2 # shell格式；忽略任何 CMD 或 docker run
 
 ### Shell && Exec 运行指令
 
-- Shell方式: `<instruction> <command>` **默认被shell解析**
+- Shell方式: `<instruction> <command>` 默认被shell解析
 
 ```dockerfile
 ENV name world
 CMD /bin/echo Hello $name # hello world
 ```
 
-- Exec方式: `<instruction> ["executable", "param1", "param2", ...]` **可读性好，默认不会被shell解析。**
+- Exec方式: `<instruction> ["executable", "param1", "param2", ...]` 可读性好，默认不会被shell解析。
 
 ```dockerfile
 ENV name world

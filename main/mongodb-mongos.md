@@ -17,13 +17,13 @@
 
 ## 组成
 
-- **config**  
+- `config`  
 
 用来保存数据，保证数据的高可用性和一致性。可以是一个单独的mongod实例，也可以是一个副本集。在生产环境下Shard一般是一个Replica Set，以防止该数据片的单点故障。可以将所有shard的副本集放在一个服务器多个mongodb实例中。  
 
 > 轻存储 可配置小硬盘
   
-- **router**  
+- `router`  
 
 路由就是mongos的实例，客户端直接连接mongos，由mongos把读写请求路由到指定的Shard上去。  
 一个Sharding集群，可以有一个mongos，也可以为每个App Server配置一个mongos以减轻路由压力。  
@@ -31,7 +31,7 @@
 
 > 重CPU 处理链接用
 
-- **shards**  
+- `shards`  
 
 用来保存数据，保证数据的高可用性和一致性。可以是一个单独的mongod实例，也可以是一个副本集。在生产环境下Shard一般是一个Replica Set，以防止该数据片的单点故障。可以将所有shard的副本集放在一个服务器多个mongodb实例中。最多个1024分片  
 

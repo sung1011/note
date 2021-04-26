@@ -31,23 +31,23 @@
 }
 ```
 
-- **注册**: server向registry注册
+- `注册`: server向registry注册
   - check whitelist exists, cluster exists, service exists
   - store
-- **反注册**: server向registry撤销注册
+- `反注册`: server向registry撤销注册
   - check services exists, cluster exists
   - del node (删除节点信息)
   - update cluster sign
-- **心跳**: server向registry发送心跳来完成节点存活状态上报。
-- **获取**: client向registry获取最新可用server节点列表
+- `心跳`: server向registry发送心跳来完成节点存活状态上报。
+- `获取`: client向registry获取最新可用server节点列表
   - localcache (本地内存)
   - snapshot (本地快照/持久化)
-- **订阅**: client向registry订阅sign
+- `订阅`: client向registry订阅sign
   - check cluster sign
   - get from remote
   - update localcache
   - update snapshot
-- **后台管理**
+- `后台管理`
   - 查询: 查询registry当前注册了哪些服务
   - 修改: 修改registry某一服务信息
 
@@ -57,22 +57,22 @@
 
 > 以Eureka为例
 
-- **Eureka Server** 注册中心服务端，实现了服务注册、存储、查询等功能
-- **服务端的Eureka Client** 集成在s的sdk，s调用sdk实现服务注册、反注册等功能。
-- **客户端的Eureka Client** 集成在c的sdk，c调用sdk实现服务订阅、服务更新等功能。
+- `Eureka Server` 注册中心服务端，实现了服务注册、存储、查询等功能
+- `服务端的Eureka Client` 集成在s的sdk，s调用sdk实现服务注册、反注册等功能。
+- `客户端的Eureka Client` 集成在c的sdk，c调用sdk实现服务订阅、服务更新等功能。
 
 ### 类型 - 应用外注册与发现
 
 > 以Consul为例
 
-- **Consul** 注册中心服务端，实现了服务注册、存储、查询等功能
-- **Registrator** 通过监听服务部署的docker实例是否存活，以进行s的注册、反注册。
-- **Consul Template** 定时从r获取s列表并刷新LB(负载均衡)配置，以达到c的服务订阅与更新功能。
+- `Consul` 注册中心服务端，实现了服务注册、存储、查询等功能
+- `Registrator` 通过监听服务部署的docker实例是否存活，以进行s的注册、反注册。
+- `Consul Template` 定时从r获取s列表并刷新LB(负载均衡)配置，以达到c的服务订阅与更新功能。
 
 ## 注册中心的CAP
 
-- **AP** 如Eureka(本地保存服务注册地址，可能出现不一致，但保证了可用性)
-- **CP** 如zookeeper(paxos leader-followers)、etcd(raft)、Consul(raft)。
+- `AP` 如Eureka(本地保存服务注册地址，可能出现不一致，但保证了可用性)
+- `CP` 如zookeeper(paxos leader-followers)、etcd(raft)、Consul(raft)。
 
 > 对于注册中心，可用性(AP)比一致性(CP)重要的多。
 > 数据不一致即r引入了不可用的服务节点，可利用c的快速失败机制，实现最终一致性。

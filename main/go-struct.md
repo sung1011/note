@@ -132,7 +132,7 @@ func (h *Horse) hello() { // 重载 覆盖 Animal.hello()
 
 func main() {
     bm_horse := &Horse{
-        Animal: &Animal{ // 结构体包含**嵌入字段**，类型名充当了嵌入字段的字段名
+        Animal: &Animal{ // 结构体包含`嵌入字段`，类型名充当了嵌入字段的字段名
             Name:   "baima",
             Weight: 60,
         },

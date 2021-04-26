@@ -27,7 +27,7 @@ struct dict{
 
 // 哈希表
 struct dictht{
-    dictEntry **table;      // 哈希表数组 bucket
+    dictEntry *table;      // 哈希表数组 bucket
     unsigned long size;     // 哈希表大小 bucket的个数 默认4个
     unsigned long sizemask; // 哈希表大小掩码，用于计算索引值。总等于size-1
     unsigned long used;     // 哈希表已使用节点(dictEntry)的数量

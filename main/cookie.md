@@ -1,6 +1,7 @@
 # cookie
 
-    Cookie通过在客户端记录会话状态,确定用户身份
+    Cookie通过在客户端记录会话状态, 确定用户身份
+    S端可以修改C端的cookie(响应头`Set-Cookie`), C对S的每个请求都会带有全部cookie数据
 
 ## 不可跨域
 
@@ -10,6 +11,18 @@
 
     UTF-8中文
     base64图片
+
+## 最大限制
+
+    4kb
+
+> 是指name=value的value的限制, 而非一个域名下所有cookie
+>
+> 每个请求都会带着全部cookie
+
+## 安全性
+
+TODO
 
 ## 属性
 

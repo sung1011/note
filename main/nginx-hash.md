@@ -19,7 +19,7 @@ typedef struct {
 
 
 typedef struct {
-  ngx_hash_elt_t **buckets;   // 指向散列表的首地址，也是第1个槽的地址
+  ngx_hash_elt_t *buckets;   // 指向散列表的首地址，也是第1个槽的地址
   ngx_uint_t size;   // 散列表中槽的总数
 } ngx_hash_t;
 ```
