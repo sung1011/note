@@ -776,3 +776,28 @@ treason | 叛国,叛变
 meekly| 谦和的,忠厚的
 rural | 乡村rustic,田园
 derailed|脱轨
+proclaim|宣布announce,声称state
+relinquish | 放弃renounce,放手,作罢
+strive | 努力,奋斗
+debase|贬低
+content| 满足,内容
+perilous|险恶sinister,危险的
+negotiation|谈判,交涉
+rifle|来复枪,步枪spear
+in-the-first-place|首先
+unfailingly|坚定不移地
+pompous|浮夸的,自大的
+pretend|假装
+smug|踌躇满志,飘飘然,俏皮的
+hypocrite|伪君子,假仁假义,表里不一double-faced
+whimper|呜咽whine,抱怨sob
+villain|恶棍scoundrel,坏人baddie
+hubris|傲慢
+shelter|庇护shield
+commission| 佣金,权力
+guile| 诡计
+guileless|朴实
+chapel|教堂,礼拜堂church
+sturdy|结实,粗壮thickset,强健
+siege|围城
+faint | 头晕,隐约,微弱
