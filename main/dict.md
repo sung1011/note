@@ -801,3 +801,4 @@ chapel|教堂,礼拜堂church
 sturdy|结实,粗壮thickset,强健
 siege|围城
 faint | 头晕,隐约,微弱
+pyramid | 金字塔,椎体cone

@@ -5,6 +5,8 @@
 协议 + 域名 + 端口 相同即同源
 
 > 限制行为: cookie, LocalStorage 和 IndexDB; DOM, JS; AJAX;
+>
+> Access-Control-Allow 即白名单, 允许某些域名/行为跨域名访问我
 
 ## 解决方案
 
