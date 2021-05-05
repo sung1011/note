@@ -83,7 +83,7 @@
 | blaze                     | 炽flame,毁,熠glow                                 | blaze a path开辟一条道路                             |
 | blend                     | 混入mingle,搅和spoil,合成synthesize               |
 | blow                      | 打击strike,灾难catastrophe,不幸unfortunately      | serious-blow沉重打击                                 |
-| blunt                     | 钝的                                              |
+| blunt                     | 钝的obtuse,率直straightforward                    |
 | bluster                   | 气焰arrogance,吓唬swash                           |
 | botch                     | 烂透了,搞砸了                                     |
 | boulder                   | 圆石头,漂砾                                       |
@@ -135,7 +135,7 @@
 | collude                   | 串通collaborate,勾结gang                          |
 | colossus                  | 庞然大物                                          |
 | comatose                  | 昏睡lethargic,昏迷                                |
-| commence                  | 开始,着手                                         |
+| commence                  | 开始,着手,发源                                    |
 | commend                   | 表彰exalt,嘉奖cite                                |
 | compensate                | 补偿,赔偿                                         |
 | comprehend                | 理解,领会,懂得                                    |
@@ -171,6 +171,7 @@
 | crack                     | 裂痕flaw,崩裂burst                                | crack-down严厉打击                                   |
 | crap                      | 掷骰子;废物                                       |
 | creep                     | 爬行crawl,蔓延spread,异样                         |
+| crawl                     | 爬行sprawl                                        |
 | crisis                    | 危机,风波                                         |
 | criteria                  | 标准                                              |
 | croak                     | 嘶哑;发牢骚complain                               |
@@ -181,7 +182,6 @@
 | cull                      | 剔除,淘汰                                         |
 | culprit                   | 罪魁祸首                                          |
 | custody                   | 保管storage,拘留detention,保护aegis               |
-| custody                   | 拘留detention                                     |
 | cut-to-the-chase          | 切入正题                                          |
 | dagger                    | 匕首,短剑                                         |
 | damp                      | 潮湿moist,润湿                                    |
@@ -199,11 +199,11 @@
 | defective                 | 残缺,欠缺,不完美imperfect                         |
 | deflect                   | 偏转,打歪,使偏                                    |
 | defy                      | 违抗,藐视,抗拒resist                              |
-| delicate                  | 精巧,娇嫩,秀气,柔弱                               |
+| delicate                  | 精巧quaint,娇嫩fragile,秀气elegant,柔弱           |
 | delusion                  | 幻想                                              |
 | demise                    | 消亡,禅让,遗赠bequeath                            |
 | deplet                    | 耗尽                                              |
-| descendant                | 后代                                              |
+| descendant                | 后代posterity,后裔offspring,儿孙                  |
 | descendent                | 后代,子孙,后裔                                    |
 | deserting                 | 抛弃,背弃,叛离                                    |
 | desperate                 | 殊死,危机critical                                 |
@@ -239,7 +239,7 @@
 | dominate                  | 支配,主宰,统治                                    |
 | doom                      | 厄运adversity                                     |
 | drawn                     | 拔出的                                            | drawn-to被吸引到, drawn-sword                        |
-| drill                     | 演习,演练,练习                                    |
+| drill                     | 演习exercise,演练,练习                            |
 | duck                      | 躲避,鸭子                                         |
 | dumb                      | 哑,说不出话来                                     | scary dumb                                           |
 | dummy                     | 假的,虚拟的,伪指令                                |
@@ -258,7 +258,7 @@
 | enthrone                  | 登基ascend                                        |
 | envision                  | 预见,预料                                         |
 | episode                   | 插曲                                              |
-| eradicate                 | 根除,铲除,肃清eliminate                           |
+| eradicate                 | 根除stub,铲除root-out,肃清eliminate               |
 | erode                     | 侵蚀corrode,腐蚀corrode,蚀eclipse                 |
 | escort                    | 护送convoy,押解detain                             |
 | essential                 | 基本上,本质,必要                                  |
@@ -375,7 +375,7 @@
 | insidious                 | 阴险sinister,隐秘sly                              |
 | insignificant             | 微不足道negligible,琐细trivial,渺茫vague          |
 | instant                   | 瞬间,片刻,即刻                                    |
-| instinct                  | 直觉                                              |
+| instinct                  | 直觉intuition,本能                                |
 | insurance                 | 保险assurance,保险业underwriting,保险费premium    |
 | intact                    | 完好,原封,完整                                    |
 | interior                  | 室内,内地                                         |
@@ -482,10 +482,10 @@
 | peg                       | 钉住,销子pin                                      |
 | penetrate                 | 渗透,穿透infiltrate,贯穿seep                      |
 | perimeter                 | 周长                                              |
-| perish                    | 灭亡die-out,陨灭succumb                           |
+| perish                    | 沦陷,灭亡die-out,陨灭succumb                      |
 | permanently               | 永久constantly                                    |
 | perpetrator               | 犯罪者                                            |
-| persecute                 | 迫害                                              |
+| persecute                 | 迫害,困扰perplex                                  |
 | pest                      | 害虫,毒物toxic                                    |
 | petrified                 | 石化的,发呆的benumb                               |
 | phantom-read              | 幻读                                              |
@@ -519,6 +519,7 @@
 | prohibit                  | 禁止proscribe,阻止deter,不准forbid                |
 | prolong                   | 延长extend,拖延deplay                             |
 | propaganda                | 宣传                                              |
+| propagate                 | 传播,宣传,散布                                    |
 | prosperity                | 繁荣thrift,景气economic-boom,昌盛flourishing      |
 | puff                      | 吹blow,喷spray,阵风gust                           |
 | puke                      | 呕吐vomit                                         |
@@ -566,7 +567,7 @@
 | resemble                  | 类似,相似                                         |
 | resent                    | 怨恨                                              |
 | resident                  | 居民inhabitant,住户householder                    |
-| restrain                  | 克制,限制                                         |
+| restrain                  | 克制inhibit,限制                                  |
 | restriction               | 限制                                              |
 | resume                    | 恢复restore,简历                                  |
 | retreat                   | 撤退evac,避难所refuge                             |
@@ -618,7 +619,7 @@
 | shamble                   | 乱七八糟,一片狼藉                                 |
 | shed                      | 棚子shack,蜕皮molt                                |
 | sheer                     | 绝对,纯属                                         |
-| shove                     | 推,挤,钻,争                                       | shove off to the interior                            |
+| shove                     | 推promote,挤squeeze,钻,争                         | shove off to the interior                            |
 | shred                     | 撕碎lacerate,切碎                                 |
 | shrimp                    | 虾crayfish,小虾                                   |
 | sibling                   | 兄弟姐妹                                          |
@@ -738,7 +739,6 @@
 | vanish                    | 消失eliminate,冰释disappear                       |
 | vegetation                | 植被,植物                                         |
 | vent                      | 发泄                                              |
-| verbose                   | 啰嗦的,冗余的                                     |
 | verge                     | 边缘periphery                                     |
 | vertical                  | 垂直                                              |
 | vessel                    | 容器receptacle,导管catheter                       |
@@ -764,41 +764,126 @@
 | write-off                 | 抹杀obliterate,报销wipe-out                       |
 | yank                      | 猛拉,猛拽                                         |
 | yerown                    | 臭名昭著                                          |
-refuge | 避难所haven
-withstand | 经受undergo,抵挡,顶住hold-out
-utter | 完全sheer,说出articulate
-spark | 火花,战火,星火
-engulf | 吞没embezzle,吞噬swallow,席卷sweep
-surge | 浪涌,滔滔billow,荡漾pitching
-deliberately | 故意purposely,存心intentionally
-shudder | 不寒而栗tremble,颤栗quiver
-treason | 叛国,叛变
-meekly| 谦和的,忠厚的
-rural | 乡村rustic,田园
-derailed|脱轨
-proclaim|宣布announce,声称state
-relinquish | 放弃renounce,放手,作罢
-strive | 努力,奋斗
-debase|贬低
-content| 满足,内容
-perilous|险恶sinister,危险的
-negotiation|谈判,交涉
-rifle|来复枪,步枪spear
-in-the-first-place|首先
-unfailingly|坚定不移地
-pompous|浮夸的,自大的
-pretend|假装
-smug|踌躇满志,飘飘然,俏皮的
-hypocrite|伪君子,假仁假义,表里不一double-faced
-whimper|呜咽whine,抱怨sob
-villain|恶棍scoundrel,坏人baddie
-hubris|傲慢
-shelter|庇护shield
-commission| 佣金,权力
-guile| 诡计
-guileless|朴实
-chapel|教堂,礼拜堂church
-sturdy|结实,粗壮thickset,强健
-siege|围城
-faint | 头晕,隐约,微弱
-pyramid | 金字塔,椎体cone
+| refuge                    | 避难所haven                                       |
+| withstand                 | 经受undergo,抵挡,顶住hold-out                     |
+| utter                     | 完全sheer,说出articulate                          |
+| spark                     | 火花,战火,星火                                    |
+| engulf                    | 吞没embezzle,吞噬swallow,席卷sweep                |
+| surge                     | 浪涌,滔滔billow,荡漾pitching                      |
+| deliberately              | 故意purposely,存心intentionally                   |
+| shudder                   | 不寒而栗tremble,颤栗quiver                        |
+| treason                   | 叛国,叛变                                         |
+| meekly                    | 谦和的,忠厚的                                     |
+| rural                     | 乡村rustic,田园                                   |
+| derailed                  | 脱轨                                              |
+| proclaim                  | 宣布announce,声称state                            |
+| relinquish                | 放弃renounce,放手,作罢                            |
+| strive                    | 努力,奋斗                                         |
+| debase                    | 贬低                                              |
+| content                   | 满足,内容                                         |
+| perilous                  | 险恶sinister,危险的                               |
+| negotiation               | 谈判,交涉                                         |
+| rifle                     | 来复枪,步枪spear                                  |
+| in-the-first-place        | 首先                                              |
+| unfailingly               | 坚定不移地                                        |
+| pompous                   | 浮夸的,自大的                                     |
+| pretend                   | 假装                                              |
+| smug                      | 踌躇满志,飘飘然,俏皮的                            |
+| hypocrite                 | 伪君子,假仁假义,表里不一double-faced              |
+| whimper                   | 呜咽whine,抱怨sob                                 |
+| villain                   | 恶棍scoundrel,坏人baddie                          |
+| hubris                    | 傲慢                                              |
+| shelter                   | 庇护shield                                        |
+| commission                | 佣金,权力                                         |
+| guile                     | 诡计                                              |
+| guileless                 | 朴实                                              |
+| chapel                    | 教堂,礼拜堂church                                 |
+| sturdy                    | 结实,粗壮thickset,强健                            |
+| siege                     | 围城                                              |
+| faint                     | 头晕,隐约,微弱                                    |
+| pyramid                   | 金字塔,椎体cone                                   |
+| time-to-time              | 时不时                                            |
+| invincible                | 不败的,无敌的                                     |
+| unleash                   | 发挥exert,发动wage                                |
+| blabber                   | 笨拙,废话nonsense,多嘴blab                        |
+| gotta                     | 得                                                |
+| conceive                  | 构想,设想envisage,怀孕pregnant                    |
+| tyrannize                 | 暴虐,压迫oppress                                  |
+| vein                      | 静脉,血管artery                                   |
+| bloodline                 | 血统,世系genealogy                                |
+| uprising                  | 起义,暴动                                         |
+| inkling                   | 暗示cue                                           |
+| vindicate                 | 表白unburden,辩护plead                            |
+| rhetoric                  | 修辞,花言巧语,辞藻                                |
+| have-an-edge              | 有优势,有利                                       |
+| layout                    | 布局distribution,设计,安排arrangement             |
+| no-telling                | 更不用说                                          |
+| ejector                   | 顶出,排除器                                       | ejector-pin顶针                                      |
+| glare                     | 强光,阳光,怒视glower                              |
+| compendium                | 概要outline,概略compendia                         |
+| disclose                  | 透露leak-out,暴露reveal,泄露divulge               |
+| snoopin                   | 探听                                              |
+| brothel                   | 妓院                                              |
+| vast                      | 辽阔extensive,浩大huge,苍茫indistinct             |
+| disrupt                   | 打乱,破坏,干扰                                    |
+| minority                  | 少数民族,少数                                     |
+| purge                     | 清除,清洗rinse,废止releal                         |
+| charmer                   | 魔术师magician,迷人的人                           |
+| stray                     | 迷路,游荡loiter,迷途                              |
+| whim                      | 异想天开,怪念头crochet                            |
+| misery                    | 苦难tribulation,苦楚bitterness,苦痛suffering      |
+| disgrace                  | 耻辱humiliation,丑事scandal,玷污blemish           |
+| pedigree                  | 谱系,世系genealogy,家谱                           |
+| fella                     | 小伙子                                            |
+| notch                     | 缺口,凹槽,切口                                    |
+| restraint                 | 克制,限制stint                                    |
+| ingest                    | 摄取,咽gulp                                       |
+| fluid                     | 流体                                              |
+| atone                     | 赎罪expiate                                       |
+| splinter                  | 碎片fragment,弹片shrapnel                         |
+| serum                     | 血清,血浆broth                                    |
+| ideology                  | 思想cogitation,意志                               |
+| entrust                   | 委托consign,托付intrust                           |
+| sole                      | 唯一,单一unitary                                  |
+| catastrophe               | 灾难disaster,浩劫great-calamity                   |
+| dwell                     | 居住reside                                        |
+| despicable                | 卑鄙contemptible,卑劣mean                         |
+| pooch                     | 狗                                                |
+| bawling                   | 嚎啕大哭                                          |
+| leap                      | 飞跃,跳跃caper,激增                               |
+| sniffle                   | 嗅,抽鼻涕                                         |
+| navigator                 | 导航员,航海家voyager                              |
+| progenitor                | 祖细胞                                            |
+| density                   | 密度closeness,浓度concentration,浓厚thick         |
+| showdown                  | 摊牌facedown                                      |
+| phony                     | 虚假bogus,伪造counterfeit                         |
+| cicada                    | 蝉                                                |
+| ignite                    | 点燃kindle,燃burn                                 |
+| jackpot                   | 头等奖,中大奖了                                   |
+| gigantic                  | 巨大enormous,庞大huge                             |
+| justified                 | 有道理的                                          |
+| bodyguard                 | 保镖triggerman,护卫escort                         |
+| waning                    | 衰落ebb,衰败fading                                |
+| remnant                   | 残余vestige,遗物relict                            |
+| rambling                  | 漫无目的                                          |
+| approval                  | 赞同consent,承认recognition                       |
+| booze                     | 豪饮tope,喝酒失控guzzle                           |
+| orphanage                 | 孤儿院                                            |
+| budget                    | 预算estimate                                      |
+| backlash                  | 反冲,强烈反对                                     |
+| revoke                    | 撤销rescind,吊销withdraw,废除repeal               |
+| detention                 | 拘留internment,扣押,延迟                          |
+| get-rid-of                | 摆脱                                              |
+| guillotine                | 断头台scaffold                                    |
+| ore                       | 矿石pit                                           |
+| in-sight                  | 在望,在眼前                                       |
+| bankrupt                  | 破产,倒闭                                         |
+| ingredient                | 成分composition,配料                              |
+| stumble                   | 绊倒,蹒跚stagger                                  |
+| unveil                    | 揭幕,暴露disclose                                 |
+| fire-bragade              | 消防队                                            |
+| siren                     | 警笛,警报器buzzer                                 |
+| buzzing                   | 嗡嗡声                                            |
+| wailing                   | 哀嚎,悲号cry-piteously                            |
+| sigh                      | 叹息                                              |
+| adverse                   | 不利的,敌对的                                     |
