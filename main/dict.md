@@ -887,3 +887,14 @@
 | wailing                   | 哀嚎,悲号cry-piteously                            |
 | sigh                      | 叹息                                              |
 | adverse                   | 不利的,敌对的                                     |
+| thermal| 激热,极热
+meltdown| 崩溃
+dive | 潜水
+manifest | 显现,表明indicate
+marrow | 骨髓,精华
+immune | 免疫
+tissue| 组织,蛛网cobweb
+labored | 劳苦的,困难的
+accountable| 担保,负责
+adament| 坚定地,硬石
+pursue| 奉行,推行carry-out,探求seek
