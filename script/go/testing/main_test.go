@@ -1,4 +1,4 @@
-package testing
+package main
 
 import (
 	"encoding/json"
@@ -71,13 +71,13 @@ func mockServer() *httptest.Server {
 
 //基准测试
 func BenchmarkConcatStringByAdd(b *testing.B) {
-
 	elems := []string{"1", "2", "3", "4", "5"}
 	b.ResetTimer() //测试片段开始
 	for i := 0; i < b.N; i++ {
 		StrAppend(elems...)
 	}
 	b.StopTimer() //测试片段结束
+
 }
 
 //基准测试
@@ -88,5 +88,4 @@ func BenchmarkConcatStringByBytesBuffer(b *testing.B) {
 		StrAppendByBuffer(elems...)
 	}
 	b.StopTimer()
-
 }

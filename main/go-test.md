@@ -41,8 +41,8 @@ func TestFoo(t *testing.T) {
 
 ## 方式  
 
-[表组测试](src/go/testing/foo_test.go)  
-[accert 断言](src/go/testing/foo_test.go)  
-[mock 模拟](src/go/testing/foo_test.go)  
-[基准测试](src/go/testing/foo_test.go)  
+[表组测试](../script/go/testing/foo_test.go)  
+[accert 断言](../script/go/testing/foo_test.go)  
+[mock 模拟](../script/go/testing/foo_test.go)  
+[基准测试](../script/go/testing/foo_test.go)  
 BDD  

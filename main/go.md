@@ -1,5 +1,7 @@
 # go  
-  
+
+## [依赖](go-start.md)
+
 ## type  
 
 ### 值类型
@@ -38,7 +40,7 @@
 ## [test](go-test.md)
 
 ## GC
-  
+
 ## ref
 
 [标准库](https://studygolang.com/pkgdoc)
