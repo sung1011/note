@@ -47,7 +47,7 @@
 | angled-brackets           | 尖括号                                            | < >                                                  |
 | annihilate                | 歼灭wipe-out,覆没capsize                          |
 | annotations               | 注释                                              |
-| anticipation              | 预料,预期                                         |
+| anticipation              | 预料,预期,悬念suspense                            |
 | antsy                     | 热情的                                            |
 | appraise                  | 评价evaluate,鉴定identify,估价estimate            |
 | aptitude                  | 材,能力倾向                                       | natural-aptitude天赋                                 |
@@ -83,7 +83,7 @@
 | blaze                     | 炽flame,毁,熠glow                                 | blaze a path开辟一条道路                             |
 | blend                     | 混入mingle,搅和spoil,合成synthesize               |
 | blow                      | 打击strike,灾难catastrophe,不幸unfortunately      | serious-blow沉重打击                                 |
-| blunt                     | 钝的obtuse,率直straightforward                    |
+| blunt                     | 钝的obtuse,率直straightforward,爽快frank          |
 | bluster                   | 气焰arrogance,吓唬swash                           |
 | botch                     | 烂透了,搞砸了                                     |
 | boulder                   | 圆石头,漂砾                                       |
@@ -135,7 +135,7 @@
 | collude                   | 串通collaborate,勾结gang                          |
 | colossus                  | 庞然大物                                          |
 | comatose                  | 昏睡lethargic,昏迷                                |
-| commence                  | 开始,着手,发源                                    |
+| commence                  | 开始initiate,着手,发源                            |
 | commend                   | 表彰exalt,嘉奖cite                                |
 | compensate                | 补偿,赔偿                                         |
 | comprehend                | 理解,领会,懂得                                    |
@@ -337,7 +337,7 @@
 | heretic                   | 异教徒                                            |
 | hideout                   | 藏身之处,避难hideaway,巢穴                        |
 | hips                      | 臀部                                              |
-| hitch                     | 打住,拴住,钩住                                    |
+| hitch                     | 拴住,挂,钩住clasp                                 |
 | hive                      | 蜂巢honeycomb                                     |
 | hoist                     | 提起elevate,升起uprising                          |
 | hold-back                 | 退缩                                              |
@@ -599,7 +599,7 @@
 | scold                     | 责骂rebuke,泼妇shrew                              |
 | scout                     | 侦查reconnaissance                                |
 | scramble                  | 争夺contest,抢rush,拼凑rig-up                     |
-| scrap                     | 碎屑,碎片fragment                                 |
+| scrap                     | 碎屑,废料flotsam,碎片fragment                     |
 | scratch                   | 刮,挠,蹭rub                                       |
 | scrawny                   | 骨瘦如柴                                          |
 | screw                     | 螺旋                                              |
@@ -663,7 +663,7 @@
 | stalking                  | 缠扰                                              |
 | startled                  | 惊愕scared,惊悚frightened                         |
 | stench                    | 恶臭                                              |
-| stick                     | 粘,棍,杆pole;stuck                                |
+| stick                     | 粘glue,棍wand,杆pole;stuck                        |
 | stiffen                   | 硬化,使变硬harden                                 |
 | sting                     | 吝啬的,蜇伤                                       |
 | stink                     | 腐臭rancidity,臭气reek                            |
@@ -903,6 +903,53 @@
 | subjective                | 主观的,个人的                                     |
 | notable                   | 显著conspicuous,引人注目                          |
 | biased                    | 有偏见的partisan                                  |
-imperative| 至关重要,迫切urgent,急迫pressing
-penal|刑事criminal | penalty惩罚
-pitfall | 陷阱trap,阴谋conspiracy
+| imperative                | 至关重要,迫切urgent,急迫pressing                  |
+| penal                     | 刑事criminal;penalty惩罚                          |
+| pitfall                   | 陷阱trap,阴谋conspiracy                           |
+| famine                    | 饥荒debt                                          |
+| pit                       | 坑tunnel,陷阱trap                                 |
+| redact                    | 篡改copyread                                      |
+| moan                      | 呻吟groan,抱怨grumble                             |
+| trial                     | 审判,审讯,考研ordeal                              |
+| disel                     | 柴油机                                            |
+| turbo                     | 涡轮turbine                                       |
+| blackout                  | 停电,灯火管制                                     |
+| supervisor                | 主管,监督者,导师                                  |
+| disseminate               | 传播propagate,散布spread,普及popularize           |
+| exceed                    | 超级,超过surpass,超越transcend                    |
+| atrocity                  | 暴行outrage,肆虐ferocity                          |
+| futile                    | 徒劳,无用useless,枉然in-vane                      |
+| timid                     | 胆小cowardly,羞怯blushful                         |
+| veteran                   | 老将,老兵,退伍军人                                |
+| leftover                  | 剩菜剩饭,盈余surplus                              |
+| shorthanded               | 人手不足                                          |
+| solicit                   | 征求seek,询问find-out                             |
+| heroic                    | 英勇valiant,豪grand                               |
+| hazy                      | 朦胧obscure,弥漫vague,隐约faint,昏暗              |
+| grumble                   | 抱怨gripe,诉苦whine                               |
+| adoleescent               | 青春期hebetic                                     |
+| disorder                  | 紊乱,混乱confuse                                  |
+| headbutt                  | 头槌,头撞                                         |
+| rake                      | 扫射strafe                                        |
+| lurking                   | 潜伏,隐藏于                                       |
+| whatsoever                | 任何whatever,无论如何,不拘泥于                    |
+| debt                      | 债务owing,饥荒famine                              |
+| impair                    | 受损,妨害jeopardize,削弱undermine                 |
+| mollify                   | 缓和alleviate                                     |
+| skeptic                   | 怀疑                                              |
+| vermin                    | 害虫                                              |
+| feeble                    | 微弱的achy,软弱的flabby                           |
+| individual                | 个体,个人                                         |
+| cozy                      | 舒适snug                                          |
+| estimate                  | 评估gauge,估量appraise,臆测                       |
+| obligation                | 义务liability                                     |
+| inferiority               | 自卑                                              |
+| childish                  | 幼稚naive,孩子气                                  |
+| withheld                  | 扣留,私藏                                         |
+| baggage                   | 行李                                              |
+| trip-up                   | 绊倒                                              |
+| fodder                    | 饲料mash,草料forage                               |
+| rowdy                     | 吵闹的                                            |
+| jealous                   | 嫉妒,妒忌                                         |
+| stretch                   | 延伸elongate,伸展outstretch                       |
+| be-bound-to               | 势必,必定be-sure                                  |
