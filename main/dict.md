@@ -173,7 +173,7 @@
 | creep                     | 爬行crawl,蔓延spread,异样                         |
 | crawl                     | 爬行sprawl                                        |
 | crisis                    | 危机,风波                                         |
-| criteria                  | 标准                                              |
+| criteria                  | 标准norm,规范specification                        |
 | croak                     | 嘶哑;发牢骚complain                               |
 | crotch                    | 裆部,叉柱                                         |
 | crumble                   | 崩溃collapse,弄碎,瓦解,崩塌                       |
@@ -899,3 +899,10 @@
 | adament                   | 坚定地,硬石                                       |
 | pursue                    | 奉行,推行carry-out,探求seek                       |
 | retract                   | 撤回withdraw,缩回                                 |
+| somewhat                  | 有点                                              |
+| subjective                | 主观的,个人的                                     |
+| notable                   | 显著conspicuous,引人注目                          |
+| biased                    | 有偏见的partisan                                  |
+imperative| 至关重要,迫切urgent,急迫pressing
+penal|刑事criminal | penalty惩罚
+pitfall | 陷阱trap,阴谋conspiracy

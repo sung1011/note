@@ -106,16 +106,16 @@ retract (
     - `go mod edit -replace example.com/a@v1.0.0=some.com/a@v1.0.0`
     - `go mod edit -replace example.com/a@v1.0.0=./a`
     - `go mod edit -dropreplace example.com/a@v1.0.0`
-    - `go mod edit -retract` //TODO
-    - `go mod edit -dropretract` //TODO
     - `go mod edit -json`
     - `go mod edit -fmt`
 
 - `go list`
-  - `go list -m all` list modules instead of packages.
-  - `go list -m -u all` list and upgrade modules instead of packages.
+  - `go list -m all` list modules and dependencies instead of packages.
+  - `go list -m -u all` list modules, dependencies and upgrade them.
 
 - `go get`
   - `go get -u` update modules providing dependencies of packages
 
-> go build 时有一个hook, 会自动调用go mod tidy, 该行为控制通过`go build -mod=readonly`或`go build -mod=vendor`
+> go build/run 时有一个hook, 会自动调用go mod tidy, 该行为控制通过`go build -mod=readonly`或`go build -mod=vendor`
+>
+> go mod下载的包`按版本`保存在`$GOPATH/pkg/mod/`
