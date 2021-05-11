@@ -953,6 +953,18 @@
 | jealous                   | 嫉妒,妒忌                                         |
 | stretch                   | 延伸elongate,伸展outstretch                       |
 | be-bound-to               | 势必,必定be-sure                                  |
-rage| 愤怒wrath,怒气ire
-freakish| 怪异的,滑稽可笑的antic
-cloak| 披风manteau,斗篷mantle
+| rage                      | 愤怒wrath,怒气ire                                 |
+| freakish                  | 怪异的,滑稽可笑的antic                            |
+| cloak                     | 披风manteau,斗篷mantle                            |
+| cranny                    | 裂缝fissure                                       |
+| nook                      | 角落cant,躲避处                                   |
+| tactics                   | 策略ploy,权谋trickery                             |
+| constraint                | 约束,强制enforcement,局促uneasiness,拘禁          |
+| incognito                 | 隐身                                              |
+| elaborate                 | 精心制作的,阐述expound,缜密comprehensive          |
+| quadrupedal               | 四脚的                                            |
+| saddle                    | 马鞍                                              |
+| formidable                | 强大,艰巨arduous,厉害terrible                     |
+| pluck                     | 采摘,拔出draw                                     |
+| throughout                | 到处,各处                                         |
+| abduct                    | 绑架kidnap,拐走                                   |
