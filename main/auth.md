@@ -2,6 +2,8 @@
 
 ## [token]
 
+## [Cookie](cookie.md)
+
 ## [session]
 
 ## [OAuth](oauth.md)

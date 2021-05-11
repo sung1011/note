@@ -54,6 +54,7 @@
 ### concept
 
 - [oop 面向对象](main/oop.md)  
+- [transaction 事务](main/acid.md)
 - [distributed 分布式](main/distributed.md)  
 - [cryptography 加密](main/crypt.md)  
 - [splite brain 脑裂](main/splite-brain.md)  

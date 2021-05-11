@@ -953,3 +953,6 @@
 | jealous                   | 嫉妒,妒忌                                         |
 | stretch                   | 延伸elongate,伸展outstretch                       |
 | be-bound-to               | 势必,必定be-sure                                  |
+rage| 愤怒wrath,怒气ire
+freakish| 怪异的,滑稽可笑的antic
+cloak| 披风manteau,斗篷mantle
