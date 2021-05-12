@@ -44,4 +44,4 @@
 
 ## 实战
 
-- `查询包含word1和word2的doc` 倒排索引+[归并排序](algo-sort-merge.md)
+- `经常查询包含word1和word2的doc` [归并排序](algo-sort-merge.md) 的预先联合查询 + 倒排索引

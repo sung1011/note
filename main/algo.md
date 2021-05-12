@@ -36,7 +36,9 @@
 [位图 bitmap](ds-bitmap.md)  
 
 [布隆 BloomFilter](algo-bloomfilter.md)  
-哈希  
+
+[哈希]  
+
 [一致性哈希 DHT](algo-DHT.md)  
 
 [共识算法 raft](algo-raft.md)
