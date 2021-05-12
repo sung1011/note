@@ -782,7 +782,7 @@
 | debase                    | 贬低                                              |
 | content                   | 满足,内容                                         |
 | perilous                  | 险恶sinister,危险的                               |
-| negotiation               | 谈判,交涉                                         |
+| negotiation               | 谈判conference,交涉                               |
 | rifle                     | 来复枪,步枪spear                                  |
 | in-the-first-place        | 首先                                              |
 | unfailingly               | 坚定不移地                                        |
@@ -968,3 +968,12 @@
 | pluck                     | 采摘,拔出draw                                     |
 | throughout                | 到处,各处                                         |
 | abduct                    | 绑架kidnap,拐走                                   |
+| lunk                      | 大块头                                            |
+| bolt                      | 门栓latch                                         | bolt-of-lightning一道闪电                            |
+| pierce                    | 刺穿perforate                                     |
+| wield                     | 挥舞brandish,舞弄,执掌                            |
+| defile                    | 污蔑slander,丑化                                  |
+| warchief                  | 酋长                                              |
+| fulfill                   | 履行perform,兑现honor,落实implement               |
+| liable                    | 容易,有责任                                       |
+| blown                     | 吹,吓坏                                           |
