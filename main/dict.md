@@ -403,7 +403,7 @@
 | liquor                    | 酒                                                |
 | literal                   | 字面量                                            |
 | literally                 | 字面上的,确实,真的                                |
-| livestock                 | 家畜,畜生                                         |
+| livestock                 | 家畜cattle,畜生domestic                                         |
 | lizard                    | 蜥蜴                                              |
 | logistics                 | 后勤                                              |
 | logs                      | 原木crude,木头timber                              |
@@ -977,3 +977,9 @@
 | fulfill                   | 履行perform,兑现honor,落实implement               |
 | liable                    | 容易,有责任                                       |
 | blown                     | 吹,吓坏                                           |
+obedient |乖乖的,听话,服从amenable
+cherish| 珍爱,珍视treasure,爱惜use-spaingly,怀念
+hostage|人质,抵押品gage
+barely-even | 几乎没有,几乎不
+ascend|上升hoist,登mount,攀implicate
+wreckage| 残骸remains,废墟ruins

@@ -25,6 +25,8 @@ redis
 >
 > 大规模项目需要注意redis单点问题
 
+---
+
 ## 请求无序?
 
 redis
@@ -35,6 +37,8 @@ redis
 4. S处理请求后,将S的seqID+=1
 5. seqID(C) > seqID(S)的请求被暂存起来,等待后续处理
 6. seqID(C) < seqID(S)的请求直接抛弃
+
+---
 
 ## ABA修改?
 
@@ -48,6 +52,8 @@ redis
 >
 > 对应SQL: `update <table> set <field>=<value>, ver=ver+1 where ver = 6`  
 
+---
+
 ## schema不固定?
 
 > issue: 不同的商品有不同的属性, 比如电脑: 内存 硬盘 CPU; 汽车: 车型, 发动机; 衣服: 颜色, 款式... 但需要抽象出一个商品属性表
@@ -56,9 +62,24 @@ redis
 2. [Mysql-json](mysql.md)
 3. elasticSearch dynamic field mappings
 
+---
+
 ## 浏览器存储?
 
 - [Cookie](cookie.md)
 - LocalStorage
 - SessionStorage
 - IndexedDB
+
+---
+
+## 如何读写分离?
+
+### 流程
+
+1. 部署一主多从的DB实例, 并令他们之间实时同步
+2. 将读写请求分离到主/从实例上
+
+### 方式
+
+---
