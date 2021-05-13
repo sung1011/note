@@ -27,7 +27,15 @@
 
 - [git](main/git.md)  
 - [svn](main/svn.md)  
-  
+
+### basic  
+
+- [data structure 数据结构](main/data-struct.md)  
+- [algorithm 算法](main/algo.md)  
+- [complexity 复杂度](main/complexity.md)  
+- [ascii](main/ascii.md)  
+- [scale 单位换算](main/scale.md)  
+
 ### database  
 
 - [redis](main/redis.md)  
@@ -76,14 +84,6 @@
 
 - [DDoS](main/ddos.md)  
 - [anti cheat 防作弊](main/anti_cheat.md)  
-
-### basic  
-
-- [complexity 复杂度](main/complexity.md)  
-- [data structure 数据结构](main/data-struct.md)  
-- [algorithm 算法](main/algo.md)  
-- [ascii](main/ascii.md)  
-- [scale 单位换算](main/scale.md)  
 
 ### programming language  
 
