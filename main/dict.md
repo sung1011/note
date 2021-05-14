@@ -991,3 +991,11 @@
 | pervert                   | 变态moron                                         |
 | honeycomb                 | 蜂窝beehive,蜂巢hive                              |
 | sprawl                    | 蔓延trail,铺展,爬行creep                          |
+| bissful                   | 幸福的                                            |
+| barrage                   | 弹幕,阻塞choke                                    |
+| damper                    | 减震器,阻碍                                       |
+| strain                    | 劳损                                              |
+| suscept                   | 感受,受影响                                       |
+| taper-off                 | 主键停止                                          |
+| taper                     | 锥形cone,锥体,尖细                                |
+| fiber                     | 纤维,构造                                         |

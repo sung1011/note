@@ -41,7 +41,7 @@
 
 ## [索引 index](mysql-index.md)
 
-## [分表](mysql-split.md)
+## [分库分表](mysql-split.md)
 
 ## [删除](mysql-delete.md)
 
