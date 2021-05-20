@@ -93,7 +93,7 @@
 | breach                    | 裂口gap,冲破                                      |
 | break-a-leg               | 短腿好运,祝你好运                                 |
 | brigade                   | 旅,队fleet                                        |
-| brink                     | 边缘periphery                                              |
+| brink                     | 边缘periphery                                     |
 | brute                     | 蛮力domestic,兽性barbarity,无礼bearish            |
 | buffer                    | 缓冲                                              | 写优化,一批小数据内存合并后写入磁盘                  |
 | bully                     | 恶霸,欺负take-advantage-of                        |
@@ -410,7 +410,7 @@
 | loiter                    | 游荡drift,闲混                                    |
 | look-into                 | 调查inquire-into,追究investigate                  |
 | loose                     | 枪                                                |
-| lop                       | 砍cut-off,掉                                             |
+| lop                       | 砍cut-off,掉                                      |
 | lousy                     | 糟糕disgusting                                    |
 | lucrative                 | 划算的cost-effective,有利可图的                   |
 | lurch                     | 困境plight                                        |
@@ -495,7 +495,7 @@
 | pinpoint                  | 查明ascertain                                     |
 | pious                     | 虔诚的devout,尽责的                               |
 | placing                   | 竖立establishment                                 |
-| pledged                   | 宣誓,誓要                                         |
+| pledged                   | 宣誓vow,誓要warrant                               |
 | plot                      | 阴谋conspiracy,情节circumstance,筹划scheme        |
 | plunging                  | 暴跌,扎进                                         |
 | poll                      | 轮询                                              |
@@ -999,31 +999,54 @@
 | taper-off                 | 主键停止                                          |
 | taper                     | 锥形cone,锥体,尖细                                |
 | fiber                     | 纤维,构造                                         |
-tatter|破烂,碎片shred
-scorch|烧焦
-call-a-draw|平局
-limb|肢
-gulp|咽
-crunch | 紧缩
-gauge|测量,估计reckon
-floch| 絮状
-extinguish | 熄灭quench,扑灭stamp-out,灭绝annihilate
-sane| 理智的,明智的recommendable,合理的equitable
-take-out| 取出
-insubordinate| 不服从,顽皮mischievous
-successor |接班人,继承者heritor
-inquisitive| 好奇心
-peppermint | 薄荷mint,薄荷油
-moisture| 水分,湿气damp,湿度humidity
-imprint| 铭刻impress,烙印
-refined | 精致,优雅elegant
-patriot| 爱国者
-bidden | 竞标tender
-propeller| 螺旋桨prop
-hydrogen | 氢气,氢argno
-embankment| 堤dyke,堤防dike,堤岸
-demean | 举止
-dizzy| 晕眩giddy,目眩dazzled
-continent | 大陆mainland,洲island
-designate| 指定,委派appoint,划定delimit
-inferior|劣势,低劣,下等
+| tatter                    | 破烂,碎片shred                                    |
+| scorch                    | 烧焦                                              |
+| call-a-draw               | 平局                                              |
+| limb                      | 肢                                                |
+| gulp                      | 咽                                                |
+| crunch                    | 紧缩                                              |
+| gauge                     | 测量,估计reckon                                   |
+| floch                     | 絮状                                              |
+| extinguish                | 熄灭quench,扑灭stamp-out,灭绝annihilate           |
+| sane                      | 理智的,明智的recommendable,合理的equitable        |
+| take-out                  | 取出                                              |
+| insubordinate             | 不服从,顽皮mischievous                            |
+| successor                 | 接班人,继承者heritor                              |
+| inquisitive               | 好奇心                                            |
+| peppermint                | 薄荷mint,薄荷油                                   |
+| moisture                  | 水分,湿气damp,湿度humidity                        |
+| imprint                   | 铭刻impress,烙印                                  |
+| refined                   | 精致,优雅elegant                                  |
+| patriot                   | 爱国者                                            |
+| bidden                    | 竞标tender                                        |
+| propeller                 | 螺旋桨prop                                        |
+| hydrogen                  | 氢气,氢argno                                      |
+| embankment                | 堤dyke,堤防dike,堤岸                              |
+| demean                    | 举止                                              |
+| dizzy                     | 晕眩giddy,目眩dazzled                             |
+| continent                 | 大陆mainland,洲island                             |
+| designate                 | 指定,委派appoint,划定delimit                      |
+| inferior                  | 劣势,低劣,下等                                    |
+| ethnic                    | 种族的,民族                                       |
+| incite                    | 煽动stir,挑拨instigate                            |
+| belittle                  | 贬低depreciate,轻视despise                        |
+| heinous                   | 令人发指的,滔天monstrous                          |
+| eugenics                  | 优生学                                            |
+| restoration               | 恢复regain,复职reinstatement                      |
+| cultivate                 | 耕种,培育foster,养殖encourage                     |
+| span                      | 跨度,广度scope                                    |
+| decipher                  | 解码decoding                                      |
+| revival                   | 复兴renaissance,复活resurrection                  |
+| proclamation              | 公告bulletin,榜文declaration,布告                 |
+| incarnation               | 化身,赋予肉体                                     |
+| internment                | 拘留detention                                     |
+| allegiance                | 忠诚fidelity,忠贞fealty                           |
+| conquer                   | 征服subdue,战胜prevail,侵占encroach               |
+| indoctrinate              | 灌输instill                                       |
+| undermine                 | 破坏sabotage,削弱inpair,败坏corrupt               |
+| defection                 | 背叛,叛逃                                         |
+| dune                      | 沙丘                                              |
+| interrogate               | 审问,质问inquire                                  |
+| violate                   | 违反counter,违背go-against,触犯offend             |
+| blimp                     | 飞艇                                              |
+| gross                     | 总的,过胖的adipose,毛rash                         |

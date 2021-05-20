@@ -66,8 +66,9 @@ gcc为GNU Compiler Collection的缩写，可以编译C和C++源代码等，它�
 
 ### https
 
-`./configure ... --with-http_ssl_module` 必要SSL模块  
-`certbot --nginx --nginx-server-root=< nginx.conf.path >` certbot协助配置证书  
+- `./configure ... --with-http_ssl_module --with-http_v2_module` 必要SSL模块
+- `certbot --nginx --nginx-ctl /opt/nginx/sbin/nginx --nginx-server-root /opt/nginx/conf -d "tickles.cn" -d "*.tickles.cn"` certbot配置泛域名证书
+- `certbot renew` 更新过期的证书 (可加进crontab)
 
 ## ref
 
