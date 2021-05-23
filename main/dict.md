@@ -1199,3 +1199,21 @@
 | flagrant                  | 粗暴,明显,恶劣                                    |
 | noose                     | 绞索,套索,绳套                                    |
 | caliber                   | 口径,素质,才干                                    |
+| attentive                 | 贴心,周到,细心                                    |
+| mere                      | 单纯,纯粹,简单                                    |
+| feat                      | 壮举,功绩,专长                                    |
+| bronze                    | 青铜,铜牌                                         |
+| unsparing                 | 毫不留情,不留情面                                 |
+| conscript                 | 新兵,征兵,征召                                    |
+| reinstate                 | 复职,恢复                                         |
+| graze                     | 放牧,吃草,擦伤                                    |
+| sparse                    | 稀少,稀疏,零星                                    |
+waterfront| 海滨,码头,沿岸
+dethrone| 废黜,取代,废王位
+swagger| 昂首阔步,大摇大摆,神气十足
+hostility|敌意,敌视,敌对
+demolition| 拆除,拆毁
+severely| 极为,严重地,极度
+infestation| 感染,虫害,入侵
+errand|差事,使命,任务
+silly| 愚蠢,傻
