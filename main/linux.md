@@ -1,5 +1,7 @@
 # linux  
-  
+
+## [cmd](linux-cmd.md)
+
 ## [cpu](linux-cpu.md)
 
 ## [memeroy](linux-mem.md)
@@ -21,8 +23,6 @@
 ## [crontab](linux-crontab.md)
 
 ## Makefile  
-
-## [cmd](linux-cmd.md)
 
 ## [hugepage](ref/hugepage.md)  
   

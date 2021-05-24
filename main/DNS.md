@@ -7,7 +7,7 @@
 - 字符数不超过255
 - TCP/UDP:53
 
-> 早期只支持英文, IDNs推出后, 支持了多语言. 方式: `punycode转码`, 如 中国.cn -> xn-fiqs8s.cn
+> 早期只支持英文, IDNs推出后, 支持了多语言. 通过`punycode转码`, 如 中国.cn -> xn-fiqs8s.cn
 
 ## 域名结构
 
@@ -67,7 +67,7 @@ host.SLD.TLD.root 如: app.tickles.cn. (root可省略为 . 亦可忽略)
       【domain】 IN NS 【DNS服务器】
       example.com. IN NS ns1.example.com.
 
-- `TXT` Text; 域名说明
+- `TXT` Text; 域名说明; 验证控制权
 
       【domain】 IN TXT 【任意字符串】
       ns1.exmaple.com. IN TXT "联系电话：XXXX"

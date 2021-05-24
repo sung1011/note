@@ -43,10 +43,11 @@ ns3.redhat.com.         73      IN      A       209.132.176.100
 ## 参数
 
 - `@` 指定DNS服务器; 如 dig @ns1.redhat.com redhat.com
+- `+trace` 跟踪完整的解析过程
+- `+short` 简短输出
 - `+noall` 关闭所有段落; 如 dig -noall +answer 只显示answer
 - `+nocomments` 关闭注释行
 - `-t` 指定类型, 一般可省略; 如 dig ns, dig AAAA, dig ANY
-- `+short` 简短输出
 - `-x` 通过IP反向查询域名; 如 dig -x 209.132.186.218; 需要S额外配置
 - `-f` 批量域名查询, 指定一个写了很多域名(换行隔开)的文件
 
