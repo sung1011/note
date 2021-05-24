@@ -1,5 +1,9 @@
 # linux命令
 
+## [dig](linux-cmd-dig.md)
+
+## nsloopup
+
 ## cloc
 
 ## nc
@@ -57,8 +61,6 @@ lsof -i :{port} #  查看占用端口的进程
 ## pathping
 
 ## mtr
-
-## nsloopup
 
 ## base64
 

@@ -35,7 +35,7 @@
 - [complexity 复杂度](main/complexity.md)  
 - [ascii](main/ascii.md)  
 - [scale 单位换算](main/scale.md)  
-- [domain name 域名](main/domain-name.md)
+- [DNS](main/DNS.md)
 
 ### database  
 
