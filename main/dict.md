@@ -619,7 +619,7 @@
 | sever                     | 断绝cut-off,分离detach                            |
 | shackle                   | 脚镣fetter,束缚,桎梏                              |
 | shamble                   | 乱七八糟,一片狼藉                                 |
-| shed                      | 棚子shack,蜕皮molt                                |
+| shed                      | 摆脱,流下,蜕皮molt,棚子shack                      |
 | sheer                     | 绝对,纯属                                         |
 | shove                     | 推promote,挤squeeze,钻,争                         | shove off to the interior                            |
 | shred                     | 撕碎lacerate,切碎                                 |
@@ -819,7 +819,7 @@
 | rhetoric                  | 修辞,花言巧语,辞藻                                |
 | have-an-edge              | 有优势,有利                                       |
 | layout                    | 布局distribution,设计,安排arrangement             |
-| no-telling                | 更不用说                                          |
+| no-telling                | 难预料,说不准,更不用说                            |
 | ejector                   | 顶出,排除器                                       | ejector-pin顶针                                      |
 | glare                     | 强光,阳光,怒视glower                              |
 | compendium                | 概要outline,概略compendia                         |
@@ -978,7 +978,7 @@
 | warchief                  | 酋长                                              |
 | fulfill                   | 履行perform,兑现honor,落实implement               |
 | liable                    | 容易,有责任                                       |
-| blown                     | 吹,吓坏                                           |
+| blown                     | 吹,吓坏,爆破                                      |
 | obedient                  | 乖乖的,听话,服从amenable                          |
 | cherish                   | 珍爱,珍视treasure,爱惜use-spaingly,怀念           |
 | hostage                   | 人质,抵押品gage                                   |
@@ -1217,3 +1217,19 @@
 | infestation               | 感染,虫害,入侵                                    |
 | errand                    | 差事,使命,任务                                    |
 | silly                     | 愚蠢,傻                                           |
+| no-wonder                 | 难怪,怪不得,不足为奇                              |
+| kimono                    | 和服                                              |
+| compound                  | 化合物,复合,大院,营地                             |
+| oppress                   | 压迫,压制,镇压                                    |
+| unveiled                  | 亮相,揭幕,公布                                    |
+| glutton                   | 馋嘴,贪吃鬼,暴食者                                |
+| commotion                 | 骚动,骚乱,混乱,暴乱                               |
+| dread                     | 糟糕,恐怖,可怕                                    |
+| full-blown                | 完成成熟,全面爆发,完全型                          |
+| oblige                    | 迫使,需求,责成,强迫                               |
+| bedridden                 | 卧床不起,卧病在床                                 |
+| splendid                  | 灿烂,辉煌,壮丽,华丽,精彩                          |
+| squat                     | 蹲坐,蹲下,蹲着                                    |
+| squalor                   | 肮脏,不干净,脏乱                                  |
+| amid                      | 在之中,在期间,当时                                |
+| prevail                   | 占上风,盛行,获胜                                  |
