@@ -43,10 +43,11 @@
 - [mongodb](main/mongodb.md)  
 - [mysql](main/mysql.md)  
 - [yac](main/yac.md)  
-- ELK
-- etcd  
 - [database实战](main/database.md)
 - [cache实战](main/cache.md)
+- [OBS 对象存储](main/OBS.md)
+- ELK
+- etcd  
   
 ### web  
 
