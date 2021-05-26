@@ -1,5 +1,7 @@
 # reids对象
 
+@@redis
+
 ## 数据结构
 
 ![img](res/redis-keyspace.png)

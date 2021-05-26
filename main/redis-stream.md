@@ -1,6 +1,8 @@
 # redis stream
 
-    redis stream主要用于消息队列(MQ,Message Queue),Redis本身是有一个Redis发布订阅（pub/sub）来实现消息队列的功能,但它有个缺点就是消息无法持久化,如果出现网络断开、Redis宕机等,消息就会被丢弃。
+@@redis
+
+    stream主要用于消息队列(MQ,Message Queue),Redis本身是有一个Redis发布订阅（pub/sub）来实现消息队列的功能,但它有个缺点就是消息无法持久化,如果出现网络断开、Redis宕机等,消息就会被丢弃。
 
 ## struct
 
