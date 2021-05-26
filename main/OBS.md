@@ -1,4 +1,6 @@
-# 对象存储 Object-Storage-Service
+# 对象存储 Object-Based-Storage
+
+@@架构@@ @@OBS@@
 
 ## 特点
 
@@ -39,7 +41,7 @@
 - `网关 Gateway` 接收请求, 获取节点信息, 访问节点数据; 服务无状态
 - `元数据 META` 数据与Key的映射关系
 - `数据节点 Node` 包含多个容器
-- `容器` 数据被分片到不同node的不同容器中
+- `容器` 大数据被截断, 分片到不同node的不同容器中
 
 ## C端概念
 
@@ -63,7 +65,7 @@
   - `所属区域`
 
 - `对象 object` 文件与属性信息的集合
-  - `Key` 对象名, 桶内唯一
+  - `Key` 对象名, 桶内唯一, 形似URL
   - `Metadata` 元数据
     - 系统 Creation-time, Content-length, Last-modify, Content-Encoding ...
     - 自定义
