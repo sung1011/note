@@ -1233,4 +1233,13 @@
 | squalor                   | 肮脏,不干净,脏乱                                  |
 | amid                      | 在之中,在期间,当时                                |
 | prevail                   | 占上风,盛行,获胜                                  |
-| intranet | 局域网,内网
+| intranet                  | 局域网,内网                                       |
+| conspiracy                | 阴谋,预谋                                         |
+| vail                      | 赏钱,小费,脱下                                    |
+| deft                      | 灵巧,熟练,济民                                    |
+| reign                     | 统治,执政,王朝                                    |
+| blot                      | 污点,污渍,污名                                    |
+| clueless                  | 无知,无能,迷茫,懵懂,笨                            |
+| chin                      | 下巴,下颌                                         |
+| come-to-the-point         | 开门见山,说重点,直说                              |
+| retribution               | 报复,惩罚,报应                                    |
