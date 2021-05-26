@@ -1,6 +1,6 @@
 # 对象存储 Object-Based-Storage
 
-@@架构@@ @@OBS@@
+@@架构 @@OBS
 
 ## 特点
 
