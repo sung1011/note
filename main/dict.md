@@ -547,7 +547,7 @@
 | reckless                  | 蛮干foolhardy,鲁莽rash                            |
 | recruit                   | 招募enlist,征募                                   |
 | redundancy                | 冗余                                              |
-| reel                      | 卷volume,卷轴scroll                               |
+| reel                      | 摇摇晃晃,不稳,卷volume,卷轴scroll                               |
 | regard                    | 看待treat,视为                                    |
 | regime                    | 政权                                              |
 | regular                   | 定期,规则,通常general                             |
@@ -1243,3 +1243,6 @@
 | chin                      | 下巴,下颌                                         |
 | come-to-the-point         | 开门见山,说重点,直说                              |
 | retribution               | 报复,惩罚,报应                                    |
+| fail-fast                 | 有问题早暴露原则                                  |
+minefield|雷区,地雷区
+flee|逃离,逃跑,逃亡

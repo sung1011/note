@@ -64,7 +64,7 @@
 
 ### concept
 
-- [oop 面向对象](main/oop.md)  
+- [design pattern 设计模式](main/dp.md)  
 - [transaction 事务](main/acid.md)
 - [distributed 分布式](main/distributed.md)  
 - [cryptography 加密](main/crypt.md)  

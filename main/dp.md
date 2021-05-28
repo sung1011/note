@@ -1,6 +1,6 @@
-# oop 面向对象
+# 设计模式
 
-## 设计思想: 高内聚, 低耦合
+## 思想: 高内聚, 低耦合
 
 ### 内聚: 内聚标志一个模块内各个元素彼此结合的紧密程度
 
@@ -39,7 +39,7 @@
 
 ---
 
-## 设计原则: (SOLID)
+## 原则: (SOLID)
 
 ### 单一职责原则SRP(Single Responsibility Principle)
 
@@ -98,14 +98,12 @@
     - 而开闭原则他: 要对扩展开放，对修改关闭。
 ```
 
-## 设计模式:(23种)
+## 类型
 
 ### 创建型模式
 
-- [简单工厂simple_factory](src/php_design_patterns/simple_factory/simple_factory.php) 一个工厂类根据传入参数决定创建哪一种产品实例
-- [工厂方法模式factory_method](src/php_design_patterns/factory_method/factory_method.php) 定义一个用于创建对象的接口，让子类决定实例化那个类
-- [抽象工厂模式abstract_factory](src/php_design_patterns/abstract_factory/abstract_factory.php) 创建相关依赖对象家族，而无须指定具体类
-- [单例模式singleton](src/php_design_patterns/singleton/mysql_singleton.php) 确保一个类只有一个实例，提供一个全局访问点
+- [单例模式singleton](dp-singleton.md) 确保一个类只有一个实例，提供一个全局访问点
+- [工厂 factory](dp-factory.md) 集中创建对象的方法
 - [建造者模式builder](src/php_design_patterns/builder/builder.php) 封装一个复杂对象过程，按照步骤构建对象
 - [原型模式prototype](src/php_design_patterns/prototype/prototype.php) 通过复制现有实例创建新实例
 
@@ -135,7 +133,8 @@
 
 ## ref
 
-- [如何通俗理解设计模式及其思想](https://blog.csdn.net/mq2553299/article/details/80962335)
-- [Java设计模式：23种设计模式全面解析（超级详细）](http://c.biancheng.net/design_pattern/)
-- [23种设计模式简单定义](https://www.jianshu.com/p/a7e5226d3f46)
-- [S.O.L.I.D: The First 5 Principles of Object Oriented Design](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design)
+- `https://blog.csdn.net/mq2553299/article/details/80962335`
+- `http://c.biancheng.net/design_pattern/`
+- `https://www.jianshu.com/p/a7e5226d3f46`
+- `https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design`
+- `https://lailin.xyz/post/go-design-pattern.html`
