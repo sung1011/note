@@ -981,7 +981,7 @@
 | blown                     | 吹,吓坏,爆破                                      |
 | obedient                  | 乖乖的,听话,服从amenable                          |
 | cherish                   | 珍爱,珍视treasure,爱惜use-spaingly,怀念           |
-| hostage                   | 人质,抵押品gage                                   |
+| hostage                   | 人质,俘虏,抵押品gage                                   |
 | barely-even               | 几乎没有,几乎不                                   |
 | ascend                    | 上升hoist,登mount,攀implicate                     |
 | wreckage                  | 残骸remains,废墟ruins                             |
@@ -1246,3 +1246,23 @@
 | fail-fast                 | 有问题早暴露原则                                  |
 minefield|雷区,地雷区
 flee|逃离,逃跑,逃亡
+ceremony| 仪式,典礼,开幕式
+finale| 结局,压轴,决赛
+vigilance| 警戒,警惕,警觉
+shore| 海岸,岸边,海边
+materialize| 出现,具体化,落实
+somehow| 似乎,不知为何,无论如何
+nab| 逮捕,捉住,猛然抓住
+sleeve|袖子|ace-up-their-sleeve一张王牌
+retrieve| 找回,取回,回收,检索
+rejoice| 欢庆,庆祝,欢喜
+tribute| 致敬,悼念,赞颂
+yelled| 大喊,喊道
+savage| 野蛮,残酷,凶猛
+ringleader| 头目,主谋,头领
+improv| 即兴表演
+bear-fruit| 取得成果,产生结果
+distinguished| 尊贵,尊敬,杰出,注明
+distinguish| 区分,辨别,分辨
+skit| 小品,喜剧,讽刺文
+bend-to| 屈服于
