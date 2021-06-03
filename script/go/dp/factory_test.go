@@ -6,7 +6,7 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
-func Test_Simple(t *testing.T) {
+func Test_Factory_Simple(t *testing.T) {
 	Convey("new parser", t, func() {
 		So(NewIParser("json"), ShouldEqual, &jsonParser{})
 		So(NewIParser("yaml"), ShouldEqual, &yamlParser{})
@@ -14,7 +14,7 @@ func Test_Simple(t *testing.T) {
 	})
 }
 
-func Test_Method(t *testing.T) {
+func Test_Factory_Method(t *testing.T) {
 	Convey("new parser factory", t, func() {
 		So(NewParserFactory("json"), ShouldEqual, &jsonParserFactory{})
 		So(NewParserFactory("yaml"), ShouldEqual, &yamlParserFactory{})
@@ -22,7 +22,7 @@ func Test_Method(t *testing.T) {
 	})
 }
 
-func Test_Abstract_GenTextParser(t *testing.T) {
+func Test_Factory_Abstract_GenTextParser(t *testing.T) {
 	Convey("new parser factory", t, func() {
 		spf := &sqlParserFactory{}
 		So(spf.GenIParserToText(), ShouldEqual, &sqlParserText{})

@@ -30,6 +30,7 @@
 
 ### basic  
 
+- [design pattern 设计模式](main/dp.md)  
 - [data structure 数据结构](main/data-struct.md)  
 - [algorithm 算法](main/algo.md)  
 - [complexity 复杂度](main/complexity.md)  
@@ -64,7 +65,6 @@
 
 ### concept
 
-- [design pattern 设计模式](main/dp.md)  
 - [transaction 事务](main/acid.md)
 - [distributed 分布式](main/distributed.md)  
 - [cryptography 加密](main/crypt.md)  

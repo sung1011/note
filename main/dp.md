@@ -104,8 +104,8 @@
 
 - [单例模式singleton](dp-singleton.md) 确保一个类只有一个实例，提供一个全局访问点
 - [工厂 factory](dp-factory.md) 集中创建对象的方法
-- [建造者模式builder](src/php_design_patterns/builder/builder.php) 封装一个复杂对象过程，按照步骤构建对象
-- [原型模式prototype](src/php_design_patterns/prototype/prototype.php) 通过复制现有实例创建新实例
+- [建造者模式builder](dp-builder.md) 封装一个复杂对象过程，按照步骤构建对象
+- [原型模式prototype](dp-prototype.md) 通过复制现有实例创建新实例
 
 ### 结构型模式
 
