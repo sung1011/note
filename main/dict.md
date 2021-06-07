@@ -806,7 +806,7 @@
 | pyramid                   | 金字塔,椎体cone                                   |
 | time-to-time              | 时不时                                            |
 | invincible                | 不败的,无敌的                                     |
-| unleash                   | 发挥exert,发动wage                                |
+| unleash                   | 释放,发挥exert,发动wage                           |
 | blabber                   | 笨拙,废话nonsense,多嘴blab                        |
 | gotta                     | 得                                                |
 | conceive                  | 构想,设想envisage,怀孕pregnant                    |
@@ -1266,7 +1266,27 @@
 | distinguished             | 尊贵,尊敬,杰出,注明                               |
 | distinguish               | 区分,辨别,分辨                                    |
 | skit                      | 小品,喜剧,讽刺文                                  |
-aerial| 空中,航空,飞行
-grudge|怨恨,仇恨,积怨
-falling-short| 低于,落空,没有达到
+| aerial                    | 空中,航空,飞行                                    |
+| grudge                    | 怨恨,仇恨,积怨                                    |
+| falling-short             | 低于,落空,没有达到                                |
+| mediator                  | 调解人,中间人                                     |
+| get-around                | 避开,绕开                                         |
+| behead                    | 斩首,杀头                                         |
+| cove                      | 海湾,小海湾                                       |
+| edible                    | 可食用,食品级                                     |
+| auspicious                | 吉利,吉祥,幸运                                    |
+| crest                     | 徽章,顶,波峰                                      |
+| lineage                   | 血统,谱系,世系,家族                               |
+| amidst                    | 在之中,底蕴,烟雨                                  |
+| hence                     | 因此,所以,自此,从这儿                             |
+| totter                    | 蹒跚,踉跄,摇摇欲坠                                |
+| allude                    | 提到,暗示,影射                                    |
+| laid-waste                | 夷为平地                                          |
+| surmise                   | 推测,猜想                                         |
+| stockpile                 | 储存,积攒                                         |
+| reassure                  | 安慰,安抚,保证                                    |
+| conglomerate              | 集团公司                                          |
+| grubber                   | 挖掘者                                            |
+| imprison                  | 关押,囚禁,下狱                                    |
+| pervert                   | 色狼,流氓,变态                                    |
 
