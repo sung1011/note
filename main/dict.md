@@ -569,7 +569,7 @@
 | resemble                  | 类似,相似                                         |
 | resent                    | 怨恨                                              |
 | resident                  | 居民inhabitant,住户householder                    |
-| restrain                  | 克制inhibit,限制                                  |
+| restrain                  | 抑制,克制inhibit,限制                                  |
 | restriction               | 限制                                              |
 | resume                    | 恢复restore,简历                                  |
 | retreat                   | 撤退evac,避难所refuge                             |
@@ -1289,4 +1289,6 @@
 | grubber                   | 挖掘者                                            |
 | imprison                  | 关押,囚禁,下狱                                    |
 | pervert                   | 色狼,流氓,变态                                    |
-
+serum|血清,精华,血浆
+lodging|住所,住宿,住房
+writhe|翻滚,扭动,翻腾
