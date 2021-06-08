@@ -144,7 +144,7 @@
 | conclusion                | 结论                                              |
 | concurrency               | 并发 任务切分                                     |
 | condolence                | 慰问,哀悼                                         |
-| conduct                   | 执行,引导channel,指挥                             |
+| conduct                   | 行动,执行,引导channel,指挥                        |
 | confess                   | 承认                                              |
 | confine                   | 局限limit,管制control                             |
 | confront                  | 对抗antagonize,面对face                           |
@@ -201,7 +201,7 @@
 | defective                 | 残缺,欠缺,不完美imperfect                         |
 | deflect                   | 偏转,打歪,使偏                                    |
 | defy                      | 违抗,藐视,抗拒resist                              |
-| delicate                  | 微妙,精巧quaint,娇嫩fragile,秀气elegant,柔弱           |
+| delicate                  | 微妙,精巧quaint,娇嫩fragile,秀气elegant,柔弱      |
 | delusion                  | 幻想                                              |
 | demise                    | 消亡,禅让,遗赠bequeath                            |
 | deplet                    | 耗尽                                              |
@@ -624,7 +624,7 @@
 | shove                     | 推promote,挤squeeze,钻,争                         | shove off to the interior                            |
 | shred                     | 撕碎lacerate,切碎                                 |
 | shrimp                    | 虾crayfish,小虾                                   |
-| sibling                   | 兄弟姐妹                                          |
+| sibling                   | 兄弟,姐妹                                         |
 | sketch                    | 草图draft,素描                                    |
 | slack                     | 松弛,呆滞sluggish,散漫undisciplined               |
 | slander                   | 诽谤defamation,诋毁                               |
@@ -643,7 +643,7 @@
 | snatch                    | 抢夺mulct                                         |
 | sneak                     | 潜行                                              | sneak-out偷偷溜走                                    |
 | sneer                     | 嘲笑,冷笑                                         |
-| snuffed                   | 消灭                                              |
+| snuff                     | 熄灭,消灭,弄熄,鼻烟                               |
 | sobbing                   | 抽泣,唏嘘                                         |
 | speck                     | 斑点                                              |
 | speculate                 | 推测conjecture,猜测                               |
@@ -696,7 +696,7 @@
 | synthesize                | 合成compound,综合integrate                        |
 | taboo                     | 禁令ban,禁忌prohibition,忌讳                      |
 | tackle                    | 逮捕arrest,抓住grip,器具utensil                   |
-| tactics                   | 战术,策略ploy,权谋trickery                             |
+| tactics                   | 战术,策略ploy,权谋trickery                        |
 | take-for-granted          | 认为理所当然                                      |
 | tap                       | 偷听eavesdrop,敲击beat                            |
 | tedy                      | 悲剧                                              |
@@ -1002,7 +1002,7 @@
 | taper                     | 锥形cone,锥体,尖细                                |
 | fiber                     | 纤维,构造                                         |
 | tatter                    | 破烂,碎片shred                                    |
-| scorch                    | 烧焦                                              |
+| scorch                    | 烧焦,焦土                                         |
 | call-a-draw               | 平局                                              |
 | limb                      | 肢                                                |
 | gulp                      | 咽                                                |
@@ -1012,7 +1012,7 @@
 | extinguish                | 熄灭quench,扑灭stamp-out,灭绝annihilate           |
 | sane                      | 理智的,明智的recommendable,合理的equitable        |
 | take-out                  | 取出                                              |
-| insubordinate             | 不服从,顽皮mischievous                            |
+| insubordinate             | 不服从,叛逆,顽皮mischievous                       |
 | successor                 | 接班人,继承者heritor                              |
 | inquisitive               | 好奇心                                            |
 | peppermint                | 薄荷mint,薄荷油                                   |
@@ -1295,4 +1295,36 @@
 | roam                      | 漫游,漫步,流浪,游荡                               |
 | chill                     | 寒意,发冷,寒颤                                    |
 | menial                    | 卑贱,低贱,不体面                                  |
-cuisine| 美食,佳肴,菜肴
+| cuisine                   | 美食,佳肴,菜肴                                    |
+| flip-out                  | 发疯                                              |
+| hand-me-downs             | 旧衣服,别人不要的,二手的                          |
+| git                       | 饭桶,混账,本地仓库                                |
+| finagle                   | 哄骗,欺骗                                         |
+| catalyst                  | 催化剂,触媒                                       |
+| proficiency               | 水平,能力,熟练,精通                               |
+| dignitaries               | 政要,贵宾,知名人士,高官                           |
+| blink-of-an-eye           | 一眨眼,一瞬间                                     |
+| farmhand                  | 农夫,农场工人,雇农                                |
+| blouse                    | 衬衫,上衣,衬衣                                    |
+| scrutiny                  | 监督,检查,调查                                    |
+| tyrannical                | 残暴,暴虐,专横                                    |
+| amass                     | 累计,收集,聚敛                                    |
+| stance                    | 立场,姿态,态度                                    |
+| rumor                     | 谣言,传闻,谣传                                    |
+| leak                      | 泄露,泄漏,泄密                                    |
+| overwhelming              | 巨大,大量,绝对,极大                               |
+| secure                    | 确保,保障,保证                                    |
+| certain-sense             | 某种意义上讲,某种程度上说                         |
+| prosecuted                | 起诉,追究,审判                                    |
+| violating                 | 违反,侵犯,违背,违法                               |
+| with-nothing-but          | 凭着,仅凭                                         |
+| meticulous                | 细致,精心,认真                                    |
+| squeaky                   | 尖尖,吱吱作响                                     |
+| banquet                   | 晚宴,婚宴,宴会,盛宴                               |
+| wind-down                 | 逐步减少,平静下来                                 |
+| compliment                | 恭维,赞美,赞扬                                    |
+| orphan                    | 孤儿,遗孤                                         |
+| yell                      | 大喊,大叫                                         |
+| agony                     | 痛苦,苦难,折磨                                    |
+| recon                     | 侦查,侦察                                         |
+| nuts                      | 疯子,坚果,睾丸                                    |
