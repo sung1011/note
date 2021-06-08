@@ -15,13 +15,9 @@
     - fail-fast 若有问题启动时能尽早暴露
   - 不支持延迟加载
 
-> db实例
-
 - `懒汉`
   - getInstance()时创建, 线程不安全需要加锁, 并发能力比饿汉弱
   - 延迟加载
-
-> model实例
 
 ## 细节
 
@@ -42,3 +38,8 @@
 - [go 懒汉](../script/go/dp/singleton-lazy.go)
 
 - [php](src/php_design_patterns/singleton/mysql_singleton.php)
+
+## 场景
+
+- DB连接数据库 (饿汉)
+- 加载model实例 (懒汉)

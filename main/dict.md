@@ -201,7 +201,7 @@
 | defective                 | 残缺,欠缺,不完美imperfect                         |
 | deflect                   | 偏转,打歪,使偏                                    |
 | defy                      | 违抗,藐视,抗拒resist                              |
-| delicate                  | 精巧quaint,娇嫩fragile,秀气elegant,柔弱           |
+| delicate                  | 微妙,精巧quaint,娇嫩fragile,秀气elegant,柔弱           |
 | delusion                  | 幻想                                              |
 | demise                    | 消亡,禅让,遗赠bequeath                            |
 | deplet                    | 耗尽                                              |
@@ -569,7 +569,7 @@
 | resemble                  | 类似,相似                                         |
 | resent                    | 怨恨                                              |
 | resident                  | 居民inhabitant,住户householder                    |
-| restrain                  | 抑制,克制inhibit,限制                                  |
+| restrain                  | 抑制,克制inhibit,限制                             |
 | restriction               | 限制                                              |
 | resume                    | 恢复restore,简历                                  |
 | retreat                   | 撤退evac,避难所refuge                             |
@@ -696,7 +696,7 @@
 | synthesize                | 合成compound,综合integrate                        |
 | taboo                     | 禁令ban,禁忌prohibition,忌讳                      |
 | tackle                    | 逮捕arrest,抓住grip,器具utensil                   |
-| tactics                   | 策略ploy,权谋trickery                             |
+| tactics                   | 战术,策略ploy,权谋trickery                             |
 | take-for-granted          | 认为理所当然                                      |
 | tap                       | 偷听eavesdrop,敲击beat                            |
 | tedy                      | 悲剧                                              |
@@ -870,7 +870,7 @@
 | rambling                  | 漫无目的                                          |
 | approval                  | 赞同consent,承认recognition                       |
 | booze                     | 豪饮tope,喝酒失控guzzle                           |
-| orphanage                 | 孤儿院                                            |
+| orphanage                 | 孤儿院,福利院                                     |
 | budget                    | 预算estimate                                      |
 | backlash                  | 反冲,强烈反对                                     |
 | revoke                    | 撤销rescind,吊销withdraw,废除repeal               |
@@ -1061,7 +1061,7 @@
 | lament                    | 哀叹bemoan,悲叹bewail                             |
 | insurgent                 | 叛乱份子,谋反的treasonable                        |
 | morale                    | 士气,风气atmosphere,情绪sentiment,风纪conduct     |
-| pawn                      | 典当mortgage,马前卒cat's-paw,走卒pledge           |
+| pawn                      | 棋子,马前卒cat's-paw,走卒pledge,典当mortgage      |
 | ethnic                    | 种族的,民族的                                     |
 | strand                    | 搁浅,缕wisp,一串                                  |
 | babble                    | 胡言乱语nonsense,泄露disclose,潺潺murmur          |
@@ -1289,6 +1289,10 @@
 | grubber                   | 挖掘者                                            |
 | imprison                  | 关押,囚禁,下狱                                    |
 | pervert                   | 色狼,流氓,变态                                    |
-serum|血清,精华,血浆
-lodging|住所,住宿,住房
-writhe|翻滚,扭动,翻腾
+| serum                     | 血清,精华,血浆                                    |
+| lodging                   | 住所,住宿,住房                                    |
+| writhe                    | 翻滚,扭动,翻腾                                    |
+| roam                      | 漫游,漫步,流浪,游荡                               |
+| chill                     | 寒意,发冷,寒颤                                    |
+| menial                    | 卑贱,低贱,不体面                                  |
+cuisine| 美食,佳肴,菜肴

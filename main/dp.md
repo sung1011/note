@@ -109,12 +109,13 @@
 
 ### 结构型模式
 
-- [适配器模式adapter](src/php_design_patterns/adapter/adapter.php) 将一个类的方法或者接口转换成客户希望另一个接口
-- [桥接模式bridge](src/php_design_patterns/bridge/bridge.php) 将抽象部分与实现部分分离，使他们都可以独立进行变化
-- [合成模式composite1](src/php_design_patterns/composite/composite.php) 将对象组成成树形结构以表示“整体-部分”的层次结构
-- [装饰器模式decorator](src/php_design_patterns/decorator/decorator.php) 动态的给对象添加新的功能
+- [代理模式proxy](dp-proxy.md) 用代理类来给原始类附加访问控制和边缘功能
+- [适配器模式adapter](dp-adapter.md) 将一个类的方法或者接口转换成客户希望另一个接口
+- [装饰器模式decorator](dp-decorator.md) 动态的给对象添加新的功能
+- [桥接模式bridge](dp-bridge.md) 将抽象部分与实现部分分离，使他们都可以独立进行变化
+
+- [合成模式composite](src/php_design_patterns/composite/composite.php) 将对象组成成树形结构以表示“整体-部分”的层次结构
 - [门面模式facade](src/php_design_patterns/facade/facade.php) 对外提供一个统一方法，用来访问子系统中一群接口
-- [代理模式proxy](src/php_design_patterns/proxy/proxy.php) 为其他对象提供一种代理以控制对这个对象的访问
 - [享元模式flyweight](src/php_design_patterns/flyweight/flyweight.php) 通过共享技术来有效支持大量细粒度的对象
 
 ### 行为型模式
@@ -130,6 +131,13 @@
 - [访问者模式visitor](src/php_design_patterns/visitor/visitor.php) 在不改变数据结构的前提下，增加作用于一组元素对象新功能
 - [中介者模式mediator](src/php_design_patterns/mediator/mediator.php) 用一个中介对象来封装一系列对象交互
 - [解释器模式interpreter](src/php_design_patterns/interpreter/interpreter.php) 定义一个语言，定义它的文法的一种表示，并定义一个解释器
+
+### 区分
+
+- `vs 代理` 代理模式是在不改变原接口的条件下, 包装一个代理类, 重在访问控制, 而非加强功能
+- `vs 装饰器` 装饰器模式是在不改变原接口的条件下, 包装一个装饰器类, 重在对原始类功能进行增强, 并支持多个装饰器嵌套使用
+- `vs 桥接` 桥接模式重在接口与实现分离, 从而令其更易修改
+- `vs 适配器` 适配器提供跟原始类不同的接口, 重要统一接口
 
 ## ref
 
