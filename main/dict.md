@@ -71,8 +71,7 @@
 | approval            | 赞同consent,承认recognition                       |
 | aptitude            | 材,能力倾向                                       | natural-aptitude天赋                                 |
 | aristocracy         | 贵族noble                                         |
-| artillery           | 火炮,大炮cannon                                   |
-| artillery           | 火炮,炮兵,大炮                                    |
+| artillery           | 火炮,炮兵,大炮cannon                              |
 | as-a-result         | 因此,致使,因而                                    |
 | as-if               | 仿佛,好像,似乎,犹如                               |
 | as-things-stand     | 就目前情况而言                                    |
@@ -112,8 +111,7 @@
 | be-bound-to         | 势必,必定be-sure                                  |
 | beam                | 光束,发光glow                                     | your eyes were beaming like kids                     |
 | bear-fruit          | 取得成果,产生结果                                 |
-| bedridden           | 卧床不起,卧病在床                                 |
-| bedridden           | 卧床不起bedfast                                   |
+| bedridden           | 卧床不起bedfast,卧病在床                          |
 | before-long         | 不久后,很快就                                     |
 | behalf              | 代表                                              |
 | behead              | 斩首,杀头                                         |
@@ -153,7 +151,6 @@
 | brat                | 小子,罩衫smock                                    |
 | brawl               | 斗殴,打架,争吵                                    |
 | breach              | 裂口cleft,突破口gap,违反                          |
-| breach              | 裂口gap,冲破                                      |
 | break-a-leg         | 短腿好运,祝你好运                                 |
 | brigade             | 旅,队fleet                                        |
 | brink               | 边缘periphery                                     |
@@ -390,7 +387,7 @@
 | division            | 分配,部门,除法                                    |
 | dizzy               | 晕眩giddy,目眩dazzled                             |
 | domesticated        | 家养的,驯化的                                     |
-| dominate            | 主宰dictate,支配allocate,统治                          | 占主导地位,主流predominate                           |
+| dominate            | 主宰dictate,支配allocate,统治                     | 占主导地位,主流predominate                           |
 | doom                | 厄运adversity                                     |
 | drawn               | 拔出的                                            | drawn-to被吸引到, drawn-sword                        |
 | dread               | 糟糕,恐怖,可怕                                    |
@@ -403,8 +400,7 @@
 | dungeon             | 地牢jail                                          |
 | dwell               | 居住reside,纠缠,寄居                              |
 | eastimate           | 估计reckon,评估appraise,预估forecast              | unsereastimate低估                                   |
-| eccentric           | 古怪,乖僻                                         |
-| eccentric           | 怪人wack                                          |
+| eccentric           | 古怪,乖僻,怪人wack                                |
 | edible              | 可食用,食品级                                     |
 | ejector             | 顶出,排除器                                       | ejector-pin顶针                                      |
 | elaborate           | 精心制作的,阐述expound,缜密comprehensive          |
@@ -434,7 +430,6 @@
 | escort              | 护送convoy,押解detain                             |
 | essential           | 基本上,本质,必要                                  |
 | estimate            | 评估gauge,估量appraise,臆测                       |
-| ethnic              | 种族的,民族                                       |
 | ethnic              | 种族的,民族的                                     |
 | eugenics            | 优生学                                            |
 | evac                | 疏散evacuation                                    |
@@ -448,7 +443,6 @@
 | excess              | 过度,过剩,过多                                    |
 | excursion           | 远足hike,交游outing,短途旅行                      |
 | exhaust             | 耗尽,排气,排出                                    |
-| expedition          | 远征,征战                                         |
 | expedition          | 远征,考察,征战campaign                            |
 | expell              | 驱逐banish,开除expel                              |
 | explicit            | 具体的                                            |
@@ -506,7 +500,6 @@
 | fodder              | 饲料mash,草料forage                               |
 | forfeit             | 丧失lose,弃权abstain                              |
 | formation           | 编队,队形                                         |
-| formidable          | 强大,艰巨,可怕                                    |
 | formidable          | 强大,艰巨arduous,厉害terrible                     |
 | fort                | 堡垒                                              |
 | fortify             | 驻守garrison,强化                                 |
@@ -781,7 +774,6 @@
 | neutralize          | 中和,消除,化解                                    |
 | nevertheless        | 尽管如此,虽说                                     |
 | no-telling          | 难预料,说不准,更不用说                            |
-| no-wonder           | 难怪                                              |
 | no-wonder           | 难怪,怪不得,不足为奇                              |
 | non-repeatable-read | 不可重复读                                        |
 | nook                | 角落cant,躲避处                                   |
@@ -815,8 +807,7 @@
 | overcast            | 阴沉,灰蒙蒙,阴天的                                |
 | overlay             | 覆盖overcast,罩子deck                             |
 | overwhelm           | 压制overpower,覆没capsize,镇压squelch             |
-| overwhelming        | 压倒性的                                          | overwhelming strength压倒性的力量                    |
-| overwhelming        | 巨大,大量,绝对,极大                               |
+| overwhelming        | 巨大,大量,绝对,极大,压倒性的                      | overwhelming strength压倒性的力量                    |
 | palm                | 手掌,托                                           |
 | pamper              | 宠惯                                              |
 | pandemic            | 大流行病                                          |
@@ -845,13 +836,11 @@
 | perceive            | 看待,感知,察觉,理解                               |
 | perilous            | 险恶sinister,危险的                               |
 | perimeter           | 周围,周边,外围                                    |
-| perimeter           | 周长                                              |
 | perish              | 沦陷,灭亡die-out,陨灭succumb                      |
 | permanently         | 永久constantly                                    |
 | perpetrator         | 犯罪者                                            |
 | persecute           | 迫害,困扰perplex                                  |
-| pervert             | 变态moron                                         |
-| pervert             | 色狼,流氓,变态                                    |
+| pervert             | 色狼,流氓,变态moron                               |
 | pest                | 害虫,毒物toxic                                    |
 | petrified           | 石化的,发呆的benumb                               |
 | phantom-read        | 幻读                                              |
@@ -899,7 +888,6 @@
 | proclaim            | 宣布announce,声称state                            |
 | proclamation        | 公告bulletin,榜文declaration,布告                 |
 | prod                | 刺stab                                            | 刺探prodding                                         |
-| prodigy             | 神童                                              |
 | prodigy             | 神童,天才,奇才                                    |
 | proficiency         | 水平,能力,熟练,精通                               |
 | proficient          | 精通                                              |
@@ -942,7 +930,6 @@
 | rearrange           | 改编adapt,重排revise                              |
 | reassure            | 安慰,安抚,保证                                    |
 | rebellion           | 叛逆,叛乱riot,暴动uprising                        |
-| recapture           | 夺回                                              |
 | recapture           | 夺回,收复recover                                  |
 | recite              | 背诵,念诵chant                                    |
 | reckless            | 蛮干foolhardy,鲁莽rash                            |
@@ -1051,8 +1038,7 @@
 | sentimental         | 婆婆妈妈,感情用事                                 |
 | sentinel            | 哨兵(意为解决/简化边界问题)                       |
 | serializable        | 串行化                                            |
-| serum               | 血清,精华,血浆                                    |
-| serum               | 血清,血浆broth                                    |
+| serum               | 血清,精华,血浆broth                               |
 | serve-you-right     | 活该                                              |
 | set-out             | 出发,启程                                         |
 | sever               | 断绝cut-off,分离detach                            |
@@ -1084,7 +1070,6 @@
 | slap                | 拍击,掌掴                                         |
 | slaughter           | 宰杀,屠杀butcher                                  |
 | sleeve              | 袖子                                              | ace-up-their-sleeve一张王牌                          |
-| slight              | 轻微                                              |
 | slight              | 轻微,细微subtle                                   |
 | slime               | 粘液,软泥                                         |
 | slit                | 切开                                              |
@@ -1138,8 +1123,7 @@
 | stalking            | 缠扰                                              |
 | stance              | 立场,姿态,态度                                    |
 | stand-ground        | 坚守立场                                          |
-| startled            | 吓到,吃惊                                         |
-| startled            | 惊愕scared,惊悚frightened                         |
+| startled            | 吓到,吃惊,惊愕scared,惊悚frightened               |
 | stench              | 恶臭                                              |
 | stick               | 粘glue,棍wand,杆pole;stuck                        |
 | stiffen             | 硬化,使变硬harden                                 |
@@ -1174,8 +1158,7 @@
 | supervisor          | 主管,监督者,导师                                  |
 | suppress            | 压制,抑制,遏制                                    |
 | surge               | 浪涌,滔滔billow,荡漾pitching                      |
-| surmise             | 推测,猜想                                         |
-| surmise             | 推测conjecture,臆测speculate                      |
+| surmise             | 推测conjecture,臆测speculate,猜想                 |
 | surpass             | 超越,赶超                                         |
 | surplus             | 过剩excess,剩余overage                            |
 | surrender           | 投降capitulate,屈服yield                          |
@@ -1193,7 +1176,6 @@
 | tackle              | 逮捕arrest,抓住grip,器具utensil                   |
 | tactical            | 策略,战略,战术,作战                               |
 | tactics             | 战术,策略ploy,权谋trickery                        |
-| tactics             | 策略ploy,权谋trickery                             |
 | take-for-granted    | 认为理所当然                                      |
 | take-out            | 取出                                              |
 | tangle              | 纠缠,纠结,缠绕                                    |
