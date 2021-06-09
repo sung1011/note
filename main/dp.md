@@ -113,31 +113,38 @@
 - [适配器模式adapter](dp-adapter.md) 将一个类的方法或者接口转换成客户希望另一个接口
 - [装饰器模式decorator](dp-decorator.md) 动态的给对象添加新的功能
 - [桥接模式bridge](dp-bridge.md) 将抽象部分与实现部分分离，使他们都可以独立进行变化
-
-- [合成模式composite](src/php_design_patterns/composite/composite.php) 将对象组成成树形结构以表示“整体-部分”的层次结构
-- [门面模式facade](src/php_design_patterns/facade/facade.php) 对外提供一个统一方法，用来访问子系统中一群接口
-- [享元模式flyweight](src/php_design_patterns/flyweight/flyweight.php) 通过共享技术来有效支持大量细粒度的对象
+- [门面模式facade](dp-facade.md) 对外提供一个统一方法，用来访问子系统中一群接口
+- [组合模式composite](dp-composite.md) 将对象组成成树形结构以表示“整体-部分”的层次结构
+- [享元模式flyweight](dp-flyweight.md) 创建和复用只读的对象
 
 ### 行为型模式
 
-- [策略模式strategy](src/php_design_patterns/strategy/strategy.php) 定义一系列算法，把它们封装起来，并且使它们可以互相替换
-- [模板方法模式template_method](src/php_design_patterns/template_method/template_method.php) 定义一个算法结构，而将一些步骤延迟到子类实现
-- [观察者模式observer](src/php_design_patterns/observer/observer.php) 对象间一对多依赖关系，一个对象改变，依赖于它对象得到通知并更新
-- [迭代器模式decorator](src/php_design_patterns/decorator/decorator.php) 一种遍历访问容器对象中各个元素的方法，不暴露该对象内部结构
-- [责任链模式responsibility_chain](src/php_design_patterns/responsibility_chain/responsibility_chain.php) 将请求的发送者和接受者解耦，使得多个对象都有处理这个请求的机会
-- [命令模式command](src/php_design_patterns/command/command.php) 将命令请求封装成一个对象，可以将不同请求来进行参数化
-- [备忘录模式memento](src/php_design_patterns/memento/memento.php) 在不破坏封装前提下，保存对象内部状态
-- [状态模式state](src/php_design_patterns/state/state.php) 允许一个对象在其内部状态改变时改变它的行为
-- [访问者模式visitor](src/php_design_patterns/visitor/visitor.php) 在不改变数据结构的前提下，增加作用于一组元素对象新功能
-- [中介者模式mediator](src/php_design_patterns/mediator/mediator.php) 用一个中介对象来封装一系列对象交互
-- [解释器模式interpreter](src/php_design_patterns/interpreter/interpreter.php) 定义一个语言，定义它的文法的一种表示，并定义一个解释器
+- [策略模式strategy](dp-strategy.md) 定义一系列算法，把它们封装起来，并且使它们可以互相替换
+- [模板方法模式template_method](dp-template-method.md) 定义一个算法结构，而将一些步骤延迟到子类实现
+- [观察者模式observer](dp-observer.md) 对象间一对多依赖关系，一个对象改变，依赖于它对象得到通知并更新
+- [迭代器模式iterator](dp-iterator.md) 一种遍历访问容器对象中各个元素的方法，不暴露该对象内部结构
+- [责任链模式responsibility_chain](dp-responsibility-chain.md) 将请求的发送者和接受者解耦，使得多个对象都有处理这个请求的机会
+- [命令模式command](dp-command.md) 将命令请求封装成一个对象，可以将不同请求来进行参数化
+- [备忘录模式memento](dp-memento.md) 在不破坏封装前提下，保存对象内部状态
+- [状态模式state](dp-state.md) 允许一个对象在其内部状态改变时改变它的行为
+- [访问者模式visitor](dp-visitor.md) 在不改变数据结构的前提下，增加作用于一组元素对象新功能
+- [中介者模式mediator](dp-mediator.md) 用一个中介对象来封装一系列对象交互
+- [解释器模式interpreter](dp-interpreter.md) 定义一个语言，定义它的文法的一种表示，并定义一个解释器
 
 ### 区分
 
-- `vs 代理` 代理模式是在不改变原接口的条件下, 包装一个代理类, 重在访问控制, 而非加强功能
-- `vs 装饰器` 装饰器模式是在不改变原接口的条件下, 包装一个装饰器类, 重在对原始类功能进行增强, 并支持多个装饰器嵌套使用
-- `vs 桥接` 桥接模式重在接口与实现分离, 从而令其更易修改
-- `vs 适配器` 适配器提供跟原始类不同的接口, 重要统一接口
+- `代理 装饰器 桥接 适配器`
+  - `vs 代理` 代理模式是在不改变原接口的条件下, 包装一个代理类, 重在访问控制, 而非加强功能
+  - `vs 装饰器` 装饰器模式是在不改变原接口的条件下, 包装一个装饰器类, 重在对原始类功能进行增强, 并支持多个装饰器嵌套使用
+  - `vs 桥接` 桥接模式重在接口与实现分离, 从而令其更易修改
+  - `vs 适配器` 适配器提供跟原始类不同的接口, 重要统一接口
+
+- `享元 单例 缓存 对象池`
+  - `享元`
+  - `单例`
+  - `缓存`
+  - `对象池`
+
 
 ## ref
 
