@@ -27,5 +27,6 @@ func Test_Prototype(t *testing.T) {
 
 	Convey("", t, func() {
 		So(nwm["bar"].visit, ShouldEqual, newBarVisit)
+		So(nwm["baz"].visit, ShouldEqual, newBazVisit)
 	})
 }

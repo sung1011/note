@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
 )
 
@@ -15,7 +14,7 @@ type Word struct {
 func (w *Word) Clone() *Word {
 	var nw Word
 	b, _ := json.Marshal(w)
-	fmt.Println(w, string(b))
+	// fmt.Println(w, string(b))
 	json.Unmarshal(b, &nw)
 	return &nw
 }
@@ -30,8 +29,9 @@ func (wm WordMap) Clone(ws []*Word) WordMap {
 	}
 
 	for _, w := range ws {
-		// NewWM[w.s] = w
-		NewWM[w.s] = w.Clone() // 深拷贝, 替换掉需要更新的字段
+		// fmt.Println("init", NewWM[w.s])
+		NewWM[w.s] = w
+		// NewWM[w.s] = w.Clone() // 深拷贝, 替换掉需要更新的字段
 	}
 
 	return NewWM
