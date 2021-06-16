@@ -227,7 +227,7 @@
 | come-to-the-point   | 开门见山,说重点,直说                              |
 | commence            | 开始initiate,着手,发源                            |
 | commend             | 表彰exalt,嘉奖cite                                |
-| commission          | 佣金,权力                                         |
+| commission          | 委任,授权,佣金,权力                                         |
 | commotion           | 骚动,骚乱,混乱,暴乱                               |
 | compatriot          | 同胞,同乡,国人                                    |
 | compendium          | 概要outline,概略compendia                         |
@@ -245,7 +245,7 @@
 | condolence          | 慰问,哀悼                                         |
 | conduct             | 行动,执行,引导channel,指挥                        |
 | confess             | 承认                                              |
-| confine             | 局限limit,管制control                             |
+| confine             | 限制,局限limit,管制control                             |
 | confront            | 对抗antagonize,面对face                           |
 | conglomerate        | 集团公司                                          |
 | conjecture          | 揣测,推测                                         |
@@ -260,7 +260,7 @@
 | consultation        | 会诊,咨询,参考reference                           |
 | contact             | 接触touch,联系                                    |
 | contagious          | 传染性                                            | contagious-disease                                   |
-| contaminate         | 污染pollute,污蔑slander                           |
+| contaminate         | 污染pollute,弄脏,污蔑slander                           |
 | content             | 满足,内容                                         |
 | continent           | 大陆mainland,洲island                             |
 | contradict          | 矛盾,抵触clash,驳斥refute                         |
@@ -326,7 +326,7 @@
 | deliberately        | 故意purposely,存心intentionally                   |
 | delicate            | 微妙,精巧quaint,娇嫩fragile,秀气elegant,柔弱      |
 | delight             | 乐趣pleasure,趣味taste,情趣appeal                 |
-| delusion            | 幻想                                              |
+| delusion            | 幻想,错觉,妄想                                              |
 | demean              | 举止                                              |
 | demise              | 消亡,禅让,遗赠bequeath                            |
 | demolition          | 拆除,拆毁                                         |
@@ -348,14 +348,14 @@
 | deteriorate         | 恶化exacerbate,变质                               |
 | detestable          | 可憎,可恶,嫌恶                                    |
 | dethrone            | 废黜,取代,废王位                                  |
-| detonate            | 起爆,发火                                         |
+| detonate            | 引爆,引燃,起爆,发火                                         |
 | detour              | 绕道bypass,弯路roundabout                         |
 | devastate           | 摧残ruin,毁坏blemish,蹂躏ravage                   |
 | devise              | 设计,发明                                         |
 | devour              | 吞食,噬bite                                       |
 | devoured            | 吞噬                                              |
 | diaper              | 尿布napkin                                        |
-| dictate             | 主宰dominate                                      |                                                      |
+| dictate             | 主宰dominate,支配,命令,强加                                      |                                                      |
 | dignitaries         | 政要,贵宾,知名人士,高官                           |
 | dignity             | 尊严sanctity,体面desert                           |
 | diplomatic          | 外交,外交手腕                                     |
@@ -642,7 +642,7 @@
 | insidious           | 阴险sinister,隐秘sly                              |
 | insignificant       | 微不足道negligible,琐细trivial,渺茫vague          |
 | instant             | 瞬间,片刻,即刻                                    |
-| instinct            | 直觉intuition,本能                                |
+| instinct            | 直觉intuition,本能,直觉,天性,本性                                |
 | insubordinate       | 不服从,叛逆,顽皮mischievous                       |
 | insurance           | 保险assurance,保险业underwriting,保险费premium    |
 | insurgent           | 叛乱份子,谋反的treasonable                        |
@@ -1323,3 +1323,30 @@
 | sovereign           | 主权,统治者,至高无上,君主                         |
 | eavesdrop           | 偷听,窃听                                         |
 | culprit             | 罪犯,凶手,元凶                                    |
+in-turn|依次,轮流,反过来
+squander| 浪费,挥霍
+resign|辞职,辞去,退出
+bicker|斗嘴,口角,冲突
+folly|愚昧,愚蠢,荒唐
+stake|股份,利益,利害关系,赌注
+tumultuous|动荡,混乱,喧嚣
+deride|嘲笑,嘲弄,讥笑
+concoct|编造,捏造,炮制
+speculation|投机,猜测,推测
+oversaw|监督,监管,见证了,掌管着
+pow|战俘,俘虏
+scurry|快跑,疾走,匆忙地跑
+sip|品尝,抿,啜,一小口
+every-now-and-then|时不时,偶尔
+booze|酒水,烈酒,酒宴
+tummy|肚子,腹部,肚腩
+clutches|魔掌,魔爪,手提包,离合器
+voyage|航程,旅程,航行
+symptom|征兆,症状,症候,表象
+proposal|方案,提议,建议
+decline|拒绝,下跌,下降,衰退
+goose-chase|白跑,徒劳,捕风捉影
+advisor|顾问,导师,参谋
+scholar|学者,学术,文人
+trait|特征,特质,性状,属性
+steadfast|坚定,坚决,踏实
