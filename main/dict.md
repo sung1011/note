@@ -650,12 +650,12 @@
 | interior            | 室内,内地                                         |
 | internment          | 拘留detention                                     |
 | interrogate         | 审问,质问inquire                                  |
-| intervene           | 介入,干涉,干预                                    |
+| intervene           | 介入,干涉,干预,插手                                    |
 | intestine           | 肠道                                              |
 | intimidate          | 恐吓,吓住frighten                                 |
 | intranet            | 局域网,内网                                       |
 | intrusion           | 侵扰                                              |
-| invade              | 入侵inrupt                                        |
+| invade              | 入侵inrupt,侵略,侵犯                                        |
 | invader             | 入侵者,侵入者                                     |
 | invasive            | 侵入性的,侵犯的                                   |
 | inveterate          | 根深蒂固ingrained                                 |
@@ -903,7 +903,7 @@
 | puke                | 呕吐vomit                                         |
 | pulp                | 纸浆,果肉flesh,化成纸浆                           |
 | puppet              | 傀儡,玩偶,提线木偶                                |
-| purge               | 清除,清洗rinse,废止releal                         |
+| purge               | 清除,净化,清洗rinse,废止releal                         |
 | pursue              | 奉行,推行carry-out,探求seek                       |
 | put-it-broadly      | 概括的说,大致上讲                                 |
 | putrid              | 腐烂的gangrenous,腐败的cankered                   |
@@ -1071,7 +1071,7 @@
 | sleeve              | 袖子                                              | ace-up-their-sleeve一张王牌                          |
 | slight              | 轻微,细微subtle                                   |
 | slime               | 粘液,软泥                                         |
-| slit                | 切开                                              |
+| slit                | 切开,缝隙,隔断                                              |
 | slouch              | 伛偻,背脊弯曲                                     |
 | smash               | 摧毁wreck,粉碎crush,扣杀                          |
 | smock-out           | 引出来,熏出来                                     |
@@ -1350,3 +1350,24 @@ advisor|顾问,导师,参谋
 scholar|学者,学术,文人
 trait|特征,特质,性状,属性
 steadfast|坚定,坚决,踏实
+numb|麻木,麻醉,麻痹
+skirmish|小冲突,前哨站,遭遇战
+adore|喜欢,崇拜,爱慕
+pissant|无足轻重
+fossil|化石,矿物,老古董,陈腐的
+obsolete|过时,陈旧,淘汰
+laudable|值得称赞,值得称道
+dignified|体面,高贵,尊严
+wholeheartedly|完全,竭诚,全心全力
+prolong|延长,延续,延期
+grope|摸索,非礼,乱摸,动手动脚
+renege|反悔,食言,违约
+inhibit|克制,抑制,妨碍,阻止
+orgasm|高潮,性高潮,快感
+reproach|羞辱,职责,辱骂
+taint|污染,玷污
+breed|繁殖,滋生,培育
+ravage|肆虐,蹂躏,破坏,掠夺
+lifespan|寿命,生命周期,使用时限,一生,有效期限
+accuse|指控,控告,职责,责怪
+epidemic|疫情,流行病
