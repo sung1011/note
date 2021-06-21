@@ -14,7 +14,7 @@ var units = map[int]*ChessPieceUnit{
 	// ... 其他棋子
 }
 
-// 棋子享元
+// 棋子静态只读; 享元
 type ChessPieceUnit struct {
 	ID    uint
 	Name  string
@@ -26,14 +26,14 @@ func NewChessPieceUnit(id int) *ChessPieceUnit {
 	return units[id]
 }
 
-// (动态)棋子
+// 棋子静态+动态
 type ChessPiece struct {
-	Unit *ChessPieceUnit
-	X    int
-	Y    int
+	Unit *ChessPieceUnit // 静态只读对象
+	X    int             // 动态
+	Y    int             // 动态
 }
 
-// (动态)棋局
+// 棋局
 type ChessBoard struct {
 	chessPieces map[int]*ChessPiece
 }
@@ -43,7 +43,7 @@ func NewChessBoard() *ChessBoard {
 	board := &ChessBoard{chessPieces: map[int]*ChessPiece{}}
 	for id := range units {
 		board.chessPieces[id] = &ChessPiece{
-			Unit: NewChessPieceUnit(id),
+			Unit: NewChessPieceUnit(id), // 创建和复用只读对象
 			X:    0,
 			Y:    0,
 		}
