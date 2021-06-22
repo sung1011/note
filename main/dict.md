@@ -631,7 +631,7 @@
 | infestation         | 感染,虫害,入侵                                    |
 | infiltrate          | 渗透permeate,浸润soak,渗入penetrate               |
 | inflicted           | 造成的,加以                                       | self-inflicted自己作                                 |
-| ingest              | 摄取,咽gulp                                       |
+| ingest              | 摄入,吸食,摄取,咽gulp                                       |
 | ingredient          | 成分composition,配料                              |
 | inhabit             | 居住于                                            |
 | inkling             | 暗示cue                                           |
@@ -1371,3 +1371,24 @@ ravage|肆虐,蹂躏,破坏,掠夺
 lifespan|寿命,生命周期,使用时限,一生,有效期限
 accuse|指控,控告,职责,责怪
 epidemic|疫情,流行病
+euthanize|安乐死
+brazen|无耻,大胆,猖狂,厚颜
+addict|上瘾,毒瘾
+overthrow|推翻,颠覆,打倒,覆灭
+abhor|憎恨,厌恶,痛恨
+premature|仓促,过早,草率,早熟
+dosing|剂量,加药,配料
+ample|充分,充足,大量,宽裕
+wrath|怒火,怒气,愤怒
+shred|粉碎,切丝,撕碎,撕毁
+knead|揉,按摩,柔和,捏合
+subdued|低迷,疲软,柔和
+infiltrate|渗透,潜入,混入
+distress|困境,危难,遇险
+agile|敏捷,灵敏,快捷
+subjugation|奴役,征服,压迫,镇压
+senile|衰老的,老朽,老年,老龄
+deterrent|威慑,阻碍,威慑手段
+foolproof|万无一失,防呆,完全的
+rowdy|吵闹,喧闹,闹哄哄,粗暴
+
