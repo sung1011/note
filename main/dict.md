@@ -1391,4 +1391,10 @@ senile|衰老的,老朽,老年,老龄
 deterrent|威慑,阻碍,威慑手段
 foolproof|万无一失,防呆,完全的
 rowdy|吵闹,喧闹,闹哄哄,粗暴
+odds|可能性,机会,胜算,几率
+misgivings|担忧,焦虑,不妥
+shatter|打破,打碎,粉碎,破掉
+nutcracker|胡桃夹子,核桃夹,坚果夹
+pincer|夹击,钳子,铁钳
+abetting|教唆,怂恿,唆使,煽动,纵容
 
