@@ -1397,4 +1397,15 @@ shatter|打破,打碎,粉碎,破掉
 nutcracker|胡桃夹子,核桃夹,坚果夹
 pincer|夹击,钳子,铁钳
 abetting|教唆,怂恿,唆使,煽动,纵容
+converge|汇聚,收敛,集合,汇合
+soil|土壤,土地,领土,泥土
+mold|模具,模子,模型
+bloodshed|杀戮,流血,血流成河,伤亡
+earthen|土制的,陶制的,土筑
+nullify|废除,抵消,消除
+slip-up|疏忽,犯错,失误
+utterly|完全,绝对,极端
+haunt|笼罩,困扰,萦绕于心,出没
+ironic|可笑,挖苦的,冷嘲的
+repent|忏悔,悔改,悔过,后悔
 
