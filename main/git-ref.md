@@ -274,6 +274,8 @@ git revert -n < oid > # 内容相反的，但不提交
 ```bash
 git blame -b -w < file > # 显示全文blame。 -b show oid; -w ignore whitespace
 git blame -L 10,20 < file > # 按行范围进行blame
+
+g blame -L 14,14 < file >  | awk '{print $1}' | xargs git show # 显示某行的提交log
 ```
 
 ### grep
