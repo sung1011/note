@@ -188,18 +188,22 @@ for _, v := range feeds {
 
 // chan传递副本
 
-// 不在函数中做错误处理, 而是用返回err代替throw
-func foo() (string, error) {
-  v, err := bar();
-  if err != nil {
-    return "", err
-  }
-  return v, nil;
-}
-
 // 如果一个接口类型只包含一个方法，那类型名需要以er结尾 ex: Reader, Writer, Matcher...
 type Matcher interface {
   Search(feed *Feed, searchTerm string) ([]*Result, error)
 }
 
 ```
+
+## lich
+
+- `add` key and val, if already exist throw errors
+- `set` replace val, if not exist throw errors
+- `list` by rand, by asc, by mark, by time
+- `mark` x, _, o, ooo
+- `import` csv
+- `export` csv
+
+## lich sql field
+
+key, val, mark, ctime, stime, uid

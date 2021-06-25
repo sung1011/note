@@ -6,7 +6,7 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
-func Test_Tpl(t *testing.T) {
+func Test_(t *testing.T) {
 	Convey("", t, func() {
 	})
 }
