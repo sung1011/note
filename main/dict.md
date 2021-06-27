@@ -60,7 +60,7 @@
 | amid                | 在之中,在期间,当时                                |
 | amidst              | 在之中,底蕴,烟雨                                  |
 | ammunition          | 弹药,军火arms                                     |
-| amnesia             | 健忘症                                            |
+| amnesia             | 健忘症,失忆症,丧失记忆                                            |
 | an-any-rate         | 好歹anyhow                                        |
 | angled-brackets     | 尖括号                                            | < >                                                  |
 | annihilate          | 歼灭wipe-out,覆没capsize                          |
@@ -181,7 +181,7 @@
 | carriage            | 运送conveyance,马车,体态posture                   |
 | carve               | 雕刻                                              |
 | casket              | 棺材coffin,匣子cassette                           |
-| castrate            | 阉割spay                                          |
+| castrate            | 阉割spay,划去                                          |
 | casualties          | 伤亡人数                                          |
 | catalyst            | 催化剂,触媒                                       |
 | catastrophe         | 灾难disaster,浩劫great-calamity                   |
@@ -253,7 +253,7 @@
 | conquer             | 征服subdue,战胜prevail,侵占encroach               |
 | conscript           | 新兵,征兵,征召                                    |
 | conserve            | 保留preserve,保全rescue,养护maintain,保守的       |
-| conspiracy          | 阴谋,预谋                                         |
+| conspiracy          | 阴谋,预谋,同谋,共谋                                         |
 | conspire            | 密谋,同谋plot                                     |
 | constraint          | 约束,强制enforcement,局促uneasiness,拘禁          |
 | consult             | 请教,咨询,参考reference                           |
@@ -303,7 +303,7 @@
 | dagger              | 匕首,短剑                                         |
 | damp                | 潮湿moist,润湿                                    |
 | damper              | 减震器,阻碍                                       |
-| dangle              | 悬hang,吊挂着                                     |
+| dangle              | 绞刑,吊死,晃荡,悬挂                                     |
 | dart                | 镖,矢arrow,飞弹missile                            |
 | debase              | 贬低                                              |
 | debt                | 债务owing,饥荒famine                              |
@@ -1130,7 +1130,7 @@
 | stink               | 腐臭rancidity,臭气reek                            |
 | stir                | 搅拌mix,拨动dial                                  | stir-up煽动                                          |
 | stockpile           | 储存,积攒                                         |
-| stomp               | 脚,踩                                             |
+| stomp               | 踩扁,脚,踩                                             |
 | stoop               | 弯腰                                              |
 | strain              | 劳损                                              |
 | strand              | 搁浅,缕wisp,一串                                  |
@@ -1408,4 +1408,28 @@ utterly|完全,绝对,极端
 haunt|笼罩,困扰,萦绕于心,出没
 ironic|可笑,挖苦的,冷嘲的
 repent|忏悔,悔改,悔过,后悔
-
+gouge|挖,挖出,扣出
+tribe|部落,部族,族人,族群
+enormity|极恶,大罪,艰巨
+reign|统治,执政,王朝,支配
+eternity|永远,永生,永世,永恒
+bumpkin|土包子,乡下人,乡巴佬
+gangster|黑帮,流氓,黑社会,歹徒
+immigrant|移民,侨民,外来者
+interbreed|杂交,交配,混种
+debris|残骸,碎片,杂物
+alley|小巷,胡同,
+granny|奶奶,姥姥,外婆,祖母
+rant|吐槽,咆哮,痛斥,怒吼
+placate|平息,安抚,抚慰,和解
+hop|跳,跳上
+upside-down|上下颠倒,倒挂,倒立
+snapped|断裂,崩溃
+submission|意见,陈述,提交
+resentment|怨恨,不满,仇恨,憎恨
+dire|严重,严峻,悲惨,危急
+scrub|擦洗,洗刷
+beam|横梁,光束,照射
+coma|昏迷,昏睡,麻木
+sloppy|邋遢,草率,懒散,潦草
+indiscriminate|无差别,任意,盲目
