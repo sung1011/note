@@ -36,23 +36,31 @@
 | WAL                 | 先写log再写磁盘                                   | Write-Ahead Logging                                  |
 | WebDAV              | HTTP1.1协议拓展                                   | Web-based Distributed Authoring and Versioning       |
 | abduct              | 绑架kidnap,拐走                                   |
+| abetting            | 教唆,怂恿,唆使,煽动,纵容                          |
+| abhor               | 憎恨,厌恶,痛恨                                    |
 | ablaze              | 燃烧,闪亮,着火                                    |
 | absurd              | 荒诞fantastic,荒谬ridiculous,荒唐preposterous     |
 | accountable         | 担保,负责                                         |
+| accuse              | 指控,控告,职责,责怪                               |
 | adament             | 坚定地,硬石                                       |
+| addict              | 上瘾,毒瘾                                         |
 | adequate            | 充足,充分,足够,恰当                               |
 | adhere              | 坚守,遵守,秉承,贯彻                               |
 | adoleescent         | 青春期hebetic                                     |
+| adore               | 喜欢,崇拜,爱慕                                    |
 | adverse             | 不利的,敌对的                                     |
+| advisor             | 顾问,导师,参谋                                    |
 | aerial              | 空中,航空,飞行                                    |
 | affinity            | 亲和力,近似approximation                          |
 | agenda              | 议程,待办事项                                     |
+| agile               | 敏捷,灵敏,快捷                                    |
 | agitate             | 激荡surge,搅拌stir,煽动incite                     |
 | agonize             | 苦恼,烦恼fret,临危                                |
 | agony               | 痛苦,苦难,折磨                                    |
 | alcoholic           | 酒鬼inebriate,酒精性的                            |
 | all-this-time       | 一直以来,这么长时间                               |
 | allegiance          | 忠诚fidelity,忠贞fealty                           |
+| alley               | 小巷,胡同,                                        |
 | allude              | 提到,暗示,影射                                    |
 | altitude            | 高度,海拔,高空                                    |
 | amass               | 累计,收集,聚敛                                    |
@@ -60,7 +68,8 @@
 | amid                | 在之中,在期间,当时                                |
 | amidst              | 在之中,底蕴,烟雨                                  |
 | ammunition          | 弹药,军火arms                                     |
-| amnesia             | 健忘症,失忆症,丧失记忆                                            |
+| amnesia             | 健忘症,失忆症,丧失记忆                            |
+| ample               | 充分,充足,大量,宽裕                               |
 | an-any-rate         | 好歹anyhow                                        |
 | angled-brackets     | 尖括号                                            | < >                                                  |
 | annihilate          | 歼灭wipe-out,覆没capsize                          |
@@ -76,6 +85,7 @@
 | as-if               | 仿佛,好像,似乎,犹如                               |
 | as-things-stand     | 就目前情况而言                                    |
 | ascend              | 上升hoist,登mount,攀implicate                     |
+| assault             | 攻击,突击,攻击性,暴力                             |
 | assault             | 突击,攻击性,突袭,暴力                             |
 | assess              | 评估evaluate,考核,征收levy                        |
 | ast                 | 抽象语法库                                        | Abstract Syntax Tree                                 |
@@ -110,6 +120,7 @@
 | bawling             | 嚎啕大哭                                          |
 | be-bound-to         | 势必,必定be-sure                                  |
 | beam                | 光束,发光glow                                     | your eyes were beaming like kids                     |
+| beam                | 横梁,光束,照射                                    |
 | bear-fruit          | 取得成果,产生结果                                 |
 | bedridden           | 卧床不起bedfast,卧病在床                          |
 | before-long         | 不久后,很快就                                     |
@@ -121,6 +132,7 @@
 | bequeath            | 遗赠                                              |
 | berserk             | 疯的bats,发狂的bughouse                           |
 | biased              | 有偏见的partisan                                  |
+| bicker              | 斗嘴,口角,冲突                                    |
 | bidden              | 竞标tender                                        |
 | binary-safe         | 二进制安全                                        | 原始数据流不包含任何特殊的格式                       |
 | bissful             | 幸福的                                            |
@@ -132,6 +144,7 @@
 | blimp               | 飞艇                                              |
 | blink-of-an-eye     | 一眨眼,一瞬间                                     |
 | bloodline           | 血统,世系genealogy                                |
+| bloodshed           | 杀戮,流血,血流成河,伤亡                           |
 | bloom               | 绽放,开花                                         |
 | blot                | 污点,污渍,污名                                    |
 | blouse              | 衬衫,上衣,衬衣                                    |
@@ -144,14 +157,17 @@
 | bolt                | 门栓latch                                         | bolt-of-lightning一道闪电                            |
 | bombard             | 轰炸strafe,炮击                                   |
 | booze               | 豪饮tope,喝酒失控guzzle                           |
+| booze               | 酒水,烈酒,酒宴                                    |
 | borne               | 承载,承担,负担                                    |
 | botch               | 烂透了,搞砸了                                     |
 | boulder             | 圆石头,漂砾                                       |
 | braces-brackets     | 大括号,curly brackets                             | { }                                                  |
 | brat                | 小子,罩衫smock                                    |
 | brawl               | 斗殴,打架,争吵                                    |
+| brazen              | 无耻,大胆,猖狂,厚颜                               |
 | breach              | 裂口cleft,突破口gap,违反                          |
 | break-a-leg         | 短腿好运,祝你好运                                 |
+| breed               | 繁殖,滋生,培育                                    |
 | brigade             | 旅,队fleet                                        |
 | brink               | 边缘periphery                                     |
 | bronze              | 青铜,铜牌                                         |
@@ -162,6 +178,7 @@
 | buffer              | 缓冲                                              | 写优化,一批小数据内存合并后写入磁盘                  |
 | bully               | 仗势欺人,恐吓,欺负take-advantage-of               |
 | bulwark             | 堡fort,壁wall,堡垒fortress                        |
+| bumpkin             | 土包子,乡下人,乡巴佬                              |
 | bureaucrat          | 官僚,老爷lord                                     |
 | bust                | 摔碎,胸围                                         |
 | buy-time            | 争取时间                                          |
@@ -181,7 +198,7 @@
 | carriage            | 运送conveyance,马车,体态posture                   |
 | carve               | 雕刻                                              |
 | casket              | 棺材coffin,匣子cassette                           |
-| castrate            | 阉割spay,划去                                          |
+| castrate            | 阉割spay,划去                                     |
 | casualties          | 伤亡人数                                          |
 | catalyst            | 催化剂,触媒                                       |
 | catastrophe         | 灾难disaster,浩劫great-calamity                   |
@@ -214,6 +231,7 @@
 | clout               | 影响力,实力                                       |
 | clown               | 小丑,滑稽buffoon,胡闹run-wild                     |
 | clueless            | 无知,无能,迷茫,懵懂,笨                            |
+| clutches            | 魔掌,魔爪,手提包,离合器                           |
 | cockroach           | 蟑螂roach                                         |
 | cocky               | 骄傲自大                                          |
 | coffin              | 棺材casket                                        |
@@ -223,11 +241,12 @@
 | collude             | 串通collaborate,勾结gang                          |
 | colonial            | 殖民地,殖民主义,殖民者                            |
 | colossus            | 庞然大物                                          |
+| coma                | 昏迷,昏睡,麻木                                    |
 | comatose            | 昏睡lethargic,昏迷                                |
 | come-to-the-point   | 开门见山,说重点,直说                              |
 | commence            | 开始initiate,着手,发源                            |
 | commend             | 表彰exalt,嘉奖cite                                |
-| commission          | 委任,授权,佣金,权力                                         |
+| commission          | 委任,授权,佣金,权力                               |
 | commotion           | 骚动,骚乱,混乱,暴乱                               |
 | compatriot          | 同胞,同乡,国人                                    |
 | compendium          | 概要outline,概略compendia                         |
@@ -238,14 +257,16 @@
 | compound            | 化合物,复合,大院,营地                             |
 | comprehend          | 理解,领会,懂得                                    |
 | compromise          | 妥协,折中,让步,和解                               |
+| conceal             | 隐瞒,掩盖,隐藏                                    |
 | concede             | 承认recognize,退让fall-back                       |
 | conceive            | 构想,设想envisage,怀孕pregnant                    |
 | conclusion          | 结论                                              |
+| concoct             | 编造,捏造,炮制                                    |
 | concurrency         | 并发 任务切分                                     |
 | condolence          | 慰问,哀悼                                         |
 | conduct             | 行动,执行,引导channel,指挥                        |
 | confess             | 承认                                              |
-| confine             | 限制,局限limit,管制control                             |
+| confine             | 限制,局限limit,管制control                        |
 | confront            | 对抗antagonize,面对face                           |
 | conglomerate        | 集团公司                                          |
 | conjecture          | 揣测,推测                                         |
@@ -253,19 +274,20 @@
 | conquer             | 征服subdue,战胜prevail,侵占encroach               |
 | conscript           | 新兵,征兵,征召                                    |
 | conserve            | 保留preserve,保全rescue,养护maintain,保守的       |
-| conspiracy          | 阴谋,预谋,同谋,共谋                                         |
+| conspiracy          | 阴谋,预谋,同谋,共谋                               |
 | conspire            | 密谋,同谋plot                                     |
 | constraint          | 约束,强制enforcement,局促uneasiness,拘禁          |
 | consult             | 请教,咨询,参考reference                           |
 | consultation        | 会诊,咨询,参考reference                           |
 | contact             | 接触touch,联系                                    |
 | contagious          | 传染性                                            | contagious-disease                                   |
-| contaminate         | 污染pollute,弄脏,污蔑slander                           |
+| contaminate         | 污染pollute,弄脏,污蔑slander                      |
 | content             | 满足,内容                                         |
 | continent           | 大陆mainland,洲island                             |
 | contradict          | 矛盾,抵触clash,驳斥refute                         |
 | contraption         | 装置,玩意,新发明物                                |
 | convention          | 惯例,约定,常规,传统                               |
+| converge            | 汇聚,收敛,集合,汇合                               |
 | coordinate          | 协作consort,配合assort,坐标                       |
 | cope                | 对付,对抗,应付                                    |
 | corp                | 公司,集团,总公司                                  |
@@ -296,6 +318,7 @@
 | cub                 | 年轻人,幼兽                                       |
 | cuisine             | 美食,佳肴,菜肴                                    |
 | cull                | 剔除,淘汰                                         |
+| culprit             | 罪犯,凶手,元凶                                    |
 | culprit             | 罪魁祸首                                          |
 | cultivate           | 耕种,培育foster,养殖encourage                     |
 | custody             | 保管storage,拘留detention,保护aegis               |
@@ -303,14 +326,16 @@
 | dagger              | 匕首,短剑                                         |
 | damp                | 潮湿moist,润湿                                    |
 | damper              | 减震器,阻碍                                       |
-| dangle              | 绞刑,吊死,晃荡,悬挂                                     |
+| dangle              | 绞刑,吊死,晃荡,悬挂                               |
 | dart                | 镖,矢arrow,飞弹missile                            |
 | debase              | 贬低                                              |
+| debris              | 残骸,碎片,杂物                                    |
 | debt                | 债务owing,饥荒famine                              |
 | deceive             | 欺骗spoof,蒙骗hoodwink                            |
 | decimate            | 毁灭                                              |
 | decipher            | 解码decoding                                      |
 | decisive            | 决定性,果断,紧要critical                          |
+| decline             | 拒绝,下跌,下降,衰退                               |
 | decline             | 衰退ebb,没落wane,减弱weaken,推辞                  |
 | decoy               | 诱饵bait                                          |
 | decree              | 法令edict,诏书rescript                            |
@@ -326,7 +351,7 @@
 | deliberately        | 故意purposely,存心intentionally                   |
 | delicate            | 微妙,精巧quaint,娇嫩fragile,秀气elegant,柔弱      |
 | delight             | 乐趣pleasure,趣味taste,情趣appeal                 |
-| delusion            | 幻想,错觉,妄想                                              |
+| delusion            | 幻想,错觉,妄想                                    |
 | demean              | 举止                                              |
 | demise              | 消亡,禅让,遗赠bequeath                            |
 | demolition          | 拆除,拆毁                                         |
@@ -334,6 +359,7 @@
 | deplet              | 耗尽                                              |
 | deputy              | 副手,代理                                         |
 | derail              | 脱轨,出轨,破坏                                    |
+| deride              | 嘲笑,嘲弄,讥笑                                    |
 | descendant          | 后代posterity,后裔offspring,儿孙                  |
 | descendent          | 后代,子孙,后裔                                    |
 | deserting           | 抛弃,背弃,叛离                                    |
@@ -346,19 +372,22 @@
 | detention           | 拘留internment,扣押,延迟                          |
 | deter               | 阻止,遏制,威慑                                    |
 | deteriorate         | 恶化exacerbate,变质                               |
+| deterrent           | 威慑,阻碍,威慑手段                                |
 | detestable          | 可憎,可恶,嫌恶                                    |
 | dethrone            | 废黜,取代,废王位                                  |
-| detonate            | 引爆,引燃,起爆,发火                                         |
+| detonate            | 引爆,引燃,起爆,发火                               |
 | detour              | 绕道bypass,弯路roundabout                         |
 | devastate           | 摧残ruin,毁坏blemish,蹂躏ravage                   |
 | devise              | 设计,发明                                         |
 | devour              | 吞食,噬bite                                       |
 | devoured            | 吞噬                                              |
 | diaper              | 尿布napkin                                        |
-| dictate             | 主宰dominate,支配,命令,强加                                      |                                                      |
+| dictate             | 主宰dominate,支配,命令,强加                       |                                                      |
+| dignified           | 体面,高贵,尊严                                    |
 | dignitaries         | 政要,贵宾,知名人士,高官                           |
 | dignity             | 尊严sanctity,体面desert                           |
 | diplomatic          | 外交,外交手腕                                     |
+| dire                | 严重,严峻,悲惨,危急                               |
 | dirty read          | 脏读                                              |
 | disband             | 解散                                              |
 | disclose            | 透露leak-out,暴露reveal,泄露divulge               |
@@ -380,6 +409,7 @@
 | distinguish         | 区分,辨别,分辨                                    |
 | distinguished       | 尊贵,尊敬,杰出,注明                               |
 | distract            | 转移divert,分散注意力                             |
+| distress            | 困境,危难,遇险                                    |
 | disturbance         | 风波crisis,骚动riot                               |
 | dive                | 潜水                                              |
 | divert              | 转移shift,挪动misappropriate                      | divert-attention                                     |
@@ -389,6 +419,8 @@
 | domesticated        | 家养的,驯化的                                     |
 | dominate            | 主宰dictate,支配allocate,统治                     | 占主导地位,主流predominate                           |
 | doom                | 厄运adversity                                     |
+| dosing              | 剂量,加药,配料                                    |
+| downwind            | 顺风,下风向                                       |
 | drawn               | 拔出的                                            | drawn-to被吸引到, drawn-sword                        |
 | dread               | 糟糕,恐怖,可怕                                    |
 | dredge              | 疏通                                              | dredge-up回想起                                      |
@@ -399,7 +431,9 @@
 | dune                | 沙丘                                              |
 | dungeon             | 地牢jail                                          |
 | dwell               | 居住reside,纠缠,寄居                              |
+| earthen             | 土制的,陶制的,土筑                                |
 | eastimate           | 估计reckon,评估appraise,预估forecast              | unsereastimate低估                                   |
+| eavesdrop           | 偷听,窃听                                         |
 | eccentric           | 古怪,乖僻,怪人wack                                |
 | edible              | 可食用,食品级                                     |
 | ejector             | 顶出,排除器                                       | ejector-pin顶针                                      |
@@ -416,11 +450,13 @@
 | engage              | 从事,接触,雇佣hire,玩弄play,约定promise           |
 | engulf              | 吞没embezzle,吞噬swallow,席卷sweep                |
 | enigma              | 谜团,神秘                                         |
+| enormity            | 极恶,大罪,艰巨                                    |
 | enormous            | 巨大的huge                                        |
 | ensue               | 随后                                              |
 | enthrone            | 登基ascend                                        |
 | entrust             | 委托consign,托付intrust                           |
 | envision            | 预见,预料                                         |
+| epidemic            | 疫情,流行病                                       |
 | episode             | 插曲                                              |
 | era                 | 时代period,纪元epoch                              |
 | eradicate           | 根除stub,铲除root-out,肃清eliminate               |
@@ -429,13 +465,17 @@
 | escort              | 护送convoy,押解detain                             |
 | essential           | 基本上,本质,必要                                  |
 | estimate            | 评估gauge,估量appraise,臆测                       |
+| etch                | 腐蚀,蚀刻                                         |
+| eternity            | 永远,永生,永世,永恒                               |
 | ethnic              | 种族的,民族的                                     |
 | eugenics            | 优生学                                            |
+| euthanize           | 安乐死                                            |
 | evac                | 疏散evacuation                                    |
 | evacuate            | 撤离,疏散,肃清                                    |
 | evacuation          | 疏散                                              |
 | evaporate           | 蒸发,破灭blight,跑flee                            |
 | evaporation         | 蒸发exhalation,汽化steaming                       |
+| every-now-and-then  | 时不时,偶尔                                       |
 | exalted             | 崇高的exorbitant                                  |
 | exceed              | 超级,超过surpass,超越transcend                    |
 | excel               | 高强,胜过,峥,特别especially                       |
@@ -497,11 +537,14 @@
 | flock               | 堆swarm,群herd                                    |
 | fluid               | 流体                                              |
 | fodder              | 饲料mash,草料forage                               |
+| folly               | 愚昧,愚蠢,荒唐                                    |
+| foolproof           | 万无一失,防呆,完全的                              |
 | forfeit             | 丧失lose,弃权abstain                              |
 | formation           | 编队,队形                                         |
 | formidable          | 强大,艰巨arduous,厉害terrible                     |
 | fort                | 堡垒                                              |
 | fortify             | 驻守garrison,强化                                 |
+| fossil              | 化石,矿物,老古董,陈腐的                           |
 | fracture            | 骨折,断裂rupture                                  |
 | frame               | 二进制帧                                          |
 | fray                | 磨损abrasion,磨损处                               |
@@ -519,6 +562,7 @@
 | futile              | 徒劳,无用useless,枉然in-vane                      |
 | gallop              | 驰骋,奔腾surge                                    |
 | gallow              | 绞刑架                                            |
+| gangster            | 黑帮,流氓,黑社会,歹徒                             |
 | garrsion            | 驻军,驻守                                         |
 | gasp                | 喘气pant,喘粗气,气急                              |
 | gauge               | 测量,估计reckon                                   |
@@ -533,13 +577,17 @@
 | glare               | 强光,阳光,怒视glower                              |
 | gloomy              | 阴沉dismal,暗淡faint                              |
 | glutton             | 馋嘴,贪吃鬼,暴食者                                |
+| goose-chase         | 白跑,徒劳,捕风捉影                                |
 | gotta               | 得                                                |
+| gouge               | 挖,挖出,扣出                                      |
+| granny              | 奶奶,姥姥,外婆,祖母                               |
 | grape               | 葡萄,葡萄弹grape-shot                             |
 | grasp               | 掌握,领会                                         |
 | graze               | 放牧,吃草,擦伤                                    |
 | grenade             | 手榴弹,手雷,烟雾弹                                |
 | grief               | 悲痛sorrow                                        |
 | grip                | 握住grasp,抱着clasp,抓住tackle,把手knob           |
+| grope               | 摸索,非礼,乱摸,动手动脚                           |
 | gross               | 总的,过胖的adipose,毛rash                         |
 | gross-said          | 总的来说                                          |
 | grubber             | 挖掘者                                            |
@@ -552,11 +600,13 @@
 | gulp                | 咽                                                |
 | gut                 | 直觉,胆量gallbladder,肠子                         |
 | hail                | 冰雹,致敬,招呼                                    |
+| hale                | 拖曳,猛拉,健壮的                                  |
 | hand-me-downs       | 旧衣服,别人不要的,二手的                          |
 | hanged              | 绞刑,被绞死                                       |
 | harried             | 折磨,掠夺                                         |
 | harsh               | 残酷的grim,苛刻bitter,严峻severe                  |
 | haste               | 匆忙                                              |
+| haunt               | 笼罩,困扰,萦绕于心,出没                           |
 | have-an-edge        | 有优势,有利                                       |
 | haven               | 避风港                                            |
 | hazy                | 朦胧obscure,弥漫vague,隐约faint,昏暗              |
@@ -578,6 +628,7 @@
 | honeycomb           | 蜂窝beehive,蜂巢hive                              |
 | hood                | 兜帽burban,引擎罩                                 |
 | hooligan            | 流氓gangster,恶棍villain                          |
+| hop                 | 跳,跳上                                           |
 | hostage             | 人质,俘虏,抵押品gage                              |
 | hostile             | 敌对的adverse,有敌意                              |
 | hostility           | 敌意,敌视,敌对                                    |
@@ -595,6 +646,7 @@
 | ignorant            | 无知clueless,茫然                                 |
 | imitate             | 模仿simulate,仿照follow                           |
 | immense             | 巨大huge,广大vast                                 |
+| immigrant           | 移民,侨民,外来者                                  |
 | immobilize          | 固定,稳住                                         |
 | immune              | 免疫                                              |
 | impact              | 影响,效果,后果                                    |
@@ -602,6 +654,7 @@
 | impeccable          | 无可挑剔的                                        |
 | imperative          | 至关重要,迫切urgent,急迫pressing                  |
 | imperial            | 帝国,皇家                                         |
+| impose              | 实施,施加,施行,强加                               |
 | impostor            | 骗子cheat,冒牌                                    |
 | imprint             | 铭刻impress,烙印                                  |
 | imprison            | 关押,囚禁,下狱                                    |
@@ -610,15 +663,18 @@
 | impulsively         | 冲动的                                            |
 | in-line-to          | 符合                                              |
 | in-no-time          | 立刻                                              |
+| in-place            | 就地,原地,到位                                    |
 | in-sight            | 在望,在眼前                                       |
 | in-sort-of          | 某种程度上                                        |
 | in-the-first-place  | 首先                                              |
+| in-turn             | 依次,轮流,反过来                                  |
 | incapacitate        | 丧失能力,失效,弄坏blemish                         | capacity容量,才能                                    |
 | incarnation         | 化身,赋予肉体                                     |
 | incite              | 煽动stir,挑拨instigate                            |
 | incognito           | 隐身                                              |
 | incompetence        | 无能                                              |
 | incursion           | 侵略,侵袭,侵入                                    |
+| indiscriminate      | 无差别,任意,盲目                                  |
 | individual          | 个体,个人                                         |
 | indoctrinate        | 灌输instill                                       |
 | induct              | 诱导                                              |
@@ -629,11 +685,14 @@
 | inferior            | 劣势,低劣,下等                                    |
 | inferiority         | 自卑                                              |
 | infestation         | 感染,虫害,入侵                                    |
+| infiltrate          | 渗透,潜入,混入                                    |
 | infiltrate          | 渗透permeate,浸润soak,渗入penetrate               |
 | inflicted           | 造成的,加以                                       | self-inflicted自己作                                 |
-| ingest              | 摄入,吸食,摄取,咽gulp                                       |
+| ingest              | 摄入,吸食,摄取,咽gulp                             |
 | ingredient          | 成分composition,配料                              |
 | inhabit             | 居住于                                            |
+| inhale              | 吸入,吸气                                         |
+| inhibit             | 克制,抑制,妨碍,阻止                               |
 | inkling             | 暗示cue                                           |
 | inlist              | 招募,入伍,谋取,收罗                               |
 | innovation          | 革新                                              |
@@ -642,25 +701,27 @@
 | insidious           | 阴险sinister,隐秘sly                              |
 | insignificant       | 微不足道negligible,琐细trivial,渺茫vague          |
 | instant             | 瞬间,片刻,即刻                                    |
-| instinct            | 直觉intuition,本能,直觉,天性,本性                                |
+| instinct            | 直觉intuition,本能,直觉,天性,本性                 |
 | insubordinate       | 不服从,叛逆,顽皮mischievous                       |
 | insurance           | 保险assurance,保险业underwriting,保险费premium    |
 | insurgent           | 叛乱份子,谋反的treasonable                        |
 | intact              | 完好,原封,完整                                    |
+| interbreed          | 杂交,交配,混种                                    |
 | interior            | 室内,内地                                         |
 | internment          | 拘留detention                                     |
 | interrogate         | 审问,质问inquire                                  |
-| intervene           | 介入,干涉,干预,插手                                    |
+| intervene           | 介入,干涉,干预,插手                               |
 | intestine           | 肠道                                              |
 | intimidate          | 恐吓,吓住frighten                                 |
 | intranet            | 局域网,内网                                       |
 | intrusion           | 侵扰                                              |
-| invade              | 入侵inrupt,侵略,侵犯                                        |
+| invade              | 入侵inrupt,侵略,侵犯                              |
 | invader             | 入侵者,侵入者                                     |
 | invasive            | 侵入性的,侵犯的                                   |
 | inveterate          | 根深蒂固ingrained                                 |
 | invincible          | 不败的,无敌的                                     |
 | invulnerable        | 无敌的                                            |
+| ironic              | 可笑,挖苦的,冷嘲的                                |
 | irrational          | 无理的,荒谬的                                     |
 | irredeemable        | 无可救药,不可挽回                                 |
 | jackpot             | 头等奖,中大奖了                                   |
@@ -675,12 +736,14 @@
 | kidnap              | 绑架,劫持hijack,拐骗                              |
 | kimono              | 和服                                              |
 | kinetic             | 运动,动力,动力学                                  |
+| knead               | 揉,按摩,柔和,捏合                                 |
 | knock-it-off        | 住手,别闹,住口,别吵                               |
 | knock-off           | 收工,歇工                                         |
 | labored             | 劳苦的,困难的                                     |
 | lagged              | 滞后,延迟                                         |
 | laid-waste          | 夷为平地                                          |
 | lament              | 哀叹bemoan,悲叹bewail                             |
+| laudable            | 值得称赞,值得称道                                 |
 | layout              | 布局distribution,设计,安排arrangement             |
 | leak                | 泄露,泄漏,泄密                                    |
 | leap                | 飞跃,跳跃caper,激增                               |
@@ -688,11 +751,13 @@
 | leftover            | 剩菜剩饭,盈余surplus                              |
 | legit               | 合法的affirmed                                    |
 | leisurely           | 悠闲的, 从容的                                    |
+| lenient             | 宽松,宽大,宽容                                    |
 | let-down            | 辜负disappoint,放下lay-down,降低reduce            |
 | lethargic           | 昏昏欲睡comatose                                  |
 | leveled             | 夷平,铺平                                         |
 | liable              | 容易,有责任                                       |
 | lick                | 舔,击败                                           |
+| lifespan            | 寿命,生命周期,使用时限,一生,有效期限              |
 | limb                | 肢                                                |
 | lineage             | 血统,谱系,世系,家族                               |
 | liquor              | 酒                                                |
@@ -727,6 +792,7 @@
 | mascot              | 吉祥物                                            |
 | mass                | 大多数,群众                                       |
 | massacre            | 屠杀slaughter,杀戮                                |
+| mastermind          | 策划者,主脑,主谋                                  |
 | materialize         | 出现,具体化,落实                                  |
 | measly              | 轻率的                                            |
 | mediator            | 调解人,中间人                                     |
@@ -735,6 +801,7 @@
 | menace              | 恐吓threaten,威慑intimidate                       |
 | menial              | 卑贱,低贱,不体面                                  |
 | mere                | 单纯,纯粹,简单                                    |
+| mesh                | 网格,网眼,网孔                                    |
 | meticulous          | 细致,精心,认真                                    |
 | midget              | 侏儒dwarf,矮人pygmy                               |
 | mighty              | 威武,维达,强势                                    |
@@ -745,11 +812,13 @@
 | miracle             | 奇迹                                              |
 | miserable           | 悲惨tragic,辛酸bitter,忧愁anxious                 |
 | misery              | 苦难tribulation,苦楚bitterness,苦痛suffering      |
+| misgivings          | 担忧,焦虑,不妥                                    |
 | misguided           | 误导,误入歧途                                     |
 | moan                | 呻吟groan,抱怨grumble                             |
 | mob                 | 暴民,暴徒,黑帮                                    |
 | moblit              | 流氓                                              |
 | moisture            | 水分,湿气damp,湿度humidity                        |
+| mold                | 模具,模子,模型                                    |
 | mollify             | 缓和alleviate                                     |
 | monarchy            | 帝制,君主政治                                     |
 | monolith            | 整体,丰碑obelisk                                  |
@@ -783,17 +852,24 @@
 | notorious           | 恶名昭著                                          |
 | novelty             | 新奇的                                            |
 | nuisance            | 累赘encumbrance,讨厌人的                          |
+| nullify             | 废除,抵消,消除                                    |
+| numb                | 麻木,麻醉,麻痹                                    |
+| nutcracker          | 胡桃夹子,核桃夹,坚果夹                            |
 | nuts                | 疯子,坚果,睾丸                                    |
 | obedient            | 乖乖的,听话,服从amenable                          |
 | objective           | 目标purpose,意图intention,客观的                  |
 | obligation          | 义务liability                                     |
 | oblige              | 迫使,需求,责成,强迫                               |
 | obliging            | 体贴,随和easygoing,合适affable                    |
+| obsolete            | 过时,陈旧,淘汰                                    |
 | obstacle            | 障碍barrier                                       |
+| odds                | 可能性,机会,胜算,几率                             |
 | odds                | 可能性possibility,优势superiority,机会opportunity |
+| ongoing             | 进行中,长期,现行                                  |
 | opponent            | 对手,反对者,对抗者adversary                       |
 | oppress             | 压迫,压制,镇压                                    |
 | ore                 | 矿石pit                                           |
+| orgasm              | 高潮,性高潮,快感                                  |
 | orphan              | 孤儿,遗孤                                         |
 | orphanage           | 孤儿院,福利院                                     |
 | out-of-action       | 失灵                                              |
@@ -805,6 +881,8 @@
 | over-run            | 泛滥                                              |
 | overcast            | 阴沉,灰蒙蒙,阴天的                                |
 | overlay             | 覆盖overcast,罩子deck                             |
+| oversaw             | 监督,监管,见证了,掌管着                           |
+| overthrow           | 推翻,颠覆,打倒,覆灭                               |
 | overwhelm           | 压制overpower,覆没capsize,镇压squelch             |
 | overwhelming        | 巨大,大量,绝对,极大,压倒性的                      | overwhelming strength压倒性的力量                    |
 | palm                | 手掌,托                                           |
@@ -850,11 +928,14 @@
 | pile                | 一堆mass,桩pale,垛buttress                        |
 | pillar              | 柱                                                |
 | pillbox             | 碉堡,药盒,地堡                                    |
+| pincer              | 夹击,钳子,铁钳                                    |
 | pinpoint            | 查明ascertain                                     |
 | pious               | 虔诚的devout,尽责的                               |
+| pissant             | 无足轻重                                          |
 | pit                 | 坑tunnel,陷阱trap                                 |
 | pitch               | 间距,俯仰,投                                      |
 | pitfall             | 陷阱trap,阴谋conspiracy                           |
+| placate             | 平息,安抚,抚慰,和解                               |
 | placing             | 竖立establishment                                 |
 | pledged             | 宣誓vow,誓要warrant                               |
 | plot                | 阴谋conspiracy,情节circumstance,筹划scheme        |
@@ -871,6 +952,7 @@
 | possession          | 所有权,所有物                                     |
 | posture             | 姿势,姿态,身段figure                              |
 | pour                | 浇灌irrigate,倾注collapse                         |
+| pow                 | 战俘,俘虏                                         |
 | practically         | 几乎nearly,事实上                                 |
 | preach              | 宣讲sermon,传教,说教                              |
 | precedent           | 先例,前例                                         | unprecedent史无前例                                  |
@@ -878,12 +960,14 @@
 | predecessor         | 前任,前身,前代,前辈                               |
 | predicament         | 困境plight                                        |
 | predicate           | 谓语;断言assert,断定为                            | predicated-on取决于                                  |
+| premature           | 仓促,过早,草率,早熟                               |
 | premeditated        | 有预谋的                                          |
 | preposterous        | 荒谬absurd,荒唐loose                              |
 | pretend             | 假装                                              |
 | pretext             | 借口,托词,理由                                    |
 | prevail             | 占上风,盛行,获胜                                  |
 | prey                | 猎物quarry,掠夺plunder                            |
+| principle           | 原则,原理,理念,方针                               |
 | proclaim            | 宣布announce,声称state                            |
 | proclamation        | 公告bulletin,榜文declaration,布告                 |
 | prod                | 刺stab                                            | 刺探prodding                                         |
@@ -892,10 +976,12 @@
 | proficient          | 精通                                              |
 | progenitor          | 祖细胞                                            |
 | prohibit            | 禁止proscribe,阻止deter,不准forbid                |
+| prolong             | 延长,延续,延期                                    |
 | prolong             | 延长extend,拖延deplay                             |
 | propaganda          | 宣传                                              |
 | propagate           | 传播,宣传,散布                                    |
 | propeller           | 螺旋桨prop                                        |
+| proposal            | 方案,提议,建议                                    |
 | prosecuted          | 起诉,追究,审判                                    |
 | prosperity          | 繁荣thrift,景气economic-boom,昌盛flourishing      |
 | prowl               | 潜行,窥伺,徘徊                                    |
@@ -903,7 +989,7 @@
 | puke                | 呕吐vomit                                         |
 | pulp                | 纸浆,果肉flesh,化成纸浆                           |
 | puppet              | 傀儡,玩偶,提线木偶                                |
-| purge               | 清除,净化,清洗rinse,废止releal                         |
+| purge               | 清除,净化,清洗rinse,废止releal                    |
 | pursue              | 奉行,推行carry-out,探求seek                       |
 | put-it-broadly      | 概括的说,大致上讲                                 |
 | putrid              | 腐烂的gangrenous,腐败的cankered                   |
@@ -918,9 +1004,11 @@
 | rake                | 扫射strafe                                        |
 | rambling            | 漫无目的                                          |
 | rampage             | 乱闹,发怒rage                                     |
+| rant                | 吐槽,咆哮,痛斥,怒吼                               |
 | rash                | 轻率slapdash,鲁莽reckless,皮疹measles             |
 | ration              | 配给allotment,口粮                                |
 | rattle              | 嘎嘎声,响环                                       | death-rattle垂死挣扎                                 |
+| ravage              | 肆虐,蹂躏,破坏,掠夺                               |
 | raze                | 抹去efface,夷                                     |
 | read-committed      | 读已提交                                          |
 | read-uncommitted    | 读未提交                                          |
@@ -944,6 +1032,7 @@
 | regime              | 政权                                              |
 | regular             | 定期,规则,通常general                             |
 | reign               | 统治,执政,王朝                                    |
+| reign               | 统治,执政,王朝,支配                               |
 | rein                | 缰绳bridle                                        |
 | rein-in             | 放慢                                              |
 | reinforce           | 接应,增员                                         |
@@ -957,17 +1046,22 @@
 | remanant            | 剩余的                                            |
 | remnant             | 残余vestige,遗物relict                            |
 | remorse             | 悔恨repentance,怜悯pity                           |
+| renege              | 反悔,食言,违约                                    |
 | renounce            | 放弃waive,背弃desert                              |
 | repeatable-read     | 可重复读                                          |
 | repell              | 击退                                              |
+| repent              | 忏悔,悔改,悔过,后悔                               |
 | repent              | 悔改,忏悔confess                                  |
 | replenish           | 补充supplement,重新充实make-up,续订refill         |
+| reproach            | 羞辱,职责,辱骂                                    |
 | reproduce           | 复制,生殖,仿造                                    |
 | repulse             | 厌恨disgust,击退repel                             |
 | rescue              | 支援,救援                                         |
 | resemble            | 类似,相似                                         |
 | resent              | 怨恨                                              |
+| resentment          | 怨恨,不满,仇恨,憎恨                               |
 | resident            | 居民inhabitant,住户householder                    |
+| resign              | 辞职,辞去,退出                                    |
 | restoration         | 恢复regain,复职reinstatement                      |
 | restrain            | 抑制,克制inhibit,限制                             |
 | restraint           | 克制,限制stint                                    |
@@ -999,6 +1093,7 @@
 | rodent              | 啮齿动物                                          |
 | rookie              | 军队中的菜鸟                                      |
 | roost               | 称雄,栖息,安歇                                    |
+| rowdy               | 吵闹,喧闹,闹哄哄,粗暴                             |
 | rowdy               | 吵闹的                                            |
 | rub                 | 擦                                                | rubber橡皮                                           |
 | rubble              | 瓦砾debris,乌合之众mob                            |
@@ -1017,6 +1112,7 @@
 | scapegoat           | 替罪羊,替身substitute                             |
 | scatter             | 疏散,散开disperse                                 |
 | scenario            | 情形,设想,脚本                                    |
+| scholar             | 学者,学术,文人                                    |
 | scold               | 责骂rebuke,泼妇shrew                              |
 | scorch              | 烧焦,焦土                                         |
 | scout               | 侦查reconnaissance                                |
@@ -1025,15 +1121,18 @@
 | scratch             | 刮,挠,蹭rub                                       |
 | scrawny             | 骨瘦如柴                                          |
 | screw               | 螺旋                                              |
+| scrub               | 擦洗,洗刷                                         |
 | scrutiny            | 监督,检查,调查                                    |
 | scuffle             | 打架                                              |
 | scum                | 废物waste,泡沫foam                                |
+| scurry              | 快跑,疾走,匆忙地跑                                |
 | seal                | 封住,封口,查封                                    |
 | sealed              | 密封                                              |
 | secure              | 确保,保障,保证                                    |
 | seduce              | 勾引,引诱,诱惑                                    |
 | seething            | 沸腾aboil                                         |
 | semi                | 半                                                | 半圆semicircle                                       |
+| senile              | 衰老的,老朽,老年,老龄                             |
 | sentimental         | 婆婆妈妈,感情用事                                 |
 | sentinel            | 哨兵(意为解决/简化边界问题)                       |
 | serializable        | 串行化                                            |
@@ -1044,6 +1143,7 @@
 | severely            | 极为,严重地,极度                                  |
 | shackle             | 脚镣fetter,束缚,桎梏                              |
 | shamble             | 乱七八糟,一片狼藉                                 |
+| shatter             | 打破,打碎,粉碎,破掉                               |
 | shed                | 摆脱,流下,蜕皮molt,棚子shack                      |
 | sheer               | 绝对,纯属                                         |
 | shelter             | 庇护shield                                        |
@@ -1052,6 +1152,7 @@
 | shove               | 推promote,挤squeeze,钻,争                         | shove off to the interior                            |
 | showdown            | 摊牌facedown                                      |
 | shred               | 撕碎lacerate,切碎                                 |
+| shred               | 粉碎,切丝,撕碎,撕毁                               |
 | shrimp              | 虾crayfish,小虾                                   |
 | shudder             | 不寒而栗tremble,颤栗quiver                        |
 | sibling             | 兄弟,姐妹                                         |
@@ -1059,9 +1160,11 @@
 | sigh                | 叹息                                              |
 | silly               | 愚蠢,傻                                           |
 | sink                | 水槽,击沉                                         |
+| sip                 | 品尝,抿,啜,一小口                                 |
 | siren               | 警笛,警报器buzzer                                 |
 | skeptic             | 怀疑                                              |
 | sketch              | 草图draft,素描                                    |
+| skirmish            | 小冲突,前哨站,遭遇战                              |
 | skit                | 小品,喜剧,讽刺文                                  |
 | slack               | 松弛,呆滞sluggish,散漫undisciplined               |
 | slam                | 打击,甩,猛然关上                                  |
@@ -1071,7 +1174,9 @@
 | sleeve              | 袖子                                              | ace-up-their-sleeve一张王牌                          |
 | slight              | 轻微,细微subtle                                   |
 | slime               | 粘液,软泥                                         |
-| slit                | 切开,缝隙,隔断                                              |
+| slip-up             | 疏忽,犯错,失误                                    |
+| slit                | 切开,缝隙,隔断                                    |
+| sloppy              | 邋遢,草率,懒散,潦草                               |
 | slouch              | 伛偻,背脊弯曲                                     |
 | smash               | 摧毁wreck,粉碎crush,扣杀                          |
 | smock-out           | 引出来,熏出来                                     |
@@ -1079,6 +1184,7 @@
 | snack               | 零食                                              |
 | snail               | 蜗牛                                              | snail's pace蜗牛的步伐                               |
 | snap                | 折断bend,谩骂swear,乱射,临时interim               |
+| snapped             | 断裂,崩溃                                         |
 | snare               | 圈套trap,牢笼cage,陷阱                            |
 | snatch              | 抢夺mulct                                         |
 | sneak               | 潜行                                              | sneak-out偷偷溜走                                    |
@@ -1088,16 +1194,19 @@
 | snuck               | 溜进,混进去                                       |
 | snuff               | 熄灭,消灭,弄熄,鼻烟                               |
 | sobbing             | 抽泣,唏嘘                                         |
+| soil                | 土壤,土地,领土,泥土                               |
 | sole                | 唯一,单一unitary                                  |
 | solicit             | 征求seek,询问find-out                             |
 | somehow             | 似乎,不知为何,无论如何                            |
 | somewhat            | 有点                                              |
+| sovereign           | 主权,统治者,至高无上,君主                         |
 | span                | 跨度,广度scope                                    |
 | spark               | 火花,战火,星火                                    |
 | sparse              | 稀少,稀疏,零星                                    |
 | spearhead           | 牵头,率先,发起                                    |
 | speck               | 斑点,灰尘,污点,浮尘                               |
 | speculate           | 推测conjecture,猜测                               |
+| speculation         | 投机,猜测,推测                                    |
 | spilling            | 溢出                                              |
 | spinal              | 脊髓vertebral,尖刺的                              |
 | spine               | 脊柱spinal,脊椎骨vertebra                         |
@@ -1110,6 +1219,7 @@
 | sprout              | 萌芽bud,发芽germinate                             |
 | squad               | 班,队                                             |
 | squalor             | 肮脏,不干净,脏乱                                  |
+| squander            | 浪费,挥霍                                         |
 | square-brackets     | 方括号                                            | [ ]                                                  |
 | squash              | 压扁squeeze,压缩                                  |
 | squat               | 蹲坐,蹲下,蹲着                                    |
@@ -1118,11 +1228,13 @@
 | squeeze             | 挤碎crush,压榨                                    |
 | stab                | 刺,捅,戳poke                                      |
 | stain               | 弄脏foul,玷污tarnish                              |
+| stake               | 股份,利益,利害关系,赌注                           |
 | stake               | 赌注wager,赌钱speculate                           |
 | stalking            | 缠扰                                              |
 | stance              | 立场,姿态,态度                                    |
 | stand-ground        | 坚守立场                                          |
 | startled            | 吓到,吃惊,惊愕scared,惊悚frightened               |
+| steadfast           | 坚定,坚决,踏实                                    |
 | stench              | 恶臭                                              |
 | stick               | 粘glue,棍wand,杆pole;stuck                        |
 | stiffen             | 硬化,使变硬harden                                 |
@@ -1130,7 +1242,7 @@
 | stink               | 腐臭rancidity,臭气reek                            |
 | stir                | 搅拌mix,拨动dial                                  | stir-up煽动                                          |
 | stockpile           | 储存,积攒                                         |
-| stomp               | 踩扁,脚,踩                                             |
+| stomp               | 踩扁,脚,踩                                        |
 | stoop               | 弯腰                                              |
 | strain              | 劳损                                              |
 | strand              | 搁浅,缕wisp,一串                                  |
@@ -1149,7 +1261,10 @@
 | stunning            | 艳glamorous,荧fluorescent                         |
 | sturdy              | 结实,粗壮thickset,强健                            |
 | subdue              | 征服,制服,压制                                    |
+| subdued             | 低迷,疲软,柔和                                    |
 | subjective          | 主观的,个人的                                     |
+| subjugation         | 奴役,征服,压迫,镇压                               |
+| submission          | 意见,陈述,提交                                    |
 | subordinate         | 下属underling,从属                                |
 | successor           | 接班人,继承者heritor                              |
 | suffocate           | 窒息,憋                                           |
@@ -1170,11 +1285,13 @@
 | swat                | 扑打beat,拍打pat                                  |
 | sway                | 摇摆swing,晃动rock                                |
 | swoop               | 猛扑,进攻onset                                    |
+| symptom             | 征兆,症状,症候,表象                               |
 | synthesize          | 合成compound,综合integrate                        |
 | taboo               | 禁令ban,禁忌prohibition,忌讳                      |
 | tackle              | 逮捕arrest,抓住grip,器具utensil                   |
 | tactical            | 策略,战略,战术,作战                               |
 | tactics             | 战术,策略ploy,权谋trickery                        |
+| taint               | 污染,玷污                                         |
 | take-for-granted    | 认为理所当然                                      |
 | take-out            | 取出                                              |
 | tangle              | 纠缠,纠结,缠绕                                    |
@@ -1206,6 +1323,7 @@
 | toss                | 抛fling,折腾get-down,甩swing                      |
 | totter              | 蹒跚,踉跄,摇摇欲坠                                |
 | tourniquet          | 止血带,止血器                                     |
+| trait               | 特征,特质,性状,属性                               |
 | traitor             | 叛徒turncoat                                      |
 | trample             | 践踏tread,蹂躏ravage,踹kick                       |
 | trastic             | 过激的                                            |
@@ -1215,6 +1333,7 @@
 | tremble             | 颤抖                                              |
 | trench              | 战壕,沟渠                                         |
 | trial               | 审判,审讯,考研ordeal                              |
+| tribe               | 部落,部族,族人,族群                               |
 | tribunal            | 法庭court                                         |
 | tribute             | 致敬,悼念,赞颂                                    |
 | trip-up             | 绊倒                                              |
@@ -1222,6 +1341,8 @@
 | troop               | 部队force,队伍contingent                          |
 | trove               | 寻宝                                              |
 | truce               | 休战,停战armistice                                |
+| tummy               | 肚子,腹部,肚腩                                    |
+| tumultuous          | 动荡,混乱,喧嚣                                    |
 | turbo               | 涡轮turbine                                       |
 | turmoil             | 动荡unrest,动乱upheaval                           |
 | twist               | 扭曲,拧巴,拧screw                                 |
@@ -1243,10 +1364,12 @@
 | unwind              | 放松                                              |
 | upbringing          | 领养,抚育                                         |
 | uprising            | 起义,暴动                                         |
+| upside-down         | 上下颠倒,倒挂,倒立                                |
 | utility             | 实用工具                                          |
 | utmost              | 最大努力,极pole                                   |
 | utopia              | 乌托邦,理想国,空想,世外桃源                       |
 | utter               | 完全sheer,说出articulate                          |
+| utterly             | 完全,绝对,极端                                    |
 | vague               | 模糊blur,弥漫,隐约faint                           |
 | vail                | 赏钱,小费,脱下                                    |
 | vain                | 虚妄blank,空虚,无意义                             |
@@ -1274,6 +1397,7 @@
 | volition            | 意志                                              |
 | vomit               | 呕吐spit                                          |
 | vouch               | 担保,作证,审核                                    |
+| voyage              | 航程,旅程,航行                                    |
 | wagon               | 运输车,补给车                                     |
 | wailing             | 哀嚎,悲号cry-piteously                            |
 | wander              | 徘徊hover,漫步stroll                              |
@@ -1287,6 +1411,7 @@
 | whim                | 异想天开,怪念头crochet                            |
 | whimper             | 呜咽whine,抱怨sob                                 |
 | whine               | 抱怨holler,呜咽whimper                            |
+| wholeheartedly      | 完全,竭诚,全心全力                                |
 | wield               | 挥舞brandish,舞弄,执掌                            |
 | wind                | 缠绕twine,蜿蜒meander,风                          |
 | wind-down           | 逐步减少,平静下来                                 |
@@ -1298,6 +1423,7 @@
 | worn                | 破旧,筋疲力尽exhausted                            |
 | worship             | 崇拜adore,供奉enshrine                            |
 | wrack               | 残骸                                              |
+| wrath               | 怒火,怒气,愤怒                                    |
 | wreck               | 破坏undermine,摧毁smash,摧残devastate             |
 | wreckage            | 残骸remains,废墟ruins                             |
 | wretch              | 不幸的人                                          |
@@ -1307,129 +1433,3 @@
 | yell                | 大喊,大叫                                         |
 | yelled              | 大喊,喊道                                         |
 | yerown              | 臭名昭著                                          |
-| downwind            | 顺风,下风向                                       |
-| inhale              | 吸入,吸气                                         |
-| hale                | 拖曳,猛拉,健壮的                                  |
-| in-place            | 就地,原地,到位                                    |
-| etch                | 腐蚀,蚀刻                                         |
-| impose              | 实施,施加,施行,强加                               |
-| principle           | 原则,原理,理念,方针                               |
-| mesh                | 网格,网眼,网孔                                    |
-| lenient             | 宽松,宽大,宽容                                    |
-| conceal             | 隐瞒,掩盖,隐藏                                    |
-| assault             | 攻击,突击,攻击性,暴力                             |
-| mastermind          | 策划者,主脑,主谋                                  |
-| ongoing             | 进行中,长期,现行                                  |
-| sovereign           | 主权,统治者,至高无上,君主                         |
-| eavesdrop           | 偷听,窃听                                         |
-| culprit             | 罪犯,凶手,元凶                                    |
-in-turn|依次,轮流,反过来
-squander| 浪费,挥霍
-resign|辞职,辞去,退出
-bicker|斗嘴,口角,冲突
-folly|愚昧,愚蠢,荒唐
-stake|股份,利益,利害关系,赌注
-tumultuous|动荡,混乱,喧嚣
-deride|嘲笑,嘲弄,讥笑
-concoct|编造,捏造,炮制
-speculation|投机,猜测,推测
-oversaw|监督,监管,见证了,掌管着
-pow|战俘,俘虏
-scurry|快跑,疾走,匆忙地跑
-sip|品尝,抿,啜,一小口
-every-now-and-then|时不时,偶尔
-booze|酒水,烈酒,酒宴
-tummy|肚子,腹部,肚腩
-clutches|魔掌,魔爪,手提包,离合器
-voyage|航程,旅程,航行
-symptom|征兆,症状,症候,表象
-proposal|方案,提议,建议
-decline|拒绝,下跌,下降,衰退
-goose-chase|白跑,徒劳,捕风捉影
-advisor|顾问,导师,参谋
-scholar|学者,学术,文人
-trait|特征,特质,性状,属性
-steadfast|坚定,坚决,踏实
-numb|麻木,麻醉,麻痹
-skirmish|小冲突,前哨站,遭遇战
-adore|喜欢,崇拜,爱慕
-pissant|无足轻重
-fossil|化石,矿物,老古董,陈腐的
-obsolete|过时,陈旧,淘汰
-laudable|值得称赞,值得称道
-dignified|体面,高贵,尊严
-wholeheartedly|完全,竭诚,全心全力
-prolong|延长,延续,延期
-grope|摸索,非礼,乱摸,动手动脚
-renege|反悔,食言,违约
-inhibit|克制,抑制,妨碍,阻止
-orgasm|高潮,性高潮,快感
-reproach|羞辱,职责,辱骂
-taint|污染,玷污
-breed|繁殖,滋生,培育
-ravage|肆虐,蹂躏,破坏,掠夺
-lifespan|寿命,生命周期,使用时限,一生,有效期限
-accuse|指控,控告,职责,责怪
-epidemic|疫情,流行病
-euthanize|安乐死
-brazen|无耻,大胆,猖狂,厚颜
-addict|上瘾,毒瘾
-overthrow|推翻,颠覆,打倒,覆灭
-abhor|憎恨,厌恶,痛恨
-premature|仓促,过早,草率,早熟
-dosing|剂量,加药,配料
-ample|充分,充足,大量,宽裕
-wrath|怒火,怒气,愤怒
-shred|粉碎,切丝,撕碎,撕毁
-knead|揉,按摩,柔和,捏合
-subdued|低迷,疲软,柔和
-infiltrate|渗透,潜入,混入
-distress|困境,危难,遇险
-agile|敏捷,灵敏,快捷
-subjugation|奴役,征服,压迫,镇压
-senile|衰老的,老朽,老年,老龄
-deterrent|威慑,阻碍,威慑手段
-foolproof|万无一失,防呆,完全的
-rowdy|吵闹,喧闹,闹哄哄,粗暴
-odds|可能性,机会,胜算,几率
-misgivings|担忧,焦虑,不妥
-shatter|打破,打碎,粉碎,破掉
-nutcracker|胡桃夹子,核桃夹,坚果夹
-pincer|夹击,钳子,铁钳
-abetting|教唆,怂恿,唆使,煽动,纵容
-converge|汇聚,收敛,集合,汇合
-soil|土壤,土地,领土,泥土
-mold|模具,模子,模型
-bloodshed|杀戮,流血,血流成河,伤亡
-earthen|土制的,陶制的,土筑
-nullify|废除,抵消,消除
-slip-up|疏忽,犯错,失误
-utterly|完全,绝对,极端
-haunt|笼罩,困扰,萦绕于心,出没
-ironic|可笑,挖苦的,冷嘲的
-repent|忏悔,悔改,悔过,后悔
-gouge|挖,挖出,扣出
-tribe|部落,部族,族人,族群
-enormity|极恶,大罪,艰巨
-reign|统治,执政,王朝,支配
-eternity|永远,永生,永世,永恒
-bumpkin|土包子,乡下人,乡巴佬
-gangster|黑帮,流氓,黑社会,歹徒
-immigrant|移民,侨民,外来者
-interbreed|杂交,交配,混种
-debris|残骸,碎片,杂物
-alley|小巷,胡同,
-granny|奶奶,姥姥,外婆,祖母
-rant|吐槽,咆哮,痛斥,怒吼
-placate|平息,安抚,抚慰,和解
-hop|跳,跳上
-upside-down|上下颠倒,倒挂,倒立
-snapped|断裂,崩溃
-submission|意见,陈述,提交
-resentment|怨恨,不满,仇恨,憎恨
-dire|严重,严峻,悲惨,危急
-scrub|擦洗,洗刷
-beam|横梁,光束,照射
-coma|昏迷,昏睡,麻木
-sloppy|邋遢,草率,懒散,潦草
-indiscriminate|无差别,任意,盲目
