@@ -47,8 +47,8 @@
 - [database实战](main/database.md)
 - [cache实战](main/cache.md)
 - [OBS 对象存储](main/OBS.md)
+- [etcd](main/etcd.md)
 - ELK
-- etcd  
   
 ### web  
 
