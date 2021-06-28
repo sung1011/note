@@ -108,3 +108,8 @@
 - [exp 经验](main/exp.md)  
 - [keymaps](main/keymaps.md)  
 - gitlab  
+
+### wiki
+
+- [sleep](wiki/sleep.md)
+- [badminton](wiki/badminton.md)
