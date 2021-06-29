@@ -2,30 +2,30 @@
 
 ## 节点间通信 RPC
 
-### `AppendEntries RPC` 日志复制和心跳 L->F/C
+### `AppendEntries RPC` 日志的复制,覆盖和充当心跳 L->F/C
 
-| 参数         | 含义                                     |
-| ------------ | ---------------------------------------- |
-| term         | Leader的任期号                           |
-| leaderId     | LeaderId,用于F重定向C的请求              |
-| prevLogIndex | 上一个log条目的索引,用来校验请求合法性   |
-| prevLogTerm  | 上一个log条目的任期号,用来校验请求合法性 |
-| entries[]    | 准备存储的log(心跳为空;一次通讯可发多个) |
-| leaderCommit | Leader已经提交的日志索引                 |
+| 参数         | 含义                     | 意义                                |
+| ------------ | ------------------------ | ----------------------------------- |
+| term         | Leader的任期号           |
+| leaderId     | LeaderId                 | 用于F重定向C的请求                  |
+| prevLogIndex | 上一个log条目的索引      | 用来校验请求合法性                  |
+| prevLogTerm  | 上一个log条目的任期号    | 用来校验请求合法性                  |
+| entries[]    | 准备存储的log数据        | 心跳则为空;数组形式一次通讯可发多个 |
+| leaderCommit | Leader已经提交的日志索引 | 用于覆盖Follower                    |
 
 ### `RequestVote RPC` Candidate发起选举请求 C->F
 
-| 参数          | 含义                              |
-| ------------- | --------------------------------- |
+| 参数          | 含义                              | 意义                                                    |
+| ------------- | --------------------------------- | ------------------------------------------------------- |
 | term          | Candidate的任期号                 |
 | candidateId   | 发起选举的ID                      |
-| lastLongIndex | Candidate最后一个日志条目的索引值 |
-| lastLogTerm   | Candidate最后一个日志条目的任期号 |
+| lastLogTerm   | Candidate最后一个日志条目的任期号 | `Follower`会拒绝比自己term小的`RequestVote`             |
+| lastLongIndex | Candidate最后一个日志条目的索引值 | term相同时,`Follower`会拒绝比自己index小的`RequestVote` |
 
 
-### `InstallSnapshot RPC`
+### `InstallSnapshot RPC` 分块日志快照给太落后的节点 C->F
 
-TODO
+分块的日志快照
 
 ---
 
@@ -50,7 +50,7 @@ TODO
 
    - `重选` 多个`Candidate`时, 可能选票无法超越半数, 此时Term加1并`RequestVote RPC`重新选举
 
-> 投票原则 `先到先得`, 先收到谁的`RequestVote RPC`就把选票给谁
+> 投票原则 `Follower`会拒绝日志没有自己新的`RequestVote RPC` (先对比term 后对比lastLogIndex)
 
 > 选举时间 每个选举的时间都是随机的, 以减小出现多个`Candidate`同时出现的概率
 
@@ -58,7 +58,30 @@ TODO
 
 ## Log Replication
 
-TODO
+### 流程
+
+1. `Leader`将客户端发来的请求命令附加(append)到日志中
+2. 并行的向其他节点发送`AppendEntries RPC`
+3. 其他节点收到RPC后进行持久化和执行, 然后响应`Leader`返回值
+
+> 此过程出现超时或报错时(崩溃,运行缓慢,网络丢包等), `Leader`会不断重试
+
+### 已提交 committed
+
+- `AppendEntries RPC`被复制到过半数节点, 该日志就会被提交.
+- 同时Leader日志中该日志前所有日志也会被提交, 包括由其他Leader创建的日志
+
+### 一致性
+
+`Leader` `Follower` 冲突的日志会被`Leader`的日志覆盖
+
+1. `Leader`针对每个`Follower`都维护了一个`nextIndex`字段(下一个需要发送给该Follower的日志索引值).
+2. 当`Leader`刚获得权力时,他初始化所有`nextIndex`为自己最后一条日志的索引值+1
+3. 若一个`Follower`日志和`Leader`不一致, 那么下一次`AppendEntries RPC`的一致性检查就会失败
+4. 失败后`Leader`会减小`nextIndex`并重试, 直到`nextIndex`会在某个位置双方达成一致
+5. 在该位置后执行日志覆盖, 使`Leader` `Follower`的日志保持一致
+
+---
 
 ## vs paxos
 
