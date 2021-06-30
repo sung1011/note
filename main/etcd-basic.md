@@ -11,20 +11,37 @@ unix 的`/etc`文件夹 + d (distribute) = etcd 用于`存储分布式配置的�
 | `Client层`     etcdctl/clientv3                       |
 --------------------------------------------------------
 --------------------------------------------------------
-| `API层`     Raft-HTTP  gRPC-API  HTTP-API(v2/v3)      |
+| `API层`                                               |
+| Raft-HTTP                                            |
+| gRPC-API                                             |
+| HTTP-API(v2/v3)                                      |
 --------------------------------------------------------
 --------------------   ----------------------------------
 | `Raft层`          |  | `Logic层`                        |
-| Leader-Election  |   | KVServer,  Quota,  Maintenance  |
-| Log-Replication  |   | Apply,  Auth,  Compactor        |
-| Membership       |   | treeIndex,  Lease               |
+| Leader-Election  |   |                                 |
+|                  |   | KVServer                        |
+| Log-Replication  |   |                                 |
+|                  |   | Quota                           |
+| Membership       |   |                                 |
+|                  |   | Maintenance                     |
 | Read-Index       |   |                                 |
+|                  |   | Apply                           |
 | Learner          |   |                                 |
-| ...              |   |                                 |
+|                  |   | Auth                            |
+|                  |   |                                 |
+|                  |   | Compactor                       |
+|                  |   |                                 |
+|                  |   | TreeIndex                       |
+|                  |   |                                 |
+|                  |   | Lease                           |
+|                  |   |                                 |
 |                  |   |                                 |
 --------------------    ---------------------------------
 ----------------------------------------------------------
-| `存储层`    WAL,  Snapshot,  boltdb                     |
+| `存储层`                                                 |
+| WAL                                                     |
+| Snapshot                                                |
+| boltDB                                                  |
 ----------------------------------------------------------
 ```
 

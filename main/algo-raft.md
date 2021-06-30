@@ -62,11 +62,14 @@
 
 1. WAL `Leader`将客户端发来的请求命令附加(append)到日志中
 2. 并行的向其他节点广播`AppendEntries RPC`
-3. 其他节点收到RPC后进行持久化和执行, 然后响应`Leader`返回值
+3. 其他节点收到RPC后进行持久化
 4. 若超过半数节点持久化成功, 则该日志标记为已提交(Committed)
-5. etcdserver模块异步从Raft模块获取已提交的日志, 应用到状态机(boltdb)
+5. 响应`Leader`返回值
+6. etcdserver模块异步从Raft模块获取已提交的日志, 更新到状态机(boltdb)
 
 > 此过程出现超时或报错时(崩溃,运行缓慢,网络丢包等), `Leader`会不断重试
+
+> `返回时机` 日志条目已提交(commited)后, Leader响应C返回值
 
 ### 已提交 committed
 
