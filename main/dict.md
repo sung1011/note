@@ -493,7 +493,7 @@
 | faint               | 头晕,隐约,微弱                                         |
 | falling-short       | 低于,落空,没有达到                                     |
 | falsified           | 伪造的forge,篡改tamper                                 |
-| falter              | 衰退decline,颤抖tremble                                |
+| falter              | 退缩,动摇,迟疑,犹豫,衰退decline,颤抖tremble                                |
 | famine              | 饥荒debt                                               |
 | fancy               | 花哨                                                   |
 | farce               | 闹剧,胡闹mischief                                      |
@@ -1040,7 +1040,7 @@
 | renege              | 反悔,食言,违约                                         |
 | renounce            | 放弃waive,背弃desert                                   |
 | repeatable-read     | 可重复读                                               |
-| repell              | 击退                                                   |
+| repell              | 击退,驱逐,抵制                                                   |
 | repent              | 忏悔confess,悔改,悔过,后悔                             |
 | replenish           | 补充supplement,重新充实make-up,续订refill              |
 | reproach            | 羞辱,职责,辱骂                                         |
@@ -1419,3 +1419,26 @@
 | yell                | 大喊,大叫                                              |
 | yelled              | 大喊,喊道                                              |
 | yerown              | 臭名昭著                                               |
+gulp|大口吞下
+unscathed|毫发无伤,安然无恙
+loathe|憎恨,厌恶,恨透
+carve-out|开辟,开拓,挖出来
+genocide|种族灭绝,种族屠杀
+resort |诉诸,采用
+feckless|软弱,无用,没精神,不负责的
+howling|嚎叫,咆哮,怒吼
+stew|炖,煮
+outwitted|智取,可以愚弄
+annex|附件,附录,附属
+indelible|不褪色,难以磨灭,擦不掉
+awash|铺天盖地,泛滥成灾,浸没
+dwarf|侏儒,矮人,矮一截,差一点,相形见绌
+distant|疏远,遥远,偏远
+hangar|机库,车库,机棚
+elbow|手肘,肘部,胳膊肘
+flippant|轻率,无礼,轻浮
+contemptible|卑鄙的,可耻的
+bloodstained|血腥,血淋淋,血渍
+prep|预备,准备好
+detonator|炸药,雷管,起爆器
+locomotive|机车,火车,机动性
