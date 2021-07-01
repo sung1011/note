@@ -23,18 +23,18 @@
 ```
 
 1. `client`
-2. `gRPC-API`
    - 负载均衡Round-robin轮询
+2. `gRPC-API`
 3. `KVServer`
-   1. 拦截器中间件
+   - 拦截器中间件
       - debug日志
       - metrics统计
       - 请求参数校验
-   2. 执行前集群必须有Leader(防止脑裂)
-   3. 慢日志
+   - 执行前集群必须有Leader(防止脑裂)
+   - 慢日志
 4. `Read-Index` 实现线性读
-5. `treeIndex` 内存B-tree索引; 查询key对应的版本号
-6. `boltDB` KV持久化存储; B+tree; 查询版本号对应的值(值的结构为key-value)
+5. `treeIndex` (MVCC)内存B-tree索引; 查询key对应的版本号
+6. `boltDB` (MVCC)KV持久化存储; B+tree; 查询版本号对应的值(值的结构为key-value)
 
 ## 串行读 Serializable
 
@@ -58,7 +58,22 @@
 
 ![img](res/etcd-read.png)
 
-1. 从treeIndex(B-tree)查询key对应的版本号
-2. 查询版本号对应的值(值的结构为key-value); 先从buffer(内存二分查找)查询; 若未命中再从boltDB(B+tree)查询
-   - key: {version}
-   - val: {key}{value}
+### TreeIndex
+
+从treeIndex(B-tree)查询key对应的版本号
+
+### boltDB
+
+查询版本号对应的值(值的结构为key-value); 先从buffer(内存二分查找)查询; 若未命中再从boltDB(B+tree)查询
+
+- 格式
+  - key: {version}
+  - val:
+    - key名称
+    - key创建时的版本号 create_revision
+    - 最后一次修改的版本号 mod_revision
+    - key自身修改的次数 version
+    - value
+    - 租约信息
+
+> 版本号为一个全局唯一自增数字, currentVersion但只存储在内存, 重启etcd后通过枚举遍历得到currentVersion

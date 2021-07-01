@@ -63,6 +63,7 @@ unix 的`/etc`文件夹 + d (distribute) = etcd 用于`存储分布式配置的�
   - Auth鉴权模块
   - Lease租约模块
   - Compactor压缩模块
+  - Quota配额校验模块
 
 - `存储层`
   - 预写日志WAL模块 保障了数据持久化
