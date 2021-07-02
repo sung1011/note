@@ -10,6 +10,8 @@
 
 ## [test](go-test.md)
 
+## [code](go-code.md)
+
 ## GC
 
 ## ref
