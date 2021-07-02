@@ -160,11 +160,11 @@
 
 ## code
 
+- etcd  
 - mq  
 - CURL
 - gRPC  
 - protobuff  
-- etcd  
 - nginx源码  
 - redis源码  
 
@@ -194,16 +194,3 @@ type Matcher interface {
 }
 
 ```
-
-## lich
-
-- `add` key and val, if already exist throw errors
-- `set` replace val, if not exist throw errors
-- `list` by rand, by asc, by mark, by time
-- `mark` x, _, o, ooo
-- `import` csv
-- `export` csv
-
-## lich sql field
-
-key, val, mark, ctime, stime, uid

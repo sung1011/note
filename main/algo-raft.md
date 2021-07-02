@@ -50,7 +50,7 @@
 
    - `重选` 多个`Candidate`时, 可能选票无法超越半数, 此时Term加1并`RequestVote RPC`重新选举
 
-> 投票原则 `Follower`会拒绝日志没有自己新的`RequestVote RPC` (先对比term 后对比lastLogIndex)
+> 当选条件/投票原则 `Follower`会拒绝日志没有自己新的`RequestVote RPC` (先对比term 后对比lastLogIndex); 即 `Candidate`至少要比大多数新才能当选
 
 > 选举时间 每个选举的时间都是随机的, 以减小出现多个`Candidate`同时出现的概率
 
