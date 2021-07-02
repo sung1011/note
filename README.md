@@ -29,6 +29,8 @@
 
 #### [svn](main/svn.md)
 
+---
+
 ### basic  
 
 #### [design pattern 设计模式](main/dp.md)
@@ -44,6 +46,8 @@
 #### [scale 单位换算](main/scale.md)
 
 #### [DNS](main/DNS.md)
+
+---
 
 ### database  
 
@@ -65,6 +69,8 @@
 
 #### ELK
   
+---
+
 ### web  
 
 #### [authorize](main/auth.md)
@@ -87,6 +93,8 @@
 
 #### restfulAPI
 
+---
+
 ### concept
 
 #### [transaction 事务](main/acid.md)
@@ -107,6 +115,8 @@
 
 #### GUID
 
+---
+
 ### deploy  
 
 #### [linux](main/linux.md)
@@ -117,13 +127,17 @@
 
 #### [CI/CD](main/cicd.md)
 
+---
+
 ### safe  
 
 #### [DDoS](main/ddos.md)
 
 #### [anti cheat 防作弊](main/anti_cheat.md)
 
-### programming language  
+---
+
+### programming-language  
 
 #### [go](main/go.md)
 
@@ -132,6 +146,8 @@
 #### [nodejs](main/nodejs.md)
 
 #### [shell](main/shell.md)
+
+---
 
 ### other  
 
