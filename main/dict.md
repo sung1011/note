@@ -493,7 +493,7 @@
 | faint               | 头晕,隐约,微弱                                         |
 | falling-short       | 低于,落空,没有达到                                     |
 | falsified           | 伪造的forge,篡改tamper                                 |
-| falter              | 退缩,动摇,迟疑,犹豫,衰退decline,颤抖tremble                                |
+| falter              | 退缩,动摇,迟疑,犹豫,衰退decline,颤抖tremble            |
 | famine              | 饥荒debt                                               |
 | fancy               | 花哨                                                   |
 | farce               | 闹剧,胡闹mischief                                      |
@@ -1040,7 +1040,7 @@
 | renege              | 反悔,食言,违约                                         |
 | renounce            | 放弃waive,背弃desert                                   |
 | repeatable-read     | 可重复读                                               |
-| repell              | 击退,驱逐,抵制                                                   |
+| repell              | 击退,驱逐,抵制                                         |
 | repent              | 忏悔confess,悔改,悔过,后悔                             |
 | replenish           | 补充supplement,重新充实make-up,续订refill              |
 | reproach            | 羞辱,职责,辱骂                                         |
@@ -1090,7 +1090,7 @@
 | rumble              | 噪音noise,轰隆隆                                       |
 | rumor               | 谣言,传闻,谣传                                         |
 | rural               | 乡村rustic,田园                                        |
-| saddle              | 马鞍                                                   |
+| saddle              | 马鞍,担负                                              |
 | saint               | 圣人sage                                               |
 | sake                | 目的,原因                                              | sake-of目的                                          |
 | saloon              | 轿车                                                   |
@@ -1215,7 +1215,7 @@
 | squeal              | 尖叫                                                   |
 | squeeze             | 挤碎crush,压榨                                         |
 | stab                | 刺,捅,戳poke                                           |
-| stain               | 弄脏foul,玷污tarnish                                   |
+| stain               | 弄脏foul,玷污tarnish,污点                              |
 | stake               | 赌注wager,赌钱speculate,股份,利益,利害关系             |
 | stalking            | 缠扰                                                   |
 | stance              | 立场,姿态,态度                                         |
@@ -1254,7 +1254,7 @@
 | submission          | 意见,陈述,提交                                         |
 | subordinate         | 下属underling,从属                                     |
 | successor           | 接班人,继承者heritor                                   |
-| suffocate           | 窒息,憋                                                |
+| suffocate           | 窒息,憋,噎住,喘不过气                                                |
 | suicide             | 自杀                                                   |
 | supervisor          | 主管,监督者,导师                                       |
 | suppress            | 压制,抑制,遏制                                         |
@@ -1419,31 +1419,35 @@
 | yell                | 大喊,大叫                                              |
 | yelled              | 大喊,喊道                                              |
 | yerown              | 臭名昭著                                               |
-gulp|大口吞下
-unscathed|毫发无伤,安然无恙
-loathe|憎恨,厌恶,恨透
-carve-out|开辟,开拓,挖出来
-genocide|种族灭绝,种族屠杀
-resort |诉诸,采用
-feckless|软弱,无用,没精神,不负责的
-howling|嚎叫,咆哮,怒吼
-stew|炖,煮
-outwitted|智取,可以愚弄
-annex|附件,附录,附属
-indelible|不褪色,难以磨灭,擦不掉
-awash|铺天盖地,泛滥成灾,浸没
-dwarf|侏儒,矮人,矮一截,差一点,相形见绌
-distant|疏远,遥远,偏远
-hangar|机库,车库,机棚
-elbow|手肘,肘部,胳膊肘
-flippant|轻率,无礼,轻浮
-contemptible|卑鄙的,可耻的
-bloodstained|血腥,血淋淋,血渍
-prep|预备,准备好
-detonator|炸药,雷管,起爆器
-locomotive|机车,火车,机动性
-shoreline|海岸线,沿岸,沿岸
-haul|牵引,托运,改变航向
-boiler|锅炉,炉,锅
-reform|改革,改造,变革
-ingrain|植根,植入,根深蒂固
+| gulp                | 大口吞下                                               |
+| unscathed           | 毫发无伤,安然无恙                                      |
+| loathe              | 憎恨,厌恶,恨透                                         |
+| carve-out           | 开辟,开拓,挖出来                                       |
+| genocide            | 种族灭绝,种族屠杀                                      |
+| resort              | 手段,诉诸,采用                                         |
+| feckless            | 软弱,无用,没精神,不负责的                              |
+| howling             | 嚎叫,咆哮,怒吼                                         |
+| stew                | 炖,煮                                                  |
+| outwitted           | 智取,可以愚弄                                          |
+| annex               | 附件,附录,附属                                         |
+| indelible           | 不褪色,难以磨灭,擦不掉                                 |
+| awash               | 铺天盖地,泛滥成灾,浸没                                 |
+| dwarf               | 侏儒,矮人,矮一截,差一点,相形见绌                       |
+| distant             | 疏远,遥远,偏远                                         |
+| hangar              | 机库,车库,机棚                                         |
+| elbow               | 手肘,肘部,胳膊肘                                       |
+| flippant            | 轻率,无礼,轻浮                                         |
+| contemptible        | 卑鄙的,可耻的                                          |
+| bloodstained        | 血腥,血淋淋,血渍                                       |
+| prep                | 预备,准备好                                            |
+| detonator           | 炸药,雷管,起爆器                                       |
+| locomotive          | 机车,火车,机动性                                       |
+| shoreline           | 海岸线,沿岸,沿岸                                       |
+| haul                | 牵引,托运,改变航向                                     |
+| boiler              | 锅炉,炉,锅                                             |
+| reform              | 改革,改造,变革                                         |
+| ingrain             | 植根,植入,根深蒂固                                     |
+| stuck               | 被困,卡住,停留                                         |
+| redemption          | 赎回,救赎,偿还                                         |
+| collide             | 碰撞,冲突,撞击,抵触                                    |
+| exquisite           | 精致,精湛,精美,高雅                                    |
