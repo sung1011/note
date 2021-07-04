@@ -1442,3 +1442,8 @@ bloodstained|血腥,血淋淋,血渍
 prep|预备,准备好
 detonator|炸药,雷管,起爆器
 locomotive|机车,火车,机动性
+shoreline|海岸线,沿岸,沿岸
+haul|牵引,托运,改变航向
+boiler|锅炉,炉,锅
+reform|改革,改造,变革
+ingrain|植根,植入,根深蒂固
