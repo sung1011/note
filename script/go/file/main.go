@@ -3,6 +3,7 @@ package main
 // https://colobu.com/2016/10/12/go-file-operations/
 
 import (
+	"io"
 	"io/ioutil"
 	"os"
 )
@@ -28,7 +29,7 @@ func (tf *TheFile) Create() (*os.File, error) {
 }
 
 func (tf *TheFile) Exist() bool {
-	_, err := tf.Stat()
+	_, err := os.Stat(tf.path)
 
 	if err != nil {
 		if os.IsExist(err) {
@@ -48,16 +49,11 @@ func (tf *TheFile) Truncate(n int64) error {
 }
 
 func (tf *TheFile) WriteSimple(bs []byte) error {
+	// 覆盖写 os.O_WRONLY|os.O_CREATE|os.O_TRUNC
 	return ioutil.WriteFile(tf.path, bs, 0666)
 }
 func (tf *TheFile) ReadSimple() ([]byte, error) {
 	return ioutil.ReadFile(tf.path)
-}
-
-func (tf *TheFile) Stat() (os.FileInfo, error) {
-	return os.Stat(tf.path)
-	// stat, err := os.Stat(tf.path)
-	// return stat, err
 }
 
 func (tf *TheFile) Mv(new string) error {
@@ -89,17 +85,27 @@ func (tf *TheFile) Open(flag int, mode os.FileMode) (*os.File, error) {
 
 	// os.Create(name) == OpenFile(name, O_RDWR|O_CREATE|O_TRUNC, 0666)  读|写|空|创建
 
-	return os.OpenFile(tf.path, flag, mode)
+	f, err := os.OpenFile(tf.path, flag, mode)
+	if err != nil {
+		return nil, err
+	}
+	defer f.Close()
+	return f, nil
 }
 
-func (tf *TheFile) Chmod(mode os.FileMode) error {
-	return os.Chmod(tf.path, mode)
-}
-
-func (tf *TheFile) Chown(uid, gid int) error {
-	return os.Chown(tf.path, uid, gid)
-}
-
-func (tf *TheFile) Symlink(target string) error {
-	return os.Symlink(tf.path, target)
+func (tf *TheFile) Copy(target string) error {
+	src, err := os.Open(tf.path)
+	if err != nil {
+		return err
+	}
+	tgt, err := os.Create(target)
+	if err != nil {
+		return err
+	}
+	// 覆盖式copy
+	_, err = io.Copy(tgt, src)
+	if err != nil {
+		return err
+	}
+	return tgt.Sync()
 }
