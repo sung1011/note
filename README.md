@@ -67,7 +67,7 @@
 
 #### [etcd](main/etcd.md)
 
-#### TODO[ELK](_)
+#### TODO [ELK](_)
   
 ---
 
@@ -109,9 +109,9 @@
 
 #### [micro server 微服务](main/ms.md)
 
-#### TODO[协程](_)
+#### TODO [协程](_)
 
-#### TODO[GUID](_)
+#### TODO [GUID](_)
 
 ---
 
@@ -130,8 +130,6 @@
 ### safe  
 
 #### [DDoS](main/ddos.md)
-
-#### [anti cheat 防作弊](main/anti_cheat.md)
 
 ---
 
@@ -162,6 +160,8 @@
 #### [exp 经验](main/exp.md)
 
 #### [keymaps](main/keymaps.md)
+
+#### [anti cheat 防作弊](main/anti_cheat.md)
 
 ---
 

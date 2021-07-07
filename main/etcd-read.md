@@ -46,7 +46,7 @@
 
 ## 线性读 (默认)
 
-    1. 节点x收到请求, 访问Leader获取当前已提交日志索引(committed index)
+    1. 节点x收到读请求, 访问Leader获取当前已提交日志索引(committed index)
     2. 等待x节点状态机赶上Leader进度. 即:已应用索引(applied index) >= Leader已提交索引(commited index)
     3. 通知读请求可以去状态机访问数据了
 

@@ -33,11 +33,12 @@
 
 ### 状态
 
-- `Leader领导人` 处理所有客户端请求, 通常系统中只有一个Leader.
+- `Leader领导人` 处理所有客户端请求, 通常系统中Leader是唯一的.
 
 - `Follower跟随者` 不会主动发送请求, 只简单响应`Leader`或`Candidate`的请求; 客户端对`Follower`请求, 会被`Follower`重定向到Leader.
 
-- `Candidate候选人` 若`Follower`接收不到`Leader`的消息, 它就会变成`Candidate`并发起一次选举(新任期Term), 获得半数以上选票的`Candidate`会成为新`Leader`; 选票平分或都不超半数则重选
+- `Candidate候选人` 若`Follower`接收`Leader`的心跳超时, 它就会变成`Candidate`并发起一次选举(新任期Term), 获得半数以上选票的`Candidate`会成为新`Leader`; 选票平分或都不超半数则重选.
+  - `PreCandidate` 假设网络原因当某个`Follower`无法收到心跳, 它将不断自增term并发起选举. 为避免此类无效选举, etcd3.4引入`PreVote参数`(默认false), 令`Follower`转`Candidate`前先进入`PreCandidate`状态, 不自增term发起预投票, 大多数节点认可才真正开始选举流程
 
 ### 流程
 
@@ -48,11 +49,13 @@
 
    - `落选` 收到其他`Candidate`的`AppendEntries RPC`并且其`Term`大于自己的, 则承认其`Leader`的合法性并自己状态转换回`Follower`; 若其`Term`小于自己的, 会拒绝这次RPC并且保持`Candidate`状态
 
-   - `重选` 多个`Candidate`时, 可能选票无法超越半数, 此时Term加1并`RequestVote RPC`重新选举
+   - `重选` 多个`Candidate`时, 可能选票无法超越半数, 此时Term加1并`RequestVote RPC`重新选举, 故不会出现多个`Leader`
 
-> 当选条件/投票原则 `Follower`会拒绝日志没有自己新的`RequestVote RPC` (先对比term 后对比lastLogIndex); 即 `Candidate`至少要比大多数新才能当选
+> 当选条件/投票原则 `Follower`会拒绝日志没有自己新(先对比term, 后对比lastLogIndex)的`RequestVote RPC`; 即 `Candidate`至少要比大多数新才能当选
 
 > 选举时间 每个选举的时间都是随机的, 以减小出现多个`Candidate`同时出现的概率
+
+> `PreVote` 假设网络原因当某个`Follower`无法收到心跳, 它将不断自增term并发起选举. 为避免此类无效选举, etcd3.4引入`PreVote参数`(默认false), 令`Follower`转`Candidate`前先进入`PreCandidate`状态, 不自增term发起预投票, 大多数节点认可才真正开始选举流程
 
 ---
 
@@ -121,3 +124,4 @@ TODO
 - [共识算法：Raft](https://www.jianshu.com/p/8e4bbe7e276c)
 - [动画演示](http://thesecretlivesofdata.com/raft/)
 - [分布式一致性协议Raft原理](https://wingsxdu.com/post/algorithms/raft/)
+- [深度解析raft分布式一致性协议](https://blog.csdn.net/z69183787/article/details/112168120)
