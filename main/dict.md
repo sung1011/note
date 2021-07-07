@@ -1254,7 +1254,7 @@
 | submission          | 意见,陈述,提交                                         |
 | subordinate         | 下属underling,从属                                     |
 | successor           | 接班人,继承者heritor                                   |
-| suffocate           | 窒息,憋,噎住,喘不过气                                                |
+| suffocate           | 窒息,憋,噎住,喘不过气                                  |
 | suicide             | 自杀                                                   |
 | supervisor          | 主管,监督者,导师                                       |
 | suppress            | 压制,抑制,遏制                                         |
@@ -1451,3 +1451,10 @@
 | redemption          | 赎回,救赎,偿还                                         |
 | collide             | 碰撞,冲突,撞击,抵触                                    |
 | exquisite           | 精致,精湛,精美,高雅                                    |
+| withstand           | 承受,耐受,经受,抵抗                                    |
+| skull               | 颅骨,头骨,头颅,脑袋                                    |
+| secretary           | 秘书,部长                                              |
+| bungle              | 搞砸,延误,笨拙                                         |
+| pebble              | 石子,砾石,鹅卵石                                       |
+| frantic             | 疯狂,狂乱,慌乱                                         |
+| squirrel            | 松鼠,栗鼠,灰鼠                                         |
