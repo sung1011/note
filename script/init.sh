@@ -11,6 +11,7 @@
 # const
 {
     go_version=1.16.5
+    docker_compose_version=1.29.2
 
     zsh_theme=arrow
 }
@@ -35,6 +36,7 @@
     CHSH=yes RUNZSH=yes sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     # 配置
     sed -i "s/^ZSH_THEME.*/ZSH_THEME=${zsh_theme}/g" "${HOME}"/.zshrc
+    # 插件 autojump, zsh-autosuggestions, zsh-syntax-highlighting, docker, docker-compose
 }
 
 
@@ -51,6 +53,12 @@
     yum install -y yum-utils 
     yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
     yum install -y docker-ce docker-ce-cli containerd.io
+}
+
+# docker-compose
+{
+    curl -L "https://github.com/docker/compose/releases/download/${docker_compose_version}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    chmod +x /usr/local/bin/docker-compose
 }
 
 # go
