@@ -7,6 +7,20 @@
 # 单步进行重装
 # 交互模式
 
+# append string, if the string not exists in the file.
+appendNX() {
+    str=$1
+    file=$2
+
+    if [ ! -f "${file}" ]; then
+        echo "file not exists: ${file}"
+        return
+    fi
+    if [ -z "$(grep "${str}" "${file}")" ]; then
+        printf "\n" >> "${file}"
+        echo "${str}" >> "${file}"
+    fi
+}
 
 # const
 {
@@ -25,8 +39,10 @@
 # installer
 {
     yum update -y
+    yum install -y epel-release
     yum install -y wget
     yum install -y git
+    yum install -y svn
 }
 
 # oh-my-zsh
@@ -36,7 +52,18 @@
     CHSH=yes RUNZSH=yes sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     # 配置
     sed -i "s/^ZSH_THEME.*/ZSH_THEME=${zsh_theme}/g" "${HOME}"/.zshrc
-    # 插件 autojump, zsh-autosuggestions, zsh-syntax-highlighting, docker, docker-compose
+    # 插件 
+        # autojump
+        git clone git://github.com/wting/autojump.git
+        cd autojump && ./install.py
+        appendNX "[[ -s /root/.autojump/etc/profile.d/autojump.sh ]] && source /root/.autojump/etc/profile.d/autojump.sh; autoload -U compinit && compinit -u" "${HOME}"/.zshrc
+        # zsh-autosuggestions
+        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+        # zsh-syntax-highlighting
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+        # open above
+        sed -i 's/^plugins=.*$/plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump)/g' "${HOME}"/.zshrc
 }
 
 
@@ -53,6 +80,11 @@
     yum install -y yum-utils 
     yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
     yum install -y docker-ce docker-ce-cli containerd.io
+
+    # 启动
+    systemctl restart docker.service
+    # 开机自启动
+    systemctl enable docker.service
 }
 
 # docker-compose
@@ -74,5 +106,3 @@
         echo "export PATH=\$PATH:/usr/local/go/bin" >> "${HOME}"/.zshrc
     fi
 }
-
-# nginx
