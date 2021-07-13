@@ -43,6 +43,7 @@ appendNX() {
     yum install -y wget
     yum install -y git
     yum install -y svn
+    yum install -y gcc
 }
 
 # oh-my-zsh
@@ -58,9 +59,9 @@ appendNX() {
         cd autojump && ./install.py
         appendNX "[[ -s /root/.autojump/etc/profile.d/autojump.sh ]] && source /root/.autojump/etc/profile.d/autojump.sh; autoload -U compinit && compinit -u" "${HOME}"/.zshrc
         # zsh-autosuggestions
-        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+        git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-autosuggestions
         # zsh-syntax-highlighting
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting
 
         # open above
         sed -i 's/^plugins=.*$/plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump)/g' "${HOME}"/.zshrc
