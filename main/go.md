@@ -4,13 +4,11 @@
 
 ## [type](go-type.md)
 
-## [标准库](go-package.md)
+## [basic](go-basic.md)
 
 ## [并发](go-concurrent.md)
 
 ## [test](go-test.md)
-
-## [code](go-code.md)
 
 ## GC
 

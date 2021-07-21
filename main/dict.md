@@ -971,7 +971,7 @@
 | prohibit            | 禁止proscribe,阻止deter,不准forbid                     |
 | prolong             | 延长extend,拖延deplay,延期,延续                        |
 | propaganda          | 宣传                                                   |
-| propagate           | 传播,宣传,散布                                         |
+| propagate           | 传播,宣传,散布,繁殖                                         |
 | propeller           | 螺旋桨prop                                             |
 | proposal            | 方案,提议,建议                                         |
 | prosecuted          | 起诉,追究,审判                                         |
@@ -1458,3 +1458,4 @@
 | pebble              | 石子,砾石,鹅卵石                                       |
 | frantic             | 疯狂,狂乱,慌乱                                         |
 | squirrel            | 松鼠,栗鼠,灰鼠                                         |
+arcade|街机,游乐场,电玩

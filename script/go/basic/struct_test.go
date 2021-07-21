@@ -2,16 +2,20 @@ package main
 
 import (
 	"testing"
+
+	. "github.com/smartystreets/goconvey/convey"
 )
 
 type Struct_Foo struct {
 	Name string
 }
 
-func TestStruct_Eq(t *testing.T) {
+func Test_Struct_Eq(t *testing.T) {
 	foo := Struct_Foo{}
 	bar := Struct_Foo{}
-	if foo != bar {
-		t.Error("not eq")
-	}
+	Convey("equal", t, func() {
+		So(foo == bar, ShouldBeTrue)
+
+		So(&foo != &bar, ShouldBeTrue)
+	})
 }
