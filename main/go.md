@@ -4,7 +4,7 @@
 
 ## [type](go-type.md)
 
-## [basic](go-basic.md)
+## [package](go-package.md)
 
 ## [并发](go-concurrent.md)
 
