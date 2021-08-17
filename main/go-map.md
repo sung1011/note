@@ -33,13 +33,18 @@ type bmap struct { // A bucket for a Go map.
 
 ```go
 m := map[string]int{"red": 1, "green": 2, "blue": 3} // len=3; 常用
+
 m := make(map[string]int, 10) // empty map; len=0; cap=10 常用
 
 m := map[string]int{} // empty map; prt=xxx len=0 cap=0; 可append
-var m = map[string]int // nil ptr map; panic if written to -- 没啥意义，基本不可用，不能赋值和append
+
+var m = map[string]int // nil ptr map; panic if written to -- 没啥意义，不可用，不能赋值和append
+
 ```
 
-> map有cap的概念，但无法使用cap()
+> `cap()` map有cap的概念，但无法使用cap()
+
+> `key限制` 不能使用 == 做比较的类型不能做map的键; 如 slice, func, strct{slice}
 
 ## 返回值 key是否存在
 

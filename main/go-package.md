@@ -1,17 +1,29 @@
 # go package
 
-## TODO [archive](_)
+## import(go-import.md)
+
+## pkg
+
+### code
+
+#### [context](../script/go/basic/context_test.go)
+
+#### [file](../script/go/file/main_test.go)
+
+### describe
+
+#### TODO [archive](_)
 
 - tar
 - zip
 
-## TODO [bufio](_)
+#### TODO [bufio](_)
 
-## TODO [builtin](_)
+#### TODO [builtin](_)
 
-## TODO [bytes](_)
+#### TODO [bytes](_)
 
-## TODO [compress](_)
+#### TODO [compress](_)
 
 - bzip2
 - flate
@@ -19,15 +31,15 @@
 - lzw
 - zlib
 
-## [context](go-context.md)
+#### [context](go-context.md)
 
-## TODO [container](_)
+#### TODO [container](_)
 
 - heap
 - list
 - ring
 
-## TODO [crypto](_)
+#### TODO [crypto](_)
 
 - aes
 - cipher
@@ -49,12 +61,12 @@
 - x509
 - x509/pkix
 
-## TODO [database](_)
+#### TODO [database](_)
 
 - sql
 - sql/driver
 
-## TODO [debug](_)
+#### TODO [debug](_)
 
 - dwarf
 - elf
@@ -63,9 +75,9 @@
 - pe
 - plan9obj
 
-## TODO [embed](_)
+#### TODO [embed](_)
 
-## TODO [encoding](_)
+#### TODO [encoding](_)
 
 - ascii85
 - asn1
@@ -79,15 +91,15 @@
 - pem
 - xml
 
-## TODO [errors](_)
+#### TODO [errors](_)
 
-## TODO [expvar](_)
+#### TODO [expvar](_)
 
-## TODO [flag](_)
+#### TODO [flag](_)
 
-## TODO [fmt](_)
+#### TODO [fmt](_)
 
-## TODO [go](_)
+#### TODO [go](_)
 
 - ast
 - build
@@ -102,7 +114,7 @@
 - token
 - types
 
-## TODO [hash](_)
+#### TODO [hash](_)
 
 - adler32
 - crc32
@@ -110,7 +122,7 @@
 - fnv
 - maphash
 
-## TODO [image](_)
+#### TODO [image](_)
 
 - color
 - color/palette
@@ -119,32 +131,32 @@
 - jpeg
 - png
 
-## TODO [index](_)
+#### TODO [index](_)
 
 - suffixarray
 
-## TODO [io](_)
+#### TODO [io](_)
 
 - fs
 - ioutil
 
-## TODO [log](_)
+#### TODO [log](_)
 
 - syslog
 
-## TODO [math](_)
+#### TODO [math](_)
 
 - big
 - bits
 - cmplx
 - rand
 
-## TODO [mime](_)
+#### TODO [mime](_)
 
 - multipart
 - quotedprintable
 
-## TODO [net](_)
+#### TODO [net](_)
 
 - http
 - http/cgi
@@ -161,25 +173,25 @@
 - textproto
 - url
 
-## TODO [os](_)
+#### TODO [os](_)
 
 - exec
 - signal
 - user
 
-## TODO [path](_)
+#### TODO [path](_)
 
 - filepath
 
-## TODO [plugin](_)
+#### TODO [plugin](_)
 
-## TODO [reflect](go-reflect.md)
+#### TODO [reflect](go-reflect.md)
 
-## TODO [regexp](_)
+#### TODO [regexp](_)
 
 - syntax
 
-## TODO [runtime](_)
+#### TODO [runtime](_)
 
 - cgo
 - debug
@@ -188,45 +200,45 @@
 - race
 - trace
 
-## TODO [sort](_)
+#### TODO [sort](_)
 
-## TODO [strconv](_)
+#### TODO [strconv](_)
 
-## TODO [strings](_)
+#### TODO [strings](_)
 
-## TODO [sync](_)
+#### TODO [sync](_)
 
 - atomic
 
-## TODO [syscall](_)
+#### TODO [syscall](_)
 
 - js
 
-## TODO [testing](_)
+#### TODO [testing](_)
 
 - fstest
 - iotest
 - quick
 
-## TODO [text](_)
+#### TODO [text](_)
 
 - scanner
 - tabwriter
 - template
 - template/parse
 
-## TODO [time](_)
+#### TODO [time](_)
 
 - tzdata
 
-## TODO [unicode](_)
+#### TODO [unicode](_)
 
 - utf16
 - utf8
 
-## TODO [unsafe](_)
+#### TODO [unsafe](_)
 
-## TODO [internal](_)
+#### TODO [internal](_)
 
 - bytealg
 - cfg
@@ -256,9 +268,3 @@
 - trace
 - unsafeheader
 - xcoff
-
-## code
-
-### [context](../script/go/basic/context_test.go)
-
-### [file](../script/go/file/main_test.go)

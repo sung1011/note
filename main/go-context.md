@@ -257,7 +257,7 @@ func parentCancelCtx(parent Context) (*cancelCtx, bool) {
 }
 ```
 
-## 注意
+## notice
 
 - 不要把ctx放在结构体中,要以参数的方式进行传递
 - 以ctx作为参数的函数方法,应该把ctx作为第一个参数,放在第一位

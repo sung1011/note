@@ -3,17 +3,20 @@
 ## 数据结构
 
 - `ptr` 底层array被切的第一个元素地址 (切口)
-- `len` 切出的可用元素个数
-- `cap` 切出的可用+扩展元素个数 (从切口到array结尾的个数)
+- `len` 切出的`可用`元素个数
+- `cap` 切出的`可用`+`扩展`元素个数 (从切口到array结尾的个数)
 
 > 可用: 可获取(`sl[4]`)，可赋值(`sl[4] = xxx`)  
+
 > 扩展: 代表不可获取get和直接赋值set; 但可用来继续切(`sl[3:10]`)，或通过append赋值和扩容
+
+> 占用: 固定24byte (=ptr8 + len8 + cap8)
 
 ## 创建 初始化 访问
 
 ```go
-sl := make([]int, 5)
-sl := make([]int, 3, 5)
+sl := make([]int, 5) // len=5 cap=5
+sl := make([]int, 3, 5) // len=3 cap=5
 sl := []int{30, 50, 20}
 sl := []string{99: "foo"} // 100个元素
 var sl []int
@@ -22,14 +25,14 @@ var sl []int
 ## 数组 与 切片
 
 ```go
-
-arr := [...]string{"a", "b", "c", "d", "e"}
-
-sl := arr[1:3] //[b, c] len=(3-1); cap=(5-1)
-
-sl2 := sl[1:3] //[c d] len=(3-1); cap=(4-1)
-// 索引3 限制cap
-sl3 := arr[2:3:3] // [c] len=(3-2); cap=(3-2)
+// 数组
+arr := [...]string{"a", "b", "c", "d", "e", "f"}
+// 切片
+sl1 := arr[2:4] // [c, d] len=2 cap=4
+// 切片的切片, cap进一步缩小
+sl1_1 := sl1[1:3] // [d, e] len=2 cap=3 (即4-1)
+// 索引3限制cap
+sl2 := arr[2:4:5] // [c, d] len=2 cap=3 (即5-2)
 ```
 
 ## 赋值
@@ -68,9 +71,10 @@ sl2 := append(sl1, "x") // ["" a b c x] len=5 cap=8; sl2新建了底层arr
 ## 拷贝 copy(dst, src)
 
 ```go
-// 仅覆盖值 && 不改变len, cap
-n := copy([]int{1,2,3}, []int{666, 777, 888, 999}) //sl1 = {666, 777, 888};999 = 3
-n := copy([]int{1,2,3}, []int{666, 777}) //sl1 = {666, 777, 3}; n = 2
+// 仅覆盖值 && 不改变len, cap && 不报错
+n := copy([]int{1, 2, 3}, []int{666, 777, 888, 999}) //sl1 = {666, 777, 888}; n = 3 (即copy了3个值)
+
+n := copy([]int{1,2,3}, []int{666, 777}) //sl1 = {666, 777, 3}; n = 2 (即copy了2个值)
 ```
 
 > go doc builtin copy
@@ -84,10 +88,9 @@ n := copy([]int{1,2,3}, []int{666, 777}) //sl1 = {666, 777, 3}; n = 2
 ## 迭代
 
 ```go
-// v是每个元素的副本， v实质是items的副本在迭代
+// v是每个元素的副本, v实质是items的副本在迭代 (修改循环内v 不会同步修改sl)
 // 循环内修改引用类型(如slice) sl[i] 会同步修改循环内的v
 // 循环内修改值类型(如array) sl[i] 不会同步修改循环内的v
-// 修改循环内v 不会同步修改sl
 items = []string{"a", "b", "c"} //或 items = [...]string{"a", "b", "c"}
 for i, v := range items {
     if i == 0 {
@@ -102,7 +105,7 @@ for i, v := range items {
 
 // for
 for i := 0; i < len(sl); i++ {
-
+  fmt.Println(sl[i]) // sl下标都是从0开始, 所以可以for迭代
 }
 ```
 
@@ -115,7 +118,7 @@ for i := 0; i < len(sl); i++ {
 ```go
 func foo() {
 old_sl := ... //切片返回值
-new_sl := make([]T, len(old_sl)) //新的底层数组
+new_sl := make([]T, len(old_sl)) // 空切片 指针指向新的底层数组
 copy(new_sl, old_sl) //新切片
 return new_sl //新切片返回值
 }
