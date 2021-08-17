@@ -23,7 +23,7 @@ sp := &Student{ // 初始化 与new等效
     Age     :18,
 }
 
-sp := &Student{"Sam", 18} // 初始化 顺序很重要
+sp := &Student{"Sam", 18} // 初始化 顺序初始值
 ```
 
 ![img](res/go-struct-assign.jpg)
@@ -45,18 +45,21 @@ type User {
     name string
     school *schoolInfo // 当期望 不随User变化而变化，使用指针
 }
-// 指针接收者 修改类型本身 
-func (u *User) changeName() { // 不论用 u 或 &u 调用,都是拷贝指针,方法内部访问的和修改的都是原始的实例数据结构
+// 指针接收者 修改类型实例本身 (不论调用者是u或&u)
+func (u *User) changeName() {
     u.name = "xx"
 }
-// 值接收者 修改类型的副本
-func (u User) changeName() User { // 不论用u 或 &u 调用,都是拷贝整个底层数据结构的，方法内部访问的和修改的都是实例的副本
+// 值接收者 修改类型实例的副本 (不论调用者是u或&u)
+func (u User) changeName() User {
     u.name = "xx"
     return u
 }
 ```
 
-> 一般用指针接收者  
+> 关注Type是值类型还是引用类型, 引用类型用值接收者即可, 值类型区分区分是修改实例本身or生成副本
+
+> 如果一个工厂函数返回的是指针, 其方法都应当使用指针接收者 (即使该方法不修改实例本身); 例外: 让类型值符合某个接口时.
+
 > func(recv) 函数; recv.Method() 方法
 
 ## 基于基础类型的新类型
@@ -66,7 +69,7 @@ type Duration int64
 
 var i int64
 i = 100
-j := i // 最后一行赋值编译会报错 `j := Duration(i)` 需要改为强转类型，才能编译通过
+j := i // 最后一行赋值编译会报错; 需要改为强转类型 `j := Duration(i)`
 var dur Duration
 dur = j
 ```
@@ -143,6 +146,48 @@ func main() {
 }
 ```
 
+```go
+// *file是嵌入指针, 外层的File保障了*file不会被复制(没有获取*file的方法)
+type File struct {
+    *file
+}
+```
+
+```go
+// 无法访问另一个包公开类型的未公开字段
+// 可以访问另一个包公开类型的未公开字段(值是类型)的公开字段
+// TODO
+```
+
+## 标签tag
+
+```go
+type Server struct {
+    Name string `tag:"名字,域名"`
+    IP   string `tag:"ip地址" size:"30"`
+}
+
+func main() {
+    t := reflect.TypeOf(Server{})
+    tn, _ := t.FieldByName("IP")
+    fmt.Println(tn.Tag.Get("size")) // 30
+}
+```
+
+## [嵌套接口](go-interface.md#嵌入结构体)
+
+## 未公开类型的公开字段
+
+```go
+TODO
+```
+
+## 空 struct{}{}
+
+1. 不占用内存
+2. 地址不变
+
+
 ## 链表 与 双向链表
 
 ![img](res/go-struct-list.jpg)
@@ -172,32 +217,6 @@ type Tree strcut {
 }
 ```
 
-## 标签tag
+## ref
 
-```go
-type Server struct {
-    Name string `tag:"名字,域名"`
-    IP   string `tag:"ip地址" size:"30"`
-}
-
-func main() {
-    t := reflect.TypeOf(Server{})
-    tn, _ := t.FieldByName("IP")
-    fmt.Println(tn.Tag.Get("size")) // 30
-}
-```
-
-## [嵌套接口](go-interface.md#嵌入结构体)
-
-## 未公开类型的公开字段
-
-```go
-
-```
-
-## 空 struct{}{}
-
-1. 不占用内存
-2. 地址不变
-
-`https://www.cnblogs.com/myuniverse/p/11595043.html`
+<https://www.cnblogs.com/myuniverse/p/11595043.html>

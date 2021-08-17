@@ -42,15 +42,21 @@ var m = map[string]int // nil ptr map; panic if written to -- 没啥意义，不
 
 ```
 
+> `len()` 对map而言, len就是cap
+
 > `cap()` map有cap的概念，但无法使用cap()
 
-> `key限制` 不能使用 == 做比较的类型不能做map的键; 如 slice, func, strct{slice}
+> `key限制` 不能使用 == 做比较的类型不能做map的key; 如`切片slice`, `函数func`, `包含切片和函数的结构体struct{slice, func}`; chan可以做key
+
+> `val限制` 任何类型
 
 ## 返回值 key是否存在
 
 ```go
 m := map[string]int{"a":99, "b":22}
+
 v1, exists1 := m["a"] // 99, true
+
 v2, exists2 := m["xxx"] // 0, false
 ```
 
@@ -58,11 +64,12 @@ v2, exists2 := m["xxx"] // 0, false
 
 直接传递
 
-> map的副本值(很小，包含指向实际数据的指针)作为参数传递给函数。
+> map的副本值(即:指针)作为参数传递给函数。
 
 ## 并发安全
 
 ```go
+// 同步锁
 type RWMap struct {
     m map[string]int
     sync.RWMutex
@@ -80,6 +87,7 @@ func (r RWMap) Set(key string, val int) {
 ```
 
 ```go
+// 原子锁
 var sm sync.Map
 sm.Store(1, "a")
 if v,ok:=sm.Load(1);ok{
@@ -87,17 +95,43 @@ if v,ok:=sm.Load(1);ok{
 }
 ```
 
-## 拷贝
+## 赋值 (保持引用)
+
+```go
+// map赋值, 会同步修改底层。
+originalMap := make(map[string]int, 10)
+originalMap["a"] = 1
+originalMap["b"] = 2
+originalMap["c"] = 3
+originalMap["d"] = 4
+originalMap["e"] = 5
+targetMap := make(map[string]int, 2)
+targetMap = originalMap
+targetMap["d"] = 4444
+
+fmt.Println(originalMap) // map[a:1 b:2 c:3 d:4444 e:5]
+```
+
+## 拷贝 (解引用)
 
 ```go
 originalMap := make(map[string]int)
-originalMap["one"] = 1
-originalMap["two"] = 2
+originalMap["a"] = 1
+originalMap["b"] = 2
 
 targetMap := make(map[string]int)
 for k, v := range originalMap {
     targetMap[k] = v
 }
+```
+
+## 删除key
+
+```go
+originalMap := make(map[string]int, 2)
+originalMap["a"] = 1
+originalMap["b"] = 2
+delete(originalMap, "a") // map[a:1]
 ```
 
 ## 集合

@@ -35,14 +35,25 @@ sl1_1 := sl1[1:3] // [d, e] len=2 cap=3 (即4-1)
 sl2 := arr[2:4:5] // [c, d] len=2 cap=3 (即5-2)
 ```
 
-## 赋值
+## 赋值 (保持引用)
 
 ```go
-// 切片赋值，会同步修改底层数组的元素值。
+// 切片赋值, 会同步修改底层数组的元素值。
 arr := [...]string{"a", "b", "c", "d"}
 sl := arr[2:] // [c d]
 sl[0] = "ccc" // arr=[a b ccc, d]
 ```
+
+## 拷贝 (解引用)
+
+```go
+// 仅覆盖值 && 不改变len, cap && 不报错
+n := copy([]int{1, 2, 3}, []int{666, 777, 888, 999}) //sl1 = {666, 777, 888}; n = 3 (即copy了3个值)
+
+n := copy([]int{1,2,3}, []int{666, 777}) //sl1 = {666, 777, 3}; n = 2 (即copy了2个值)
+```
+
+> `copy(dst, src)` go doc builtin copy
 
 ## append 增长/扩容
 
@@ -67,17 +78,6 @@ sl2 := append(sl1, "x") // ["" a b c x] len=5 cap=8; sl2新建了底层arr
 - 空 切片
 
   `sl := make([]int, 0)` ptr有值（指向底层的空array）, len 0, cap 0
-
-## 拷贝 copy(dst, src)
-
-```go
-// 仅覆盖值 && 不改变len, cap && 不报错
-n := copy([]int{1, 2, 3}, []int{666, 777, 888, 999}) //sl1 = {666, 777, 888}; n = 3 (即copy了3个值)
-
-n := copy([]int{1,2,3}, []int{666, 777}) //sl1 = {666, 777, 3}; n = 2 (即copy了2个值)
-```
-
-> go doc builtin copy
 
 ## 作为参数
 

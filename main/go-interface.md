@@ -3,9 +3,12 @@
 相同行为，不同实例。(即：多态)
 
 > 用于同一行为，实例替换，如 db, err := sql.Open("mysql", "root:password@tcp(127.0.0.1:3306)") // mysql可换成sqllite， postgresql， oralce  
+
 > 也用于不同类型统一行为，如 copy(os.Stdout, r.Body)  
 
 ## 数据结构
+
+TODO
 
 ## 方法集methodSet & 参数
 
@@ -16,7 +19,10 @@
 ### 原理
 
 实例的methodSet决定了它所实现的接口，以及通过receiver可以调用的方法。  
+
 通过指针实例可以拿到值类型实例的methodSet(解引用)，通过值实例不能拿到指针实例的methodSet。  
+
+> 多态
 
 ### 示例
 
@@ -55,9 +61,7 @@ func foo(i I) { // 作为参数 转为接口
 
 ## 嵌套 组合
 
-### 组合
-
-接口组合: 默认继承了IReader和IWriter中的抽象方法；方法需要实现IReader, IWriter中全部接口方法。
+### 接口组合
 
 ```go
 type IReader interface {
@@ -68,6 +72,8 @@ type IWriter interface {
    Write(file string, data string)
 }
 
+// 默认继承了IReader和IWriter中的抽象方法
+// 方法需要实现IReader 和 IWriter中全部接口方法。
 type IReadWriter interface {
    IReader
    IWriter
@@ -137,29 +143,24 @@ func main() {
 
 ## 类型断言
 
-语法
-
 ```go
 var x interface{}
 x = 10
-v, ok := x.(int) // 断言x是否为实现了int类型(的实例10)的接口。 10, true
-// v, ok := x.(*int) // 断言有严格的判断。 nil, false
+v, ok := x.(int) // 10, true; 断言x是否为实现了int类型(的实例10)的接口。
+// v, ok := x.(*int) // nil, false; 断言有严格的判断。
 ```
-
-配合switch
 
 ```go
+// 配合switch
 switch x.(type) {
     case int:
-    fmt.Println("the type of a is int")
+       fmt.Println("is int")
     case string:
-    fmt.Println("the type of a is string")
+       fmt.Println("is string")
     default:
-    fmt.Println("unknown type")
+       fmt.Println("unknown type")
 }
 ```
-
-[tag](go-struct.md#标签tag)
 
 ## ref
 
