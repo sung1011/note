@@ -1,6 +1,6 @@
 # go archive
 
-## [code]
+## code
 
 - [tar](../script/go/basic/archive_tar_test.go)
 - [zip](../script/go/basic/archive_zip_test.go)
