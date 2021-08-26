@@ -266,3 +266,7 @@
 - trace
 - unsafeheader
 - xcoff
+
+## ref
+
+<https://pkg.go.dev/std>

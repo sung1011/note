@@ -1,4 +1,4 @@
-module scr/basic
+module scr/package
 
 go 1.15
 

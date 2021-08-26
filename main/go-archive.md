@@ -2,8 +2,8 @@
 
 ## code
 
-- [tar](../script/go/basic/archive_tar_test.go)
-- [zip](../script/go/basic/archive_zip_test.go)
+- [tar](../script/go/package/archive_tar_test.go)
+- [zip](../script/go/package/archive_zip_test.go)
 
 ## tar
 
