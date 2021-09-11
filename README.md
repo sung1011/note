@@ -178,3 +178,5 @@
 #### [medical radiation](wiki/medical-radiation.md)
 
 #### [EVA](wiki/eva.md)
+
+#### [cognitive bias](wiki/cognitive-bias.md)
