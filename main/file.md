@@ -21,5 +21,5 @@ use DEFLATE compression algorithm (same zip)
 ## tar
 
 ```txt
-archive/package the files and dirs
+archive(package) the files and dirs
 ```
