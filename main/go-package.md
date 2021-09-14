@@ -15,7 +15,7 @@
 - tar
 - zip
 
-#### TODO [bufio](go-bufio.md)
+#### [bufio](go-bufio.md)
 
 #### TODO [builtin](_)
 
