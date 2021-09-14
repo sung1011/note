@@ -175,8 +175,10 @@
 
 #### [badminton](wiki/badminton.md)
 
-#### [medical radiation](wiki/medical-radiation.md)
+#### [radiation](wiki/radiation.md)
 
 #### [EVA](wiki/eva.md)
 
 #### [cognitive bias](wiki/cognitive-bias.md)
+
+#### [designing](wiki/designing.md)

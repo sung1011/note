@@ -329,7 +329,6 @@
 | debt                | 债务owing,饥荒famine                                   |
 | deceive             | 欺骗spoof,蒙骗hoodwink                                 |
 | decimate            | 毁灭                                                   |
-| decipher            | 解码decoding                                           |
 | decisive            | 决定性,果断,紧要critical                               |
 | decline             | 衰退ebb,没落wane,减弱weaken,推辞,下跌                  |
 | decoy               | 诱饵bait                                               |
@@ -479,7 +478,7 @@
 | exhaust             | 耗尽,排气,排出                                         |
 | expedition          | 远征,考察,征战campaign                                 |
 | expell              | 驱逐banish,开除expel                                   |
-| explicit            | 具体的                                                 |
+| explicit            | 具体,明确,清晰                                         |
 | extensive           | 广泛的widespread,大规模broad-scale                     |
 | exterminate         | 歼灭,剿灭,毁灭                                         |
 | extinction          | 废除                                                   |
@@ -1466,3 +1465,36 @@
 | projection          | 投影,预测,投射,放映                                    |
 | orthographic        | 正交,直角的,垂直线的                                   |
 | axonometric         | 轴侧,轴测图                                            |
+| cacophony           | 杂音,嘈杂                                              |
+| wrench              | 扳手,扳钳                                              |
+| spouse              | 配偶,伴侣,另一半                                       |
+| ambiguity           | 歧义,模棱两可,含糊不清                                 |
+| dimensional         | 立体,空间感                                            |
+| gestalt             | 完全形态,格式塔                                        |
+| cognitive           | 认知,感知                                              |
+| holistic            | 全面,综合,全方位                                       |
+| symmetry            | 对称,平衡,均匀                                         |
+| proximity           | 临近,接近,附近                                         |
+| discreet            | 谨慎,低调,慎重,隐蔽                                    |
+| overlap             | 重叠,重复,重合,叠加                                    |
+| lapping             | 研磨,磨光,精研,重叠                                    |
+| terse               | 简短,简洁,简明,洗练                                    |
+| hypothetical        | 假设,假定,臆测                                         |
+| mortgage            | 抵押,房贷,抵押物,按揭,典当                             |
+| punctual            | 守时,正点,准时                                         |
+| hierarchy           | 层次,等级制度,层级,等级体系                            |
+| dimension           | 维度,层面,方面                                         |
+| decipher            | 破解,破译,解读,解密                                    |
+| ponder              | 思考,考虑,思索,深思                                    |
+| adolescence         | 青春期,青少年                                          |
+| toddler             | 幼儿,小孩,幼童                                         |
+| juggling            | 杂耍,杂技,变戏法                                       |
+| caregivers          | 照料者,照顾者,护理人员                                 |
+| inadequate          | 不足,不够,不适当                                       |
+| ideographic         | 表意,象形字,象形                                       |
+| radius              | 半径,范围,方圆,辐射线                                  |
+| orientation         | 方向,定向,取向                                         |
+| intranet            | 局域网,内联网                                          |
+| jargon              | 术语,行话,专业术语                                     |
+aforementioned| 上述,前面提到的
+pastel|柔和,浅色,粉彩
