@@ -75,7 +75,7 @@
 
 #### TODO [embed](_)
 
-#### TODO [encoding](_)
+#### TODO [encoding](go-encoding.md)
 
 - ascii85
 - asn1
@@ -89,7 +89,7 @@
 - pem
 - xml
 
-#### TODO [errors](_)
+#### TODO [errors](go-errors.md)
 
 #### TODO [expvar](_)
 
