@@ -37,7 +37,7 @@
 - list
 - ring
 
-#### TODO [crypto](_)
+#### [crypto](go-crypto.md)
 
 - aes
 - cipher
@@ -75,7 +75,7 @@
 
 #### TODO [embed](_)
 
-#### TODO [encoding](go-encoding.md)
+#### [encoding](go-encoding.md)
 
 - ascii85
 - asn1
@@ -89,13 +89,13 @@
 - pem
 - xml
 
-#### TODO [errors](go-errors.md)
+#### [errors](go-errors.md)
 
 #### TODO [expvar](_)
 
 #### TODO [flag](_)
 
-#### TODO [fmt](_)
+#### TODO [fmt](go-fmt.go)
 
 #### TODO [go](_)
 
