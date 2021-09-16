@@ -1496,5 +1496,7 @@
 | orientation         | 方向,定向,取向                                         |
 | intranet            | 局域网,内联网                                          |
 | jargon              | 术语,行话,专业术语                                     |
-aforementioned| 上述,前面提到的
-pastel|柔和,浅色,粉彩
+| aforementioned      | 上述,前面提到的                                        |
+| pastel              | 柔和,浅色,粉彩                                         |
+| thwarting           | 阻挠,挫败                                              |
+| shimmer             | 闪光,微光,光泽,亮光                                    |
