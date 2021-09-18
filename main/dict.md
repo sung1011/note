@@ -1500,3 +1500,9 @@
 | pastel              | 柔和,浅色,粉彩                                         |
 | thwarting           | 阻挠,挫败                                              |
 | shimmer             | 闪光,微光,光泽,亮光                                    |
+| counterproductive   | 适得其反,反效果的,起反作用的                           |
+| alienate            | 疏远                                                   |
+| intimidate          | 恐吓,威胁                                              |
+| retina              | 视网膜,网膜                                            |
+cone|锥体,锥形,圆锥形
+

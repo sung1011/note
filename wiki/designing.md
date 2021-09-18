@@ -5,6 +5,8 @@
 - `the past` our experience
 - `the future` our goals
 
+---
+
 ## DESIGNING perceptions
 
 ### avoid ambiguity
@@ -13,11 +15,13 @@ Avoid ambiguity information display , and test your design to verify that all us
 
 ### be consistent
 
-Place information and controlsin consistent locations.
+Place information and control in consistent locations.
 
 ### understand the goals
 
 User come to a system with goalsthey want to achieve.
+
+---
 
 ## GESTALT principle
 
@@ -32,7 +36,6 @@ Relative distance between objects in a display affects our perception of whether
 Objects that look similar appear grouped , all other things being equal .
 
 - icon
-
 - form
 
 ### Continuity
@@ -58,7 +61,6 @@ Our vision automatically organizes and interprets the data so as to simplify it 
 The foreground consists of those elements of a scene that are the object of our primary attention , and the background is everything else .
 
 - pop up
-
 - icon
 
 ### Common Fate
@@ -72,9 +74,24 @@ Move together are perceived as grouped or related .
 The more structured and terse the presentation of information, the more quickly and easily people can scan and comprehend it .
 
 - indent content
-
 - terser repetitious
-
 - improved by table
-
 - separate long numbers .
+
+---
+
+## Reading Unnatural (disrupt)
+
+### Uncommon or unfamiliar vocabulary
+
+### Difficult scripts and typefaces
+
+- Tiny fonts
+- Text on noisy background
+
+### Information buried in repetition
+
+- Centered text
+- Reverse Color, Combining flaws that disrupt reading
+
+### Too much text in a user interface
