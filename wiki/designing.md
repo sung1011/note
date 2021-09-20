@@ -95,3 +95,59 @@ The more structured and terse the presentation of information, the more quickly 
 - Reverse Color, Combining flaws that disrupt reading
 
 ### Too much text in a user interface
+
+---
+
+## Color Vision
+
+### How color vision work
+
+#### Trichromacy 三色视觉
+
+posits three types of cones preferentially sensitive to blue, green, and red. 视网膜的三种视锥细胞分别优先敏感于蓝、绿和红色
+
+#### Opponent process 互补处理
+
+It states that the visual system interprets color in an antagonistic way: red vs. green, blue vs. yellow, black vs. white. 视觉系统以一种拮抗的方式解释颜色：红对绿，蓝对黄，黑对白。
+
+### Vision is optimize for contrast, not brightness
+
+The sensitive of our visual system to contrast rather than to absolutely brightness.
+
+### Discriminate colors depends on how colors are presented
+
+- `paleness`
+
+    The paler(less saturated) two color are, the harder it is to tell them apart. such as pale color marking.
+
+- `color patch size`
+
+    The smaller and thinner objects are, the harder it is to distinguish their color. such as chart legend.
+
+- `separation`
+
+    The more separated color patches are, the more difficult it is to distinguish. such as unfollowed link from already followed ones.
+
+### Color blindness
+
+- red/green color-blindness people can't distinguish
+  - dark red from black
+  - blue from purple
+  - light green from white
+
+### External factors that influence the ability to distinguish colors
+
+- variation among color displays
+  - computer display vary
+- gray-scale display
+- display angle
+- ambient illusion
+  - strong light on a display washes out color
+
+### Guidelines for using color
+
+1. use distinctive colors
+2. avoid color pairs that color-blindness cannot distinguish
+3. use color redundantly with other cue
+   - use symbol icon
+4. avoid separate opponent colors

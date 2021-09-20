@@ -222,7 +222,7 @@
 | cicada              | 蝉                                                     |
 | cinema              | 上映                                                   |
 | circumvented        | 规避                                                   |
-| clash               | 冲突conflict                                           |
+| clash               | 冲突conflict,矛盾,不一致                               |
 | cling               | 执着perseverance,贪恋hate-to-leave,依偎snuggle         |
 | cloak               | 披风manteau,斗篷mantle                                 |
 | clout               | 影响力,实力                                            |
@@ -1504,5 +1504,28 @@
 | alienate            | 疏远                                                   |
 | intimidate          | 恐吓,威胁                                              |
 | retina              | 视网膜,网膜                                            |
-cone|锥体,锥形,圆锥形
-
+| cone                | 锥体,锥形,圆锥形                                       |
+| cafeteria           | 食堂,自助餐厅                                          |
+| billboard           | 广告牌,公告牌,看板                                     |
+| ambiguous           | 模糊,含糊,模棱两可                                     |
+| primed              | 准备好,底漆,涂底漆                                     |
+| sniff               | 嗅,探,抽鼻子                                           |
+| confound            | 混淆,变乱,挫败                                         |
+| violet              | 紫色,紫罗兰色                                          |
+| neuron              | 神经元,神经细胞                                        |
+| cortex              | 皮质,皮层,大脑皮层                                     |
+| optic               | 光学,视觉,光学的                                       |
+| leopard             | 豹子,猎豹,雪豹                                         |
+| omit                | 忽略,遗漏,删去,漏掉                                    |
+| cylinder            | 圆筒,滚筒,圆柱体,柱面                                  |
+| presentation        | 介绍,陈述,展示                                         |
+| saturate            | 浸透,饱和,饱和度                                       |
+| subtle              | 细微,微妙,隐蔽,含蓄                                    |
+| deficit             | 缺陷,匮乏,短缺,不足,赤字,逆差                          |
+| hue                 | 色彩,色调,颜色                                         |
+| tell-apart          | 区分于,分辨,识别                                       |
+| beige               | 米色,米黄色,浅褐色                                     |
+| ambient             | 环境,氛围,周围                                         |
+| venetian-blind      | 百叶窗                                                 |
+| sensation           | 感知,感受,感觉                                         |
+| antagonism          | 拮抗(两种以上药物合并使用后，使作用减弱或消失),对立    |
