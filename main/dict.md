@@ -1529,3 +1529,7 @@
 | venetian-blind      | 百叶窗                                                 |
 | sensation           | 感知,感受,感觉                                         |
 | antagonism          | 拮抗(两种以上药物合并使用后，使作用减弱或消失),对立    |
+peripheral| 外围,周边,周围
+sensor|传感器,感应器,探头,探测
+stationary|静止的,固定的,平静的
+
