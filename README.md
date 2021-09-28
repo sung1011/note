@@ -139,7 +139,7 @@
 
 ### programming-language  
 
-#### [go](main/go.md)
+#### [golang](main/go.md)
 
 #### [php](main/php.md)
 
