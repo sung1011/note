@@ -202,3 +202,9 @@ TODO
 ### 导表
 
 TODO
+
+### 解析id
+
+mongo: `ObjectId("5e0c4e087deadd1a6f8b4b57").getTimestamp()`
+
+> 截取_id的前8位, hex->dec.
