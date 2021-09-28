@@ -95,7 +95,7 @@
 
 #### TODO [flag](_)
 
-#### TODO [fmt](go-fmt.go)
+#### [fmt](go-fmt.md)
 
 #### TODO [go](_)
 
