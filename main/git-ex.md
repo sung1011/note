@@ -3,13 +3,18 @@
 ## 贡献度
 
 ```bash
-   # commit数量排名
-   git log --pretty='%aN' | sort | uniq -c | sort -k1 -n -r | head -n 3
-   # 指定用户的增删代码量
-   git log --author="{用户名}" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' 
-   # 所有用户的增删代码量
-   git log --format='%aN' | sort -u | while read name; do echo -en "$name\t"; git log --author="$name" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' -; done
+# commit数量排名
+git log --pretty='%aN' | sort | uniq -c | sort -k1 -n -r | head -n 3
+```
 
+```bash
+# 指定用户的增删代码量
+git log --author="{用户名}" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' 
+```
+
+```bash
+# 所有用户的增删代码量
+git log --format='%aN' | sort -u | while read name; do echo -en "$name\t"; git log --author="$name" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' -; done
 ```
 
 > 附加时间范围 git log --since="2018-03-01" --before="2019-01-09"
@@ -17,28 +22,28 @@
 ## 迁移
 
 ```bash
-    git clone --bare git://github.com/username/project.git # 克隆裸库(仅代码)
-    git push --mirror git@gitcafe.com/username/newproject.git # 推送到新地址
+git clone --bare git://github.com/username/project.git # 克隆裸库(仅代码)
+git push --mirror git@gitcafe.com/username/newproject.git # 推送到新地址
 ```
 
 ## 回滚
 
-1. 回滚指定版本 git checkout; 以新建分支回滚 (临时回滚)
+- 回滚指定版本 git checkout; 以新建分支回滚 (临时回滚)
 
-   ```bash
-      git checkout {commit_id} && git checkout -b {new_branch_name}
-   ```
+```bash
+ git checkout {commit_id} && git checkout -b {new_branch_name}
+```
 
-2. 回滚指定版本、n个版本 git reset --hard; 以主分支回滚 (永久回滚)
+- 回滚指定版本、n个版本 git reset --hard; 以主分支回滚 (永久回滚)
 
-   ```bash
-   git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push -f
-   ```
+```bash
+git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push -f
+```
 
 ## 当前分支
 
 ```bash
-current_branch=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
+git rev-parse --abbrev-ref HEAD 2> /dev/null
 ```
 
 ## 错误的分支merge
@@ -114,4 +119,14 @@ git diff-tree -r --no-commit-id --name-only < oid(commit) > | xargs tar -rf myco
 
 TODO
 
-## [git note](git.md)
+## 文件创建时间
+
+```bash
+git log --pretty=format:"%ad" -- < file > | tail -1
+```
+
+## 分支信息
+
+```bash
+git reflog show --date=iso < branch >
+```
