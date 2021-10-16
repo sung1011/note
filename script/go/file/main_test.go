@@ -267,11 +267,13 @@ func Test_Read(t *testing.T) {
 			So(err, ShouldBeNil)
 			So(len(bs), ShouldEqual, l)
 		})
+		// 一次IO, 将内容打入内存
 		Convey("read file sample", func() {
 			bs, err := ioutil.ReadFile(tmp_file)
 			So(err, ShouldBeNil)
 			So(len(bs), ShouldEqual, l)
 		})
+		// 多次IO, 但节省内存
 		Convey("read file buffer", func() {
 			f, err := os.Open(tmp_file)
 			So(err, ShouldBeNil)
