@@ -182,3 +182,5 @@
 #### [designing](wiki/designing.md)
 
 #### [data indicator](wiki/data-indicator.md)
+
+#### [misogyny](wiki/misogyny.md)
