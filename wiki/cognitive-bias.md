@@ -53,3 +53,6 @@
 
 根据事物所属类别或群体判断其特质, 而忽略其独特性.
 
+## ref
+
+<https://zh.wikipedia.org/wiki/%E8%AA%8D%E7%9F%A5%E5%81%8F%E8%AA%A4%E5%88%97%E8%A1%A8>
