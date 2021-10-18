@@ -167,20 +167,20 @@
 
 ---
 
-### wiki
+### wiki (未分类, 未来单独建立库)
 
-#### [sleep](wiki/sleep.md)
+#### [badminton 羽毛球](wiki/badminton.md)
 
-#### [badminton](wiki/badminton.md)
-
-#### [radiation](wiki/radiation.md)
+#### [radiation 辐射](wiki/radiation.md)
 
 #### [EVA](wiki/eva.md)
 
-#### [cognitive bias](wiki/cognitive-bias.md)
+#### [cognitive bias 认知偏误](wiki/cognitive-bias.md)
 
-#### [designing](wiki/designing.md)
+#### [designing 设计](wiki/designing.md)
 
-#### [data indicator](wiki/data-indicator.md)
+#### [data indicator 数据指标](wiki/data-indicator.md)
 
-#### [misogyny](wiki/misogyny.md)
+#### [misogyny 厌女](wiki/misogyny.md)
+
+#### [sleep 睡眠](wiki/sleep.md)
