@@ -221,7 +221,7 @@
 - template
 - template/parse
 
-### TODO [time](_)
+### TODO [time](go-time.md)
 
 - tzdata
 
