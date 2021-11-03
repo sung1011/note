@@ -105,28 +105,6 @@ db.coll.drop()
 db.dropDatabase()
 ```
 
-### mongoexport mongoimport 导出导入数据
-
-```bash
-
-mongoexport -d dbname -c collectionname -o file --type json/csv -f field
-
-# -d ：数据库名
-# -c ：collection名
-# -o ：输出的文件名
-# --type ： 输出的格式，默认为json
-# -f ：输出的字段，如果-type为csv，则需要加上-f "字段名"
-
-mongoimport -d dbname -c collectionname --file filename --headerline --type json/csv -f field
-
-# -d ：数据库名
-# -c ：collection名
-# --type ：导入的格式默认json
-# -f ：导入的字段名
-# --headerline ：如果导入的格式是csv，则可以使用第一行的标题作为导入的字段
-# --file ：要导入的文件
-```
-
 ## aggregation 聚合  
 
 阶段操作符  
@@ -199,9 +177,40 @@ TODO
 3. findAndModify 若 upsert: true 并 无查询结果时, 并发状态下可能插入多个doc
 4. findAndModify 在分片集群中，查询必须包含分片key
 
-### 导表
+### 导表 导列 导数据
 
-TODO
+```bash
+mongoexport -d dbname -c collectionname -o file --type json/csv -f field
+
+# -d ：数据库名
+# -c ：collection名
+# -o ：输出的文件名
+# --type ： 输出的格式，默认为json
+# -f ：输出的字段，如果-type为csv，则需要加上-f "字段名"
+
+mongoimport -d dbname -c collectionname --file filename --headerline --type json/csv -f field
+
+# -d ：数据库名
+# -c ：collection名
+# --type ：导入的格式默认json
+# -f ：导入的字段名
+# --headerline ：如果导入的格式是csv，则可以使用第一行的标题作为导入的字段
+# --file ：要导入的文件
+```
+
+> 文件为可读的 json 或 csv
+
+## 备份 还原
+
+```bash
+mongodump -h IP --port 端口 -u 用户名 -p 密码 -d 数据库 -o 文件存在路径
+
+mongorestore -h IP --port 端口 -u 用户名 -p 密码 -d 数据库 --drop 备份文件夹下的db路径
+# --drop 替换
+# 备份文件夹下的db路径
+```
+
+> 文件为不可读的bson
 
 ### 解析id
 
