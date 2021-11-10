@@ -173,7 +173,7 @@
 
 #### [radiation 辐射](wiki/radiation.md)
 
-#### [EVA](wiki/eva.md)
+#### [EVA 新世界福音战士](wiki/eva.md)
 
 #### [cognitive bias 认知偏误](wiki/cognitive-bias.md)
 

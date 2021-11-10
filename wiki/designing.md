@@ -104,11 +104,13 @@ The more structured and terse the presentation of information, the more quickly 
 
 #### Trichromacy 三色视觉
 
-posits three types of cones preferentially sensitive to blue, green, and red. 视网膜的三种视锥细胞分别优先敏感于蓝、绿和红色
+posits three types of cones preferentially sensitive to blue, green, and red.
+视网膜的三种视锥细胞分别优先敏感于蓝、绿和红色.
 
 #### Opponent process 互补处理
 
-It states that the visual system interprets color in an antagonistic way: red vs. green, blue vs. yellow, black vs. white. 视觉系统以一种拮抗的方式解释颜色：红对绿，蓝对黄，黑对白。
+It states that the visual system interprets color in an antagonistic way: red vs. green, blue vs. yellow, black vs. white.
+视觉系统以一种拮抗的方式解释颜色：红对绿，蓝对黄，黑对白.
 
 ### Vision is optimize for contrast, not brightness
 
@@ -130,7 +132,7 @@ The sensitive of our visual system to contrast rather than to absolutely brightn
 
 ### Color blindness
 
-- red/green color-blindness people can't distinguish
+- red/green color-blindness people can't distinguish; male 9%, female 1%.
   - dark red from black
   - blue from purple
   - light green from white
@@ -151,3 +153,31 @@ The sensitive of our visual system to contrast rather than to absolutely brightn
 3. use color redundantly with other cue
    - use symbol icon
 4. avoid separate opponent colors
+
+---
+
+## Peripheral Vision is Poor
+
+### Resolution of the fovea compared to that of the periphery
+
+- The fact that retinal cone cells are distributed tightly in and near the fovea, and sparsely in the peripheral of the Retina affects not only spatial resolution but color resolution as well.
+- our visual field has a gap, which we see nothing, called blind spot. we brain fills it with the surrounding.
+
+![img](../main/res/distribution-of-photoreceptor-cell.png)
+
+### Example from computer user interfaces
+
+- after the click, an error message appear in the periphery
+
+#### solve methods
+
+- put it where users are looking
+- Mark the error
+- use an error symbol
+- reserve red for errors
+
+#### avoid heavy artillery for making user notice
+
+- Pop-up message in error dialog box
+- Use sound (e.g. beep)
+- Flash or wiggle briefly
