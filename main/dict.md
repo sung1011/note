@@ -1547,4 +1547,5 @@
 | hoe                 | 锄头,锄草,锄地                                         |
 | blemish             | 污点,瑕疵,缺陷,伤疤                                    |
 | acuity              | 敏锐,尖锐,敏度                                         |
-tempting | 诱人,诱惑
+| tempting            | 诱人,诱惑                                              |
+| LGBT                | 女同Lesbians,男同Gays,双性Bisexuals,跨性Transgender    |
