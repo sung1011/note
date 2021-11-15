@@ -181,3 +181,30 @@ The sensitive of our visual system to contrast rather than to absolutely brightn
 - Pop-up message in error dialog box
 - Use sound (e.g. beep)
 - Flash or wiggle briefly
+
+## Attention is limited, memory is imperfect
+
+### characteristic of long-term memory
+
+- eror prone
+- weighted by emotions
+- retroactively alterable
+
+#### implication of long-term memory characteristic for user interface design
+
+- password prompt hint
+- user-interface consistency, the more consistency, the less to learn
+
+### characteristic of short-term memory
+
+- attention is highly and selectively
+- the capacity of working memory is low
+- the volatility of working memory is high
+
+#### implication of short-term memory characteristic for user interface design
+
+- search box retains search keyword
+- they forget what mode the system is in and do the wrong thing by mistake
+
+---
+
