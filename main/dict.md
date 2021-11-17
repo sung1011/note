@@ -1551,3 +1551,4 @@
 | LGBT                | 女同Lesbians,男同Gays,双性Bisexuals,跨性Transgender    |
 | amplified           | 加剧,放大,扩大                                         |
 | dampened            | 削弱,遏制,抑制                                         |
+| deflate             | 放气,泄气,漏气                                         |

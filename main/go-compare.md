@@ -30,7 +30,7 @@
 | bufio  | 1G   | 367ms     |
 | ioutil | 1G   | 4s        |
 
-> gb级别 ioutil需要一次性开辟gb的内存; os每次io都调用系统read(); bufio则是优先读缓冲区, 所以更快
+> gb级别 ioutil需要一次性开辟GB级的内存; os每次io都调用系统read(); bufio则是优先读缓冲区, 所以更快
 
 #### bufio 读取一行 ReadBytes, ReadString, ReadSlice, ReadLine
 

@@ -58,7 +58,7 @@ func Test_Errors_lt113(t *testing.T) {
 }
 
 func Test_Errors_egt113(t *testing.T) {
-	Convey("errors by warp after go.1.13", t, func() {
+	Convey("errors by warp after go.1.13 (wrapping error by %w)", t, func() {
 		// %w 用来生成一个可包裹的Error的Wrapping Error
 		bar := func() error {
 			return fmt.Errorf("bar -> %w", ErrNotFound)

@@ -229,7 +229,6 @@ func Test_HTMLEscape(t *testing.T) {
 	Convey("", t, func() {
 		var out bytes.Buffer
 		json.HTMLEscape(&out, []byte(`{"Name":"<b>HTML content</b>"}`))
-
 		So(out.String(), ShouldEqual, `{"Name":"\u003cb\u003eHTML content\u003c/b\u003e"}`)
 	})
 }
