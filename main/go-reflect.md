@@ -221,6 +221,21 @@ func StructOf(fields []StructField) Type
 func TypeOf(i interface{}) Type
 ```
 
+## Value
+
+```pic
+                reflect.ValueOf(i interface{})
+    变量 -------------------------------------------> reflect.Value
+     <                                                  |
+     |                                                  |
+     |                                                  |
+     | 类型断言                                          |
+     |                                                  |
+     |                                                  |
+    interface{}类型 <------------------------------------
+                            reflect.Value.Interface()
+```
+
 ```go
 type Value struct {
 	// typ holds the type of the value represented by a Value.
@@ -326,10 +341,18 @@ func (v Value) Uint() uint64
 func (v Value) UnsafeAddr() uintptr
 ```
 
+## StructField
+
 ```go
-reflect.TypeOf()  // reflect.Type
-reflect.ValueOf() // reflect.Value
-reflect.DeepEqual(x, y interface{}) 比较map, slice  
+type StructField struct {
+    Name string          // 字段名
+    PkgPath string       // 字段路径
+    Type      Type       // 字段反射类型对象
+    Tag       StructTag  // 字段的结构体标签
+    Offset    uintptr    // 字段在结构体中的相对偏移
+    Index     []int      // Type.FieldByIndex中的返回的索引值
+    Anonymous bool       // 是否为匿名字段
+}
 ```
 
 ## ref

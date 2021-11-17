@@ -24,7 +24,7 @@ func Test_Reflect_Type(t *testing.T) {
 		// Ptr's Elem()
 		typ := reflect.TypeOf(stPTR)
 		So(typ.Kind(), ShouldEqual, reflect.Ptr)           // 指针类型
-		So(typ.Elem().Kind(), ShouldEqual, reflect.Struct) // 取类型的元素(指针的对象是个struct)
+		So(typ.Elem().Kind(), ShouldEqual, reflect.Struct) // 取类型的元素(类似语言层*操作)
 
 		// struct field & tag
 		sf, _ := typ.Elem().FieldByName("Birth")
@@ -34,10 +34,29 @@ func Test_Reflect_Type(t *testing.T) {
 	})
 }
 
-// func Test_Reflect_Value(t *testing.T) {
-// 	Convey("Value", t, func() {
-// 	})
-// }
+func Test_Reflect_Value(t *testing.T) {
+	Convey("Value", t, func() {
+		// 变量 -> reflect.Value -> Interface{} -> 变量
+		var a int = 1024                                       // 变量
+		valueOfA := reflect.ValueOf(a)                         // reflect.Value
+		itf := valueOfA.Interface()                            // interface{}
+		i := itf.(int)                                         // 类型断言 变回变量
+		So(reflect.TypeOf(i).Kind(), ShouldEqual, reflect.Int) // int
+
+		So(reflect.TypeOf(valueOfA.Int()).Kind(), ShouldEqual, reflect.Int64) // reflect.Value 强转int64
+		So(valueOfA.CanAddr(), ShouldBeFalse)                                 // 不可被寻址 TODO why?
+		So(valueOfA.CanSet(), ShouldBeFalse)                                  // 不可赋值 (需要可寻址 + 可导出的字段)
+		So(valueOfA.CanInterface(), ShouldBeTrue)
+
+		valueOfAPtr := reflect.ValueOf(&a)
+		So(valueOfAPtr.Elem().CanAddr(), ShouldBeTrue) // 可寻址 a的值
+		So(valueOfAPtr.CanSet(), ShouldBeFalse)        // 不可赋值 (需要可寻址 + 可导出的字段)
+		x := valueOfAPtr.Elem()
+		x.SetInt(1234)
+		So(x.Int(), ShouldEqual, 1234)
+		So(reflect.TypeOf(x).Kind(), ShouldEqual, reflect.Struct)
+	})
+}
 
 func Test_Reflect_IsZero(t *testing.T) {
 	Convey("Is Zero", t, func() {
