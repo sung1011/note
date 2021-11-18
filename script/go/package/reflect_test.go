@@ -43,18 +43,82 @@ func Test_Reflect_Value(t *testing.T) {
 		i := itf.(int)                                         // 类型断言 变回变量
 		So(reflect.TypeOf(i).Kind(), ShouldEqual, reflect.Int) // int
 
+		// struct
+		date, _ := time.Parse("2006-01-02 15:04:05", "1989-10-11 04:00:00") // str -> time.Time
+		valueOfSt := reflect.ValueOf(struct {
+			Name  string
+			Age   int
+			Birth time.Time `json:"birth" foo:"bar"`
+		}{
+			"sunji",
+			32,
+			date,
+		})
+		So(valueOfSt.Field(1).Int(), ShouldEqual, 32)
+		So(valueOfSt.FieldByName("Age").Kind(), ShouldEqual, reflect.Int)
+
+	})
+}
+
+func Test_Reflect_Set(t *testing.T) {
+	Convey("通过反射赋值", t, func() {
+		var a int = 1024               // 变量
+		valueOfA := reflect.ValueOf(a) // reflect.Value
+
 		So(reflect.TypeOf(valueOfA.Int()).Kind(), ShouldEqual, reflect.Int64) // reflect.Value 强转int64
 		So(valueOfA.CanAddr(), ShouldBeFalse)                                 // 不可被寻址 TODO why?
 		So(valueOfA.CanSet(), ShouldBeFalse)                                  // 不可赋值 (需要可寻址 + 可导出的字段)
 		So(valueOfA.CanInterface(), ShouldBeTrue)
 
 		valueOfAPtr := reflect.ValueOf(&a)
-		So(valueOfAPtr.Elem().CanAddr(), ShouldBeTrue) // 可寻址 a的值
+		So(valueOfAPtr.Elem().CanAddr(), ShouldBeTrue) //  可寻址(a的值)
 		So(valueOfAPtr.CanSet(), ShouldBeFalse)        // 不可赋值 (需要可寻址 + 可导出的字段)
 		x := valueOfAPtr.Elem()
 		x.SetInt(1234)
 		So(x.Int(), ShouldEqual, 1234)
 		So(reflect.TypeOf(x).Kind(), ShouldEqual, reflect.Struct)
+	})
+}
+
+func Test_Reflect_Call_Func(t *testing.T) {
+	Convey("通过反射调用函数", t, func() {
+		add := func(a, b int) int {
+			return a + b
+		}
+		funcValue := reflect.ValueOf(add)
+
+		paramList := []reflect.Value{reflect.ValueOf(2), reflect.ValueOf(3)}
+
+		retList := funcValue.Call(paramList)
+
+		So(retList[0].Int(), ShouldEqual, 5)
+	})
+}
+
+type myMath struct {
+	Pi float64
+}
+
+func (st myMath) Sum(a, b int) int {
+	return a + b
+}
+func (st myMath) Dec(a, b int) int {
+	return a - b
+}
+
+func Test_Reflect_Call_Method(t *testing.T) {
+	Convey("通过反射调用方法", t, func() {
+		var my = myMath{3.14}
+
+		rValue := reflect.ValueOf(my)
+
+		So(rValue.NumMethod(), ShouldEqual, 2)
+
+		paramList := []reflect.Value{reflect.ValueOf(30), reflect.ValueOf(20)}
+
+		retList := rValue.MethodByName("Dec").Call(paramList)
+
+		So(retList[0].Int(), ShouldEqual, 10)
 	})
 }
 
