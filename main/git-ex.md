@@ -1,43 +1,52 @@
 # git 实战
 
+## pull的内容涉及正在修改的文件
+
+工作区如果有 modified 的文件a, pull的内容恰巧包含a文件, 则会aborting
+
+可以`git stash push` 后再pull来解决 (有可能发生冲突)
+
+```bash
+Updating e72ede4..bb7de2c
+error: Your local changes to the following files would be overwritten by merge:
+	ccc
+Please commit your changes or stash them before you merge.
+Aborting
+```
+
 ## 贡献度
 
 ```bash
 # commit数量排名
 git log --pretty='%aN' | sort | uniq -c | sort -k1 -n -r | head -n 3
-```
 
-```bash
 # 指定用户的增删代码量
 git log --author="{用户名}" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' 
-```
 
-```bash
 # 所有用户的增删代码量
 git log --format='%aN' | sort -u | while read name; do echo -en "$name\t"; git log --author="$name" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' -; done
+
+# 附加时间范围 git log --since="2018-03-01" --before="2019-01-09"
 ```
 
-> 附加时间范围 git log --since="2018-03-01" --before="2019-01-09"
 
 ## 迁移
 
 ```bash
+# 方法1
 git clone --bare git://github.com/username/project.git # 克隆裸库(仅代码)
+
+# 方法2
 git push --mirror git@gitcafe.com/username/newproject.git # 推送到新地址
 ```
 
 ## 回滚
 
-- 回滚指定版本 git checkout; 以新建分支回滚 (临时回滚)
 
 ```bash
- git checkout {commit_id} && git checkout -b {new_branch_name}
-```
+git checkout {commit_id} && git checkout -b {new_branch_name} #临时回滚; 回滚指定版本 && 新建分支
 
-- 回滚指定版本、n个版本 git reset --hard; 以主分支回滚 (永久回滚)
-
-```bash
-git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push -f
+git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push -f # 永久回滚
 ```
 
 ## 当前分支
@@ -61,18 +70,18 @@ git rev-parse --abbrev-ref HEAD 2> /dev/null
 3. 错误的将带有feature的dev合入到master, 并push
 
    1. master撤销dev的所有内容 `[master] git revert <merge commit> -m 1`
-   2. master保留feature内容(但不保留dev的a) `[master] git checkout <feature> -- <X files>; git add .;git commit` -- master已正常
-   3. master合入dev(将revert带回dev) `[dev] git merge master` -- 此时dev中的a内容没有了, 期望dev有a
-   4. 检出dev被撤销的文件(还原出a内容) `[dev] git checkout <merge commit> -- <X files>; git add .; git commit` -- dev已正常
+   2. master保留feature内容(但不保留dev的X) `[master] git checkout <feature> -- <X files>; git add .;git commit` -- master已正常
+   3. master合入dev(将revert带回dev) `[dev] git merge master` -- 此时dev中的a内容没有了, 期望dev有X
+   4. 检出dev被撤销的文件(还原出X内容) `[dev] git checkout <merge commit> -- <X files>; git add .; git commit` -- dev已正常
    5. 若dev中有其他feature，需要类似【4】把这些被撤销feature内容还原出来
 
    ```bash
    # 正常情况下 dev 和 master 为平行关系，feature合入dev进行测试，合入master进行上线
-    D-----E---X---F---a----- dev # 比master多一些脏提交a
+    D-----E---X---F---a----- dev # 比master多一些脏提交X
              /                 \
             X feature           \  # 错误的将带有feature(X)的dev合入master
            /                     \
-    D-----E---F------------------Xa master # feature错误的合入master 并且 dev的a错误的合进了master
+    D-----E---F------------------X master # feature错误的合入master 并且 dev的X错误的合进了master
    ```
 
 ### 查找大文件
@@ -125,7 +134,7 @@ TODO
 git log --pretty=format:"%ad" -- < file > | tail -1
 ```
 
-## 分支信息
+## 分支信息 (包含创建时间)
 
 ```bash
 git reflog show --date=iso < branch >

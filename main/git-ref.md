@@ -33,8 +33,9 @@ git clone --depth 10 < repo > # 深度。保留最新的10个commit，更前的c
 ### diff
 
 ```bash
-git diff HEAD~3, - HEAD^^^
+git diff HEAD~3 # HEAD^^^
 git diff --cached # 暂存区 与 HEAD 比较
+git diff origin/< branch > # 与远端比较 (大多同 --cached)
 git diff < commit1 > < commit2 >
 git diff < branch1 > < branch2 > -- < file >
 ```
@@ -42,8 +43,8 @@ git diff < branch1 > < branch2 > -- < file >
 ### commit
 
 ```bash
-git commit --amend # 替换上一次提交的msg
-git commit -m, --message < msg >
+git commit --amend # 修改最近一次提交的msg
+git commit -m # --message < msg >
 ```
 
 ### notes
@@ -73,9 +74,9 @@ git mv a b # 一般重命名大小写时用。 另外可通过配置使大小写
 ```bash
 git branch -vv # 展示HEAD，分支，oid，message
 git branch -d
-git branch --no-merged # 获取未合入当前分支的分支
+git branch -a --no-merged # 未合入当前分支的(远端)分支
 git branch --merged # 获取已合入当前分支的分支
-git branch --merged master # 获取已合入master的分支
+git branch --merged < branch > # 已合入<branch>的分支
 git branch -m < new-branch-name > # 分支重命名
 ```
 
@@ -96,7 +97,6 @@ git checkout --orphan < new branch > # 新建0提交的分支，当前内容全�
 
 ```bash
 git merge < branch >
-git merge --squash < branch > 创建一个单独的提交而不是做一次合并
 
        A---B---C topic
       /
@@ -105,7 +105,15 @@ git merge --squash < branch > 创建一个单独的提交而不是做一次合�
        A---B---C topic
       /         \
  D---E---F---G---H master
-```
+
+git merge --squash < branch > # 创建一个单独的提交而不是做一次合并
+
+       A---B---C topic
+      /
+ D---E---F---G master
+
+ D---E---F---G---H(ABC) master
+ ```
 
 ### mergetool
 
@@ -113,7 +121,8 @@ git merge --squash < branch > 创建一个单独的提交而不是做一次合�
 
 ```bash
 git log --oneline
-git log -< num >, -n < num >
+git log --oneline --decorate # 一行 id+msg
+git log -< num > # -n< num > 最近n条
 git log --all # 所有分支
 git log --graph
 ```
@@ -123,13 +132,14 @@ git log --graph
 ```bash
 git stash -u    # 保存一个stash 包含untracked文件
 git stash save  # 保存一个stash
-git stash apply < stash@{n} > # 弹出一个stash，并且保留记录
-git stash pop   # 弹出一个stash，不保留记录
 git stash push  # 暂存一个stash
+git stash apply < n > # 弹出一个stash，并且保留记录; n 为 stash@n的值
+git stash pop < n >  # 弹出一个stash，不保留记录; n 为 stash@n的值
 git stash show
 git stash branch
 git stash clear # 删除所有stash
 git stash list
+git stash list -p
 git stash drop
 ```
 
@@ -151,28 +161,22 @@ git tag -d # 删除本地标签
 ### pull
 
 ```bash
-git pull -r # pull 并 rebase
-```
+git pull # git fetch && git merge
 
-```bash
-# git pull = git fetch && git merge
-       A---B---C master on origin
+       A---B---C feature
       /
  D---E---F---G *master
 
 > E is origin/master in your repository
 
-       A---B---C origin/master
+       A---B---C feature
       /         \
  D---E---F---G---H *master
 
-> H is origin/master in your repository && commit message is "Merge branch 'master' of < rep >"
-```
+# H commit message is "Merge branch 'feature' of < rep >"
 
-```bash
-# git pull -r = git fetch && git rebase FETCH_HEAD
+[topic] get pull --rebase origin master # fetch && rebase FETCH_HEAD
 
-[topic] get pull --rebase origin master
       A---B---C *topic
      /
 D---E---F---G master
@@ -180,27 +184,24 @@ D---E---F---G master
               'A'--'B'--'C' *topic
              /
 D---E---F---G master
-
 ```
 
-> 不要在master进行rebase操作，即以topic为基点变基master的commit，由于master不接受push -f，master变基前的commit不会消失。
 
 ### push
 
 ```bash
-git push -u origin < branch > # 关联分支。 当前 与 <branch>
+git push -u origin < branch > # 关联分支。 当前与远端
 git push origin --delete < branch > # 删除远端分支
-git push -f --all # 强制推送到所有remote
+git push -f # 强制推送 执行前需保证本地是最新(别人没再新的提交)
 ```
 
-> push -f: 执行前需保证本地是最新(别人没再新的提交)
 
 ### remote
 
 ```bash
 git remote add origin < remote-url > # 创建远程仓库
 git remote set-url origin < remote-url > # 修改远程仓库
-git remote show origin # 远端与本地分支的关系
+git remote show origin # 远端与本地分支的关系; 远端分支列表 tracked已追踪的 / stale陈旧3month以上
 ```
 
 ### submodule
@@ -234,16 +235,16 @@ git remote show origin # 远端与本地分支的关系
 ```bash
 # 1. [master] git commit 12 // 12
 # 2. [master] git checkout -b topic; // 检出功能分支
-# 3. [master] git commit 34; // 1234
-# 4. [topic] git commit ab; // 12ab
-# 5. [topic] git rebase master; // 变基到master HEAD之后 // 1234ab
-# 6. [master] git merge topic; // 1234ab
+# 3. [master] git commit 34; // 12_34
+# 4. [topic] git commit ab; // 12_ab
+# 5. [topic] git rebase master; // 变基到master HEAD之后 // 12_34_ab
+# 6. [master] git merge topic; // 12_34_ab
 
 git rebase < 上游主分支 > < 分支 >
 
-[topic] git rebase master // 变基并自动改变被移动的commit
+[topic] git rebase master # 变基并自动改变被移动的commit
 [topic] git rebase -i HEAD~20
-[topic] git rebase -i master // 变基并交互式改变被移动的commit
+[topic] git rebase -i master # 变基并交互式改变被移动的commit
 
       A---B---C *topic
      /
@@ -252,18 +253,27 @@ D---E---F---G master
               'A'--'B'--'C' *topic
              /
 D---E---F---G master
+
+# 不要在变基已经push到远端的commit (topic), 否则需要push -f
+
+# rebase后, A'B'C'是时间连续的多个commit, 便于查看
+
+# 不要在master进行rebase操作，即以topic为基点变基master的commit，如master不接受push -f，master变基前的commit不会消失。
+
+# 工作区有正在修改的文件时进行pull, 同文件会报错; 可以先stash push + pull, 但有可能会冲突(修改的行相同)
+
 ```
 
-> 不要在master上变基已经push到远端的commit, 因为需要push -f
 
 ### revert
 
 ```bash
 git revert < oid > # 提交一个与指定commit内容相反的commit。
 git revert -n < oid > # 内容相反的，但不提交
+
+# 若在主分支revert一个功能分支(revert merge commit id)，则该功能分支无法重新merge到主分支，需要用cherry-pick。
 ```
 
-> 若在主分支revert一个功能分支，则该功能分支无法重新merge到主分支，需要用cherry-pick。
 
 ## Debugging
 
@@ -272,9 +282,8 @@ git revert -n < oid > # 内容相反的，但不提交
 ### blame
 
 ```bash
-git blame -b -w < file > # 显示全文blame。 -b show oid; -w ignore whitespace
 git blame -L 10,20 < file > # 按行范围进行blame
-
+git blame -b -w < file > # 显示全文blame。 -b show oid; -w ignore whitespace
 g blame -L 14,14 < file >  | awk '{print $1}' | xargs git show # 显示某行的提交log
 ```
 
@@ -329,8 +338,8 @@ g blame -L 14,14 < file >  | awk '{print $1}' | xargs git show # 显示某行的
 ### clean
 
 ```bash
-git clean -id # 交互询问删不删Untracked -d 和目录
-git clean -nd # -n 试图删除Untracked -d 和目录
+git clean -id # 交互询问删不删Untracked; -d 和目录
+git clean -nd # -n 试图删除Untracked; -d 和目录
 git clean -df # -f 直接删除Untracked文件; -d 和目录
 ```
 
@@ -368,6 +377,9 @@ git cat-file -s  # 查看对象size
 git cat-file -p  # 查看对象内容
 ```
 
+> [对象类型](git-internals.md#对象类型)
+
+
 ### check-ignore
 
 ### commit-tree
@@ -381,7 +393,7 @@ git cat-file -p  # 查看对象内容
 ### ls-files
 
 ```bash
-git ls-files -m # 列出modified文件
+git ls-files -m # 列出Modified文件
 git ls-files -o # 列出Untracked文件
 git ls-files -d # 列出删除的文件
 ```
@@ -413,10 +425,12 @@ git rev-list < oid1 >...< oid2 > # 两次提交之间的所有提交
 ```bash
 git verify-pack -v .git/objects/pack/pack-*.idx # 获取所有pack中的对象详细信息; commit对应的基础tree不会显示
 git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -g -r | head -n5 # 获取最大的5个对象
+
+# -v 返回: SHA-1 | type | size | size-in-packfile | offset-in-packfile  
+
+# -v 未分类的对象返回: SHA-1 | type | size | size-in-packfile | offset-in-packfile | depth | base-SHA-1
 ```
 
-> -v 返回: SHA-1 | type | size | size-in-packfile | offset-in-packfile  
-> -v 未分类的对象返回: SHA-1 | type | size | size-in-packfile | offset-in-packfile | depth | base-SHA-1
 
 ### write-tree
 
@@ -436,4 +450,4 @@ HEAD 头指针
 
 ## ref
 
-- https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+<https://www.atlassian.com/git/tutorials/saving-changes/gitignore>
