@@ -125,10 +125,6 @@ git branch --contains < commitid >
 git diff-tree -r --no-commit-id --name-only < oid(commit) > | xargs tar -rf mycommit.tar
 ```
 
-## 获取指定tree/blob被哪些commit引用了
-
-TODO
-
 ## 文件创建时间
 
 ```bash
@@ -140,3 +136,7 @@ git log --pretty=format:"%ad" -- < file > | tail -1
 ```bash
 git reflog show --date=iso < branch >
 ```
+
+## 获取指定tree/blob被哪些commit引用了
+
+TODO

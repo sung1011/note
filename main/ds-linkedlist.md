@@ -16,21 +16,44 @@
 
 ### 单向链表
 
+```bash
+{
     head  
-    node {data, next(last指向null)}
+    node {
+        data 
+        next # last指向null
+        }
     len  
+}
+```
 
 ### 双向链表
 
+```bash
+{
     head  
-    node {data, prev, next(last指向null)}  
+    node {
+        data
+        prev 
+        next # last指向null
+        }  
     len  
+}
+```
 
 ### 循环链表
 
+```bash
+{
     head  
-    node {data, prev, next(last指向head)}  
+    node {
+        data 
+        prev 
+        next # last指向null
+        }  
     len  
+}
+```
 
 ## 操作
 

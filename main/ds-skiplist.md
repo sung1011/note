@@ -2,9 +2,12 @@
 
 ![img](res/ds-skiplist.png)
 
-## 概念
-
     多重索引的有序链表
+
+## 场景
+
+    优化链表查询速度
+    数据(member)和其数值(score), 需要对score范围查找
 
 ## 特征
 
@@ -33,6 +36,10 @@
 - `insert O(log n)`
 
 - `delete O(log n)`
+
+## 实战
+
+- redis zset
 
 ## ref
 

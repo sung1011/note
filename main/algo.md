@@ -2,54 +2,60 @@
 
 ## 分类
 
-[递归]
+- [递归]
 
-[排序]
+- [排序]
 
-- 冒泡排序（Bubble Sort）
-- 插入排序（Insertion Sort）
-- 希尔排序（Shell Sort）
-- 选择排序（Selection Sort）
-- 快速排序（Quick Sort）
-- [归并排序（Merge Sort）](algo-sort-merge.md)
-- 堆排序（Heap Sort）
-- 计数排序（Counting Sort）
-- 桶排序（Bucket Sort）
-- 基数排序（Radix Sort）
+  - 冒泡排序（Bubble Sort）
+  - 插入排序（Insertion Sort）
+  - 希尔排序（Shell Sort）
+  - 选择排序（Selection Sort）
+  - 快速排序（Quick Sort）
+  - [归并排序（Merge Sort）](algo-sort-merge.md)
+  - 堆排序（Heap Sort）
+  - 计数排序（Counting Sort）
+  - 桶排序（Bucket Sort）
+  - 基数排序（Radix Sort）
 
-[二分查找]
+- [二分查找]
 
-[搜索]
+- [搜索]
 
-[贪心]
+- [贪心]
 
-[分治]
+- [分治]
 
-[回溯]
+- [回溯]
 
-[动态规划]
+- [动态规划]
 
-[字符串匹配算法]
+- [字符串匹配算法]
 
-[雪花 snowflake](algo-snowflake.md)
+- [雪花 snowflake](algo-snowflake.md)
 
-[位图 bitmap](ds-bitmap.md)  
+- [位图 bitmap](ds-bitmap.md)  
 
-[布隆 BloomFilter](algo-bloomfilter.md)  
+- [布隆 BloomFilter](algo-bloomfilter.md)  
 
-[哈希]  
+        将一个元素带入多个哈希算法, 结果存入bitmap
 
-[一致性哈希 DHT](algo-DHT.md)  
+- [RBM RoaringBitmap]
 
-[共识算法 raft](algo-raft.md)
+- [哈希 hash](algo-hash.md)
 
-[海盗分金币](algo-pirate-gold.md)
+        将给定数据转化为`固定长度的不规则值`的函数
 
-[PoW 工作量证明算法](algo-pow.md)
+- [一致性哈希 DHT](algo-DHT.md)  
 
-[PoS 权益证明算法](algo-pos.md)
+- [共识算法 raft](algo-raft.md)
 
-[DPos 代表权益证明算法](algo-dpos.md)
+- [海盗分金币](algo-pirate-gold.md)
+
+- [PoW 工作量证明算法](algo-pow.md)
+
+- [PoS 权益证明算法](algo-pos.md)
+
+- [DPos 代表权益证明算法](algo-dpos.md)
 
 ## ref
 
