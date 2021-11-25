@@ -1,12 +1,32 @@
 # 平衡二叉树
 
-![img](res/ds-avl-tree.png)
-
     基于二叉搜索树，自平衡（左右层级差不会大于1）
 
-> [二叉树](ds-binary-tree.md)  
-> [二叉搜索树](ds-binary-search-tree.md)  
+```bash
+# AVL ; left=3 right=4
+                3
+              /    \
+            2        5
+           /        / \
+         1         4   6
+                        \
+                         7
+
+# 非AVL ; left=2 right=4
+                3
+              /    \
+            2        5
+                    / \
+                   4   6
+                        \
+                         7
+```
 
 ## ref
 
+> [二叉树](ds-binary-tree.md)  
+
+> [二叉搜索树](ds-binary-search-tree.md)  
+
 > `https://zhuanlan.zhihu.com/p/56066942`  
+

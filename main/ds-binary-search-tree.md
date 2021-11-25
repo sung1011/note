@@ -1,8 +1,14 @@
 # 二叉搜索树 binary search tree / 二叉排序树 Binary Sorted Tree
 
-![img](res/ds-binary-search-tree.png)
+```bash
+                27
+             /      \
+           14         35
+          /  \       /  \
+        10   19     31   42
+```
 
-    基于二叉树，各节点值不同且`有序`，左 < 根 < 右。
+    基于二叉树，各节点值不同且`有序` (左 < 根 < 右)
 
 > [二叉树](ds-binary-tree.md) 每个节点 <= 2个子节点。  
 

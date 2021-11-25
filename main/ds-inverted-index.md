@@ -1,7 +1,5 @@
 # 倒排索引 inverted index
 
-## 概念
-
     正排索引（forward index）: 根据key查找内容
     倒排索引（inverted index）: 根据内容的关键词查找key
 

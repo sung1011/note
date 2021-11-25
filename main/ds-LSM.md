@@ -1,16 +1,20 @@
 # LSM Log Structured Merge
 
+    先写内存, 数据写满后, 逐层滚动地归并 排序 写入磁盘。
+
 ![img](res/ds-lsm.png)
 
-    先写内存, 数据写满后, 逐层滚动地归并合并写入磁盘。
+- `内存` 内存数据, 一般32M
 
-- `Memtable` 内存数据, 一般32M; 写满后创建(分配)新的内存Memtable继续写; 按key组织的[跳表SkipList](ds-skiplist.md)
+- `Memtable` 内存写满后创建(分配)新的内存Memtable继续写; 按key组织的[跳表SkipList](ds-skiplist.md)
+
 - `Immutable` 每个Memtable写满32M的内存就转化成Immutable; 跟Memtable区别就是他只读, 不可再写
+
 - `SSTable` sorted string table 磁盘数据(多层); 由Immutable写入 并 逐层合并; 最终数据有序地写入连续的磁盘
 
 > 整块Immutable写入SSTable, 所以是顺序写
 
-> `SSTable`一共7层（L0~L6）, 每层比上一层大10倍。
+> `SSTable`一共7层（L0~L6）, 每层比上一层大10倍; 每层都会重新排序
 
 ## 特性
 
@@ -52,8 +56,10 @@
 ## 实例
 
 - `RocksDB存储引擎` 读写速度与redis同量级; FB开源; CockroachDB, MyRocks等多种数据库可以使用这个存储引擎
+- `Etcd (BoltDB)`
 
 ## ref
 
 > `https://blog.csdn.net/u014774781/article/details/52105708`
+
 > `https://www.jianshu.com/p/5c846e205f5f`

@@ -4,7 +4,7 @@
 
 - [数组 Array](ds-array.md)  
 
-      有限个相同类型元素组成的有序（连续内存空间存储）集合。易查。
+      有限个相同类型元素组成的有序（连续内存空间存储）集合。
 
 - [链表 LinkedList](ds-linkedlist.md)  
 
@@ -50,15 +50,11 @@
 
 - [二叉检索树 Binary Search Tree](ds-binary-search-tree.md)
 
-      各节点值不同，左 < 根 < 右。
+      各节点值不同 且 有序 (左 < 根 < 右)。
 
-- [平衡二叉树 AVL-Tree](ds-AVL-tree.md)
+- [平衡二叉树 AVL Tree](ds-AVL-tree.md)
 
       自平衡（左右层级差不会大于1）
-
-- [LSM Log Structured Merge](ds-LSM.md)
-
-      先写内存，数据写满后，逐层滚动地归并合并写入磁盘。
 
 - [B-树 平衡多路查找树 B-Tree](ds-b-tree.md)
 
@@ -69,11 +65,16 @@
       中间节点不存储value(数据)，只存储key(索引)，value都在叶子节点里。
       每个叶子节点都有兄弟叶子的指针。
 
+- [LSM Log Structured Merge](ds-LSM.md)
+
+      先写内存, 数据写满后, 逐层滚动地归并 排序 写入磁盘。
+
 - [红黑树](ds-rbtree.md)  
 
       不严格控制左、右子树层级差，但再平衡时效率更高。
 
 ## ref
 
-[数据结构](ref/data-struct.md)
-[IO wiki](https://oi-wiki.org/ds/)
+- [数据结构](ref/data-struct.md)
+
+- [IO wiki](https://oi-wiki.org/ds/)
