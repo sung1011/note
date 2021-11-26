@@ -22,11 +22,11 @@
 
    - `重选` 多个`Candidate`时, 可能选票无法超越半数, 此时Term加1并`RequestVote RPC`重新选举, 故不会出现多个`Leader`
 
-> 当选条件/投票原则 `Follower`会拒绝日志没有自己新(先对比term, 后对比lastLogIndex)的`RequestVote RPC`; 即 `Candidate`至少要比大多数新才能当选
+> 当选条件/投票原则: `Follower`会拒绝日志没有自己新(先对比term, 后对比lastLogIndex)的`RequestVote RPC`; 即 `Candidate`至少要比大多数新才能当选
 
-> 选举时间 每个选举的时间都是随机的, 以减小出现多个`Candidate`同时出现的概率
+> 选举时间: 每个选举的时间都是随机的, 以减小出现多个`Candidate`同时出现的概率
 
-> `PreVote` 假设网络原因当某个`Follower`无法收到心跳, 它将不断自增term并发起选举. 为避免此类无效选举, etcd3.4引入`PreVote参数`(默认false), 令`Follower`转`Candidate`前先进入`PreCandidate`状态, 不自增term发起预投票, 大多数节点认可才真正开始选举流程
+> `PreVote`: 假设网络原因当某个`Follower`无法收到心跳, 它将不断自增term并发起选举. 为避免此类无效选举, etcd3.4引入`PreVote参数`(默认false), 令`Follower`转`Candidate`前先进入`PreCandidate`状态, 不自增term发起预投票, 大多数节点认可才真正开始选举流程
 
 ---
 
@@ -53,7 +53,7 @@
 | lastLongIndex | Candidate最后一个日志条目的索引值 | term相同时,`Follower`会拒绝比自己index小的`RequestVote` |
 
 
-### `InstallSnapshot RPC` 分块日志快照给太落后的节点进行覆盖 C->F
+### `InstallSnapshot RPC` 分块日志快照给太落后的节点进行覆盖 L->F
 
 分块的日志快照
 
@@ -84,7 +84,7 @@
 `Leader` `Follower` 冲突的日志会被`Leader`的日志覆盖
 
 1. `Leader`针对每个`Follower`都维护了一个`nextIndex`字段(下一个需要发送给该Follower的日志索引值).
-2. 当`Leader`刚获得权力时,他初始化所有`nextIndex`为自己最后一条日志的索引值+1
+2. 当`Leader`刚获得权力时,他初始化所有`nextIndex`作为自己最后一条日志的索引值+1
 3. 若一个`Follower`日志和`Leader`不一致, 那么下一次`AppendEntries RPC`的一致性检查就会失败
 4. 失败后`Leader`会减小`nextIndex`并重试, 直到`nextIndex`会在某个位置双方达成一致
 5. 在该位置后执行日志覆盖, 使`Leader` `Follower`的日志保持一致
