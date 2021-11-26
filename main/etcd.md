@@ -10,7 +10,7 @@
 
 ## 选举
 
-- [raft 选举](algo-raft.md)
+- [raft](algo-raft.md)
 
 ## 一致性
 

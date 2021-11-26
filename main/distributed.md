@@ -8,6 +8,7 @@
 - [PoW 工作量证明算法](algo-pow.md)
 - [PoS 权益证明算法](algo-pos.md)
 - [DPos 代表权益证明算法](algo-dpos.md)
+- [一致性哈希 DHT](algo-DHT.md)  
 
 ---
 

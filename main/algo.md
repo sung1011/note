@@ -33,7 +33,11 @@
 
 - [雪花 snowflake](algo-snowflake.md)
 
+      分布式全局唯一ID
+
 - [位图 bitmap](ds-bitmap.md)  
+
+      数据映射为bit数组, 只存0或1
 
 - [布隆 BloomFilter](algo-bloomfilter.md)  
 
@@ -51,11 +55,11 @@
 
 - [海盗分金币](algo-pirate-gold.md)
 
-- [PoW 工作量证明算法](algo-pow.md)
+- [工作量证明算法 PoW](algo-pow.md)
 
-- [PoS 权益证明算法](algo-pos.md)
+- [权益证明算法 PoS](algo-pos.md)
 
-- [DPos 代表权益证明算法](algo-dpos.md)
+- [代表权益证明算法 DPos](algo-dpos.md)
 
 ## ref
 

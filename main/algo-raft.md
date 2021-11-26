@@ -1,34 +1,5 @@
 # raft
 
-## 节点间通信 RPC
-
-### `AppendEntries RPC` 日志的复制,覆盖和充当心跳 L->F/C
-
-| 参数         | 含义                     | 意义                                |
-| ------------ | ------------------------ | ----------------------------------- |
-| term         | Leader的任期号           |
-| leaderId     | LeaderId                 | 用于F重定向C的请求                  |
-| prevLogIndex | 上一个log条目的索引      | 用来校验请求合法性                  |
-| prevLogTerm  | 上一个log条目的任期号    | 用来校验请求合法性                  |
-| entries[]    | 准备存储的log数据        | 心跳则为空;数组形式一次通讯可发多个 |
-| leaderCommit | Leader已经提交的日志索引 | 用于覆盖Follower                    |
-
-### `RequestVote RPC` Candidate发起选举请求 C->F
-
-| 参数          | 含义                              | 意义                                                    |
-| ------------- | --------------------------------- | ------------------------------------------------------- |
-| term          | Candidate的任期号                 |
-| candidateId   | 发起选举的ID                      |
-| lastLogTerm   | Candidate最后一个日志条目的任期号 | `Follower`会拒绝比自己term小的`RequestVote`             |
-| lastLongIndex | Candidate最后一个日志条目的索引值 | term相同时,`Follower`会拒绝比自己index小的`RequestVote` |
-
-
-### `InstallSnapshot RPC` 分块日志快照给太落后的节点进行覆盖 C->F
-
-分块的日志快照
-
----
-
 ## 选举 leader-election
 
 ### 状态
@@ -56,6 +27,35 @@
 > 选举时间 每个选举的时间都是随机的, 以减小出现多个`Candidate`同时出现的概率
 
 > `PreVote` 假设网络原因当某个`Follower`无法收到心跳, 它将不断自增term并发起选举. 为避免此类无效选举, etcd3.4引入`PreVote参数`(默认false), 令`Follower`转`Candidate`前先进入`PreCandidate`状态, 不自增term发起预投票, 大多数节点认可才真正开始选举流程
+
+---
+
+## 节点间通信 RPC
+
+### `AppendEntries RPC` 日志的复制,覆盖和充当心跳 L->F/C
+
+| 参数         | 含义                     | 意义                                |
+| ------------ | ------------------------ | ----------------------------------- |
+| term         | Leader的任期号           |
+| leaderId     | LeaderId                 | 用于F重定向C的请求                  |
+| prevLogIndex | 上一个log条目的索引      | 用来校验请求合法性                  |
+| prevLogTerm  | 上一个log条目的任期号    | 用来校验请求合法性                  |
+| entries[]    | 准备存储的log数据        | 心跳则为空;数组形式一次通讯可发多个 |
+| leaderCommit | Leader已经提交的日志索引 | 用于覆盖Follower                    |
+
+### `RequestVote RPC` Candidate发起选举请求 C->F
+
+| 参数          | 含义                              | 意义                                                    |
+| ------------- | --------------------------------- | ------------------------------------------------------- |
+| term          | Candidate的任期号                 |
+| candidateId   | 发起选举的ID                      |
+| lastLogTerm   | Candidate最后一个日志条目的任期号 | `Follower`会拒绝比自己term小的`RequestVote`             |
+| lastLongIndex | Candidate最后一个日志条目的索引值 | term相同时,`Follower`会拒绝比自己index小的`RequestVote` |
+
+
+### `InstallSnapshot RPC` 分块日志快照给太落后的节点进行覆盖 C->F
+
+分块的日志快照
 
 ---
 
