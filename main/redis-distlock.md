@@ -21,9 +21,9 @@
 - PX 设置30s过期
 - random_value 为了更安全的释放锁，值需要随机性
 
-安全释放锁
 
 ```lua
+-- 安全释放锁
 if redis.call("get",KEYS[1]) == ARGV[1] then
     return redis.call("del",KEYS[1])
 else
@@ -37,9 +37,9 @@ end
 
 1. 获取当前Unix时间为开始获取锁的时间。`start_t`
 2. 依次尝试从N个实例(如5个实例)，使用相同的key和随机值获取锁。
-3. 计算获取锁所用时间（`cost_t` = 当前时间 - start_t）。
-4. 当大多数实例（如5分之3实例成功）获取锁且cost_t小于锁过期时间，则获取成功。 key的真正过期时间=过期时间-cost_t。
-5. 若获取锁失败（如5分之2实例成功），则进行解锁（5个实例都解锁，不论是否加锁成功）。
+3. 计算获取锁所用时间 `cost_t = now - start_t`。
+4. 当大多数实例(如5分之3实例成功)获取锁且cost_t小于锁过期时间，则获取成功 `key的真正过期时间= 过期时间 - cost_t`。
+5. 若获取锁失败(如5分之2实例成功), 则进行解锁（5个实例都解锁，不论是否加锁成功）。
 
 ### 是否异步
 
@@ -55,4 +55,4 @@ end
 
 ## ref
 
-[redis分布式锁](http://redis.cn/topics/distlock.html)
+- <http://redis.cn/topics/distlock.html> redis分布式锁

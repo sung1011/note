@@ -2,7 +2,10 @@
 
 ## etcd
 
-unix 的`/etc`文件夹 + d (distribute) = etcd 用于`存储分布式配置的信息存储服务`
+```bash
+etcd = unix 的`/etc`文件夹 + `d` (distribute) 
+# 用于`存储分布式配置的信息存储服务`
+```
 
 ## 架构
 
@@ -47,15 +50,17 @@ unix 的`/etc`文件夹 + d (distribute) = etcd 用于`存储分布式配置的�
 
 - `Client层` v2/v3两大版本的API客户端库
 
-- `API层` C访问S/S访问S的通讯协议
+- `API层` C访问S 或 S访问S的通讯协议
 
 - `Raft层` raft算法实现层
+
   - Leader选举
   - 日志复制
   - ReadIndex
   - 成员切换
 
 - `Logic层` 特性实现层
+
   - KVServer模块
   - MVCC模块
     - treeIndex模块
@@ -66,6 +71,7 @@ unix 的`/etc`文件夹 + d (distribute) = etcd 用于`存储分布式配置的�
   - Quota配额校验模块
 
 - `存储层`
+
   - 预写日志WAL模块 保障了数据持久化
   - 快照Snapshot模块 差异较大时Leader覆盖同步Follower数据
   - boltdb模块 集群元数据和用户写入数据

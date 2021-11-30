@@ -51,4 +51,6 @@ typedef struct intset {
 
 ## issues
 
-集合元素互斥性如何保证？
+- 集合元素互斥性如何保证？
+
+排序的

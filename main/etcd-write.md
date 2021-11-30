@@ -75,7 +75,7 @@
 
 1. 生成唯一ID
 2. ID关联一个对应的消息通知channel
-3. 向raft模块发起提案Propose
+3. 向raft模块发起提案Proposal
 4. 阻塞等待结果, 结果会通过消息通知channel返回 or 超时
    - 默认超时7s = 5s磁盘IO延时 + 2s竞选超时
    - err `etcdserver: request timed out`

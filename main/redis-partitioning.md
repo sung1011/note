@@ -1,12 +1,10 @@
-# redis分区
-
-## 概念
+# redis 分区
 
 将数据分发到不同实例，每个实例是所有key的一个子集。
   
-## 实现 - 算法
+## 实现
 
-- 范围 如：id范围
+### range范围 如：id范围
 
 ```bash
 1~1000 -> R0， 1001~2000 -> R1， 2001~3000 -> R2
@@ -14,7 +12,7 @@
 ...
 ```
 
-- hash(散列) 如：crc32, redis cluster
+### hash函数 如：crc32
 
 ```bash
 slot_num = 1024 // 槽
@@ -24,7 +22,7 @@ redis = slots[slot_index].redis // redis = 666槽位对应的redis实例
 redis.do(command)
 ```
 
-- [一致性哈希 DHT](algo-DHT.md)
+### [一致性哈希 DHT](algo-DHT.md) 如: redis-cluster
 
 ## 实现
 
@@ -38,13 +36,13 @@ redis.do(command)
 
 ### 3. 查询路由(Query routing)  
 
-客户端随机地请求任意一个redis实例，然后由Redis将请求转发给正确的Redis节点。(cluster)  
+客户端随机地请求任意一个redis实例，然后由Redis将请求转发给key所在的Redis节点。(cluster)  
 
-## 分区的普遍缺点
+## 缺点
 
-涉及多个key的操作通常不会被支持。（如事务)  
-数据处理变得困难，如备份时必须从不同redis实例和主机同时收集RDB/AOF文件  
-节点变更后，数据无法平滑迁移到新节点（扩缩容）  
+- 涉及多个key的操作通常不会被支持。（如事务)  
+- 数据处理变得困难，如备份时必须从不同redis实例和主机同时收集RDB/AOF文件  
+- 节点变更后，数据无法平滑迁移到新节点（扩缩容）  
 
 ## 实战
 
@@ -67,7 +65,7 @@ redis.do(command)
 ### hash tag
 
 key不同槽位，即不同节点，通过key的一部分进行hash，该部分称为hash tag  
-`a{bar}1, sun{bar}, {bar}xie`, 识别{}作为reshard的key，将以上key分片到同一个实例。
+`a{bar}1, sun{bar}, {bar}xie`, 识别{bar}作为reshard的key，将以上key分片到同一个实例。
 
 ### 预分片
 

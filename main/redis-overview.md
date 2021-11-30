@@ -1,8 +1,20 @@
-# redis 版本
+# redis 概述
 
 @@redis
 
-## Redis2.6
+## 场景
+
+- 会话缓存  
+- 页面缓存  
+- 消息队列  
+- 计数器  
+- 排行榜  
+- 秒杀  
+- 分布式锁  
+
+## version
+
+### Redis2.6
 
 > released 2012
 
@@ -20,7 +32,7 @@
 12. info可以按照section输出，并且添加了一些统计项
 13. sort命令优化
 
-## Redis2.8
+### Redis2.8
 
 > released 2013.11.22
 
@@ -33,12 +45,12 @@
 7. 发布订阅添加了pubsub。
 8. Redis Sentinel第二版，相比于Redis2.6的Redis Sentinel，此版本已经变成生产可用。
 
-## Redis3.0（里程碑)
+### Redis3.0（里程碑)
 
 > released 2015.4.1
 
 1. `Redis Cluster：Redis的官方分布式实现。`
-2. 全新的embedded string对象编码结果，优化小对象内存访问，在特定的工作负载下载速度大幅提升。
+2. `全新的embedded string对象编码`，优化小对象内存访问，在特定的工作负载下载速度大幅提升。
 3. LRU算法大幅提升。
 4. migrate连接缓存，大幅提升键迁移的速度。
 5. migrate命令两个新的参数copy和replace。
@@ -48,7 +60,7 @@
 9. Redis日志小做调整：日志中会反应当前实例的角色（master或者slave）。
 10. incr命令性能提升。
 
-## Redis3.2
+### Redis3.2
 
 > released 2016.5.6
 
@@ -69,7 +81,7 @@
 15. cluster nodes命令得到加速。
 16. Jemalloc更新到4.0.3版本。
 
-## Redis4.0
+### Redis4.0
 
 > released 2016.12.02
 
@@ -82,7 +94,7 @@
 7. 提供了RDB-AOF混合持久化格式，充分利用了AOF和RDB各自优势。
 8. Redis Cluster 兼容NAT和Docker。
 
-## Redis5.0
+### Redis5.0
 
 > released 2018.05.29
 

@@ -24,9 +24,46 @@
 
 > 当选条件/投票原则: `Follower`会拒绝日志没有自己新(先对比term, 后对比lastLogIndex)的`RequestVote RPC`; 即 `Candidate`至少要比大多数新才能当选
 
-> 选举时间: 每个选举的时间都是随机的, 以减小出现多个`Candidate`同时出现的概率
+### 异常
 
-> `PreVote`: 假设网络原因当某个`Follower`无法收到心跳, 它将不断自增term并发起选举. 为避免此类无效选举, etcd3.4引入`PreVote参数`(默认false), 令`Follower`转`Candidate`前先进入`PreCandidate`状态, 不自增term发起预投票, 大多数节点认可才真正开始选举流程
+#### 多个Candidate同时出现?
+
+选举时间: 每个选举的时间都是随机的, 以减小出现多个`Candidate`同时出现的概率
+
+#### 网络原因导致某个Follower无法接收心跳?
+
+`PreVote`: 假设网络原因当某个`Follower`无法收到心跳, 它将不断自增term并发起选举. 为避免此类无效选举, etcd3.4引入`PreVote参数`(默认false), 令`Follower`转`Candidate`前先进入`PreCandidate`状态, 不自增term发起预投票, 大多数节点认可才真正开始选举流程
+
+#### 多个Leader同时出现?
+
+任期
+
+---
+
+## Log Replication
+
+### 流程
+
+1. WAL `Leader`将客户端发来的请求命令附加(append)到日志中
+2. 并行的向其他节点广播`AppendEntries RPC`
+3. 其他节点收到RPC后进行持久化
+4. 若超过半数节点持久化成功, 则该日志标记为已提交(Committed)
+5. 响应`Leader`返回值
+6. etcdserver模块异步从Raft模块获取已提交的日志, 更新到状态机(boltdb)
+
+> 此过程出现超时或报错时(崩溃,运行缓慢,网络丢包等), `Leader`会不断重试
+
+> committed后 同时Leader日志中该日志前所有日志也会被提交, 包括由其他Leader创建的日志
+
+### 一致性
+
+`Leader` `Follower` 冲突的日志会被`Leader`的日志覆盖
+
+1. `Leader`针对每个`Follower`都维护了一个`nextIndex`字段(下一个需要发送给该Follower的日志索引值).
+2. 当`Leader`刚获得权力时,他初始化所有`nextIndex`作为自己最后一条日志的索引值+1
+3. 若一个`Follower`日志和`Leader`不一致, 那么下一次`AppendEntries RPC`的一致性检查就会失败
+4. 失败后`Leader`会减小`nextIndex`并重试, 直到`nextIndex`会在某个位置双方达成一致
+5. 在该位置后执行日志覆盖, 使`Leader` `Follower`的日志保持一致
 
 ---
 
@@ -59,38 +96,6 @@
 
 ---
 
-## Log Replication
-
-### 流程
-
-1. WAL `Leader`将客户端发来的请求命令附加(append)到日志中
-2. 并行的向其他节点广播`AppendEntries RPC`
-3. 其他节点收到RPC后进行持久化
-4. 若超过半数节点持久化成功, 则该日志标记为已提交(Committed)
-5. 响应`Leader`返回值
-6. etcdserver模块异步从Raft模块获取已提交的日志, 更新到状态机(boltdb)
-
-> 此过程出现超时或报错时(崩溃,运行缓慢,网络丢包等), `Leader`会不断重试
-
-> `返回时机` 日志条目已提交(commited)后, Leader响应C返回值
-
-### 已提交 committed
-
-- `AppendEntries RPC`被复制到过半数节点, 该日志就会被提交.
-- 同时Leader日志中该日志前所有日志也会被提交, 包括由其他Leader创建的日志
-
-### 一致性
-
-`Leader` `Follower` 冲突的日志会被`Leader`的日志覆盖
-
-1. `Leader`针对每个`Follower`都维护了一个`nextIndex`字段(下一个需要发送给该Follower的日志索引值).
-2. 当`Leader`刚获得权力时,他初始化所有`nextIndex`作为自己最后一条日志的索引值+1
-3. 若一个`Follower`日志和`Leader`不一致, 那么下一次`AppendEntries RPC`的一致性检查就会失败
-4. 失败后`Leader`会减小`nextIndex`并重试, 直到`nextIndex`会在某个位置双方达成一致
-5. 在该位置后执行日志覆盖, 使`Leader` `Follower`的日志保持一致
-
----
-
 ## 成员变更
 
 TODO
@@ -118,6 +123,8 @@ TODO
 - 确保安全性(包括网络延迟,分区,数据包丢失,重复,乱序时不会返回不正确结果)
 - 只要超过一半服务可运行, 一致性算法就可用
 - 不依赖于时序来确保日志的一致性, 避免错误的时钟和极端消息延迟导致的问题
+
+---
 
 ## ref
 

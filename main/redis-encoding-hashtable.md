@@ -86,21 +86,19 @@ A: 进行rehash操作来扩容或缩容(改变哈希表数组的大小)
 
 ### 扩容缩容
 
-扩容条件: used > size || fork进行cow时 used * 5 > size
-
 ```c
+// 扩容条件: used > size || fork进行cow时 used * 5 > size
 d->ht[0].used >= d->ht[0].size && (dict_can_resize || d->ht[0].used/d->ht[0].size > dict_force_resize_ratio)
 ```
 
-缩容条件: used * 10 < size && size > 4 && fork进行cow时不缩容
-
 ```c
+// 缩容条件: used * 10 < size && size > 4 && fork进行cow时不缩容
 (size > DICT_HT_INITIAL_SIZE && (used*100/size < HASHTABLE_MIN_FILL))
 ```
 
 > `扩容/缩容的size` dict->ht[1].size = dict->ht[0].used * 2
 >
-> `load factor` = ht[0].used / ht[0].size 负载因子
+> `load factor 负载因子` = ht[0].used / ht[0].size
 >
 > `dict_can_resize` 是否rehash fork进程进行copy on write（如rdb, aof, module）时值为0
 >

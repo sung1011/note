@@ -39,7 +39,9 @@ host.SLD.TLD.root 如: app.tickles.cn. (root可省略为 . 亦可忽略)
 
 > 域名解析服务: 代理请求 和 缓存结果; 地址配置在 /etc/resolve.conf
 
-> [dig](linux-cmd-dig.md)观察域名解析过程 `dig +trance <domain name>`; root->TLD->SLD->host; 查到`A`记录,即找到IP; Received 为每个阶段分界;
+> [dig](linux-cmd-dig.md)观察域名解析过程 `dig <domain name>`; root->TLD->SLD->host; 查到`A`记录,即找到IP; Received 为每个阶段分界;
+
+> whois 查看域名信息
 
 ## DNS资源记录 RR
 
