@@ -50,7 +50,9 @@
 
 ## 连接处理
 
-## 高可用
+## [高可用](redis-sentinel.md) 
+
+    Redis-Sentinel是Redis官方的高可用性解决方案
 
 ## 延迟监控
 
@@ -74,3 +76,11 @@
 - [redisbook](http://redisbook.com)
 - [Redis进阶不得不了解的内存优化细节](https://blog.csdn.net/belalds/article/details/81106853)
 - [redis主体流程](https://www.jianshu.com/p/427cf97d7951)
+
+## todo
+
+- Sentinel
+- 发布订阅模式
+- 快速跳表
+- lua脚本
+- 事务

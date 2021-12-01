@@ -43,4 +43,4 @@ Redis 基于 Reactor 模式开发了自己的网络事件处理器：文件事�
 
 ## ref
 
-[Redis线程模型](https://www.cnblogs.com/barrywxx/p/8570821.html)
+- Redis线程模型 <https://www.cnblogs.com/barrywxx/p/8570821.html>

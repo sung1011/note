@@ -4,7 +4,7 @@
   
 ## 实现
 
-### range范围 如：id范围
+### range范围 如：id范围 如: redis-cluster
 
 ```bash
 1~1000 -> R0， 1001~2000 -> R1， 2001~3000 -> R2
@@ -22,7 +22,7 @@ redis = slots[slot_index].redis // redis = 666槽位对应的redis实例
 redis.do(command)
 ```
 
-### [一致性哈希 DHT](algo-DHT.md) 如: redis-cluster
+### [一致性哈希 DHT](algo-DHT.md)
 
 ## 实现
 
@@ -64,8 +64,8 @@ redis.do(command)
 
 ### hash tag
 
-key不同槽位，即不同节点，通过key的一部分进行hash，该部分称为hash tag  
-`a{bar}1, sun{bar}, {bar}xie`, 识别{bar}作为reshard的key，将以上key分片到同一个实例。
+通过key的一部分进行hash，该部分称为hash tag  
+识别`{}`作为reshard的key, 如: `a{bar}1, sun{bar}, {bar}xie`, 将以上key分片到同一个实例。
 
 ### 预分片
 
