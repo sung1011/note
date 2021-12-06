@@ -2,6 +2,8 @@
 
 @@json @@jwt @@跨语言 @@协议 @@加密 @@SSO @@非对称加密
 
+    S认证后, S发给C一段密文, 只有S能解开, 过程只依赖一个S端的secretKey, 不需要依赖额外数据.
+
 ## 特征
 
 1. 跨语言
@@ -28,8 +30,6 @@
 3. C通过HTTP header每个请求将`JWT`传递给服务端
 4. S对`JWT`验签, 并获取payload信息
 
-> 白话: S发给C一段密文, 只有S能解开, 过程只依赖一个共同的secretKey, 不需要依赖额外数据.
->
 > HTTP-header: `Authorization: Bearer {JWT}`  
 
 ## 构成
@@ -78,14 +78,12 @@ payload = base64(data) // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
 ```
 
 > 实际就是预定义声明 和 自定义声明  
->
+
 > JWT默认不加密, 所以payload中不要存敏感信息  
->
+
 > 也可以将生成JWT再加密一层
 
-### signature 签名
-
-放篡改
+### signature 签名 放篡改
 
 ```js
 data = base64UrlEncode(header) + '.' + base64UrlEncode(payload);

@@ -16,8 +16,8 @@
 
     4kb
 
-> 是指name=value的value的限制, 而非一个域名下所有cookie
->
+> 是指一个name=value的value的限制, 而非一个域名下所有cookie
+
 > 每个请求都会带着全部cookie
 
 ## 安全性

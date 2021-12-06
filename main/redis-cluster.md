@@ -28,7 +28,7 @@
 ## 实现
 
 - `通信` 所有node之间通过 TCP连接 和 二进制集群连接(cluster bus) 建立通信.
-- `协议` gossip.
+- `协议` Gossip.
   - 发现新node
   - ping健康检查心跳
   - 发数据消息
@@ -36,14 +36,14 @@
 
 ## 主从
 
-    master挂调后, 通过选举, 将slave节点升级为master节点.
+    master挂后, 通过选举, 将slave节点升级为master节点.
 
 ## 弱一致性
 
 ### 异步复制
 
     master处理并返回后, 异步的复制到slave.
-    当尚未复制时master挂了, 数据就丢失.
+    当尚未复制时master挂了, 会有部分数据就丢失.
 
 ### 脑裂
 

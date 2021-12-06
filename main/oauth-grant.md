@@ -1,17 +1,38 @@
 # oauth 授权 (获取token)
 
+## members
+
+- `Third-party application` 第三方应用程序(app、web-a)，又称"客户端"（client）但也可能是app的server。 --- 第三方app
+- `User Agent` 用户代理。 --- 浏览器
+- `Authorization server` 认证服务器(web-b-auth)，即服务提供商专门用来处理认证的服务器。 --- 百度账号认证服务
+- `Resource server` 资源服务器(web-b)，即服务提供商存放用户生成的资源的服务器。它与认证服务器，可以是同一台服务器，也可以是不同的服务器。 --- 百度云盘/地图/翻译服务
+- `Resource Owner` 资源所有者，又称"用户"（user）。 --- 自己
+- `HTTP service` HTTP服务提供商，简称"服务提供商"。 --- 百度
+
 ## 流程
 
-```seq
-    第三方应用 app --- auth req ---> res owner      // app要求用户授权
-    第三方应用 app <--- auth grant --- res owner    // 用户同意授权
-app
-    第三方应用 app --- auth grant ---> 微信验证 auth server   // app使用上一步的授权，向认证服申请令牌
-    第三方应用 app <--- access token --- 微信验证 auth server // 认证服认证，并发放令牌
-app
-    第三方应用 app --- access token ---> 微信 res server // app使用令牌向资源服请求资源
-    第三方应用 app <--- protected resource --- 微信 res server // 资源服验证令牌，并提供资源
+```bash
+            auth-req
+    app ---------------------> res owner        # app要求用户授权
+            auth-code
+    app <--------------------- res owner        # 用户登录并同意授权
+
+            auth-code 
+    app ---------------------> auth server      # app使用上一步的授权码，向认证服申请令牌
+            access-token
+    app <--------------------- auth server      # 认证，并发放令牌
+
+            access-token
+    app ---------------------> res server       # app使用令牌向资源服请求资源
+            protected-resource
+    app <--------------------- res server       # 验证令牌，并提供资源
 ```
+
+> auth-server & res-server 是同一企业下的不同服务
+
+> auth-server 可以做SSO
+
+> auth-code 细分了资源权限
 
 ## 类型
 
@@ -22,9 +43,9 @@ app
 
 ### 授权码（authorization-code）
 
-app先申请授权码，user登录web-b使app获得授权码，app的server端再通过授权码获取令牌。
-
 ```bash
+# app先申请授权码，user登录web-b使app获得授权码，app的server端再通过授权码获取令牌。
+
 
 # 1. app跳转到web-b，user在web-b登录后，选择授权or不授权，授权则返回授权码
 https://b.com/oauth/authorize         # web-a req
@@ -46,7 +67,6 @@ https://b.com/oauth/token?   # web-a req
  redirect_uri={CALLBACK-WEB-A}  # 令牌颁发后的回调
 
 # 4. web-b发送令牌json数据给web-a
-
 a.com/{CALLBACK-WEB-A}
 
 {    
@@ -62,13 +82,14 @@ a.com/{CALLBACK-WEB-A}
 ```
 
 > 步骤1 是重定向，必须get，敏感信息可能会被中间人攻击  
+
 > 步骤3 由后端发起请求，保障了安全
 
 ### 隐藏式（implicit）
 
-app是纯前端应用，跟授权码方式项目，没有授权码这个中间步骤。
 
 ```bash
+# app是纯前端应用，跟授权码方式项目，没有授权码这个中间步骤。
 
 # 1. app跳转到web-b，user在web-b登录后，选择授权or不授权，授权则直接返回返回token
 https://b.com/oauth/authorize?
@@ -82,13 +103,14 @@ https://a.com/{CALLBACK-WEB-A}#code={AUTHORIZATION_CODE} # 回调web-a 附带授
 ```
 
 > 注意，令牌的位置是 URL 锚点（fragment），而不是查询字符串（querystring），这是因为 OAuth 2.0 允许跳转网址是 HTTP 协议，因此存在"中间人攻击"的风险，而浏览器跳转时，锚点不会发到服务器，就减少了泄漏令牌的风险。  
+
 > 隐藏式非常不安全，用于安全需求不高的场景，并且有效期务必很短。
 
 ### 密码式（password）
 
-将web-b的账号密码直接交给web-a进行授权。
 
 ```bash
+# 将web-b的账号密码直接交给web-a进行授权。
 
 # 1. 传递web-b的用户名，密码
 https://oauth.b.com/token?
@@ -102,9 +124,9 @@ https://oauth.b.com/token?
 
 ### 凭证式（credentials）
 
-命令行下请求令牌
 
 ```bash
+# 命令行下请求令牌
 
 # 1. web-a 的 server 进行请求
 https://oauth.b.com/token?
