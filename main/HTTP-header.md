@@ -79,8 +79,9 @@
 
 - GZIP (、ZLIB、DEFLATE)
 
-  - 场景1：获取S端临时压缩的数据，在C端解压。
-    1. req header `Accept-Encoding: gzip` 表达C端支持gzip
+  - 场景1：获取S端临时压缩的数据(如: nginx压缩并返回)，在C端解压。
+
+    1. req header `Accept-Encoding: gzip` 表达C端想要gzip
     2. resp header `Content-Encoding: gzip` S端压缩数据、返回此响应头与压缩后的数据
        - resp header `Content-Length: 1234` 为压缩后的大小
     3. 客户端（浏览器）收到该响应头，进行解压（流式）
@@ -94,8 +95,10 @@
     1. req header `Content-Encoding: gzip` 在C端代码进行压缩，带此header告知S端请求格式为gzip
 
 > 优点 压缩
-> 缺点 压缩与解压耗时耗CPU；
-> 原理 找到类似的字符串，并替换。所以对很多标签的代码文件压缩率高（xml, html）
+
+> 缺点 压缩与解压耗时耗CPU
+
+> 原理 找到类似的字符串, 并替换. 所以对很多标签的代码文件压缩率高（xml, html）
 
 ## ref
 

@@ -137,7 +137,7 @@ kubectl [command] [TYPE] [NAME] [flags]
 
 ### debug
 
-`ks get po <pod name> -o yaml` 获取pod yaml
+`ks get po <pod name> -o yaml` 获取pod yaml
 `ks describe <any>`
 `ks edit <any>`
 `ks port-forward <pod name> <local port>:<pod port>` 本地端口映射pod端口

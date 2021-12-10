@@ -1,10 +1,12 @@
 # HTTP
 
-## 概念
+    @@HTTP
 
-基于TCP协议，属于OSI应用层的面向对象的超文本传输协议。
+    基于TCP协议，属于OSI应用层的面向对象的超文本传输协议。
 
 ## 版本
+
+[HTTPS](HTTPS.md)
 
 [HTTP/0.9](HTTP-0.9.md)
 
@@ -15,8 +17,6 @@
 [HTTP/2](HTTP-2.md)
 
 [HTTP/3](HTTP-3.md)
-
-[HTTPS](HTTPS.md)
 
 ## Request
 
@@ -63,13 +63,23 @@ Connection: keep-alive
 
 ### [响应头 header](HTTP-header.md)
 
-### 响应体  
+### 响应体 body
 
-## [通讯流程 TCP](TCP.md)
+## 网络流程
+
+1. `HTTP` GET google.com http1.1
+2. `DNS` domain name: google.com; IP 39.156.69.79
+3. `TCP` src port: 5678; dst port: 80
+4. `IP` src IP: 120.244.152.147; dst IP 39.156.69.79
+5. `MAC` src MAC: dc:a9:04:8f:98:aa; src GateWay MAC: 32:35:2f:dc:e4:8a
+6. `Router` dst {router1 ip}, {router2 ip}, {router3 ip}, {router4 ip} ...;
+
+
+## [TCP协议](TCP.md)
 
 ## [跨域 cors](HTTP-cors.md)
 
 ## ref
 
-[队头阻塞](https://cloud.tencent.com/developer/article/1509279)
-[HTTP历史演变](https://www.cnblogs.com/imstudy/p/9234124.html)
+- [队头阻塞](https://cloud.tencent.com/developer/article/1509279)
+- [HTTP历史演变](https://www.cnblogs.com/imstudy/p/9234124.html)

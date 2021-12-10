@@ -50,7 +50,7 @@ usr每个线程阻塞等待sys的返回。
 2. select线程阻塞等待select()系统调用返回
 3. 当数据从sys就绪，会激活`select() > 0`
 4. select线程遍历events找到准备就绪的fd，将其标记为就绪状态fd_set = 1。
-5. usr线程正式发起read/write请求，从sys读取那些标记就绪的数据。
+5. usr线程正式发起read/write请求，从sys读取那些标记就绪的数据。
 
 - 采用一个1024数组存储状态，最多同时检查1024。  
 - 某个sys线程就绪将select的某个fd激活时，select并不知道哪个fd有数据，只能自己遍历。

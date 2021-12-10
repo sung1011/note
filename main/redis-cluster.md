@@ -1,5 +1,7 @@
 # redis - cluster
 
+@@哈希 @@redis
+
 ![img](res/redis-cluster.png)
 
 ## 优点

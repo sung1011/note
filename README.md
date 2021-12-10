@@ -81,8 +81,6 @@
 
 #### [socket 套接字](main/socket.md)
 
-#### [network 网络编程](main/linux-network.md)
-
 #### [protocal 协议](main/protocal.md)
 
 #### [nginx](main/nginx.md)

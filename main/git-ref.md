@@ -125,6 +125,7 @@ git log --oneline --decorate # 一行 id+msg
 git log -< num > # -n< num > 最近n条
 git log --all # 所有分支
 git log --graph
+git log feature ^master # feature里有, master里没有的commmit
 ```
 
 ### stash
@@ -411,6 +412,11 @@ git rev-list < oid1 >...< oid2 > # 两次提交之间的所有提交
 ```
 
 ### rev-parse
+
+```bash
+git rev-parse HEAD^ # 上一个commit-id
+git rev-parse --short HEAD^ # 上一个commit-id(short)
+```
 
 ### show-ref
 

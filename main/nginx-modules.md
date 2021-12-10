@@ -81,7 +81,7 @@ module: ngx_http_autoindex_module
 ### 限制流量
 
 module: ngx_http_core_module.Embedded Variables
-配置: set $limit_rate 1k; #限制BPS
+配置: set $limit_rate 1k; #限制BPS
 
 ### 防DDOS
 
@@ -166,7 +166,7 @@ directives: limit_conn_zone, limit_conn, limit_conn_log_level, limit_conn_status
 
 ### access 认证
 
-#### 限制ip
+#### 限制ip
 
 module: http_access_module  
 stage: access  

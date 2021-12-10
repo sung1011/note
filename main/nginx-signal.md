@@ -1,6 +1,6 @@
 # nginx信号
 
-以下信号量省略SIG前缀。如 SIGQUIT 即 QUIT
+以下信号量省略SIG前缀。如 SIGQUIT 即 QUIT
 
 ## master
 

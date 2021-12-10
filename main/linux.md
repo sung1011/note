@@ -8,8 +8,6 @@
 
 ## disk
 
-## [network](linux-network.md)
-
 ## [架构](linux-arch.md)  
 
 ## [进程](linux-process.md)  

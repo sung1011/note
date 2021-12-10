@@ -140,3 +140,9 @@ git reflog show --date=iso < branch >
 ## 获取指定tree/blob被哪些commit引用了
 
 TODO
+
+## 某次merge的内容
+
+```bash
+git diff HEAD^ HEAD
+```
