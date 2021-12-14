@@ -7,7 +7,7 @@
 # 单步进行重装
 # 交互模式
 
-# append string, if the string not exists in the file.
+# append string, if the string not exists in the file.
 appendNX() {
     str=$1
     file=$2

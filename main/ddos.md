@@ -1,4 +1,4 @@
-# DDoS Distributed Denial of Service 分布式拒绝服务
+# DDoS Distributed-Denial-of-Service 分布式拒绝服务
 
 ## 类型
 

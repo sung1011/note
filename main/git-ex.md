@@ -9,7 +9,7 @@
 ```bash
 Updating e72ede4..bb7de2c
 error: Your local changes to the following files would be overwritten by merge:
-	ccc
+    ccc
 Please commit your changes or stash them before you merge.
 Aborting
 ```
