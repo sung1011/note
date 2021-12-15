@@ -9,8 +9,8 @@
 ```bash
 make # 执行第一个target
 
-make clean
-make a.txt
+make clean # 伪目标
+make a.txt # 文件
 
 make -f rules.txt
 make --file=rules.txt
@@ -131,7 +131,7 @@ test2:
     VARIABLE += value   # 将值追加到变量的尾端。
 ```
 
-### 内置变量 Implicit Variables
+### 内置变量 Implicit-Variables
 
 ```makefile
 # $(CC)当前编译器; 内置变量大多C语言相关的, 不常用
@@ -141,7 +141,7 @@ output:
 
 > 手册 关于implicit-variables <https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html>
 
-### 自动变量 Automatic Variables
+### 自动变量 Automatic-Variables
 
 ```makefile
 # $@ 代指< target >; 如make foo的$@就是foo
@@ -178,9 +178,50 @@ dest/%.txt: src/%.txt
 
 > 手册 关于automatic variables <https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html>
 
-### 函数
+### 函数 Functions
 
-TODO
+```makefile
+# 格式
+$(function args)
+# 或
+${function args}
+```
+
+```makefile
+# shell 执行shell命令
+srcfiles := $(shell echo src/{00..99}.txt)
+```
+
+```makefile
+# wildcard 替换bash通配符
+srcfiles := $(wildcard src/*.txt)
+```
+
+```makefile
+# subst 文本替换
+# $(subst from,to,text)
+
+# 1
+$(subst ee,EE,feet on the street)
+
+# 2
+comma:= ,
+empty:=
+space:= $(empty) $(empty) # space变量用两个空变量作为标识符，当中是一个空格
+foo:= a b c
+bar:= $(subst $(space),$(comma),$(foo)) # bar is now `a,b,c'.
+```
+
+```makefile
+# patsubst 匹配替换
+# $(patsubst pattern,replacement,text)
+$(patsubst %.c,%.o,x.c.c bar.c)
+
+# 简写 变量名 + 冒号 + 后缀名替换规则
+min: $(OUTPUT:.js=.min.js) # 变量output中的.js全部替换为.min.js
+```
+
+> 手册 关于内置函数 <https://www.gnu.org/software/make/manual/html_node/Functions.html>
 
 ## ref
 
