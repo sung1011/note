@@ -24,7 +24,7 @@ make --file=rules.txt
 
 ```
 
-### target 目标
+### 1. arget 目标
 
 ```makefile
 # `make clean`会寻找当前目录名为clean的文件, 文件存在则不执行逻辑, 可通过声明`.PHPONY`以避免
@@ -40,7 +40,7 @@ dir:
 
 > 手册 关于target <https://www.gnu.org/software/make/manual/html_node/Special-Targets.html#Special-Targets>
 
-### prerequistes 前置条件
+### 2. prerequistes 前置条件
 
 ```makefile
 .PHONY: result
@@ -56,7 +56,7 @@ s2.txt:
 	echo 456 >> s2.txt
 ```
 
-### tab
+### 3. tab
 
 ```makefile
 # 以 > 替代[tab]
@@ -65,7 +65,7 @@ all:
 >echo Hello, world
 ```
 
-### commands 命令
+### 4. commands 命令
 
 ```makefile
 # 每行cmd在一个单独的shell进程执行
