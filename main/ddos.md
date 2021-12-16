@@ -2,9 +2,9 @@
 
 ## 类型
 
-流量型攻击  
-连接型攻击  
-特殊协议缺陷  
+- 流量型攻击  
+- 连接型攻击  
+- 特殊协议缺陷  
 
 ### Ip lood
 
@@ -12,7 +12,7 @@
 
 ### [Ack Flood](ddos-ackflood.md)
 
-### Udp 反射 Flood
+### [Udp 反射放大 Flood](ddos-udpflood.md)
 
 ### Dns Query Flood
 
@@ -32,7 +32,7 @@
 
 ### Connection Flood
 
-### CC攻击
+### [CC攻击](ddos-cc.md)
 
 ### http slow header慢速攻击
 

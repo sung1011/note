@@ -67,9 +67,10 @@ lsof -i :{port} #  查看占用端口的进程
 ```bash
 # 编码
 base64 {file}
+echo {txt} | base64
 # 解码
 base64 -d {code} > {file}
-echo {code} | base64 -d > {file}
+echo {code} | base64 -d
 ```
 
 ## curl

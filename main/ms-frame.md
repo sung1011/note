@@ -4,26 +4,28 @@
 
 ## 外部建立连接
 
-[HTTP](HTTP.md)  
-[SOCKET](socket.md)
+- [HTTP](HTTP.md)  
+- [SOCKET](socket.md)
 
 ### IO模型
 
-[BIO](linux-io.md)  
-[NIO](linux-io.md)  
-[AIO](linux-io.md)  
+- BIO  
+- NIO  
+- AIO  
+
+> [IO模型](linux-io.md)
 
 ## 内部通信协议
 
-[HTTP](HTTP.md)  
-Dubbo  
+- [HTTP](HTTP.md)  
+- Dubbo  
 
 ## 序列化压缩
 
-XML  
-JSON  
-protocol buffer  
-Thrift  
+- XML  
+- JSON  
+- protocol buffer  
+- Thrift  
 
 ### 序列化压缩 - 评估标准
 

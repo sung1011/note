@@ -105,6 +105,6 @@ cached 文件的数据缓存（包含读和写）
   
 ## ref
 
-[arm-linux学习-（MMU内存管理单元）](https://www.jianshu.com/p/abb4b5aeb83b)
-[Linux的内存分页管理](https://www.cnblogs.com/vamei/p/9329278.html)
-[内存耗用 VSS/RSS/PSS/USS](https://www.jianshu.com/p/3bab26d25d2e)
+- [arm-linux学习-（MMU内存管理单元）](https://www.jianshu.com/p/abb4b5aeb83b)
+- [Linux的内存分页管理](https://www.cnblogs.com/vamei/p/9329278.html)
+- [内存耗用 VSS/RSS/PSS/USS](https://www.jianshu.com/p/3bab26d25d2e)

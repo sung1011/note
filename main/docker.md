@@ -2,7 +2,9 @@
   
 ## 隔离  
 
-### 命名空间 namespace: 独立的系统视图(文件 进程 网络接口 主机名等)  
+### 命名空间 namespace
+
+    独立的系统视图(文件, 进程, 网络接口, 主机名等)  
 
 - `Monut (mnt)` 提供磁盘挂载点和文件系统的隔离能力
 
@@ -20,21 +22,23 @@
   
 - `User Id (user)` 提供用户隔离能力  
 
-### 控制组 cgroups: 限制资源量(cpu 内存 网络带宽)  
+### 控制组 cgroups
 
-cpu  
-memory  
-network  
+    限制资源量(cpu, 内存, 网络带宽)
+
+- cpu  
+- memory  
+- network  
   
 ## 组成  
 
-镜像 image: 构建  
-镜像仓库 image repository: 分发  
-容器 container: 运行  
+- 镜像 image: 构建  
+- 镜像仓库 image repository: 分发  
+- 容器 container: 运行  
   
 ## docker vs VM  
 
-每个虚拟机会独立虚拟化CPU与kernel  
+    每个虚拟机会独立虚拟化CPU与kernel  
 
 ## [Dockerfile](docker-dockerfile.md)
 

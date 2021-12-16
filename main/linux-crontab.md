@@ -12,11 +12,11 @@
 
 ```bash
 # 以下都是用户级操作, 对应/var/spool/cron/
--e　编辑该用户的计时器设置,如果不指定用户，则表示编辑当前用户的crontab文件
--l　列出该用户的计时器设置,如果不指定用户，则表示显示当前用户的crontab文件内容。
--r　删除某个用户的crontab文件，如果不指定用户，则默认删除当前用户的crontab文件。
--i  在删除用户的crontab文件时给确认提示。
--u user 用来设定某个用户的crontab服务，例如，“-u ixdba”表示设定ixdba用户的crontab服务，此参数一般有root用户来运行。
+-e 编辑该用户的计时器设置,如果不指定用户, 则表示编辑当前用户的crontab文件
+-l 列出该用户的计时器设置,如果不指定用户, 则表示显示当前用户的crontab文件内容
+-r 删除某个用户的crontab文件, 如果不指定用户, 则默认删除当前用户的crontab文件。
+-i 在删除用户的crontab文件时给确认提示。
+-u 用来设定某个用户的crontab服务, 例如, “-u ixdba”表示设定ixdba用户的crontab服务, 此参数一般有root用户来运行。
 file file是命令文件的名字,表示将file做为crontab的任务列表文件并载入crontab (覆盖到/var/spool/cron/)。
 ```
 
@@ -24,8 +24,8 @@ file file是命令文件的名字,表示将file做为crontab的任务列表文�
 
 ```bash
 # 环境
-SHELL=/bin/bash
-PATH=/sbin:/bin:/usr/sbin:/usr/bin
+SHELL=/bin/bash # SHELL
+PATH=/sbin:/bin:/usr/sbin:/usr/bin # PATH
 HOME=/User/sunji # 执行脚本的主目录
 
 # 示例
@@ -52,7 +52,7 @@ HOME=/User/sunji2
 0,30 18-23 * * * /usr/local/etc/rc.d/lighttpd restart  #每天18 : 00至23 : 00之间每隔30分钟重启apache。
 0 23 * * 6 /usr/local/etc/rc.d/lighttpd restart        #每星期六的11 : 00 pm重启apache。
 * */1 * * * /usr/local/etc/rc.d/lighttpd restart       #每一小时重启apache
-* 23-7/1 * * * /usr/local/etc/rc.d/lighttpd restart    #晚上11点到早上7点之间，每隔一小时重启apache
+* 23-7/1 * * * /usr/local/etc/rc.d/lighttpd restart    #晚上11点到早上7点之间, 每隔一小时重启apache
 0 11 4 * mon-wed /usr/local/etc/rc.d/lighttpd restart  #每月的4号与每周一到周三的11点重启apache
 0 4 1 jan * /usr/local/etc/rc.d/lighttpd restart       #一月一号的4点重启apache
 */30 * * * * /usr/sbin/ntpdate 210.72.145.44           #每半小时同步一下时间
@@ -63,10 +63,10 @@ HOME=/User/sunji2
 * * * * * timeout -s SIGINT 100 flock -xn /tmp/lock /path/to/php /path/to/file
 
 # run-parts 执行文件夹内所有
-01 * * * * root run-parts /etc/cron.hourly //每小时执行/etc/cron.hourly内的脚本
-02 4 * * * root run-parts /etc/cron.daily //每天执行/etc/cron.daily内的脚本
-22 4 * * 0 root run-parts /etc/cron.weekly //每星期执行/etc/cron.weekly内的脚本
-42 4 1 * * root run-parts /etc/cron.monthly //每月去执行/etc/cron.monthly内的脚本
+01 * * * * root run-parts /etc/cron.hourly # 每小时执行/etc/cron.hourly内的脚本
+02 4 * * * root run-parts /etc/cron.daily # 每天执行/etc/cron.daily内的脚本
+22 4 * * 0 root run-parts /etc/cron.weekly # 每星期执行/etc/cron.weekly内的脚本
+42 4 1 * * root run-parts /etc/cron.monthly # 每月去执行/etc/cron.monthly内的脚本
 ```
 
 ## crond

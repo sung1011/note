@@ -187,21 +187,22 @@
 
 ### AKF分类
 
-x轴： 基于算法分发请求  
-y轴： 基于URL对功能分发到不同的服务  
-z轴： 基于用户ip或者其他信息映射到某个特定集群或服务  
+- x轴： 基于算法分发请求  
+- y轴： 基于URL对功能分发到不同的服务  
+- z轴： 基于用户ip或者其他信息映射到某个特定集群或服务  
 
 ### method
 
-权重,随机,加权随机 round-robin  
-IP哈希 ip-hash  
-最小连接数 least-connected  
-哈希 hash: URL哈希或自定义的哈希
-随机 random
-fair(第三方): 根据响应时间  
+- 权重,随机,加权随机 round-robin  
+- IP哈希 ip-hash  
+- 最小连接数 least-connected  
+- 哈希 hash: URL哈希或自定义的哈希
+- 随机 random
+- fair(第三方): 根据响应时间  
 
-- hash算法可以配置一致性hash, 以防扩缩容时缓存大量失效, 带来压力。 `hash key consistent`  
-- 使用upstream_zone模块，以共享内存的方式将负载均衡算法共享到所有worker生效。
+> hash算法可以配置一致性hash, 以防扩缩容时缓存大量失效, 带来压力。 `hash key consistent`  
+
+> 使用upstream_zone模块，以共享内存的方式将负载均衡算法共享到所有worker生效。
 
 ### Health checks
 

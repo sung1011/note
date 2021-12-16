@@ -1,6 +1,6 @@
-# note  
+# NOTE  
 
-## struct  
+## STRUCT  
   
 ```bash
 ├── README.md  
@@ -21,9 +21,9 @@
 └── self.md  
 ```  
   
-## directory  
+## DIRECTORY  
   
-### version control  
+### VERSION CONTROL  
 
 #### [git](main/git.md)
 
@@ -31,7 +31,7 @@
 
 ---
 
-### basic  
+### BASIC  
 
 #### [design pattern 设计模式](main/dp.md)
 
@@ -41,7 +41,7 @@
 
 #### [complexity 复杂度](main/complexity.md)
 
-#### [ascii](main/ascii.md)
+#### [ASCII](main/ascii.md)
 
 #### [scale 单位换算](main/scale.md)
 
@@ -49,7 +49,7 @@
 
 ---
 
-### database  
+### DATABASE  
 
 #### [redis](main/redis.md)
 
@@ -73,7 +73,7 @@
   
 ---
 
-### web  
+### WEB  
 
 #### [authorize](main/auth.md)
 
@@ -93,7 +93,7 @@
 
 ---
 
-### concept
+### CONCEPT
 
 #### [transaction 事务](main/acid.md)
 
@@ -109,13 +109,13 @@
 
 #### [micro server 微服务](main/ms.md)
 
-#### [协程](_) TODO
+#### [协程](main/linux-coroutine.md)
 
 #### [GUID](_) TODO
 
 ---
 
-### deploy  
+### DEPLOY  
 
 #### [linux](main/linux.md)
 
@@ -127,13 +127,13 @@
 
 ---
 
-### safe  
+### SAFE  
 
 #### [DDoS](main/ddos.md)
 
 ---
 
-### programming-language  
+### PROGRAMMING-LANGUAGE  
 
 #### [golang](main/go.md)
 
@@ -145,7 +145,7 @@
 
 ---
 
-### other  
+### OTHER  
 
 #### [dict](main/dict.md)
 
@@ -161,11 +161,9 @@
 
 #### [keymaps](main/keymaps.md)
 
-#### [anti cheat 防作弊](main/anti_cheat.md)
-
 ---
 
-### wiki (未分类, 未来单独建立库)
+### WIKI (未分类, 未来单独建立库)
 
 #### [badminton 羽毛球](wiki/badminton.md)
 

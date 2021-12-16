@@ -1,7 +1,5 @@
 # socket
 
-## 概念
-
     传输层实现端到端的通信,  其端点为socket
 
 ## 实质
@@ -9,9 +7,11 @@
 ![img](res/socket-layer0.jpeg)
 ![img](res/socket-layer.jpeg)
 
-Socket是应用层与TCP/IP协议族通信的中间软件抽象层, 它是一组接口。  
-在设计模式中, Socket其实就是一个门面模式, 它把复杂的TCP/IP协议族隐藏在Socket接口后面, 对用户来说, 一组简单的接口就是全部。  
-socket = IP : prot  
+> Socket是应用层与TCP/IP协议族通信的中间软件抽象层, 它是一组接口。  
+
+> 在设计模式中, Socket其实就是一个门面模式, 它把复杂的TCP/IP协议族隐藏在Socket接口后面, 对用户来说, 一组简单的接口就是全部。  
+
+> socket = IP : prot  
 
 ## 分类
 
