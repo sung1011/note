@@ -44,13 +44,13 @@ struct ngx_pool_s {
 
 ### 连接内存池
 
-模块：ngx_http_core_module
-指令：connection_pool_size 连接预分配内存
+模块: ngx_http_core_module
+指令: connection_pool_size 连接预分配内存
 
 ### 请求内存池
 
-模块：ngx_http_core_module
-指令：request_pool_size 请求预分配内存
+模块: ngx_http_core_module
+指令: request_pool_size 请求预分配内存
 
 ## ref
 

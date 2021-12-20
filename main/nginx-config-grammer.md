@@ -59,8 +59,8 @@ http {
 | $document_uri       | 与$uri相同.                                                                                                            |
 | $host               | 请求中的主机头(Host)字段, 如果请求中的主机头不可用或空, 则为处理请求的server名称.                                      |
 | $hostname           | 机器名使用 gethostname系统调用的值                                                                                      |
-| $http_HEADER        | HTTP请求头中的内容, HEADER为HTTP请求中的内容转为小写, -变为_(破折号变为下划线), 例如：$http_user_agent(Uaer-Agent的值); |
-| $sent_http_HEADER   | HTTP响应头中的内容, HEADER为HTTP响应中的内容转为小写, -变为_(破折号变为下划线), 例如：$sent_http_cache_control.        |
+| $http_HEADER        | HTTP请求头中的内容, HEADER为HTTP请求中的内容转为小写, -变为_(破折号变为下划线), 例如: $http_user_agent(Uaer-Agent的值); |
+| $sent_http_HEADER   | HTTP响应头中的内容, HEADER为HTTP响应中的内容转为小写, -变为_(破折号变为下划线), 例如: $sent_http_cache_control.        |
 | $is_args            | 如果$args设置, 值为"?", 否则为"".                                                                                      |
 | $limit_rate         | 这个变量可以限制连接速率.                                                                                              |
 | $nginx_version      | 当前运行的nginx版本号.                                                                                                 |

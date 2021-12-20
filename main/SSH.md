@@ -7,10 +7,10 @@
 
 ## 文件
 
-   id_rsa：保存私钥
-   id_rsa.pub：保存公钥
-   authorized_keys：保存已授权的客户端公钥
-   known_hosts：保存已认证的远程主机ID
+   id_rsa: 保存私钥
+   id_rsa.pub: 保存公钥
+   authorized_keys: 保存已授权的客户端公钥
+   known_hosts: 保存已认证的远程主机ID
 
 ## 连接
 

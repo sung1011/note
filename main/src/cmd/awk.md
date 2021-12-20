@@ -25,13 +25,13 @@ OFMT        # 数字输出的格式, 默认为％.6g.
 ## 函数  
 
 ```bash
-tolower()：字符转为小写.  
-length()：返回字符串长度.  
-substr()：返回子字符串.  
-sin()：正弦.  
-cos()：余弦.  
-sqrt()：平方根.  
-rand()：随机数.  
+tolower(): 字符转为小写.  
+length(): 返回字符串长度.  
+substr(): 返回子字符串.  
+sin(): 正弦.  
+cos(): 余弦.  
+sqrt(): 平方根.  
+rand(): 随机数.  
 ```
   
 > 转化成大写 `awk -F ':' '{ print toupper($1) }' demo.txt`

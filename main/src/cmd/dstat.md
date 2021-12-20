@@ -24,41 +24,41 @@ dstat 是一个可以取代vmstat, iostat, netstat和ifstat这些命令的多功
 ## 输出
 
 1. --total-cpu-usage---- CPU使用率  
-usr：用户空间的程序所占百分比；  
-sys：系统空间程序所占百分比；  
-idel：空闲百分比；  
-wai：等待磁盘I/O所消耗的百分比；  
-hiq：硬中断次数；  
-siq：软中断次数；  
+usr: 用户空间的程序所占百分比；  
+sys: 系统空间程序所占百分比；  
+idel: 空闲百分比；  
+wai: 等待磁盘I/O所消耗的百分比；  
+hiq: 硬中断次数；  
+siq: 软中断次数；  
 
 2. -dsk/total-磁盘统计  
-read：读总数  
-writ：写总数  
+read: 读总数  
+writ: 写总数  
 
 3. -net/total- 网络统计  
-recv：网络收包总数  
-send：网络发包总数  
+recv: 网络收包总数  
+send: 网络发包总数  
 
 4. ---paging-- 内存分页统计  
-in： pagein(换入)  
-out：page out(换出)  
+in:  pagein(换入)  
+out: page out(换出)  
 
 5. --system--系统信息  
-int：中断次数  
-csw：上下文切换  
+int: 中断次数  
+csw: 上下文切换  
 
 ## 常用参数
 
--l ：显示负载统计量  
--m ：显示内存使用率(包括used, buffer, cache, free值)  
--r ：显示I/O统计  
--s ：显示交换分区使用情况  
--t ：将当前时间显示在第一行  
-–fs ：显示文件系统统计数据(包括文件总数量和inodes值)  
-–nocolor ：不显示颜色(有时候有用)  
-–socket ：显示网络统计数据  
-–tcp ：显示常用的TCP统计  
-–udp ：显示监听的UDP接口及其当前用量的一些动态数据  
+-l : 显示负载统计量  
+-m : 显示内存使用率(包括used, buffer, cache, free值)  
+-r : 显示I/O统计  
+-s : 显示交换分区使用情况  
+-t : 将当前时间显示在第一行  
+–fs : 显示文件系统统计数据(包括文件总数量和inodes值)  
+–nocolor : 不显示颜色(有时候有用)  
+–socket : 显示网络统计数据  
+–tcp : 显示常用的TCP统计  
+–udp : 显示监听的UDP接口及其当前用量的一些动态数据  
 
 ## 实战
 

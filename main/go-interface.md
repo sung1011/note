@@ -1,6 +1,6 @@
 # go 接口
 
-相同行为, 不同实例.(即：多态)
+相同行为, 不同实例.(即: 多态)
 
 > 用于同一行为, 实例替换, 如 db, err := sql.Open("mysql", "root:password@tcp(127.0.0.1:3306)") // mysql可换成sqllite,  postgresql,  oralce  
 

@@ -2,12 +2,12 @@
 
 平均活跃进程数
 
-- 处于可运行状态(running/runnable)的平均进程数, 即：`正被cpu计算`和`等待cpu计算`的进程.
-- 不可中断状态(uninterruptible sleep/disk sleep)的平均进程数, 即：`等待I/O`的进程
+- 处于可运行状态(running/runnable)的平均进程数, 即: `正被cpu计算`和`等待cpu计算`的进程.
+- 不可中断状态(uninterruptible sleep/disk sleep)的平均进程数, 即: `等待I/O`的进程
 
 ## 取值
 
-值大于cpu个数时超载,  超载不应超过100%.(如：2核 平均负载4)
+值大于cpu个数时超载,  超载不应超过100%.(如: 2核 平均负载4)
 
 ## 平均负载 & CPU使用率
 

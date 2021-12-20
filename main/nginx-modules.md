@@ -3,16 +3,17 @@
 ## 类型 - 结构划分
 
 ![img](res/nginx-modules.jpeg)
-核心module：HTTP、EVENT、MAIL、STEAM  
-基础module：HTTP Accessmodule、HTTP FastCGImodule、HTTP Proxymodule和HTTP Rewritemodule,   
-第三方module：HTTP Upstream Request Hashmodule、Noticemodule和HTTP Access Keymodule.  
+
+- 核心module: HTTP、EVENT、MAIL、STEAM
+- 基础module: HTTP Access、HTTP FastCGI、HTTP Proxy和HTTP Rewrite
+- 第三方module: HTTP Upstream Request Hash、Notice和HTTP Access Keymodule.  
 
 ## 类型 - 功能划分
 
-Core(核心module)：构建nginx基础服务、管理其他module.  
-Handlers(处理器module)：此类module直接处理请求, 并进行输出内容和修改headers信息等操作.  
-Filters (过滤器module)：此类module主要对其他处理器module输出的内容进行修改操作, 最后由Nginx输出.  
-Proxies (代理类module)：此类module是Nginx的HTTP Upstream之类的module, 这些module主要与后端一些服务比如FastCGI等进行交互, 实现服务代理和负载均衡等功能.  
+Core(核心module): 构建nginx基础服务、管理其他module.  
+Handlers(处理器module): 此类module直接处理请求, 并进行输出内容和修改headers信息等操作.  
+Filters (过滤器module): 此类module主要对其他处理器module输出的内容进行修改操作, 最后由Nginx输出.  
+Proxies (代理类module): 此类module是Nginx的HTTP Upstream之类的module, 这些module主要与后端一些服务比如FastCGI等进行交互, 实现服务代理和负载均衡等功能.  
 
 ## 目录
 

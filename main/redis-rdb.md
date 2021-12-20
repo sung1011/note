@@ -76,8 +76,8 @@
 
 #### 名词
 
-- master_replid: 复制ID1(后文简称：replid1),一个长度为41个字节(40个随机串+’0’)的字符串.redis实例都有,和runid没有直接关联,但和runid生成规则相同,都是由getRandomHexChars函数生成.当实例变为从实例后,自己的replid1会被主实例的replid1覆盖.  
-- master_replid2：复制ID2(后文简称:replid2),默认初始化为全0,用于存储上次主实例的replid1  
+- master_replid: 复制ID1(后文简称: replid1),一个长度为41个字节(40个随机串+’0’)的字符串.redis实例都有,和runid没有直接关联,但和runid生成规则相同,都是由getRandomHexChars函数生成.当实例变为从实例后,自己的replid1会被主实例的replid1覆盖.  
+- master_replid2: 复制ID2(后文简称:replid2),默认初始化为全0,用于存储上次主实例的replid1  
 - master_repl_offset: master偏移量  
 - second_repl_offset: 上次主实例repid1和复制偏移量；用于兄弟实例或级联复制,主库故障切换psync.  
 

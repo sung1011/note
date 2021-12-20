@@ -53,14 +53,14 @@ Fluentd-elasticsearch提供集群日志采集、存储与查询
 
 ### 分层架构
 
-核心层：Kubernetes最核心的功能, 对外提供API构建高层的应用, 对内提供插件式应用执行环境  
-应用层：部署(无状态应用、有状态应用、批处理任务、集群应用等)和路由(服务发现、DNS解析等)  
-管理层：系统度量(如基础设施、容器和网络的度量), 自动化(如自动扩展、动态Provision等)以及策略管理(RBAC、Quota、PSP、NetworkPolicy等)  
-接口层：kubectl命令行工具、客户端SDK以及集群联邦  
-生态系统：在接口层之上的庞大容器集群管理调度的生态系统, 可以划分为两个范畴  
+核心层: Kubernetes最核心的功能, 对外提供API构建高层的应用, 对内提供插件式应用执行环境  
+应用层: 部署(无状态应用、有状态应用、批处理任务、集群应用等)和路由(服务发现、DNS解析等)  
+管理层: 系统度量(如基础设施、容器和网络的度量), 自动化(如自动扩展、动态Provision等)以及策略管理(RBAC、Quota、PSP、NetworkPolicy等)  
+接口层: kubectl命令行工具、客户端SDK以及集群联邦  
+生态系统: 在接口层之上的庞大容器集群管理调度的生态系统, 可以划分为两个范畴  
 
-- Kubernetes外部：日志、监控、配置管理、CI、CD、Workflow、FaaS、OTS应用、ChatOps等
-- Kubernetes内部：CRI、CNI、CVI、镜像仓库、Cloud Provider、集群自身的配置和管理等
+- Kubernetes外部: 日志、监控、配置管理、CI、CD、Workflow、FaaS、OTS应用、ChatOps等
+- Kubernetes内部: CRI、CNI、CVI、镜像仓库、Cloud Provider、集群自身的配置和管理等
 
 ![k8slayer](res/k8slayer.jpg)
 
@@ -70,11 +70,11 @@ Pod是Kubernetes创建或部署的最小/最简单的基本单位, 一个Pod代�
 
 ### 共享资源  
 
-PID命名空间：Pod中的不同应用程序可以看到其他应用程序的进程ID；  
-网络命名空间：Pod中的多个容器能够访问同一个IP和端口范围；  
-IPC命名空间：Pod中的多个容器能够使用SystemV IPC或者POSIX消息队列进行通信；  
-UTS命名空间：Pod中的多个容器共享一个主机名；  
-Volumes(共享存储卷)：Pod中的各个容器可以访问在Pod级别定义的Volumes.  
+PID命名空间: Pod中的不同应用程序可以看到其他应用程序的进程ID；  
+网络命名空间: Pod中的多个容器能够访问同一个IP和端口范围；  
+IPC命名空间: Pod中的多个容器能够使用SystemV IPC或者POSIX消息队列进行通信；  
+UTS命名空间: Pod中的多个容器共享一个主机名；  
+Volumes(共享存储卷): Pod中的各个容器可以访问在Pod级别定义的Volumes.  
 
 ### 存活探针 LivenessProbe
 
@@ -140,7 +140,7 @@ endpoint是k8s集群中的一个资源对象, 存储在etcd中, 用来记录一�
 
 - service不配置selector: endpoint controller不会生成endpoint对象. 可手动创建endpoint(name必须与svc name相同)
 
-endpoint controller: 是k8s集群控制器的其中一个组件, 其功能如下：  
+endpoint controller: 是k8s集群控制器的其中一个组件, 其功能如下:   
 
 - 负责生成和维护所有endpoint对象的控制器
 - 负责监听service和对应pod的变化

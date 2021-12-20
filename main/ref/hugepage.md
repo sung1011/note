@@ -11,7 +11,7 @@ PHP7开启HugePage支持后, 会把自身的text段, 以及内存分配中的hug
 
 ## 开启方法
 
-以CentOS 6.5为例, 通过命令：
+以CentOS 6.5为例, 通过命令: 
 
 sudo sysctl vm.nr_hugepages=128
 分配128个预留的大页内存.
@@ -29,14 +29,14 @@ opcache.huge_code_pages=1
 
 ## 关于负载过高, 系统CPU使用占比过高的问题
 
-当我们升级完第一个服务池时, 感觉整个升级过程还是比较顺利, 当灰度Page池, 低峰时一切正常, 但到了流量高峰, 系统CPU占用非常高, 如图：
+当我们升级完第一个服务池时, 感觉整个升级过程还是比较顺利, 当灰度Page池, 低峰时一切正常, 但到了流量高峰, 系统CPU占用非常高, 如图: 
 
 
 系统CPU的使用远超用户程序CPU的使用, 正常情况下, 系统CPU与用户程序CPU占比应该在1/3左右.但我们的实际情况则是, 系统CPU是用户CPU的2~3倍, 很不正常.
 
 对比了一下两个服务池的流量, 发现Page池的流量正常比Home池高不少, 在升级Home池时, 没发现该问题, 主要原因是流量没有达到一定级别, 所以未触发该问题.当单机流量超过一定阈值, 系统CPU的使用会出现一个直线的上升, 此时系统性能会严重下降.
 
-这个问题其实困扰了我们有一段时间, 通过各种搜索资料, 均未发现任何升级PHP7会引起系统CPU过高的线索.但我们发现了另外一个比较重要的线索, 很多软件官方文档里非常明确的提出了可以通过关闭Transparent HugePages(透明大页)来解决系统负载过高的问题.后来我们也尝试对其进行了关闭, 经过几天的观察, 该问题得到解决, 如图：
+这个问题其实困扰了我们有一段时间, 通过各种搜索资料, 均未发现任何升级PHP7会引起系统CPU过高的线索.但我们发现了另外一个比较重要的线索, 很多软件官方文档里非常明确的提出了可以通过关闭Transparent HugePages(透明大页)来解决系统负载过高的问题.后来我们也尝试对其进行了关闭, 经过几天的观察, 该问题得到解决, 如图: 
 
 
 
@@ -68,7 +68,7 @@ echo always >  /sys/kernel/mm/transparent_hugepage/enabled
 echo always > /sys/kernel/mm/transparent_hugepage/defrag
 (4)设置开机关闭.
 
-修改/etc/rc.local文件, 添加如下行：
+修改/etc/rc.local文件, 添加如下行: 
 
 if test -f /sys/kernel/mm/redhat_transparent_hugepage/enabled; then     
      echo never > /sys/kernel/mm/transparent_hugepage/enabled     

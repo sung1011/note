@@ -3,7 +3,7 @@
 ## POD
 
 ```yaml
-# yaml格式的pod定义文件完整内容：
+# yaml格式的pod定义文件完整内容: 
 apiVersion: v1       #必选, 版本号, 例如v1
 kind: Pod       #必选, Pod
 metadata:       #必选, 元数据
@@ -61,8 +61,8 @@ spec:         #必选, Pod中容器的详细定义
        securityContext:
          privileged:false
     restartPolicy: [Always | Never | OnFailure]#Pod的重启策略, Always表示一旦不管以何种方式终止运行, kubelet都将重启, OnFailure表示只有Pod以非0退出码退出才重启, Nerver表示不再重启该Pod
-    nodeSelector: obeject  #设置NodeSelector表示将该Pod调度到包含这个label的node上, 以key：value的格式指定
-    imagePullSecrets:    #Pull镜像时使用的secret名称, 以key：secretkey格式指定
+    nodeSelector: obeject  #设置NodeSelector表示将该Pod调度到包含这个label的node上, 以key: value的格式指定
+    imagePullSecrets:    #Pull镜像时使用的secret名称, 以key: secretkey格式指定
     - name: string
     hostNetwork:false      #是否使用主机网络模式, 默认为false, 如果设置为true, 表示使用宿主机网络
     volumes:       #在该pod上定义共享存储卷列表

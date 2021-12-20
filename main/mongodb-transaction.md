@@ -13,11 +13,11 @@
 
 ### 分类
 
-- primary(默认)： 读Primary  --- 若该选项, RS中P挂了, 是不会故障转移的.
-- primaryPreferred： 优先读P, 若P不可用, 再读S  
-- secondary： 读Secondary  
-- secondaryPreferred： 优先读S, 若S不可用, 再读P  
-- nearest：读最近的可达节点上(通过ping时间判定远近)  
+- primary(默认):  读Primary  --- 若该选项, RS中P挂了, 是不会故障转移的.
+- primaryPreferred:  优先读P, 若P不可用, 再读S  
+- secondary:  读Secondary  
+- secondaryPreferred:  优先读S, 若S不可用, 再读P  
+- nearest: 读最近的可达节点上(通过ping时间判定远近)  
 
 ### 场景
 
@@ -184,7 +184,7 @@ session3.commitTransaction(); // 事务3提交,  事务外的修改立刻成功,
     1. 从节点及时地拉取数据: 阻塞拉取  
        - 从拉取主的oplog时,  为了第一时间拉取, find命令支持一个awaitData的选项, 当find没有任何符合条件的文档时, 并不立即返回, 而是等待最多maxTimeMS(默认为2s)时间看是否有新的符合条件的数据, 如果有就返回.  
     2. 主节点同步拉取状态: Secondary应用完oplog会向主报告最新进度  
-       - Secondary上有单独的线程, 当oplog的最新时间戳发生更新时, 就会向Primary发送replSetUpdatePosition命令更新自己的oplog时间戳.(即：)  
+       - Secondary上有单独的线程, 当oplog的最新时间戳发生更新时, 就会向Primary发送replSetUpdatePosition命令更新自己的oplog时间戳.(即: )  
     3. 当Primary发现有足够多的节点oplog时间戳已经满足条件了, 向客户端进行应答.  
 ```
 

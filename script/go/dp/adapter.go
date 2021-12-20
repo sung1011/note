@@ -12,7 +12,7 @@ type AWSClient struct{}
 
 // RunInstance 启动实例
 func (c *AWSClient) RunInstance(cpu, mem float64) error {
-	fmt.Printf("aws client run success, cpu： %f, mem: %f", cpu, mem)
+	fmt.Printf("aws client run success, cpu:  %f, mem: %f", cpu, mem)
 	return nil
 }
 
@@ -32,7 +32,7 @@ type AliyunClient struct{}
 
 // CreateServer 启动实例
 func (c *AliyunClient) CreateServer(cpu, mem int) error {
-	fmt.Printf("aws client run success, cpu： %d, mem: %d", cpu, mem)
+	fmt.Printf("aws client run success, cpu:  %d, mem: %d", cpu, mem)
 	return nil
 }
 

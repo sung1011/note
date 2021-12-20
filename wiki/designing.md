@@ -110,7 +110,7 @@ posits three types of cones preferentially sensitive to blue, green, and red.
 #### Opponent process 互补处理
 
 It states that the visual system interprets color in an antagonistic way: red vs. green, blue vs. yellow, black vs. white.
-视觉系统以一种拮抗的方式解释颜色：红对绿, 蓝对黄, 黑对白.
+视觉系统以一种拮抗的方式解释颜色: 红对绿, 蓝对黄, 黑对白.
 
 ### Vision is optimize for contrast, not brightness
 

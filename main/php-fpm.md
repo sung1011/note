@@ -49,7 +49,7 @@ struct fpm_scoreboard_s {
         atomic_t lock;
         char dummy[16];
     };//锁状态
-    char pool[32];//实例名称 例如：[www]
+    char pool[32];//实例名称 例如: [www]
     int pm; //PM运行模式
     time_t start_epoch; //开始时间
     int idle;//procs的空闲数

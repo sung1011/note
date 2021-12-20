@@ -54,13 +54,13 @@
 
 ### 优点  
 
-    读写方面： sharding将读写负载均匀到各个shard, 且workload上限可以通过水平扩展来增加.  
-    扩容方面： 每个shard保存一部分数据, 可以通过增加shards来扩容(动态扩容, 无需下线).  
-    高可用方面： 即便某个shard不可用了, 整个集群也可以对外提供服务, 只不过访问down掉的shard会报"Connection refused"的错误.而且MongoDB3.2以后可以为每个shard都配置副本集(replica set), 这样保证最大程度的高可用性.  
+    读写方面:  sharding将读写负载均匀到各个shard, 且workload上限可以通过水平扩展来增加.  
+    扩容方面:  每个shard保存一部分数据, 可以通过增加shards来扩容(动态扩容, 无需下线).  
+    高可用方面:  即便某个shard不可用了, 整个集群也可以对外提供服务, 只不过访问down掉的shard会报"Connection refused"的错误.而且MongoDB3.2以后可以为每个shard都配置副本集(replica set), 这样保证最大程度的高可用性.  
 
 ### 缺点  
 
-    额外消耗：router与shards节点间消耗; 读写多个分片数据
+    额外消耗: router与shards节点间消耗; 读写多个分片数据
     管理复杂
 
 ### 额外  

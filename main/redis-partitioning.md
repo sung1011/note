@@ -4,7 +4,7 @@
   
 ## 实现
 
-### range范围 如：id范围 如: redis-cluster
+### range范围 如: id范围 如: redis-cluster
 
 ```bash
 1~1000 -> R0,  1001~2000 -> R1,  2001~3000 -> R2
@@ -12,7 +12,7 @@
 ...
 ```
 
-### hash函数 如：crc32
+### hash函数 如: crc32
 
 ```bash
 slot_num = 1024 // 槽
@@ -73,4 +73,4 @@ redis.do(command)
 
 ## ref
 
-[分区：怎样将数据分布到多个redis实例](http://www.redis.cn/topics/partitioning.html)
+[分区: 怎样将数据分布到多个redis实例](http://www.redis.cn/topics/partitioning.html)

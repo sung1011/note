@@ -72,7 +72,7 @@ host.SLD.TLD.root 如: app.tickles.cn. (root可省略为 . 亦可忽略)
 - `TXT` Text; 域名说明; 验证控制权
 
       【domain】 IN TXT 【任意字符串】
-      ns1.exmaple.com. IN TXT "联系电话：XXXX"
+      ns1.exmaple.com. IN TXT "联系电话: XXXX"
 
 - `CNAME` Canonical Name 规范名,别名
 
