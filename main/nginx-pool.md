@@ -33,24 +33,24 @@ struct ngx_pool_s {
 
 ### 方法
 
-创建内存池 ngx_pool_t \*  ngx_create_pool(size_t size, ngx_log_t *log);  
-销毁内存池 void ngx_destroy_pool(ngx_pool_t *pool);  
-重置内存池 void ngx_reset_pool(ngx_pool_t *pool);  
-内存申请(对齐) void \*  ngx_palloc(ngx_pool_t *pool, size_t size);  
-内存申请(不对齐) void \*  ngx_pnalloc(ngx_pool_t *pool, size_t size);  
-内存清除 ngx_int_t  ngx_pfree(ngx_pool_t *pool, void *p);  
+    创建内存池 ngx_pool_t *  ngx_create_pool(size_t size, ngx_log_t *log);  
+    销毁内存池 void ngx_destroy_pool(ngx_pool_t *pool);  
+    重置内存池 void ngx_reset_pool(ngx_pool_t *pool);  
+    内存申请(对齐) void *  ngx_palloc(ngx_pool_t *pool, size_t size);  
+    内存申请(不对齐) void *  ngx_pnalloc(ngx_pool_t *pool, size_t size);  
+    内存清除 ngx_int_t  ngx_pfree(ngx_pool_t *pool, void *p);  
 
 ## 实战
 
 ### 连接内存池
 
-模块: ngx_http_core_module
-指令: connection_pool_size 连接预分配内存
+    模块: ngx_http_core_module
+    指令: connection_pool_size 连接预分配内存
 
 ### 请求内存池
 
-模块: ngx_http_core_module
-指令: request_pool_size 请求预分配内存
+    模块: ngx_http_core_module
+    指令: request_pool_size 请求预分配内存
 
 ## ref
 

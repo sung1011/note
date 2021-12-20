@@ -10,4 +10,4 @@
 
 ## [红黑树 ngx_rbtree_t](nginx-rbtree.md)
 
-## 基数树
+## [基数树]

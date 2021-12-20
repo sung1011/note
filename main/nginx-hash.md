@@ -2,11 +2,11 @@
 
 ## 场景
 
-静态不变的内容.即通常不会插入, 删除
+    静态不变的内容.即通常不会插入, 删除
 
 ## 源码
 
-src/core/ngx_hash
+    src/core/ngx_hash
 
 ## 数据结构
 
@@ -26,21 +26,22 @@ typedef struct {
 
 ## hash_max_size
 
-最大hash bucket个数
+    最大hash bucket个数
 
 ## hash_bucket_size
 
-与cpu cache向上对齐(64b)
+    与cpu cache向上对齐(64b)
 
 ## 实例
 
-variables(steam/http)  
+    variables(steam/http)  
 
-map(stream/http)  
+    map(stream/http)  
 
 反向代理  
 
-- http proxy
+http proxy
+
 - ngx_http_uwsgi_module
 - ngx_http_scgi_module
 - ngx_http_fastcgi_module
