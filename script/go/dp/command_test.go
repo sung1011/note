@@ -10,7 +10,7 @@ import (
 
 func Test_Command(t *testing.T) {
 	Convey("command and exec by sequence", t, func() {
-		// 用于测试，模拟来自客户端的事件
+		// 用于测试, 模拟来自客户端的事件
 		eventChan := make(chan string)
 		events := []string{"start", "archive", "archive", "start"}
 		go func([]string) {
@@ -60,7 +60,7 @@ func Test_Command(t *testing.T) {
 
 func Test_Command_Func(t *testing.T) {
 	Convey("command2 and exec by sequence", t, func() {
-		// 用于测试，模拟来自客户端的事件
+		// 用于测试, 模拟来自客户端的事件
 		eventChan := make(chan string)
 		events := []string{"start", "archive", "archive", "start"}
 		go func([]string) {

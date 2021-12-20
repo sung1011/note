@@ -4,15 +4,15 @@
 
 ![img](res/nginx-modules.jpeg)
 核心module：HTTP、EVENT、MAIL、STEAM  
-基础module：HTTP Accessmodule、HTTP FastCGImodule、HTTP Proxymodule和HTTP Rewritemodule，  
-第三方module：HTTP Upstream Request Hashmodule、Noticemodule和HTTP Access Keymodule。  
+基础module：HTTP Accessmodule、HTTP FastCGImodule、HTTP Proxymodule和HTTP Rewritemodule,   
+第三方module：HTTP Upstream Request Hashmodule、Noticemodule和HTTP Access Keymodule.  
 
 ## 类型 - 功能划分
 
-Core(核心module)：构建nginx基础服务、管理其他module。  
-Handlers（处理器module）：此类module直接处理请求，并进行输出内容和修改headers信息等操作。  
-Filters （过滤器module）：此类module主要对其他处理器module输出的内容进行修改操作，最后由Nginx输出。  
-Proxies （代理类module）：此类module是Nginx的HTTP Upstream之类的module，这些module主要与后端一些服务比如FastCGI等进行交互，实现服务代理和负载均衡等功能。  
+Core(核心module)：构建nginx基础服务、管理其他module.  
+Handlers(处理器module)：此类module直接处理请求, 并进行输出内容和修改headers信息等操作.  
+Filters (过滤器module)：此类module主要对其他处理器module输出的内容进行修改操作, 最后由Nginx输出.  
+Proxies (代理类module)：此类module是Nginx的HTTP Upstream之类的module, 这些module主要与后端一些服务比如FastCGI等进行交互, 实现服务代理和负载均衡等功能.  
 
 ## 目录
 
@@ -69,9 +69,9 @@ module: ngx_http_gzip_module
 gzip            on;  
 gzip_min_length 1000;   #小于1k的文件不压缩  
 gzip_types      text/plain application/xml;  
-gzip_static     on;  #读取预先压缩的gz文件，免去临时压缩返回的资源消耗。
+gzip_static     on;  #读取预先压缩的gz文件, 免去临时压缩返回的资源消耗.
 
-> gzip_static on时nginx会读取xx文件时，优先判定是否存在xx.gz，存在则返回xx.gz
+> gzip_static on时nginx会读取xx文件时, 优先判定是否存在xx.gz, 存在则返回xx.gz
 
 ### 浏览文件
 
@@ -87,7 +87,7 @@ module: ngx_http_core_module.Embedded Variables
 
 module: ngx_http_limit_req_module 限制每秒请求数  
 module: ngx_http_limit_conn_module 限制ip连接数  
-geo, map 给上游（如lvs, haproxy）设置白名单  
+geo, map 给上游(如lvs, haproxy)设置白名单  
 
 ### proxy && cache
 
@@ -146,7 +146,7 @@ stage: server rewrite, rewrite
 
 module: http_limit_req_module  
 stage: pre_access  
-算法: leaky bucket  突发流量限定为恒定流量, 故响应可能变慢, 超流量返回错误。  
+算法: leaky bucket  突发流量限定为恒定流量, 故响应可能变慢, 超流量返回错误.  
 directives: limit_req_zone, limit_req, limit_req_log_level, limit_req_status  
 范围:  
 
@@ -162,7 +162,7 @@ directives: limit_conn_zone, limit_conn, limit_conn_log_level, limit_conn_status
 
 - all worker (基于共享内存)  
 - 进入pre_access前不生效  
-- 限制的有效性取决于key的设定， key一般用客户端ip (取真实客户端ip依赖realipmodule)  
+- 限制的有效性取决于key的设定,  key一般用客户端ip (取真实客户端ip依赖realipmodule)  
 
 ### access 认证
 
@@ -184,18 +184,18 @@ directives: auth_basic, auth_basic_user_file
 module: http_auth_request_module  
 stage: access  
 directives: auth_request, auth_request_set  
-原理: 向上游服务转发请求，若上游返回200则验证通过，否则验证失败。  
+原理: 向上游服务转发请求, 若上游返回200则验证通过, 否则验证失败.  
 
 #### 配置条件
 
 module: ngx_http_core_module  
 directives: satisfy all|any  
-原理: all全部放行才放行，any任一放行就放行  
+原理: all全部放行才放行, any任一放行就放行  
 实例:  
 
 ```bash
 location / {
-    satisfy any; 任一满足即可。如访问以下ip 或 密码验证正确
+    satisfy any; 任一满足即可.如访问以下ip 或 密码验证正确
     allow 192.168.1.0/32;
     deny  all;
     auth_basic           "closed site";
@@ -205,13 +205,13 @@ location / {
 
 ### pre_content
 
-#### 试图访问多个url路径，若文件都不存在则返回最后一个url或者code
+#### 试图访问多个url路径, 若文件都不存在则返回最后一个url或者code
 
 module: ngx_http_try_file_module  
 stage: pre_content  
 directives: try_file  
 
-#### 流量拷贝，处理请求时，生成子请求访问其他服务，但不处理其返回值
+#### 流量拷贝, 处理请求时, 生成子请求访问其他服务, 但不处理其返回值
 
 module: ngx_http_mirror_module  
 stage: pre_content  
@@ -249,10 +249,10 @@ directives: access_log, log_format, open_log_file_cache
 - log_format 日志格式
 
 - open_log_file_cache 文件缓存 以减少含有变量路径的日志打开关闭的消耗
-  - max: 设置缓存中的最大文件描述符数量，如果缓存被占满，采用LRU算法将描述符关闭。
-  - inactive: 设置存活时间，默认是10s
-  - min_uses: 设置在inactive时间段内，日志文件最少使用多少次后，该日志文件描述符记入缓存中，默认是1次
-  - valid: 设置检查频率，默认60s
+  - max: 设置缓存中的最大文件描述符数量, 如果缓存被占满, 采用LRU算法将描述符关闭.
+  - inactive: 设置存活时间, 默认是10s
+  - min_uses: 设置在inactive时间段内, 日志文件最少使用多少次后, 该日志文件描述符记入缓存中, 默认是1次
+  - valid: 设置检查频率, 默认60s
   - off: 禁用缓存
 
 ### filter
@@ -295,7 +295,7 @@ module: ngx_http_proxy_module
 
 - HTTP/1.1 101 Web Socket Protocol Handshake
 
-### slice 通过range协议，分解并缓存大的数据块
+### slice 通过range协议, 分解并缓存大的数据块
 
 module: http_slice_module  
 directives: slice
@@ -306,5 +306,5 @@ module: ngx_http_core_module
 directives: open_file_cache, open_file_cache_errors, open_file_cache_min_users, open_file_cache_valid
 
 - open_file_cache max=N [inactive=time]
-  - max 每个worker最多缓存多少个文件，超出LRU淘汰
-  - inactive 多少秒后没被访问，则淘汰
+  - max 每个worker最多缓存多少个文件, 超出LRU淘汰
+  - inactive 多少秒后没被访问, 则淘汰

@@ -24,7 +24,7 @@
         data; # 数据
 
         # 每个元素表示该层下一个node的地址
-        # next[1]是第1层的下一个node地址，next[2]是第2层的下一个node地址...
+        # next[1]是第1层的下一个node地址, next[2]是第2层的下一个node地址...
         # null表示末尾
         NODE []next; # 节点
     }

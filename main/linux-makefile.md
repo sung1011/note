@@ -2,7 +2,7 @@
 
     一种常用的构建工具
 
-> 代码变成可执行文件，叫做编译（compile）；先编译这个，还是先编译那个（即编译的安排），叫做构建（build）。
+> 代码变成可执行文件, 叫做编译(compile)；先编译这个, 还是先编译那个(即编译的安排), 叫做构建(build).
 
 ## usage
 
@@ -122,13 +122,13 @@ test2:
 
 #make的赋值运算符
 
-    VARIABLE = value    # 在执行时扩展，允许递归扩展。
+    VARIABLE = value    # 在执行时扩展, 允许递归扩展.
 
-    VARIABLE := value   # 在定义时扩展。
+    VARIABLE := value   # 在定义时扩展.
 
-    VARIABLE ?= value   # 只有在该变量为空时才设置值。
+    VARIABLE ?= value   # 只有在该变量为空时才设置值.
 
-    VARIABLE += value   # 将值追加到变量的尾端。
+    VARIABLE += value   # 将值追加到变量的尾端.
 ```
 
 ### 内置变量 Implicit-Variables
@@ -157,19 +157,19 @@ dest/%.txt: src/%.txt
 ```
 
 ```makefile
-# $? 指代比目标更新的所有前置条件，之间以空格分隔。比如，规则为 t: p1 p2，其中 p2 的时间戳比 t 新，$?就指代p2。
+# $? 指代比目标更新的所有前置条件, 之间以空格分隔.比如, 规则为 t: p1 p2, 其中 p2 的时间戳比 t 新, $?就指代p2.
 ```
 
 ```makefile
-# $^ 指代所有前置条件，之间以空格分隔。比如，规则为 t: p1 p2，那么 $^ 就指代 p1 p2 。
+# $^ 指代所有前置条件, 之间以空格分隔.比如, 规则为 t: p1 p2, 那么 $^ 就指代 p1 p2 .
 ```
 
 ```makefile
-# $* 指代匹配符 % 匹配的部分， 比如% 匹配 f1.txt 中的f1 ，$* 就表示 f1。
+# $* 指代匹配符 % 匹配的部分,  比如% 匹配 f1.txt 中的f1 , $* 就表示 f1.
 ```
 
 ```makefile
-# $(@D)和$(@F) 分别指向 $@ 的目录名和文件名。比如，$@是 src/input.c，那么$(@D) 的值为 src ，$(@F) 的值为 input.c。
+# $(@D)和$(@F) 分别指向 $@ 的目录名和文件名.比如, $@是 src/input.c, 那么$(@D) 的值为 src , $(@F) 的值为 input.c.
 ```
 
 ```makefile
@@ -207,7 +207,7 @@ $(subst ee,EE,feet on the street)
 # 2
 comma:= ,
 empty:=
-space:= $(empty) $(empty) # space变量用两个空变量作为标识符，当中是一个空格
+space:= $(empty) $(empty) # space变量用两个空变量作为标识符, 当中是一个空格
 foo:= a b c
 bar:= $(subst $(space),$(comma),$(foo)) # bar is now `a,b,c'.
 ```

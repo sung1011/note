@@ -178,7 +178,7 @@ func (c *cancelCtx) cancel(removeFromParent bool, err error) {
     }
     // 设置取消原因
     c.err = err
-    // 设置一个关闭的channel或者将done channel关闭，用以发送关闭信号
+    // 设置一个关闭的channel或者将done channel关闭, 用以发送关闭信号
     if c.done == nil {
         c.done = closedchan
     } else {

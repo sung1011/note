@@ -4,14 +4,14 @@
 
 - mongod 应用软件
 - mongo 命令行管理工具
-- mongos 路由进程，分片环境使用
+- mongos 路由进程, 分片环境使用
 - mongodump / mongostrore 备份和恢复
-- mongoexport / mongoimport CSV/JSON等导入导出，主要用于不同系统间数据迁移
+- mongoexport / mongoimport CSV/JSON等导入导出, 主要用于不同系统间数据迁移
 - compass 官方GUI
-- Ops Manager（企业） 集群管理软件
-- BI Connector（企业） SQL解释器、BI套接件
-- MongoDB Charts（企业） 可视化工具
-- Atlas（付费/免费） 云服务
+- Ops Manager(企业) 集群管理软件
+- BI Connector(企业) SQL解释器、BI套接件
+- MongoDB Charts(企业) 可视化工具
+- Atlas(付费/免费) 云服务
 
 ## stat
 
@@ -33,7 +33,7 @@ mongostats // 命令行工具 简略信息
 
 db.oplog.rs.find().sort({$natrual:-1}).limit(1).next.ts - db.oplog.rs.find().sort({$natrual:1}).limit(1).next.ts // 可容纳多久的写操作
 
-//查询专注度，搜索扫描了多少个文档
+//查询专注度, 搜索扫描了多少个文档
 var status = db.serverStatus()
 status.metrics.queryExecutor.scanned / status.metrics.document.returned // 扫描文档
 status.metrics.queryExcutor.scannedObjects / status.metrics.document.returned // 返回文档
@@ -42,7 +42,7 @@ status.metrics.queryExcutor.scannedObjects / status.metrics.document.returned //
 var status = db.serverStatus()
 status.metrics.operation.scanAndOrder / status.opcounters.query
 
-db.stats() // 内存数据大小 实例数据总量（压缩前）
+db.stats() // 内存数据大小 实例数据总量(压缩前)
 storageSize // 落盘后占用磁盘大小
 ```
 
@@ -116,7 +116,7 @@ db.dropDatabase()
 ## lock
 
 ```js
-db.fsyncLock() // 锁住db写入 rs锁住不会报错，解锁后自动同步。
+db.fsyncLock() // 锁住db写入 rs锁住不会报错, 解锁后自动同步.
 db.fsyncUnlock() // 解锁db写入
 ```
   
@@ -141,7 +141,7 @@ while(c.hasNext()) {
 var c = db.coll.find({ status:1 }, {}).limit(100); while(c.hasNext()) {  printjson(c.next()); }  
 ```
 
-> 实质是拿到全部数据，然后遍历
+> 实质是拿到全部数据, 然后遍历
   
 ### 查询最后插入的数据
 
@@ -172,10 +172,10 @@ TODO
 
 ### update vs findAndModify
 
-1. update 可更新多个doc，但只保证单个doc原子性
-2. findAndModify 可以保证修改 与 返回结果（改前，改后都可以）这两个步骤是原子的
+1. update 可更新多个doc, 但只保证单个doc原子性
+2. findAndModify 可以保证修改 与 返回结果(改前, 改后都可以)这两个步骤是原子的
 3. findAndModify 若 upsert: true 并 无查询结果时, 并发状态下可能插入多个doc
-4. findAndModify 在分片集群中，查询必须包含分片key
+4. findAndModify 在分片集群中, 查询必须包含分片key
 
 ### 导表 导列 导数据
 
@@ -185,8 +185,8 @@ mongoexport -d dbname -c collectionname -o file --type json/csv -f field
 # -d ：数据库名
 # -c ：collection名
 # -o ：输出的文件名
-# --type ： 输出的格式，默认为json
-# -f ：输出的字段，如果-type为csv，则需要加上-f "字段名"
+# --type ： 输出的格式, 默认为json
+# -f ：输出的字段, 如果-type为csv, 则需要加上-f "字段名"
 
 mongoimport -d dbname -c collectionname --file filename --headerline --type json/csv -f field
 
@@ -194,7 +194,7 @@ mongoimport -d dbname -c collectionname --file filename --headerline --type json
 # -c ：collection名
 # --type ：导入的格式默认json
 # -f ：导入的字段名
-# --headerline ：如果导入的格式是csv，则可以使用第一行的标题作为导入的字段
+# --headerline ：如果导入的格式是csv, 则可以使用第一行的标题作为导入的字段
 # --file ：要导入的文件
 ```
 

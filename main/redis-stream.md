@@ -2,7 +2,7 @@
 
 @@redis
 
-    stream主要用于消息队列(MQ,Message Queue),Redis本身是有一个Redis发布订阅（pub/sub）来实现消息队列的功能,但它有个缺点就是消息无法持久化,如果出现网络断开、Redis宕机等,消息就会被丢弃。
+    stream主要用于消息队列(MQ,Message Queue),Redis本身是有一个Redis发布订阅(pub/sub)来实现消息队列的功能,但它有个缺点就是消息无法持久化,如果出现网络断开、Redis宕机等,消息就会被丢弃.
 
 ## struct
 
@@ -19,13 +19,13 @@ TODO
 
 ## cmd
 
-- `XADD` 添加消息到末尾（生产消息）
+- `XADD` 添加消息到末尾(生产消息)
 - `XTRIM` 对流进行修剪,限制长度
 - `XDEL` 删除消息
 - `XLEN` 获取流包含的元素数量,及消息长度
 - `XRANGE` 获取消息列表,会自动过滤已经删除的消息
 - `XREVERANGE` 反向获取消息列表,ID从大到小
-- `XREAD` 以阻塞或非阻塞方式获取消息列表（消费消息）
+- `XREAD` 以阻塞或非阻塞方式获取消息列表(消费消息)
 
 - `XGROUP CREATE` 创建消费者组
 - `XREADGROUP GROUP` 读取消费者组中的消息

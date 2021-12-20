@@ -4,7 +4,7 @@ package main
 type Iterator interface {
 	HasNext() bool
 	Next()
-	// 获取当前元素，由于 Go 1.15 中还没有泛型，所以我们直接返回 interface{}
+	// 获取当前元素, 由于 Go 1.15 中还没有泛型, 所以我们直接返回 interface{}
 	CurrentItem() interface{}
 }
 

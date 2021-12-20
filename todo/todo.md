@@ -15,7 +15,7 @@
 - 慢请求
 - pay记录过多如何处理
 - 支付校验都有啥
-- 如何管道标准错误（而非标准输出） `http://www.dovov.com/854.html`
+- 如何管道标准错误(而非标准输出) `http://www.dovov.com/854.html`
 - git ref `https://www.php.cn/manual/view/35099.html`
 - why the design `https://draveness.me/whys-the-design/`
 - ssh `http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html`
@@ -50,7 +50,7 @@ for _, v := range feeds {
 
 // chan传递副本
 
-// 如果一个接口类型只包含一个方法，那类型名需要以er结尾 ex: Reader, Writer, Matcher...
+// 如果一个接口类型只包含一个方法, 那类型名需要以er结尾 ex: Reader, Writer, Matcher...
 type Matcher interface {
   Search(feed *Feed, searchTerm string) ([]*Result, error)
 }

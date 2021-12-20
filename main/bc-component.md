@@ -2,7 +2,7 @@
 
 ## P2P网络协议
 
-网络传输和广播、节点发现和维护。
+网络传输和广播、节点发现和维护.
 
 ### 网络连接
 
@@ -10,14 +10,14 @@
 
 ### 拓扑结构
 
-全分布式拓扑结构 (交易从某个节点产生，广播到邻近节点传播)
+全分布式拓扑结构 (交易从某个节点产生, 广播到邻近节点传播)
 
 ```note
 P2P网络拓扑结构分类:
-中心化拓扑（Centralized Topology）；
-全分布式非结构化拓扑（Decentralized Unstructured Topology）；
-全分布式结构化拓扑（Decentralized Structured Topology，也称作DHT网络）；
-半分布式拓扑（Partially Decentralized Topology）。
+中心化拓扑(Centralized Topology)；
+全分布式非结构化拓扑(Decentralized Unstructured Topology)；
+全分布式结构化拓扑(Decentralized Structured Topology, 也称作DHT网络)；
+半分布式拓扑(Partially Decentralized Topology).
 ```
 
 ### 节点发现
@@ -45,7 +45,7 @@ P2P网络拓扑结构分类:
    1. HeaderFirst 先同步头 再同步体
    2. BlockFirst 同步整体
 
-## 共识机制（分布式一致性算法）
+## 共识机制(分布式一致性算法)
 
 [PoW 工作量证明算法](algo-pow.md)
 

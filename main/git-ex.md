@@ -70,7 +70,7 @@ git rev-parse --abbrev-ref HEAD 2> /dev/null
 3. 错误的将带有dev合入到master, 并push
 
    ```bash
-   # 正常情况下 dev 和 master 为平行关系，feature合入dev进行测试，合入master进行上线
+   # 正常情况下 dev 和 master 为平行关系, feature合入dev进行测试, 合入master进行上线
     D-----E---X---F---a----- dev # 比master多一些脏提交a
              /                 \
             X feature           \  # 错误的将带有feature(X)的dev合入master
@@ -82,7 +82,7 @@ git rev-parse --abbrev-ref HEAD 2> /dev/null
    2. master保留feature内容(但不保留dev的a) `[master] git checkout <feature> -- <X files>; git add .;git commit` -- master已正常
    3. master合入dev(将revert带回dev) `[dev] git merge master` -- 此时dev中的a内容没有了, 期望dev有a
    4. 检出dev被撤销的文件(还原出a内容) `[dev] git checkout <merge commit> -- <X files>; git add .; git commit` -- dev已正常
-   5. 若dev中有其他feature，需要类似【4】把这些被撤销feature内容还原出来
+   5. 若dev中有其他feature, 需要类似【4】把这些被撤销feature内容还原出来
 
 
 ### 查找大文件
@@ -94,7 +94,7 @@ git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -g -r | head -n5
 git rev-list --objects --all | grep < oid(blob) >
 ```
 
-## 彻底删除某个文件（大文件、涉密文件）
+## 彻底删除某个文件(大文件、涉密文件)
 
 ```bash
 git filter-branch --force --index-filter \

@@ -30,7 +30,7 @@ sp := &Student{"Sam", 18} // 初始化 顺序初始值
 
 ## 内存布局 连续
 
-结构体和它所包含的数据在内存中是以连续块的形式存在的，即使结构体中嵌套有其他的结构体
+结构体和它所包含的数据在内存中是以连续块的形式存在的, 即使结构体中嵌套有其他的结构体
 
 ![img](res/go-struct-mem.jpg)
 
@@ -43,7 +43,7 @@ sp := &Student{"Sam", 18} // 初始化 顺序初始值
 ```go
 type User {
     name string
-    school *schoolInfo // 当期望 不随User变化而变化，使用指针
+    school *schoolInfo // 当期望 不随User变化而变化, 使用指针
 }
 // 指针接收者 修改类型实例本身 (不论调用者是u或&u)
 func (u *User) changeName() {
@@ -74,10 +74,10 @@ var dur Duration
 dur = j
 ```
 
-## 构造器（一个函数根据数据结构返回这个数据结构的一个实例对象） & 工厂方法
+## 构造器(一个函数根据数据结构返回这个数据结构的一个实例对象) & 工厂方法
 
 ```go
-func newStudent(name string, age int) *Student { // 若改为NewStudent（N大写）可以认为是工厂方法
+func newStudent(name string, age int) *Student { // 若改为NewStudent(N大写)可以认为是工厂方法
     return &Student{
         name,
         age,
@@ -122,7 +122,7 @@ type Horse struct {
 func (a *Animal) hello() {
     fmt.Println(a.Name)
     fmt.Println(a.Weight)
-    //fmt.Println(a.Speak) // animal访问不到horse的字段， 即便是horse实例
+    //fmt.Println(a.Speak) // animal访问不到horse的字段,  即便是horse实例
     // fmt.Println(a.int) // animal访问不到horse的匿名字段
 }
 
@@ -135,7 +135,7 @@ func (h *Horse) hello() { // 重载 覆盖 Animal.hello()
 
 func main() {
     bm_horse := &Horse{
-        Animal: &Animal{ // 结构体包含`嵌入字段`，类型名充当了嵌入字段的字段名
+        Animal: &Animal{ // 结构体包含`嵌入字段`, 类型名充当了嵌入字段的字段名
             Name:   "baima",
             Weight: 60,
         },

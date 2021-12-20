@@ -1,6 +1,6 @@
 package main
 
-// SensitiveWordFilter 敏感词过滤器，判定是否是敏感词
+// SensitiveWordFilter 敏感词过滤器, 判定是否是敏感词
 type SensitiveWordFilter interface {
 	Filter(content string) bool
 }

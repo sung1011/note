@@ -29,8 +29,8 @@ func (in *InputText) Restore(s *Snapshot) {
 	in.content = s.GetText()
 }
 
-// Snapshot 快照，用于存储数据快照
-// 对于快照来说，只能不能被外部（不同包）修改，只能获取数据，满足封装的特性
+// Snapshot 快照, 用于存储数据快照
+// 对于快照来说, 只能不能被外部(不同包)修改, 只能获取数据, 满足封装的特性
 type Snapshot struct {
 	content string
 }

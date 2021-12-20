@@ -15,11 +15,11 @@
 3. location.hash + iframe
 4. window.name + iframe跨域
 5. postMessage跨域
-6. 跨域资源共享（CORS）
+6. 跨域资源共享(CORS)
 
-    - Access-Control-Allow-Origin: { 允许跨域的host，若无端口结尾不加/ }
-    - Access-Control-Allow-Credentials: true // 允许前端带认证cookie：启用此项后，上面的域名不能为'*'
-    - Access-Control-Allow-Headers: Content-Type,X-Requested-With // 提示OPTIONS检测时，后端需要设置的常用自定义头
+    - Access-Control-Allow-Origin: { 允许跨域的host, 若无端口结尾不加/ }
+    - Access-Control-Allow-Credentials: true // 允许前端带认证cookie：启用此项后, 上面的域名不能为'*'
+    - Access-Control-Allow-Headers: Content-Type,X-Requested-With // 提示OPTIONS检测时, 后端需要设置的常用自定义头
 
 7. nginx代理跨域
 8. nodejs中间件代理跨域

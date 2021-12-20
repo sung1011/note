@@ -22,12 +22,12 @@
 │   └── win-utf
 ├── fastcgi_temp                     # fastcgi临时数据目录
 ├── html                             # Nginx默认站点目录
-│   ├── 50x.html                     # 错误页面优雅替代显示文件，例如当出现502错误时会调用此页面
+│   ├── 50x.html                     # 错误页面优雅替代显示文件, 例如当出现502错误时会调用此页面
 │   └── index.html                   # 默认的首页文件
 ├── logs                             # Nginx日志目录
 │   ├── access.log                   # 访问日志文件
 │   ├── error.log                    # 错误日志文件
-│   └── nginx.pid                    # pid文件，Nginx进程启动后，会把所有进程的ID号写到此文件
+│   └── nginx.pid                    # pid文件, Nginx进程启动后, 会把所有进程的ID号写到此文件
 ├── proxy_temp                       # 临时目录
 ├── sbin                             # Nginx命令目录
 │   └── nginx                        # Nginx的可执行文件
@@ -37,4 +37,4 @@
 
 ## ref
 
-[doc](http://nginx.org/en/docs/configure.html)
+- doc <http://nginx.org/en/docs/configure.html>

@@ -11,7 +11,7 @@ curl -H "Authorization: Bearer ACCESS_TOKEN" \
 
 ## 更新token
 
-web-b 可以在授权时一次性颁发两个令牌， REFRESH_TOKEN 用于更新令牌。
+web-b 可以在授权时一次性颁发两个令牌,  REFRESH_TOKEN 用于更新令牌.
 
 ```bash
 
@@ -23,4 +23,4 @@ https://b.com/oauth/token?
 
 ```
 
-> 也可以重走一遍授权流程，但体验不佳
+> 也可以重走一遍授权流程, 但体验不佳

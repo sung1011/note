@@ -33,7 +33,7 @@
               2. epoll_ctl()
                  1. acceptTcpHandler()
                  2. acceptCommonHandler()
-                 3. createClient() # 创建redisClient对象 && 连接fd注册看到事件循环。
+                 3. createClient() # 创建redisClient对象 && 连接fd注册看到事件循环.
         5. aeMain()
               1. aeProcessEvents()
               2. aeApiPoll()

@@ -61,16 +61,16 @@ CS共享一些非敏感信息(C端轻易可解密)
    iss: jwt签发者 // issuer
    sub: jwt所面向的用户 // subject
    aud: 接收jwt的一方 // audience
-   exp: jwt的过期时间，这个过期时间必须要大于签发时间 // expireation time
-   nbf: 定义在什么时间之前，该jwt都是不可用的. // not before
+   exp: jwt的过期时间, 这个过期时间必须要大于签发时间 // expireation time
+   nbf: 定义在什么时间之前, 该jwt都是不可用的. // not before
    iat: jwt的签发时间 // issued at
-   jti: jwt的唯一身份标识，主要用来作为一次性token,从而回避重放攻击。 // JWT ID
+   jti: jwt的唯一身份标识, 主要用来作为一次性token,从而回避重放攻击. // JWT ID
 
    // public claims 公共的声明(自定义)
    uid: 1001,
    name: sun,
 
-   // private claims 私有的声明(自定义) 用于在同意使用它们的各方之间共享信息，并且不是注册的或公开的声明。
+   // private claims 私有的声明(自定义) 用于在同意使用它们的各方之间共享信息, 并且不是注册的或公开的声明.
    foo: 123,
 }
 

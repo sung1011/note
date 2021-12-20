@@ -66,10 +66,10 @@ func (tf *TheFile) Open(flag int, mode os.FileMode) (*os.File, error) {
 	//   os.O_RDONLY // 只读
 	//   os.O_WRONLY // 只写
 	//   os.O_RDWR // 读写
-	//   os.O_APPEND // 往文件中添建（Append）
+	//   os.O_APPEND // 往文件中添建(Append)
 	//   os.O_CREATE // 如果文件不存在则先创建
 	//   os.O_TRUNC // 文件打开时裁剪文件
-	//   os.O_EXCL // 和O_CREATE一起使用，文件不能存在
+	//   os.O_EXCL // 和O_CREATE一起使用, 文件不能存在
 	//   os.O_SYNC // 以同步I/O的方式打开
 
 	// mode: 如0666

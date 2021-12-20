@@ -14,13 +14,13 @@
 | pass_request_headers     | 是否转发请求头                         | 构造请求内容       |       |         |      | o    |
 | pass_request_body        | 是否转发请求体                         | 构造请求内容       |       |         |      | o    |
 | [request_buffering](_)   | 是否缓存请求包体                       | 接收请求body       | o     | o       | o    | o    |
-| client_max_body_size     | 检查请求头content-length，超返413      | 接收请求body       |       |         |      | o    |
-| client_body_buffer_size  | 分配请求体buffer大小，小则内存大则文件 | 接收请求body       |       |         |      | o    |
+| client_max_body_size     | 检查请求头content-length, 超返413      | 接收请求body       |       |         |      | o    |
+| client_body_buffer_size  | 分配请求体buffer大小, 小则内存大则文件 | 接收请求body       |       |         |      | o    |
 | client_body_temp_path    | 请求body临时文件存储路径               | 接收请求body       |       |         |      | o    |
 | client_body_in_file_only | 请求的body是否存文件                   | 接收请求body       |       |         |      | o    |
-| client_header_timeout    | 读取header时间限制，超返408            | 接收请求body       |       |         |      | o    |
-| client_body_timeout      | 读取body时间限制，超返408              | 接收请求body       |       |         |      | o    |
-| connect_timeout          | 连接上游超时时间，超反502              | 建立连接并发送请求 | o     | o       | o    | o    |
+| client_header_timeout    | 读取header时间限制, 超返408            | 接收请求body       |       |         |      | o    |
+| client_body_timeout      | 读取body时间限制, 超返408              | 接收请求body       |       |         |      | o    |
+| connect_timeout          | 连接上游超时时间, 超反502              | 建立连接并发送请求 | o     | o       | o    | o    |
 | bind                     | TCP连接绑定地址(Source IP Address)     | 建立连接并发送请求 | o     | o       | o    | o    |
 | socket_keepalive         | 使用TCPkeepalive                       | 建立连接并发送请求 | o     | o       | o    | o    |
 | ignore_client_abort      | 忽略客户端关连接                       | 建立连接并发送请求 | o     | o       | o    | o    |
@@ -36,7 +36,7 @@
 | temp_file_write_size     | 缓冲文件每次写入大小                   | 接收上游响应       | o     | o       | o    | o    |
 | max_temp_file_size       | 临时文件最大大小                       | 接收上游响应       | o     | o       | o    | o    |
 | busy_buffers_size        | 缓冲完成前转发包体的大小               | 接收上游响应       | o     | o       | o    | o    |
-| read_timeout             | 读取响应超时时间（两次write期间计时）  | 接收上游响应       | o     | o       | o    | o    |
+| read_timeout             | 读取响应超时时间(两次write期间计时)  | 接收上游响应       | o     | o       | o    | o    |
 | limit_rate               | 读取响应限速率                         | 接收上游响应       | o     | o       | o    | o    |
 | [hide_header](_)         | 隐藏某些响应头部                       | 处理上游响应header | o     | o       | o    | o    |
 | pass_header              | 恢复hide_header隐藏的头部              | 处理上游响应header | o     | o       | o    | o    |
@@ -61,7 +61,7 @@
 | ssl_verify               | 是否验证上游服务的证书                 | SSL                | o     |         |      | o    |
 | ssl_verify_depth         | 设置验证证书链的深度                   | SSL                | o     |         |      | o    |
 | cache                    | 指定共享内存名                         | 缓存               | o     | o       | o    | o    |
-| cache_path               | 缓存文件存放位置，淘汰策略等           | 缓存               | o     | o       | o    | o    |
+| cache_path               | 缓存文件存放位置, 淘汰策略等           | 缓存               | o     | o       | o    | o    |
 | cache_bypass             | 指定哪些请求不使用缓存                 | 缓存               | o     | o       | o    | o    |
 | cache_background_update  | 开启子请求更新陈旧缓存                 | 缓存               | o     | o       | o    | o    |
 | cache_key                | 定义缓存关键字                         | 缓存               | o     | o       | o    | o    |
@@ -93,15 +93,15 @@
     2. 能降低nginx读写磁盘
     3. 会令next_upstream功能失效
 - hide_header 隐藏某些上游响应头部 (以下为默认隐藏的头部)
-  - Date nginx发送响应头的时间，由ngx_http_header_filter_module填写
-  - Server nginx版本，由ngx_http_header_filter_module填写
-  - X-Pad apache为避免浏览器bug生成的头部，默认忽略
-  - X-Accel- 用于控制nginx行为的响应，不需要向客户端转发
+  - Date nginx发送响应头的时间, 由ngx_http_header_filter_module填写
+  - Server nginx版本, 由ngx_http_header_filter_module填写
+  - X-Pad apache为避免浏览器bug生成的头部, 默认忽略
+  - X-Accel- 用于控制nginx行为的响应, 不需要向客户端转发
     - X-Accel-Expire 控制缓存过期时间
 - cache_use_stale
-  - updating 并发时仅1个请求发向上游，其他请求使用已经过期的旧缓存
-  - error 与上游发生错误时，使用缓存
-  - timeout 与上游发生超时时，使用缓存
+  - updating 并发时仅1个请求发向上游, 其他请求使用已经过期的旧缓存
+  - error 与上游发生错误时, 使用缓存
+  - timeout 与上游发生超时时, 使用缓存
   - http_(500|502|503|504|403|404|429) 缓存以上错误码的内容
 
 ### 反向代理流程
@@ -114,7 +114,7 @@
    2. off; 边收边转发请求body
 4. 根据负载均衡策略选择上游服务
 5. 根据参数连接上游
-6. 发送请求body（边读边发）
+6. 发送请求body(边读边发)
 7. 处理并返回...
 8. 接收响应header
 9. 处理响应header
@@ -122,7 +122,7 @@
     1. on; 接收完整响应body
     2. off; 边收边处理上游响应headerbody
 11. 发送响应header
-12. 发送响应body（边读边发）
+12. 发送响应body(边读边发)
 13. cache
     1. on; 响应body加入缓存
 14. 关闭连接 或 复用连接
@@ -148,38 +148,38 @@
     1. 是: 根据cache_background_update生成子请求; 向下游发送缓存的响应
     2. 否: 向上游发起请求
 10. 共享内存中分配节点
-11. 淘汰已过期的缓存，再次分配
+11. 淘汰已过期的缓存, 再次分配
 
 ### 缓存流程 --- 接收上游响应的缓存处理流程
 
 1. 是否匹配no_cache
-   1. 否: 不更新缓存，转发上游响应
+   1. 否: 不更新缓存, 转发上游响应
 2. 方法是否匹配cache_valid
-   1. 否: 不更新缓存，转发上游响应
+   1. 否: 不更新缓存, 转发上游响应
 3. 判断响应码是否为200或206
    1. 是: 更新缓存中的etag和last_modified
-4. 处理缓存相关的响应header，并检查是否有响应头不使用缓存
-   1. 是: 不更新缓存，转发上游响应
+4. 处理缓存相关的响应header, 并检查是否有响应头不使用缓存
+   1. 是: 不更新缓存, 转发上游响应
 5. 读取、转发上游响应
 6. 将临时文件mv至缓存目录
 7. 更新共享内存状态
 
 ### 缓存肖峰
 
-#### 并发时由第1个请求激活cache，其他请求利用该cache响应
+#### 并发时由第1个请求激活cache, 其他请求利用该cache响应
 
-- cache_lock 并发时仅1个请求发向上游，其他请求等待那个请求返回并生成缓存，使用该缓存响应客户端。
-- cache_lock_timeout 并发时等待第1个请求返回的超时时间，超时则自己向上游请求。
-- cache_lock_age 并发时等待第1个请求返回的超时时间，超时则再放行一个向上游请求。
+- cache_lock 并发时仅1个请求发向上游, 其他请求等待那个请求返回并生成缓存, 使用该缓存响应客户端.
+- cache_lock_timeout 并发时等待第1个请求返回的超时时间, 超时则自己向上游请求.
+- cache_lock_age 并发时等待第1个请求返回的超时时间, 超时则再放行一个向上游请求.
 
-#### 减少回源请求，使用stale陈旧的缓存; 并发时用旧缓存响应
+#### 减少回源请求, 使用stale陈旧的缓存; 并发时用旧缓存响应
 
 - cache_use_stale
-  - updating 并发时仅1个请求发向上游，其他请求使用已经过期的旧缓存
-  - error 与上游发生错误时，使用缓存
-  - timeout 与上游发生超时时，使用缓存
+  - updating 并发时仅1个请求发向上游, 其他请求使用已经过期的旧缓存
+  - error 与上游发生错误时, 使用缓存
+  - timeout 与上游发生超时时, 使用缓存
   - http_(500|502|503|504|403|404|429) 缓存以上错误码的内容
-- cache_background_update 并发时多个请求发向上游，其他请求使用已经过期的旧缓存
+- cache_background_update 并发时多个请求发向上游, 其他请求使用已经过期的旧缓存
 
 ### 缓存清除模块 ngx_cache_purge(第三方模块)
 
@@ -200,9 +200,9 @@
 - 随机 random
 - fair(第三方): 根据响应时间  
 
-> hash算法可以配置一致性hash, 以防扩缩容时缓存大量失效, 带来压力。 `hash key consistent`  
+> hash算法可以配置一致性hash, 以防扩缩容时缓存大量失效, 带来压力. `hash key consistent`  
 
-> 使用upstream_zone模块，以共享内存的方式将负载均衡算法共享到所有worker生效。
+> 使用upstream_zone模块, 以共享内存的方式将负载均衡算法共享到所有worker生效.
 
 ### Health checks
 
@@ -214,13 +214,13 @@ command: upstream, server
   - max_conns: 最大并发的连接数
   - max_fails: 允许请求失败次数
   - fail_timeout: 经过max_fails失败后,服务暂停的时间(熔断)
-  - backup: 备份服务器（当其余服务器异常时启用）  
+  - backup: 备份服务器(当其余服务器异常时启用)  
   - down: 标记已下线  
   - resolve: 指定dns解析域名
   - route: set route name
   - service: set service name
-  - slow_start: 防止新添加/恢复的主机被突然增加的请求所压垮，令weight从0开始慢慢增加到设定值。 （不能用于hash, ip_hash)
-  - drain: 优雅关闭。即不再接受请求。
+  - slow_start: 防止新添加/恢复的主机被突然增加的请求所压垮, 令weight从0开始慢慢增加到设定值. (不能用于hash, ip_hash)
+  - drain: 优雅关闭.即不再接受请求.
 
 ## 实战
 

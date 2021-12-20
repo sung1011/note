@@ -1,6 +1,6 @@
 # LSM Log Structured Merge
 
-    先写内存, 数据写满后, 逐层滚动地归并 排序 写入磁盘。
+    先写内存, 数据写满后, 逐层滚动地归并 排序 写入磁盘.
 
 ![img](res/ds-lsm.png)
 
@@ -14,11 +14,11 @@
 
 > 整块Immutable写入SSTable, 所以是顺序写
 
-> `SSTable`一共7层（L0~L6）, 每层比上一层大10倍; 每层都会重新排序
+> `SSTable`一共7层(L0~L6), 每层比上一层大10倍; 每层都会重新排序
 
 ## 特性
 
-- `批量写入` 单次多页顺序写( 而非B+的多次单页随机写 ), 写效率极高。
+- `批量写入` 单次多页顺序写( 而非B+的多次单页随机写 ), 写效率极高.
 
 - `存储延迟` 可异步归并; WAL 保障可用性
 
@@ -29,27 +29,27 @@
   1. 追加写前日志 WAL(解决了可靠性)
   2. 写入Memtable 和 Immutable
   3. 后台线程将Immutable数据复制到L0 并 释放Immutable内存
-  4. L0占内存较多时, C0与C1归并排序生成new-C1, 替换old-C1。 -- 这个过程称为 Compaction, 可稍后异步完成。
-  5. L1占磁盘较多时, C1与C2归并排序生成new-C2, 替换old-C2。
+  4. L0占内存较多时, C0与C1归并排序生成new-C1, 替换old-C1. -- 这个过程称为 Compaction, 可稍后异步完成.
+  5. L1占磁盘较多时, C1与C2归并排序生成new-C2, 替换old-C2.
   6. L2占磁盘较多时...
 
-> 写放大: 用户插入1k数据, 通过上述流程实际可能插入10k数据 和 多次IO。
+> 写放大: 用户插入1k数据, 通过上述流程实际可能插入10k数据 和 多次IO.
 
 > 数据写入L0时直接写, 并不会检查Key是否已经存在
 
 - `find O (k*log n)`
   
   1. 先查内存
-  2. 若没查到这个key, 则逆序遍历SSTable文件。
+  2. 若没查到这个key, 则逆序遍历SSTable文件.
   3. SSTable的内容有序, 所以二分法 log N, 逐个遍历SSTable文件, 所以 k*log N
      1. check MEM L0
      2. check DIST L1
      3. check DIST L2
      4. check DIST L3
 
-> 优化: [bloom filter](algo-bloomfilter.md)快速得到是否在当前层, 替代二分查找。
+> 优化: [bloom filter](algo-bloomfilter.md)快速得到是否在当前层, 替代二分查找.
 
-> 读放大: 用户读取1k数据, 通过上述流程实际可能读取10k数据 和 多次IO。
+> 读放大: 用户读取1k数据, 通过上述流程实际可能读取10k数据 和 多次IO.
 
 - `delete`
 

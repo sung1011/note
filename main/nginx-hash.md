@@ -2,7 +2,7 @@
 
 ## 场景
 
-静态不变的内容。即通常不会插入，删除
+静态不变的内容.即通常不会插入, 删除
 
 ## 源码
 
@@ -12,14 +12,14 @@ src/core/ngx_hash
 
 ```c
 typedef struct {
-  void value;   // 指向用户自定义元素数据的指针，如果当前ngx_hash_elt_t槽为空，则value的值为0
+  void value;   // 指向用户自定义元素数据的指针, 如果当前ngx_hash_elt_t槽为空, 则value的值为0
   u_short len;   // 元素关键字的长度
   u_char name[1];   // 元素关键字的首地址
 } ngx_hash_elt_t;
 
 
 typedef struct {
-  ngx_hash_elt_t *buckets;   // 指向散列表的首地址，也是第1个槽的地址
+  ngx_hash_elt_t *buckets;   // 指向散列表的首地址, 也是第1个槽的地址
   ngx_uint_t size;   // 散列表中槽的总数
 } ngx_hash_t;
 ```

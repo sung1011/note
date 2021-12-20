@@ -45,7 +45,7 @@ int, embstr, raw
 
 > 字符长度区分在44 = 64 - 19 - 1  
 
-> 64: 总体占用超过64byte，redis认为是大字符串  
+> 64: 总体占用超过64byte, redis认为是大字符串  
 
 > 19: SDS对象header为alloc+3; 即最小字符串占用16+3=19  
 
@@ -62,9 +62,9 @@ set foo 123 // int
 incr foo // int (124)
 ```
 
-- embstr是只读的（无修改的方法）当对`embstr进行append`时，会先变为raw再修改。
-- 当对`int进行append`时，也会变为raw再修改。
-- 当对`int进行incr`等操作，是对int的修改，不会转化类型。
+- embstr是只读的(无修改的方法)当对`embstr进行append`时, 会先变为raw再修改.
+- 当对`int进行append`时, 也会变为raw再修改.
+- 当对`int进行incr`等操作, 是对int的修改, 不会转化类型.
 
 <!-- ## 实现
 

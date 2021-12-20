@@ -2,9 +2,9 @@
 
 ## config
 
-- `/etc/crontab` # 系统级。一般不要动
-- `/etc/cron.d/` # 系统级。全局计划任务时可以增改这个
-- `/var/spool/cron/<user>` # 用户级。可用 crontab -l, -e等进行操作。
+- `/etc/crontab` # 系统级.一般不要动
+- `/etc/cron.d/` # 系统级.全局计划任务时可以增改这个
+- `/var/spool/cron/<user>` # 用户级.可用 crontab -l, -e等进行操作.
 
 > 以上配置修改后, 立刻生效, 不必重载服务即生效
 
@@ -14,10 +14,10 @@
 # 以下都是用户级操作, 对应/var/spool/cron/
 -e 编辑该用户的计时器设置,如果不指定用户, 则表示编辑当前用户的crontab文件
 -l 列出该用户的计时器设置,如果不指定用户, 则表示显示当前用户的crontab文件内容
--r 删除某个用户的crontab文件, 如果不指定用户, 则默认删除当前用户的crontab文件。
--i 在删除用户的crontab文件时给确认提示。
--u 用来设定某个用户的crontab服务, 例如, “-u ixdba”表示设定ixdba用户的crontab服务, 此参数一般有root用户来运行。
-file file是命令文件的名字,表示将file做为crontab的任务列表文件并载入crontab (覆盖到/var/spool/cron/)。
+-r 删除某个用户的crontab文件, 如果不指定用户, 则默认删除当前用户的crontab文件.
+-i 在删除用户的crontab文件时给确认提示.
+-u 用来设定某个用户的crontab服务, 例如, “-u ixdba”表示设定ixdba用户的crontab服务, 此参数一般有root用户来运行.
+file file是命令文件的名字,表示将file做为crontab的任务列表文件并载入crontab (覆盖到/var/spool/cron/).
 ```
 
 ## cmd
@@ -46,11 +46,11 @@ HOME=/User/sunji2
 # *  *  *  *  * user-name  command to be executed
 
 # 示例
-30 21 * * * /usr/local/etc/rc.d/lighttpd restart       #每晚的21:30重启apache。
-45 4 1,10,22 * * /usr/local/etc/rc.d/lighttpd restart  #每月1、10、22日的4 : 45重启apache。
+30 21 * * * /usr/local/etc/rc.d/lighttpd restart       #每晚的21:30重启apache.
+45 4 1,10,22 * * /usr/local/etc/rc.d/lighttpd restart  #每月1、10、22日的4 : 45重启apache.
 10 1 * * 6,0 /usr/local/etc/rc.d/lighttpd restart      #每周六、周日的1 : 10重启apache
-0,30 18-23 * * * /usr/local/etc/rc.d/lighttpd restart  #每天18 : 00至23 : 00之间每隔30分钟重启apache。
-0 23 * * 6 /usr/local/etc/rc.d/lighttpd restart        #每星期六的11 : 00 pm重启apache。
+0,30 18-23 * * * /usr/local/etc/rc.d/lighttpd restart  #每天18 : 00至23 : 00之间每隔30分钟重启apache.
+0 23 * * 6 /usr/local/etc/rc.d/lighttpd restart        #每星期六的11 : 00 pm重启apache.
 * */1 * * * /usr/local/etc/rc.d/lighttpd restart       #每一小时重启apache
 * 23-7/1 * * * /usr/local/etc/rc.d/lighttpd restart    #晚上11点到早上7点之间, 每隔一小时重启apache
 0 11 4 * mon-wed /usr/local/etc/rc.d/lighttpd restart  #每月的4号与每周一到周三的11点重启apache
@@ -86,7 +86,7 @@ systemctl disable crond    #禁止开机自动启动
 /sbin/service crond stop     #关闭服务
 /sbin/service crond restart  #重启服务
 /sbin/service crond reload   #重新载入配置
-ntsysv                       #查看crontab服务是否已设置为开机启动（用方向键和tab操作）
+ntsysv                       #查看crontab服务是否已设置为开机启动(用方向键和tab操作)
 chkconfig –level 35 crond on #开机自动启动
 ```
 

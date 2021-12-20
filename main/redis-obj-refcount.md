@@ -10,7 +10,7 @@ robj resetRefCount(robj *o); // 对象的引用计数清零(但不释放对象)
 
 ## 对象共享
 
-server初始化时会创建一些共享对象，供自定义的值对象共享。
+server初始化时会创建一些共享对象, 供自定义的值对象共享.
 
 ```c
 void createSharedObjects(void); // server初始化时创建共享对象
@@ -21,4 +21,4 @@ void createSharedObjects(void); // server初始化时创建共享对象
 // 特别标记类: minstring maxstring
 ```
 
-> 若某key得值对象是共享对象，则`object refcount <key>`返回2147483647(INT_MAX)。
+> 若某key得值对象是共享对象, 则`object refcount <key>`返回2147483647(INT_MAX).

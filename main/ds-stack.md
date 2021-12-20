@@ -61,14 +61,14 @@ b = 2
 - `最小栈` O(1)获取栈的最小元素
 
 ```bash
-# push()时额外保存当前最小栈, 在pop()后不需要重新计算；队列同理。
+# push()时额外保存当前最小栈, 在pop()后不需要重新计算；队列同理.
 
 stack = [10, 12, 9, 14]; # min = stack[2] = 9
 minsStackIndex = [0, 2];
 
 # push()
 stack = [10, 12, 9, 14, 4]; # min = stack[4] = 4
-minsStackIndex = [0, 2, 4]; # push()时发现4是最小栈，则将其索引值同步push()到额外栈中。
+minsStackIndex = [0, 2, 4]; # push()时发现4是最小栈, 则将其索引值同步push()到额外栈中.
 
 # pop() pop() pop()
 stack = [10, 12]; # min = stack[0] = 10

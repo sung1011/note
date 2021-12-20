@@ -4,13 +4,13 @@
 
 ## [编译安装](nginx-compile.md)
 
+## [架构](nginx-arch.md)
+
 ## [目录结构](nginx-file.md)
 
 ## [配置语法](nginx-config-grammer.md)
 
 ## [信号 signal](nginx-signal.md)
-
-## [架构](nginx-arch.md)
 
 ## [流程](nginx-process.md)
 

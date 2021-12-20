@@ -26,7 +26,7 @@ func generate(file string) (string, error) {
 	// 构建注释和 node 的关系
 	cmap := ast.NewCommentMap(fset, f, f.Comments)
 	for node, group := range cmap {
-		// 从注释 @proxy 接口名，获取接口名称
+		// 从注释 @proxy 接口名, 获取接口名称
 		name := getProxyInterfaceName(group)
 		if name == "" {
 			continue
@@ -38,7 +38,7 @@ func generate(file string) (string, error) {
 		// 从文件中查找接口
 		obj := f.Scope.Lookup(name)
 
-		// 类型转换，注意: 这里没有对断言进行判断，可能会导致 panic
+		// 类型转换, 注意: 这里没有对断言进行判断, 可能会导致 panic
 		t := obj.Decl.(*ast.TypeSpec).Type.(*ast.InterfaceType)
 
 		for _, field := range t.Methods.List {
@@ -78,7 +78,7 @@ func generate(file string) (string, error) {
 }
 
 // getParamsOrResults 获取参数或者是返回值
-// 返回带类型的参数，以及不带类型的参数，以逗号间隔
+// 返回带类型的参数, 以及不带类型的参数, 以逗号间隔
 func getParamsOrResults(fields *ast.FieldList) (string, string) {
 	var (
 		params     []string
@@ -161,7 +161,7 @@ type proxyData struct {
 type proxyMethod struct {
 	// 方法名
 	Name string
-	// 参数，含参数类型
+	// 参数, 含参数类型
 	Params string
 	// 参数名
 	ParamNames string

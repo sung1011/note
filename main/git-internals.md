@@ -6,7 +6,7 @@
 
 - `Index / Stage 暂存区` git add 后, 将内容存入版本库中的暂存区
 
-- `Repository 版本库（本地仓库）` .git文件夹
+- `Repository 版本库(本地仓库)` .git文件夹
 
 - `Remote 远程仓库` 云端
 
@@ -28,7 +28,7 @@
 
 ### commit (or tag)
 
-  每个commit记录了提交一个更新的所有元数据，如指向的tree，父commit，作者、提交者、提交日期、提交日志等。每次提交都指向一个tree对象，记录了当次提交时的目录信息。一个commit可以有多个（至少一个）父commits。
+  每个commit记录了提交一个更新的所有元数据, 如指向的tree, 父commit, 作者、提交者、提交日期、提交日志等.每次提交都指向一个tree对象, 记录了当次提交时的目录信息.一个commit可以有多个(至少一个)父commits.
 
 ```bash
 # git cat-file < oid or tag >
@@ -42,7 +42,7 @@ committer sunji <sung1011@gmail.com> 1600173852 +0800
 
 ### tree
 
-  每个tree代表了一个目录的信息，包含了此目录下的blobs，子目录（对应于子trees），文件名、路径等元数据。因此，对于有子目录的目录，git相当于存储了嵌套的trees。
+  每个tree代表了一个目录的信息, 包含了此目录下的blobs, 子目录(对应于子trees), 文件名、路径等元数据.因此, 对于有子目录的目录, git相当于存储了嵌套的trees.
 
 ```bash
 # git cat-file -p 8c14e08655a16ff642e8bc340aed6abcc24118d9
@@ -54,7 +54,7 @@ committer sunji <sung1011@gmail.com> 1600173852 +0800
 
 ### blob
 
-  每个blob代表一个（版本的）文件，blob只包含文件的数据，而忽略文件的其他元数据，如名字、路径、格式等。
+  每个blob代表一个(版本的)文件, blob只包含文件的数据, 而忽略文件的其他元数据, 如名字、路径、格式等.
 
 ```php
 # git cat-file -p 33b4f711f4fce3f6547b6db3919d98273cb8e692

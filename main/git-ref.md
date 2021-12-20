@@ -21,7 +21,7 @@ git help -w --web #
 ### clone
 
 ```bash
-git clone --depth 10 < repo > # 深度。保留最新的10个commit，更前的commit嫁接(grafted)成一个整体
+git clone --depth 10 < repo > # 深度.保留最新的10个commit, 更前的commit嫁接(grafted)成一个整体
 ```
 
 ## Basic Snapshotting
@@ -64,7 +64,7 @@ git reset --hard  # reset HEAD, index, working tree
 ### mv
 
 ```bash
-git mv a b # 一般重命名大小写时用。 另外可通过配置使大小写敏感`git config core.ignorecase false`
+git mv a b # 一般重命名大小写时用. 另外可通过配置使大小写敏感`git config core.ignorecase false`
 ```
 
 ## Branching and Merging
@@ -72,7 +72,7 @@ git mv a b # 一般重命名大小写时用。 另外可通过配置使大小写
 ### branch
 
 ```bash
-git branch -vv # 展示HEAD，分支，oid，message
+git branch -vv # 展示HEAD, 分支, oid, message
 git branch -d
 git branch -a --no-merged # 未合入当前分支的(远端)分支
 git branch --merged # 获取已合入当前分支的分支
@@ -86,9 +86,9 @@ git branch -m < new-branch-name > # 分支重命名
 git checkout -b < new branch > < start_point > # 基于当前分支or某commit 来新建分支
 git checkout -- < filename > # 丢弃工作区指定文件的修改
 git checkout . # 丢弃工作区当前文件夹的 modified
-git checkout < oid > # 检出某次commit。修改后新建分支来保存修改内容（分离头指针 detached HEAD）。
+git checkout < oid > # 检出某次commit.修改后新建分支来保存修改内容(分离头指针 detached HEAD).
 git checkout < oid > -- < filename > # 检出指定oid 的 指定文件
-git checkout --orphan < new branch > # 新建0提交的分支，当前内容全部转为committed状态
+git checkout --orphan < new branch > # 新建0提交的分支, 当前内容全部转为committed状态
 ```
 
 ### switch
@@ -134,8 +134,8 @@ git log feature ^master # feature里有, master里没有的commmit
 git stash -u    # 保存一个stash 包含untracked文件
 git stash save  # 保存一个stash
 git stash push  # 暂存一个stash
-git stash apply < n > # 弹出一个stash，并且保留记录; n 为 stash@n的值
-git stash pop < n >  # 弹出一个stash，不保留记录; n 为 stash@n的值
+git stash apply < n > # 弹出一个stash, 并且保留记录; n 为 stash@n的值
+git stash pop < n >  # 弹出一个stash, 不保留记录; n 为 stash@n的值
 git stash show
 git stash branch
 git stash clear # 删除所有stash
@@ -191,7 +191,7 @@ D---E---F---G master
 ### push
 
 ```bash
-git push -u origin < branch > # 关联分支。 当前与远端
+git push -u origin < branch > # 关联分支. 当前与远端
 git push origin --delete < branch > # 删除远端分支
 git push -f # 强制推送 执行前需保证本地是最新(别人没再新的提交)
 ```
@@ -259,7 +259,7 @@ D---E---F---G master
 
 # rebase后, A'B'C'是时间连续的多个commit, 便于查看
 
-# 不要在master进行rebase操作，即以topic为基点变基master的commit，如master不接受push -f，master变基前的commit不会消失。
+# 不要在master进行rebase操作, 即以topic为基点变基master的commit, 如master不接受push -f, master变基前的commit不会消失.
 
 # 工作区有正在修改的文件时进行pull, 同文件会报错; 可以先stash push + pull, 但有可能会冲突(修改的行相同)
 
@@ -269,10 +269,10 @@ D---E---F---G master
 ### revert
 
 ```bash
-git revert < oid > # 提交一个与指定commit内容相反的commit。
-git revert -n < oid > # 内容相反的，但不提交
+git revert < oid > # 提交一个与指定commit内容相反的commit.
+git revert -n < oid > # 内容相反的, 但不提交
 
-# 若在主分支revert一个功能分支(revert merge commit id)，则该功能分支无法重新merge到主分支，需要用cherry-pick。
+# 若在主分支revert一个功能分支(revert merge commit id), 则该功能分支无法重新merge到主分支, 需要用cherry-pick.
 ```
 
 
@@ -284,7 +284,7 @@ git revert -n < oid > # 内容相反的，但不提交
 
 ```bash
 git blame -L 10,20 < file > # 按行范围进行blame
-git blame -b -w < file > # 显示全文blame。 -b show oid; -w ignore whitespace
+git blame -b -w < file > # 显示全文blame. -b show oid; -w ignore whitespace
 g blame -L 14,14 < file >  | awk '{print $1}' | xargs git show # 显示某行的提交log
 ```
 
@@ -426,7 +426,7 @@ git rev-parse --short HEAD^ # 上一个commit-id(short)
 
 ### update-ref
 
-### verify-pack 读取归档文件（idx）
+### verify-pack 读取归档文件(idx)
 
 ```bash
 git verify-pack -v .git/objects/pack/pack-*.idx # 获取所有pack中的对象详细信息; commit对应的基础tree不会显示

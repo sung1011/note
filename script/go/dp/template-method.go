@@ -23,7 +23,7 @@ func (CookMenu) fire() {
 	fmt.Println("开火")
 }
 
-// 做菜，交给具体的子类实现
+// 做菜, 交给具体的子类实现
 func (CookMenu) cooke() {
 }
 

@@ -23,7 +23,7 @@ func (p *CustomerB) update() {
 	// fmt.Println("客户B收到报纸")
 }
 
-// 报社 （被观察者)
+// 报社 (被观察者)
 type NewsOffice struct {
 	customers []Customer
 }

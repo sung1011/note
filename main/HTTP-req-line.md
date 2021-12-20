@@ -8,7 +8,7 @@ GET /hello?foo=bar HTTP/1.1
 
 - GET: 获取数据
 - HEAD: 只解析 header
-- POST: 新增数据（也改数据）
+- POST: 新增数据(也改数据)
 - PUT: 修改数据
 - DELETE: 删除数据
 - CONNECT: 预留

@@ -49,7 +49,7 @@ parent: 父类
 
 ### 引用  
 
-对象的赋值，本身就是引用。
+对象的赋值, 本身就是引用.
 
 ```php
 $obj1 = &$obj; // 改为 `$obj1 = $obj;` 以下结果相同
@@ -104,14 +104,14 @@ echo $b; // 2
 
 接口是类的模板, 实现某接口就必须实现接口中定义的所有方法  
 接口中所有方法的访问控制必须public  
-当参数传递，以松耦合  
-实现多个接口接口， 达到组合的效果， 以松耦合  
+当参数传递, 以松耦合  
+实现多个接口接口,  达到组合的效果,  以松耦合  
 可以被实现`implements` 和 继承 `extends`  
 
 ### 抽象  
 
-接口中有具体实现的方法， 就是抽象  
-继承抽象的子类，其访问控制必须更宽松  
+接口中有具体实现的方法,  就是抽象  
+继承抽象的子类, 其访问控制必须更宽松  
 只能用来被继承`extends`  
 
 ### 魔术方法  
@@ -128,7 +128,7 @@ echo $b; // 2
 - __invoke() 把对象当函数执行  
 - __clone()  
   - 调用: clone时  
-  - 说明: `$obj2 = clone $obj1`会进行浅拷贝（即$obj2是$obj1的拷贝, 但$obj2中的属性若是一个对象$objHang, 其保存的是指针地址, 即`$objHang`是浅拷贝）， 而深拷贝需要__clone()魔术方法。用以`$obj1`调用clone时， 内部的handler。  
+  - 说明: `$obj2 = clone $obj1`会进行浅拷贝(即$obj2是$obj1的拷贝, 但$obj2中的属性若是一个对象$objHang, 其保存的是指针地址, 即`$objHang`是浅拷贝),  而深拷贝需要__clone()魔术方法.用以`$obj1`调用clone时,  内部的handler.  
 - __sleep() 序列化 `serialize()`  
 - __wakeup() 反序列化 `unserialize()`  
 - __set_state() 导出时`var_export()`  
@@ -183,9 +183,9 @@ echo $b; // 2
 
 - 魔术方法  
 - php7为何比php5性能高
-  - 变量存储字节减小，减少内存占用，提升变量操作速度
-  - 改善数组结构，数组元素和hash映射表被分配在同一块内存里，降低了内存占用、提升了 cpu 缓存命中率
-  - 改进了函数的调用机制，通过优化参数传递的环节，减少了一些指令，提高执行效率
+  - 变量存储字节减小, 减少内存占用, 提升变量操作速度
+  - 改善数组结构, 数组元素和hash映射表被分配在同一块内存里, 降低了内存占用、提升了 cpu 缓存命中率
+  - 改进了函数的调用机制, 通过优化参数传递的环节, 减少了一些指令, 提高执行效率
 - abstruct, interface  
 - cgi, fastcgi, php-fpm, swoole  
 - 反射  
@@ -194,12 +194,12 @@ echo $b; // 2
 
 ### 高级  
 
-- 字符串在手册中介绍，「PHP的字符串是二进制安全的」，这句话怎么理解，为什么是二进制安全？  --- php zval str数据结构`len + *val`; 不会将"abc \0 def"的`\0`错误的认为是结尾符而忽略后边的 def（而C语言会）  
-- 字符串连接符.，在内核中有哪些操作？多次.连接，是否会造成内存碎片过多？  --- 会
+- 字符串在手册中介绍, 「PHP的字符串是二进制安全的」, 这句话怎么理解, 为什么是二进制安全？  --- php zval str数据结构`len + *val`; 不会将"abc \0 def"的`\0`错误的认为是结尾符而忽略后边的 def(而C语言会)  
+- 字符串连接符., 在内核中有哪些操作？多次.连接, 是否会造成内存碎片过多？  --- 会
 - PHP中使用多线程和多进程分别有哪些优缺点？  
-- 线上环境中，PHP进程偶尔会卡死（死锁），请问如何检测本质问题？  --- `https://blog.csdn.net/u010412301/article/details/52776584`
+- 线上环境中, PHP进程偶尔会卡死(死锁), 请问如何检测本质问题？  --- `https://blog.csdn.net/u010412301/article/details/52776584`
 - PHP中创建多线程、多进程有哪些方式？互斥信号该如何实现？  --- `https://blog.csdn.net/ZHANG_TIMI/article/details/78342722`
-- 使用cUrl下载大文件时，占用内存太大，有没比较优化的方式？--- `curl_setopt($ch, CURLOPT_WRITEFUNCTION, function($ch ,$str) use (&$flag){})`  
+- 使用cUrl下载大文件时, 占用内存太大, 有没比较优化的方式？--- `curl_setopt($ch, CURLOPT_WRITEFUNCTION, function($ch ,$str) use (&$flag){})`  
 - 写代码来解决多进程/线程同时读写一个文件  --- `flock`
 - PHP的的这种弱类型变量是怎么实现的？  
 - 垃圾回收  
@@ -211,7 +211,7 @@ echo $b; // 2
 ### ref
 
 - [Fpm启动机制及流程分析———详细](http://www.mamicode.com/info-detail-2625546.html)
-- [PHP内核探索之变量（7）- 不平凡的字符串](https://blog.csdn.net/fvjuerh/article/details/68946281)
+- [PHP内核探索之变量(7)- 不平凡的字符串](https://blog.csdn.net/fvjuerh/article/details/68946281)
 - [php下载大文件的方法](https://blog.csdn.net/dengjiexian123/article/details/53057593)
 - [亿级用户 PC 主站的 PHP7 升级实践](https://www.infoq.cn/article/practice-of-PHP7-upgrade-for-the-PC-master-station)
 - [phpfpm运行原理](https://blog.csdn.net/sinat_38804294/article/details/94393621)

@@ -38,13 +38,13 @@ m := make(map[string]int, 10) // empty map; len=0; cap=10 常用
 
 m := map[string]int{} // empty map; prt=xxx len=0 cap=0; 可append
 
-var m = map[string]int // nil ptr map; panic if written to -- 没啥意义，不可用，不能赋值和append
+var m = map[string]int // nil ptr map; panic if written to -- 没啥意义, 不可用, 不能赋值和append
 
 ```
 
 > `len()` 对map而言, len就是cap
 
-> `cap()` map有cap的概念，但无法使用cap()
+> `cap()` map有cap的概念, 但无法使用cap()
 
 > `key限制` 不能使用 == 做比较的类型不能做map的key; 如`切片slice`, `函数func`, `包含切片和函数的结构体struct{slice, func}`; chan可以做key
 
@@ -64,7 +64,7 @@ v2, exists2 := m["xxx"] // 0, false
 
 直接传递
 
-> map的副本值(即:指针)作为参数传递给函数。
+> map的副本值(即:指针)作为参数传递给函数.
 
 ## 并发安全
 
@@ -98,7 +98,7 @@ if v,ok:=sm.Load(1);ok{
 ## 赋值 (保持引用)
 
 ```go
-// map赋值, 会同步修改底层。
+// map赋值, 会同步修改底层.
 originalMap := make(map[string]int, 10)
 originalMap["a"] = 1
 originalMap["b"] = 2
