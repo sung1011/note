@@ -14,9 +14,9 @@
 
 ```note
 P2P网络拓扑结构分类:
-中心化拓扑(Centralized Topology)；
-全分布式非结构化拓扑(Decentralized Unstructured Topology)；
-全分布式结构化拓扑(Decentralized Structured Topology, 也称作DHT网络)；
+中心化拓扑(Centralized Topology); 
+全分布式非结构化拓扑(Decentralized Unstructured Topology); 
+全分布式结构化拓扑(Decentralized Structured Topology, 也称作DHT网络); 
 半分布式拓扑(Partially Decentralized Topology).
 ```
 

@@ -52,7 +52,7 @@ db.coll.createIndex({"release.contry":1, "release.date":1})
 
 - 场景 版本衍变
 - 痛点 文档格式不同, 难以管理
-- 方案 增加版本号字段；快速过滤掉不需要升级的文档；不同版本做不同管理校验.
+- 方案 增加版本号字段; 快速过滤掉不需要升级的文档; 不同版本做不同管理校验.
 
 ```js
 {name: haha, company: lala}

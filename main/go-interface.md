@@ -2,7 +2,7 @@
 
 相同行为, 不同实例.(即: 多态)
 
-> 用于同一行为, 实例替换, 如 db, err := sql.Open("mysql", "root:password@tcp(127.0.0.1:3306)") // mysql可换成sqllite,  postgresql,  oralce  
+> 用于同一行为, 实例替换, 如 db, err := sql.Open("mysql", "root:password@tcp(127.0.0.1:3306)") // mysql可换成sqllite, postgresql, oralce  
 
 > 也用于不同类型统一行为, 如 copy(os.Stdout, r.Body)  
 

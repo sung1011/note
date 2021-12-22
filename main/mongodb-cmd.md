@@ -150,7 +150,7 @@ db.coll.find().skip(db.coll.count()-1).forEach(printjson)
 db.coll.find().limit(1).sort({$natural:-1})  
 ```  
   
-### 查询文档的keys
+### 查询文档的field
 
 ```js  
 for(var key in db.coll.findOne({_id:"xxx"})) {print (key)}  
@@ -206,6 +206,7 @@ mongoimport -d dbname -c collectionname --file filename --headerline --type json
 mongodump -h IP --port 端口 -u 用户名 -p 密码 -d 数据库 -o 文件存在路径
 
 mongorestore -h IP --port 端口 -u 用户名 -p 密码 -d 数据库 --drop 备份文件夹下的db路径
+
 # --drop 替换
 # 备份文件夹下的db路径
 ```
@@ -214,6 +215,12 @@ mongorestore -h IP --port 端口 -u 用户名 -p 密码 -d 数据库 --drop 备�
 
 ### 解析id
 
-mongo: `ObjectId("5e0c4e087deadd1a6f8b4b57").getTimestamp()`
+```bash
+# 一个
+ObjectId("5e0c4e087deadd1a6f8b4b57").getTimestamp()
+
+# 遍历
+db.{coll}.find().forEach(function(row){print("time: " + row._id.getTimestamp())})
+```
 
 > 截取_id的前8位, hex->dec.

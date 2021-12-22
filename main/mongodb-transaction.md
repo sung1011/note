@@ -7,7 +7,7 @@
 | A        | 单coll单doc 1.x; 复制集多表多行 4.0;分片集群多表多行4.2 |
 | C        | writeConcern, readConcern 3.2                           |
 | I        | readConcern 3.2                                         |
-| D        | journal + replicskt                                     |
+| D        | journal + replicset                                     |
 
 ## 读优先级 Read Preference --- 从哪个节点读
 
@@ -177,16 +177,16 @@ session3.commitTransaction(); // 事务3提交,  事务外的修改立刻成功,
 
 副本集应答写入Replica Acknowledged   - `{writeConcern:{w:2, wtimeout:5000}}`  - `{writeConcern:{w:majority, wtimeout:5000}}`  
 
-```txt
 - 对于使用副本集的场景, 缺省情况下仅仅从主(首选)节点进行应答  
 - 可修改应答情形为特定数目或者majority(写到大多数)来保证数据的可靠  
   - primary是如何确认数据已成功写入大多数节点的？
     1. 从节点及时地拉取数据: 阻塞拉取  
-       - 从拉取主的oplog时,  为了第一时间拉取, find命令支持一个awaitData的选项, 当find没有任何符合条件的文档时, 并不立即返回, 而是等待最多maxTimeMS(默认为2s)时间看是否有新的符合条件的数据, 如果有就返回.  
-    2. 主节点同步拉取状态: Secondary应用完oplog会向主报告最新进度  
-       - Secondary上有单独的线程, 当oplog的最新时间戳发生更新时, 就会向Primary发送replSetUpdatePosition命令更新自己的oplog时间戳.(即: )  
-    3. 当Primary发现有足够多的节点oplog时间戳已经满足条件了, 向客户端进行应答.  
-```
+       - 从拉取主的`oplog`时,  为了第一时间拉取, find命令支持一个awaitData的选项, 当find没有任何符合条件的文档时, 并不立即返回, 而是等待最多maxTimeMS(默认为2s)时间看是否有新的符合条件的数据, 如果有就返回.  
+    2. 主节点同步拉取状态: Secondary应用完`oplog`会向主报告最新进度  
+       - Secondary上有单独的线程, 当`oplog`的最新时间戳发生更新时, 就会向Primary发送replSetUpdatePosition命令更新自己的`oplog`时间戳.
+    3. 当Primary发现有足够多的节点`oplog`时间戳已经满足条件了, 向客户端进行应答.  
+
+> [oplog](mongodb-oplog.md)
 
 ## issues
 

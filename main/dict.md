@@ -60,7 +60,7 @@
 | alcoholic           | 酒鬼inebriate,酒精性的                                 |
 | all-this-time       | 一直以来,这么长时间                                    |
 | allegiance          | 忠诚fidelity,忠贞fealty                                |
-| alley               | 小巷,胡同,                                             |
+| alley               | 小巷,胡同                                              |
 | allude              | 提到,暗示,影射                                         |
 | altitude            | 高度,海拔,高空                                         |
 | amass               | 累计,收集,聚敛                                         |

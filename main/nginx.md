@@ -12,7 +12,7 @@
 
 ## [信号](nginx-signal.md)
 
-## [流程](nginx-process.md)
+## [处理流程](nginx-process.md)
 
 ## [模块](nginx-modules.md)
 

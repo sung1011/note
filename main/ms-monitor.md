@@ -37,15 +37,15 @@
 
 - `ELK`
 
-  - `Logstash` 收集和传输；收集数据、过滤、分析、格式化、聚合、存储.
-  - `Elasticsearch` 处理；分布式搜索和分析引擎；可伸缩、高可靠、易管理.
-  - `Kibana` 展示；图形化展示.
-  - `Beats` 数据收集；轻量.
+  - `Logstash` 收集和传输; 收集数据、过滤、分析、格式化、聚合、存储.
+  - `Elasticsearch` 处理; 分布式搜索和分析引擎; 可伸缩、高可靠、易管理.
+  - `Kibana` 展示; 图形化展示.
+  - `Beats` 数据收集; 轻量.
   
 - `Graphite`
 
   - Carbon 处理
-  - Whisper 存储；时序数据库
+  - Whisper 存储; 时序数据库
   - Graphite-Web 展示
 
 - `TICK`

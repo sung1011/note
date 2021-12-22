@@ -67,7 +67,7 @@ sl1 := append(sl, []string{"a", "b", "c"}...) // ["" a b c] len=4 cap=4; sl&sl1�
 sl2 := append(sl1, "x") // ["" a b c x] len=5 cap=8; sl2新建了底层arr
 ```
 
-> append的扩容机制: cap < 1000时翻倍扩cap； cap >= 1000 每次扩cap25%
+> append的扩容机制: cap < 1000时翻倍扩cap;  cap >= 1000 每次扩cap25%
 
 ## nil切片 & 空切片
 

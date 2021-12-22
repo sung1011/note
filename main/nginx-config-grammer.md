@@ -2,19 +2,17 @@
 
 ## 语法
 
-```txt
-配置文件由`指令`与`指令块`构成  
-每条指令以;分号结尾, 指令与参数以空格分隔  
-指令块以{}大括号将多条指令组织在一起  
-include用来引入配置  
-以#符号作为注释  
-以$符号作为变量  
-部分指令的参数支持正则  
-```
+    配置文件由`指令`与`指令块`构成  
+    每条指令以;分号结尾, 指令与参数以空格分隔  
+    指令块以{}大括号将多条指令组织在一起  
+    include用来引入配置  
+    以#符号作为注释  
+    以$符号作为变量  
+    部分指令的参数支持正则  
 
 ## 示例
 
-```conf
+```nginx
 http {
     include       mime.types;
     #access_log  logs/access.log  main;
@@ -71,7 +69,7 @@ http {
 | $request_filename   | 当前连接请求的文件路径, 由root或alias指令与URI请求生成.                                                                |
 | $request_body       | 这个变量(0.7.58+)包含请求的主要信息.在使用proxy_pass或fastcgi_pass指令的location中比较有意义.                       |
 | $request_body_file  | 客户端请求主体信息的临时文件名.                                                                                        |
-| $request_completion | 如果请求成功, 设为"OK"；如果请求未完成或者不是一系列请求中最后一部分则设为空.                                          |
+| $request_completion | 如果请求成功, 设为"OK"; 如果请求未完成或者不是一系列请求中最后一部分则设为空.                                          |
 | $request_method     | 这个变量是客户端请求的动作, 通常为GET或POST.                                                                           |
 | $request_uri        | 这个变量等于包含一些客户端请求参数的原始URI, 它无法修改, 请查看$uri更改或重写URI.                                      |
 | $scheme             | 所用的协议, 比如http或者是https, 比如rewrite ^(.+)$ $scheme://example.com$1 redirect;                                   |
@@ -80,11 +78,6 @@ http {
 | $server_port        | 请求到达服务器的端口号.                                                                                                |
 | $server_protocol    | 请求使用的协议, 通常是HTTP/1.0或HTTP/1.1.                                                                              |
 | $uri                | 求中的当前URI(不带请求参数, 参数位于args)                                                                               |
-
-### 数据结构
-
-- variables_hash_bucket_size  变量名大小64B
-- variables_hash_max_size     变量数量最大值1024个
 
 ### http_头部名字
 

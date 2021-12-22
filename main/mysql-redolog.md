@@ -21,14 +21,14 @@
 
 ## redo-log-buffer刷入redo-log-file的条件
 
-1. Master Thread 每1秒；
-2. 每个事务commit时；
-3. 当重做日志缓冲池剩余空间小于1/2时；
+1. Master Thread 每1秒; 
+2. 每个事务commit时; 
+3. 当重做日志缓冲池剩余空间小于1/2时; 
 
 ## redo-log-file刷入磁盘的条件
 
 `innodb_flush_log_at_trx_commit`
 
-- =0 buffer每1秒一次写入redo-log-file, 并且同步flush(刷磁盘)；--- 速度快, 丢1s数据.
-- =1 每次事务提交写入redo-log-file, fsync同步flush；(default)；--- 安全, 速度慢.
-- =2 每次事务提交写入redo-log-file, 不同步flush, 但fsync每秒flush；--- 介于中间, 只有断电会丢1s.
+- =0 buffer每1秒一次写入redo-log-file, 并且同步flush(刷磁盘); --- 速度快, 丢1s数据.
+- =1 每次事务提交写入redo-log-file, fsync同步flush; (default); --- 安全, 速度慢.
+- =2 每次事务提交写入redo-log-file, 不同步flush, 但fsync每秒flush; --- 介于中间, 只有断电会丢1s.

@@ -47,7 +47,7 @@ redisObject {
 | RPOP    | 调用ziplistIndex定位表尾, 调用ziplistDelete删除表尾.        | 调用listLast定位表尾, 调用listDelNode删除表尾.               |
 | LINDEX  | 调用ziplistIndex定位节点, 返回节点所保存的元素.             | 调用listIndex定位节点, 然后返回节点所保存的元素.             |
 | LLEN    | 调用ziplistLen返回压缩列表的长度.                           | 调用listLength返回双端链表的长度.                            |
-| LINSERT | 插入表头表尾时ziplistPush；插入其他ziplistInsert.           | 调用listInsertNode, 将新节点插入到双端链表的指定位置.        |
+| LINSERT | 插入表头表尾时ziplistPush; 插入其他ziplistInsert.           | 调用listInsertNode, 将新节点插入到双端链表的指定位置.        |
 | LREM    | 遍历节点, 并调用ziplistDelete删除包含了给定元素的节点.      | 遍历双端链表节点, 并调用listDelNode删除包含了给定元素的节点. |
 | LTRIM   | 调用ziplistDeleteRange, 删除不在索引范围内的节点.           | 遍历双端链表节点, 并调用listDelNode删除不在索引范围内的节点. |
 | LSET    | ziplistDelete删除指定节点, 然后调用ziplistInsert插入新节点. | listIndex定位节点, 然后赋值更新节点的值.                     | --> |

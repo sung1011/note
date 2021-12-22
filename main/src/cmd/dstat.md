@@ -24,12 +24,12 @@ dstat 是一个可以取代vmstat, iostat, netstat和ifstat这些命令的多功
 ## 输出
 
 1. --total-cpu-usage---- CPU使用率  
-usr: 用户空间的程序所占百分比；  
-sys: 系统空间程序所占百分比；  
-idel: 空闲百分比；  
-wai: 等待磁盘I/O所消耗的百分比；  
-hiq: 硬中断次数；  
-siq: 软中断次数；  
+usr: 用户空间的程序所占百分比;   
+sys: 系统空间程序所占百分比;   
+idel: 空闲百分比;   
+wai: 等待磁盘I/O所消耗的百分比;   
+hiq: 硬中断次数;   
+siq: 软中断次数;   
 
 2. -dsk/total-磁盘统计  
 read: 读总数  

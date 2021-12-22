@@ -13,7 +13,7 @@ pm = dynamic; 动态进程(一定范围内控制空闲worker数量; 有额外内
 - pm.min_spare_servers = 5; 闲置子进程最小数量,  再小就fork  
 - pm.max_spare_servers = 35; 闲置子进程最大数量,  再大就kill  
 
-pm = ondemand; 按需分配进程(一定范围内, 定时删除空闲worker, 直到只剩master；内存友好, 不适合流量突发情况)  
+pm = ondemand; 按需分配进程(一定范围内, 定时删除空闲worker, 直到只剩master; 内存友好, 不适合流量突发情况)  
 
 - pm.max_children = 300;
 - pm.process_idle_timeout = 10s;

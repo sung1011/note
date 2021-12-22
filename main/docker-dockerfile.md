@@ -33,7 +33,7 @@ CMD ["param1","param2"] # 用作 ENTRYPOINT 的默认补充参数
 
 ```dockerfile
 ENTRYPOINT  ["executable", "param1", "param2"] # exec格式, 推荐.
-ENTRYPOINT command param1 param2 # shell格式；忽略任何 CMD 或 docker run 提供的参数.
+ENTRYPOINT command param1 param2 # shell格式; 忽略任何 CMD 或 docker run 提供的参数.
 ```
 
 > 让容器以应用程序或者服务的形式运行  
