@@ -64,7 +64,7 @@ $A commit;
 
 > `读已提交/不可重复读` RC read-committed -- 非幂等读取; 读O, B的一致状态;
 
-> `可重复读` RR repeatable-read -- 幂等读取; 读O, B的一致状态;
+> `可重复读` RR repeatable-read -- 幂等读取; 读O, B的一致状态; 如同读取一份快照, 改完覆盖写入.
 
 > `串行化` serializable -- 不常见; 无并发,性能差,同步锁,无需隔离
 

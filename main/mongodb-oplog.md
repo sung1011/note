@@ -1,9 +1,11 @@
 # MongoDB oplog
 
+    replset主从同步操作, 来实现数据同步
+
 ## 流程
 
-1. Primary上的写操作完成后, 会向特殊的local.oplog.rs特殊集合写入一条oplog
-2. Secondary异步的不断的从Primary取新的oplog并幂等地应用
+1. Primary上的写操作完成后, 会向local.oplog.rs特殊集合写入一条oplog
+2. Secondary异步的不断的从Primary取新的oplog并幂等地写入
 
 ## 大小
 

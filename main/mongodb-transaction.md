@@ -9,6 +9,10 @@
 | I        | readConcern 3.2                                         |
 | D        | journal + replicset                                     |
 
+> [journal](mongodb-journal.md)
+
+> [replset](mongodb-replset.md)
+
 ## 读优先级 Read Preference --- 从哪个节点读
 
 ### 分类

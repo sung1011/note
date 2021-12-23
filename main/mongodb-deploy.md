@@ -28,7 +28,9 @@
 
 ## 使用tag操作成员
 
-## 使用journaling方式停电
+## 使用journal方式停电
+
+> [journal](mongodb-journal.md)
 
 ## 主机名
 

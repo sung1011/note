@@ -6,11 +6,13 @@
 
 ## [index](mongodb-index.md)
 
-## [replication](mongodb-relication.md)
+## [replication](mongodb-replset.md)
 
-## [sharding](mongodb-mongos.md)
+## [sharding](mongodb-sharding.md)
 
 ## [transaction](mongodb-transaction.md)
+
+## [storage](mongodb-storage.md)
 
 ---
 
@@ -19,3 +21,9 @@
 ### [change stream](mongodb-changestream.md)
 
 ### [设计模式](mongodb-design.md)
+
+## ref
+
+- docs-cn <https://docs.mongoing.com/>
+
+- docs-en <https://docs.mongodb.com/>

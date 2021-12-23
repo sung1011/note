@@ -1,4 +1,4 @@
-# mongos
+# sharding
 
 ## 场景
 
@@ -19,26 +19,32 @@
 
 - `config`  
 
-      用来保存数据, 保证数据的高可用性和一致性.可以是一个单独的mongod实例, 也可以是一个副本集.在生产环境下Shard一般是一个Replica Set, 以防止该数据片的单点故障.可以将所有shard的副本集放在一个服务器多个mongodb实例中.  
+      用来存储sharded集群的元数据和配置信息
 
-> 轻存储 可配置小硬盘
+> 轻存储, 可配置小硬盘
   
-- `router`  
+- `router` (mongos)  
 
-      路由就是mongos的实例, 客户端直接连接mongos, 由mongos把读写请求路由到指定的Shard上去.  
-      一个Sharding集群, 可以有一个mongos, 也可以为每个App Server配置一个mongos以减轻路由压力.  
-      注意这里的mongos并不要配置为rs, 因为只是个路由, 并不存储数据, 配置多个mongos的意思是配置多个单独的mongos实例.  
+      路由就是mongos的实例, 客户端直接连接mongos, 由mongos把读写请求路由到指定的Shard上去; 可以配置多个独立的mongos减轻路由压力.
 
-> 重CPU 处理链接用
+> 重CPU, 处理链接用
 
-- `shards`  
+> 可以每个app-server配置一个mongos来减轻路由压力
 
-      用来保存数据, 保证数据的高可用性和一致性.可以是一个单独的mongod实例, 也可以是一个副本集.在生产环境下Shard一般是一个Replica Set, 以防止该数据片的单点故障.可以将所有shard的副本集放在一个服务器多个mongodb实例中.最多个1024分片  
+> monogs不存储数据, 所以不要配置为ReplSet
 
-> 不要在mongos上层部署负载均衡. --- 驱动会无法探测哪些是存活节点, 从而无法自动故障恢复;  驱动无法判定游标是哪个节点创建的, 从而遍历游标时出错.
+> 不要在mongos上层部署负载均衡. 驱动会无法探测哪些是存活节点, 从而无法自动故障恢复; 驱动无法判定游标是哪个节点创建的, 从而遍历游标时出错.
+
+
+- `shard`  
+
+      用来保存分片数据, 保证数据的高可用性和一致性. 可以是一个单独的mongod实例, 也可以是一个副本集 | >= 3.2; 
+
+> 最多个1024分片
+
 > 重硬盘, 重内存
 
-## 概念
+## 名词
 
 - `片键 shard key` 文档中的一或多个字段
   - 取值基数尽量大 cardinality --- 尽量大(如 ID),避免很大的块出现.可考虑组合片键增加基数(如 uid+time)
@@ -54,9 +60,9 @@
 
 ### 优点  
 
-    读写方面:  sharding将读写负载均匀到各个shard, 且workload上限可以通过水平扩展来增加.  
-    扩容方面:  每个shard保存一部分数据, 可以通过增加shards来扩容(动态扩容, 无需下线).  
-    高可用方面:  即便某个shard不可用了, 整个集群也可以对外提供服务, 只不过访问down掉的shard会报"Connection refused"的错误.而且MongoDB3.2以后可以为每个shard都配置副本集(replica set), 这样保证最大程度的高可用性.  
+    读写: sharding将读写负载均匀到各个shard, 且workload上限可以通过水平扩展来增加.  
+    扩容: 每个shard保存一部分数据, 可以通过增加shards来扩容(动态扩容, 无需下线).  
+    高可用: 即便某个shard不可用了, 整个集群也可以对外提供服务, 只不过访问down掉的shard会报"Connection refused"的错误.
 
 ### 缺点  
 

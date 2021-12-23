@@ -11,3 +11,5 @@
 ## [deploy](mongodb-deploy.md)
 
 ## [transaction](mongodb-transaction.md)
+
+## [cmd](mongodb-replset-cmd.md)
