@@ -15,8 +15,9 @@
 
 ## stat
 
-```js
-db.serverStatus() // 主要信息
+```bash
+db.serverStatus() # 主要信息
+
   connections 连接数
   locks 锁
   network 网络
@@ -28,22 +29,23 @@ db.serverStatus() // 主要信息
     concurrentTransactions Ticket令牌读写量使用情况
   mem 内存
   metrics 性能指标
-db.isMaster() // 次要信息 节点情况
-mongostats // 命令行工具 简略信息
 
-db.oplog.rs.find().sort({$natrual:-1}).limit(1).next.ts - db.oplog.rs.find().sort({$natrual:1}).limit(1).next.ts // 可容纳多久的写操作
+db.isMaster() # 次要信息 节点情况
+mongostats # 命令行工具 简略信息
 
-//查询专注度, 搜索扫描了多少个文档
+db.oplog.rs.find().sort({$natrual:-1}).limit(1).next.ts - db.oplog.rs.find().sort({$natrual:1}).limit(1).next.ts # 可容纳多久的写操作
+
+#查询专注度, 搜索扫描了多少个文档
 var status = db.serverStatus()
-status.metrics.queryExecutor.scanned / status.metrics.document.returned // 扫描文档
-status.metrics.queryExcutor.scannedObjects / status.metrics.document.returned // 返回文档
+status.metrics.queryExecutor.scanned / status.metrics.document.returned # 扫描文档
+status.metrics.queryExcutor.scannedObjects / status.metrics.document.returned # 返回文档
 
-// 内存排序情况
+# 内存排序情况
 var status = db.serverStatus()
 status.metrics.operation.scanAndOrder / status.opcounters.query
 
-db.stats() // 内存数据大小 实例数据总量(压缩前)
-storageSize // 落盘后占用磁盘大小
+db.stats() # 内存数据大小 实例数据总量(压缩前)
+storageSize # 落盘后占用磁盘大小
 ```
 
 ## insert
@@ -65,6 +67,9 @@ db.coll.find({title: /^bat/i})
 db.coll.find({title: {$regex: /^bat/i})
 db.coll.find({"from.country": "China"})
 db.coll.find({"category": "action"}, {_id: 0, title: 1}) // projection 投影(字段)
+db.coll.find( { age: { $gt: 25, $lte: 50 } } )
+db.coll.find( { $or: [ { status: "A" } , { age: 50 } ] } )
+db.coll.find( { status: "A" } ).sort( { user_id: -1 } )
 ```
 
 ## update
@@ -101,17 +106,16 @@ db.coll.find({age: {$gt: 20}}).explain(true) // 索引执行细节
 ## drop
 
 ```js
-db.coll.drop()
-db.dropDatabase()
+db.coll.drop() // 删coll
+db.dropDatabase() // 删db
 ```
 
 ## aggregation 聚合  
 
-阶段操作符  
-
-- $count, $project, $match, $group, $sort, $limit, $unwind  
-  
-`db.mycol.aggregate([{group: {_id: 'sex', personCount: {$sum: 1}}}])`  
+```bash
+# 阶段操作符: $count, $project, $match, $group, $sort, $limit, $unwind  
+db.mycol.aggregate([{group: {_id: 'sex', personCount: {$sum: 1}}}])  
+```
 
 ## lock
 
