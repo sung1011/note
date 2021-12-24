@@ -1,7 +1,5 @@
 # NOTE  
 
-## STRUCT  
-  
 ```bash
 ├── README.md  
 ├── main  
@@ -21,162 +19,158 @@
 └── self.md  
 ```  
   
-## DIRECTORY  
-  
-### VERSION CONTROL  
+## VERSION CONTROL  
 
-#### [git](main/git.md)
+### [git](main/git.md)
 
-#### [svn](main/svn.md)
+### [svn](main/svn.md)
 
 ---
 
-### BASIC  
+## BASIC  
 
-#### [design pattern 设计模式](main/dp.md)
+### [design pattern 设计模式](main/dp.md)
 
-#### [data structure 数据结构](main/data-struct.md)
+### [data structure 数据结构](main/data-struct.md)
 
-#### [algorithm 算法](main/algo.md)
+### [algorithm 算法](main/algo.md)
 
-#### [complexity 复杂度](main/complexity.md)
+### [complexity 复杂度](main/complexity.md)
 
-#### [ASCII](main/ascii.md)
+### [ASCII](main/ascii.md)
 
-#### [scale 单位换算](main/scale.md)
+### [scale 单位换算](main/scale.md)
 
-#### [DNS](main/DNS.md)
+### [DNS](main/DNS.md)
 
 ---
 
-### DATABASE  
+## DATABASE  
 
-#### [redis](main/redis.md)
+### [redis](main/redis.md)
 
-#### [mongodb](main/mongodb.md)
+### [mongodb](main/mongodb.md)
 
-#### [mysql](main/mysql.md)
+### [mysql](main/mysql.md)
 
-#### [yac](main/yac.md)
+### [yac](main/yac.md)
 
-#### [database实战](main/database.md)
+### [database实战](main/db.md)
 
-#### [cache实战](main/cache.md)
+### [cache实战](main/cache.md)
 
-#### [OBS 对象存储](main/OBS.md)
+### [OBS 对象存储](main/OBS.md)
 
-#### [etcd](main/etcd.md)
+### [etcd](main/etcd.md)
 
-#### [boltDB](main/boltDB.md)
+### [boltDB](main/boltDB.md)
 
-#### [ELK](_) TODO
+### [ELK](_) TODO
   
 ---
 
-### WEB  
+## WEB  
 
-#### [authorize](main/auth.md)
+### [authorize](main/auth.md)
 
-#### [HTTP](main/HTTP.md)
+### [HTTP](main/HTTP.md)
 
-#### [socket 套接字](main/socket.md)
+### [socket 套接字](main/socket.md)
 
-#### [protocal 协议](main/protocal.md)
+### [protocal 协议](main/protocal.md)
 
-#### [nginx](main/nginx.md)
+### [nginx](main/nginx.md)
 
-#### [message queue 消息队列](main/mq.md)
+### [message queue 消息队列](main/mq.md)
 
-#### [load balance 负载均衡](main/load-balance.md)
+### [load balance 负载均衡](main/load-balance.md)
 
-#### [spike 秒杀](main/spike.md)
-
----
-
-### CONCEPT
-
-#### [transaction 事务](main/acid.md)
-
-#### [distributed 分布式](main/distributed.md)
-
-#### [cryptography 加密](main/crypt.md)
-
-#### [splite brain 脑裂](main/splite-brain.md)
-
-#### [blockchain 区块链](main/blockchain.md)
-
-#### [middle end 中台](main/middle-end.md)
-
-#### [micro server 微服务](main/ms.md)
-
-#### [协程](main/linux-coroutine.md)
-
-#### [GUID](_) TODO
+### [spike 秒杀](main/spike.md)
 
 ---
 
-### DEPLOY  
+## CONCEPT
 
-#### [linux](main/linux.md)
+### [transaction 事务](main/acid.md)
 
-#### [docker](main/docker.md)
+### [distributed 分布式](main/distributed.md)
 
-#### [kubernetes](main/k8s.md)
+### [cryptography 加密](main/crypt.md)
 
-#### [CI/CD](main/cicd.md)
+### [splite brain 脑裂](main/splite-brain.md)
 
----
+### [blockchain 区块链](main/blockchain.md)
 
-### SAFE  
+### [middle end 中台](main/middle-end.md)
 
-#### [DDoS](main/ddos.md)
+### [micro server 微服务](main/ms.md)
 
----
+### [协程](main/linux-coroutine.md)
 
-### PROGRAMMING-LANGUAGE  
-
-#### [golang](main/go.md)
-
-#### [php](main/php.md)
-
-#### [nodejs](main/nodejs.md)
-
-#### [shell](main/shell.md)
+### [GUID](_) TODO
 
 ---
 
-### OTHER  
+## DEPLOY  
 
-#### [dict](main/dict.md)
+### [linux](main/linux.md)
 
-#### [tool](main/tool.md)
+### [docker](main/docker.md)
 
-#### [github](main/github.md)
+### [kubernetes](main/k8s.md)
 
-#### [licenses](main/licenses.md)
-
-#### [markdown](main/markdown.md)
-
-#### [exp 经验](main/exp.md)
-
-#### [keymaps](main/keymaps.md)
+### [CI/CD](main/cicd.md)
 
 ---
 
-### WIKI (未分类, 未来单独建立库)
+## SAFE  
 
-#### [badminton 羽毛球](wiki/badminton.md)
+### [DDoS](main/ddos.md)
 
-#### [radiation 辐射](wiki/radiation.md)
+---
 
-#### [EVA 新世界福音战士](wiki/eva.md)
+## PROGRAMMING-LANGUAGE  
 
-#### [cognitive bias 认知偏误](wiki/cognitive-bias.md)
+### [golang](main/go.md)
 
-#### [designing 设计](wiki/designing.md)
+### [php](main/php.md)
 
-#### [data indicator 数据指标](wiki/data-indicator.md)
+### [nodejs](main/nodejs.md)
 
-#### [misogyny 厌女](wiki/misogyny.md)
+### [shell](main/shell.md)
 
-#### [sleep 睡眠](wiki/sleep.md)
+---
+
+## OTHER  
+
+### [dict](main/dict.md)
+
+### [tool](main/tool.md)
+
+### [github](main/github.md)
+
+### [licenses](main/licenses.md)
+
+### [markdown](main/markdown.md)
+
+### [exp 经验](main/exp.md)
+
+---
+
+## WIKI (未分类, 未来单独建立库)
+
+### [badminton 羽毛球](wiki/badminton.md)
+
+### [radiation 辐射](wiki/radiation.md)
+
+### [EVA 新世界福音战士](wiki/eva.md)
+
+### [cognitive bias 认知偏误](wiki/cognitive-bias.md)
+
+### [designing 设计](wiki/designing.md)
+
+### [data indicator 数据指标](wiki/data-indicator.md)
+
+### [misogyny 厌女](wiki/misogyny.md)
+
+### [sleep 睡眠](wiki/sleep.md)

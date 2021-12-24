@@ -1,6 +1,6 @@
-# mongodb 副本集
+# mongodb 复制集
 
-    MongoDB中的副本集是一组维护相同数据集合的mongod进程。
+    MongoDB中的复制集是一组维护相同数据集合的mongod进程。
 
 ## [oplog](mongodb-oplog.md)
 
