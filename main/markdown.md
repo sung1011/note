@@ -1,5 +1,19 @@
 # markdown
 
+## emoji
+
+:joy: :smile: :wink:
+
+- [emoji](emoji.md)
+
+- [github-emoji](https://gist.github.com/rxaviers/7360908)
+
+## highlight
+
+I need to highlight these ==very important words==. (github不支持)
+
+I need to highlight these <mark>very important words</mark>.
+
 ## 细节折叠
 
 <details>
@@ -29,18 +43,29 @@
     - 第二项嵌套的第一个元素
     - 第二项嵌套的第二个元素
 
-## 区块引用
+## 引用
+
+### 区块引用
 
 > 第一层
 >> 第二层
 >>> 第三层
 
-## 多行引用
+### 多行引用
 
 > 第1行(转移)\
 第2行(双空格)  
 第3行(无)
 第4行
+
+### 内嵌格式引用
+
+> #### The quarterly results look great!
+>
+> - Revenue was off the chart.
+> - Profits were higher than ever.
+>
+>  *Everything* is going according to **plan**.
 
 ## html元素
 
@@ -64,9 +89,7 @@
 
 ## 注脚
 
-这是一个markdown [^1] 的注脚示例.
-
-> vscode的md不支持
+这是一个markdown [^1] 的注脚示例.  (github支持, vscode的md不支持)
 
 [^1]: "我是Markdown注脚1"
 
@@ -80,7 +103,7 @@
    [self]: markdown.md
    [p]: res/markdownlogo.png
 
-## 锚点
+## 锚点 (GitHub不支持)
 
 ### My Great Heading {#custom-id}
 
@@ -113,12 +136,10 @@ c := make(chan int)
 
 ## 缩放图片
 
-<img src="res/markdownlogo.png" width=30%>
-
 ![altaltalt](res/markdownlogo.png "鼠标锚点")
 
-## ref {#ref}
+<img src="res/markdownlogo.png" width=50>
+
+## ref
 
 - [markdown-basic-syntax](https://www.markdownguide.org/basic-syntax/)
-
-- [self](#custom-id)
