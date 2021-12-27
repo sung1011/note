@@ -1,5 +1,14 @@
 # linux命令
 
+## openssl
+
+```bash
+# sha256校验文件签名
+openssl digest -sha256 go1.17.5.darwin-amd64.pkg
+# crc32校验文件
+crc32 go1.17.5.darwin-amd64.pkg
+```
+
 ## 重定向 >
 
 | 文件描述符FD | 名称         | 缩写   | 默认值 |
