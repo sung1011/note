@@ -48,5 +48,7 @@
 | float64     | 8             | -9223372036854775808 ~ 9223372036854775807 |
 
 > `unsafe.Sizeof(T)`
+
 > `int` 4byte in 32bit; 8byte in 64bit
+
 > `timestamp` 如1604556795 # int32

@@ -13,7 +13,7 @@
 
 > [replset](mongodb-replset.md)
 
-## 读优先级 Read Preference --- 从哪个节点读
+## 读优先级 Read-Preference --- 从哪个节点读
 
 ### 分类
 
@@ -38,7 +38,7 @@
 
 ---
 
-## 读事务 Read Concern
+## 读事务 Read-Concern
 
 > `https://docs.mongodb.com/manual/reference/read-concern/`
 
@@ -52,7 +52,7 @@
 
 ![img](res/mongodb-readconcern-write-timeline.svg)
 
-replicset更新一个数据, P、S1、S2分别读取到该数据的时间节点
+replset更新一个数据, P、S1、S2分别读取到该数据的时间节点
 
 | target | available、local | majority |
 | ------ | ---------------- | -------- |

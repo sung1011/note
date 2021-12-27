@@ -1,11 +1,9 @@
 # nodejs
 
-## 特点
-
-异步io  
-事件驱动与回调  
-单线程时间轮询  
-跨平台  
+    异步io  
+    事件驱动与回调  
+    单线程时间轮询  
+    跨平台  
 
 - libuv: 抽象封装兼容linux,  windows.
 - linux libeio+libev: 采用线程池与阻塞io模拟异步io
@@ -30,10 +28,10 @@
 
 ## 异步io
 
-事件循环  
-观察者  
-请求对象  
-执行回调  
+    事件循环  
+    观察者  
+    请求对象  
+    执行回调  
 
 ![asyncio](res/asyncio.png)  
 

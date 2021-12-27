@@ -10,7 +10,7 @@ mysql
 2. 创建时GUID作为参数, 指定其GUID作为表的主键值(具有唯一性)
 
 > 幂等
->
+
 > 重复创建的请求建议忽略, 不抛出异常, 以第一次创建的返回值为准.
 
 redis
@@ -22,7 +22,7 @@ redis
 5. 若不存在, 则视为重复创建
 
 > 幂等
->
+
 > 大规模项目需要注意redis单点问题
 
 ---
@@ -49,7 +49,7 @@ redis
 3. 并且update时将ver+=1
 
 > 幂等
->
+
 > 对应SQL: `update <table> set <field>=<value>, ver=ver+1 where ver = 6`  
 
 ---
@@ -70,5 +70,3 @@ redis
 - LocalStorage
 - SessionStorage
 - IndexedDB
-
----
