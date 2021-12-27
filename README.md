@@ -19,7 +19,7 @@
 └── self.md  
 ```  
   
-## VERSION CONTROL  
+## VERSION CONTROL
 
 ### [git](main/git.md)
 
@@ -153,6 +153,8 @@
 
 ### [markdown](main/markdown.md)
 
+markdown-ref [main/markdown.md#ref]
+
 ### [exp 经验](main/exp.md)
 
 ---
@@ -174,3 +176,6 @@
 ### [misogyny 厌女](wiki/misogyny.md)
 
 ### [sleep 睡眠](wiki/sleep.md)
+
+### [心理导图](wiki/self-chain.md)
+

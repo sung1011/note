@@ -22,10 +22,10 @@
 
 ## 嵌套列表
 
-1. 第一项: 
+1. 第一项
     - 第一项嵌套的第一个元素
     - 第一项嵌套的第二个元素
-2. 第二项: 
+2. 第二项
     - 第二项嵌套的第一个元素
     - 第二项嵌套的第二个元素
 
@@ -80,6 +80,10 @@
    [self]: markdown.md
    [p]: res/markdownlogo.png
 
+## 锚点
+
+### My Great Heading {#custom-id}
+
 ## 代码块对比
 
 <table>
@@ -112,3 +116,9 @@ c := make(chan int)
 <img src="res/markdownlogo.png" width=30%>
 
 ![altaltalt](res/markdownlogo.png "鼠标锚点")
+
+## ref {#ref}
+
+- [markdown-basic-syntax](https://www.markdownguide.org/basic-syntax/)
+
+- [self](#custom-id)
