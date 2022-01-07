@@ -199,9 +199,3 @@ curl localhost:3000/api/multipart -F raw=@raw.data -F hello=world
 ## ref
 
 - linux重定向 <http://linux-wiki.cn/wiki/Bash%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91>
-
-综艺和电影我经常是看了二创才去爱优腾和影院的
-实际蹭热度吸流量 不等于 损害平台利益
-之前看到爱奇艺老总访谈时说: 一场球赛用户从二创得知最终比分和哪个球员进的 就不会来平台看整场球赛了.
-觉得好扯, 那体育新闻更剧透.
-营收一开始下滑就立刻找茬和涨价.

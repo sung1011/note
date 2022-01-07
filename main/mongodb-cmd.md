@@ -162,7 +162,9 @@ for(var key in db.coll.findOne({_id:"xxx"})) {print (key)}
   
 ### 查询内嵌embedded文档的keys
 
-TODO
+```js  
+for( var key in db.coll.findOne({_id:"xxx"}).speckey ) {print (key)}  
+```  
   
 ### doc size
 
@@ -172,7 +174,7 @@ Object.bsonsize(db.coll.findOne({type:"auto"}))
 
 ### 单个doc 16M限制
 
-TODO
+    TODO
 
 ### update vs findAndModify
 

@@ -8,7 +8,7 @@
     - 内部协议
     - 版本校验
     - 聊天与广播
-    - session
+    - session(jwt)
     - 加密
     - 压缩
     - pb

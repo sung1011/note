@@ -1,6 +1,6 @@
 # go compare
 
-## os, bufio, ioutil
+## os | bufio | ioutil
 
 - `os` 调用系统函数
 - `bufio` 带缓冲区; 最优选
@@ -66,29 +66,60 @@
 
 > gb级别 ReadLine, ReadSlice较快
 
-## gzip, zip, tar
+## gzip | zip | tar
 
 ### zip
 
-```txt
-more popular on Windows
-archiving and compression
-use DEFLATE compression algorithm (same gzip)
-```
+    more popular on Windows
+    archiving and compression
+    use DEFLATE compression algorithm (same gzip)
 
 ### gzip
 
-```txt
-more popular on Linux/Unix
-faster than ZIP
-more save space than ZIP
-just compression
-use DEFLATE compression algorithm (same zip)
-```
+    more popular on Linux/Unix
+    faster than ZIP
+    more save space than ZIP
+    just compression
+    use DEFLATE compression algorithm (same zip)
 
 ### tar
 
-```txt
-archive(package) the files and dirs
+    archive(package) the files and dirs
+
+## struct.field.func | type-interface
+
+```go
+// struct.field.func
+package main
+
+type Foo struct {
+  	say func() error
+}
+
+func main() {
+  	f := &Foo{
+      say: func() error { // 每次实例化时, 实现一次成员方法say(); 可以不实现
+      	return nil
+      },
+	}
+	f.say()
+}
+
 ```
 
+```go
+// type-interface
+package main
+
+type IFoo interface {
+	say() error
+}
+
+type Foo struct { // 定义结构体时, 实现一次接口方法say(); 必须实现
+}
+
+// 
+func (this *Foo) say() error {
+    return nil
+}
+```

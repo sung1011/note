@@ -7,12 +7,10 @@
 ## 特征
 
 1. 跨语言
-2. 不需要保存在server
-   1. 减少内存压力
-   2. 对分布式友好
+2. 不需要保存在server, 对内存和分布式友好
 3. 传输数据量小
 
-> session问题就在于需要保存在server
+> session的问题就在于需要保存在server
 
 ## 用途
 
@@ -51,9 +49,9 @@ JWT = `{header}.{payload}.{signature}`
 header = base64(data) // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
 ```
 
-### payload 载荷
+### payload 载荷 (claims)
 
-CS共享一些非敏感信息(C端轻易可解密)
+      CS共享一些非敏感信息(C端轻易可解密)
 
 ```js
 {
@@ -79,7 +77,7 @@ payload = base64(data) // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
 
 > 实际就是预定义声明 和 自定义声明  
 
-> JWT默认不加密, 所以payload中不要存敏感信息  
+> JWT默认不加密, 因此payload中不要存敏感信息  
 
 > 也可以将生成JWT再加密一层
 
@@ -87,10 +85,10 @@ payload = base64(data) // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
 
 ```js
 data = base64UrlEncode(header) + '.' + base64UrlEncode(payload);
-key = 'secretKey_in_server' // secretKey/salt/key/秘钥 保存在server中
+secretKey = 'secretKey_in_server' // secretKey/salt/key/秘钥 保存在server中
 hashMethod = header.alg // HMACSHA256
 
-signature = base64UrlEncode(hashMethod(data, key)); // TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
+signature = base64UrlEncode(hashMethod(data, secretKey)); // TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
 ```
 
 > key 可以是对称加密秘钥, 也可以是非对称加密的公钥+私钥, 决定于加密算法
