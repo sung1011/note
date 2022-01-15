@@ -106,6 +106,15 @@ echo 123 | tee file1
 
 ## nc
 
+```bash
+# 扫描IP段 -v 可视化; -z 扫描时不发数据; -w 超时时间
+nc -vzw 2 47.93.191.198 8080-8088
+# Connection to 47.93.191.198 port 8080 [tcp/http] succeeded!
+# nc: connectx to 47.93.191.198 port 8081 (tcp) failed: Connection refused
+# ...
+# nc: connectx to 47.93.191.198 port 8088 (tcp) failed: Connection refused
+```
+
 ## [awk](src/cmd/awk.md)  
 
 ## [grep](ref/grep.md)  
