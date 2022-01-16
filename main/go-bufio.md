@@ -2,7 +2,7 @@
 
 ## code
 
-- [bufio](../script/go/package/bufio_test.go)
+- [bufio](src/go/package/bufio_test.go)
 
 ## bufio read()
 

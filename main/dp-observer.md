@@ -15,7 +15,7 @@
 
 ## code
 
-- [go](../script/go/dp/observer.go)
+- [go](src/go/dp/observer.go)
 
 - [php](src/php_design_patterns/observer/observer.php)
 

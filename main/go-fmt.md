@@ -2,7 +2,7 @@
 
 ## code
 
-- [fmt](../script/go/package/fmt_test.go)
+- [fmt](src/go/package/fmt_test.go)
 
 ## 运算符 operand
 

@@ -14,7 +14,7 @@
 
 ## code
 
-- [go](../script/go/dp/flyweight.go)
+- [go](src/go/dp/flyweight.go)
 
 - [php](src/php_design_patterns/flyweight/flyweight.php)
 

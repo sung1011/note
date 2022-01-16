@@ -14,7 +14,7 @@
 
 ## code
 
-- [go](../script/go/dp/bridge.go)
+- [go](src/go/dp/bridge.go)
 
 - [php](src/php_design_patterns/bridge/bridge.php)
 

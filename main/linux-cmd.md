@@ -115,7 +115,7 @@ nc -vzw 2 47.93.191.198 8080-8088
 # nc: connectx to 47.93.191.198 port 8088 (tcp) failed: Connection refused
 ```
 
-## [awk](src/cmd/awk.md)  
+## [awk](linux-cmd-awk.md)  
 
 ## [grep](ref/grep.md)  
   

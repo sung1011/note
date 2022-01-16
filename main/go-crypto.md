@@ -2,4 +2,4 @@
 
 ## code
 
-- [md5](../script/go/package/crypto_md5_test.go)
+- [md5](src/go/package/crypto_md5_test.go)

@@ -13,7 +13,7 @@
 
 ## code
 
-- [go](../script/go/dp/memento.go)
+- [go](src/go/dp/memento.go)
 
 - [php](src/php_design_patterns/memento/memento.php)
 

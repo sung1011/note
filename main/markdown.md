@@ -60,12 +60,12 @@ I need to highlight these <mark>very important words</mark>.
 
 ### 内嵌格式引用
 
-> #### The quarterly results look great!
+> #### The quarterly results look great
 >
 > - Revenue was off the chart.
 > - Profits were higher than ever.
 >
->  *Everything* is going according to **plan**.
+> *Everything* is going according to **plan**.
 
 ## html元素
 

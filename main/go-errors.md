@@ -2,7 +2,7 @@
 
 ## code
 
-- [errors](../script/go/package/errors_test.go)
+- [errors](src/go/package/errors_test.go)
 
 ## ref
 

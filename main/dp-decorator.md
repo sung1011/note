@@ -14,6 +14,6 @@
 
 ## code
 
-- [go](../script/go/dp/decorator.go)
+- [go](src/go/dp/decorator.go)
 
 - [php](src/php_design_patterns/decorator/decorator.php)

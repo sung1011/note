@@ -17,9 +17,9 @@
 
 ## code
 
-- [go 简单工厂](../script/go/dp/factory-simple.go)
-- [go 工厂方法](../script/go/dp/factory-method.go)
-- [go 抽象工厂](../script/go/dp/factory-abstract.go)
+- [go 简单工厂](src/go/dp/factory-simple.go)
+- [go 工厂方法](src/go/dp/factory-method.go)
+- [go 抽象工厂](src/go/dp/factory-abstract.go)
 
 - [php 简单工厂](src/php_design_patterns/simple_factory/simple_factory.php)
 - [php 工厂方法](src/php_design_patterns/factory_method/factory_method.php)

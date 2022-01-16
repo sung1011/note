@@ -2,7 +2,7 @@
 
 ## code
 
-- [reflect](../script/go/package/reflect_test.go)
+- [reflect](src/go/package/reflect_test.go)
 
 ## Type
 

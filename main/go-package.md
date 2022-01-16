@@ -1,6 +1,6 @@
 # go package
 
-- [file](../script/go/file/main_test.go)
+- [file](src/go/file/main_test.go)
 
 ## [archive](go-archive.md)
 

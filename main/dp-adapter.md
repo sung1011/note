@@ -15,7 +15,7 @@
 
 ## code
 
-- [go](../script/go/dp/adapter.go)
+- [go](src/go/dp/adapter.go)
 
 - [php](src/php_design_patterns/adapter/adapter.php)
 

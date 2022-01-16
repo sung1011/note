@@ -49,7 +49,7 @@
 
 ## 实战
 
-### [dstat](src/cmd/dstat.md)
+### [dstat](linux-cmd-dstat.md)
 
 ### waitio高(cpu使用率高, 平均负载高), 有D进程, Z进程
 

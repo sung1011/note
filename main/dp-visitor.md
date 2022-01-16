@@ -10,7 +10,7 @@
 
 ## code
 
-- [go](../script/go/dp/visitor.go)
+- [go](src/go/dp/visitor.go)
 
 - [php](src/php_design_patterns/visitor/visitor.php)
 

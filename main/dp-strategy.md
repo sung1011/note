@@ -13,7 +13,7 @@
 
 ## code
 
-- [go](../script/go/dp/strategy.go)
+- [go](src/go/dp/strategy.go)
 
 - [php](src/php_design_patterns/strategy/strategy.php)
 

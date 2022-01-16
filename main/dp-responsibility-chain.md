@@ -14,7 +14,7 @@
 
 ## code
 
-- [go](../script/go/dp/responsibility-chain.go)
+- [go](src/go/dp/responsibility-chain.go)
 
 - [php](src/php_design_patterns/responsibility_chain/responsibility_chain.php)
 

@@ -13,7 +13,7 @@
 
 ## code
 
-- [go](../script/go/dp/composite.go)
+- [go](src/go/dp/composite.go)
 
 - [php](src/php_design_patterns/composite/composite.php)
 

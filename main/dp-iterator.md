@@ -17,7 +17,7 @@
 
 ## code
 
-- [go](../script/go/dp/iterator.go)
+- [go](src/go/dp/iterator.go)
 
 - [php](src/php_design_patterns/iterator/iterator.php)
 

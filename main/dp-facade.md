@@ -18,7 +18,7 @@
 
 ## code
 
-- [go](../script/go/dp/facade.go)
+- [go](src/go/dp/facade.go)
 
 - [php](src/php_design_patterns/facade/facade.php)
 

@@ -6,7 +6,7 @@
 
 ## code
 
-- [context](../script/go/basic/context_test.go)
+- [context](src/go/basic/context_test.go)
 
 ## 接口
 

@@ -448,6 +448,7 @@ git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -g -r | head -n5 # �
 
 ```bash
 HEAD 头指针
+detached HEAD 分离头指针 # git checkout <commit-id>, 即 直接检出obj tree, 而非分支时
 ^   父
 ^^^ 父父父
 ~3  父父父

@@ -58,7 +58,7 @@
 
 - `sysbench --threads=10 --timeout=300 threads run`
 
-### [vmstat](src/cmd/vmstat.md) `vmstat 5`
+### [vmstat](linux-cmd-vmstat.md) `vmstat 5`
 
 ### pidstat: `pidstat -wt 5`
 

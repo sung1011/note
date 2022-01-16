@@ -34,8 +34,8 @@
 
 ## code
 
-- [go 饿汉](../script/go/dp/singleton-hungry.go)
-- [go 懒汉](../script/go/dp/singleton-lazy.go)
+- [go 饿汉](src/go/dp/singleton-hungry.go)
+- [go 懒汉](src/go/dp/singleton-lazy.go)
 
 - [php](src/php_design_patterns/singleton/mysql_singleton.php)
 

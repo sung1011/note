@@ -1,5 +1,0 @@
-#! /bin/bash
-
-scp -r root@52.221.32.200:/mnt/htdocs/tests/happya-release-qa/farm/config ./qa_config
-
-scp ./qa_config root@10.0.84.123:/mnt/htdocs/sunji/

@@ -2,4 +2,4 @@
 
 ## code
 
-- [json](../script/go/package/encoding_json_test.go)
+- [json](src/go/package/encoding_json_test.go)

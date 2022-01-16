@@ -10,7 +10,7 @@
 
 ## code
 
-- [go](../script/go/dp/interpreter.go)
+- [go](src/go/dp/interpreter.go)
 
 - [php](src/php_design_patterns/interpreter/interpreter.php)
 

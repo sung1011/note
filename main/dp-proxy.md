@@ -14,8 +14,8 @@
 
 ## code
 
-- [go 静态代理](../script/go/dp/proxy-static.go)
-- [go 动态代理](../script/go/dp/proxy-dynamic.go)
+- [go 静态代理](src/go/dp/proxy-static.go)
+- [go 动态代理](src/go/dp/proxy-dynamic.go)
 
 - [php](src/php_design_patterns/proxy/proxy.php)
 

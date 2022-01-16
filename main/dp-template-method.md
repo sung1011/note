@@ -13,7 +13,7 @@
 
 ## code
 
-- [go](../script/go/dp/template-method.go)
+- [go](src/go/dp/template-method.go)
 
 - [php](src/php_design_patterns/template_method/template_method.php)
 

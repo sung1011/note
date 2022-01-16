@@ -13,7 +13,7 @@
 
 ## code
 
-- [go 建造者 传统](../script/go/dp/builder-simple.go)
-- [go 建造者 改进](../script/go/dp/builder-opt.go)
+- [go 建造者 传统](src/go/dp/builder-simple.go)
+- [go 建造者 改进](src/go/dp/builder-opt.go)
 
 - [php 建造者](src/php_design_patterns/builder/builder.php)

@@ -11,8 +11,8 @@
 
 ## code
 
-- [go 接口](../script/go/dp/command.go)
-- [go 参数方法](../script/go/dp/command-func.go)
+- [go 接口](src/go/dp/command.go)
+- [go 参数方法](src/go/dp/command-func.go)
 
 - [php](src/php_design_patterns/command/command.php)
 

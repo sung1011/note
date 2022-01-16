@@ -2,7 +2,7 @@
 
 ## code
 
-- [time](../script/go/package/time_test.go)
+- [time](src/go/package/time_test.go)
 
 ## TimeZone
 

@@ -17,7 +17,7 @@
 
 ## code
 
-- [go](../script/go/dp/mediator.go)
+- [go](src/go/dp/mediator.go)
 
 - [php](src/php_design_patterns/mediator/mediator.php)
 

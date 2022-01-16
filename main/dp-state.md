@@ -14,7 +14,7 @@
 
 ## code
 
-- [go](../script/go/dp/state.go)
+- [go](src/go/dp/state.go)
 
 - [php](src/php_design_patterns/state/state.php)
 
