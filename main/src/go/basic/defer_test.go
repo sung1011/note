@@ -3,7 +3,7 @@ package main
 // 延迟到return后执行
 // 倒序执行
 // defer func(param), 其参数param会快照保存一份(defer上下文的)副本
-// 指针和闭包会延迟
+// 指针和闭包非快照, 会延迟, 取执行时的上下文
 
 // ref: https://www.cnblogs.com/phpper/p/11984161.html
 
@@ -31,73 +31,75 @@ func GetName(u Users) {
 	u.GetName()
 }
 
-func Test_Defer(t *testing.T) {
+func Test_Defer_Slice(t *testing.T) {
 	// var is []int
-	Convey("", t, func() {
-		Convey("slice", func() {
-			var ss [3]struct{} // 0 1 2
+	Convey("slice", t, func() {
+		var ss [3]struct{} // 0 1 2
 
-			Convey("_; desc", func() { // 2 1 0
-				for i := range ss {
-					defer fmt.Println(i)
-				}
-			})
-			// 闭包用到的变量, 执行时已经变成了2
-			Convey("closure; last; ", func() { // 2 2 2
-				for i := range ss {
-					defer func() {
-						fmt.Println(i)
-					}()
-				}
-			})
-
-			Convey("func ; desc", func() { // 2 1 0
-				for i := range ss {
-					defer func(i int) {
-						fmt.Println(i)
-					}(i)
-				}
-			})
-
+		Convey("=> ok", func() {
+			for i := range ss {
+				defer fmt.Println(i) // 2 1 0
+			}
+		})
+		// 闭包用到的变量, 执行时已经变成了2
+		Convey("closure => last; ", func() {
+			for i := range ss {
+				defer func() {
+					fmt.Println(i) // 2 2 2
+				}()
+			}
 		})
 
-		Convey("struct", func() {
-			Convey("指针接收者; last", func() { // c c c
-				list := []Users{{"a"}, {"b"}, {"c"}}
-				for _, u := range list {
-					defer u.GetName()
-				}
-			})
-
-			Convey("by 参数; desc", func() { // c b a
-				list := []Users{{"a"}, {"b"}, {"c"}}
-				for _, u := range list {
-					defer GetName(u)
-				}
-			})
-
-			Convey("值接收者; desc", func() { // c b a
-				list := []Users{{"a"}, {"b"}, {"c"}}
-				for _, u := range list {
-					defer u.GetNameVal()
-				}
-			})
-		})
-
-		Convey("panic", func() {
-			Convey("defer内容执行后才会报错", func() { // d c b a panic
-				defer fmt.Println("a")
-				defer fmt.Println("b")
-
-				i := 0
+		Convey("closure(param) => ok", func() {
+			for i := range ss {
 				defer func(i int) {
-					fmt.Println("c")
-					// fmt.Println(10 / i) // panic
-					// panic("errrrrr") // panic
+					fmt.Println(i) // 2 1 0
 				}(i)
+			}
+		})
 
-				defer fmt.Println("d")
-			})
+	})
+}
+
+func Test_Defer_Struct(t *testing.T) {
+	Convey("struct", t, func() {
+		Convey("指针接收者 => last", func() {
+			list := []Users{{"a"}, {"b"}, {"c"}}
+			for _, u := range list {
+				defer u.GetName() // c c c
+			}
+		})
+
+		Convey("指针接收者(param) => ok", func() {
+			list := []Users{{"a"}, {"b"}, {"c"}}
+			for _, u := range list {
+				defer GetName(u) // c b a
+			}
+		})
+
+		Convey("值接收者 => ok", func() { // copy
+			list := []Users{{"a"}, {"b"}, {"c"}}
+			for _, u := range list {
+				defer u.GetNameVal() // c b a
+			}
+		})
+	})
+}
+
+func Test_Defer_Over(t *testing.T) {
+	Convey("over", t, func() {
+		Convey("panic => defer内容执行后才会报错", func() { // d c b a panic
+			defer fmt.Println("a")
+			defer fmt.Println("b")
+
+			i := 0
+			defer func(i int) {
+				fmt.Println("c")
+				// fmt.Println(10 / i) // panic
+				// panic("errrrrr") // panic
+			}(i)
+
+			defer fmt.Println("d")
 		})
 
 		Convey("return; 注意命名返回值; 闭包延迟读取", func() { // derfer: b
@@ -132,6 +134,6 @@ func Test_Defer(t *testing.T) {
 			}()
 			// os.Exit(0)
 		})
-
 	})
+
 }
