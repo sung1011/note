@@ -28,7 +28,7 @@
 
 ### commit (or tag)
 
-  每个commit记录了提交一个更新的所有元数据, 如指向的tree, 父commit, 作者、提交者、提交日期、提交日志等.每次提交都指向一个tree对象, 记录了当次提交时的目录信息.一个commit可以有多个(至少一个)父commits.
+    每个commit记录了提交一个更新的所有元数据, 如指向的tree, 父commit, 作者、提交者、提交日期、提交日志等.每次提交都指向一个tree对象, 记录了当次提交时的目录信息.一个commit可以有多个(至少一个)父commits.
 
 ```bash
 # git cat-file < oid or tag >

@@ -6,6 +6,8 @@ import (
 	"os"
 	"testing"
 
+	pkgErr "github.com/pkg/errors"
+
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -47,6 +49,8 @@ func Test_Errors(t *testing.T) {
 
 func Test_Errors_lt113(t *testing.T) {
 	Convey("errors by assert befor go1.13", t, func() {
+		// 实现error接口
+		// 存在问题: 无法嵌套, 附加额外信息
 		foo := func() error {
 			return &QueryErr{"foo", ErrNotFound}
 		}
@@ -77,5 +81,22 @@ func Test_Errors_egt113(t *testing.T) {
 		err1 := fmt.Errorf("new error:[%w]", &QueryErr{"XYZ", errors.New("zzz")})
 		So(errors.As(err1, &err0), ShouldBeTrue) // 判断类型是否相同, 并提取第一个符合目标类型的错误.
 		So(fmt.Sprint(err0), ShouldEqual, "query err: XYZ")
+
 	})
+}
+
+func Test_PkgErrors(t *testing.T) {
+
+	Convey("cause", t, func() {
+		e1 := pkgErr.New("inner")
+		e2 := pkgErr.Wrap(e1, "middle")
+		e3 := pkgErr.Wrap(e2, "outer")
+
+		So(e3.Error(), ShouldEqual, "outer: middle: inner") // with msg, with stack
+		So(pkgErr.Cause(e3).Error(), ShouldEqual, "inner")  // 原始error
+
+		e2msg := pkgErr.WithMessage(e2, "with msg")
+		So(e2msg.Error(), ShouldEqual, "with msg: middle: inner") // 只with msg, 不with stack
+	})
+
 }

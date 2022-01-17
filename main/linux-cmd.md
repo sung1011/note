@@ -1,5 +1,13 @@
 # linux命令
 
+## stdbuf
+
+```bash
+tail -f access.log | stdbuf -oL cut -d' ' -f1 | uniq # 输出不缓冲, 直接显示; | (管道) 会将内容read到kernel, 具有缓冲区, 未写满的缓冲无法传递给后续程序
+```
+
+> 管道与缓冲 <https://www.cnblogs.com/outsrkem/p/11200697.html>
+
 ## openssl
 
 ```bash

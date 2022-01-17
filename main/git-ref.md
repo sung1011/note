@@ -38,6 +38,7 @@ git diff --cached # 暂存区 与 HEAD 比较
 git diff origin/< branch > # 与远端比较 (大多同 --cached)
 git diff < commit1 > < commit2 >
 git diff < branch1 > < branch2 > -- < file >
+git diff --stat ':!<file1>' ':!<file2>' # diff, 但排除 file1 和 file2 ...
 ```
 
 ### commit

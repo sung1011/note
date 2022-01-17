@@ -7,10 +7,10 @@
 
 ## 文件
 
-   id_rsa: 保存私钥
-   id_rsa.pub: 保存公钥
-   authorized_keys: 保存已授权的客户端公钥
-   known_hosts: 保存已认证的远程主机ID
+      id_rsa: 保存私钥
+      id_rsa.pub: 保存公钥
+      authorized_keys: 保存已授权的客户端公钥
+      known_hosts: 保存已认证的远程主机ID
 
 ## 连接
 
@@ -54,12 +54,14 @@ ssh -p 1234 user@host # 指定端口
 ```bash
 # 本地复制到远端
 cd && tar czv src | ssh user@host 'tar xz'
+
 # 远端复制到本地
 ssh user@host 'tar cz src' | tar xzv
+
 # 本地8080端口的数据通过ssh传送到远端
 ssh -D 8080 user@host
 ```
 
 ## ref
 
-> `http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html`
+> ruanyifeng <http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html>
