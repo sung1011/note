@@ -177,3 +177,4 @@
 
 ### [心理导图](wiki/self-chain.md)
 
+### [novel](wiki/novel.md)

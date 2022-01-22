@@ -51,6 +51,24 @@ EOF
 
 ```
 
+### echo
+
+```bash
+echo -n a;echo b; # -n 输出出现在同一行
+ab
+
+echo -e "hello\nword" # -e 解释特殊字符
+hello
+word
+```
+
+### && ||
+
+```bash
+cat log && ls log # cat成功才会ls
+cat log || ls log # cat失败才会ls
+```
+
 ### FD重定向
 
 ```bash

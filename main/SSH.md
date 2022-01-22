@@ -24,9 +24,9 @@ ssh user@host 'mkdir -p .ssh && cat >> .ssh/authorized_keys' < ~/.ssh/id_rsa.pub
 # ssh连接
 ssh user@host
 
-　　The authenticity of host 'host (12.18.429.21)' can't be established.
-　　RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.
-　　Are you sure you want to continue connecting (yes/no)?
+    The authenticity of host 'host (12.18.429.21)' can't be established.
+    RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.
+    Are you sure you want to continue connecting (yes/no)?
 ```
 
 1. 首次ssh时问询是否确定连接公钥指纹为 `98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d` 的机器, 这是为了防止中间人攻击, 公钥指纹需自行对比.
@@ -40,7 +40,6 @@ ssh user@host
 ssh -vt user@host # 调试
 
 ssh -p 1234 user@host # 指定端口
-
 ```
 
 ## ssh_config
