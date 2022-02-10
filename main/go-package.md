@@ -2,6 +2,12 @@
 
 - [file](src/go/file/main_test.go)
 
+---
+
+## [uber-go/zap](go-uber-go_zap.md)
+
+---
+
 ## [archive](go-archive.md)
 
 - tar

@@ -171,10 +171,14 @@
 
 ### [data indicator 数据指标](wiki/data-indicator.md)
 
-### [misogyny 厌女](wiki/misogyny.md)
-
 ### [sleep 睡眠](wiki/sleep.md)
 
 ### [心理导图](wiki/self-chain.md)
 
 ### [novel](wiki/novel.md)
+
+### book
+
+#### [misogyny 厌女](wiki/misogyny.md)
+
+#### [从零开始的女性主义](wiki/feminism-from-scratch.md)

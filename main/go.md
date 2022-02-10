@@ -18,4 +18,4 @@
 
 ## ref
 
-[标准库](https://studygolang.com/pkgdoc)
+- [标准库](https://studygolang.com/pkgdoc)
