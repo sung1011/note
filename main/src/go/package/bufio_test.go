@@ -51,7 +51,7 @@ func Test_Bufio_Write(t *testing.T) {
 		w1.WriteString("a")       // 写入w1的缓冲
 		w1.WriteString("b")
 		w1.WriteString("c")
-		t.Log(w1.Size())                  // defaultBufSize=4096
+		t.Log(w1.Size())                  // 4096; defaultBufSize=4096
 		So(w1.Buffered(), ShouldEqual, 3) // 没有flush, 数据还在w1的缓冲区
 		So(bf.Len(), ShouldEqual, 0)      // 没有flush, 所以尚未写入bf
 
@@ -62,8 +62,9 @@ func Test_Bufio_Write(t *testing.T) {
 		w2 := bufio.NewWriterSize(bf, w1.Size()*2) // 新建缓冲区(by 指定size)
 		w2.WriteString("x")                        // 写入w的缓冲
 		w2.WriteString("y")
-		So(bf.Len(), ShouldEqual, 0) // 尚未写入bf
-		w2.Flush()                   // 将w的缓冲写入bf
+		So(w2.Buffered(), ShouldEqual, 2) // 没有flush, 数据还在w1的缓冲区, 新建了, 所以是2而非3+2
+		So(bf.Len(), ShouldEqual, 0)      // 尚未写入bf
+		w2.Flush()                        // 将w的缓冲写入bf
 
 		So(w2.Buffered(), ShouldEqual, 0) // w2的缓冲区已经被清空
 		So(bf.Len(), ShouldEqual, 2)      // 确实已经写入bf了

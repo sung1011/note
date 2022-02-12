@@ -175,6 +175,8 @@
 
 ### [novel](wiki/novel.md)
 
+### [两性](wiki/sex.md)
+
 ### book
 
 ### [designing with the mind in mind 设计](wiki/designing-with-the-mind-in-mind.md)
