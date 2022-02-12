@@ -167,8 +167,6 @@
 
 ### [cognitive bias 认知偏误](wiki/cognitive-bias.md)
 
-### [designing 设计](wiki/designing.md)
-
 ### [data indicator 数据指标](wiki/data-indicator.md)
 
 ### [sleep 睡眠](wiki/sleep.md)
@@ -179,6 +177,10 @@
 
 ### book
 
+### [designing with the mind in mind 设计](wiki/designing-with-the-mind-in-mind.md)
+
 #### [misogyny 厌女](wiki/misogyny.md)
 
 #### [从零开始的女性主义](wiki/feminism-from-scratch.md)
+
+
