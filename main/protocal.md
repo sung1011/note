@@ -200,8 +200,6 @@
     Ethernet v.2  
     Internetwork  
   
-![OSI](res/OSI.jpg)  
-
 ## ref
 
 - <https://mp.weixin.qq.com/s/jiPMUk6zUdOY6eKxAjNDbQ>

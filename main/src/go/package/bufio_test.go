@@ -10,6 +10,8 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
+// bufio比buffer复杂一点, 多了个内存缓冲区
+
 var txt string = "github.com\nsmartystreets\ngoconvey\nconvey"
 
 func Test_Bufio_Read(t *testing.T) {
