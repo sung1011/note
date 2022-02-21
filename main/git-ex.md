@@ -2,9 +2,9 @@
 
 ## pull的内容涉及正在修改的文件
 
-工作区如果有 modified 的文件a, pull的内容恰巧包含a文件, 则会aborting
+工作区如果有 modified 的文件a, pull的内容恰巧包含a文件, 则会提示报错
 
-可以`git stash push` 后再pull来解决 (有可能发生冲突)
+可以`git stash push` + `git pull` + `git stash pop`, 注意这有可能会冲突
 
 ```bash
 Updating e72ede4..bb7de2c

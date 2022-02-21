@@ -90,6 +90,7 @@ git checkout . # 丢弃工作区当前文件夹的 modified
 git checkout < oid > # 检出某次commit.修改后新建分支来保存修改内容(分离头指针 detached HEAD).
 git checkout < oid > -- < filename > # 检出指定oid 的 指定文件
 git checkout --orphan < new branch > # 新建0提交的分支, 当前内容全部转为committed状态
+git checkout stash@{0} # 检出stash0的快照
 ```
 
 ### switch
@@ -135,14 +136,14 @@ git log feature ^master # feature里有, master里没有的commmit
 git stash -u    # 保存一个stash 包含untracked文件
 git stash save  # 保存一个stash
 git stash push  # 暂存一个stash
-git stash apply < n > # 弹出一个stash, 并且保留记录; n 为 stash@n的值
-git stash pop < n >  # 弹出一个stash, 不保留记录; n 为 stash@n的值
+git stash pop < n >  # 弹出一个stash, 不保留记录; n 为 stash@{n}的值
+git stash apply < n > # 弹出一个stash, 并且保留记录; n 为 stash@{n}的值
 git stash show
 git stash branch
 git stash clear # 删除所有stash
 git stash list
 git stash list -p
-git stash drop
+git stash drop < n >
 ```
 
 ### tag

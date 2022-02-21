@@ -80,12 +80,15 @@ func Test_Buffer_Write(t *testing.T) {
 
 		Convey("truncate", func() {
 			bf := bytes.NewBuffer([]byte(buffer_txt))
-			bf.Truncate(3) // 从头剪切出3个字符, 其他都丢弃
-			So(string(bf.Bytes()), ShouldEqual, "git")
+			bs := bf.Next(3) // offset偏移量+=3
+			So(string(bs), ShouldEqual, "git")
+			So(string(bf.Bytes()), ShouldEqual, "hub.com\nsmartystreets\ngoconvey\nconvey") // buf="hub.com......."
+			bf.Truncate(3)                                                                  // 从头向后[:off+n]剪切出3个字符, 其他都丢弃
+			So(string(bf.Bytes()), ShouldEqual, "hub")                                      // buf="hub"
 
 			Convey("next", func() {
-				bf.Next(1) // offset偏移量+=1
-				So(string(bf.Bytes()), ShouldEqual, "it")
+				bf.Next(1)                                // offset偏移量+=1
+				So(string(bf.Bytes()), ShouldEqual, "ub") // buf="ub"
 			})
 		})
 	})

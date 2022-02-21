@@ -179,10 +179,10 @@
 
 ### book
 
-### [designing with the mind in mind 设计](wiki/designing-with-the-mind-in-mind.md)
+#### [designing with the mind in mind 设计](wiki/designing-with-the-mind-in-mind.md)
 
 #### [misogyny 厌女](wiki/misogyny.md)
 
 #### [从零开始的女性主义](wiki/feminism-from-scratch.md)
 
-
+#### [男孩、鼹鼠、狐狸和马](wiki/the-boy-the-mole-the-fox-the-horse.md)

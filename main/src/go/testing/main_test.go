@@ -38,14 +38,14 @@ func TestSendJSON(t *testing.T) {
 	server := mockServer()
 	defer server.Close()
 	//Get请求发往模拟服务器的地址
-	resq, err := http.Get(server.URL)
+	resp, err := http.Get(server.URL)
 	if err != nil {
 		t.Fatal("创建Get失败")
 	}
-	defer resq.Body.Close()
+	defer resp.Body.Close()
 
-	log.Println("code:", resq.StatusCode)
-	json, err := ioutil.ReadAll(resq.Body)
+	log.Println("code:", resp.StatusCode)
+	json, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		log.Fatal(err)
 	}
