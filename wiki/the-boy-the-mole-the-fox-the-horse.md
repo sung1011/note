@@ -6,6 +6,8 @@
 
 > 读过最短的书, 十几分钟读完了, 甚至没来得及加入到todo-list! 就干下这碗鸡汤
 
+> 英文版手写字体难适应, 要多习惯一会儿
+
 ![img](../main/res/boymolefoxhorse.png)
 
 ## 鼹鼠
