@@ -154,37 +154,3 @@
 ### [markdown](main/markdown.md)
 
 ### [exp 经验](main/exp.md)
-
----
-
-## WIKI (未分类, 未来单独建立库)
-
-### [badminton 羽毛球](wiki/badminton.md)
-
-### [radiation 辐射](wiki/radiation.md)
-
-### [EVA 新世界福音战士](wiki/eva.md)
-
-### [cognitive bias 认知偏误](wiki/cognitive-bias.md)
-
-### [data indicator 数据指标](wiki/data-indicator.md)
-
-### [sleep 睡眠](wiki/sleep.md)
-
-### [心理导图](wiki/self-chain.md)
-
-### [novel](wiki/novel.md)
-
-### [两性](wiki/sex.md)
-
-## BOOK
-
-### [designing with the mind in mind 设计](wiki/designing-with-the-mind-in-mind.md)
-
-### [misogyny 厌女](wiki/misogyny.md)
-
-### [从零开始的女性主义](wiki/feminism-from-scratch.md)
-
-### [男孩、鼹鼠、狐狸和马](wiki/the-boy-the-mole-the-fox-the-horse.md)
-
-### [钙](wiki/calcium.md)
