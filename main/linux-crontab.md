@@ -67,7 +67,10 @@ HOME=/User/sunji2
 02 4 * * * root run-parts /etc/cron.daily # 每天执行/etc/cron.daily内的脚本
 22 4 * * 0 root run-parts /etc/cron.weekly # 每星期执行/etc/cron.weekly内的脚本
 42 4 1 * * root run-parts /etc/cron.monthly # 每月去执行/etc/cron.monthly内的脚本
+
 ```
+
+> % 在cron表达式中是关键词, 需要改为\%, 如 \* \* \* \* \* php test.php >> /tmp/test`date "\%Y-\%m-\%d"`.log
 
 ## crond
 
