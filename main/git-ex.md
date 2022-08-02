@@ -2,16 +2,16 @@
 
 ## pull的内容涉及正在修改的文件
 
-工作区如果有 modified 的文件a, pull的内容恰巧包含a文件, 则会提示报错
-
-可以`git stash push` + `git pull` + `git stash pop`, 注意这有可能会冲突
-
 ```bash
-Updating e72ede4..bb7de2c
-error: Your local changes to the following files would be overwritten by merge:
-    ccc
-Please commit your changes or stash them before you merge.
-Aborting
+    # 工作区如果有 modified 的文件a, pull的内容恰巧包含a文件, 则会提示报错
+    # 可以`git stash push` + `git pull` + `git stash pop`, 注意这有可能会冲突
+
+
+    Updating e72ede4..bb7de2c
+    error: Your local changes to the following files would be overwritten by merge:
+        ccc
+    Please commit your changes or stash them before you merge.
+    Aborting
 ```
 
 ## 贡献度
@@ -69,21 +69,22 @@ git rev-parse --abbrev-ref HEAD 2> /dev/null
 
 3. 错误的将带有dev合入到master, 并push
 
-   ```bash
-   # 正常情况下 dev 和 master 为平行关系, feature合入dev进行测试, 合入master进行上线
-    D-----E---X---F---a----- dev # 比master多一些脏提交a
-             /                 \
-            X feature           \  # 错误的将带有feature(X)的dev合入master
-           /                     \
-    D-----E---F------------------Xa master # feature错误的合入master 并且 dev的a错误的合进了master
-   ```
+```bash
+# 正常情况下 dev 和 master 为平行关系, feature合入dev进行测试, 合入master进行上线
+ D-----E---X---F---a----- dev # 比master多一些脏提交a
+          /                 \
+         X feature           \  # 错误的将带有feature(X)的dev合入master
+        /                     \
+ D-----E---F------------------Xa master # feature错误的合入master 并且 dev的a错误的合进了master
 
-   1. master撤销dev的所有内容 `[master] git revert <merge commit> -m 1`
-   2. master保留feature内容(但不保留dev的a) `[master] git checkout <feature> -- <X files>; git add .;git commit` -- master已正常
-   3. master合入dev(将revert带回dev) `[dev] git merge master` -- 此时dev中的a内容没有了, 期望dev有a
-   4. 检出dev被撤销的文件(还原出a内容) `[dev] git checkout <merge commit> -- <X files>; git add .; git commit` -- dev已正常
-   5. 若dev中有其他feature, 需要类似【4】把这些被撤销feature内容还原出来
+1. master撤销dev的所有内容 `[master] git revert <merge commit> -m 1`
+2. master保留feature内容(但不保留dev的a) `[master] git checkout <feature> -- <X files>; git add .;git commit` -- master已正常
+3. master合入dev(将revert带回dev) `[dev] git merge master` -- 此时dev中的a内容没有了, 期望dev有a
+4. 检出dev被撤销的文件(还原出a内容) `[dev] git checkout <merge commit> -- <X files>; git add .; git commit` -- dev已正常
+5. 若dev中有其他feature, 需要类似【4】把这些被撤销feature内容还原出来
 
+# 污染严重的话, 可以废弃master 从上游分支重检出一个新的master' (比如main), 然后重新合并feature
+```
 
 ### 查找大文件
 
@@ -137,12 +138,10 @@ git log --pretty=format:"%ad" -- < file > | tail -1
 git reflog show --date=iso < branch >
 ```
 
-## 获取指定tree/blob被哪些commit引用了
+## 某次merge的内容
 
 TODO
 
-## 某次merge的内容
+## 获取指定tree/blob被哪些commit引用了
 
-```bash
-git diff HEAD^ HEAD
-```
+TODO

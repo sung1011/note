@@ -55,9 +55,9 @@ git commit -m # --message < msg >
 ### reset
 
 ```bash
-git reset --soft  # reset HEAD (remain index, working tree)
-git reset --mixed # reset HEAD, index (remain working tree)    *default
-git reset --hard  # reset HEAD, index, working tree
+git reset --soft  # reset only HEAD
+git reset --mixed # reset HEAD and index    *default
+git reset --hard  # reset HEAD, index and working tree
 ```
 
 ### rm
@@ -74,11 +74,12 @@ git mv a b # 一般重命名大小写时用. 另外可通过配置使大小写�
 
 ```bash
 git branch -vv # 展示HEAD, 分支, oid, message
-git branch -d
+git branch -d # 删除分支
 git branch -a --no-merged # 未合入当前分支的(远端)分支
 git branch --merged # 获取已合入当前分支的分支
 git branch --merged < branch > # 已合入<branch>的分支
 git branch -m < new-branch-name > # 分支重命名
+git branch --contains < commit-id > # 列出包含指定commit的分支
 ```
 
 ### checkout
@@ -87,9 +88,9 @@ git branch -m < new-branch-name > # 分支重命名
 git checkout -b < new branch > < start_point > # 基于当前分支or某commit 来新建分支
 git checkout -- < filename > # 丢弃工作区指定文件的修改
 git checkout . # 丢弃工作区当前文件夹的 modified
-git checkout < oid > # 检出某次commit.修改后新建分支来保存修改内容(分离头指针 detached HEAD).
+git checkout < oid > # 检出某次commit; 新建分支(gco -b)来保存修改后的内容(分离头指针 detached HEAD).
 git checkout < oid > -- < filename > # 检出指定oid 的 指定文件
-git checkout --orphan < new branch > # 新建0提交的分支, 当前内容全部转为committed状态
+git checkout --orphan < new branch > # new unparented branch; 新建无parented分支
 git checkout stash@{0} # 检出stash0的快照
 ```
 
@@ -107,6 +108,7 @@ git merge < branch >
        A---B---C topic
       /         \
  D---E---F---G---H master
+
 
 git merge --squash < branch > # 创建一个单独的提交而不是做一次合并
 
@@ -144,6 +146,8 @@ git stash clear # 删除所有stash
 git stash list
 git stash list -p
 git stash drop < n >
+
+# 工作区有modified的文件时进行pull, 同文件会报错; 可以先stash-push + pull + stash-pop, 此时相同line会冲突
 ```
 
 ### tag
@@ -164,13 +168,13 @@ git tag -d # 删除本地标签
 ### pull
 
 ```bash
-git pull # git fetch && git merge
+git pull = git fetch && git merge
 
        A---B---C feature
       /
  D---E---F---G *master
 
-> E is origin/master in your repository
+# E is origin/master in your repository
 
        A---B---C feature
       /         \
@@ -236,18 +240,18 @@ git remote show origin # 远端与本地分支的关系; 远端分支列表 trac
 ### rebase
 
 ```bash
-# 1. [master] git commit 12 // 12
-# 2. [master] git checkout -b topic; // 检出功能分支
-# 3. [master] git commit 34; // 12_34
-# 4. [topic] git commit ab; // 12_ab
-# 5. [topic] git rebase master; // 变基到master HEAD之后 // 12_34_ab
-# 6. [master] git merge topic; // 12_34_ab
+[topic] git rebase < 上游主分支 > < 指定分支 >
 
-git rebase < 上游主分支 > < 分支 >
-
-[topic] git rebase master # 变基并自动改变被移动的commit
+[topic] git rebase master # 变基并改变(移动)topic的commit, 到master HEAD的后面
 [topic] git rebase -i HEAD~20
 [topic] git rebase -i master # 变基并交互式改变被移动的commit
+
+# [master] git checkout -b topic; // 检出功能分支
+# [master] git commit t1; // t1
+# [topic] git commit t2; // t1 t2
+# [master] git commit m1 // t1 t2 m1
+# [topic] git rebase master; // 变基到 master HEAD
+# [master] git merge topic; // m1 t1 t2 (m1的tree, parent(顺序)变了, 但Date不会变)
 
       A---B---C *topic
      /
@@ -257,13 +261,11 @@ D---E---F---G master
              /
 D---E---F---G master
 
-# 不要在变基已经push到远端的commit (topic), 否则需要push -f
+# 只能变基未push到远端的commit (topic), 否则需要push -f
 
-# rebase后, A'B'C'是时间连续的多个commit, 便于查看
+# rebase后, A'B'C'是时间连续的多个commit, 便于查看 (顺序在G后面, 时间保持原状)
 
 # 不要在master进行rebase操作, 即以topic为基点变基master的commit, 如master不接受push -f, master变基前的commit不会消失.
-
-# 工作区有正在修改的文件时进行pull, 同文件会报错; 可以先stash push + pull, 但有可能会冲突(修改的行相同)
 
 ```
 
@@ -416,8 +418,8 @@ git rev-list < oid1 >...< oid2 > # 两次提交之间的所有提交
 ### rev-parse
 
 ```bash
-git rev-parse HEAD^ # 上一个commit-id
-git rev-parse --short HEAD^ # 上一个commit-id(short)
+git rev-parse HEAD^ # 获取上一个commit-id
+git rev-parse --short HEAD^ # 获取上一个commit-id (short)
 ```
 
 ### show-ref
@@ -438,7 +440,6 @@ git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -g -r | head -n5 # �
 
 # -v 未分类的对象返回: SHA-1 | type | size | size-in-packfile | offset-in-packfile | depth | base-SHA-1
 ```
-
 
 ### write-tree
 
