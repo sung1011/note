@@ -13,6 +13,8 @@
 - `同进程`
 - `跨进程` 消息队列
 
+> 所有订阅者a, b, c都实现了recv方法, 被观察者统一调用
+
 ## code
 
 - [go](src/go/dp/observer.go)

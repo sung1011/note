@@ -1,19 +1,39 @@
 package main
 
+// factory
+
 type IParserFactory interface {
-	GenParser() IParser
+	GenParser() iParser
 }
 
 type jsonParserFactory struct{}
 
-func (j *jsonParserFactory) GenParser() IParser {
-	return &jsonParser{}
+func (j *jsonParserFactory) GenParser() iParser {
+	return &jParser{}
 }
 
 type yamlParserFactory struct{}
 
-func (j *yamlParserFactory) GenParser() IParser {
-	return &yamlParser{}
+func (j *yamlParserFactory) GenParser() iParser {
+	return &yParser{}
+}
+
+// instance
+
+type iParser interface {
+	Parse([]byte)
+}
+
+type jParser struct{}
+
+func (j *jParser) Parse(b []byte) {
+
+}
+
+type yParser struct{}
+
+func (j *yParser) Parse(b []byte) {
+
 }
 
 func NewParserFactory(t string) IParserFactory {

@@ -5,12 +5,12 @@ type SensitiveWordFilter interface {
 	Filter(content string) bool
 }
 
-// SensitiveWordFilterChain 职责链
+// SensitiveWordFilterChain 职责链类
 type SensitiveWordFilterChain struct {
 	filters []SensitiveWordFilter
 }
 
-// AddFilter 添加一个过滤器
+// AddFilter 添加过滤器
 func (c *SensitiveWordFilterChain) AddFilter(filter SensitiveWordFilter) {
 	c.filters = append(c.filters, filter)
 }
@@ -25,6 +25,8 @@ func (c *SensitiveWordFilterChain) Filter(content string) bool {
 	}
 	return false
 }
+
+// ---------- Filter实现 --------------
 
 // AdSensitiveWordFilter 广告
 type AdSensitiveWordFilter struct{}

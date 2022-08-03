@@ -9,12 +9,15 @@ type IUserStatic interface {
 	Login(uname, pwd string) error
 }
 
+// 原始类
 type UserStatic struct{}
 
+// 原始功能
 func (u *UserStatic) Login(uname, pwd string) error {
 	return nil
 }
 
+// proxy 包了一下原始类, 重新实现其方法
 type UserProxy struct {
 	u *UserStatic
 }

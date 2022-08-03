@@ -12,6 +12,8 @@
 - `链表`
 - `数组`
 
+> 实现了同一接口的实例挂在一个链表上, 顺序执行
+
 ## code
 
 - [go](src/go/dp/responsibility-chain.go)

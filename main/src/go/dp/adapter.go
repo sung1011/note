@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// ICreateServer 创建云主机
+// ICreateServer 创建云主机; aws和aliyun的创建server方法不同, 这里统一他们
 type ICreateServer interface {
 	CreateServer(cpu, mem float64) error
 }

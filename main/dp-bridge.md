@@ -10,7 +10,7 @@
 
 ## 实现
 
-- `接口` 接口嵌套
+- `接口` 接口嵌套; 接口包接口
 
 ## code
 
@@ -21,3 +21,5 @@
 ## 场景
 
 - 不同的通知类型, 有不同的报警级别(即两个维度)
+  - isend接口 表达不同发送方式: email, dingding, wechat, qq...
+  - inotify接口 嵌套isend, 表达不同发送级别: notice, warning, error,

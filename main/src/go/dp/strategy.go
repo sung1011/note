@@ -25,19 +25,19 @@ func NewStorageStrategy(t string) (StorageStrategy, error) {
 	return s, nil
 }
 
-// 保存文件
+// 策略1 保存文件
 type fileStorage struct{}
 
-// 保存到文件
+// 策略1实现 保存文件
 func (s *fileStorage) Save(name string, data []byte) error {
 	// return ioutil.WriteFile(name, data, os.ModeAppend)
 	return nil
 }
 
-// 加密保存到文件
+// 策略2 加密保存文件
 type encryptFileStorage struct{}
 
-// 加密保存
+// 策略2实现 加密保存
 func (s *encryptFileStorage) Save(name string, data []byte) error {
 	data, err := encrypt(data)
 	if err != nil {

@@ -35,7 +35,7 @@ host.SLD.TLD.root 如: app.tickles.cn. (root可省略为 . 亦可忽略)
 4. `域名解析S`请求`root domain` (根域名dns S), 返回`TLD`(cn)S地址
 5. `域名解析S`请求`TLD` (顶级域名dns S), 返回`SLD`(tickles.cn)S地址
 6. `域名解析S`请求`SLD` (二级域名dns S), 返回`host`(app.tickles.cn)地址IP
-7. `域名解析S`返回C端 域名app.tickles.cn对应的实际IP
+7. `域名解析S`返回C端 域名app.tickles.cn对应的IP
 
 > 域名解析服务: 代理请求 和 缓存结果; 地址配置在 /etc/resolve.conf
 

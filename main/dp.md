@@ -103,7 +103,7 @@
 ### 创建型模式
 
 - **[单例模式singleton](dp-singleton.md)** 确保一个类只有一个实例, 提供一个全局访问点
-- **[工厂 factory](dp-factory.md)** 集中创建对象的方法
+- **[工厂factory](dp-factory.md)** 集中创建对象的方法
 - **[建造者模式builder](dp-builder.md)** 封装一个复杂对象过程, 按照步骤构建对象
 - [原型模式prototype](dp-prototype.md) 通过复制现有实例创建新实例
 
@@ -112,7 +112,7 @@
 - **[代理模式proxy](dp-proxy.md)** 用代理类来给原始类附加访问控制和边缘功能
 - **[适配器模式adapter](dp-adapter.md)** 将一个类的方法或者接口转换成客户希望另一个接口
 - **[装饰器模式decorator](dp-decorator.md)** 动态的给对象添加新的功能
-- **[桥接模式bridge](dp-bridge.md)** 将抽象部分与实现部分分离, 使他们都可以独立进行变化
+- **[桥接模式bridge](dp-bridge.md)** 将不同维度组合在一起, 使他们都可以独立进行变化
 - [门面模式facade](dp-facade.md) 对外提供一个统一方法, 用来访问子系统中一群接口
 - [组合模式composite](dp-composite.md) 将对象组成成树形结构以表示“整体-部分”的层次结构
 - [享元模式flyweight](dp-flyweight.md) 创建和复用只读的对象
