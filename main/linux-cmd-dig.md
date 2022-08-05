@@ -1,6 +1,21 @@
 # dig
 
-```go
+## 参数
+
+- `@` 指定DNS服务器 (可以是根server, 也可以不是); 如 dig @ns1.redhat.com redhat.com
+- `+trace` 跟踪完整的解析过程
+- `+short` 简短输出
+- `+noall` 关闭所有段落; 如 dig -noall +answer 只显示answer
+- `+nocomments` 关闭注释行
+- `-t` 指定类型, 一般可省略; 如 dig ns, dig AAAA, dig ANY
+- `-x` 通过IP反向查询域名; 如 dig -x 209.132.186.218; 需要S额外配置
+- `-f` 批量域名查询, 指定一个写了很多域名(换行隔开)的文件
+
+> 可配置该命令默认携带的参数 `$HOME/.digrc`
+
+## 实例
+
+```txt
 $ dig redhat.com
 
 // 头信息 版本和输入参数
@@ -45,16 +60,3 @@ ns3.redhat.com.         73      IN      A       209.132.176.100
 ;; WHEN: Thu Jan 12 10:09:49 2012
 ;; MSG SIZE  rcvd: 164
 ```
-
-## 参数
-
-- `@` 指定DNS服务器; 如 dig @ns1.redhat.com redhat.com
-- `+trace` 跟踪完整的解析过程
-- `+short` 简短输出
-- `+noall` 关闭所有段落; 如 dig -noall +answer 只显示answer
-- `+nocomments` 关闭注释行
-- `-t` 指定类型, 一般可省略; 如 dig ns, dig AAAA, dig ANY
-- `-x` 通过IP反向查询域名; 如 dig -x 209.132.186.218; 需要S额外配置
-- `-f` 批量域名查询, 指定一个写了很多域名(换行隔开)的文件
-
-> 可配置该命令默认携带的参数 `$HOME/.digrc`

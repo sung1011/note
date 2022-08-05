@@ -7,7 +7,7 @@
 
 ## 场景
 
-        根据关键内容(tag)找key.
+    根据关键内容(tag)找key.
 
 ## 特征
 
@@ -21,15 +21,15 @@
 
 ```bash
 
-      word14 -> < doc1, doc2 ... > # 包含该word的doc的有序链表, 方便与其他链表求交集、并集、差集 
+      word14 -> doc1, doc2 ... # 包含该word的doc的有序链表, 方便与其他链表求交集、并集、差集 
 
-      word77 -> < doc2 ... >
+      word77 -> doc2 ...
       ...
 
-      # 倒排索引 扩展记录word在doc中的位置
-      word14 -> < doc1_0, doc2_2 ... >
+      # 扩展记录word在doc中的位置
+      word14 -> doc1_0, doc2_2 ...
 
-      word77 -> < doc2_0, doc2_3 ... >
+      word77 -> doc2_0, doc2_3 ...
       ...
 ```
 

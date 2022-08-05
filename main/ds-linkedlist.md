@@ -19,11 +19,11 @@
 ```bash
 {
     head  
-    node {
-        data 
-        next # last指向null
-        }
     len  
+    node {
+      data 
+      next # last指向null
+    }
 }
 ```
 
@@ -32,12 +32,12 @@
 ```bash
 {
     head  
-    node {
-        data
-        prev 
-        next # last指向null
-        }  
     len  
+    node {
+      data
+      prev 
+      next # last指向null
+    }  
 }
 ```
 
@@ -46,12 +46,12 @@
 ```bash
 {
     head  
-    node {
-        data 
-        prev 
-        next # last指向null
-        }  
     len  
+    node: {
+      data 
+      prev 
+      next # last指向null
+    }  
 }
 ```
 

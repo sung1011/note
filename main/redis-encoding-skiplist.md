@@ -1,14 +1,14 @@
 # redis 编码 skiplist
 
-OBJ_ENCODING_SKIPLIST
+    OBJ_ENCODING_SKIPLIST
 
 ## 作用于
 
-OBJ_ZSET, 集群节点
+    OBJ_ZSET, 集群节点
 
 ## source code
 
-src/server.h
+    src/server.h
 
 ## 数据结构
 
@@ -36,27 +36,25 @@ typedef struct zskiplistNode {
 
 ### 层
 
-加快访问其他节点的速度, 一般层越多越快, 层高在1~32随机的
+    加快访问其他节点的速度, 一般层越多越快, 层高在1~32随机的
 
 ### 跨度
 
-节点间的距离, 即排位.
+    节点间的距离, 即排位.
 
 > 前进节点=NULL则跨度=0; 前进节点有值则至少跨度=1  
 
 ### 前进指针
 
-用于遍历
+    用于遍历
 
 ### 后退指针
 
-用于逆向遍历
+    用于逆向遍历
 
 ### 分值和成员
 
-成员互斥, 分值可相同.分值相等时, 按成员排序.
-
-## 特性
+    成员互斥, 分值可相同. 分值相等时, 按成员排序.
 
 ## API
 
@@ -76,4 +74,8 @@ typedef struct zskiplistNode {
 
 ## issues
 
-如何保证member互斥的？
+    如何保证member互斥的？
+
+## ref
+
+- [深入理解Redis跳跃表的基本实现和特性](https://juejin.cn/post/6893072817206591496)

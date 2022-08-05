@@ -81,7 +81,7 @@ A: 进行rehash操作来扩容或缩容(改变哈希表数组的大小)
 条件: CURD时 || 定时器
 
 > dict->rehashindex 记录了迁移的索引进度
->
+
 > rehash过程中CURD操作会先在ht[0]进行, 没有的话再到ht[1]操作.
 
 ### 扩容缩容
@@ -97,11 +97,11 @@ d->ht[0].used >= d->ht[0].size && (dict_can_resize || d->ht[0].used/d->ht[0].siz
 ```
 
 > `扩容/缩容的size` dict->ht[1].size = dict->ht[0].used * 2
->
+
 > `load factor 负载因子` = ht[0].used / ht[0].size
->
+
 > `dict_can_resize` 是否rehash fork进程进行copy on write(如rdb, aof, module)时值为0
->
+
 > `dict_force_resize_ratio` = 5 即子进程存在期间(bgsave, bgrewriteof)所需负载因子较大, 尽量避免扩容带来的内存消耗.  
 
 ![img](res/redis-encoding-dict-rehash.png)

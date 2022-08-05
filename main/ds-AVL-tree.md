@@ -2,8 +2,10 @@
 
     基于二叉搜索树, 自平衡(左右层级差不会大于1)
 
+## 结构
+
 ```bash
-# AVL ; left=3 right=4
+# AVL ; left=3L right=4L
                 3
               /    \
             2        5
@@ -12,7 +14,7 @@
                         \
                          7
 
-# 非AVL ; left=2 right=4
+# 非AVL ; left=2L right=4L
                 3
               /    \
             2        5
