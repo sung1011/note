@@ -29,8 +29,6 @@
 - `worst` O(k*log(n))
 - `avg` O(k*log(n))
 
-> 速度稳定
-
 ## 空间
 
     O(n)

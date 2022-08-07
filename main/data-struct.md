@@ -58,7 +58,7 @@
 
 - [B-树 平衡多路查找树 B-Tree](ds-b-tree.md)
 
-      可拥有 k个key k+1个阶/路/子节点 m/2 <= k <= m-1
+      每个节点都有key(索引)和value(数据), 搜索可能在中间节点结束
 
 - [B+树 B+Tree](ds-b+tree.md)
 
@@ -68,10 +68,12 @@
 - [LSM Log Structured Merge](ds-LSM.md)
 
       先写内存, 数据写满后, 逐层滚动地归并 排序 写入磁盘
+      写效率高
 
 - [红黑树](ds-rbtree.md)  
 
       不严格控制左、右子树层级差, 但再平衡时效率更高
+      比AVL的增删改效率高
 
 ## ref
 

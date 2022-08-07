@@ -2,9 +2,9 @@
 
 ## 并发模型
 
-channel  
-sync  
-context  
+    channel  
+    sync  
+    context  
 
 ## 设计  
 
@@ -32,11 +32,11 @@ context
 
 ## 设计思想  
 
-不要以共享内存的方式来通信, 相反, 要通过通信来共享内存.(Do not communicate by sharing memory; instead, share memory by communicating.)  
+    不要以共享内存的方式来通信, 相反, 要通过通信来共享内存.(Do not communicate by sharing memory; instead, share memory by communicating.)  
 
 ## 设计模型  
 
-CSP: CSP并发模型  communicating sequential processes  
+    CSP: CSP并发模型  communicating sequential processes  
 
 ## 设计实现  
 

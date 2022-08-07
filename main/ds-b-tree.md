@@ -9,14 +9,12 @@
     设某个b-tree为 m 阶b-tree
     m/2 <= k <= m-1
 
-## 场景
-
-    查询中间节点数据速度较快
-    较少遍历
 
 ## 特征
 
-- `每个节点可包含k个key:value 和 k+1路`
+- 每个节点可包含k个key:value 和 k+1路数据
+- 查询中间节点数据速度较快
+- 擅长主键查询, 不擅长条件查询和遍历
 
 ## 操作
 
@@ -95,7 +93,7 @@
 
 ### vs B+Tree
 
-1. 每个节点都有数据, 数据只出现在一个节点, 搜索有可能在中间节点结点结束(这种情况比B+tree快)
+1. 每个节点都有数据, 数据只出现在一个节点, 搜索有可能在中间节点结束 (这种情况比B+tree快)
 2. 自动层次控制
 3. 遍历性能比B+tree差
 
@@ -105,13 +103,10 @@
 
 ## ref
 
-> [二叉树](ds-binary-tree.md)  
-
-> [二叉搜索树](ds-binary-search-tree.md)  
-
-> [平衡二叉树](ds-AVL-tree.md)
-
-> `https://zhuanlan.zhihu.com/p/24309634`  
-> `https://www.oschina.net/question/565065_86338`  
-> `https://zhuanlan.zhihu.com/p/27700617`  
-> `https://www.cnblogs.com/nullzx/p/8729425.html`  
+- [二叉树](ds-binary-tree.md)  
+- [二叉搜索树](ds-binary-search-tree.md)  
+- [平衡二叉树](ds-AVL-tree.md)
+- `https://zhuanlan.zhihu.com/p/24309634`  
+- `https://www.oschina.net/question/565065_86338`  
+- `https://zhuanlan.zhihu.com/p/27700617`  
+- `https://www.cnblogs.com/nullzx/p/8729425.html`  

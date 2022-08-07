@@ -41,13 +41,16 @@
 
 - [布隆 BloomFilter](algo-bloomfilter.md)  
 
-        将一个元素带入多个哈希算法, 结果存入bitmap
+      将一个元素带入多个哈希算法, 结果存入bitmap
 
-- [RBM RoaringBitmap]
+- [RBM RoaringBitmap](algo-roaringbitmap.md)
+
+      将大块的bitmap分成各个小块，其中每个小块在需要存储数据的时候才会存在
+      解决bitmap存稀松数字的却需要长len结构的问题
 
 - [哈希 hash](algo-hash.md)
 
-        将给定数据转化为`固定长度的不规则值`的函数
+      将给定数据转化为`固定长度的不规则值`的函数
 
 - [一致性哈希 DHT](algo-DHT.md)  
 

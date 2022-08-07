@@ -1,4 +1,4 @@
-# LSM Log Structured Merge
+# LSM log-structured-merge
 
     先写内存, 数据写满后, 逐层滚动地归并 排序 写入磁盘.
 
@@ -52,6 +52,12 @@
 > 读放大: 用户读取1k数据, 通过上述流程实际可能读取10k数据 和 多次IO.
 
 - `delete`
+
+## 对比
+
+### vs b+tree
+
+    相比b+tree, LSM更擅长写入, 更劣于读取
 
 ## 实例
 
