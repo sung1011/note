@@ -1,15 +1,15 @@
 # redis 编码 hashtable
 
-OBJ_ENCODING_HT
+    OBJ_ENCODING_HT
 
 ## 作用于
 
-OBJ_HASH  
-OBJ_SET
+    OBJ_HASH  
+    OBJ_SET
 
 ## source code
 
-src/dict
+    src/dict
 
 ## 数据结构
 
@@ -66,19 +66,19 @@ index = hash & dict->ht[?].sizemask;  // 使用哈希表的sizemask属性和哈�
 
 ## 键冲突
 
-Q: 当2+个键被分配到哈希表数组的同一个索引, 即键冲突 collision  
+    Q: 当2+个键被分配到哈希表数组的同一个索引, 即键冲突 collision  
 
-A: 通过链地址法(separate chaining)解决, 新节点添加到链表表头位置.
+    A: 通过链地址法(separate chaining)解决, 新节点添加到链表表头位置.
 
 ## rehash
 
-Q: 哈希表键值对太多或太少  
+    Q: 哈希表键值对太多或太少  
 
-A: 进行rehash操作来扩容或缩容(改变哈希表数组的大小)
+    A: 进行rehash操作来扩容或缩容(改变哈希表数组的大小)
 
 ### 渐进式rehash
 
-条件: CURD时 || 定时器
+    条件: CURD时 || 定时器
 
 > dict->rehashindex 记录了迁移的索引进度
 
@@ -117,8 +117,3 @@ d->ht[0].used >= d->ht[0].size && (dict_can_resize || d->ht[0].used/d->ht[0].siz
 | dictGetRandomKey | 随机返回一个键值对                 | O(1)   |
 | dictDelete       | 字典中删除给定键所对应键值对       | O(1)   |
 | dectRelease      | 释放给定字典, 及字典中所有键值对   | O(N)   |
-
-## issues
-
-如何保证field互斥的？  
-random为啥O(1)？

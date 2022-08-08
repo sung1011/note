@@ -9,7 +9,6 @@
 - `Follower跟随者` 不会主动发送请求, 只简单响应`Leader`或`Candidate`的请求; 客户端对`Follower`请求, 会被`Follower`重定向到Leader.
 
 - `Candidate候选人` 若`Follower`接收`Leader`的心跳超时, 它就会变成`Candidate`并发起一次选举(新任期Term), 获得半数以上选票的`Candidate`会成为新`Leader`; 选票平分或都不超半数则重选.
-  - `PreCandidate` 假设网络原因当某个`Follower`无法收到心跳, 它将不断自增term并发起选举. 为避免此类无效选举, etcd3.4引入`PreVote参数`(默认false), 令`Follower`转`Candidate`前先进入`PreCandidate`状态, 不自增term发起预投票, 大多数节点认可才真正开始选举流程
 
 ### 流程
 
@@ -22,21 +21,21 @@
 
    - `重选` 多个`Candidate`时, 可能选票无法超越半数, 此时Term加1并`RequestVote RPC`重新选举, 故不会出现多个`Leader`
 
-> 当选条件/投票原则: `Follower`会拒绝日志没有自己新(先对比term, 后对比lastLogIndex)的`RequestVote RPC`; 即 `Candidate`至少要比大多数新才能当选
+> 当选条件/投票原则: `Follower`会拒绝日志没有自己新(先对比term, 后对比lastLogIndex)的`RequestVote RPC`; 即 `Candidate`的term至少要比大多数新才能当选; 即没我积极我不同意, 没我知道的多我不同意.
 
 ### 异常
 
 #### 多个Candidate同时出现?
 
-选举时间: 每个选举的时间都是随机的, 以减小出现多个`Candidate`同时出现的概率
+     选举时间: 每个选举的时间都是随机的, 以减小出现多个`Candidate`同时出现的概率
 
 #### 网络原因导致某个Follower无法接收心跳?
 
-`PreVote`: 假设网络原因当某个`Follower`无法收到心跳, 它将不断自增term并发起选举. 为避免此类无效选举, etcd3.4引入`PreVote参数`(默认false), 令`Follower`转`Candidate`前先进入`PreCandidate`状态, 不自增term发起预投票, 大多数节点认可才真正开始选举流程
+     `PreVote`: 假设网络原因当某个`Follower`无法收到心跳, 它将不断自增term并发起选举. 为避免此类无效选举, etcd3.4引入`PreVote参数`(默认false), 令`Follower`转`Candidate`前先进入`PreCandidate`状态, 不自增term发起预投票, 大多数节点认可才真正开始选举流程
 
 #### 多个Leader同时出现?
 
-任期
+     任期term
 
 ---
 
@@ -57,7 +56,7 @@
 
 ### 一致性
 
-`Leader` `Follower` 冲突的日志会被`Leader`的日志覆盖
+      `Leader` `Follower` 冲突的日志会被`Leader`的日志覆盖
 
 1. `Leader`针对每个`Follower`都维护了一个`nextIndex`字段(下一个需要发送给该Follower的日志索引值).
 2. 当`Leader`刚获得权力时,他初始化所有`nextIndex`作为自己最后一条日志的索引值+1
@@ -92,7 +91,7 @@
 
 ### `InstallSnapshot RPC` 分块日志快照给太落后的节点进行覆盖 L->F
 
-分块的日志快照
+      分块的日志快照
 
 ---
 

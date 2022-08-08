@@ -29,6 +29,18 @@ typedef struct redisObject {
 } robj;
 ```
 
+## obj
+
+### [string对象](redis-obj-string.md)
+
+### [list对象](redis-obj-list.md)
+
+### [hash对象](redis-obj-hash.md)
+
+### [set对象](redis-obj-set.md)
+
+### [zset对象](redis-obj-zset.md)
+
 ## obj与encoding关系
 
 `ssize_t rdbSaveObjectType(rio *rdb, robj *o, robj *key)` # src/rdb.c
@@ -41,16 +53,6 @@ typedef struct redisObject {
 | set      | intset           | hashtable             |
 | zset     | ziplist          | skiplist              |
 
-## [string对象](redis-obj-string.md)
-
-## [list对象](redis-obj-list.md)
-
-## [hash对象](redis-obj-hash.md)
-
-## [set对象](redis-obj-set.md)
-
-## [zset对象](redis-obj-zset.md)
-
 ## [LRU](redis-cache-eliminate.md)
 
-## [refcount](redis-obj-refcount.md)
+## [引用计数 refcount](redis-obj-refcount.md)

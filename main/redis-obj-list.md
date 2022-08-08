@@ -4,9 +4,9 @@ OBJ_LIST
 
 ## encoding
 
-- [OBJ_ENCODING_ZIPLIST](redis-encoding-ziplist.md)
 - [OBJ_ENCODING_QUICKLIST](redis-encoding-quicklist.md)
-<!-- OBJ_ENCODING_LINKEDLIST   -->
+- [OBJ_ENCODING_ZIPLIST](redis-encoding-ziplist.md)
+- OBJ_ENCODING_LINKEDLIST  
 
 ### 实例
 
@@ -30,19 +30,24 @@ redisObject {
 
 ### 转换
 
-| encoding   | 条件                                |
-| ---------- | ----------------------------------- |
-| linkedlist | 元素值字符长度 > 64B 或 len > 512   |
-| ziplist    | 元素值字符长度 <= 64B && len <= 512 |
+| encoding           | 条件                                | 解释                          |
+| ------------------ | ----------------------------------- | ----------------------------- |
+| ziplist压缩链表    | 元素值字符长度 <= 64B && len <= 512 | 节约空间                      |
+| linkedlist双向链表 | 元素值字符长度 > 64B 或 len > 512   | zip空间连续, 修改时需重新分配 |
+| quicklist快速链表  | ver >= 3.2                          | 结合时间和空间                |
 
-> 条件可通过配置修改 `list-max-ziplist-value`、`list-max-ziplist-entries`
+> quicklist重要配置参数 `每个node的字节大小限制 list-max-ziplist-value`、`每个node的entries数量 list-max-ziplist-entries`
+
+## ref
+
+- quicklist <https://blog.csdn.net/ldw201510803006/article/details/122384221>
 
 <!-- ## 实现
 
-| cmd     | ziplist                                                      | linkedlist                                                    |
-| ------- | ------------------------------------------------------------ | ------------------------------------------------------------- |
-| LPUSH   | 调用ziplistPush                                              | 调用listAddNodeHead                                           |
-| RPUSH   | 调用ziplistPush                                              | 调用listAddNodeTail                                           |
+| cmd     | ziplist                                                     | linkedlist                                                   |
+| ------- | ----------------------------------------------------------- | ------------------------------------------------------------ |
+| LPUSH   | 调用ziplistPush                                             | 调用listAddNodeHead                                          |
+| RPUSH   | 调用ziplistPush                                             | 调用listAddNodeTail                                          |
 | LPOP    | 调用ziplistIndex定位表头, 调用ziplistDelete删除表头.        | 调用listFirst定位表头, 调用listDelNode删除表头.              |
 | RPOP    | 调用ziplistIndex定位表尾, 调用ziplistDelete删除表尾.        | 调用listLast定位表尾, 调用listDelNode删除表尾.               |
 | LINDEX  | 调用ziplistIndex定位节点, 返回节点所保存的元素.             | 调用listIndex定位节点, 然后返回节点所保存的元素.             |

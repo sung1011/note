@@ -1,15 +1,15 @@
 # redis 编码 sds
 
-OBJ_ENCODING_EMBSTR  
-OBJ_ENCODING_RAW  
+    OBJ_ENCODING_EMBSTR  
+    OBJ_ENCODING_RAW  
 
 ## 作用于
 
-string
+    string
 
 ## source code
 
-src/sds
+    src/sds
 
 ## 数据结构
 

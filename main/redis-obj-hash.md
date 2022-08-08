@@ -2,8 +2,8 @@
 
 ## encoding
 
-- OBJ_ENCODING_ZIPLIST  
-- OBJ_ENCODING_HT  
+- [OBJ_ENCODING_ZIPLIST](redis-encoding-ziplist.md)
+- [OBJ_ENCODING_HT](redis-encoding-hashtable.md)
 
 ### 实例
 
@@ -31,7 +31,5 @@ redisObject {
 | -------- | ----------------------------------- |
 | ht       | 元素值字符长度 > 64B 或 len > 512   |
 | ziplist  | 元素值字符长度 <= 64B && len <= 512 |
-
-> 条件可通过配置修改 `list-max-ziplist-value`、`list-max-ziplist-entries`
 
 <!-- ## 实现 -->

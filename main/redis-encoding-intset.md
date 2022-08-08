@@ -1,10 +1,15 @@
 # redis 编码 intset
 
-OBJ_ENCODING_INTSET
+    OBJ_ENCODING_INTSET
 
 ## 作用于
 
-OBJ_SET
+    OBJ_SET
+
+## 特性
+
+    有序
+    去重
 
 ## 数据结构
 
@@ -20,7 +25,7 @@ typedef struct intset {
 
 ## 升级
 
-添加比集合中元素类型更长的新元素, 需要先升级.(如 [1,2,3] -> [1,2,3,65535]即int16升级int32)
+    添加比集合中元素类型更长的新元素, 需要先升级.(如 [1,2,3] -> [1,2,3,65535]即int16升级int32)
 
 ### 步骤
 
@@ -32,9 +37,7 @@ typedef struct intset {
 
 ## 降级
 
-不支持降级
-
-## 特性
+   不支持降级
 
 ## API
 
@@ -48,9 +51,3 @@ typedef struct intset {
 | intsetGet     | 取出底层数组在给定索引上的元素. | O(1)                                                                       |
 | intsetLen     | 返回整数集合包含的元素个数.     | O(1)                                                                       |
 | intsetBlobLen | 返回整数集合占用的内存字节数.   | O(1)                                                                       |
-
-## issues
-
-- 集合元素互斥性如何保证？
-
-排序的
