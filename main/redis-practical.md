@@ -13,8 +13,6 @@
 
 `restore srckey 0 "{dump dstkey}"` // 伪代码
 
-## scan所有  
-
 ## 大key
 
 1. redis-cli --bigkeys  
@@ -22,7 +20,9 @@
 
 ## 删除匹配到的key  
 
-`redis-cli keys *something* | xargs redis-cli del`  
+```bash
+   redis-cli keys *something* | xargs redis-cli del  
+```
 
 ## 从文件中执行命令(大量) --pipe
 
@@ -37,3 +37,10 @@
    cat < file > | redis-cli --pipe
 ```
 
+## 高可用
+
+```bash
+   - 主从复制
+   - 哨兵模式
+   - 集群
+```

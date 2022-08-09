@@ -1,13 +1,13 @@
 # auth
 
-## [token]
+## token
 
 ## [Cookie](cookie.md)
 
-## [session]
+## session
 
 ## [OAuth](oauth.md)
 
 ## [JWT](JWT.md)
 
-## [SSO]
+## SSO

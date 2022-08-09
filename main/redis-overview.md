@@ -14,7 +14,7 @@
 
 ## version
 
-### Redis2.6
+### Redis 2.6
 
 > released 2012
 
@@ -32,7 +32,7 @@
 12. info可以按照section输出, 并且添加了一些统计项
 13. sort命令优化
 
-### Redis2.8
+### Redis 2.8
 
 > released 2013.11.22
 
@@ -45,7 +45,7 @@
 7. 发布订阅添加了pubsub.
 8. Redis Sentinel第二版, 相比于Redis2.6的Redis Sentinel, 此版本已经变成生产可用.
 
-### Redis3.0(里程碑)
+### Redis 3.0(里程碑)
 
 > released 2015.4.1
 
@@ -60,7 +60,7 @@
 9. Redis日志小做调整: 日志中会反应当前实例的角色(master或者slave).
 10. incr命令性能提升.
 
-### Redis3.2
+### Redis 3.2
 
 > released 2016.5.6
 
@@ -81,20 +81,20 @@
 15. cluster nodes命令得到加速.
 16. Jemalloc更新到4.0.3版本.
 
-### Redis4.0
+### Redis 4.0
 
 > released 2016.12.02
 
 1. 提供了模块系统, 方便第三方开发者拓展Redis的功能.
 2. `PSYNC2.0: 优化了之前版本中, 主从节点切换必然引起全量复制的问题.`
 3. `提供了新的缓存剔除算法: LFU(Last Frequently Used) , 并对已有算法进行了优化.`
-4. 提供了非阻塞del和flushall/flushdb功能, 有效解决删除了bigkey可能造成的Redis阻塞.
+4. 提供了多线程非阻塞del和flushall/flushdb功能, 有效解决删除了bigkey可能造成的Redis阻塞.
 5. 提供了memory命令, 实现对内存更为全面的监控统计.
 6. 提供了交互数据库功能, 实现Redis内部数据库的数据置换.
 7. 提供了RDB-AOF混合持久化格式, 充分利用了AOF和RDB各自优势.
 8. Redis Cluster 兼容NAT和Docker.
 
-### Redis5.0
+### Redis 5.0
 
 > released 2018.05.29
 
@@ -117,3 +117,7 @@
 17. Lua 相关的改进
 18. 引入动态的 HZ(Dynamic HZ) 以平衡空闲 CPU 使用率和响应性
 19. 对 Redis 核心代码进行了重构并在许多方面进行了改进
+
+### Redis 6.0
+
+1. 多线程读写并发

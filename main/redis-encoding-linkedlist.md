@@ -1,14 +1,14 @@
 # redis 编码 linkedlist 双端链表
 
-OBJ_ENCODING_LINKEDLIST
+    OBJ_ENCODING_LINKEDLIST
 
 ## 作用于
 
-OBJ_LIST
+    OBJ_LIST
 
 ## souce code
 
-src/adlist
+    src/adlist
 
 ## 数据结构
 

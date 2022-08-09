@@ -26,9 +26,13 @@
 
     prev, next, data
 
+## [压缩列表 ziplist](redis-encoding-ziplist.md)
+
+    entries的数据存储在连续内存, 数据可压缩
+
 ## [快速列表 quicklist](redis-encoding-quicklist.md)
 
-    quicklist
+    linkedlist + ziplist
 
 ## [字典 hashtable](redis-encoding-hashtable.md)
 
@@ -36,14 +40,10 @@
 
 ## [跳跃表 skiplist](redis-encoding-skiplist.md)
 
-    member, score多重索引
+    member, score 包含多重索引的双向链表
 
 ## [整数集合 intset](redis-encoding-intset.md)
 
-    数组
-
-## [压缩列表 ziplist](redis-encoding-ziplist.md)
-
-    ziplist
+    有序 去重
 
 ## [stream](_) TODO

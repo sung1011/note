@@ -6,20 +6,23 @@
 
 ## 优点
 
-- 间隔较短, 足够耐久耐用(durable)  
-- 容灾性好(redis-check-aof修复)  
-- 重写  
-- 易读易用  
+    - 间隔较短, 足够耐久耐用(durable)  
+    - 容灾性好(redis-check-aof修复)  
+    - rewrite  
+    - 易读易用, 可编辑  
 
 ## 缺点
 
-- 文件较大  
-- 重写很消耗CPU和内存
+    - 文件较大  
+    - 重写很消耗CPU和内存
 
 ## 流程
 
-1. reids会将收到的每一个写命令以一定格式通过write()函数写入到内存缓存区aof_buf
-2. 后台线程flushAppendOnlyFile()将aof_buf内容写入到文件
+1. 执行命令
+2. 执行成功的命令写入内存 aof_buf
+3. 内存 aof_buf 写入文件 (由后台线程)
+
+> `先执行` redis不语法检查, 所以先执行确认返回值是正确, 才写文件; 有可能丢失和阻塞
 
 ## 配置
 
@@ -30,7 +33,8 @@
 
 ## rewrite
 
-      为了压缩aof的持久化文件(aof文件是可读的 + 保存了全部写操作 所以体积会很大).  
+      aof文件是可读的 + 保存了全部写操作 所以体积会很大
+      rewrite可以压缩aof的持久化文件 
 
 1. redis调用fork(), 现在有父子两个进程.  
 2. 子进程根据`内存`中的数据库快照, 往临时文件中写入重建数据库状态的命令.`注意: 这里是重写了aof文件,  并没有读取旧aof`  
@@ -38,9 +42,7 @@
 4. 当子进程把快照内容以命令方式写到临时文件中后, 子进程发信号通知父进程.父进程把缓存的写命令也写入到临时文件.  
 5. 现在父进程可以使用临时文件替换老的aof文件, 并重命名, 后面收到的写命令也开始往新的aof文件中追加.  
   
-> 手动 bgrewriteaof >2.2  
-
-> 自动 bgrewriteaof >2.4
+> bgrewriteaof >2.2手动 >2.4自动
 
 ## 容灾修复
 
@@ -51,9 +53,13 @@
 
 ## RDB + AOF  
 
-1. `BGREWRITEAOF`, `BGSAVE`无法同时使用.
-2. RBD与AOF同时生效时, AOF优先级更高.
+- AOF的`BGREWRITEAOF`, RBD的`BGSAVE`无法同时使用(防止IO过高).
+- AOF优先级更高.
 
 ## 过期
 
-slaves不会独立处理过期, 会等到master执行DEL命令.
+    slaves不会独立处理过期, 会等到master执行DEL命令.
+
+## ref
+
+- <http://www.redis.cn/topics/persistence.html>

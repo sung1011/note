@@ -6,7 +6,7 @@ OBJ_LIST
 
 - [OBJ_ENCODING_QUICKLIST](redis-encoding-quicklist.md)
 - [OBJ_ENCODING_ZIPLIST](redis-encoding-ziplist.md)
-- OBJ_ENCODING_LINKEDLIST  
+- [OBJ_ENCODING_LINKEDLIST](redis-encoding-linkedlist.md)
 
 ### 实例
 
