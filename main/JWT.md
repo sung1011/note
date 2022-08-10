@@ -2,30 +2,31 @@
 
 @@json @@jwt @@跨语言 @@协议 @@加密 @@SSO @@非对称加密
 
-    S认证后, S发给C一段密文, 只有S能解开, 过程只依赖一个S端的secretKey, 不需要依赖额外数据.
+    S认证后, 返回一段密文(JWT)给C, JWT包含账号非敏感信息, 只有S能解开, 改过程不依赖额外数据 只依赖一个S端的secretKey.
+    作用: 认证登陆过, 传递payload信息
 
 ## 特征
 
-1. 跨语言
-2. 不需要保存在server, 对内存和分布式友好
-3. 传输数据量小
+- 跨语言
+- 不需要保存在server, 对内存和分布式友好
+- 传输数据量小
 
 > session的问题就在于需要保存在server
 
 ## 用途
 
-1. 认证
-2. 交换payload信息(安全无篡改)
+- 认证
+- 交换payload信息(无法篡改)
 
 ## 缺点
 
-1. 无法使用过程中废止某个token(因为S不保存会话信息)
+- 无法使用过程中废止某个token(因为S不保存会话信息)
 
 ## 流程
 
 1. C发送账号密码
 2. S验证, 并返回`JWT`
-3. C通过HTTP header每个请求将`JWT`传递给服务端
+3. C通过每个请求的 HTTP header 将`JWT`传递给服务端
 4. S对`JWT`验签, 并获取payload信息
 
 > HTTP-header: `Authorization: Bearer {JWT}`  
