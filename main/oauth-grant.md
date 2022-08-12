@@ -43,7 +43,7 @@
 
 ```bash
 # 适用于: app
-# app先申请授权码, user登录res-server获得授权码, 回调给app-server, app-server再通过授权码获取令牌.
+# user登录res-server获得auth-code 并回调给app-server, app-server再通过auth-code申请token.
 
 
 # 1. app跳转到res-server, 登录后授权

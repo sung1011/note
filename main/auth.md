@@ -4,9 +4,15 @@
 
 ## [Cookie](cookie.md)
 
+    S端通过Cookie在C端记录会话状态
+
 ## session
 
 ## [OAuth](oauth.md)
+
+    分离`第三方应用(app)`和`资源所有者(user)`.
+    user同意以后 `资源服务器(res server)`向app颁发令牌.
+    app通过令牌请求数据.
 
 ## [JWT](JWT.md)
 

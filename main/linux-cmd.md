@@ -30,12 +30,15 @@ crc32 go1.17.5.darwin-amd64.pkg
 ### 简单重定向
 
 ```bash
-# cmd > file; 清空file, 输出重定向到file; bash的
+# 清空file, 输出重定向到file; bash的
+cmd > file
 
-# cmd >> file; 不清空file, 输出重定向到file
+# 不清空file, 输出重定向到file
+cmd >> file
 
-# cmd < file; 使cmd从file读入
-yum install -y $(<package.list)
+# cmd读入file
+cmd < file
+# 如 yum install -y $(<package.list)
 
 # cmd << file; 
 cat <<EOF
@@ -43,21 +46,27 @@ abc
 def
 EOF
 
-# cmd <<< word
+cmd <<< word
 
-# cmd <> file
+cmd <> file
 
-# cmd >| file
+cmd >| file
 
 ```
 
 ### echo
 
 ```bash
-echo -n a;echo b; # -n 输出出现在同一行
+echo a; echo b
+a
+b
+
+# -n 输出出现在同一行
+echo -n a;echo b 
 ab
 
-echo -e "hello\nword" # -e 解释特殊字符
+# -e 解释特殊字符
+echo -e "hello\nword" 
 hello
 word
 ```
@@ -87,7 +96,6 @@ cat log || ls log # cat失败才会ls
 # cmd <&n-	移动输入文件描述符n而非复制它.(需要解释)
 
 # cmd >&n-	移动输出文件描述符 n而非复制它.(需要解释)
-
 ```
 
 ### 组合重定向
@@ -195,6 +203,8 @@ netstat -nat
 ```
 
 ## ping
+
+    协议: ICMP（Internet Control Message Protocol 因特网报文控制协议）
 
 ## traceroute
 

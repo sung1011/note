@@ -2,16 +2,17 @@
 
 ## 意义
 
-验证HTTPS网站是否可信  
-防止中间人攻击  
+    验证HTTPS网站是否可信  
+    防止中间人攻击  
 
 ## 证书链
 
 ![calink](res/CA-link.png)
-证书以证书链形式存在.  
-最上层为root, 即CA, 用来颁发证书.  
-最下层为end-user, 对应每个网站购买使用的证书.  
-中间层为intermediates, 即二级CA、三级CA...帮助root颁发证书.  
+
+    证书以证书链形式存在.  
+    最上层为root, 即CA, 用来颁发证书.  
+    最下层为end-user, 对应每个网站购买使用的证书.  
+    中间层为intermediates, 即二级CA、三级CA...帮助root颁发证书.  
 
 ## 证书组成
 
@@ -41,7 +42,6 @@
 6. 将签过名的数字证书与 `Issuer 的公钥` 一同发给客户端.
 
 ```bash
-
 证书 = 多个元数据 = 签发人( Issuer )、签发时间、有效期 + 证书持有者( Owner )的基本信息, 比如 DN(DNS Name, 即证书生效的域名)、 Owner的公钥...  
 
 摘要 = hash(证书) = hash算法如SHA-256对数字证书散列  
@@ -80,15 +80,15 @@
 
 ### DV domain validated 域名验证  
 
-便宜 快捷  
+      便宜 快捷  
 
 ### OV organization validated 组织验证  
 
-较贵 中速
+      较贵 中速
 
 ### EV extended validated 扩展验证  
 
-最贵 难申请 浏览器显示名称与国家  
+      最贵 难申请 浏览器显示名称与国家  
 
 ## 申请流程
 
@@ -98,5 +98,5 @@
 
 ## ref
 
-[证书链](https://www.jianshu.com/p/fcd0572c4765)
-[SSL证书原理讲解](https://www.cnblogs.com/dinglin1/p/9279831.html)
+- [证书链](https://www.jianshu.com/p/fcd0572c4765)
+- [SSL证书原理讲解](https://www.cnblogs.com/dinglin1/p/9279831.html)

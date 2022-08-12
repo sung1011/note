@@ -65,7 +65,7 @@
 
 ### [boltDB](main/boltDB.md)
 
-### [ELK](_) TODO
+<!-- ### [ELK](_) TODO -->
   
 ---
 
@@ -106,8 +106,6 @@
 ### [micro server 微服务](main/ms.md)
 
 ### [协程](main/linux-coroutine.md)
-
-### [GUID](_) TODO
 
 ---
 
@@ -153,4 +151,4 @@
 
 ### [markdown](main/markdown.md)
 
-### [exp 经验](main/exp.md)
+### [exp 经验教训](main/exp.md)

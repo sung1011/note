@@ -1,7 +1,14 @@
 # cookie
 
-    Cookie通过在客户端记录会话状态, 确定用户身份
-    S端可以修改C端的cookie(响应头`Set-Cookie`), C对S的每个请求都会带有全部cookie数据
+    S端通过Cookie在C端记录会话状态
+
+## 方式
+
+    S端可以修改C端的cookie(响应头`Set-Cookie`)
+
+## 传输
+
+    C对S的每个请求都会带有全部cookie数据
 
 ## 不可跨域
 
@@ -18,11 +25,9 @@
 
 > 是指一个name=value的value的限制, 而非一个域名下所有cookie
 
-> 每个请求都会带着全部cookie
-
 ## 安全性
 
-TODO
+    TODO
 
 ## 属性
 

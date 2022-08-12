@@ -27,13 +27,13 @@
 
     C -------------------------> S: `ACK` ack=k+1 # ok, 建立连接吧
                             ESTABLISHED
+
+# 第三次握手的意义
+    # 当第一次 第二次握手出现延迟, S端依然会正常响应, 但C端已认为过期, 于是不会发起第三次握手建立连接, 重新建立连接.
+    # 反之, 若无第三次握手, S端会在第二次握手就开始建立连接, 而C端此刻已经认为过期并重新建一条连接了, 浪费S资源.
 ```
 
-> 当第一次握手出现网络延迟, 第二次握手依然会正常响应(但C端已认为过期), 这时第三次握手就会被抛弃, S端没收到第三次握手就不会建立连接.  
-
-> 反之, 若无第三次握手, S端会在第二次握手就开始建立C端已经认为过期抛弃的连接, 浪费资源.
-
-> SYN_RCVD [syn_ack flood](ddos.md)
+> [syn_ack flood](ddos-syn-ackflood.md)
 
 ### 四次挥手
 
@@ -51,16 +51,23 @@
  TIME_WAIT              LAST_ACK (压测时C端突然断开, S端很多LAST_ACK
 
 
-    C --------------------> S: `ACK` ack=j+1 # ok, 我关了, 你也关吧. (并且轮询几下检测是否真断了)
+    C --------------------> S: `ACK` ack=j+1 # ok, 我关了, 你也关吧. (并且进入time_wait, 然后轮询几下检测是否真断了)
   CLOSED
                         CLOSED
+# 第二, 三次挥手的意义
+    # 服务端还在处理数据无法立即关闭socket, 故只能先回复一个ACK确认.  
+
+# 第四次挥手的意义
+    # 第四次挥手后进入time_wait状态, 在2MSL时间点发送ACK(以确保连接中所有报文都过期) 并 重复几次这个过程(以确保S连接关闭)
 ```
 
-> 第二, 三次挥手的意义在于, 服务端还在处理数据无法立即关闭socket, 故只能先回复一个ACK确认.  
+> `MSL` maximum segment lifetime 报文最大生存时间 30s~60s
 
-> 第四次挥手会进入time_wait状态, 在 2MSL 时间点发送ACK (以保障连接中C的最后一个ACK和S的最后一个FIN都已消失)
+## 可靠传输
 
-> MSL: maximum segment lifetime 报文最大生存时间 30s~60s
+```bash
+    发出报文在超时时间内没有收到确认, 则重传
+```
 
 ## 流量控制
 
@@ -117,8 +124,18 @@ cwnd=0停止发送, 设置定时器
 cwnd>0, 继续发送
 ```
 
+## 超时 与 重传
 
-## 拥塞控制
+```bash
+    不是固定时间, 而是动态的, 每个连接有独立的超时时间
+    超时后会重传
+```
+
+> `RTT Round-Trip-Time` 往返时延，也就是数据包从发出去到收到对应 ACK 的时间。RTT 是针对连接的，每一个连接都有各自独立的 RTT。
+
+> `RTO Retransmission-Time-Out` 重传超时，也就是前面说的超时时间。
+
+## 拥塞控制 与 重传
 
 ![img](res/tcp-flow-limit.png)
 
@@ -180,7 +197,7 @@ cwnd=2k, ssthresh=10k = 9k+1k
 - 快重传 与 快恢复
 
 ```bash
-# 快重传
+# 快重传 快恢复
 
 # 不设置定时器, 3次ack后马上重传丢失的数据包#2
 # 重传后不进行慢开始(cwnd=1) 而是设置为与ssthresh相等(cwnd=ssthresh)
@@ -209,7 +226,8 @@ cwnd=2k, ssthresh=10k = 9k+1k
                 #2   询问3次后 快速重传#2
     C --------------------> S
     C <-------------------- S
-cwnd=9k(与sthresh相等), ssthresh=9k (出现网络拥塞时的窗口大小的一半 (cwnd/2 = 18/2))
+
+# cwnd=9k(与sthresh相等), ssthresh=9k (出现网络拥塞时的窗口大小的一半 (cwnd/2 = 18/2))
 ```
 
 > "快重传+快恢复"相比"慢开始+拥塞避免", 重传更快(不用等计时器), 窗口恢复更合理(cwnd不用重置为1, 而是重置为ssthresh相同的值)
@@ -223,14 +241,18 @@ cwnd=9k(与sthresh相等), ssthresh=9k (出现网络拥塞时的窗口大小的�
 # 假如发送缓冲区/接收缓冲区容量都是5
                     send buffer (cap=5)                           recv buffer (cap=5)
         C -----------> < aabbb > -------------TCP连接-------------> < iijkk > -----------------> S
-            aaaa         (粘包)      bcccc ccccc ccdde efghi                       kk lll m nnn... (拆包)
+            aa         (粘包)      bcccc ccccc ccdde efghi                       kk lll m nnn... (拆包)
 ```
 
 > HTTP协议会帮助处理粘包/拆包, 基于TCP自定义协议需要关注粘包/拆包问题.
 
+> `重传` 丢包使数据不完整, 则会整个重传
+
 ## ref
 
+- 超时与重传机制 <https://zhuanlan.zhihu.com/p/101702312>
 - tcp状态 <https://blog.csdn.net/wuji0447/article/details/78356875>
 - 理解TCP <https://www.jianshu.com/p/ca64764e4a26>
 - TCP流量控制,拥塞控制 <https://zhuanlan.zhihu.com/p/37379780>
 - 流量控制 <https://www.cnblogs.com/kubidemanong/p/9987810.html>
+- 传输层 <https://github.com/CyC2018/CS-Notes/blob/master/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%20-%20%E4%BC%A0%E8%BE%93%E5%B1%82.md>

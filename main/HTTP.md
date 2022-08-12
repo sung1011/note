@@ -1,6 +1,6 @@
 # HTTP
 
-    @@HTTP
+@@HTTP
 
     基于TCP协议, 属于OSI应用层的面向对象的超文本传输协议.
 
@@ -34,7 +34,7 @@ action=login&uid=4
 
 ### [请求行 line](HTTP-req-line.md)
 
-### [请求头 header](HTTP-header.md)
+### [请求头 header](HTTP-header.md#http请求头)
 
 ### 请求空行 CRLF
 
@@ -61,19 +61,20 @@ Connection: keep-alive
 
 ### [响应行 line](HTTP-resp-line.md)
 
-### [响应头 header](HTTP-header.md)
+### [响应头 header](HTTP-header.md#http响应头)
 
 ### 响应体 body
 
+略
+
 ## 网络流程
 
-1. `HTTP` GET google.com http1.1
-2. `DNS` domain name: google.com; IP 39.156.69.79
+1. `DNS` domain name: google.com; IP 39.156.69.79
+2. `HTTP` GET google.com http1.1
 3. `TCP` src port: 5678; dst port: 80
 4. `IP` src IP: 120.244.152.147; dst IP 39.156.69.79
 5. `MAC` src MAC: dc:a9:04:8f:98:aa; src GateWay MAC: 32:35:2f:dc:e4:8a
 6. `Router` dst {router1 ip}, {router2 ip}, {router3 ip}, {router4 ip} ...;
-
 
 ## [TCP协议](TCP.md)
 
