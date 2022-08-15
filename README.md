@@ -97,15 +97,15 @@
 
 ### [cryptography 加密](main/crypt.md)
 
-### [splite brain 脑裂](main/splite-brain.md)
+### [splite-brain 脑裂](main/splite-brain.md)
 
 ### [blockchain 区块链](main/blockchain.md)
 
-### [middle end 中台](main/middle-end.md)
+### [middle-end 中台](main/middle-end.md)
 
-### [micro server 微服务](main/ms.md)
+### [micro-server 微服务](main/ms.md)
 
-### [协程](main/linux-coroutine.md)
+### [coroutine 协程](main/linux-coroutine.md)
 
 ---
 

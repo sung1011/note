@@ -24,4 +24,4 @@
 
 ### path
 
-    {dbPath}/journal/WiredTigerLog.<sequence>
+    {dbPath}/journal/WiredTigerLog.{sequence}

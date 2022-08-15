@@ -2,12 +2,12 @@
 
 ## 事务
 
-| 事务属性 | 支持程度                                                |
-| -------- | ------------------------------------------------------- |
-| A        | 单coll单doc 1.x; 复制集多表多行 4.0;分片集群多表多行4.2 |
-| C        | writeConcern, readConcern 3.2                           |
-| I        | readConcern 3.2                                         |
-| D        | journal + replicset                                     |
+| 事务属性 | 支持程度                                                    |
+| -------- | ----------------------------------------------------------- |
+| A        | 单coll单doc 1.x; >=4.0复制集多表多行; >=4.2分片集群多表多行 |
+| C        | >3.2 writeConcern, readConcern                              |
+| I        | >3.2 readConcern                                            |
+| D        | journal + replicset                                         |
 
 > [journal](mongodb-journal.md)
 
@@ -17,11 +17,11 @@
 
 ### 分类
 
-- primary(默认):  读Primary  --- 若该选项, RS中P挂了, 是不会故障转移的.
-- primaryPreferred:  优先读P, 若P不可用, 再读S  
-- secondary:  读Secondary  
-- secondaryPreferred:  优先读S, 若S不可用, 再读P  
-- nearest: 读最近的可达节点上(通过ping时间判定远近)  
+- `primary(默认)` 读Primary; 若该选项, RS中P挂了, 是不会故障转移的.
+- `primaryPreferred` 优先读P; 若P不可用, 再读S  
+- `secondary` 读Secondary  
+- `secondaryPreferred` 优先读S; 若S不可用, 再读P  
+- `nearest` 读最近的可达节点上(通过ping时间判定远近)  
 
 ### 场景
 
@@ -44,15 +44,15 @@
 
 ### 分类
 
-- available 读数据  
-- local 读属于当前分片的数据 (非分片与available一样)
-- majority 读多数节点已提交/不会被回滚的数据 --- 以MVCC机制实现, 避免脏读 --- 隔离级别 Read Committed
-- linearizable 线性读  --- 只对单doc作用, 执行慢需配超时
-- snapshot 读快照  
+- `available` 读数据  
+- `local` 读属于当前分片的数据 (非分片与available一样)
+- `majority` 读多数节点已提交/不会被回滚的数据; 以MVCC机制实现, 避免脏读; 隔离级别 read-committed
+- `snapshot` 读快照; 隔离级别 repeatable-read  
+- `linearizable` 线性读; 只对单doc作用, 执行慢需配超时
 
 ![img](res/mongodb-readconcern-write-timeline.svg)
 
-replset更新一个数据, P、S1、S2分别读取到该数据的时间节点
+      replset更新一个数据, P、S1、S2分别读取到该数据的时间节点
 
 | target | available、local | majority |
 | ------ | ---------------- | -------- |
@@ -62,29 +62,32 @@ replset更新一个数据, P、S1、S2分别读取到该数据的时间节点
 
 ### 场景
 
-- available、local的区别
+#### available、local的区别
   
 ```md
-数据(chunk x)从分片1(shard1)自动迁移到分片2(shard2)的过程中
-如果此时聚合查询涉及shard2,则
+1. 数据(chunk x)从分片1(shard1)自动迁移到分片2(shard2)的过程中
+2. 此时聚合查询涉及shard2
+
 - local 不包含x
 - available 会包含x的脏数据
 
-> 普通的读写依然会操作shard1 (config中依然记录着chunk属于shard1)
+> 普通的读写依然会操作shard1(config中依然记录着chunk属于shard1)
 ```
 
-- majority避免脏读
+#### majority避免脏读
 
-```md
-数据x写入P
-读取P的x
-P挂了
-重新选举
-- 非majority 读到的x是脏数据, 因为x已经从事务角度看发生了回滚
-- majority 会等大多数节点有数据才读, 所以避免了脏读.
+```bash
+1. 数据x写入P
+2. 读取P的x
+3. P挂了
+4. 回滚, 重新选举
+
+# 非majority 读到的x是脏数据, 因为x已经从事务角度看发生了回滚
+
+# majority 会等大多数节点有数据才读, 所以避免了脏读.
 ```
 
-- 读写分离 写P后立刻从S读
+#### 读写分离 写P后立刻从S读
 
 ```md
 // w P + r S 可能读不到
@@ -96,29 +99,31 @@ db.order.insert({oid:123, d:xxx}, writeConcern:{w: majority})
 db.order.find({oid:123}).readPref("secondary").readConcern("majority")
 ```
 
-- lineariable避免脑裂读旧数据
+#### lineariable避免脑裂读旧数据
 
-```md
+```bash
 数据x=1; P, S1, S2发生脑裂, x=2写入S1(新的P)
-- 非lineariable 还会对旧P进行读取值x=1
-- lineariable 对旧P进行读取时, 会对其他进行确认x是否最新
+
+# 非lineariable 还会对旧P进行读取值x=1
+
+# lineariable 对旧P进行读取时, 会对其他进行确认x是否最新
 ```
 
-- 事务隔离性
+#### 事务隔离性
 
-```md
+```js
 db.tb.insert([{x:1},{x:2}])
 var session = db.getMongo().startSession();
 session.startTransaction();
 var coll = session.getDatabase('test').getCollection('tb')
-coll.update({x: 1}, {y: 123}) // 事务内更新
-coll.find({x: 1}) // 事务内查询 x: 1 y: 123
-db.tb.find({x: 1}) // 事务外查询 x: 1 `事务提交前, 事务外看不到事务内的操作, 体现事务隔离性.`
+coll.update({x: 1}, {y: 123})           // 事务内更新
+coll.find({x: 1})                       // 事务内查询 x: 1 y: 123
+db.tb.find({x: 1})                      // 事务外查询 x: 1 `事务提交前, 事务外看不到事务内的操作, 体现事务隔离性.`
 ```
 
-- 可重复读 repeatable-read
+#### 可重复读 repeatable-read
 
-```md
+```js
 db.tb.insert([{x:1},{x:2}])
 var session = db.getMongo().startSession();
 session.startTransaction({
@@ -126,14 +131,14 @@ session.startTransaction({
     writeConcern: {w: majority}
 });
 var coll = session.getDatabase('test').getCollection('tb')
-db.tb.update({x: 1}, {y: 123}) // 事务外更新
-db.tb.find({x: 1}) // 事务外查询 x: 1 y: 123
-coll.find({x: 1}) // 事务内查询 x: 1 `事务内可重复读`
+db.tb.update({x: 1}, {y: 123})          // 事务外更新
+db.tb.find({x: 1})                      // 事务外查询 x: 1 y: 123
+coll.find({x: 1})                       // 事务内查询 x: 1 `事务内可重复读, 不受外部影响`
 ```
 
-- 两个事务写冲突
+#### 两个事务写冲突
 
-```md
+```js
 db.tb.insert([{x:1},{x:2}])
 var session = db.getMongo().startSession();
 session.startTransaction({
@@ -142,16 +147,16 @@ session.startTransaction({
 });
 var coll = session.getDatabase('test').getCollection('tb')
 
-coll1.update({x: 1}, {y: 123}) // 事务1更新
-coll2.update({x: 1}, {y: 456}) // 事务2更新 -> 报错, 该数据被另一事务占用 `两个事务悲观锁`
+coll1.update({x: 1}, {y: 123})          // 事务1更新
+coll2.update({x: 1}, {y: 456})          // 事务2更新 -> 报错, 该数据被另一事务占用 `两个事务悲观锁`
 
-session1.commitTransaction(); // 事务1提交
-coll2.update({x: 1}, {y: 456}) // 事务2更新 -> 依然报错, 该数据被另一事务占用
-session2.abortTransaction(); // 抛弃事务2, 并重启事务(startSession())才可以 `两个事务冲突, 必须abort`
+session1.commitTransaction();           // 事务1提交
+coll2.update({x: 1}, {y: 456})          // 事务2更新 -> 依然报错, 该数据被另一事务占用
+session2.abortTransaction();            // 抛弃事务2, 并重启事务(startSession())才可以 `两个事务冲突, 必须abort`
 
-...coll3.update({x: 1}, {y: 999}) // 重启后的新事务正常修改
-db.coll.update({x: 1}, {y: 1000}) // 阻塞等待事务3提交
-session3.commitTransaction(); // 事务3提交,  事务外的修改立刻成功,  此时y = 1000 `事务外的修改 阻塞等待事务的commit 才能修改成功`
+...coll3.update({x: 1}, {y: 999})       // 重启后的新事务正常修改
+db.coll.update({x: 1}, {y: 1000})       // 阻塞等待事务3提交
+session3.commitTransaction();           // 事务3提交, 事务外的修改立刻成功,  此时y = 1000 `事务外的修改 阻塞等待事务的commit 才能修改成功`
 ```
 
 ---
@@ -159,19 +164,20 @@ session3.commitTransaction(); // 事务3提交,  事务外的修改立刻成功,
 ## 写事务 Write Concern
 
 ![img](res/mongodb-writeconcern-w0.png)  
-非应答写入Unacknowledged  - `{writeConcern:{w:0}}`  
+
+### 非应答写入Unacknowledged  - `{writeConcern:{w:0}}`  
 
 - MongoDB不对客户端进行应答, 驱动会检查套接字, 网络错误等.  
 
 ![img](res/mongodb-writeconcern-w1.png)  
 
-应答写入Acknowledged(默认)  - `{writeConcern:{w:1}}`  
+### 应答写入Acknowledged(默认)  - `{writeConcern:{w:1}}`  
 
 - MongoDB会在收到写入操作并且确认该操作在内存中应用后进行应答, 但不会确认数据是否已写入磁盘;同时允许客户端捕捉网络、重复key等等错误  
 
 ![img](res/mongodb-writeconcern-w1j1.png)  
 
-应答写入+journal写入Journaled  - `{writeConcern:{w:1, j:true}}`  
+### 应答写入+journal写入Journaled  - `{writeConcern:{w:1, j:true}}`  
 
 - 确认写操作已经写入journal日志(持久化)之后应答客户端, 必须允许开启日志功能, 才能生效.(w=写内存后返回,w+j=写内存+写日志后返回)  
 - 写入journal操作必须等待直到下次提交日志时完成写入  
@@ -179,7 +185,7 @@ session3.commitTransaction(); // 事务3提交,  事务外的修改立刻成功,
 
 ![img](res/mongodb-writeconcern-wm.png)  
 
-副本集应答写入Replica Acknowledged   - `{writeConcern:{w:2, wtimeout:5000}}`  - `{writeConcern:{w:majority, wtimeout:5000}}`  
+### 副本集应答写入Replica Acknowledged   - `{writeConcern:{w:2, wtimeout:5000}}`  - `{writeConcern:{w:majority, wtimeout:5000}}`  
 
 - 对于使用副本集的场景, 缺省情况下仅仅从主(首选)节点进行应答  
 - 可修改应答情形为特定数目或者majority(写到大多数)来保证数据的可靠  

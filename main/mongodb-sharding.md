@@ -17,32 +17,31 @@
 
 ## 组成
 
-- `config`  
+### `config`  
 
       用来存储sharded集群的元数据和配置信息
 
 > 轻存储, 可配置小硬盘
   
-- `router` (mongos)  
+### `router` (mongos)  
 
-      路由就是mongos的实例, 客户端直接连接mongos, 由mongos把读写请求路由到指定的Shard上去; 可以配置多个独立的mongos减轻路由压力.
+      路由就是mongos的实例, 客户端直接连接mongos, 由mongos把读写请求路由到指定的Shard上去
 
-> 重CPU, 处理链接用
+> 处理链接消耗大量CPU
 
-> 可以每个app-server配置一个mongos来减轻路由压力
+> monogs不存储数据, 所以不要设为ReplSet
 
-> monogs不存储数据, 所以不要配置为ReplSet
+> 可以配置多个独立的mongos减轻路由压力.
 
 > 不要在mongos上层部署负载均衡. 驱动会无法探测哪些是存活节点, 从而无法自动故障恢复; 驱动无法判定游标是哪个节点创建的, 从而遍历游标时出错.
 
-
-- `shard`  
+### `sharding`  
 
       用来保存分片数据, 保证数据的高可用性和一致性. 可以是一个单独的mongod实例, 也可以是一个副本集 | >= 3.2; 
 
 > 最多个1024分片
 
-> 重硬盘, 重内存
+> 硬盘 内存 消耗量大
 
 ## 名词
 
@@ -52,7 +51,7 @@
   - 取值分布 --- 尽量均匀
   - 避免单调递增减的片键
 - `文档 doc` 包含shard key的一行数据
-- `块 chunk` n个doc 一chunk约64M, 集群间以chunk为单位均衡
+- `块 chunk` n个doc 每个chunk约64M, 集群间以chunk为单位均衡
 - `分片 shard` n个chunk, 主动增减分片, 自动迁移chunk
 - `集合 cluster` n个shard
   
@@ -62,7 +61,7 @@
 
     读写: sharding将读写负载均匀到各个shard, 且workload上限可以通过水平扩展来增加.  
     扩容: 每个shard保存一部分数据, 可以通过增加shards来扩容(动态扩容, 无需下线).  
-    高可用: 即便某个shard不可用了, 整个集群也可以对外提供服务, 只不过访问down掉的shard会报"Connection refused"的错误.
+    高可用: 即便某个shard不可用了, 整个集群也可以对外提供服务, 不过访问down掉的shard会报"Connection refused"的错误.
 
 ### 缺点  
 

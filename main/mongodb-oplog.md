@@ -9,13 +9,15 @@
 
 ## 大小
 
-- 默认
-  - WiredTiger 空闲磁盘5%
-  - In-Memory 物理内存5%
-- 配置 oplogSizeMB
-- 命令
-  - 调整 replSetResizeOplog
-  - 查看 rs.printReplicationInfo()
+```bash
+   - 默认
+     - WiredTiger 空闲磁盘5%
+     - In-Memory 物理内存5%
+   - 配置 oplogSizeMB
+   - 命令
+     - 调整 replSetResizeOplog
+     - 查看 rs.printReplicationInfo()
+```
 
 ## 速度
 

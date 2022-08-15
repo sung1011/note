@@ -154,7 +154,7 @@ db.coll.find().skip(db.coll.count()-1).forEach(printjson)
 db.coll.find().limit(1).sort({$natural:-1})  
 ```  
   
-### 查询文档的field
+### 遍历文档某field
 
 ```js  
 for(var key in db.coll.findOne({_id:"xxx"})) {print (key)}  

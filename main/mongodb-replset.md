@@ -6,6 +6,8 @@
 
 ## [data sync](mongodb-data-sync.md)
 
+## [journal](mongodb-journal.md)
+
 ## [selection](mongodb-selection.md)
 
 ## [deploy](mongodb-deploy.md)

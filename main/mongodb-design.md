@@ -1,10 +1,16 @@
 # mongodb design
 
-## 1对1 内嵌
+## 1对1
 
-## 1对n 数组 {address:['bj', 'tj', 'sh']}
+    内嵌
 
-## n对n 数组+关联 {address: [010, 022, 021]} {code: {110:bj, 022:tj, 021:sh}}
+## 1对n
+
+    数组 {address:['bj', 'tj', 'sh']}
+
+## n对n
+
+    数组+关联 {address: [010, 022, 021]} {code: {110:bj, 022:tj, 021:sh}}
 
 ## 分桶
 
