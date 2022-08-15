@@ -13,7 +13,7 @@
 │   │   └── ...  
 │   ├── git.md  
 │   ├── dict.md  
-│   └── go.md  
+│   └── golang.md  
 │   └── ...  
 ├── README.md             主目录  
 └── self.md  
@@ -27,11 +27,11 @@
 
 ---
 
-## BASIC  
+## BASIC
 
-### [design pattern 设计模式](main/dp.md)
+### [design-pattern 设计模式](main/dp.md)
 
-### [data structure 数据结构](main/data-struct.md)
+### [data-structure 数据结构](main/data-struct.md)
 
 ### [algorithm 算法](main/algo.md)
 
@@ -45,7 +45,7 @@
 
 ---
 
-## DATABASE  
+## DATABASE
 
 ### [redis](main/redis.md)
 
@@ -63,33 +63,35 @@
 
 ### [etcd](main/etcd.md)
 
-### [boltDB](main/boltDB.md)
+<!-- ### [boltDB](main/boltDB.md) -->
 
 <!-- ### [ELK](_) TODO -->
   
 ---
 
-## WEB  
-
-### [authorize](main/auth.md)
-
-### [HTTP](main/HTTP.md)
-
-### [socket 套接字](main/socket.md)
-
-### [protocal 协议](main/protocal.md)
+## WEB
 
 ### [nginx](main/nginx.md)
 
-### [message queue 消息队列](main/mq.md)
+### [authorize](main/auth.md)
 
-### [load balance 负载均衡](main/load-balance.md)
+### [TCP](main/TCP.md)
 
-### [spike 秒杀](main/spike.md)
+### [HTTP](main/HTTP.md)
+
+### [protocal 协议](main/protocal.md)
+
+### [socket 套接字](main/socket.md)
+
+### [message-queue 消息队列](main/mq.md)
+
+### [load-balance 负载均衡](main/load-balance.md)
 
 ---
 
 ## CONCEPT
+
+### [coroutine 协程](main/linux-coroutine.md)
 
 ### [transaction 事务](main/acid.md)
 
@@ -105,11 +107,9 @@
 
 ### [micro-server 微服务](main/ms.md)
 
-### [coroutine 协程](main/linux-coroutine.md)
-
 ---
 
-## DEPLOY  
+## DEPLOY
 
 ### [linux](main/linux.md)
 
@@ -121,15 +121,15 @@
 
 ---
 
-## SAFE  
+## SAFE
 
 ### [DDoS](main/ddos.md)
 
 ---
 
-## PROGRAMMING-LANGUAGE  
+## PROGRAMMING-LANGUAGE
 
-### [golang](main/go.md)
+### [golang](main/golang.md)
 
 ### [php](main/php.md)
 
@@ -139,7 +139,7 @@
 
 ---
 
-## OTHER  
+## OTHER
 
 ### [dict](main/dict.md)
 
@@ -152,3 +152,5 @@
 ### [markdown](main/markdown.md)
 
 ### [exp 经验教训](main/exp.md)
+
+### [spike 秒杀](main/spike.md)

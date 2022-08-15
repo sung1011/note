@@ -8,9 +8,7 @@
 
 ## 索引
 
-## 选举
-
-- [raft](algo-raft.md)
+## [选举](algo-raft.md)
 
 ## 一致性
 

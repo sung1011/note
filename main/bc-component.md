@@ -2,35 +2,35 @@
 
 ## P2P网络协议
 
-网络传输和广播、节点发现和维护.
+        网络传输和广播、节点发现和维护.
 
 ### 网络连接
 
-网络连接基于TCP
+        网络连接基于TCP
 
 ### 拓扑结构
 
-全分布式拓扑结构 (交易从某个节点产生, 广播到邻近节点传播)
+```bash
+        全分布式拓扑结构 (交易从某个节点产生, 广播到邻近节点传播)
 
-```note
-P2P网络拓扑结构分类:
-中心化拓扑(Centralized Topology); 
-全分布式非结构化拓扑(Decentralized Unstructured Topology); 
-全分布式结构化拓扑(Decentralized Structured Topology, 也称作DHT网络); 
-半分布式拓扑(Partially Decentralized Topology).
+        P2P网络拓扑结构分类:
+            中心化拓扑 (Centralized Topology); 
+            全分布式非结构化拓扑 (Decentralized Unstructured Topology); 
+            全分布式结构化拓扑 (Decentralized Structured Topology, 也称作DHT网络); 
+            半分布式拓扑 (Partially Decentralized Topology).
 ```
 
 ### 节点发现
 
-初始节点发现
+        初始节点发现
 
-1. DNS
-2. 硬编码种子节点
+- DNS
+- 硬编码种子节点
 
-启动节点发现
+         启动节点发现
 
-1. 比特币: 拷贝邻近节点的对等节点列表(peer list)
-2. 以太坊: KAD(Kademlia)
+- 比特币: 拷贝邻近节点的对等节点列表(peer list)
+- 以太坊: KAD(Kademlia)
 
 ### 局域网穿透
 

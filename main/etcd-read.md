@@ -64,7 +64,9 @@
 
 ### boltDB
 
-查询版本号对应的值(值的结构为key-value); 先从buffer(内存二分查找)查询; 若未命中再从boltDB(B+tree)查询
+      查询版本号对应的值(值的结构为key-value);
+      先从buffer(内存二分查找)查询;
+      若未命中再从boltDB(B+tree)查询
 
 - 格式
   - key: {version}
