@@ -34,39 +34,48 @@ type bmap struct { // A bucket for a Go map.
 ```go
 m := map[string]int{"red": 1, "green": 2, "blue": 3} // len=3; 常用
 
-m := make(map[string]int, 10) // empty map; len=0; cap=10 常用
+m := make(map[string]int) // empty map; len=0; cap=0 常用; 超过len会自动扩容
+m := make(map[string]int, 100) // empty map; len=0; cap=10 常用, 出于性能考虑
 
-m := map[string]int{} // empty map; prt=xxx len=0 cap=0; 可append
+m := map[string]int{} // empty map; prt=xxx len=0 cap=0;
 
-var m = map[string]int // nil ptr map; panic if written to -- 没啥意义, 不可用, 不能赋值和append
-
+// nil ptr map
+// panic: assignment to entry in nil map
+// "panic if written to" -- 没意义; 不能赋值; 可以查找 删除 循环 统计; 需要用上述方法初始化内存再用
+var m = map[string]int 
 ```
 
-> `len()` 对map而言, len就是cap
+> `len()` 对map而言, len就是cap; map有cap的概念, 但无法使用cap()
 
-> `cap()` map有cap的概念, 但无法使用cap()
+> `key限制` 无法 == 做比较的类型不能做map的key; 如`切片slice`, `函数func`, `包含切片和函数的结构体struct{slice, func}`; chan可以做key
 
-> `key限制` 不能使用 == 做比较的类型不能做map的key; 如`切片slice`, `函数func`, `包含切片和函数的结构体struct{slice, func}`; chan可以做key
-
-> `val限制` 任何类型
+> `val限制` 无限制; 任何类型
 
 ## 返回值 key是否存在
 
 ```go
-m := map[string]int{"a":99, "b":22}
+m := map[string]int{"a":100, "b":200}
 
-v1, exists1 := m["a"] // 99, true
-
+v1, exists1 := m["a"] // 100, true
 v2, exists2 := m["xxx"] // 0, false
 ```
 
+## 不可获取元素地址
+
+```go
+    m := map[string]int{"sun": 1001}
+    _ := &m["sun"]      // 编译错误: cannot take the address of m1["hello"]
+```
+
+> map的增长可能会导致元素地址变更
+
 ## 作为参数
 
-直接传递
-
-> map的副本值(即:指针)作为参数传递给函数.
+        直接传递, 指针的值 (8byte)
 
 ## 并发安全
+
+    同一个变量在多个goroutine中访问需要保证并发安全
 
 ```go
 // 同步锁
@@ -84,13 +93,23 @@ func (r RWMap) Set(key string, val int) {
     defer r.Unlock()
     r.m[key] = val
 }
+
+// ---------------------------------
+func foo() {
+    var lock sync.Mutex
+
+    lock.Lock()
+    mapList["c"] = 3
+    lock.Unlock()
+}
 ```
 
 ```go
 // 原子锁
-var sm sync.Map
-sm.Store(1, "a")
-if v,ok:=sm.Load(1);ok{
+var lock sync.Map
+lock.Store("a", 1)
+lock.Store("b", 2)
+if v,ok:=lock.Load("a");ok{
     fmt.Println(v)
 }
 ```
@@ -107,9 +126,7 @@ originalMap["d"] = 4
 originalMap["e"] = 5
 targetMap := make(map[string]int, 2)
 targetMap = originalMap
-targetMap["d"] = 4444
-
-fmt.Println(originalMap) // map[a:1 b:2 c:3 d:4444 e:5]
+targetMap["d"] = 4444 // map[a:1 b:2 c:3 d:4444 e:5]
 ```
 
 ## 拷贝 (解引用)
@@ -191,4 +208,4 @@ func sortValue(mp map[string]int) {
 
 ## ref
 
-[剖析golang map的实现](https://www.jianshu.com/p/092d4a746620)
+- [剖析golang map的实现](https://www.jianshu.com/p/092d4a746620)

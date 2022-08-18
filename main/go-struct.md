@@ -36,7 +36,7 @@ sp := &Student{"Sam", 18} // 初始化 with顺序初始值
 
 ## 参数传递
 
-    一般传递其指针 &struct
+    一般传递其指针 &struct (8byte)
 
 ## 方法
 
@@ -60,7 +60,7 @@ func (u User) changeName() User {
 
 > 如果一个工厂函数返回的是指针, 其方法都应当使用指针接收者 (即使该方法不修改实例本身); 例外: 让类型值符合某个接口时.
 
-> func(recv) 函数; recv.Method() 方法
+> func(recv) 叫函数; recv.Method() 叫方法
 
 ## 基于基础类型的新类型
 

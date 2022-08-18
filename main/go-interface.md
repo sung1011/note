@@ -1,26 +1,22 @@
 # go 接口
 
-相同行为, 不同实例.(即: 多态)
-
-> 用于同一行为, 实例替换, 如 db, err := sql.Open("mysql", "root:password@tcp(127.0.0.1:3306)") // mysql可换成sqllite, postgresql, oralce  
-
-> 也用于不同类型统一行为, 如 copy(os.Stdout, r.Body)  
+        相同行为, 不同实例. (即: 多态)
 
 ## 数据结构
 
-TODO
+        TODO
 
 ## 方法集methodSet & 参数
 
 ### 概述
 
-接口指针类型接收者`recv(*T)`只能接收指针实例`*T`, 不能接收值类型实例`T`.(注意区别接口方法 和 普通方法, 普通方法无此限制)
+        接口指针类型接收者`recv(*T)`只能接收指针实例`*T`, 不能接收值类型实例`T` (注意区别接口方法 和 普通方法, 普通方法无此限制)
 
 ### 原理
 
-实例的methodSet决定了它所实现的接口, 以及通过receiver可以调用的方法.  
+        实例的methodSet决定了它所实现的接口, 以及通过receiver可以调用的方法.  
 
-通过指针实例可以拿到值类型实例的methodSet(解引用), 通过值实例不能拿到指针实例的methodSet.  
+        通过指针实例可以拿到值类型实例的methodSet(解引用), 通过值实例不能拿到指针实例的methodSet.  
 
 > 多态
 
@@ -43,6 +39,10 @@ func main() {
 func foo(i I) { // 作为参数 转为接口
     i.do()
 }
+
+// 用于同一行为, 实例替换, 如 db, err := sql.Open("mysql", "root:password@tcp(127.0.0.1:3306)") // mysql可换成sqllite, postgresql, oralce  
+
+// 也用于不同类型统一行为, 如 copy(os.Stdout, r.Body)  
 ```
 
 ### 接收者角度
@@ -148,9 +148,8 @@ var x interface{}
 x = 10
 v, ok := x.(int) // 10, true; 断言x是否为实现了int类型(的实例10)的接口.
 // v, ok := x.(*int) // nil, false; 断言有严格的判断.
-```
 
-```go
+
 // 配合switch
 switch x.(type) {
     case int:
@@ -164,4 +163,4 @@ switch x.(type) {
 
 ## ref
 
-[Go语言开发(五)、Go语言面向接口](https://blog.51cto.com/9291927/2130244)
+- [Go语言开发(五)、Go语言面向接口](https://blog.51cto.com/9291927/2130244)

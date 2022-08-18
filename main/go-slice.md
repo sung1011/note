@@ -2,15 +2,13 @@
 
 ## 数据结构
 
-- `ptr` 底层array被切的第一个元素地址 (切口)
-- `len` 切出的`可用`元素个数
-- `cap` 切出的`可用`+`扩展`元素个数 (从切口到array结尾的个数)
+```bash
+    `ptr` 底层array被切的第一个元素地址 (切口)
+    `len` 切出的元素个数
+    `cap` 从切口到底层array结尾的个数
 
-> 可用: 可获取(`sl[4]`), 可赋值(`sl[4] = xxx`)  
-
-> 扩展: 代表不可获取get和直接赋值set; 但可用来继续切(`sl[3:10]`), 或通过append赋值和扩容
-
-> 占用: 固定24byte (=ptr8 + len8 + cap8)
+    # `占用` 固定24byte = ptr8 + len8 + cap8
+```
 
 ## 创建 初始化 访问
 
@@ -28,7 +26,7 @@ var sl []int
 // 数组
 arr := [...]string{"a", "b", "c", "d", "e", "f"}
 // 切片
-sl1 := arr[2:4] // [c, d] len=2 cap=4
+sl1 := arr[2:4] // [c, d] len=2 cap=4 (即6-2)
 // 切片的切片, cap进一步缩小
 sl1_1 := sl1[1:3] // [d, e] len=2 cap=3 (即4-1)
 // 索引3限制cap
@@ -41,7 +39,7 @@ sl2 := arr[2:4:5] // [c, d] len=2 cap=3 (即5-2)
 // 切片赋值, 会同步修改底层数组的元素值.
 arr := [...]string{"a", "b", "c", "d"}
 sl := arr[2:] // [c d]
-sl[0] = "ccc" // arr=[a b ccc, d]
+sl[0] = "ccc" // arr: [a b ccc, d]
 ```
 
 ## 拷贝 (解引用)
@@ -67,7 +65,12 @@ sl1 := append(sl, []string{"a", "b", "c"}...) // ["" a b c] len=4 cap=4; sl&sl1�
 sl2 := append(sl1, "x") // ["" a b c x] len=5 cap=8; sl2新建了底层arr
 ```
 
-> append的扩容机制: cap < 1000时翻倍扩cap;  cap >= 1000 每次扩cap25%
+> append的扩容机制: 更换底层array; cap < 1000时翻倍扩;  cap >= 1000 每次扩25%
+
+## 并发安全
+
+        与map一样, 也需要考虑并发安全
+        同步锁 / chan
 
 ## nil切片 & 空切片
 
@@ -81,9 +84,7 @@ sl2 := append(sl1, "x") // ["" a b c x] len=5 cap=8; sl2新建了底层arr
 
 ## 作为参数
 
-    直接传递
-
-> slice{*ptr, len, cap}的副本值(很小, 包含指向实际数据的指针)作为参数传递给函数.
+      直接传递, ptr+len+cap 的值 (24byte)
 
 ## 迭代
 
@@ -98,19 +99,19 @@ for i, v := range items {
 
 ## 内存GC
 
-问题: 当切片对应的底层数组很大, 而GC不会回收正在被引用的对象, 造成内存浪费.  
-解决: 当函数的返回值是指向底层数组的数据结构(如slice), 应在函数内copy slice到新slice并返回新slice.
-效果: 函数退出时老slice对应的较大的底层数组会被回收, 保存在内存的是新的小slice.
+      问题: 当切片对应的底层数组很大, 而GC不会回收正在被引用的对象, 造成内存浪费.  
+      解决: 当函数的返回值是指向底层数组的数据结构(如slice), 应在函数内copy slice到新slice并返回新slice.
+      效果: 函数退出时老slice对应的较大的底层数组会被回收, 保存在内存的是新的小slice.
 
 ```go
 func foo() {
-old_sl := ... //切片返回值
-new_sl := make([]T, len(old_sl)) // 空切片 指针指向新的底层数组
-copy(new_sl, old_sl) //新切片
-return new_sl //新切片返回值
+  old_sl := ... //切片返回值
+  new_sl := make([]T, len(old_sl)) // 空切片 指针指向新的底层数组
+  copy(new_sl, old_sl) //新切片
+  return new_sl //新切片返回值
 }
 ```
 
 ## ref
 
-`https://blog.csdn.net/lengyuezuixue/article/details/81197691`
+- <`https://blog.csdn.net/lengyuezuixue/article/details/81197691`>
