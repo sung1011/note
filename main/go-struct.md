@@ -2,7 +2,7 @@
 
 ## 数据结构
 
-TODO
+        TODO
 
 ## 创建 初始化 访问
 
@@ -23,20 +23,20 @@ sp := &Student{ // 初始化 与new等效
     Age     :18,
 }
 
-sp := &Student{"Sam", 18} // 初始化 顺序初始值
+sp := &Student{"Sam", 18} // 初始化 with顺序初始值
 ```
 
 ![img](res/go-struct-assign.jpg)
 
 ## 内存布局 连续
 
-结构体和它所包含的数据在内存中是以连续块的形式存在的, 即使结构体中嵌套有其他的结构体
+    结构体和它所包含的数据在内存中是以连续块的形式存在的, 即使结构体中嵌套有其他的结构体
 
 ![img](res/go-struct-mem.jpg)
 
 ## 参数传递
 
-一般传递其指针 &struct
+    一般传递其指针 &struct
 
 ## 方法
 
@@ -179,13 +179,13 @@ func main() {
 ## 未公开类型的公开字段
 
 ```go
-TODO
+    TODO
 ```
 
 ## 空 struct{}{}
 
-1. 不占用内存
-2. 地址不变
+- 不占用内存
+- 地址不变
 
 
 ## 链表 与 双向链表
@@ -219,4 +219,4 @@ type Tree strcut {
 
 ## ref
 
-<https://www.cnblogs.com/myuniverse/p/11595043.html>
+- <https://www.cnblogs.com/myuniverse/p/11595043.html>

@@ -34,25 +34,29 @@ typedef struct {
 
 ## 实例
 
-    variables(steam/http)  
+```bash
+variables(steam/http)  
+```
 
-    map(stream/http)  
+```bash
+map(stream/http)  
+```
 
-反向代理  
+```bash
+http proxy # 反向代理  
 
-http proxy
-
-- ngx_http_uwsgi_module
-- ngx_http_scgi_module
-- ngx_http_fastcgi_module
+    - ngx_http_uwsgi_module
+    - ngx_http_scgi_module
+    - ngx_http_fastcgi_module
 
 http module  
 
-- ngx_http_referer_module
-- ngx_http_ssi_module
-- ngx_http_srcache_filter_module
+    - ngx_http_referer_module
+    - ngx_http_ssi_module
+    - ngx_http_srcache_filter_module
 
 http core  
 
-- server name
-- MIME types
+    - server name
+    - MIME types
+```

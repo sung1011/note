@@ -35,7 +35,7 @@
 
 #### 多个Leader同时出现?
 
-     任期term
+     判定任期term大的作为leader
 
 ---
 

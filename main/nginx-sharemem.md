@@ -1,4 +1,4 @@
-# nginx 共享内容
+# nginx 共享内存
 
     效率高: 管道和消息队列等需要4次拷贝, 共享内存2次.
 
@@ -30,8 +30,9 @@
 
 ### rbtree
 
+```bash
 - ngx_stream_limit_conn_module # 流控
-- ngx_http_limit_conn_module #
+- ngx_http_limit_conn_module
 - ngx_stream_limit_req_module
 - http_cache
   - ngx_http_file_cache_module
@@ -43,6 +44,7 @@
   - ngx_http_ssl_module
   - ...mail...
   - ...stream...
+```
 
 ### 单链表
 

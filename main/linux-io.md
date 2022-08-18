@@ -40,76 +40,84 @@
   
 ## 实例
 
-### 多线程
+### 多线程 [同步阻塞]
 
-    usr每个线程阻塞等待sys的返回.
+```bash
+    每个usr线程阻塞等待sys的返回.
+
+    # issues
+        阻塞
+```
 
 ### select多路复用 [同步非阻塞]  
 
+```bash
     1个线程同时遍历多个io请求结果.
 
-1. 将需要io操作的fd注册到events中
-2. select线程阻塞等待select()系统调用返回
-3. 当数据从sys就绪, 会激活`select() > 0`
-4. select线程遍历events找到准备就绪的fd, 将其标记为就绪状态fd_set = 1.
-5. usr线程正式发起read/write请求, 从sys读取那些标记就绪的数据.
+    # flow
+        1. 将需要io操作的fd注册到events中
+        2. select线程阻塞等待select()系统调用返回
+        3. 当数据从sys就绪, 会 select() > 0
+        4. select线程遍历events找到准备就绪的fd, 将其标记为就绪状态fd_set = 1.
+        5. usr线程正式发起read/write请求, 从sys读取那些标记就绪的数据.
 
-> 采用一个1024数组存储状态, 最多同时检查1024.  
+    # issue
+        句柄存在上限
+        重复初始化
+        逐个遍历排查句柄状态
 
-> 某个sys线程就绪将select的某个fd激活时, select并不知道哪个fd有数据, 只能自己遍历.
+    # 结构
+        fd_set rfds, wfds;
+
+    # 伪代码
+        {
+            select(socket);
+            while(1) {
+                sockets = select();
+                for(socket in sockets) {
+                    if(can_read(socket)) {
+                    read(socket, buffer);
+                    process(buffer);
+                }
+                }
+            }
+        }
+```
+
+> 采用一个1024数组存储状态, 最多同时检查1024.
 
 > 非线程安全
 
-#### select数据结构
-
-```bash
-    fd_set rfds, wfds;
-```
-
-#### 伪代码
-
-```bash
-{
-  select(socket);
-  while(1) {
-    sockets = select();
-      for(socket in sockets) {
-        if(can_read(socket)) {
-          read(socket, buffer);
-          process(buffer);
-      }
-    }
-  }
-}
-```
-  
 ### poll多路复用 [同步非阻塞]  
 
+```bash
        链表结构的select
 
-1. 主动轮询链表(采用链表避免数组长度限制), 其他同select(依然遍历全部fd, 看哪个fd有sys返回)  
+        # flow
+           1. 主动轮询链表(采用链表避免数组长度限制), 其他同select(依然遍历全部fd, 看哪个fd有sys返回)  
 
-> 某个sys线程就绪将poll激活时, poll并不知道哪个fd有数据, 只能自己遍历.
+        # issue
+           逐个遍历排查句柄状态; 某个sys线程就绪将poll激活时, poll并不知道哪个fd有数据, 只能自己遍历.
+```
 
 > 非线程安全
   
-### epoll多路复用 [同步非阻塞]  
-
-1. 通过epoll_ctl注册fd(注册到RBTREE结构), 一旦该fd就绪, 内核就会采用类似callback的回调机制来激活该fd, epoll_wait便可以收到通知.即不用再遍历而是监听回调进行io.
-2. usr,sys通过共享内存传递消息.
-3. 没有最大并发链接数限制.
-4. 线程安全.
-
-> 同步?异步?
-
-> kqueue FreeBSD系统的epoll  
-
-#### 数据结构
+### epoll多路复用 [异步非阻塞]  
 
 ```bash
-    int epfd;
-    struct epoll_event *events;
+        当fb准备就绪, 会被异步回调通知得到哪些fb已经ready
+
+        # flow
+           1. 通过epoll_ctl注册fd(注册到RBTREE结构)
+           2. 一旦该fd就绪, 内核就会采用类似callback的回调机制来激活该fd, epoll_wait便可以收到通知. (即不用再遍历而是监听回调进行io)
+           3. usr,sys通过共享内存传递消息.
+        
+        # 结构
+           int epfd;
+           struct epoll_event *events;
 ```
+
+> 线程安全
 
 ### 信号驱动 (SIGIO) [同步非阻塞]  
 

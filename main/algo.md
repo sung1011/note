@@ -64,6 +64,10 @@
 
 - [代表权益证明算法 DPos](algo-dpos.md)
 
+- [漏桶](algo-leaky-bucket.md)
+
+- [令牌桶](algo-token-bucket.md)
+
 ## ref
 
 [算法](https://cloud.tencent.com/developer/article/1101517)

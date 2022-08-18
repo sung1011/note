@@ -1,15 +1,15 @@
 # nginx信号
 
-以下信号量省略SIG前缀.如 SIGQUIT 即 QUIT
+        以下信号量省略SIG前缀.如 SIGQUIT 即 QUIT
 
 ## master
 
-- `TERM`、`INT` 立刻关闭.同`nginx -s stop`  
-- `QUIT` 从容关闭, 等待worker处理结束后关闭.同`nginx -s quit`  
-- `HUP` 平滑重启, 重新加载配置文件.同`nginx -s reload`  
-- `USR1` 重新打开日志文件.同`nginx -s repoen`  
-- `USR2` 平滑升级可执行程序.(热部署用到)  
-- `WINCH` 从容关闭worker, 保留master.(热部署用到)  
+- `TERM`、`INT` 立刻关闭. 同`nginx -s stop`  
+- `QUIT` 从容关闭, 等待worker处理结束后关闭. 同`nginx -s quit`  
+- `HUP` 平滑重启, 重新加载配置文件. 同`nginx -s reload`  
+- `USR1` 重新打开日志文件. 同`nginx -s repoen`  
+- `USR2` 平滑升级可执行程序. (热部署用到)  
+- `WINCH` 从容关闭worker, 保留master. (热部署用到)  
 
 ## worker
 

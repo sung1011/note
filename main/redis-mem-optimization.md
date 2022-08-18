@@ -1,5 +1,17 @@
 # redis内存调优  
 
+## 占用预估
+
+```bash
+    # 同等数据量, 不同结构对比
+    hash最优
+    list, set次之
+    string容易全局hash碰撞, 占用较多
+    zset由于skiplist结构复杂, 占用最大
+```
+
+- 内存占用估算 <http://www.redis.cn/redis_memory/>
+
 ## 内存压缩
 
     以CPU换取内存

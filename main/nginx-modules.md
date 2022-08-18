@@ -161,8 +161,6 @@ error_page 444 /err.html
 # 算法: leaky bucket  突发流量限定为恒定流量, 故响应可能变慢, 超流量返回错误.  
 # directives: limit_req_zone, limit_req, limit_req_log_level, limit_req_status  
 
-范围:  
-
 - all worker (基于共享内存)  
 - 进入pre_access前不生效  
 
@@ -172,12 +170,60 @@ error_page 444 /err.html
 # stage: pre_access  
 # directives: limit_conn_zone, limit_conn, limit_conn_log_level, limit_conn_status  
 
-范围:
-
 - all worker (基于共享内存)  
 - 进入pre_access前不生效  
 - 限制的有效性取决于key的设定,  key一般用客户端ip (取真实客户端ip依赖realipmodule)  
+
+
+    # limit_req_zone命令及limit_req命令限制单个IP的请求处理频率
+	# 定义限流维度，一个用户一分钟一个请求进来，多余的全部漏掉
+    #  1r/s代表1秒一个请求，1r/m一分钟接收一个请求， 如果Nginx这时还有别人的请求没有处理完，Nginx就会拒绝处理该用户请求
+
+	limit_req_zone $binary_remote_addr zone=one:10m rate=1r/m;
+ 
+	#绑定限流维度
+	server{
+		location/seckill.html{
+			limit_req zone=zone;	
+			proxy_pass http://lj_seckill;
+		}
+	}
+
+
+    # Nginx提供burst参数结合nodelay参数可以解决流量突发的问题
+  	# 定义限流维度，一个用户一分钟一个请求进来，多余的全部漏掉
+    # 为什么就多了一个 burst=5 nodelay; 呢，多了这个可以代表Nginx对于一个用户的请求会立即处理前五个，多余的就慢慢来落，没有其他用户的请求我就处理你的，有其他的请求的话我Nginx就漏掉不接受你的请求
+	limit_req_zone $binary_remote_addr zone=one:10m rate=1r/m;
+ 
+	#绑定限流维度
+	server{
+		location/seckill.html{
+			limit_req zone=zone burst=5 nodelay;
+			proxy_pass http://lj_seckill;
+		}
+	}
+
+
+
+    # limit_conn_zone + limit_conn限制并发连接数
+    # 单个IP10并发, 整个服务最大100并发
+  	http {
+		limit_conn_zone $binary_remote_addr zone=myip:10m;
+		limit_conn_zone $server_name zone=myServerName:10m;
+	}
+ 
+    server {
+        location / {
+            limit_conn myip 10;
+            limit_conn myServerName 100;
+            rewrite / http://www.lijie.net permanent;
+        }
+    }
 ```
+
+> [漏桶](algo-leaky-bucket.md)
+
+> [令牌桶](algo-token-bucket.md)
 
 ### access 认证
 
@@ -230,17 +276,17 @@ location / {
 
 ### content
 
-#### static (已并入ngx_http_core_module)
-
-#### index 返回主页
-
-#### autoindex 返回目录结构
-
-#### proxy_pass 反向代理
-
-#### concat (第三方) 同时请求/下载多个小文件
-
 ```nginx
+# static (已并入ngx_http_core_module)
+
+# index 返回主页
+
+# autoindex 返回目录结构
+
+# proxy_pass 反向代理
+
+# concat (第三方) 同时请求/下载多个小文件
+
 # module: ngx_http_concat  
 # stage: content  
 # usage: `https://localhost/??a.js,b.css,res/c.js`  
@@ -332,3 +378,25 @@ location / {
 
 ```
 
+### 防爬虫
+
+```nginx
+server{
+	listen 80;
+	server_name 127.0.0.1; 
+	# 添加如下内容即可防止爬虫
+	if ($http_user_agent ~* "qihoobot|Baiduspider|Googlebot|Googlebot-Mobile|Googlebot-Image|Mediapartners-Google|Adsbot-Google|Feedfetcher-Google|Yahoo! Slurp|Yahoo! Slurp China|YoudaoBot|Sosospider|Sogou spider|Sogou web spider|MSNBot|ia_archiver|Tomato Bot") 
+	{
+		return 403;
+	}
+}
+```
+
+### 限制浏览器
+
+```nginx
+if ($http_user_agent ~* "Firefox|MSIE")
+{
+     return 403;
+}
+```
