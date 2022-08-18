@@ -81,7 +81,7 @@ sl2 := append(sl1, "x") // ["" a b c x] len=5 cap=8; sl2新建了底层arr
 
 ## 作为参数
 
-直接传递
+    直接传递
 
 > slice{*ptr, len, cap}的副本值(很小, 包含指向实际数据的指针)作为参数传递给函数.
 
@@ -89,23 +89,10 @@ sl2 := append(sl1, "x") // ["" a b c x] len=5 cap=8; sl2新建了底层arr
 
 ```go
 // v是每个元素的副本, v实质是items的副本在迭代 (修改循环内v 不会同步修改sl)
-// 循环内修改引用类型(如slice) sl[i] 会同步修改循环内的v
-// 循环内修改值类型(如array) sl[i] 不会同步修改循环内的v
 items = []string{"a", "b", "c"} //或 items = [...]string{"a", "b", "c"}
 for i, v := range items {
-    if i == 0 {
-        items[1] = "xxx";
-    }
-    if i == 1 {
-        // array [a b c]
-        // slice [a xxx c]
-        fmt.Println(v);
-    }
-}
-
-// for
-for i := 0; i < len(sl); i++ {
-  fmt.Println(sl[i]) // sl下标都是从0开始, 所以可以for迭代
+    v = "xxx"
+    fmt.Println(items, v) // [a b c], xxx
 }
 ```
 
