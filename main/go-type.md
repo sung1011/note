@@ -17,10 +17,10 @@
 
     变量存储的是一个地址, 这个地址存储最终的值. 内存通常在堆上分配, 通过GC回收.
 
-- func
 - [slice](go-slice.md)  
 - [map](go-map.md)  
 - [chan](go-chan.md)  
+- func
 - [interface](go-interface.md)
 
 ## 空间
@@ -34,7 +34,7 @@
 | func        | 8           | ptr                                        |
 | slice       | 24          | ptr + len + cap                            |
 | array       | ~           | T * len                                    |
-| struct      | 8           | ptr                                        |
+| struct      | ~           |                                            |
 | string      | >16         |                                            |
 | uint8       | 1           | 0~255                                      |
 | uint16      | 2           | 0~65535                                    |

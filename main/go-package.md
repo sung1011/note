@@ -15,11 +15,11 @@
 
 ## [bufio](go-bufio.md)
 
-## [builtin]
+## builtin
 
-## [bytes]
+## bytes
 
-## [compress]
+## compress
 
 - bzip2
 - flate
@@ -29,7 +29,7 @@
 
 ## [context](go-context.md)
 
-## [container]
+## container
 
 - heap
 - list
@@ -57,12 +57,12 @@
 - x509
 - x509/pkix
 
-## [database]
+## database
 
 - sql
 - sql/driver
 
-## [debug]
+## debug
 
 - dwarf
 - elf
@@ -71,7 +71,7 @@
 - pe
 - plan9obj
 
-## [embed]
+## embed
 
 ## [encoding](go-encoding.md)
 
@@ -89,13 +89,13 @@
 
 ## [errors](go-errors.md)
 
-## [expvar]
+## expvar
 
-## [flag]
+## flag
 
 ## [fmt](go-fmt.md)
 
-## [go]
+## go
 
 - ast
 - build
@@ -110,7 +110,7 @@
 - token
 - types
 
-## [hash]
+## hash
 
 - adler32
 - crc32
@@ -118,7 +118,7 @@
 - fnv
 - maphash
 
-## [image]
+## image
 
 - color
 - color/palette
@@ -127,32 +127,32 @@
 - jpeg
 - png
 
-## [index]
+## index
 
 - suffixarray
 
-## [io]
+## io
 
 - fs
 - ioutil
 
-## [log]
+## log
 
 - syslog
 
-## [math]
+## math
 
 - big
 - bits
 - cmplx
 - rand
 
-## [mime]
+## mime
 
 - multipart
 - quotedprintable
 
-## [net]
+## net
 
 - http
 - http/cgi
@@ -169,25 +169,25 @@
 - textproto
 - url
 
-## [os]
+## os
 
 - exec
 - signal
 - user
 
-## [path]
+## path
 
 - filepath
 
-## [plugin]
+## plugin
 
 ## [reflect](go-reflect.md)
 
-## [regexp]
+## regexp
 
 - syntax
 
-## [runtime]
+## runtime
 
 - cgo
 - debug
@@ -196,27 +196,27 @@
 - race
 - trace
 
-## [sort]
+## sort
 
-## [strconv]
+## strconv
 
-## [strings]
+## strings
 
-## [sync]
+## sync
 
 - atomic
 
-## [syscall]
+## syscall
 
 - js
 
-## [testing]
+## testing
 
 - fstest
 - iotest
 - quick
 
-## [text]
+## text
 
 - scanner
 - tabwriter
@@ -227,14 +227,14 @@
 
 - tzdata
 
-## [unicode]
+## unicode
 
 - utf16
 - utf8
 
-## [unsafe]
+## unsafe
 
-## [internal]
+## internal
 
 - bytealg
 - cfg
