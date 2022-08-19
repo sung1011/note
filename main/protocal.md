@@ -19,6 +19,8 @@
 | 网络层 internet    | 网络层                 | IP协议(网际协议)、ICMP协议(互联网控制报文协议)                           |
 | 数据链路层 link    | 数据链路层, 物理层     | Ethernet ARP协议(地址解析协议)、Mac                                      |
 
+## [协议列表](protocal-list.md)
+
 ## 协议详解
   
 ### 7 应用层  
@@ -65,7 +67,10 @@
 ### 3 网络层
 
 - [IP](IP.md)  
-- [ICMP](ICMP.md) `ping` `Traceroute`  
+- [ICMP](ICMP.md)
+
+      Traceroute by ping
+
 - 路由器
 
       外网IP寻址, 在多个路由器间计算最优路由路径, 将数据送达指定主机.
@@ -90,8 +95,6 @@
 
 - 网线  
 - 集线器hub  
-
-## [协议列表](protocal-list.md)
 
 ## ref
 

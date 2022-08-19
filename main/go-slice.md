@@ -67,6 +67,45 @@ sl2 := append(sl1, "x") // ["" a b c x] len=5 cap=8; sl2新建了底层arr
 
 > append的扩容机制: 更换底层array; cap < 1000时翻倍扩;  cap >= 1000 每次扩25%
 
+## 删除
+
+```go
+// 删除开头
+a = []int{1, 2, 3}
+a = a[1:] // 删除开头1个元素
+a = a[N:] // 删除开头N个元素
+
+// 删除开头, 且不移动数据指针
+a = []int{1, 2, 3}
+a = append(a[:0], a[1:]...) // 删除开头1个元素
+a = append(a[:0], a[N:]...) // 删除开头N个元素
+
+// 删除开头, 且不移动数据指针
+a = []int{1, 2, 3}
+a = a[:copy(a, a[1:])] // 删除开头1个元素
+a = a[:copy(a, a[N:])] // 删除开头N个元素
+
+
+// 删除中间
+a = []int{1, 2, 3, ...}
+a = append(a[:i], a[i+1:]...) // 删除中间1个元素
+a = append(a[:i], a[i+N:]...) // 删除中间N个元素
+a = a[:i+copy(a[i:], a[i+1:])] // 删除中间1个元素
+a = a[:i+copy(a[i:], a[i+N:])] // 删除中间N个元素
+
+// 删除尾部
+a = []int{1, 2, 3}
+a = a[:len(a)-1] // 删除尾部1个元素
+a = a[:len(a)-N] // 删除尾部N个元素
+
+// 删除指定位置
+seq := []string{"a", "b", "c", "d", "e"}
+index := 2
+fmt.Println(seq[:index], seq[index+1:]) // [a, b] [d, e]
+seq = append(seq[:index], seq[index+1:]...)
+fmt.Println(seq) // [a, b, c, d]
+```
+
 ## 并发安全
 
         与map一样, 也需要考虑并发安全

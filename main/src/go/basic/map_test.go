@@ -9,7 +9,7 @@ type Foo struct {
 	Name string
 }
 
-func TestKey(t *testing.T) {
+func Test_Key(t *testing.T) {
 	m := make(map[Foo]int, 10)
 	f := Foo{}
 	m[f] = 1
