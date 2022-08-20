@@ -123,7 +123,7 @@ func main() {
 
 ## 空接口 interface{}
 
-可存储任意数据类型的实例
+      可存储任意数据类型的实例
 
 ```go
 type Foo struct {

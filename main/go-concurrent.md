@@ -2,7 +2,7 @@
 
 ## [设计理论](go-concurrent-design-theory.md)
 
-## [设计实现](go-concurrent-design.md)
+## [设计实现](go-concurrent-design-GMP.md)
 
 ## [调度](go-concurrent-dispatch.md)
 

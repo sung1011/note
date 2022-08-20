@@ -14,6 +14,7 @@
         最多个数GOMAXPROCS可配置
 
         # 配置: runtime.GOMAXPROCS(); 默认为CPU核数
+        # 自旋M + 普通M <= GOMAXPROCS; 若超过, M生成后立刻进入休眠
 
     M: Machine (Thread) 内核线程
 
@@ -26,6 +27,8 @@
 
         (优先)存放G
         若满了会放在全局队列
+
+        # 256个
 
     全局队列
 

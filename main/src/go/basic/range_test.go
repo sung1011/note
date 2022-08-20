@@ -6,6 +6,8 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
+// # ref - <https://learnku.com/articles/26861>
+
 func Test_Range(t *testing.T) {
 
 	Convey("", t, func() {
@@ -45,7 +47,7 @@ func Test_Range(t *testing.T) {
 			}
 		})
 
-		Convey("issue3: map循环中增删, 由于其随机特性, 不确定是否增减循环次数", func() {
+		Convey("issue3: map循环中增删, 由于其随机特性, 不确定是否/有可能 会增减循环次数", func() {
 			m := map[int]int{
 				1: 111,
 				2: 222,

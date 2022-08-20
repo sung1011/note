@@ -136,6 +136,8 @@ for i, v := range items {
 }
 ```
 
+> [迭代](src/go/basic/range_test.go) range时增删不影响循环次数; range改立刻生效; range只创建一次i, v
+
 ## 内存GC
 
       问题: 当切片对应的底层数组很大, 而GC不会回收正在被引用的对象, 造成内存浪费.  

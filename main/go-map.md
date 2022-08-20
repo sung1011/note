@@ -73,6 +73,14 @@ v2, exists2 := m["xxx"] // 0, false
 
         直接传递, 指针的值 (8byte)
 
+## 迭代
+
+```go
+    todo
+```
+
+> [迭代](src/go/basic/range_test.go) range时增删有可能增删循环次数; range改立刻生效; range只创建一次i, v
+
 ## 并发安全
 
     同一个变量在多个goroutine中访问需要保证并发安全

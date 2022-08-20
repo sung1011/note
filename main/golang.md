@@ -14,6 +14,8 @@
 
 ## [test](go-test.md)
 
+## [debug](go-debug.md)
+
 ## GC
 
 ## ref

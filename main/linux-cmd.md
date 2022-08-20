@@ -241,6 +241,14 @@ curl localhost:3000/api/basic -X POST -d @data.txt # x-www-from-urlencoded
 curl localhost:3000/api/multipart -F raw=@raw.data -F hello=world
 ```
 
+## top
+
+```bash
+    go build -o foo && ./foo
+    top -pid $(pidof foo)       
+```
+
+
 ## ref
 
 - linux重定向 <http://linux-wiki.cn/wiki/Bash%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91>
