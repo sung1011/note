@@ -71,12 +71,18 @@ func TestSampleAssert(t *testing.T) { // func name need prefix with Test for tes
 			So("asdf", ShouldNotBeBlank)
 		})
 
-		// Convey("panic", func() {
-		// 	So(func(), ShouldPanic)
-		// 	So(func(), ShouldNotPanic)
-		// 	So(func(), ShouldPanicWith, "")    // or errors.New("something")
-		// 	So(func(), ShouldNotPanicWith, "") // or errors.New("something")
-		// })
+		Convey("panic", func() {
+			fp := func() {
+				panic("oh my god")
+			}
+			fnp := func() {
+			}
+
+			So(fp, ShouldPanic)
+			So(fnp, ShouldNotPanic)
+			So(fp, ShouldPanicWith, "oh my god") // or errors.New("something")
+			So(fp, ShouldNotPanicWith, "haha")   // or errors.New("something")
+		})
 
 		Convey("type checking", func() {
 			So(1, ShouldHaveSameTypeAs, 0)

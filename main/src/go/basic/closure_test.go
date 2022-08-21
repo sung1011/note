@@ -20,16 +20,26 @@ func calc() func() int {
 
 func TestCalc(t *testing.T) {
 	Convey("", t, func() {
-		funcA := calc() // 附带函数(calc)内的作用域, 即当前r=1
-		a1 := funcA()   // r = 1 + 4; 附带函数(calc)内的作用域, 即calc中r也变为5
-		So(a1, ShouldEqual, 5)
+		Convey("scope", func() {
+			funcA := calc() // 附带函数(calc)内的作用域, 即当前r=1
+			a1 := funcA()   // r = 1 + 4; 附带函数(calc)内的作用域, 即calc中r也变为5
+			So(a1, ShouldEqual, 5)
 
-		a2 := funcA() // r = 5 + 4; 附带函数(calc)内的作用域, 即calc中r也变为9
-		So(a2, ShouldEqual, 9)
+			a2 := funcA() // r = 5 + 4; 附带函数(calc)内的作用域, 即calc中r也变为9
+			So(a2, ShouldEqual, 9)
 
-		funcB := calc() // 新函数作用域, 即当前r=1
-		b1 := funcB()
+			funcB := calc() // 新函数作用域, 即当前r=1
+			b1 := funcB()
 
-		So(b1, ShouldEqual, 5)
+			So(b1, ShouldEqual, 5)
+		})
+
+		Convey("for", func() {
+			for i := 0; i < 3; i++ {
+				func(i int) {
+					t.Log(i) // 0 1 2
+				}(i)
+			}
+		})
 	})
 }

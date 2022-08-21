@@ -146,10 +146,10 @@ for i, v := range items {
 
 ```go
 func foo() {
-  old_sl := ... //切片返回值
+  old_sl := ... // 切片返回值
   new_sl := make([]T, len(old_sl)) // 空切片 指针指向新的底层数组
-  copy(new_sl, old_sl) //新切片
-  return new_sl //新切片返回值
+  copy(new_sl, old_sl) // 深拷贝到新切片
+  return new_sl // 新切片返回值
 }
 ```
 

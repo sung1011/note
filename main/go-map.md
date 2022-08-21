@@ -56,8 +56,8 @@ var m = map[string]int
 ```go
 m := map[string]int{"a":100, "b":200}
 
-v1, exists1 := m["a"] // 100, true
-v2, exists2 := m["xxx"] // 0, false
+_, exists1 := m["a"] // 100, true
+_, exists2 := m["xxx"] // 0, false
 ```
 
 ## 不可获取元素地址
@@ -105,7 +105,6 @@ func (r RWMap) Set(key string, val int) {
 // ---------------------------------
 func foo() {
     var lock sync.Mutex
-
     lock.Lock()
     mapList["c"] = 3
     lock.Unlock()
@@ -132,12 +131,12 @@ originalMap["b"] = 2
 originalMap["c"] = 3
 originalMap["d"] = 4
 originalMap["e"] = 5
-targetMap := make(map[string]int, 2)
+targetMap := make(map[string]int, 2) // 即使这里len是2, 后面也会全赋值过来
 targetMap = originalMap
 targetMap["d"] = 4444 // map[a:1 b:2 c:3 d:4444 e:5]
 ```
 
-## 拷贝 (解引用)
+## 深拷贝 (解引用)
 
 ```go
 originalMap := make(map[string]int)
@@ -167,6 +166,26 @@ sets := map[string]struct{} (
     "x": {},
     "y": {},
 )
+
+// 加锁
+type inter interface{}
+
+type Set struct {
+	m map[inter]bool
+	sync.RWMutex
+}
+
+func New() *Set {
+	return &Set{
+		m: map[inter]bool{},
+	}
+}
+
+func (s *Set) Add(item inter) {
+	s.Lock()
+	defer s.Unlock()
+	s.m[item] = true
+}
 ```
 
 ## 函数作为map的值
@@ -187,19 +206,19 @@ mf[2] = func() string{ return "bbb" }
 ## 排序
 
 ```go
-// 根据key排序
+// 根据key排序后迭代
 func sortKey(mp map[string]int) {
-   var newMp = make([]string, 0)
+   var newMpKey = make([]string, 0)
    for k, _ := range mp {
-      newMp = append(newMp, k)
+      newMpKey = append(newMpKey, k)
    }
-   sort.Strings(newMp)
-   for _, v := range newMp {
-      fmt.Println("根据key排序后的新集合》》   key:", v, "    value:", mp[v])
+   sort.Strings(newMpKey)
+   for _, v := range newMpKey {
+      fmt.Println("key:", v, "value:", mp[v])
    }
 }
 
-// 根据value排序
+// 根据value排序后迭代
 func sortValue(mp map[string]int) {
    var newMp = make([]int, 0)
    var newMpKey = make([]string, 0)
@@ -209,7 +228,7 @@ func sortValue(mp map[string]int) {
    }
    sort.Ints(newMp)
    for k, v := range newMp {
-      fmt.Println("根据value排序后的新集合》》  key:", newMpKey[k], "    value:", v)
+      fmt.Println("key:", newMpKey[k], "value:", v)
    }
 }
 ```

@@ -8,6 +8,8 @@
   
 ## [配置](php-config.md)
 
+## [优化](php-optimize.md)
+
 ## [实战](php-ex.md)
 
 ## ref

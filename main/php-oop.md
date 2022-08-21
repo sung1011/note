@@ -1,25 +1,25 @@
 # php oop
- 
+
 ## [设计模式](dp.md)  
 
 ## 对象  
 
-生成: 类的实例化  
-组成: 属性 方法  
+    生成: 类的实例化  
+    组成: 属性 方法  
 
 ## 特性  
 
-继承  
-封装  
-多态  
+    继承  
+    封装  
+    多态  
 
 ## 继承, final  
 
 ## 访问控制  
 
-public  
-protected  
-private  
+    public  
+    protected  
+    private  
 
 ## $this, self, parent
 

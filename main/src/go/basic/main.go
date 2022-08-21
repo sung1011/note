@@ -1,31 +1,24 @@
 package main
 
-import (
-	"log"
-	"runtime"
-	"time"
-)
-
-func test() {
-	//slice 会动态扩容，用slice来做堆内存申请
-	container := make([]int, 8)
-
-	log.Println(" ===> loop begin.")
-	for i := 0; i < 32*1000*1000; i++ {
-		container = append(container, i)
-	}
-	log.Println(" ===> loop end.")
-}
+import "fmt"
 
 func main() {
-	log.Println("Start.")
-
-	test()
-
-	log.Println("force gc.")
-	runtime.GC() //强制调用gc回收
-
-	log.Println("Done.")
-
-	time.Sleep(3600 * time.Second) //睡眠，保持程序不退出
+	ch := make(chan int, 3)
+	for i := 0; i < 10; i++ {
+		go func(i int) {
+			ch <- i
+		}(i)
+	}
+	j := 0
+	for {
+		if j >= 5 {
+			close(ch)
+		}
+		r, ok := <-ch
+		if !ok {
+			break
+		}
+		fmt.Println(r)
+		j++
+	}
 }

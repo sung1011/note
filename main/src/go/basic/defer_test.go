@@ -61,6 +61,37 @@ func Test_Defer_Slice(t *testing.T) {
 	})
 }
 
+func Test_Defer_Panic(t *testing.T) {
+	Convey("panic", t, func() {
+		Convey("seq", func() { // b a panic (panic 后的 c 不会被执行到)
+			defer t.Log("a")
+			defer t.Log("b")
+			// panic("errrrr")
+			defer t.Log("c")
+		})
+		Convey("closure", func() { // c b a panic (会执行到c)
+			defer t.Log("a")
+			pf := func() {
+				t.Log("b")
+				// panic("errrrrr") // panic
+			}
+			defer pf()
+			defer t.Log("c")
+		})
+		Convey("recover", func() { // b recover a (panic 后的 c 不会被执行到)
+			defer t.Log("a")
+			defer func() {
+				t.Log("b")
+				if err := recover(); err != nil {
+					t.Log("recover")
+				}
+			}()
+			panic("errrrr")
+			defer t.Log("c")
+		})
+	})
+}
+
 func Test_Defer_Struct(t *testing.T) {
 	Convey("struct", t, func() {
 		Convey("指针接收者 => last", func() {
@@ -102,15 +133,20 @@ func Test_Defer_Over(t *testing.T) {
 			defer fmt.Println("d")
 		})
 
-		Convey("return; 注意命名返回值; 闭包延迟读取", func() { // derfer: b
+		Convey("return; 注意命名返回值; 闭包延迟读取", func() {
 			// 模拟普通函数 带有命名返回值
 			func() (s string) {
 				s = "aaa"
 				defer func() {
-					fmt.Println("defer: " + s)
+					fmt.Println("defer: " + s) // derfer: bbb
 				}()
-				return "bbb" // 会赋值给命名返回值s
+				return "bbb" // 会先返回 赋值给命名返回值s
 			}()
+			// 相当于
+			// 1. s=aaa
+			// 2. return bbb
+			// 3. func() (s=bbb) {}
+			// 4. defer s=bbb
 		})
 
 		Convey("尽量不在循环中使用defer, defer有额外开销; 去掉defer即可", func() {
@@ -126,6 +162,7 @@ func Test_Defer_Over(t *testing.T) {
 			// 	return err
 			// }
 			// defer f.Close()
+
 		})
 
 		Convey("os.Exit时defer不会执行", func() {
