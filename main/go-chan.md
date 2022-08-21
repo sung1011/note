@@ -16,6 +16,13 @@ func main() {
 
 ## 是否关闭
 
+```go
+r, ok <-ch
+if !ok {
+    fmt.Println("is close")
+}
+```
+
 ## 控制速率
 
 ```go
