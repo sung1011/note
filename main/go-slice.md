@@ -18,6 +18,8 @@ sl := make([]int, 3, 5) // len=3 cap=5
 sl := []int{30, 50, 20}
 sl := []string{99: "foo"} // 100个元素
 var sl []int
+
+// sl := make([]int) // missing len argument to make([]int)
 ```
 
 ## 数组 与 切片

@@ -1,6 +1,6 @@
 # go 接口
 
-        相同行为, 不同实例. (即: 多态)
+        相同行为, 不同实例 (多态)
 
 ## 数据结构
 
@@ -15,8 +15,7 @@
 ### 原理
 
         实例的methodSet决定了它所实现的接口, 以及通过receiver可以调用的方法.  
-
-        通过指针实例可以拿到值类型实例的methodSet(解引用), 通过值实例不能拿到指针实例的methodSet.  
+        通过指针实例可以拿到值类型实例的methodSet(解引用), 通过值实例不能拿到指针实例的methodSet
 
 > 多态
 
@@ -29,15 +28,16 @@ type I interface {
 
 type Tp struct{}
 
-func (t *Tp) do() {} // 指针接收者实现的接口
+func (t *Tp) do() {} // 接口指针接收者的实现
 
 func main() {
-    foo(&Tp{}) // ok; 指针实现了I的接口
-    // foo(Tp{}) // error; 值没实现I的接口 (找不到其接口指针*T的方法集)
+    foo(&Tp{}) // ok; 指针 实现了I的接口
+    // foo(Tp{}) // error; 值 没实现I的接口 (找不到其接口指针*T的方法集)
 }
 
 func foo(i I) { // 作为参数 转为接口
     i.do()
+    // i.doOther() // error: undefined (type I has no field or method doOther)
 }
 
 // 用于同一行为, 实例替换, 如 db, err := sql.Open("mysql", "root:password@tcp(127.0.0.1:3306)") // mysql可换成sqllite, postgresql, oralce  
@@ -160,6 +160,8 @@ switch x.(type) {
        fmt.Println("unknown type")
 }
 ```
+
+> 接口类型才可以断言, 如果x:=10, 需要转换为接口才能断言: switch interface{}(x).(type)
 
 ## ref
 

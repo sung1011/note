@@ -80,6 +80,7 @@ db.coll.update({_id:123}, {$set: {"address.uid5":"bj"}}) // 修改内嵌文档
 db.coll.update({_id:123}, {$set: {"address.1":"bj"}}) // 修改数组元素值
 db.coll.update({_id:123}, {$set: {"books.1.name":"haha"}}) // 修改数组元素内嵌文档的值
 db.coll.update({_id:123}, {$unset: {"foo.bar.baz":1, "foo.bar.quz":1}}) // 删除多个内嵌
+db.coll.findAndModify({query: {_id: 123, "point": 100}, update: {"point": 110}})  // 可以执行多个doc
 ```
 
 ## remove

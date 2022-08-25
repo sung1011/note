@@ -34,6 +34,10 @@
   
 ---
 
+### [splite-brain 脑裂](main/splite-brain.md)
+
+---
+
 ## 锁  
 
 ### 乐观锁(Optimistic Lock)

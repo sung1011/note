@@ -2,8 +2,7 @@ package main
 
 import (
 	"testing"
-
-	. "github.com/smartystreets/goconvey/convey"
+	// . "github.com/smartystreets/goconvey/convey"
 )
 
 /*

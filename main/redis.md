@@ -39,7 +39,11 @@
     LRU Least-Recently-Used 按时间过期删除
     LFU Least-Frequently-Used 按时间过期 + 使用频率删除
 
-## 事务
+## [事务](redis-transaction.md)
+
+        隔离：事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。
+        原子：事务中的命令要么全部被执行，要么全部都不执行。
+        但不会报错回滚
 
 ## [分区/集群](redis-partitioning.md)
 
