@@ -1,6 +1,6 @@
 # redis replication sync
 
-    将rdb文件复制到slave并载入内存, 以实现数据同步
+    将RDB文件复制到slave并载入内存, 以实现数据同步
 
 ## Sync
 
@@ -12,7 +12,7 @@
 2. `同步` 占用带宽; 主服务器需要将自己生成的RDB文件发送给从服务器,这个发送操作会耗费主从服务器大量的网络资源(带宽和流量),并对主服务器响应命令请求的时间产生影响
 3. `加载` 阻塞载入RDB; 载入RDB文件, 因为阻塞而没办法处理命令请求
 
-> `save` save阻塞主线程, bgsave不阻塞主线程
+> `阻塞` save阻塞主线程, bgsave不阻塞主线程
 
 ## psync1 (>=2.8)
 
@@ -43,11 +43,15 @@
 1. redis关闭时, 把复制信息作为辅助字段存储在RDB文件中; 重启时重新赋值给相关字段
 2. 其他流程同psync1
 
+> `查看相关参数` info命令的replication
+
 ## 实战
 
 ### 处理key的过期
 
-    slave不处理过期的key, 当master时自然过期
+    slave不处理过期的key, master发现key过期后, 会发送DEL到slave
+    若master无法及时提供DEL, slave会通过自己的逻辑时钟判定是否key已经过期, 避免读取时返回已过期的key
+    slave当master时自然处理过期
 
 ### master压力
 

@@ -61,7 +61,7 @@
 
 ## [复制](redis-replication.md)
 
-    将rdb文件复制到slave并载入内存, 以实现数据同步
+    将RDB文件复制到slave并载入内存, 以实现数据同步
 
 ## [持久化RDB](redis-rdb.md)
 

@@ -44,3 +44,23 @@
    - 哨兵模式
    - 集群
 ```
+
+## keys *
+
+```bash
+    不要使用keys *, 会阻塞主进程
+    可以使用scan进行迭代
+```
+
+## 异步队列
+
+todo
+
+## 延迟队列
+
+```bash
+    # zset方案
+    生产者用zadd, score存时间戳
+    消费者用zrangebyscore获取 并 zremrangebyscore消费.
+      原子性考虑: 1. redis事务 2. 消息队列
+```

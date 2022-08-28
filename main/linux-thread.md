@@ -16,3 +16,15 @@
 - 非中断 unblock  
 - 结束 finish
   
+## 分类
+
+### 内核线程
+
+    KLT kernel-level-thread 
+    创建 销毁 切换都由内核完成
+
+### 用户线程
+
+    ULT user-level-thread
+    速度比KLT快得多
+    OS内核无法感知ULT的存在

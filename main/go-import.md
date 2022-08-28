@@ -1,18 +1,16 @@
 # go import
 
-## 单行导入
+## 导入
 
 ```go
-import "包1"
-import "包2"
-```
+// 单行导入
+import "path1"   // 注意: 这里是路径, 而非包名
+import "path2"
 
-## 多行导入
-
-```go
+// 多行导入
 import (
-    "包1"
-    "包2"
+    "path1"
+    "path2"
 )
 ```
 

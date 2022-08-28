@@ -1,5 +1,7 @@
 # go start
 
+## [version](go-version.md)
+
 ## [install](go-install.md)
 
 ## [go env](go-env.md)
