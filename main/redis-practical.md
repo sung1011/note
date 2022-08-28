@@ -1,10 +1,10 @@
 # redis 实战
 
-## 经验
+## 实践
 
 - key名尽量短, 但也要保障可读性  
-- 尽可能使用散列表(hashes)节约内存  
-- Master最好不要做任何持久化工作, 如RDB内存快照和AOF日志文件  
+- 尽可能使用hashe节约内存 (ziplist)
+- Master最好不要做任何持久化工作, 如RDB和AOF
 - 如果数据比较重要, 某个Slave开启AOF备份数据, 策略设置为每秒同步一次  
 - 为了主从复制的速度和连接的稳定性, Master和Slave最好在同一个局域网内  
 - 主从复制不要用图状结构, 用单向链表结构更为稳定, 即: Master <- Slave1 <- Slave2 <- Slave3... 这样的结构方便解决单点故障问题, 实现Slave对Master的替换.如果Master挂了, 可以立刻启用(目前只支持手动切换)Slave1做Master, 其他不变.  

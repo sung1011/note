@@ -20,12 +20,18 @@
 
 #### LRU策略
 
-1. noeviction: 当内存限制达到 则返回错误 且 客户端尝试执行会让更多内存被使用的命令(大部分的写入指令, 但DEL和几个例外)  
-2. allkeys-lru: 尝试回收最少使用的键(LRU)
-3. volatile-lru: 尝试回收最少使用的键(LRU), 但仅限于在过期的键
-4. allkeys-random: 回收随机的键
-5. volatile-random: 回收随机的键, 但仅限于在过期的键.  
-6. volatile-ttl: 回收在过期的键, 并且 优先回收存活时间(TTL)较短的键, 使得新添加的数据有空间存放.  
+1. no-eviction: 则返回错误, 不删除
+2. allkeys-lru: 回收最少使用
+3. allkeys-random: 随机回收
+4. volatile-lru: 从已设置过期时间的键中, 回收最少使用
+5. volatile-random: 从已设置过期时间的键中, 随机回收
+6. volatile-ttl: 从已设置过期时间的键中, 回收即将过期
+
+> `选择` 如数据呈现访问幂律分布, 即一部分访问频率高, 则选择allkeys-lru; 如呈现访问平等分布, 则选择allkeys-random
+
+> `allkeys` 所有键: server.db[i].dict
+
+> `volatile` 已设置过期的键: server.db[i].expires
 
 #### LFU (Least-Frequently-Used)
 

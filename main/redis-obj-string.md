@@ -33,6 +33,10 @@ redisObject {
 }
 ```
 
+### 值的最大存储
+
+    512M
+
 ### 转换
 
 int, embstr, raw  

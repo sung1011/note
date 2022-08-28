@@ -2,6 +2,8 @@
 
 ![G-P-M](res/gpm)  
 
+![img](res/gmp-flow.png)
+
 ## 复用线程
 
 ### work-stealing 机制; 偷取
@@ -254,6 +256,24 @@
 
         销毁 > 自旋 > 创建 > 队列中取
         自旋比较消耗资源, 但销毁更浪费资源, 不如让M短期自旋, 尝试获取/偷取G
+
+### 阻塞
+
+        IO
+        select
+        block on syscall
+        channel
+        等待锁
+        runtime.Gosched()
+
+### Sysmon
+
+    Sysmon也叫监控线程, 周期性的检查变动
+        >5min span物理内存闲置, 则强制释放
+        >2min没有GC, 则强制GC
+        长时间未处理netpoll, 则添加到全局队列
+        >10ms的Goroutine会进行抢占调度(retake)
+        长时间因syscall阻塞的P, 则回收
 
 ---
 
