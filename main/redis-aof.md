@@ -20,7 +20,7 @@
 
 1. 执行命令
 2. 执行成功的命令写入内存 aof_buf
-3. 内存 aof_buf 写入文件 (由后台线程)
+3. 由后台线程将aof_buf内存 fsync写入文件
 
 > `先执行` redis不语法检查, 所以先执行确认返回值是正确, 才写文件; 有可能丢失和阻塞
 
@@ -29,7 +29,7 @@
 - `appendonly yes`          //启用aof持久化方式  
 - `appendfsync everysec`    //每秒钟强制写入磁盘一次, 在性能和持久化方面做了很好的折中, 推荐  
 - `appendfsync always`      //每次收到写命令就立即强制写入磁盘, 最慢的, 但是保证完全的持久化, 不推荐使用  
-- `appendfsync no`          //完全依赖os, 性能最好,持久化没保证  
+- `appendfsync no`          //完全依赖os, 性能最好, 持久化没保证  
 
 ## rewrite
 
@@ -37,9 +37,12 @@
 
 1. redis调用fork(), 现在有父子两个进程.  
 2. 子进程根据`内存`中的数据库快照, 往临时aof文件写入数据库状态. `注意: 这里是重写了aof文件, 并没有读取旧aof`  
-3. 父进程继续处理client请求写旧aof, 这样保证如果rewrite失败的话并不会出问题; 把新收到的写命令缓存起来x
-4. 临时aof文件生成完毕后, 缓存x也append在后面
+3. 父进程继续处理client请求写旧aof, 这样保证如果rewrite失败的话并不会出问题; 把新收到的写命令缓存起来aof_rewrite_buf_blocks
+   - 默认在rewrite时也会fsync, 但消耗CPU, 推荐关闭
+4. 临时aof文件生成完毕后, 缓存aof_rewrite_buf_blocks也append在后面
 5. 父进程使用临时aof替换老的aof
+
+> `no-appendfsync-on-rewrite no` 配置默认no, 推荐为yes 即rewrite时对新写的操作暂定fsync到旧aof, 仅存在buf
   
 > `aof文件` 是可读的 + 保存了全部写操作, 所以体积会很大;
 

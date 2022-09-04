@@ -6,11 +6,11 @@
 
 ```go
 func main() {
-    x := make(chan int)
+    ch := make(chan int)
     go func() {
-        x <- 1
+        ch <- 1
     }()
-    <-x
+    <-ch
 }
 ```
 

@@ -13,7 +13,7 @@
 │   │   └── ...  
 │   ├── git.md  
 │   ├── dict.md  
-│   └── golang.md  
+│   └── go.md  
 │   └── ...  
 ├── README.md             主目录  
 └── self.md  
@@ -127,7 +127,7 @@
 
 ## PROGRAMMING-LANGUAGE
 
-### [golang](main/golang.md)
+### [golang](main/go.md)
 
 ### [php](main/php.md)
 

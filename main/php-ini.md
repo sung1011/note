@@ -2,13 +2,12 @@
 
 ## base
 
-request_slowlog_timeout = 1 慢查询条件  
-slowlog = "" 慢查询log目录  
-max_execution_time; 报出Fatal Error; 不包含system(), sleep()等系统调用, 数据库处理时间, 比较鸡肋.
-max_execution_time = 30  
-memory_limit = 8388608 (8M)  
-disable_functions = "" 禁用函数, 多个由逗号隔开  
-error_reporting  
+    request_slowlog_timeout = 1; 慢查询条件  
+    slowlog = ""; 慢查询log目录  
+    max_execution_time = 30; 报出Fatal Error; 不包含system(), sleep()等系统调用, 数据库处理时间, 比较鸡肋.
+    memory_limit = 8388608; (8M)  
+    disable_functions = ""; 禁用函数, 多个由逗号隔开  
+    error_reporting  
 
 - Deprecated最低级别错误, 程序继续执行  
 - Notice 通知级别的错误 如直接使用未声明变量, 程序继续执行  

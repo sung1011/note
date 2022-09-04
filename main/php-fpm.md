@@ -2,30 +2,38 @@
 
 ## config
 
-pm = static; 静态进程 (固定分配, 减少额外资源消耗, 但有进程切换消耗; memory_limit * max_children < 物理机内存; 可尽量多以满足高并发)  
+    pm = static; 静态进程 (固定分配, 减少额外资源消耗, 但有进程切换消耗; memory_limit * max_children < 物理机内存; 可尽量多以满足高并发)  
 
 - pm.max_children = 300; 静态方式下开启的php-fpm进程数量  
 
-pm = dynamic; 动态进程(一定范围内控制空闲worker数量; 有额外内存开销)  
+---
+
+    pm = dynamic; 动态进程(一定范围内控制空闲worker数量; 有额外内存开销)  
 
 - pm.start_servers = 20; 动态方式下的起始php-fpm进程数量  
 - pm.max_children = 300; 动态方式下开启的最大php-fpm进程数量  
 - pm.min_spare_servers = 5; 闲置子进程最小数量,  再小就fork  
 - pm.max_spare_servers = 35; 闲置子进程最大数量,  再大就kill  
 
-pm = ondemand; 按需分配进程(一定范围内, 定时删除空闲worker, 直到只剩master; 内存友好, 不适合流量突发情况)  
+---
+
+    pm = ondemand; 按需分配进程(一定范围内, 定时删除空闲worker, 直到只剩master; 内存友好, 不适合流量突发情况)  
 
 - pm.max_children = 300;
 - pm.process_idle_timeout = 10s;
 
-pm.max_requests = 10240; 每个worker处理多少个请求后会重启该线程 // 由于内存泄漏, 泄漏的内存会累计, 重启以归还内存  
+---
+
+    pm.max_requests = 10240; 每个worker处理多少个请求后会重启该线程 // 由于内存泄漏, 泄漏的内存会累计, 重启以归还内存  
 
 - 内存消耗 = max_children * memory_limit; 静态进程内存消耗  
 - 内存消耗 = max_spare_servers * memory_limit; 动态进程内存消耗  
 
-rlimit_files = 1024; 文件打开描述符的rlimit限制, 默认系统值(ulimit -n)(一般要跟系统的同步更改)  
-request_terminate_timeout (phpfpm.conf) 超时会报502Bad Gateway; 包含请求的一切时间; 会与 `max_execution_time` 同时生效, 谁先到达谁起作用.  
-覆盖ini: php_admin_value 如 php_admin_value[memory_limit] = 128M; php_admin_value[date.timezone] = Asia/Shanghai  
+---
+
+    rlimit_files = 1024; 文件打开描述符的rlimit限制, 默认系统值(ulimit -n)(一般要跟系统的同步更改)  
+    request_terminate_timeout (phpfpm.conf) 超时会报502Bad Gateway; 包含请求的一切时间; 会与 `max_execution_time` 同时生效, 谁先到达谁起作用.  
+    覆盖ini: php_admin_value 如 php_admin_value[memory_limit] = 128M; php_admin_value[date.timezone] = Asia/Shanghai  
 
 - process_control_timeout (phpfpm.conf) --- quit信号的超时时间, 超过该时间会在 `process_control_timeout+1` 后terminat.设置不合理, 则reload会导致terminat.建议值同 `request_terminate_timeout`  
 
@@ -33,13 +41,13 @@ request_terminate_timeout (phpfpm.conf) 超时会报502Bad Gateway; 包含请求
 
 `fpm_request_stage_e` 源码中的结构体
 
-| stage | 备注 |
-| --- | --- |
-FPM_REQUEST_ACCEPTING | 空闲状态(等待请求)
-FPM_REQUEST_READING_HEADERS | 读取头信息
-FPM_REQUEST_INFO | 获取请求信息
-FPM_REQUEST_EXECUTING | 执行状态
-FPM_REQUEST_END | 请求结束状态
+| stage                       | 备注               |
+| --------------------------- | ------------------ |
+| FPM_REQUEST_ACCEPTING       | 空闲状态(等待请求) |
+| FPM_REQUEST_READING_HEADERS | 读取头信息         |
+| FPM_REQUEST_INFO            | 获取请求信息       |
+| FPM_REQUEST_EXECUTING       | 执行状态           |
+| FPM_REQUEST_END             | 请求结束状态       |
 
 ## scoreboard
 

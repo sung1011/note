@@ -1,6 +1,6 @@
 # go  
 
-## [开始](go-start.md)
+## [basic](go-basic.md)
 
 ## [type](go-type.md)
 

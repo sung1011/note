@@ -8,9 +8,9 @@
 - [array](go-array.md)  
 - [struct](go-struct.md)  
 - bool  
-- int
-- float  
-- string  
+- [int](go-int.md)
+- [float](go-float.md)
+- [string](go-string.md)  
 - unsafe.Pointer
 
 ## 引用类型
@@ -23,19 +23,23 @@
 - func
 - [interface](go-interface.md)
 
-## 空间
+## 自定义类型 与 类型别名
+
+- [custom](go-type-custom.md)
+
+## size
 
 | type        | size (byte) | value range                                |
 | ----------- | ----------- | ------------------------------------------ |
 | bool        | 1           | true/false                                 |
-| ptr         | 8           |
+| ptr         | 8           |                                            |
 | channel     | 8           | ptr                                        |
 | map         | 8           | ptr                                        |
 | func        | 8           | ptr                                        |
 | slice       | 24          | ptr + len + cap                            |
 | array       | ~           | T * len                                    |
 | struct      | ~           |                                            |
-| string      | >16         |                                            |
+| string      | 16          | ptr + len                                 |
 | uint8       | 1           | 0~255                                      |
 | uint16      | 2           | 0~65535                                    |
 | uint32/rune | 4           | 0~4294967295                               |

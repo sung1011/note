@@ -69,7 +69,8 @@ type Duration int64
 
 var i int64
 i = 100
-j := i // 最后一行赋值编译会报错; 需要改为强转类型 `j := Duration(i)`
+// j := i // 最后一行赋值编译会报错; 需要显式转换类型 `j := Duration(i)`
+j := Duration(i) // 可以赋值是因为他们具有相同的底层类型(underlying type)int64
 var dur Duration
 dur = j
 ```

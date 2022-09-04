@@ -94,9 +94,12 @@ db.coll.remove({})
 ## index
 
 ```js
-db.coll.createIndex({name: 1}) // 1 升序 2 降序; ensureIndex是别名
+db.coll.createIndex({name: 1}) // 1 升序 -1 降序; ensureIndex是别名
+db.coll.createIndex({name: 1}, {background: true}) // 后台创建索引; 过程中服务读写无影响, 但创建速度慢
+  db.currentOp() // 查看创建索引的进度
+  db.killOp() // 终止创建索引
 db.coll.createIndex({name: 1}, {unique: true}) // 唯一索引
-db.coll.createIndex({gender: 1, joinTime: 1, age: 1}) // 复合索引 创建遵循ESR原则
+db.coll.createIndex({gender: 1, joinTime: 1, age: -1}) // 复合索引 创建遵循ESR原则; 索引名'gender_1_joinTime_1_age_-1'
 db.coll.createIndex({age: 1}, {partialFilterExpression: {age: {$get: 5}}}) // 索引部分创建 age大于5的才创建索引
 db.coll.createIndex({name: 1}, {background: 1}) // 后台创建 推荐创建索引时必须加此选项
 db.coll.getIndexes() // 查看集合索引; getIndexKeys()简化
@@ -231,3 +234,7 @@ db.{coll}.find().forEach(function(row){print("time: " + row._id.getTimestamp())}
 ```
 
 > 截取_id的前8位, hex->dec.
+
+## ref
+
+- 后台创建索引 <https://haicoder.net/mongodb/mongodb-createindex-background.html>

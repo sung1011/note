@@ -41,5 +41,3 @@
   - `vet`         report likely mistakes in packages
 
 > go build/run 时有一个hook, 会自动调用go mod tidy, 该行为控制通过`go build -mod=readonly`或`go build -mod=vendor`
-
-> go mod下载的包`按版本`保存在`$GOPATH/pkg/mod/`

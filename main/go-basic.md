@@ -1,4 +1,4 @@
-# go start
+# go basic
 
 ## [version](go-version.md)
 
@@ -11,3 +11,5 @@
 ## [cmd](go-cmd.md)
 
 ## [import](go-import.md)
+
+## [赋值](go-assignment.md)
