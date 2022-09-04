@@ -10,27 +10,27 @@
 type Student struct {// 结构体
     Name string
     Age int
+    Scores map[string]int
 }
-
-var s Student // 声明
-s.Name = "Sam" // 赋值
+// 声明
+// 零值可用, 不必初始化, 方便.如: var b bytes.Buffer, var mu sync.Mutex
+var s Student 
+s.Name = "Sam"
 s.Age = 18
-
-sp := new(Student) // 初始化
-
-sp := &Student{ // 初始化 与new等效
-    Name    :"Sam",
-    Age     :18,
-}
-
-sp := &Student{"Sam", 18} // 初始化 with顺序初始值
+// 初始化
+sp1 := new(Student) 
+// 初始化 并赋值; 不推荐赋值时 按顺序匿名赋值
+sp2 := &Student{Name: "Sam", Age: 18, Scores: make(map[string]int)}
+sp2.Scores = map[string]int{"math": 98, "chemistry": 80}
+// 初始化 并顺序初始值
+sp3 := &Student{"Sam", 18} 
 ```
-
-![img](res/go-struct-assign.jpg)
 
 ## 内存布局 连续
 
     结构体和它所包含的数据在内存中是以连续块的形式存在的, 即使结构体中嵌套有其他的结构体
+
+![img](res/go-struct-assign.jpg)
 
 ![img](res/go-struct-mem.jpg)
 
@@ -41,26 +41,49 @@ sp := &Student{"Sam", 18} // 初始化 with顺序初始值
 ## 方法
 
 ```go
-type User {
-    name string
-    school *schoolInfo // 当期望 不随User变化而变化, 使用指针
+type User struct {
+	name   string
+	School *SchoolInfo // 当期望 不随User变化而变化, 使用指针
+	_      int8        // 匿名字段
 }
+type SchoolInfo struct {
+	Addr string
+}
+
 // 指针接收者 修改类型实例本身 (不论调用者是u或&u)
 func (u *User) changeName() {
-    u.name = "xx"
+	u.name = "xx"
 }
+
 // 值接收者 修改类型实例的副本 (不论调用者是u或&u)
-func (u User) changeName() User {
-    u.name = "xx"
-    return u
+// func (u User) changeName() User {
+// 	u.name = "xx"
+// 	return u
+// }
+
+// 获取内嵌字段
+func (u User) getSchoolAddr() string {
+	return u.School.Addr
+}
+
+func main() {
+	u := &User{ // 初始化
+		name:   "sun",
+		School: &SchoolInfo{Addr: "xxx"}, // 初始化内嵌结构
+	}
+	fmt.Println("", u)
 }
 ```
 
 > 关注Type是值类型还是引用类型, 引用类型用值接收者即可, 值类型区分区分是修改实例本身or生成副本
 
-> 如果一个工厂函数返回的是指针, 其方法都应当使用指针接收者 (即使该方法不修改实例本身); 例外: 让类型值符合某个接口时.
+> 如果一个工厂函数返回的是指针, 其方法都应当使用指针接收者 (即使该方法不修改实例本身); 例外: 需要类型值符合某个接口时
 
-> func(recv) 叫函数; recv.Method() 叫方法
+> func(recv) 是函数; recv.Method() 是方法
+
+> T类型中包含T类型字段 不合法; 但可以包含*T, []T, map[string]T
+
+> T1包含T2, T2包含T1 不合法
 
 ## 基于基础类型的新类型
 
@@ -75,18 +98,22 @@ var dur Duration
 dur = j
 ```
 
-## 构造器(一个函数根据数据结构返回这个数据结构的一个实例对象) & 工厂方法
+## 构造函数
+
+    作为工厂方法用于构造实例, 返回实例的指针
+    特别是可以对未导出的字段赋值
 
 ```go
-func newStudent(name string, age int) *Student { // 若改为NewStudent(N大写)可以认为是工厂方法
+// func NewT(field1, field2, ...) *T
+func NewStudent(name string, age int) *Student {
     return &Student{
-        name,
-        age,
+        name: name,
+        age: age,
     }
 }
 ```
 
-## 扩展
+## 包含
 
 ```go
 type Animal struct {
@@ -156,7 +183,7 @@ type File struct {
 
 ```go
 // 无法访问另一个包公开类型的未公开字段
-// 可以访问另一个包公开类型的未公开字段(值是类型)的公开字段
+// 可以访问另一个包公开类型的未公开字段(值是类型)的公开字段 ???
 // TODO
 ```
 
@@ -183,11 +210,42 @@ func main() {
     TODO
 ```
 
-## 空 struct{}{}
+## 空结构体 struct{}{}
 
-- 不占用内存
-- 地址不变
+    不占用内存
+    地址不变
 
+```go
+    type Empty struct{}
+    var s Empty
+    fmt.Println(unsafe.Sizeof(s)) // 0
+
+    var ch := make(chan Empty)
+    ch <-Empty  // 不占用内存, 只作为一种事件信息传递
+```
+
+## 内存对齐
+
+    每个字段占用8byte, 字段顺序影响其内存空间占用
+
+```go
+type T1 struct {
+	b byte   // 1
+	i int64  // 8
+	u uint16 // 2
+}
+type T2 struct {
+	b byte   // 1
+	u uint16 // 2
+	i int64  // 8
+}
+
+func main() {
+	var t1 T1 // (1+`7`) + 8 + 2 = 24; 7为填充
+	var t2 T2 // (1+2+`5`) + 8 = 16; 5为填充
+	fmt.Println(unsafe.Sizeof(t1), unsafe.Sizeof(t2))
+}
+```
 
 ## 链表 与 双向链表
 
