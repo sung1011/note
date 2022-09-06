@@ -97,21 +97,52 @@ echo $b; // 2
 ## 魔术方法  
 
 ```bash
-__get()  
-__set()  
-__isset()  
-__unset()  
-__call() 调用不存在的方法  
-__callStatic() 调用不存在的静态方法  
-__construct()  
-__destruct()  
-__toString() 输出对象  
-__invoke() 把对象当函数执行  
-__clone()  
-__sleep() 序列化 `serialize()`  
-__wakeup() 反序列化 `unserialize()`  
-__set_state() 导出时`var_export()`  
+    __get()  
+    __set()  
+    __isset()  
+    __unset()  
+    __call() 调用不存在的方法  
+    __callStatic() 调用不存在的静态方法  
+    __construct()  
+    __destruct()  
+
+    __toString() 输出对象  
+    __invoke() 把对象当函数执行  
+    __clone()  clone时如何处理
+    __sleep() 序列化 `serialize()`  
+    __wakeup() 反序列化 `unserialize()`  
+    __set_state() 导出时`var_export()`  
 ```
 
-> clone: `$obj2 = clone $obj1`会进行浅拷贝(即$obj2是$obj1的拷贝, 但$obj2中的属性若是一个对象$objHang, 其保存的是指针地址, 即`$objHang`是浅拷贝), 而深拷贝需要__clone()魔术方法.用以`$obj1`调用clone时, 内部的handler
+## 浅拷贝 深拷贝
 
+```php
+class Test{
+    public $a = 1;
+    public $obj;
+
+    public function __construct(){
+        $this->obj = new \stdClass();
+    }
+}
+
+// 对象赋值
+$m = new Test();
+$n = $m;
+$m->a = 2;// 修改m，n也随之改变
+$n->a;//2; 浅拷贝
+
+// 克隆 普通属性深拷贝, 对象属性浅拷贝
+$p = clone $m;
+$m->a = 2;
+$m->obj->foo = 123;
+$p->a; // 2; 普通属性深拷贝(不跟着变)
+$p->obj->foo; // null; 对象属性浅拷贝(跟着变)
+
+// 序列化 深拷贝
+$n = unserialize(serialize($m))     // json_encode() json_decode() 也可以
+$m->a = 2;
+$m->obj->foo = 123;
+$n->a; // 1; 普通属性深拷贝(不跟着变)
+$n->obj->foo; // null; 对象属性深拷贝(不跟着变)
+```

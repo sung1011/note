@@ -127,7 +127,7 @@ TODO
 
 ## ref
 
-- [共识算法: Raft](https://www.jianshu.com/p/8e4bbe7e276c)
-- [动画演示](http://thesecretlivesofdata.com/raft/)
-- [分布式一致性协议Raft原理](https://wingsxdu.com/post/algorithms/raft/)
-- [深度解析raft分布式一致性协议](https://blog.csdn.net/z69183787/article/details/112168120)
+- 共识算法: Raft <https://www.jianshu.com/p/8e4bbe7e276c>
+- 动画演示 <http://thesecretlivesofdata.com/raft/>
+- 分布式一致性协议Raft原理 <https://wingsxdu.com/post/algorithms/raft/>
+- 深度解析raft分布式一致性协议 <https://blog.csdn.net/z69183787/article/details/112168120>

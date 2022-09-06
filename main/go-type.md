@@ -7,11 +7,11 @@
 - ptr  
 - [array](go-array.md)  
 - [struct](go-struct.md)  
-- bool  
 - [int](go-int.md)
 - [float](go-float.md)
 - [string](go-string.md)  
 - unsafe.Pointer
+- bool  
 
 ## 引用类型
 

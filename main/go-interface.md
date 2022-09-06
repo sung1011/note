@@ -23,26 +23,34 @@
 
 ```go
 type I interface {
-    do()
+	M1()
+	M2()
 }
 
-type Tp struct{}
+type Foo struct {}
 
-func (t *Tp) do() {} // 接口指针接收者的实现
+func (*Foo) M1() {      // 指针接收者
+	fmt.Println("m1")
+}
+func (Foo) M2() {       // 值接收者
+	fmt.Println("m2")
+}
 
 func main() {
-    foo(&Tp{}) // ok; 指针 实现了I的接口
-    // foo(Tp{}) // error; 值 没实现I的接口 (找不到其接口指针*T的方法集)
+	var i I
+	i = &Foo{}
+	// i = Foo{}   // error; 值 没实现接口I的M1方法
+	i.M1() // m1
+	i.M2() // m2
+    _, ok1 := i.(I)      // 接口断言, 实例是否实现了I接口
+	_, ok2 := i.(*Foo)
+	// _, ok2 := i.(Foo)    // error; 值 没实现接口I的M1方法
+	fmt.Println("implement:", ok1, ok2) // true true
 }
 
-func foo(i I) { // 作为参数 转为接口
-    i.do()
-    // i.doOther() // error: undefined (type I has no field or method doOther)
-}
+// 接口 用于同一行为, 实例替换, 如 db, err := sql.Open("mysql", "root:password@tcp(127.0.0.1:3306)") // mysql可换成sqllite, postgresql, oralce  
 
-// 用于同一行为, 实例替换, 如 db, err := sql.Open("mysql", "root:password@tcp(127.0.0.1:3306)") // mysql可换成sqllite, postgresql, oralce  
-
-// 也用于不同类型统一行为, 如 copy(os.Stdout, r.Body)  
+// 接口 也用于不同类型统一行为, 如 copy(os.Stdout, r.Body)  
 ```
 
 ### 接收者角度
@@ -148,7 +156,6 @@ var x interface{}
 x = 10
 v, ok := x.(int) // 10, true; 断言x是否为实现了int类型(的实例10)的接口.
 // v, ok := x.(*int) // nil, false; 断言有严格的判断.
-
 
 // 配合switch
 switch x.(type) {

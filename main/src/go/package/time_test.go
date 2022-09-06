@@ -57,3 +57,27 @@ func Test_Time_Parse(t *testing.T) {
 		So(t.Format("2006-01-02 15:04:05"), ShouldEqual, "2021-10-11 04:00:00")
 	})
 }
+
+func Test_Time_Ticker(t *testing.T) {
+	Convey("Ticker", t, func() {
+		ch := make(chan int)
+
+		timer := time.NewTicker(1 * time.Second)
+		defer timer.Stop()
+
+		go func(ch chan int) {
+			stop := time.After(5 * time.Second)
+			for {
+				select {
+				case <-stop:
+					fmt.Println("stop!")
+					ch <- 1
+					return
+				case <-timer.C:
+					fmt.Println("ticker")
+				}
+			}
+		}(ch)
+		<-ch
+	})
+}

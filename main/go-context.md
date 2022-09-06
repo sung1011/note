@@ -266,7 +266,7 @@ func parentCancelCtx(parent Context) (*cancelCtx, bool) {
 - 不要把ctx放在结构体中,要以参数的方式进行传递
 - 以ctx作为参数的函数方法,应该把ctx作为第一个参数,放在第一位
 - 给一个函数方法传递ctx的时候,不要传递nil,如果不知道传递什么,就使用ctx.TODO
-- ctx的Value相关方法应该传递必须的数据,不要滥用,什么数据都使用这个传递
+- ctx的Value相关方法应该传递必须的数据,不要滥用
 
 ## ref
 

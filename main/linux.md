@@ -6,7 +6,7 @@
 
 ## [memeroy](linux-mem.md)
 
-## [disk]
+## disk
 
 ## [架构](linux-arch.md)  
 

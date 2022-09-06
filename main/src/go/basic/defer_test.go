@@ -63,13 +63,13 @@ func Test_Defer_Slice(t *testing.T) {
 
 func Test_Defer_Panic(t *testing.T) {
 	Convey("panic", t, func() {
-		Convey("seq", func() { // b a panic (panic 后的 c 不会被执行到), panic最后执行
+		Convey("seq", func() { // b a panic; (panic 后的 c 不会被执行到), panic最后执行
 			defer t.Log("a")
 			defer t.Log("b")
 			// panic("errrrr")
 			defer t.Log("c") // be ignore
 		})
-		Convey("closure", func() { // d b a panic (不会执行到c), panic最后执行
+		Convey("closure", func() { // d b a panic; (不会执行到c), panic最后执行
 			defer t.Log("a")
 			defer func() {
 				t.Log("b")
@@ -78,7 +78,7 @@ func Test_Defer_Panic(t *testing.T) {
 			}()
 			defer t.Log("d")
 		})
-		Convey("recover", func() { // b recover a (panic 后的 c 不会被执行到)
+		Convey("recover", func() { // b recover a; (panic 后的 c 不会被执行到)
 			defer t.Log("a")
 			defer func() {
 				t.Log("b")
@@ -117,8 +117,8 @@ func Test_Defer_Struct(t *testing.T) {
 	})
 }
 
-func Test_Defer_Over(t *testing.T) {
-	Convey("over", t, func() {
+func Test_Defer_Return(t *testing.T) {
+	Convey("return", t, func() {
 		Convey("return; 注意命名返回值; 闭包延迟读取", func() {
 			// 模拟普通函数 带有命名返回值
 			func() (s string) {
@@ -149,7 +149,6 @@ func Test_Defer_Over(t *testing.T) {
 			// 	return err
 			// }
 			// defer f.Close()
-
 		})
 
 		Convey("os.Exit时defer不会执行", func() {

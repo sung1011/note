@@ -37,12 +37,15 @@
 
 1. redis调用fork(), 现在有父子两个进程.  
 2. 子进程根据`内存`中的数据库快照, 往临时aof文件写入数据库状态. `注意: 这里是重写了aof文件, 并没有读取旧aof`  
-3. 父进程继续处理client请求写旧aof, 这样保证如果rewrite失败的话并不会出问题; 把新收到的写命令缓存起来aof_rewrite_buf_blocks
+3. 父进程继续处理client请求写旧aof, 这样保证如果rewrite失败的话并不会出问题
+4. 新收到的写命令触及的内存页copy到aof_rewrite_buf_blocks, 然后新老数据页都更新.
    - 默认在rewrite时也会fsync, 但消耗CPU, 推荐关闭
-4. 临时aof文件生成完毕后, 缓存aof_rewrite_buf_blocks也append在后面
-5. 父进程使用临时aof替换老的aof
+5. 临时aof文件生成完毕后, 缓存aof_rewrite_buf_blocks也append在后面
+6. 父进程使用临时aof替换老的aof
 
 > `no-appendfsync-on-rewrite no` 配置默认no, 推荐为yes 即rewrite时对新写的操作暂定fsync到旧aof, 仅存在buf
+
+> 如果操作时bigKey, 那copy内存页到aof_rewrite_buf_blocks的CPU消耗会很大
   
 > `aof文件` 是可读的 + 保存了全部写操作, 所以体积会很大;
 

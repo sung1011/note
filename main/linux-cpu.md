@@ -1,6 +1,6 @@
 # linux cpu
 
-## [cpu性能](cpu-performance.md)
+## [CPU性能](cpu-performance.md)
 
 ## [平衡负载](linux-loadAverage.md)  
 
@@ -12,4 +12,4 @@
 
 ## [中断](linux-interrupt.md)
 
-## [cpu优化]
+## CPU优化

@@ -13,7 +13,7 @@
 
 - [填充 Padding](crypt-padding.md)
 
-      AES支持`noPadding`, `pkcs5Padding`, `ISO10126Padding`
+      AES支持`no`, `pkcs5`, `pkcs7 / zero`, `ISO10126`
 
 - 初始向量 IV
 
