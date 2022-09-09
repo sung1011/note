@@ -194,12 +194,14 @@ func main() {
     接口才可以断言
 
 ```go
+// interface{}转化为具体Type
+// 断言是否为该类型
 var x interface{}
 x = 10
 v, ok := x.(int) // 10, true; 断言x是否为实现了int类型(的实例10)的接口.
 // v, ok := x.(*int) // nil, false; 断言有严格的判断.
 
-// 配合switch
+// type switch结构
 switch x.(type) {
     case int:
        fmt.Println("is int")
