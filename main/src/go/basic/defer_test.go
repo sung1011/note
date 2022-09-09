@@ -2,10 +2,21 @@ package main
 
 // 延迟到return后执行
 // 倒序执行
-// defer func(param), 其参数param会快照保存一份(defer上下文的)副本
+// defer func(param), 其参数param会值拷贝一份当前上下文的副本
 // 指针和闭包非快照, 会延迟, 取执行时的上下文
 
 // ref: https://www.cnblogs.com/phpper/p/11984161.html
+
+/**
+func foo() TYPE{
+    ...CODE...
+    defer b()
+    ...CODE...
+    // 函数执行出了错误
+    return args
+    // 函数b()都会在这里执行
+}
+**/
 
 import (
 	"fmt"
@@ -31,31 +42,41 @@ func GetName(u Users) {
 	u.GetName()
 }
 
-func Test_Defer_Slice(t *testing.T) {
+func Test_Defer_Seq(t *testing.T) {
 	// var is []int
 	Convey("slice", t, func() {
 		var ss [3]struct{} // 0 1 2
 
-		Convey("=> ok", func() {
+		Convey("desc", func() {
 			for i := range ss {
 				defer fmt.Println(i) // 2 1 0
 			}
 		})
-		// 闭包用到的变量, 执行时已经变成了2
-		Convey("closure => last; ", func() {
+		Convey("closure 执行时的上下文", func() {
 			for i := range ss {
 				defer func() {
 					fmt.Println(i) // 2 2 2
-				}()
+				}() // 压栈但未传值 执行时的上下文
 			}
 		})
 
-		Convey("closure(param) => ok", func() {
+		Convey("closure(param) 压栈时, 根据上下文传递值拷贝", func() {
 			for i := range ss {
 				defer func(i int) {
 					fmt.Println(i) // 2 1 0
-				}(i)
+				}(i) // 压栈时, 根据上下文传递值拷贝
 			}
+		})
+		Convey("return; 闭包延迟读取, 带命名返回值", func() {
+			// 模拟普通函数 带有命名返回值
+			func() (s string) {
+				s = "aaa"
+				defer func() {
+					fmt.Println("defer: " + s) // derfer: bbb
+				}()
+				return "bbb"
+				// defer s := bbb
+			}()
 		})
 
 	})
@@ -66,14 +87,14 @@ func Test_Defer_Panic(t *testing.T) {
 		Convey("seq", func() { // b a panic; (panic 后的 c 不会被执行到), panic最后执行
 			defer t.Log("a")
 			defer t.Log("b")
-			// panic("errrrr")
+			// panic("errrrr") // 当前与return之后
 			defer t.Log("c") // be ignore
 		})
 		Convey("closure", func() { // d b a panic; (不会执行到c), panic最后执行
 			defer t.Log("a")
 			defer func() {
 				t.Log("b")
-				// panic("errrrrr") // panic
+				// panic("errrrrr")
 				t.Log("c") // be ignore
 			}()
 			defer t.Log("d")
@@ -119,23 +140,6 @@ func Test_Defer_Struct(t *testing.T) {
 
 func Test_Defer_Return(t *testing.T) {
 	Convey("return", t, func() {
-		Convey("return; 注意命名返回值; 闭包延迟读取", func() {
-			// 模拟普通函数 带有命名返回值
-			func() (s string) {
-				s = "aaa"
-				defer func() {
-					fmt.Println("defer: " + s) // derfer: bbb
-				}()
-				return "bbb" // 会先返回 赋值给命名返回值s
-			}()
-			// return, defer, 返回值 的关系
-			// return最先执行，return负责将结果赋值返回值中；接着defer开始执行一些收尾工作；最后函数携带当前返回值退出。
-			// 1. s=aaa
-			// 2. return bbb
-			// 3. func() (s=bbb) {}
-			// 4. defer s=bbb
-		})
-
 		Convey("尽量不在循环中使用defer, defer有额外开销; 去掉defer即可", func() {
 			for i := 0; i < 100; i++ {
 				// f, _ := os.Open("./defer_test")

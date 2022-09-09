@@ -16,11 +16,13 @@
     类型不同, 必须显式转化
 
 ```go
-    type myInt int // int 是 myInt的底层类型(underlying type)
+    type Duration int64 // int64 是 Duration 的底层类型(underlying type)
 
-    var i int = 123
-	// var mi myInt = i         error: cannot use i (type int) as type myInt in assignment
-	var mi myInt = myInt(i)
+	var i int64 = 100
+	// j := i // error: cannot use j (type int64) as type Duration in assignment
+	j := Duration(i) // 可以转换, 他们具有相同的底层类型(underlying type)int64
+	var dur Duration = j
+	fmt.Println("", dur)
 ```
 
 ## 类型别名 Type alias

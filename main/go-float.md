@@ -53,5 +53,4 @@ todo
 	v1 := decimal.NewFromFloat32(f1)
 	v2 := decimal.NewFromFloat32(f2)
 	fmt.Println(v1 == v2)       // false
-
 ```

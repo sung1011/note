@@ -9,6 +9,7 @@
 
 ```go
 var arr [5]int;
+// var arr [...]int; error: use of [...] array outside of array literal
 arr := [5]int;
 arr := [5]int{10, 20, 30, 40, 50};
 arr := [...]int{10, 20, 30, 40, 50};
@@ -27,6 +28,8 @@ a2[0] = 888         // 修改元素的值
 a1 = a2             // 888, 9, 0
 ```
 
+## [是否==](go-type-compare.md#array)
+
 ## 多维数组
 
 ```go
@@ -38,4 +41,4 @@ arr := [4][2]int{
 ## 数组参数
 
       &arr 传递指针 8字节
-      arr 传递值 24字节
+      arr 传递值 T*len 可能巨大

@@ -1,10 +1,31 @@
 # go 接口
 
-        相同行为, 不同实例 (多态)
+        定义不同实例的相同行为
 
 ## 数据结构
 
-        TODO
+```go
+// 不包含任何方法的 interface{} 类型
+type eface struct { // 16字节
+    _type *_type    // *Type
+    data  unsafe.Pointer
+}
+// 包含方法
+type iface struct { // 16字节
+    tab  *itab      // method-set 方法集
+    data unsafe.Pointer
+}
+
+// 一个interface由两部分组成 类型 和 值
+// 只有当类型, 值都相同, 接口才相等
+```
+
+```go
+	var t Ifoo
+	t = &foo{}             // 0x11a6c30
+	fmt.Printf("%p\n", t)  // (0x10ebda0,0x11a6c30); (指针1: 实例类型信息+方法集; 指针2: 实例&foo{})
+	println(t)
+```
 
 ## 方法集methodSet & 参数
 
@@ -15,9 +36,11 @@
 ### 原理
 
         实例的methodSet决定了它所实现的接口, 以及通过receiver可以调用的方法.  
-        通过指针实例可以拿到值类型实例的methodSet(解引用), 通过值实例不能拿到指针实例的methodSet
+        通过指针实例*T可以调用值实例T的methodSet(解引用), 反之值实例T不能拿到指针实例*T的methodSet
 
-> 多态
+### 签名
+
+        签名 = 函数名 + 参数(类型) + 返回值(类型)
 
 ### 示例
 
@@ -42,8 +65,8 @@ func main() {
 	// i = Foo{}   // error; 值 没实现接口I的M1方法
 	i.M1() // m1
 	i.M2() // m2
-    _, ok1 := i.(I)      // 接口断言, 实例是否实现了I接口
-	_, ok2 := i.(*Foo)
+	_, ok1 := i.(I)    // 接口实例是否I的实例
+	_, ok2 := i.(*Foo) // 接口实例是否是*Foo的实例
 	// _, ok2 := i.(Foo)    // error; 值 没实现接口I的M1方法
 	fmt.Println("implement:", ok1, ok2) // true true
 }
@@ -66,6 +89,8 @@ func main() {
 | ----------- | ------------------- | ------------------------------------ |
 | 值类型:T    | (T Type)            | 接口中实例是值类型, 只能组成值接收者 |
 | 指针类型:\*T | (T Type)或(T *Type) | 接口中实例是指针类型更通用           |
+
+## [是否==](go-type-compare.md#interface)
 
 ## 嵌套 组合
 
@@ -149,7 +174,24 @@ func main() {
 }
 ```
 
+```go
+	var any interface{}
+	any = "hello world"
+	any = 11
+```
+
+```go
+	testSlice := []int{11,22,33,44}
+	var any []interface{}
+	// any = testSlice     // error: cannot use testSlice (type []int) as type []interface {} in assignment
+
+    // 复合结构不能直接赋值给interface{}, 只能for range逐个append()
+```
+
 ## 类型断言
+
+    判断接口是否是某个类型的实例
+    接口才可以断言
 
 ```go
 var x interface{}

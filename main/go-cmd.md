@@ -3,6 +3,9 @@
 - `go`
   - `bug`         start a bug report
   - `build`       compile packages and dependencies
+
+        编译出可执行文件
+
   - `clean`       remove object files and cached files
   - `doc`         show documentation for package or symbol
   - `env`         print Go environment information
@@ -13,6 +16,9 @@
     - `go get -u` update modules providing dependencies of packages
 
   - `install`     compile and install packages and dependencies
+
+        build后可执行文件安装到bin, 其依赖安装到pkg
+
   - `list`        list packages or modules
     - `go list -m all` list modules and dependencies instead of packages.
     - `go list -m -u all` list modules, dependencies and upgrade them.

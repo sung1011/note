@@ -1,4 +1,4 @@
-# 一致性哈希DHT consistent hashing
+# 一致性哈希DHT distributed hash table
 
 @@分布式 @@哈希 @@算法
 

@@ -2,6 +2,16 @@
 
     nil读写阻塞，写关闭异常，读关闭空零
 
+## 数据结构
+
+    todo
+
+```go
+	t := make(chan int)
+	fmt.Printf("%p\n", t) // 0xc00008c060
+	println(t) // 0xc00008c060
+```
+
 ## 基础用法
 
 ```go

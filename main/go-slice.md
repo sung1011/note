@@ -3,11 +3,17 @@
 ## 数据结构
 
 ```bash
-    `ptr` 底层array被切的第一个元素地址 (切口)
     `len` 切出的元素个数
     `cap` 从切口到底层array结尾的个数
+    `ptr` 底层array被切的第一个元素地址 (切口)
 
-    # `占用` 固定24byte = ptr8 + len8 + cap8
+    # `占用` 固定24字节 = len8 + cap8 + ptr8
+```
+
+```go
+    t := make([]int, 3, 5)
+	fmt.Printf("%p", t)     // 0xc000036760; 底层ptr
+    print(t)                // [3/5]0xc000036760; [len/cap]底层ptr
 ```
 
 ## 创建 初始化 访问
@@ -25,45 +31,52 @@ var sl []int
 ## 数组 与 切片
 
 ```go
-// 数组
-arr := [...]string{"a", "b", "c", "d", "e", "f"}
-// 切片
-sl1 := arr[2:4] // [c, d] len=2 cap=4 (即6-2)
-// 切片的切片, cap进一步缩小
-sl1_1 := sl1[1:3] // [d, e] len=2 cap=3 (即4-1)
-// 索引3限制cap
-sl2 := arr[2:4:5] // [c, d] len=2 cap=3 (即5-2)
+	// 切全部[:], [0:len]
+	arr := [...]int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	fmt.Println(arr[:], arr[0:9]) // [1~9]; 切全部 切到9但不包含9 (类似for i=0; i<len(); i++)
+	// 切[A:B]
+	sl1 := arr[2:4]
+	fmt.Println(sl1[:6])                 // [3 4 5 6 7 8]; cap足够时, 依然能切到(:4)后面的元素
+	fmt.Println(sl1, len(sl1), cap(sl1)) // [3 4] 2 7; len=4-2; cap=9-2
+	// 切[A:B:C]; 限定cap
+	sl2 := arr[2:4:4]
+	fmt.Println(sl2, len(sl2), cap(sl2)) // [3 4] 2 2
+	// 浅拷贝, 会同步修改底层数组的值
+	sl1[0] = 3333
+	fmt.Println(sl1, arr) // [3333 4] [1 2 3333 4 5 6 7 8 9]
 ```
 
-## 赋值 (保持引用)
+## 深拷贝 (解引用)
 
 ```go
-// 切片赋值, 会同步修改底层数组的元素值.
-arr := [...]string{"a", "b", "c", "d"}
-sl := arr[2:] // [c d]
-sl[0] = "ccc" // arr: [a b ccc, d]
-```
-
-## 拷贝 (解引用)
-
-```go
-// 仅覆盖值 && 不改变len, cap && 不报错
-n := copy([]int{1, 2, 3}, []int{666, 777, 888, 999}) //sl1 = {666, 777, 888}; n = 3 (即copy了3个值)
-
-n := copy([]int{1,2,3}, []int{666, 777}) //sl1 = {666, 777, 3}; n = 2 (即copy了2个值)
+	// 深拷贝解引用
+	var n int
+	origin := []int{1, 2, 3}
+	new := make([]int, len(origin))
+	copy(new, origin)
+	new[0] = 1111
+	fmt.Println(origin, new) // [1 2 3] [1111 2 3]; 不会同步修改原切片的值
+	// 少覆盖
+	n = copy(origin, []int{666, 777}) 
+	fmt.Println(origin, n)            // {666, 777, 3}; n = 2 (即copy了2个值)
+	// 多覆盖
+	n = copy(origin, []int{666, 777, 888, 999})
+	fmt.Println(origin, n)                      // {666, 777, 888}; n = 3 (即copy了3个值)
 ```
 
 > `copy(dst, src)` go doc builtin copy
+
+## [是否==](go-type-compare.md#slice)
 
 ## append 增长/扩容
 
 ```go
 sl := make([]string, 1, 4); //[] len=1; cap=4
 
-// cap足够时 增长: 增加可用元素 & 同步修改底层数组的元素值.  len++
+// cap足够时 增长 增加可用元素; 浅拷贝 同步修改底层数组的元素值.  len++
 sl1 := append(sl, []string{"a", "b", "c"}...) // ["" a b c] len=4 cap=4; sl&sl1共享底层arr
 
-// cap不足时 扩容: 新建底层数组(cap倍增).  len++ cap+++++
+// cap不足时 扩容: 新建底层数组(cap倍增).  len++ cap++++++
 sl2 := append(sl1, "x") // ["" a b c x] len=5 cap=8; sl2新建了底层arr
 ```
 
@@ -117,15 +130,16 @@ fmt.Println(seq) // [a, b, c, d]
 
 - nil 切片
 
-  `var sl []int`  ptr为nil, len 0, cap 0  
+    `var sl []int`  ptr==nil, len 0, cap 0  
 
 - 空 切片
 
-  `sl := make([]int, 0)` ptr有值(指向底层的空array), len 0, cap 0
+    `sl := make([]int, 0)` ptr有值, len 0, cap 0
 
 ## 作为参数
 
-      直接传递, ptr+len+cap 的值 (24byte)
+      值传递, ptr+len+cap (24byte)
+      引用传递, ptr 8byte
 
 ## 迭代
 

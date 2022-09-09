@@ -12,4 +12,6 @@
 
 ## [import](go-import.md)
 
+## [const](go-const.md)
+
 ## [赋值](go-assignment.md)

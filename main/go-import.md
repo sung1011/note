@@ -1,5 +1,11 @@
 # go import
 
+## 指定主版本
+
+```go
+import "github.com/go-redis/redis/v7" // v7.x.x
+```
+
 ## 导入
 
 ```go
@@ -14,7 +20,9 @@ import (
 )
 ```
 
-## 自定义包名
+## 别名包名
+
+    避免包名冲突
 
 ```go
 import (
@@ -23,21 +31,33 @@ import (
 )
 ```
 
-## 指定主版本
+## 特殊导入包
+
+    不加包名, 直接访问
 
 ```go
-import "github.com/go-redis/redis/v7" // v7.x.x
+import (
+    . "fmt"
+)
+
+func main() {
+    Println()    // 无需包名，直接访问Println
+}
 ```
 
 ## 匿名导入包
 
+    只触发导入包的init()函数
+
 ```go
 import (
-    _ "path/to/package" // 触发导入包的init()
+    _ "path/to/package"
 )
 ```
 
 ## init() 包的初始化函数
+
+    依赖包之间深度优先, 包内常量 -> 变量 -> init()
 
 ![img](res/go-init-seq.png)
 
@@ -45,9 +65,10 @@ import (
 func init() {
 
 }
-# 初始化顺序: 以深度优先的顺序. 如包的引用关系为 main->A->B->C, 则`init()`的调用顺序为 C.init->B.init->A.init->main
 
-# 包内顺序: 常量 -> 变量 -> init()
+# 依赖顺序: 以深度优先的顺序. 如包的引用关系为 main->A->B->C, 则`init()`的调用顺序为 C->B->A->main
+
+# 包内顺序: 常量 -> 全局变量 -> init()
 
 # 同一个包的多个`init()`顺序随机
 
@@ -110,7 +131,7 @@ func init() {
 }
 ```
 
-### 用途3: 工厂模式
+### 用途3: 注册工厂模式
 
     sql包, pq包搭配使用, pq将实例注册进sql, sql.Open()最为工厂方法使用
     有效降低pq包对外的直接暴露
@@ -151,4 +172,28 @@ func main() {
     img, _, err := image.Decode(f) // 对文件进行解码，得到图片实例
     b := img.Bounds() // 对象可以获取图片宽高 b.Max.X, b.Max.Y
 }
+```
+
+## struct
+
+    struct的名字是小写, 则struct不会被导出, 内部字段也不会被导出
+    struct的名字是大写, 则struct可导出, 内部大写字段可导出
+    内嵌的struct无论名字大小写, 其内部大写字段可导出
+
+```go
+type animal struct{
+    name string
+    Speak string
+}
+
+func (a *animal) Pub() {}
+
+func (a *animal) pri() {}
+
+type Horse struct {
+    animal
+    sound string
+}
+// 可导出 Horse.Speak
+// 可导出 Horse.Pub()
 ```
