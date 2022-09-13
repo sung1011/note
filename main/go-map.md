@@ -42,7 +42,7 @@ type bmap struct { // A bucket for a Go map.
 m := map[string]int{"red": 1, "green": 2, "blue": 3} // len=3; 常用
 
 m := make(map[string]int) // empty map; len=0; cap=0 常用; 超过len会自动扩容
-m := make(map[string]int, 100) // empty map; len=0; cap=10 常用, 出于性能考虑
+m := make(map[string]int, 100) // empty map; len=0; cap=100 常用, 出于性能考虑
 
 m := map[string]int{} // empty map; prt=xxx len=0 cap=0;
 
@@ -52,7 +52,9 @@ m := map[string]int{} // empty map; prt=xxx len=0 cap=0;
 var m map[string]int 
 ```
 
-> `len()` 对map而言, len就是cap; map有cap的概念, 但无法使用cap()
+> `len()` 对map而言, len()是key的个数; map有cap的概念, 但无法使用cap()
+
+> `cap()` map不能使用cap(), 但make(map[T]T, cap)时可以初始化容量
 
 ## key限制
 

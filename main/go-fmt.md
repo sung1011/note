@@ -4,6 +4,20 @@
 
 - [fmt](src/go/package/fmt_test.go)
 
+## 读取输入
+
+- `Scan` 从标准输入os.Stdin中读取数据. `Scan()、Scanf()、Scanln()`
+
+- `SScan` 从字符串中读取数据. `Sscan()、Sscanf()、Sscanln()`
+
+- `Fscan` 从io.Reader中读取数据. `Fscan()、Fscanf()、Fscanln()`
+
+> *scanln 遇到换行符停止
+
+> *scan 换行当空格处理
+
+> *scanf 指定格式
+
 ## 运算符 operand
 
 | operand | type      | desc                                     | ex                                    |
