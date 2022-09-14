@@ -15,15 +15,15 @@ func Test_Range(t *testing.T) {
 			Convey("Q: range是i, v都只创建1次, 导致v的地址是同一个", func() {
 				sl := []int{1, 2, 3}
 				for _, v := range sl { // range的坑, v只在第一次循环时创建了1次, 开辟了一个地址&v
-					t.Log(&v) // 3次是同一个地址
+					t.Log(v, &v) // 3次v不同, 但是是同一个地址
 				}
 			})
 
 			Convey("A: 重新赋值创建n次", func() {
 				sl := []int{1, 2, 3}
 				for _, v := range sl {
-					tmp := v    // 创建了3次, 是3个不同的变量
-					t.Log(&tmp) // 3次是不同地址
+					tmp := v       // 创建了3次, 是3个不同的变量
+					t.Log(v, &tmp) // 3次v不同, 是不同地址
 				}
 			})
 

@@ -13,12 +13,12 @@
 | int32/rune  | 4           | -2147483648 ~ 2147483647                   |
 | uint64/int  | 8           | -9223372036854775808 ~ 9223372036854775807 |
 
-> [size](go-type.md#size)
+> [size](go-type-size.md)
 
 ## 溢出
 
     声明时溢出会报错
-    运算中溢出, 不会报错
+    运算中溢出, 不报错会循环
 
 ```go
 var v uint16 = 65536 // error: constant 65536 overflows uint16

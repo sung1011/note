@@ -32,7 +32,8 @@
 
 ### hand-off 机制; 放手
 
-        G阻塞时, 调休眠中/新调出的M接管P和P的队列, 继续执行
+        G阻塞时, sysmon监控抢夺式的调 休眠中/新创建 的M接管P来继续执行
+        调度有一定的延迟, 常常是M阻塞后被敏锐的OS调走, P还在等待hand-off, 因此P不要太少
 
 ```bash
     # G1阻塞, 导致P1M1不干活儿了
@@ -250,12 +251,46 @@
 
 ### 偷取为什么不用加锁?
 
-        todo
+        atomic 原子操作来规避futex竞争下陷入切换等待问题
+        但 lock free 在竞争下也会有忙轮询的状态，比如不断的尝试（自旋）
 
 ### 资源消耗
 
         销毁 > 自旋 > 创建 > 队列中取
         自旋比较消耗资源, 但销毁更浪费资源, 不如让M短期自旋, 尝试获取/偷取G
+
+### G的限制
+
+        限制
+            数量: 没限制
+            内存: 单goroutine占用内存2~4k(且是连续内存块)
+              4k * 1,000,000 = 4,000,000k ≈ 4G内存
+        查看
+            当前G数量 runtime.NumGoroutine()
+
+### P的限制
+
+        设置
+            CPU核数(默认); 环境变量$GOMAXPROCS; runtime.GOMAXPROCS()
+        限制
+            无
+        过少
+            hand-off时浪费
+        过多
+            计算密集时, 多了也没用, 反而更耗时
+            M也响应增多, 按照内核调度算法来切换就绪状态的线程，切换又引起上下文切换。
+        策略
+            计算密集 CPU核数*2
+            IO密集(或syscall比较多) >CPU核数*5
+        其他
+            P的数量不影响G的创建
+
+### M的限制
+
+        设置
+            runtime.SetMaxThreads()
+        限制
+            10000
 
 ### 阻塞
 
@@ -316,4 +351,5 @@
 - Golang深入理解GPM模型 <https://www.bilibili.com/video/BV19r4y1w7Nx?p=12&spm_id_from=pageDriver&vd_source=1092dd19ba71837a4fbb1ad282ee1357>
 - go休养之路 <https://www.yuque.com/aceld/golang/ga6pb1>
 - Golang 调度器 GMP 原理与调度全分析 <https://learnku.com/articles/41728>
+- Goroutine 数量控制在多少合适，会影响 GC 和调度？ <https://www.51cto.com/article/649707.html>
 

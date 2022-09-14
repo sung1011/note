@@ -143,7 +143,7 @@ func main() {
 }
 ```
 
-## [嵌套接口](go-interface.md#嵌入结构体)
+## [嵌套接口](go-interface.md#嵌入类型)
 
 ## 未公开类型的公开字段
 

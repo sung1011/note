@@ -2,6 +2,12 @@
 
     S端通过Cookie在C端记录会话状态
 
+## 用途
+
+- `用户标识` 登录后C端保存一串唯一字符xxx, 并在每次请求时携带, S端找到xxx对应的uid
+
+- `填充信息, 用户喜好` 自动填充账号 邮箱
+
 ## 方式
 
     S端可以修改C端的cookie(响应头`Set-Cookie`)
@@ -41,3 +47,7 @@
 | secure  | bool   | Cookie是否仅被使用安全协议传输.安全协议有HTTPS,SSL等,在网络上传输数据之前先将数据加密.默认为false                                        |
 | comment | string | Cookie的用处说明.浏览器显示Cookie信息的时候显示该说明                                                                                             |
 | version | int    | Cookie使用的版本号.0表示遵循Netscape的Cookie规范,1表示遵循W3C的RFC 2109规范                                                                       |
+
+## ref
+
+- <https://www.zhihu.com/question/19786827>

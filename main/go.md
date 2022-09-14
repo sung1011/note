@@ -10,7 +10,7 @@
 
 ## [feature](go-feature.md)
 
-## [并发](go-concurrent.md)
+## [concurrent](go-concurrent.md)
 
 ## [test](go-test.md)
 

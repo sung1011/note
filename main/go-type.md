@@ -28,7 +28,7 @@
 - [slice](go-slice.md)  `不可==`
 - [map](go-map.md)  `不可==`
 - [func](go-func.md)  `不可==`
-- [chan](go-chan.md)  
+- [chan](go-chan.md)
 - [interface](go-interface.md)
 - [ptr](go-ptr.md)
 

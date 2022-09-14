@@ -2,7 +2,7 @@
 
 ## 标志位  
 
-- **SYN** synchronous 建立联机
+- **SYN** synchronous(同步) 建立联机同步信息
 - **ACK** acknowledgement(确认) 向对方发送确认
 - **PSH** push(传送) 接收端尽快传送数据到应用层, 不必等缓冲区满再发送.
 - **FIN** finish(结束) 结束连接
@@ -47,7 +47,7 @@
                         CLOSE_WAIT
 
 
-    C <-------------------- S: `FIN` seq=j # S: (处理完了)可以关了, 请C进入time_wait
+    C <-------------------- S: `FIN` seq=j # S: (处理完了)可以关了, 请C先进入time_wait
  TIME_WAIT              LAST_ACK (压测时C端突然断开, S端很多LAST_ACK
 
 

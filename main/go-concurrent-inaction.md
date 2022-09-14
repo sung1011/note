@@ -10,6 +10,8 @@
 
 - [sync.Mutex](go-sync-mutex.md)
 
+- sync.Map
+
 ## context  
 
 ## atomic
