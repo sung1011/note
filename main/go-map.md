@@ -4,28 +4,37 @@
 
 ```go
 type hmap struct {
-    count     int // # live cells == size of map.  Must be first (used by len() builtin)
-    flags     uint8
-    B         uint8  // log_2 of # of buckets (can hold up to loadFactor * 2^B items)
-    noverflow uint16 // approximate number of overflow buckets; see incrnoverflow for details
-    hash0     uint32 // hash seed
+    count     int // 元素的个数
+    flags     uint8 // 标记读写状态，主要是做竞态检测，避免并发读写
+    B         uint8  // 可以容纳 2 ^ N 个bucket
+    noverflow uint16 // 溢出的bucket个数
+    hash0     uint32 // hash 因子
 
-    buckets    unsafe.Pointer // array of 2^B Buckets. may be nil if count==0.
-    oldbuckets unsafe.Pointer // previous bucket array of half the size, non-nil only when growing
-    nevacuate  uintptr        // progress counter for evacuation (buckets less than this have been evacuated)
+    buckets    unsafe.Pointer // 指向数组buckets的指针
+    oldbuckets unsafe.Pointer // growing 时保存原buckets的指针
+    nevacuate  uintptr        // growing 时已迁移的个数
 
-    extra *mapextra // optional fields
+    extra *mapextra
 }
 
-type mapextra struct { // mapextra holds fields that are not present on all maps.
+type mapextra struct {
     overflow    *[]*bmap
     oldoverflow *[]*bmap
 
     nextOverflow *bmap
 }
 
-type bmap struct { // A bucket for a Go map.
-    tophash [bucketCnt]uint8
+// 桶结构 A bucket for a Go map.
+type bmap struct {
+    // tophash generally contains the top byte of the hash value
+    // for each key in this bucket. If tophash[0] < minTopHash,
+    // tophash[0] is a bucket evacuation state instead.
+    tophash [bucketCnt]uint8    // 记录着每个key的高8个bits
+    // Followed by bucketCnt keys and then bucketCnt elems.
+    // NOTE: packing all the keys together and then all the elems together makes the
+    // code a bit more complicated than alternating key/elem/key/elem/... but it allows
+    // us to eliminate padding which would be needed for, e.g., map[int64]int8.
+    // Followed by an overflow pointer.
 }
 ```
 
@@ -285,4 +294,5 @@ func sortValue(mp map[string]int) {
 
 ## ref
 
-- [剖析golang map的实现](https://www.jianshu.com/p/092d4a746620)
+- <https://www.jianshu.com/p/092d4a746620>
+- <https://learnku.com/articles/33919>

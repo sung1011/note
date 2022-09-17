@@ -251,7 +251,7 @@
 
 ### 偷取为什么不用加锁?
 
-        atomic 原子操作来规避futex竞争下陷入切换等待问题
+        atomic 原子操作来规避mutex竞争下陷入切换等待问题
         但 lock free 在竞争下也会有忙轮询的状态，比如不断的尝试（自旋）
 
 ### 资源消耗
@@ -274,6 +274,7 @@
             CPU核数(默认); 环境变量$GOMAXPROCS; runtime.GOMAXPROCS()
         限制
             无
+            本地队列G个数256个
         过少
             hand-off时浪费
         过多
