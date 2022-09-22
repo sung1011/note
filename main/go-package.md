@@ -29,8 +29,7 @@
 
 ## [context](go-context.md)
 
-    取消协程
-    多个协程交互时, 方便传递数据
+    一组 goroutine 之间传递共享的值、取消信号、deadline...
     协程x和其子协程都会被取消, x的父协程不会被取消
 
 ## container
@@ -158,7 +157,7 @@
 
 ## net
 
-- http
+- [http](go-http.md)
 - http/cgi
 - http/cookiejar
 - http/fcgi

@@ -8,30 +8,103 @@
 2. 活性A(Liveness property A): 无死锁. 即便持有锁的客户端崩溃(crashed)或者网络被分裂(gets partitioned), 锁仍然可以被获取.
 3. 活性B(Liveness property B): 容错. 只要大部分Redis节点都活着, 客户端就可以获取和释放锁.
 
-## 故障迁移时
+## 模式
 
-1. 客户端A从master获取到锁
+### 加锁set解锁del
+
+```bash
+    # 加锁 
+       set {key} {unique_random} EX 5 NX
+       # 设置 过期时间 + 若key不存在 + 校验唯一随机值
+
+    # 解锁
+        # redis
+        del {key}
+
+        # lua
+        if redis.call("get",KEYS[1]) == ARGV[1] then
+          return redis.call("del",KEYS[1])
+        else
+          return 0
+        end
+```
+
+> issue: 线程a抢到锁后 若执行时间过长, 可能错误的删除线程b的锁; 需要[compare && del](redis-distlock.md#compare&&del解锁)解决
+
+### compare&&del解锁
+
+```bash
+    # 加锁
+       set {key} {unique_random} EX 5 NX
+    
+    # 解锁
+        # redis
+        get
+        del
+
+        # lua
+        // 加锁
+        String uuid = UUID.randomUUID().toString().replaceAll("-","");
+        SET key uuid NX EX 30
+        // 解锁
+        if (redis.call('get', KEYS[1]) == ARGV[1])
+            then return redis.call('del', KEYS[1])
+        else return 0
+        end
+```
+
+> issue: a执行时间长, b获取锁执行, 此时a, b在同时执行.
+
+### 守护线程
+
+```bash
+    # 启动守护线程, 在锁过期之前给锁"续命"
+    # a获得锁执行很慢, 锁即将超时, 守护线程给a锁的过期时间延长n秒
+```
+
+### 可重入锁
+
+```bash
+    # 若需要线程在持有锁的情况下再次请求锁, 就是可重入锁
+    # hincrby 计数每个线程的锁情况 加锁+=1, 解锁-=1
+     // 如果 lock_key 不存在
+     if (redis.call('exists', KEYS[1]) == 0)
+     then
+         // 设置 lock_key 线程标识 1 进行加锁
+         redis.call('hset', KEYS[1], ARGV[2], 1);
+         // 设置过期时间
+         redis.call('pexpire', KEYS[1], ARGV[1]);
+         return nil;
+         end;
+     // 如果 lock_key 存在且线程标识是当前欲加锁的线程标识
+     if (redis.call('hexists', KEYS[1], ARGV[2]) == 1)
+         // 自增
+         then redis.call('hincrby', KEYS[1], ARGV[2], 1);
+         // 重置过期时间
+         redis.call('pexpire', KEYS[1], ARGV[1]);
+         return nil;
+         end;
+     // 如果加锁失败，返回锁剩余时间
+     return redis.call('pttl', KEYS[1]);
+```
+
+### 发布订阅阻塞等待unlock
+
+    其他竞争的线程不轮询, 而是通过订阅发布功能去抢夺锁
+
+```bash
+    # 1. 线程a加锁成功
+    # 2. 线程bcd加锁失败, 订阅"锁释放"消息, 阻塞等待
+    # 3. a解锁, 发布"锁释放"消息, 到mq
+    # 4. bcd从mq获得"锁释放"消息 并 加锁
+```
+
+### 集群故障迁移时
+
+1. a线程从master获取到锁
 2. 在master将锁同步到slave之前, master宕掉了.
 3. slave节点被晋级为master节点
-4. 客户端B取得了同一个资源被客户端A已经获取到的另外一个锁. 安全失效!
-
-## 单实例锁
-
-`SET resource_name random_value NX PX 30000`
-
-- NX key不存在时才能执行成功
-- PX 设置30s过期
-- random_value 为了更安全的释放锁, 值需要随机性
-
-
-```lua
--- 安全释放锁
-if redis.call("get",KEYS[1]) == ARGV[1] then
-    return redis.call("del",KEYS[1])
-else
-    return 0
-end
-```
+4. b线程获得本该a线程占用的锁, ab同时执行任务
 
 ## RedLock算法
 
@@ -63,3 +136,5 @@ end
 ## ref
 
 - <http://redis.cn/topics/distlock.html> redis分布式锁
+
+- <https://xiaomi-info.github.io/2019/12/17/redis-distributed-lock/>

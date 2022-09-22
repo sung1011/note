@@ -16,7 +16,7 @@
 
 ## atomic
 
-## 并发模式
+## [并发模式]
 
 - runner
 - pool

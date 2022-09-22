@@ -9,7 +9,6 @@ import (
 // # ref - <https://learnku.com/articles/26861>
 
 func Test_Range(t *testing.T) {
-
 	Convey("", t, func() {
 		Convey("issue1: range只创建1次i, v", func() {
 			Convey("Q: range是i, v都只创建1次, 导致v的地址是同一个", func() {

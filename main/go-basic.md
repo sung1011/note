@@ -17,3 +17,7 @@
 ## [赋值](go-assignment.md)
 
 ## [运算](go-arithmetic.md)
+
+## [defer](go-defer.md)
+
+## [panic](go-panic.md)

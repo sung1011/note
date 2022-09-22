@@ -14,6 +14,16 @@
 
     S端可以修改C端的cookie(响应头`Set-Cookie`)
 
+## 持久化
+
+### Session Cookie
+
+    临时Cookie, 浏览器关闭就消失
+
+### persistent cookie
+
+    持久化Cookie, 保存在磁盘, 浏览器关闭也不会消失
+
 ## 传输
 
     C对S的每个请求都会带有全部cookie数据
@@ -35,6 +45,49 @@
 ## 安全性
 
     TODO
+
+## go http.cookie
+
+```go
+go doc http.cookie
+package http // import "net/http"
+
+type Cookie struct {
+	Name  string        // key
+	Value string        // value
+
+	Path       string    // optional
+	Domain     string    // optional
+	Expires    time.Time // optional; 老版本浏览器
+	RawExpires string    // for reading cookies only
+
+	// MaxAge=0 means no 'Max-Age' attribute specified.
+	// MaxAge<0 means delete cookie now, equivalently 'Max-Age: 0'
+	// MaxAge>0 means Max-Age attribute present and given in seconds
+	MaxAge   int         // 新版本浏览器
+	Secure   bool
+	HttpOnly bool
+	SameSite SameSite
+	Raw      string
+	Unparsed []string // Raw text of unparsed attribute-value pairs
+}
+    A Cookie represents an HTTP cookie as sent in the Set-Cookie header of an
+    HTTP response or the Cookie header of an HTTP request.
+
+    See https://tools.ietf.org/html/rfc6265 for details.
+
+func (c *Cookie) String() string
+func (c *Cookie) Valid() error
+
+
+cookie.Path("/WEB16");
+    代表访问WEB16应用中的任何资源都携带cookie
+cookie.Path("/WEB16/cookietest");
+    代表访问WEB16中的cookietest时才携带cookie信息
+cookie.Domain(".foo.com");
+    这对foo.com域下的所有主机都生效(如www.foo.com)，但不包括子域www.abc.foo.com
+
+```
 
 ## 属性
 

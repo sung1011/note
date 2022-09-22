@@ -29,6 +29,8 @@
 
 ## BASIC
 
+### [字符编码](main/encoding.md)
+
 ### [design-pattern 设计模式](main/dp.md)
 
 ### [data-structure 数据结构](main/data-struct.md)
@@ -36,8 +38,6 @@
 ### [algorithm 算法](main/algo.md)
 
 ### [complexity 复杂度](main/complexity.md)
-
-### [ASCII](main/ascii.md)
 
 ### [scale 单位换算](main/scale.md)
 

@@ -1,6 +1,7 @@
 # todo
 
-- stdout stdin stderr 重定向
+    stdout stdin stderr 重定向
+    kafka vs rabbitmq
 
 ## check
 

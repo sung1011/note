@@ -1,6 +1,8 @@
 # mq
 
-## optional
+## 选项
+
+- kafka
 
 - rabbitmq
 
@@ -8,7 +10,7 @@
 
 - rocketMq
 
-- kafka
+- activeMq
 
 ## 功能
 
@@ -22,6 +24,8 @@
 ## 场景
 
 ### 异步
+
+    并行读取
 
 ```bash
 # 串行
@@ -45,6 +49,8 @@
 
 ### 解耦
 
+    系统崩溃, 不受影响
+
 ```bash
 # 耦合
   订单 -------------> 库存
@@ -58,6 +64,8 @@
 
 ### 流量肖峰
 
+    高并发时排队
+
 ```bash
   C端 -------------> MQ <------------- 秒杀业务处理
                             (读取秒杀请求)
@@ -67,6 +75,8 @@
 ```
 
 ### 消息通讯
+
+    多点订阅接收
 
 ```bash
 # 点对点
@@ -83,3 +93,4 @@
 ## ref
 
 - <https://blog.csdn.net/lvwenbo0107/article/details/117423481>
+- <https://www.simplilearn.com/kafka-vs-rabbitmq-article>

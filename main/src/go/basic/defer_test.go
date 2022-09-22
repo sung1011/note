@@ -64,7 +64,7 @@ func Test_Defer_Seq(t *testing.T) {
 			for i := range ss {
 				defer func(i int) {
 					fmt.Println(i) // 2 1 0
-				}(i) // 压栈时, 根据上下文传递值拷贝
+				}(i) // 压栈时, 根据上下文传递值拷贝; 同 `defer fmt.Println(i)`
 			}
 		})
 		Convey("return; 闭包延迟读取, 带命名返回值", func() {
@@ -162,5 +162,25 @@ func Test_Defer_Return(t *testing.T) {
 			// os.Exit(0)
 		})
 	})
+}
 
+/**
+Benchmark_WithDefer-4      	 3196197	       358.1 ns/op
+Benchmark_WithoutDefer-4   	1000000000	         0.4087 ns/op
+*/
+
+func Benchmark_WithDefer(b *testing.B) {
+	var j int = 0
+	for i := 0; i < b.N; i++ {
+		defer func() {
+			j++
+		}()
+	}
+}
+
+func Benchmark_WithoutDefer(b *testing.B) {
+	var j int = 0
+	for i := 0; i < b.N; i++ {
+		j++
+	}
 }

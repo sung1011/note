@@ -1,7 +1,6 @@
 # go context
 
-    取消协程
-    多个协程交互时, 方便传递数据
+    一组 goroutine 之间传递共享的值、取消信号、deadline...
     协程x和其子协程都会被取消, x的父协程不会被取消
 
 ## code
@@ -12,11 +11,10 @@
 
 ```go
 type Context interface {
-
     // 获取设置的超时自动Cancel的时间点
     Deadline() (deadline time.Time, ok bool)
 
-    // 只读的struct{}, parent context发起了取消请求, 信号量可读, 应进行return退出goroutine
+    // parent context发起了取消请求, 信号量可读, 应进行return退出goroutine
     Done() <-chan struct{}
 
     // 取消请求的原因error
@@ -272,3 +270,4 @@ func parentCancelCtx(parent Context) (*cancelCtx, bool) {
 
 - <https://zhuanlan.zhihu.com/p/110085652>
 - <https://studygolang.com/articles/23247?fr=sidebar>
+- <https://zhuanlan.zhihu.com/p/68792989>

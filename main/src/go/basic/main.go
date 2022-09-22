@@ -1,26 +1,20 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
 
 func main() {
-	ch := make(chan int, 0)
-	go func() {
-		for {
-			ch <- 1
+	fmt.Println("foo1")
+	bar()
+	fmt.Println("foo2")
+}
+
+func bar() {
+	defer func() {
+		if e := recover(); e != nil {
+			fmt.Println("panic is:", e)
 		}
 	}()
-
-	t := time.NewTimer(1e9)
-	for {
-		select {
-		case v := <-ch:
-			fmt.Println("", v)
-		case <-t.C:
-			fmt.Println("timeout")
-			return
-		}
-	}
+	fmt.Println("bar1")
+	panic("barrrr")
+	fmt.Println("bar2")
 }

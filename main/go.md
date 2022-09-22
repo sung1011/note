@@ -18,6 +18,10 @@
 
 ## GC
 
+## [action](go-action.md)
+
+## [repo](go-repo.md)
+
 ## ref
 
 - [标准库](https://studygolang.com/pkgdoc)
