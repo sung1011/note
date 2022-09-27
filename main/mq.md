@@ -21,6 +21,10 @@
 - topic
 - RPC
 
+## 协议
+
+- AMQP 高级消息队列协议
+
 ## 场景
 
 ### 异步
@@ -49,7 +53,7 @@
 
 ### 解耦
 
-    系统崩溃, 不受影响
+    系统崩溃时保障可用性
 
 ```bash
 # 耦合
@@ -92,5 +96,6 @@
 
 ## ref
 
-- <https://blog.csdn.net/lvwenbo0107/article/details/117423481>
-- <https://www.simplilearn.com/kafka-vs-rabbitmq-article>
+- 实际用法 <https://blog.csdn.net/lvwenbo0107/article/details/117423481>
+- rabbitmq vs kafka <https://www.simplilearn.com/kafka-vs-rabbitmq-article>
+- rabbitmq vs kafka <https://blog.csdn.net/baichoufei90/article/details/83795829>

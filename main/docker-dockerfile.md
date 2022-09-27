@@ -17,7 +17,7 @@ RUN command param1 param2 # shell格式
 
 ## CMD
 
-    容器启动后默认执行的命令和参数(docker run 会被覆盖).
+    容器启动后`默认执行`的命令和参数(docker run 会被覆盖).
 
 ```dockerfile
 CMD ["executable","param1","param2"] # exec格式, 推荐
@@ -39,6 +39,7 @@ ENTRYPOINT command param1 param2 # shell格式; 忽略任何 CMD 或 docker run 
 ```
 
 > 让容器以应用程序或者服务的形式运行  
+
 > 不会被忽略, 一定会执行
 
 ## LABEL
