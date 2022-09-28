@@ -170,7 +170,7 @@
         M1           M2
 ```
 
-### P-queue满时继续创建G
+### P-queue满且继续创建G
 
 - `行为` 当P1-queue已经满了, G1继续创建G', 会将P1-queue的前一半G随机打乱顺序后, 与G'一起放到Global-queue
 - `目的` 防止饥饿
@@ -271,7 +271,9 @@
 ### P的限制
 
         设置
-            CPU核数(默认); 环境变量$GOMAXPROCS; runtime.GOMAXPROCS()
+            环境变量$GOMAXPROCS; runtime.GOMAXPROCS()
+        默认
+            CPU核数
         限制
             无
             本地队列G个数256个

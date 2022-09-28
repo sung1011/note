@@ -1,6 +1,6 @@
-# LSM log-structured-merge
+# LSM log-structured-merge 日志结构合并树
 
-    先写内存, 数据写满后, 逐层滚动地归并 排序 写入磁盘.
+    先写内存, 数据写满后, 逐层滚动地归并 顺序的 写入磁盘.
 
 ![img](res/ds-lsm.png)
 

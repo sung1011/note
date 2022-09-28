@@ -105,3 +105,7 @@
 - [redisbook](http://redisbook.com)
 - [Redis进阶不得不了解的内存优化细节](https://blog.csdn.net/belalds/article/details/81106853)
 - [redis主体流程](https://www.jianshu.com/p/427cf97d7951)
+
+## todo
+
+- 启动流程 <https://juejin.cn/post/6844903756916588557>

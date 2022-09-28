@@ -20,3 +20,7 @@
 - [亿级用户 PC 主站的 PHP7 升级实践](https://www.infoq.cn/article/practice-of-PHP7-upgrade-for-the-PC-master-station)
 - [phpfpm运行原理](https://blog.csdn.net/sinat_38804294/article/details/94393621)
 - [PHP传值和传引用区别](https://blog.csdn.net/chengjianghao/article/details/81507752)
+
+## todo
+
+- fpm流程 <https://www.php.cn/php-weizijiaocheng-415752.html>

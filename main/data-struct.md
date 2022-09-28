@@ -67,7 +67,7 @@
 
 - [LSM Log Structured Merge](ds-LSM.md)
 
-      先写内存, 数据写满后, 逐层滚动地归并 排序 写入磁盘
+      先写内存, 数据写满后, 逐层滚动地归并 顺序的 写入磁盘
       写效率高
 
 - [红黑树](ds-rbtree.md)  

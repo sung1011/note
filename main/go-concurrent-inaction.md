@@ -12,6 +12,8 @@
 
 - sync.Map
 
+- [sync.Pool](go-sync-pool.md)
+
 ## context  
 
 ## atomic
@@ -19,5 +21,4 @@
 ## [并发模式]
 
 - runner
-- pool
 - work

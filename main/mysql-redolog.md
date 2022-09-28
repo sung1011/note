@@ -21,9 +21,9 @@
 
 ## redo-log-buffer刷入redo-log-file的条件
 
-1. Master Thread 每1秒; 
-2. 每个事务commit时; 
-3. 当重做日志缓冲池剩余空间小于1/2时; 
+1. Master Thread 每1秒
+2. 每个事务commit时
+3. 当重做日志缓冲池剩余空间小于1/2时
 
 ## redo-log-file刷入磁盘的条件
 

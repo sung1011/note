@@ -14,7 +14,8 @@
 1. C 请求 S, 返回 S.pubKey
 
 2. C 用 S.pubKey 加密 (C.pubKey + C对称加密key) 发送给 S
-    - 双向验证: hash后生成摘要, 用C.priKey对摘要加密 生成数字签名, 发给S以防篡改
+
+    - 双向验证: 数据hash后生成摘要, 用C.priKey对摘要加密 生成数字签名, 发给S以防篡改
       - 摘要 = hash( data )
       - 签名 = C.priKey加密( 摘要 )
 
