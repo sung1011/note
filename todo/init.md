@@ -1,0 +1,116 @@
+# init
+
+## brew
+
+```bash
+    # install
+        autojump
+        pidof
+        exa
+        bat
+        gvm
+```
+
+## iterm2
+
+```bash
+    # 按键映射
+        Preferences.Profiles.Keys Terminal-App-Compatiblility
+    # 文字大小
+        Preferences.Profiles.Text.Font
+```
+
+## ssh
+
+```bash
+    # 生成.ssh 公钥私钥
+        ssh-keygen -t rsa -C "tickles@xxx"
+```
+
+## .zshrc
+
+```bash
+    # env
+        export GO111MODULE="on" # go
+
+    # alias
+        alias gacp='git add .;git commit -m \"ig:\";git push'
+        alias glacp='git pull;git add .;git commit -m \"ig:\";git push'
+        alias dk='docker'
+        alias dki='docker image'
+        alias dkc='docker container'
+        alias dkcp='docker-compose'
+        alias ks='kubectl'
+        alias mnk='minikube'
+        alias vf='vim $(fzf)'
+        alias readlink=greadlink
+```
+
+## vim
+
+```bash
+    # install spf13-vim
+        curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
+
+    # plugin
+        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions # install
+        plugins=( [plugins...] zsh-autosuggestions) # .zshrc 
+
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting # install
+        plugins=( [plugins...] zsh-syntax-highlighting) # .zshrc
+
+    # config .vimrc.local
+        set shell=bash\ -i
+        filetype plugin on
+        syntax on
+        set nospell
+        set encoding=utf-8
+        set wrap
+
+        "tagbar
+        "autocmd VimEnter * nested :TagbarOpen
+
+        " syntastic
+        let g:syntastic_always_populate_loc_list = 0
+        let g:syntastic_auto_loc_list = 0
+        let g:syntastic_check_on_open = 0
+        let g:syntastic_check_on_wq = 0
+
+        " colorscheme
+        "let g:solarized_termcolors=16
+        color desert "Load a colorscheme
+
+        set foldmethod=manual "不折叠 另需要手动修改PIV/syntax/php.vim
+        let g:DisableAutoPHPFolding = 1
+        let g:PIVAutoClose = 1
+
+        set nobackup " 不备份
+
+        " keybindings
+        " - map operate
+        let mapleader = ","
+        map <leader>b :buffers<cr>
+        map <leader>1 :b1<cr>
+        map <leader>2 :b2<cr>
+        map <leader>3 :b3<cr>
+        map <leader>4 :b4<cr>
+        map <leader>5 :b5<cr>
+        map <leader>6 :b6<cr>
+        map <leader>d :bd<cr>
+        map <leader>. :bn<cr>
+        map <leader>m :bp<cr>
+        map <leader>w :w<cr>
+        map <leader>W :wq<cr>
+        map <leader>q :q<cr>
+        map <leader>Q :q!<cr>
+        map <leader>f :Ack
+        " - map git
+        map <leader>gll :Git pull<cr>
+        map <leader>ga :Git add .<cr>
+        map <leader>gacp :!git pull;git add .;git commit -m 'ig:';git push<cr>
+        " - map run script
+        map <Leader>l :%!python3<CR> "运行py3
+        map <Leader>p :%!php<CR> "运行php
+        " - map format
+        map <leader>= gg=G'' 
+```
