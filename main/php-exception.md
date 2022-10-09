@@ -27,3 +27,7 @@
 
     注册一个会在php中止时执行的函数
     `register_shutdown_function`
+
+## ref
+
+- <https://blog.csdn.net/jkzyx123/article/details/123505118>

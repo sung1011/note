@@ -4,7 +4,7 @@
   
 ## [面向对象 OOP](php-oop.md)
 
-## [异常处理](phpException.md)
+## [异常处理](php-exception.md)
   
 ## [配置](php-config.md)
 
