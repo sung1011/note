@@ -135,6 +135,8 @@
 
 ### [shell](main/shell.md)
 
+### [typescript](main/typescript.md)
+
 ---
 
 ## OTHER
