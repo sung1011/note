@@ -235,7 +235,7 @@ git remote show origin # 远端与本地分支的关系; 远端分支列表 trac
 
 ### cherry-pick
 
-### [diff](#diff#1)
+### diff
 
 ### rebase
 
@@ -268,7 +268,6 @@ D---E---F---G master
 # 不要在master进行rebase操作, 即以topic为基点变基master的commit, 如master不接受push -f, master变基前的commit不会消失.
 
 ```
-
 
 ### revert
 

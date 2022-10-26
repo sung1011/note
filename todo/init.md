@@ -9,15 +9,21 @@
         exa
         bat
         gvm
+        zoxide # zoxide is a smarter cd command, inspired by z and autojump.
+        fzf
 ```
 
 ## iterm2
 
 ```bash
+    # Theme
+        Preference.Appearance.General.Theme = Minimal
     # 按键映射
-        Preferences.Profiles.Keys Terminal-App-Compatiblility
+        Preferences.Profiles.Keys = Natural Text Editing
     # 文字大小
-        Preferences.Profiles.Text.Font
+        Preferences.Profiles.Text.Font = 14
+    # Colors
+        Preferences.Profiles.Colors.Color-Presets = Tango Dark
 ```
 
 ## ssh
@@ -33,6 +39,14 @@
     # env
         export GO111MODULE="on" # go
 
+    # theme
+        ZSH_THEME="arrow"
+
+    # proxy
+        export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
+        export http_proxy="http://127.0.0.1:7890"
+        export https_proxy=$http_proxy
+
     # alias
         alias gacp='git add .;git commit -m \"ig:\";git push'
         alias glacp='git pull;git add .;git commit -m \"ig:\";git push'
@@ -43,7 +57,12 @@
         alias ks='kubectl'
         alias mnk='minikube'
         alias vf='vim $(fzf)'
-        alias readlink=greadlink
+        alias readlink='greadlink'
+        alias cat='bat --paging=never --plain'
+        alias cd='z' # zoxide
+
+    # zoxide
+        eval "$(zoxide init zsh)"
 ```
 
 ## vim
@@ -78,7 +97,7 @@
 
         " colorscheme
         "let g:solarized_termcolors=16
-        color desert "Load a colorscheme
+        color fx "Load a colorscheme
 
         set foldmethod=manual "不折叠 另需要手动修改PIV/syntax/php.vim
         let g:DisableAutoPHPFolding = 1
@@ -113,4 +132,11 @@
         map <Leader>p :%!php<CR> "运行php
         " - map format
         map <leader>= gg=G'' 
+```
+
+## app
+
+```bash
+    eudic 欧路词典
+    百度云盘
 ```

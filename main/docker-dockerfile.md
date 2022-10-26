@@ -4,20 +4,20 @@
 
 ## RUN
 
-    构建新的Image Layer时执行(docker build).
+    构建Image Layer时执行(docker build).
+    一般用作安装软件包和其依赖库
 
 ```dockerfile
 RUN ["executable","param1","param2"] # exec格式, 推荐
 RUN command param1 param2 # shell格式
 ```
 
-> 可多个RUN  
-
-> 一般用作安装软件包
+> 可多个RUN
 
 ## CMD
 
-    容器启动后`默认执行`的命令和参数(docker run 会被覆盖).
+    Image启动成容器时`默认执行`的命令和参数
+    一般执行一个server, 如`CMD ["go", "main.go"]`
 
 ```dockerfile
 CMD ["executable","param1","param2"] # exec格式, 推荐
@@ -27,7 +27,7 @@ CMD ["param1","param2"] # 用作 ENTRYPOINT 的默认补充参数
 
 > docker run 指定了命令, CMD会被忽略  
 
-> 定义多个CMD, 只执行最后一个
+> 定义多个CMD, 只执行最后一个;
 
 ## ENTRYPOINT
 

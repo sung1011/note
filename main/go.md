@@ -1,5 +1,7 @@
 # go  
 
+## [feature](go-feature.md)
+
 ## [basic](go-basic.md)
 
 ## [type](go-type.md)
@@ -7,8 +9,6 @@
 ## [package](go-package.md)
 
 ## [compare](go-compare.md)
-
-## [feature](go-feature.md)
 
 ## [concurrent](go-concurrent.md)
 
