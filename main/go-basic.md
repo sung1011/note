@@ -14,9 +14,9 @@
 
 ## [const](go-const.md)
 
-## [赋值](go-assignment.md)
+## [assignment](go-assignment.md)
 
-## [运算](go-arithmetic.md)
+## [arithmetic](go-arithmetic.md)
 
 ## [defer](go-defer.md)
 

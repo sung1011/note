@@ -91,6 +91,8 @@
 
 ## CONCEPT
 
+### [programming language](programming-language.md)
+
 ### [coroutine 协程](main/linux-coroutine.md)
 
 ### [transaction 事务](main/acid.md)
@@ -134,6 +136,8 @@
 ### [nodejs](main/nodejs.md)
 
 ### [shell](main/shell.md)
+
+### [typescript](main/typescript.md)
 
 ---
 
