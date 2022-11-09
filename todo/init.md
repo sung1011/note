@@ -5,12 +5,14 @@
 ```bash
     # install
         autojump
-        pidof
-        exa
         bat
+        exa
         gvm
-        zoxide # zoxide is a smarter cd command, inspired by z and autojump.
         fzf
+        nvm
+        ncdu
+        pidof
+        zoxide # zoxide is a smarter cd command, inspired by z and autojump.
 ```
 
 ## iterm2
@@ -24,6 +26,8 @@
         Preferences.Profiles.Text.Font = 14
     # Colors
         Preferences.Profiles.Colors.Color-Presets = Tango Dark
+    # Unlimited scrollback
+        Preferences.Profiles.Terminal.Unlimited-scrollback
 ```
 
 ## ssh

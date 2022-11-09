@@ -46,8 +46,12 @@ git push --mirror git@gitcafe.com/username/newproject.git # 推送到新地址
 ```bash
 git checkout {commit_id} && git checkout -b {new_branch_name} #临时回滚; 回滚指定版本 && 新建分支
 
-git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push -f # 永久回滚
+git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push -f # 回退最近1/n个commit
+
+git rebase -i HEAD [] && git push -f # 交互模式中指定删除某1/n个commit;
 ```
+
+> 注意 `reset/ rebase` + `push -f` , 其他人pull后, 若本地有回滚前的内容, 则这些内容不会被删除, 而是在版本库中, 容易被重新带到远端
 
 ## 当前分支
 
