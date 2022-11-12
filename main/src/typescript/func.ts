@@ -1,6 +1,4 @@
-# ts func
 
-```ts
 // 函数
 function foo1() { }
 
@@ -20,15 +18,17 @@ function foo5(name:string, age?:number) { }
 function foo6(name:string, age:number = 30) { }
 
 // 剩余参数
-function foo7(init:number, ...result:number[]) {
+function foo7(init:number, ...rest:number[]): number {
+    return init + rest.reduce((pre, cur) => pre + cur)
 }
-foo7(10001, 1, 2, 3, 4, 5)
+foo7(1000, 1, 2, 3, 4, 5)
+
 
 // 重载 同名函数不同参数
 function foo8(name:string):string;
 function foo8(age:number):number;
 function foo8(name:string, age:number):number;
-function foo8(p1:any, p2?:any):any {
+function foo8(p1:any, p2?:any):any { // 最宽泛的实现, 在函数内部区分参数类型
     if (p2 != undefined) {
         // name age
     } else if (typeof p1 == 'string') {
@@ -46,4 +46,3 @@ foo8("zxc", 123)
 function foo9(cb:() => void) {}
 foo9(() => {
 })
-```

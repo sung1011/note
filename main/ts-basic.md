@@ -2,8 +2,16 @@
 
 ## [install](ts-install.md)
 
-## [type](ts-type.md)
+## [type](src/typescript/type.ts)
 
-## [func](ts-func.md)
+- [enum 枚举](src/typescript/enum.ts)
 
-## [class](ts-class.md)
+## [func](src/typescript/func.ts)
+
+## [class](src/typescript/class.ts)
+
+## interface 接口
+
+- [object interface 对象类型接口](src/typescript/object-interface.ts)
+
+- [func interface 函数类型接口](src/typescript/func-interface.ts)

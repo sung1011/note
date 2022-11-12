@@ -1,3 +1,6 @@
+// 声明
+// { 变量 / 函数 }: type
+
 // bool
 var v1:boolean = true
 v1 = false
@@ -58,7 +61,7 @@ var sy1:symbol = Symbol()
 var sy2 = Symbol()
 // sy1 != sy2
 
-// undefined, null
+// undefined, null 是所有类型的子类型
 var un: undefined = undefined
 var nu: null = null
 var num = 123
