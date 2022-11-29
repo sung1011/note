@@ -143,4 +143,7 @@
 ```bash
     eudic 欧路词典
     百度云盘
+    snipaste
+        - ctrl+cmd+s
+        - ctrl+cmd+p
 ```
