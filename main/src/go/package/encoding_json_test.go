@@ -50,6 +50,26 @@ func Test_Unmarshal(t *testing.T) {
 	})
 }
 
+func Test_Marshal_With_Tag(t *testing.T) {
+	Convey("Marshal() with tag struct{} -> string", t, func() {
+		type ColorGroup struct {
+			ID     int      `json:"id,string"`       // 转类型; int转str
+			Name   string   `json:"color_name"`      // 转名字; name转color_name
+			Colors []string `json:"-"`               // 忽略; 不转出该字段
+			Label  int      `json:"color,omitempty"` // 省略空; 值为空值则不转出该字段
+		}
+		group := ColorGroup{
+			ID:     1,
+			Name:   "Reds",
+			Colors: []string{"Crimson", "Red", "Ruby", "Maroon"},
+			Label:  0,
+		}
+		b, err := json.Marshal(group)
+		So(err, ShouldBeNil)
+		So(string(b), ShouldEqual, `{"id":"1","color_name":"Reds"}`)
+	})
+}
+
 func Test_Decoder(t *testing.T) {
 	Convey("Decoder", t, func() {
 		const jsonStream = `
@@ -218,9 +238,9 @@ func Test_MarshalIndent(t *testing.T) {
 func Test_Valid(t *testing.T) {
 	Convey("", t, func() {
 		goodJSON := `{"example": 1}`
-		badJSON := `{"example":2:]}}`
-
 		So(json.Valid([]byte(goodJSON)), ShouldBeTrue)
+
+		badJSON := `{"example":2:]}}`
 		So(json.Valid([]byte(badJSON)), ShouldBeFalse)
 	})
 }

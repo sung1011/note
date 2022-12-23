@@ -22,6 +22,8 @@
 
 ## [repo](go-repo.md)
 
+## [vscode](go-vscode.md)
+
 ## ref
 
 - [标准库](https://studygolang.com/pkgdoc)
