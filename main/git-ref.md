@@ -138,7 +138,7 @@ git log feature ^master # feature里有, master里没有的commmit
 git stash -u    # 保存一个stash 包含untracked文件
 git stash save  # 保存一个stash
 git stash push  # 暂存一个stash
-git stash pop < n >  # 弹出一个stash, 不保留记录; n 为 stash@{n}的值
+git stash pop < n >  # 弹出一个stash, 不保留记录; n 为 stash@{n}的值; 如 git stash pop 2
 git stash apply < n > # 弹出一个stash, 并且保留记录; n 为 stash@{n}的值
 git stash show
 git stash branch

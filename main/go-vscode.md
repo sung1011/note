@@ -1,6 +1,6 @@
 # go vscode
 
-## 填充空结构体
+## 填充空值到结构体
 
 ```go
 type Foo struct{
@@ -110,7 +110,7 @@ type Student struct{
 }
 ```
 
-1. Add Tags To Struct Fields
+1. 命令:`Add Tags To Struct Fields`
 
 ```go
 /**
@@ -171,11 +171,11 @@ func add(a, b int) int {
 
 ```setting
     "go.editorContextMenuCommands": {
-        "toggleTestFile": true,
+        "toggleTestFile": false,
         "addTags": true,
         "removeTags": false,
         "fillStruct": false,
-        "testAtCursor": true,
+        "testAtCursor": false,
         "testFile": false,
         "testPackage": false,
         "generateTestForFunction": true,
@@ -183,8 +183,8 @@ func add(a, b int) int {
         "generateTestForPackage": false,
         "addImport": true,
         "testCoverage": true,
-        "playground": true,
-        "debugTestAtCursor": true,
+        "playground": false,
+        "debugTestAtCursor": false,
         "benchmarkAtCursor": false
     },
 ```

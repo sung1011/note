@@ -28,6 +28,8 @@
         Preferences.Profiles.Colors.Color-Presets = Tango Dark
     # Unlimited scrollback
         Preferences.Profiles.Terminal.Unlimited-scrollback
+    # dedicated window
+        Perferences.Keys.Hotkey.Create-a-Dedicated-Hotkey-Window.Double-tap-key = ^Control
 ```
 
 ## ssh
@@ -141,9 +143,18 @@
 ## app
 
 ```bash
+    google Chrome
+    iterm2
+    vscode
+    mpv
+    迅雷
+    wechat
     eudic 欧路词典
-    百度云盘
+    百度云盘 BaiduNetdisk
+    dash
     snipaste
         - ctrl+cmd+s
         - ctrl+cmd+p
+    docker
+    qq音乐
 ```
