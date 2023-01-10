@@ -4,14 +4,14 @@
 
 | Header              | 解释                                                     | 示例                                               |
 | ------------------- | -------------------------------------------------------- | -------------------------------------------------- |
-| Accept              | 指定C端可接受的内容类型.                                | Accept: text/plain, text/html                      |
-| Accept-Charset      | 指定C端可接受的字符编码集.                              | Accept-Charset: iso-8859-5                         |
-| Accept-Encoding     | 指定浏览器可以支持的web服务器返回内容压缩编码类型.      | Accept-Encoding: compress, gzip                    |
+| Accept              | 指定C端可接受的内容类型.                                 | Accept: text/plain, text/html                      |
+| Accept-Charset      | 指定C端可接受的字符编码集.                               | Accept-Charset: iso-8859-5                         |
+| Accept-Encoding     | 指定浏览器可以支持的web服务器返回内容压缩编码类型.       | Accept-Encoding: compress, gzip                    |
 | Accept-Language     | 浏览器可接受的自然语言                                   | Accept-Language: en,zh                             |
 | Accept-Ranges       | 可以请求实体的一部分, 指定单位                           | Accept-Ranges: bytes                               |
 | ~~Authorization~~   | HTTP鉴权, 值为模式与base64(usr:pwd), 错误返401           | Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==  |
 | Cache-Control       | 指定请求和响应遵循的缓存机制                             | Cache-Control: no-cache                            |
-| Connection          | 表示是否需要持久连接.(HTTP 1.1默认进行持久连接)       | Connection: close                                  |
+| Connection          | 表示是否需要持久连接.(HTTP 1.1默认进行持久连接)          | Connection: close                                  |
 | Cookie              | HTTP请求发送时, 会把保存在该请求域名下的所有cookie值     | Cookie: $Version=1; Skin=new;                      |
 | Content-Length      | 请求的内容长度                                           | Content-Length: 348                                |
 | Content-Type        | 请求的与实体对应的MIME信息                               | Content-Type: application/x-www-form-urlencoded    |
@@ -29,7 +29,7 @@
 | Range               | 只请求实体的一部分, 指定范围                             | Range: bytes=500-999                               |
 | Referer             | 先前网页的地址, 当前请求网页紧随其后,即来路              | Referer: http://www.baidu.com/arch/71.html         |
 | TE                  | 客户端愿意接受的传输编码, 并通知服务器接受接受尾加头信息 | TE: trailers,deflate;q=0.5                         |
-| Upgrade             | 向服务器指定某种传输协议以便服务器进行转换(如果支持)   | Upgrade: HTTP/2.0, SHTTP/1.3, IRC/6.9, RTA/x11     |
+| Upgrade             | 向服务器指定某种传输协议以便服务器进行转换(如果支持)     | Upgrade: HTTP/2.0, SHTTP/1.3, IRC/6.9, RTA/x11     |
 | User-Agent          | User-Agent的内容包含发出请求的用户信息                   | User-Agent: Mozilla/5.0 (Linux; X11)               |
 | Via                 | 通知中间网关或代理服务器地址, 通信协议                   | Via: 1.0 fred, 1.1 nowhere.com (Apache/1.1)        |
 | Warning             | 关于消息实体的警告信息                                   | Warn: 199 Miscellaneous warning                    |
@@ -39,10 +39,10 @@
 | Header             | 解释                                                      | 示例                                                |
 | ------------------ | --------------------------------------------------------- | --------------------------------------------------- |
 | Accept-Ranges      | 表明服务器是否支持指定范围请求及哪种类型的分段请求        | Accept-Ranges: bytes                                |
-| Age                | 从原始服务器到代理缓存形成的估算时间(以秒计, 非负)      | Age: 12                                             |
+| Age                | 从原始服务器到代理缓存形成的估算时间(以秒计, 非负)        | Age: 12                                             |
 | Allow              | 允许的HTTP方法, 不允许则返回405                           | Allow: GET, HEAD                                    |
 | Cache-Control      | 告诉所有的缓存机制是否可以缓存及哪种类型                  | Cache-Control: no-cache                             |
-| Content-Encoding   | web服务器支持的返回内容压缩编码类型.                     | Content-Encoding: gzip                              |
+| Content-Encoding   | web服务器支持的返回内容压缩编码类型.                      | Content-Encoding: gzip                              |
 | Content-Language   | 响应体的语言                                              | Content-Language: en,zh                             |
 | Content-Length     | 响应体的长度                                              | Content-Length: 348                                 |
 | Content-Location   | 请求资源可替代的备用的另一地址                            | Content-Location: /index.htm                        |
