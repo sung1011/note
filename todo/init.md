@@ -13,6 +13,7 @@
         ncdu
         pidof
         zoxide # zoxide is a smarter cd command, inspired by z and autojump.
+        git-flow
 ```
 
 ## iterm2
