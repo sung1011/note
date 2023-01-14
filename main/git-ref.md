@@ -130,6 +130,7 @@ git log -< num > # -n< num > 最近n条
 git log --all # 所有分支
 git log --graph
 git log feature ^master # feature里有, master里没有的commmit
+git log -m -p < commit-id > # 显示merge的内容; -p可替换为--name-only / --name-status
 ```
 
 ### stash

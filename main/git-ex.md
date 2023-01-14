@@ -144,7 +144,9 @@ git reflog show --date=iso < branch >
 
 ## 某次merge的内容
 
-TODO
+```bash
+git log -m -p <merge commit-id> # -p可替换为--name-only / --name-status
+```
 
 ## 获取指定tree/blob被哪些commit引用了
 
