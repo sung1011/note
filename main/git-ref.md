@@ -101,22 +101,22 @@ git checkout stash@{0} # 检出stash0的快照
 ```bash
 git merge < branch >
 
-       A---B---C topic
+       A---B---C *topic
       /
- D---E---F---G master
+ D---E---F---G *master
 
-       A---B---C topic
+       A---B---C *topic
       /         \
- D---E---F---G---H master
+ D---E---F---G---H *master
 
 
 git merge --squash < branch > # 创建一个单独的提交而不是做一次合并
 
-       A---B---C topic
+       A---B---C *topic
       /
  D---E---F---G master
 
- D---E---F---G---H(ABC) master
+ D---E---F---G---H(ABC) *master
  ```
 
 ### mergetool
@@ -170,13 +170,13 @@ git tag -d # 删除本地标签
 ```bash
 git pull = git fetch && git merge
 
-       A---B---C feature
+       A---B---C *feature
       /
  D---E---F---G *master
 
 # E is origin/master in your repository
 
-       A---B---C feature
+       A---B---C *feature
       /         \
  D---E---F---G---H *master
 
@@ -186,11 +186,11 @@ git pull = git fetch && git merge
 
       A---B---C *topic
      /
-D---E---F---G master
+D---E---F---G *master
 
               'A'--'B'--'C' *topic
              /
-D---E---F---G master
+D---E---F---G *master
 ```
 
 

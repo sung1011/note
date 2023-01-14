@@ -6,6 +6,8 @@
 
 ## [git实战](git-ex.md)
 
+## [git workflow](git-workflow.md)
+
 ## ref
 
 - [git book](https://git-scm.com/book/zh/v2/)
