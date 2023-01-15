@@ -39,6 +39,7 @@ git diff origin/< branch > # 与远端比较 (大多同 --cached)
 git diff < commit1 > < commit2 >
 git diff < branch1 > < branch2 > -- < file >
 git diff --stat ':!<file1>' ':!<file2>' # diff, 但排除 file1 和 file2 ...
+git diff --word-diff=plain # 一行内显示diff
 ```
 
 ### commit
