@@ -148,6 +148,14 @@ git reflog show --date=iso < branch >
 git log -m -p <merge commit-id> # -p可替换为--name-only / --name-status
 ```
 
+## 当前功能分支的改动
+
+```bash
+git checkout feature
+git pull origin develop
+git diff origin/develop
+```
+
 ## 获取指定tree/blob被哪些commit引用了
 
 TODO
