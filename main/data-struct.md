@@ -4,7 +4,7 @@
 
 - [浮点数 Float](float.md)
 
-      todo
+      浮点数是指用符号、尾数、基数和指数这四部分来表示的小数
 
 - [数组 Array](ds-array.md)  
 
