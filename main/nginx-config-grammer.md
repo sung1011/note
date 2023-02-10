@@ -81,7 +81,7 @@ http {
 
 ### http_头部名字
 
-```bash
+```js
 直接获取header中对应key的val. 
 如 `curl localhost -H 'foo=bar'; # 则 $http_foo = bar`  
 

@@ -6,7 +6,7 @@
 
 ## usage
 
-```bash
+```js
 make # 执行第一个target
 
 make clean # 伪目标

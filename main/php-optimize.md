@@ -21,7 +21,7 @@ var_dump(memory_get_usage()); // n; 内存没涨
 
 ## JIT Just-In-Time Compilation
 
-```bash
+```js
 # php with opcache
 
                     ---- `Zend Compiler`  

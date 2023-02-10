@@ -1,6 +1,6 @@
 # NOTE  
 
-```bash
+```js
 ├── README.md  
 ├── main  
 │   ├── ref         引用  

@@ -24,7 +24,7 @@
 
 ### range范围 如: id范围
 
-```bash
+```js
     1~1000 -> R0,  1001~2000 -> R1,  2001~3000 -> R2
     3001~4000 -> R0,  4001~5000 -> R1,  5001~6000 -> R2
     ...
@@ -32,7 +32,7 @@
 
 ### hash函数 如: crc32
 
-```bash
+```js
     slot_num = 1024                 # 槽
     hash = crc32(key)               # key = foobar, hash = 93024922
     slot_index = hash % slot_num    # slot_index = 666
@@ -44,7 +44,7 @@
 
 ### [一致性哈希 DHT](algo-DHT.md)
 
-```bash
+```js
     NODE_HASH_SLOT = CRC16(node) mod 16384 # 实例所在的slot
     KEY_HASH_SLOT = CRC16(key) mod 16384 # key所在的slot
 ```

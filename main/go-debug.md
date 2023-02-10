@@ -34,7 +34,7 @@ func main() {
 }
 ```
 
-```bash
+```js
 go run trace.go // 生成trace.out
 go tool trace trace.out
 # 点击输出的链接 跳转到web界面查看
@@ -42,7 +42,7 @@ go tool trace trace.out
 
 ## time 查看耗时
 
-```bash
+```js
     time go run test.go
 
     real	0m0.843s
@@ -56,7 +56,7 @@ go tool trace trace.out
 
 ## GCTrace 查看内存
 
-```bash
+```js
     go build -o foo && GODEBUG='gctrace=1' ./foo
 
     # 格式

@@ -9,7 +9,7 @@
 
 ## 大小
 
-```bash
+```js
    - 默认
      - WiredTiger 空闲磁盘5%
      - In-Memory 物理内存5%

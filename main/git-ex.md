@@ -2,7 +2,7 @@
 
 ## pull的内容涉及正在修改的文件
 
-```bash
+```js
     # 工作区如果有 modified 的文件a, pull的内容恰巧包含a文件, 则会提示报错
     # 可以`git stash push` + `git pull` + `git stash pop`, 注意这有可能会冲突
 
@@ -16,7 +16,7 @@
 
 ## 贡献度
 
-```bash
+```js
 # commit数量排名
 git log --pretty='%aN' | sort | uniq -c | sort -k1 -n -r | head -n 3
 
@@ -32,7 +32,7 @@ git log --format='%aN' | sort -u | while read name; do echo -en "$name\t"; git l
 
 ## 迁移
 
-```bash
+```js
 # 方法1
 git clone --bare git://github.com/username/project.git # 克隆裸库(仅代码)
 
@@ -43,7 +43,7 @@ git push --mirror git@gitcafe.com/username/newproject.git # 推送到新地址
 ## 回滚
 
 
-```bash
+```js
 git checkout {commit_id} && git checkout -b {new_branch_name} #临时回滚; 回滚指定版本 && 新建分支
 
 git reset --hard [^回退上一版本|^^回退上两个版本|~n回退上n个版本|commit_id回退到某一版本] && git push -f # 回退最近1/n个commit
@@ -55,7 +55,7 @@ git rebase -i HEAD [] && git push -f # 交互模式中指定删除某1/n个commi
 
 ## 当前分支
 
-```bash
+```js
 git rev-parse --abbrev-ref HEAD 2> /dev/null
 ```
 
@@ -73,7 +73,7 @@ git rev-parse --abbrev-ref HEAD 2> /dev/null
 
 3. 错误的将带有dev合入到master, 并push
 
-```bash
+```js
 # 正常情况下 dev 和 master 为平行关系, feature合入dev进行测试, 合入master进行上线
  D-----E---X---F---a----- dev # 比master多一些脏提交a
           /                 \
@@ -92,7 +92,7 @@ git rev-parse --abbrev-ref HEAD 2> /dev/null
 
 ### 查找大文件
 
-```bash
+```js
 # 获取最大的5个blob
 git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -g -r | head -n5
 # 通过blob获取文件名
@@ -101,13 +101,13 @@ git rev-list --objects --all | grep < oid(blob) >
 
 ## 彻底删除某个文件(大文件、涉密文件)
 
-```bash
+```js
 git filter-branch --force --index-filter \
   "git rm --cached --ignore-unmatch < file >" \
   --prune-empty --tag-name-filter cat -- --all
 ```
 
-```bash
+```js
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch < file >'
 
 rm -rf .git/refs/original
@@ -120,37 +120,37 @@ git push --force
 
 ## 哪些分支包含指定commit
 
-```bash
+```js
 git branch --contains < commitid >
 ```
 
 ## 导出某次commit的文件
 
-```bash
+```js
 git diff-tree -r --no-commit-id --name-only < oid(commit) > | xargs tar -rf mycommit.tar
 ```
 
 ## 文件创建时间
 
-```bash
+```js
 git log --pretty=format:"%ad" -- < file > | tail -1
 ```
 
 ## 分支信息 (包含创建时间)
 
-```bash
+```js
 git reflog show --date=iso < branch >
 ```
 
 ## 某次merge的内容
 
-```bash
+```js
 git log -m -p <merge commit-id> # -p可替换为--name-only / --name-status
 ```
 
 ## 当前功能分支的改动
 
-```bash
+```js
 git checkout feature
 git pull origin develop
 git diff origin/develop

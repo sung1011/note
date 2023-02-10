@@ -4,7 +4,7 @@
 
 ## 算法
 
-```bash
+```js
     NODE_HASH_SLOT = CRC16(node) mod 16384 # 实例所在的slot
 
     KEY_HASH_SLOT = CRC16(key) mod 16384 # key所在的slot

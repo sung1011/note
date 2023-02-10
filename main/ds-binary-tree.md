@@ -4,7 +4,7 @@
 
 ## 结构
 
-```bash
+```js
                 a                 Level0
               /    \
             b        c            Level1

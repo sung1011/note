@@ -18,7 +18,7 @@
 
 目录  
 
-```bash
+```js
 ├── main.go  
 └── somepackage  
     ├── foo.go          被测试文件  

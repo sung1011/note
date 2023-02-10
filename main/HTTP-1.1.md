@@ -11,7 +11,7 @@
 
 ## 持久连接 persistent connection
 
-```bash
+```js
     # TCP三次握手
     c -> s  # syn
     c <- s  # ack + syn

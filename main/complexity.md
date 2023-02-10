@@ -2,7 +2,7 @@
 
 ## 时间复杂度
 
-```bash
+```js
 常数 O(1)  # hash查
 对数 O(log(n))  # b-tree, b+bree
 线性 O(n)  # for循环遍历
@@ -15,7 +15,7 @@
 
 ## 空间复杂度
 
-```bash
+```js
 常数 O(1)  
 线性 O(n)  
 平方 O(n², n^2)  

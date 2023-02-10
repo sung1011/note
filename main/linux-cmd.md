@@ -2,7 +2,7 @@
 
 ## stdbuf
 
-```bash
+```js
 tail -f access.log | stdbuf -oL cut -d' ' -f1 | uniq # 输出不缓冲, 直接显示; | (管道) 会将内容read到kernel, 具有缓冲区, 未写满的缓冲无法传递给后续程序
 ```
 
@@ -10,7 +10,7 @@ tail -f access.log | stdbuf -oL cut -d' ' -f1 | uniq # 输出不缓冲, 直接�
 
 ## openssl
 
-```bash
+```js
 # sha256校验文件签名
 openssl digest -sha256 go1.17.5.darwin-amd64.pkg
 # crc32校验文件
@@ -29,7 +29,7 @@ crc32 go1.17.5.darwin-amd64.pkg
 
 ### 简单重定向
 
-```bash
+```js
 # 清空file, 输出重定向到file; bash的
 cmd > file
 
@@ -56,7 +56,7 @@ cmd >| file
 
 ### echo
 
-```bash
+```js
 echo a; echo b
 a
 b
@@ -73,14 +73,14 @@ word
 
 ### && ||
 
-```bash
+```js
 cat log && ls log # cat成功才会ls
 cat log || ls log # cat失败才会ls
 ```
 
 ### FD重定向
 
-```bash
+```js
 # cmd >&n	把输出送到文件描述符n
 
 # cmd m>&n	把输出 到文件符m的信息重定向到文件描述符n
@@ -100,7 +100,7 @@ cat log || ls log # cat失败才会ls
 
 ### 组合重定向
 
-```bash
+```js
 # cmd 2>file	把文件描述符2重定向到file, 即把错误输出存到file中.
 find ~ -type f 2> /dev/null
 
@@ -120,14 +120,14 @@ find ~ -type f 2> /dev/null
 
 ## |
 
-```bash
+```js
 # 上个命令的stdout接入到下个命令的stdin
 echo 123 | base64
 ```
 
 ## tee
 
-```bash
+```js
 # stderr, stdout输出到屏幕和文件
 echo 123 | tee file1
 ```
@@ -140,7 +140,7 @@ echo 123 | tee file1
 
 ## nc
 
-```bash
+```js
 # 扫描IP段 -v 可视化; -z 扫描时不发数据; -w 超时时间
 nc -vzw 2 47.93.191.198 8080-8088
 # Connection to 47.93.191.198 port 8080 [tcp/http] succeeded!
@@ -155,50 +155,50 @@ nc -vzw 2 47.93.191.198 8080-8088
   
 ## du  
 
-```bash
+```js
 du -sh * | sort -n # 文件大小
 ```
 
 ## sort
 
-```bash
+```js
 sort -nr -k4 # 以第四列进行数值倒序排序 (不加-n是按ascii)
 ```
   
 ## lsof  
 
-```bash
+```js
 lsof -i :{port} #  查看占用端口的进程
 lsof -n | awk '{print $2}' | sort | uniq -c |sort -nr # 端口占用排序排重
 ```
   
 ## ulimit  
 
-```bash
+```js
 ulimit -n # 每个进程可打开的文件数
 ```
   
 ## fuser  
 
-```bash
+```js
 fuser -n tcp 9000
 ```
 
 ## sar
 
-```bash
+```js
 sar -n {sock}
 ```
 
 ## tcpdump
 
-```bash
+```js
 tcpdump -iany tcp port 9000
 ```
 
 ## netstat
 
-```bash
+```js
 netstat -nat
 ```
 
@@ -214,7 +214,7 @@ netstat -nat
 
 ## base64
 
-```bash
+```js
 # 编码
 base64 {file}
 echo {txt} | base64
@@ -226,7 +226,7 @@ echo {code} | base64 -d
 
 ## curl
 
-```bash
+```js
 # application/x-www-form-urlencoded
 curl localhost:3000/api/basic -X POST -d 'hello=world'
 
@@ -243,7 +243,7 @@ curl localhost:3000/api/multipart -F raw=@raw.data -F hello=world
 
 ## top
 
-```bash
+```js
     go build -o foo && ./foo
     top -pid $(pidof foo)       
 ```

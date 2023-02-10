@@ -6,7 +6,7 @@
 
     defer的性能开销不小
 
-```bash
+```js
 Benchmark_WithDefer-4      	 3196197	       358.1 ns/op
 Benchmark_WithoutDefer-4   	1000000000	         0.4087 ns/op
 ```

@@ -34,15 +34,15 @@ typedef struct {
 
 ## 实例
 
-```bash
+```js
 variables(steam/http)  
 ```
 
-```bash
+```js
 map(stream/http)  
 ```
 
-```bash
+```js
 http proxy # 反向代理  
 
     - ngx_http_uwsgi_module

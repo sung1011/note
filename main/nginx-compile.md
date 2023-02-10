@@ -2,7 +2,7 @@
 
 ## 下载解压
 
-```bash
+```js
 wget http://nginx.org/download/nginx-1.16.0.tar.gz 
 
 tar -xzf nginx-1.16.0.tar.gz
@@ -10,7 +10,7 @@ tar -xzf nginx-1.16.0.tar.gz
 
 ## 源码目录结构
 
-```bash
+```js
 .
 ├── auto            # 自动检测系统环境以及编译相关的脚本
 │   ├── cc          # 关于编译器相关的编译选项的检测脚本
@@ -38,11 +38,11 @@ tar -xzf nginx-1.16.0.tar.gz
 
 1. 安装依赖
 
-   ```bash
+   ```js
    yum install gcc gcc-c++ automake pcre pcre-devel zlip zlib-devel openssl openssl-devel  
    ```
 
-   ```bash
+   ```js
        gcc为GNU Compiler Collection的缩写, 可以编译C和C++源代码等, 它是GNU开发的C和C++以及其他很多种语言 的编译器(最早的时候只能编译C, 后来很快进化成一个编译多种语言的集合, 如Fortran、Pascal、Objective-C、Java、Ada、 Go等). gcc 在编译C++源代码的阶段, 只能编译 C++ 源文件, 而不能自动和 C++ 程序使用的库链接(编译过程分为编译、链接两个阶段, 注意不要和可执行文件这个概念搞混, 相对可执行文件来说有三个重要的概念: 编译(compile)、链接(link)、加载(load).源程序文件被编译成目标文件, 多个目标文件连同库被链接成一个最终的可执行文件, 可执行文件被加载到内存中运行).因此, 通常使用 g++ 命令来完成 C++ 程序的编译和连接, 该程序会自动调用 gcc 实现编译.
 
        gcc-c++也能编译C源代码, 只不过把会把它当成C++源代码, 后缀为.c的, gcc把它当作是C程序, 而g++当作是c++程序; 后缀为.cpp的, 两者都会认为是c++程序, 注意, 虽然c++是c的超集, 但是两者对语法的要求是有区别的.
@@ -61,7 +61,7 @@ tar -xzf nginx-1.16.0.tar.gz
    - objs目录存放临时文件
    - ./configure --help  查看配置参数
 
-   ```bash
+   ```js
    # 参数
    --prefix 安装路径  
    --with-xxx 指定添加模块 (默认不添加)  

@@ -2,7 +2,7 @@
 
     由多个节点组成, 具有层次关系.
 
-```bash
+```js
                 a                 Level0
               /    \
             b        c            Level1

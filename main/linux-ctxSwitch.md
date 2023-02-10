@@ -69,7 +69,7 @@
 
 - `watch -d "cat /proc/interrupts"`
 
-```bash
+```js
         CPU0    CPU1
 ...
 RES:    2403249 575911  Rescheduling    interrupts #RES是重调度中断

@@ -15,7 +15,7 @@
 
     查看shadowsocks的http代理监听端口(1087), 并设置环境变量
 
-```bash
+```js
 export http_proxy="http://127.0.0.1:1087"  
 export https_proxy=$http_proxy  
 ```  

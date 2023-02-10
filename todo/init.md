@@ -2,7 +2,7 @@
 
 ## brew
 
-```bash
+```js
     # install
         autojump
         bat
@@ -18,7 +18,7 @@
 
 ## iterm2
 
-```bash
+```js
     # Theme
         Preference.Appearance.General.Theme = Minimal
     # 按键映射
@@ -35,14 +35,14 @@
 
 ## ssh
 
-```bash
+```js
     # 生成.ssh 公钥私钥
         ssh-keygen -t rsa -C "tickles@xxx"
 ```
 
 ## .zshrc
 
-```bash
+```js
     # env
         export GO111MODULE="on" # go
 
@@ -74,7 +74,7 @@
 
 ## vim
 
-```bash
+```js
     # install spf13-vim
         curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
 
@@ -143,7 +143,7 @@
 
 ## app
 
-```bash
+```js
     google Chrome
     iterm2
     vscode

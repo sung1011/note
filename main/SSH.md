@@ -14,7 +14,7 @@
 
 ## 连接
 
-```bash
+```js
 # 生成公钥
 ssh-keygen
 
@@ -36,7 +36,7 @@ ssh user@host
 
 ## cmd
 
-```bash
+```js
 ssh -vt user@host # 调试
 
 ssh -p 1234 user@host # 指定端口
@@ -50,7 +50,7 @@ ssh -p 1234 user@host # 指定端口
 
 ### 远端直接操作
 
-```bash
+```js
 # 本地复制到远端
 cd && tar czv src | ssh user@host 'tar xz'
 

@@ -16,7 +16,7 @@
 
 ## 结构
 
-```bash
+```js
     SKIP_LIST {
         NODE head; # 表头
         int level; # 层级

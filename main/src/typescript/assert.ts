@@ -4,9 +4,11 @@
 interface ApiError extends Error {
     code: number
 }
+
 interface HttpError extends Error {
     statusCode: number
 }
+
 function isApiError(err:Error) {
     if (typeof (err as ApiError).code == 'number') {
         return true

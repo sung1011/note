@@ -2,7 +2,7 @@
 
 ## 使用token
 
-```bash
+```js
 # 将token加在header中
 curl -H "Authorization: Bearer ACCESS_TOKEN" \
 "https://api.b.com"
@@ -12,7 +12,7 @@ curl -H "Authorization: Bearer ACCESS_TOKEN" \
 
 res-server 可以在授权时一次性颁发两个令牌,  REFRESH_TOKEN 用于更新令牌.
 
-```bash
+```js
 https://b.com/oauth/token?
   grant_type=refresh_token&         # 授权方式: 更新
   client_id={ CLIENT_ID }&

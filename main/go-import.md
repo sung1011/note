@@ -61,7 +61,7 @@ import (
 
 ![img](res/go-init-seq.png)
 
-```bash
+```js
 func init() {
 
 }

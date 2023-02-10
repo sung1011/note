@@ -113,7 +113,7 @@
 
 ### majority避免脏读
 
-```bash
+```js
 1. 数据x写入P
 2. 读取P的x
 3. P挂了
@@ -138,7 +138,7 @@ db.order.find({oid:123}).readPref("secondary").readConcern("majority")
 
 ### lineariable避免脑裂读旧数据
 
-```bash
+```js
 数据x=1; P, S1, S2发生脑裂, x=2写入S1(新的P)
 
 # 非lineariable 还会对旧P进行读取值x=1

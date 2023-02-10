@@ -15,7 +15,7 @@
 
 ## stat
 
-```bash
+```js
 db.serverStatus() # 主要信息
 
   connections 连接数
@@ -116,7 +116,7 @@ db.dropDatabase() // 删db
 
 ## aggregation 聚合  
 
-```bash
+```js
 # 阶段操作符: $count, $project, $match, $group, $sort, $limit, $unwind  
 db.mycol.aggregate([{group: {_id: 'sex', personCount: {$sum: 1}}}])  
 ```
@@ -132,7 +132,7 @@ db.fsyncUnlock() // 解锁db写入
 
 ### 执行脚本
 
-```bash
+```js
 mongo --quiet < a.js | grep abc
 ```
 
@@ -189,7 +189,7 @@ Object.bsonsize(db.coll.findOne({type:"auto"}))
 
 ### 导表 导列 导数据
 
-```bash
+```js
 mongoexport -d dbname -c collectionname -o file --type json/csv -f field
 
 # -d : 数据库名
@@ -212,7 +212,7 @@ mongoimport -d dbname -c collectionname --file filename --headerline --type json
 
 ## 备份 还原
 
-```bash
+```js
 mongodump -h IP --port 端口 -u 用户名 -p 密码 -d 数据库 -o 文件存在路径
 
 mongorestore -h IP --port 端口 -u 用户名 -p 密码 -d 数据库 --drop 备份文件夹下的db路径
@@ -225,7 +225,7 @@ mongorestore -h IP --port 端口 -u 用户名 -p 密码 -d 数据库 --drop 备�
 
 ### 解析id
 
-```bash
+```js
 # 一个
 ObjectId("5e0c4e087deadd1a6f8b4b57").getTimestamp()
 

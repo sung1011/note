@@ -35,7 +35,7 @@
 
 #### LFU (Least-Frequently-Used)
 
-```bash
+```js
    # LRU问题
    即使A使用频率比较高, 仍然会在|处被LRU淘汰, redis4.0+的LFU策略解决这一问题.
 

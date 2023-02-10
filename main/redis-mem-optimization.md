@@ -2,7 +2,7 @@
 
 ## 占用预估
 
-```bash
+```js
     # 同等数据量, 不同结构对比
     `hash` 最优 (必须是值短的 用ziplist)
     `list`, `set` 次之
@@ -16,7 +16,7 @@
 
     以CPU换取内存
 
-```bash
+```js
 # redis.conf
 hash-max-zipmap-entries 64 (2.6以上使用hash-max-ziplist-entries)
 hash-max-zipmap-value 512  (2.6以上使用hash-max-ziplist-value)

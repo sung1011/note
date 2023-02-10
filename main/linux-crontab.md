@@ -10,7 +10,7 @@
 
 ## crontab
 
-```bash
+```js
 # 以下都是用户级操作, 对应/var/spool/cron/
 -e 编辑该用户的计时器设置,如果不指定用户, 则表示编辑当前用户的crontab文件
 -l 列出该用户的计时器设置,如果不指定用户, 则表示显示当前用户的crontab文件内容
@@ -22,7 +22,7 @@ file file是命令文件的名字,表示将file做为crontab的任务列表文�
 
 ## cmd
 
-```bash
+```js
 # 环境
 SHELL=/bin/bash # SHELL
 PATH=/sbin:/bin:/usr/sbin:/usr/bin # PATH
@@ -74,7 +74,7 @@ HOME=/User/sunji2
 
 ## crond
 
-```bash
+```js
 systemctl start   crond    #启动服务
 systemctl stop    crond    #关闭服务
 systemctl restart crond    #重启服务
@@ -95,7 +95,7 @@ chkconfig –level 35 crond on #开机自动启动
 
 ## 秒级
 
-```bash
+```js
 * * * * * ls /tmp
 * * * * * sleep 3 && ls /tmp
 * * * * * sleep 6 && ls /tmp

@@ -22,7 +22,7 @@
     事务中若错误: 不会中断 和 回滚事务, 而是继续执行完事务
         - 执行前无语法检查
 
-```bash
+```js
   WATCH                           # 乐观锁
       curr_point = GET user1_point
       curr_gold = GET user1_gold

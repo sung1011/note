@@ -2,7 +2,7 @@
 
 ## etcd
 
-```bash
+```js
 etcd = unix 的`/etc`文件夹 + `d` (distribute) 
 # 用于`存储分布式配置的信息存储服务`
 ```

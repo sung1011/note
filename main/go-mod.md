@@ -6,7 +6,7 @@
 
 ## GOPATH
 
-```bash
+```js
     通过`go get {pkg}@vX.Y.Z`下载包和其依赖到GOPATH
     运行时go编译器从GOPATH下搜索依赖的第三方包
     默认: $HOME/go/
@@ -48,7 +48,7 @@
 
 ### 操作
 
-```bash
+```js
     `初始化`
         go mod init {domain-name}/{user-name}/{repo-name}
         #  e.g. go mod init github.com/sung1011/note
@@ -84,7 +84,7 @@
 
 ### go.mod file
 
-```bash
+```js
 module github.com/sung1011/testing
 
 go 1.14

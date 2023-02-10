@@ -4,7 +4,7 @@
 
 ## usage
 
-```bash
+```js
     # shell
     mongod --storageEngine inMemory --dbpath
 

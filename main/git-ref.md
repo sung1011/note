@@ -8,7 +8,7 @@
 
 ### help
 
-```bash
+```js
 git help -w --web #
 ```
 
@@ -20,7 +20,7 @@ git help -w --web #
 
 ### clone
 
-```bash
+```js
 git clone --depth 10 < repo > # 深度.保留最新的10个commit, 更前的commit嫁接(grafted)成一个整体
 ```
 
@@ -32,7 +32,7 @@ git clone --depth 10 < repo > # 深度.保留最新的10个commit, 更前的comm
 
 ### diff
 
-```bash
+```js
 git diff HEAD~3 # HEAD^^^
 git diff --cached # 暂存区 与 HEAD 比较
 git diff origin/< branch > # 与远端比较 (大多同 --cached)
@@ -44,7 +44,7 @@ git diff --word-diff=plain # 一行内显示diff
 
 ### commit
 
-```bash
+```js
 git commit --amend # 修改最近一次提交的msg
 git commit -m # --message < msg >
 ```
@@ -55,7 +55,7 @@ git commit -m # --message < msg >
 
 ### reset
 
-```bash
+```js
 git reset --soft  # reset only HEAD
 git reset --mixed # reset HEAD and index    *default
 git reset --hard  # reset HEAD, index and working tree
@@ -65,7 +65,7 @@ git reset --hard  # reset HEAD, index and working tree
 
 ### mv
 
-```bash
+```js
 git mv a b # 一般重命名大小写时用. 另外可通过配置使大小写敏感`git config core.ignorecase false`
 ```
 
@@ -73,7 +73,7 @@ git mv a b # 一般重命名大小写时用. 另外可通过配置使大小写�
 
 ### branch
 
-```bash
+```js
 git branch -vv # 展示HEAD, 分支, oid, message
 git branch -d # 删除分支
 git branch -a --no-merged # 未合入当前分支的(远端)分支
@@ -85,7 +85,7 @@ git branch --contains < commit-id > # 列出包含指定commit的分支
 
 ### checkout
 
-```bash
+```js
 git checkout -b < new branch > < start_point > # 基于当前分支or某commit 来新建分支
 git checkout -- < filename > # 丢弃工作区指定文件的修改
 git checkout . # 丢弃工作区当前文件夹的 modified
@@ -99,7 +99,7 @@ git checkout stash@{0} # 检出stash0的快照
 
 ### merge
 
-```bash
+```js
 git merge < branch >
 
        A---B---C *topic
@@ -124,7 +124,7 @@ git merge --squash < branch > # 创建一个单独的提交而不是做一次合
 
 ### log
 
-```bash
+```js
 git log --oneline
 git log --oneline --decorate # 一行 id+msg
 git log -< num > # -n< num > 最近n条
@@ -136,7 +136,7 @@ git log -m -p < commit-id > # 显示merge的内容; -p可替换为--name-only / 
 
 ### stash
 
-```bash
+```js
 git stash -u    # 保存一个stash 包含untracked文件
 git stash save  # 保存一个stash
 git stash push  # 暂存一个stash
@@ -154,7 +154,7 @@ git stash drop < n >
 
 ### tag
 
-```bash
+```js
 git tag # 查看标签
 git tag -ln # 标签详情
 git tag < tag-name > # 创建标签
@@ -169,7 +169,7 @@ git tag -d # 删除本地标签
 
 ### pull
 
-```bash
+```js
 git pull = git fetch && git merge
 
        A---B---C *feature
@@ -198,7 +198,7 @@ D---E---F---G *master
 
 ### push
 
-```bash
+```js
 git push -u origin < branch > # 关联分支. 当前与远端
 git push origin --delete < branch > # 删除远端分支
 git push -f # 强制推送 执行前需保证本地是最新(别人没再新的提交)
@@ -207,7 +207,7 @@ git push -f # 强制推送 执行前需保证本地是最新(别人没再新的�
 
 ### remote
 
-```bash
+```js
 git remote add origin < remote-url > # 创建远程仓库
 git remote set-url origin < remote-url > # 修改远程仓库
 git remote show origin # 远端与本地分支的关系; 远端分支列表 tracked已追踪的 / stale陈旧3month以上
@@ -241,7 +241,7 @@ git remote show origin # 远端与本地分支的关系; 远端分支列表 trac
 
 ### rebase
 
-```bash
+```js
 [topic] git rebase < 上游主分支 > < 指定分支 >
 
 [topic] git rebase master # 变基并改变(移动)topic的commit, 到master HEAD的后面
@@ -273,7 +273,7 @@ D---E---F---G master
 
 ### revert
 
-```bash
+```js
 git revert < oid > # 提交一个与指定commit内容相反的commit.
 git revert -n < oid > # 内容相反的, 但不提交
 
@@ -287,7 +287,7 @@ git revert -n < oid > # 内容相反的, 但不提交
 
 ### blame
 
-```bash
+```js
 git blame -L 10,20 < file > # 按行范围进行blame
 git blame -b -w < file > # 显示全文blame. -b show oid; -w ignore whitespace
 g blame -L 14,14 < file >  | awk '{print $1}' | xargs git show # 显示某行的提交log
@@ -343,7 +343,7 @@ g blame -L 14,14 < file >  | awk '{print $1}' | xargs git show # 显示某行的
 
 ### clean
 
-```bash
+```js
 git clean -id # 交互询问删不删Untracked; -d 和目录
 git clean -nd # -n 试图删除Untracked; -d 和目录
 git clean -df # -f 直接删除Untracked文件; -d 和目录
@@ -357,7 +357,7 @@ git clean -df # -f 直接删除Untracked文件; -d 和目录
 
 ### filter-branch 重写分支
 
-```bash
+```js
 git filter-branch --force --prune-empty --index-filter 'git rm -rf --cached --ignore-unmatch < file >' --tag-name-filter cat -- --all # 彻底删除某文件
 ```
 
@@ -377,7 +377,7 @@ git filter-branch --force --prune-empty --index-filter 'git rm -rf --cached --ig
 
 ### cat-file 调试对象信息
 
-```bash
+```js
 git cat-file -t  # 查看对象类型
 git cat-file -s  # 查看对象size
 git cat-file -p  # 查看对象内容
@@ -398,7 +398,7 @@ git cat-file -p  # 查看对象内容
 
 ### ls-files
 
-```bash
+```js
 git ls-files -m # 列出Modified文件
 git ls-files -o # 列出Untracked文件
 git ls-files -d # 列出删除的文件
@@ -410,7 +410,7 @@ git ls-files -d # 列出删除的文件
 
 ### rev-list
 
-```bash
+```js
 git rev-list --objects --all # 获取所有对象(commit, tree, blob) 及blob对应的文件, tree对应的目录 (commit 和 tree快照对应的数据第二列显示null);
 git rev-list --objects < oid(tree) > # 获取快照中所有内容(oid, file)
 git rev-list < oid1 >...< oid2 > # 两次提交之间的所有提交
@@ -418,7 +418,7 @@ git rev-list < oid1 >...< oid2 > # 两次提交之间的所有提交
 
 ### rev-parse
 
-```bash
+```js
 git rev-parse HEAD^ # 获取上一个commit-id
 git rev-parse --short HEAD^ # 获取上一个commit-id (short)
 ```
@@ -433,7 +433,7 @@ git rev-parse --short HEAD^ # 获取上一个commit-id (short)
 
 ### verify-pack 读取归档文件(idx)
 
-```bash
+```js
 git verify-pack -v .git/objects/pack/pack-*.idx # 获取所有pack中的对象详细信息; commit对应的基础tree不会显示
 git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -g -r | head -n5 # 获取最大的5个对象
 
@@ -450,7 +450,7 @@ git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -g -r | head -n5 # �
 
 ### 标记
 
-```bash
+```js
 HEAD 头指针
 detached HEAD 分离头指针 # git checkout <commit-id>, 即 直接检出obj tree, 而非分支时
 ^   父

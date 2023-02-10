@@ -5,7 +5,7 @@
 
 ## 结构
 
-```bash
+```js
 # AVL ; left=3L right=4L
                 3
               /    \

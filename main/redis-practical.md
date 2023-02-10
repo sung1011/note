@@ -20,13 +20,13 @@
 
 ## 删除匹配到的key  
 
-```bash
+```js
    redis-cli keys *something* | xargs redis-cli del  
 ```
 
 ## 从文件中执行命令(大量) --pipe
 
-```bash
+```js
    # 1. 创建文件  
    set myk12 v1  
    zadd zset12 0 a 1 b 3 c  
@@ -39,7 +39,7 @@
 
 ## 高可用
 
-```bash
+```js
    - 主从复制
    - 哨兵模式
    - 集群
@@ -47,7 +47,7 @@
 
 ## keys *
 
-```bash
+```js
     不要使用keys *, 会阻塞主进程
     可以使用scan进行迭代
 ```
@@ -58,7 +58,7 @@ todo
 
 ## 延迟队列
 
-```bash
+```js
     # zset方案
     生产者用zadd, score存时间戳
     消费者用zrangebyscore获取 并 zremrangebyscore消费.

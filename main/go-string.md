@@ -5,7 +5,7 @@
 
 ## 数据结构
 
-```bash
+```js
     # 源码
         var s string = "hello"
     # 运行时 

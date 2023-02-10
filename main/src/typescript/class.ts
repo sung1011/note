@@ -44,7 +44,6 @@ class chaosName {
 let chaosNameObj = new chaosName()
 chaosNameObj.name = 'daf'
 
-
 // 静态方法
 class Animal {
     private name:string

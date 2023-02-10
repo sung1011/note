@@ -33,7 +33,7 @@
 
 ## 构成
 
-```bash
+```js
 JWT = `{header}.{payload}.{signature}`
 ```
 

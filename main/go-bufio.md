@@ -15,7 +15,7 @@
 
 ### read示例
 
-```bash
+```js
 # 从硬盘读取10个字符, 每次读取1个, bufio利用缓冲, 实际只从硬盘读取3次
 io.Reader --> buffer --> consumer
 
@@ -44,7 +44,7 @@ ijkl -----> ijkl -----> i
 
 ### write示例
 
-```bash
+```js
 # 频繁写入, 利用bufio的缓冲, 攒一波写入(flush)一次, 减少disk-io
 producer --> buffer --> io.Writer (destination )
 

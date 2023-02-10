@@ -4,7 +4,7 @@
 
 ## 组成
 
-```bash
+```js
                                 subscribe 
                /->Registery <-------\
              /                        \ 

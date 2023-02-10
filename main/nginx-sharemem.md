@@ -30,7 +30,7 @@
 
 ### rbtree
 
-```bash
+```js
 - ngx_stream_limit_conn_module # 流控
 - ngx_http_limit_conn_module
 - ngx_stream_limit_req_module

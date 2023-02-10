@@ -19,7 +19,7 @@
 
   ![img](res/inverted-index.png)
 
-```bash
+```js
 
       word14 -> doc1, doc2 ... # 包含该word的doc的有序链表, 方便与其他链表求交集、并集、差集 
 
@@ -37,9 +37,9 @@
 
 - 正排索引
 
-```bash
   ![img](res/forward-index.png)
 
+```js
       doc1 -> [ word14, word27, word33 ... ]  # 全部内容的数组, 每个元素是一个词
 
       doc2 -> [ word77, word312, word14, word77 ... ]

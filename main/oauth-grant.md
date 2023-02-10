@@ -11,7 +11,7 @@
 
 ## 流程
 
-```bash
+```js
                         auth-req
     app         ---------------------> res owner        # app要求用户授权
                         auth-code
@@ -41,7 +41,7 @@
 
 ### 授权码(authorization-code)
 
-```bash
+```js
 # 适用于: app
 # user登录res-server获得auth-code 并回调给app-server, app-server再通过auth-code申请token.
 
@@ -93,7 +93,7 @@ res-server -> app
 
 ### 隐藏式(implicit)
 
-```bash
+```js
 # 适用于: app是纯前端应用, 无后端
 # 直接向前端返回token, 没有授权码这个中间步骤. (易劫持不安全)
 
@@ -120,7 +120,7 @@ res-server -> app
 ### 密码式(password)
 
 
-```bash
+```js
 # 适用于: app其他方式都无法采用的情况
 # 直接发送res-server的账号密码以获取信任
 
@@ -138,7 +138,7 @@ app -> res-server
 
 ### 凭证式(clint credentials)
 
-```bash
+```js
 # 适用于: 服务器终端
 # 通过证书请求令牌
 

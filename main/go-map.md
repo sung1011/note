@@ -67,7 +67,7 @@ var m map[string]int
 
 ## key限制
 
-```bash
+```js
     无法 == 做比较的类型不能做map的key
     如:
         `切片 slice`

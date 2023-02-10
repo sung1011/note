@@ -9,7 +9,7 @@
 
 node package manager
 
-```bash
+```js
 npm install -g typescript # 或 cnpm
 ```
 
@@ -17,7 +17,7 @@ npm install -g typescript # 或 cnpm
 
 TypeScript execution and REPL for node.js
 
-```bash
+```js
 npm install -g ts-node
 
 ts-node --init  # 生成tsconfig.json

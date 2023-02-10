@@ -38,7 +38,7 @@
 
 ### DHCP 配置流程
 
-```bash
+```js
 # 申请IP
 MAC头: 新机MAC;广播MAC
 IP头: 新机IP 0.0.0.0;广播IP

@@ -96,7 +96,7 @@ echo $b; // 2
 
 ## 魔术方法  
 
-```bash
+```js
     __get()  
     __set()  
     __isset()  

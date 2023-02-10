@@ -15,7 +15,7 @@
 
 ## 数据结构
 
-```bash
+```js
 {
     zlbytes: 123,       # 记录整个ziplist的大小
     zltail: 3,          # ziplist开始指针与最后一个entry之间的偏移量，通过该偏移量可以获得最后一个entry
