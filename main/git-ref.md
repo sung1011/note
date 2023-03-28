@@ -21,7 +21,7 @@ git help -w --web #
 ### clone
 
 ```js
-git clone --depth 10 < repo > # 深度.保留最新的10个commit, 更前的commit嫁接(grafted)成一个整体
+git clone --depth 10 < repo > // 深度.保留最新的10个commit, 更前的commit嫁接(grafted)成一个整体
 ```
 
 ## Basic Snapshotting
@@ -33,20 +33,20 @@ git clone --depth 10 < repo > # 深度.保留最新的10个commit, 更前的comm
 ### diff
 
 ```js
-git diff HEAD~3 # HEAD^^^
-git diff --cached # 暂存区 与 HEAD 比较
-git diff origin/< branch > # 与远端比较 (大多同 --cached)
+git diff HEAD~3 // HEAD^^^
+git diff --cached // 暂存区 与 HEAD 比较
+git diff origin/< branch > // 与远端比较 (大多同 --cached)
 git diff < commit1 > < commit2 >
 git diff < branch1 > < branch2 > -- < file >
-git diff --stat ':!<file1>' ':!<file2>' # diff, 但排除 file1 和 file2 ...
-git diff --word-diff=plain # 一行内显示diff
+git diff --stat ':!<file1>' ':!<file2>' // diff, 但排除 file1 和 file2 ...
+git diff --word-diff=plain // 一行内显示diff
 ```
 
 ### commit
 
 ```js
-git commit --amend # 修改最近一次提交的msg
-git commit -m # --message < msg >
+git commit --amend // 修改最近一次提交的msg
+git commit -m // --message < msg >
 ```
 
 ### notes
@@ -56,9 +56,9 @@ git commit -m # --message < msg >
 ### reset
 
 ```js
-git reset --soft  # reset only HEAD
-git reset --mixed # reset HEAD and index    *default
-git reset --hard  # reset HEAD, index and working tree
+git reset --soft  // reset only HEAD
+git reset --mixed // reset HEAD and index    *default
+git reset --hard  // reset HEAD, index and working tree
 ```
 
 ### rm
@@ -66,7 +66,7 @@ git reset --hard  # reset HEAD, index and working tree
 ### mv
 
 ```js
-git mv a b # 一般重命名大小写时用. 另外可通过配置使大小写敏感`git config core.ignorecase false`
+git mv a b // 一般重命名大小写时用. 另外可通过配置使大小写敏感`git config core.ignorecase false`
 ```
 
 ## Branching and Merging
@@ -74,25 +74,25 @@ git mv a b # 一般重命名大小写时用. 另外可通过配置使大小写�
 ### branch
 
 ```js
-git branch -vv # 展示HEAD, 分支, oid, message
-git branch -d # 删除分支
-git branch -a --no-merged # 未合入当前分支的(远端)分支
-git branch --merged # 获取已合入当前分支的分支
-git branch --merged < branch > # 已合入<branch>的分支
-git branch -m < new-branch-name > # 分支重命名
-git branch --contains < commit-id > # 列出包含指定commit的分支
+git branch -vv // 展示HEAD, 分支, oid, message
+git branch -d // 删除分支
+git branch -a --no-merged // 未合入当前分支的(远端)分支
+git branch --merged // 获取已合入当前分支的分支
+git branch --merged < branch > // 已合入<branch>的分支
+git branch -m < new-branch-name > // 分支重命名
+git branch --contains < commit-id > // 列出包含指定commit的分支
 ```
 
 ### checkout
 
 ```js
-git checkout -b < new branch > < start_point > # 基于当前分支or某commit 来新建分支
-git checkout -- < filename > # 丢弃工作区指定文件的修改
-git checkout . # 丢弃工作区当前文件夹的 modified
-git checkout < oid > # 检出某次commit; 新建分支(gco -b)来保存修改后的内容(分离头指针 detached HEAD).
-git checkout < oid > -- < filename > # 检出指定oid 的 指定文件
-git checkout --orphan < new branch > # new unparented branch; 新建无parented分支
-git checkout stash@{0} # 检出stash0的快照
+git checkout -b < new branch > < start_point > // 基于当前分支or某commit 来新建分支
+git checkout -- < filename > // 丢弃工作区指定文件的修改
+git checkout . // 丢弃工作区当前文件夹的 modified
+git checkout < oid > // 检出某次commit; 新建分支(gco -b)来保存修改后的内容(分离头指针 detached HEAD).
+git checkout < oid > -- < filename > // 检出指定oid 的 指定文件
+git checkout --orphan < new branch > // new unparented branch; 新建无parented分支
+git checkout stash@{0} // 检出stash0的快照
 ```
 
 ### switch
@@ -111,7 +111,7 @@ git merge < branch >
  D---E---F---G---H *master
 
 
-git merge --squash < branch > # 创建一个单独的提交而不是做一次合并
+git merge --squash < branch > // 创建一个单独的提交而不是做一次合并
 
        A---B---C *topic
       /
@@ -126,25 +126,25 @@ git merge --squash < branch > # 创建一个单独的提交而不是做一次合
 
 ```js
 git log --oneline
-git log --oneline --decorate # 一行 id+msg
-git log -< num > # -n< num > 最近n条
-git log --all # 所有分支
+git log --oneline --decorate // 一行 id+msg
+git log -< num > // -n< num > 最近n条
+git log --all // 所有分支
 git log --graph
-git log feature ^master # feature里有, master里没有的commmit
-git log -m -p < commit-id > # 显示merge的内容; -p可替换为--name-only / --name-status
+git log feature ^master // feature里有, master里没有的commmit
+git log -m -p < commit-id > // 显示merge的内容; -p可替换为--name-only / --name-status
 ```
 
 ### stash
 
 ```js
-git stash -u    # 保存一个stash 包含untracked文件
-git stash save  # 保存一个stash
-git stash push  # 暂存一个stash
-git stash pop < n >  # 弹出一个stash, 不保留记录; n 为 stash@{n}的值; 如 git stash pop 2
-git stash apply < n > # 弹出一个stash, 并且保留记录; n 为 stash@{n}的值
+git stash -u    // 保存一个stash 包含untracked文件
+git stash save  // 保存一个stash
+git stash push  // 暂存一个stash
+git stash pop < n >  // 弹出一个stash, 不保留记录; n 为 stash@{n}的值; 如 git stash pop 2
+git stash apply < n > // 弹出一个stash, 并且保留记录; n 为 stash@{n}的值
 git stash show
 git stash branch
-git stash clear # 删除所有stash
+git stash clear // 删除所有stash
 git stash list
 git stash list -p
 git stash drop < n >
@@ -155,10 +155,10 @@ git stash drop < n >
 ### tag
 
 ```js
-git tag # 查看标签
-git tag -ln # 标签详情
-git tag < tag-name > # 创建标签
-git tag -d # 删除本地标签
+git tag // 查看标签
+git tag -ln // 标签详情
+git tag < tag-name > // 创建标签
+git tag -d // 删除本地标签
 ```
 
 ### worktree
@@ -184,7 +184,7 @@ git pull = git fetch && git merge
 
 # H commit message is "Merge branch 'feature' of < rep >"
 
-[topic] get pull --rebase origin master # fetch && rebase FETCH_HEAD
+[topic] get pull --rebase origin master // fetch && rebase FETCH_HEAD
 
       A---B---C *topic
      /
@@ -199,18 +199,18 @@ D---E---F---G *master
 ### push
 
 ```js
-git push -u origin < branch > # 关联分支. 当前与远端
-git push origin --delete < branch > # 删除远端分支
-git push -f # 强制推送 执行前需保证本地是最新(别人没再新的提交)
+git push -u origin < branch > // 关联分支. 当前与远端
+git push origin --delete < branch > // 删除远端分支
+git push -f // 强制推送 执行前需保证本地是最新(别人没再新的提交)
 ```
 
 
 ### remote
 
 ```js
-git remote add origin < remote-url > # 创建远程仓库
-git remote set-url origin < remote-url > # 修改远程仓库
-git remote show origin # 远端与本地分支的关系; 远端分支列表 tracked已追踪的 / stale陈旧3month以上
+git remote add origin < remote-url > // 创建远程仓库
+git remote set-url origin < remote-url > // 修改远程仓库
+git remote show origin // 远端与本地分支的关系; 远端分支列表 tracked已追踪的 / stale陈旧3month以上
 ```
 
 ### submodule
@@ -244,9 +244,9 @@ git remote show origin # 远端与本地分支的关系; 远端分支列表 trac
 ```js
 [topic] git rebase < 上游主分支 > < 指定分支 >
 
-[topic] git rebase master # 变基并改变(移动)topic的commit, 到master HEAD的后面
+[topic] git rebase master // 变基并改变(移动)topic的commit, 到master HEAD的后面
 [topic] git rebase -i HEAD~20
-[topic] git rebase -i master # 变基并交互式改变被移动的commit
+[topic] git rebase -i master // 变基并交互式改变被移动的commit
 
 # [master] git checkout -b topic; // 检出功能分支
 # [master] git commit t1; // t1
@@ -274,8 +274,8 @@ D---E---F---G master
 ### revert
 
 ```js
-git revert < oid > # 提交一个与指定commit内容相反的commit.
-git revert -n < oid > # 内容相反的, 但不提交
+git revert < oid > // 提交一个与指定commit内容相反的commit.
+git revert -n < oid > // 内容相反的, 但不提交
 
 # 若在主分支revert一个功能分支(revert merge commit id), 则该功能分支无法重新merge到主分支, 需要用cherry-pick.
 ```
@@ -288,9 +288,9 @@ git revert -n < oid > # 内容相反的, 但不提交
 ### blame
 
 ```js
-git blame -L 10,20 < file > # 按行范围进行blame
-git blame -b -w < file > # 显示全文blame. -b show oid; -w ignore whitespace
-g blame -L 14,14 < file >  | awk '{print $1}' | xargs git show # 显示某行的提交log
+git blame -L 10,20 < file > // 按行范围进行blame
+git blame -b -w < file > // 显示全文blame. -b show oid; -w ignore whitespace
+g blame -L 14,14 < file >  | awk '{print $1}' | xargs git show // 显示某行的提交log
 ```
 
 ### grep
@@ -344,9 +344,9 @@ g blame -L 14,14 < file >  | awk '{print $1}' | xargs git show # 显示某行的
 ### clean
 
 ```js
-git clean -id # 交互询问删不删Untracked; -d 和目录
-git clean -nd # -n 试图删除Untracked; -d 和目录
-git clean -df # -f 直接删除Untracked文件; -d 和目录
+git clean -id // 交互询问删不删Untracked; -d 和目录
+git clean -nd // -n 试图删除Untracked; -d 和目录
+git clean -df // -f 直接删除Untracked文件; -d 和目录
 ```
 
 ### gc
@@ -358,7 +358,7 @@ git clean -df # -f 直接删除Untracked文件; -d 和目录
 ### filter-branch 重写分支
 
 ```js
-git filter-branch --force --prune-empty --index-filter 'git rm -rf --cached --ignore-unmatch < file >' --tag-name-filter cat -- --all # 彻底删除某文件
+git filter-branch --force --prune-empty --index-filter 'git rm -rf --cached --ignore-unmatch < file >' --tag-name-filter cat -- --all // 彻底删除某文件
 ```
 
 ### instaweb
@@ -378,9 +378,9 @@ git filter-branch --force --prune-empty --index-filter 'git rm -rf --cached --ig
 ### cat-file 调试对象信息
 
 ```js
-git cat-file -t  # 查看对象类型
-git cat-file -s  # 查看对象size
-git cat-file -p  # 查看对象内容
+git cat-file -t  // 查看对象类型
+git cat-file -s  // 查看对象size
+git cat-file -p  // 查看对象内容
 ```
 
 > [对象类型](git-internals.md#对象类型)
@@ -399,9 +399,9 @@ git cat-file -p  # 查看对象内容
 ### ls-files
 
 ```js
-git ls-files -m # 列出Modified文件
-git ls-files -o # 列出Untracked文件
-git ls-files -d # 列出删除的文件
+git ls-files -m // 列出Modified文件
+git ls-files -o // 列出Untracked文件
+git ls-files -d // 列出删除的文件
 ```
 
 ### merge-base
@@ -411,16 +411,16 @@ git ls-files -d # 列出删除的文件
 ### rev-list
 
 ```js
-git rev-list --objects --all # 获取所有对象(commit, tree, blob) 及blob对应的文件, tree对应的目录 (commit 和 tree快照对应的数据第二列显示null);
-git rev-list --objects < oid(tree) > # 获取快照中所有内容(oid, file)
-git rev-list < oid1 >...< oid2 > # 两次提交之间的所有提交
+git rev-list --objects --all // 获取所有对象(commit, tree, blob) 及blob对应的文件, tree对应的目录 (commit 和 tree快照对应的数据第二列显示null);
+git rev-list --objects < oid(tree) > // 获取快照中所有内容(oid, file)
+git rev-list < oid1 >...< oid2 > // 两次提交之间的所有提交
 ```
 
 ### rev-parse
 
 ```js
-git rev-parse HEAD^ # 获取上一个commit-id
-git rev-parse --short HEAD^ # 获取上一个commit-id (short)
+git rev-parse HEAD^ // 获取上一个commit-id
+git rev-parse --short HEAD^ // 获取上一个commit-id (short)
 ```
 
 ### show-ref
@@ -434,8 +434,8 @@ git rev-parse --short HEAD^ # 获取上一个commit-id (short)
 ### verify-pack 读取归档文件(idx)
 
 ```js
-git verify-pack -v .git/objects/pack/pack-*.idx # 获取所有pack中的对象详细信息; commit对应的基础tree不会显示
-git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -g -r | head -n5 # 获取最大的5个对象
+git verify-pack -v .git/objects/pack/pack-*.idx // 获取所有pack中的对象详细信息; commit对应的基础tree不会显示
+git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -g -r | head -n5 // 获取最大的5个对象
 
 # -v 返回: SHA-1 | type | size | size-in-packfile | offset-in-packfile  
 
@@ -452,7 +452,7 @@ git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -g -r | head -n5 # �
 
 ```js
 HEAD 头指针
-detached HEAD 分离头指针 # git checkout <commit-id>, 即 直接检出obj tree, 而非分支时
+detached HEAD 分离头指针 // git checkout <commit-id>, 即 直接检出obj tree, 而非分支时
 ^   父
 ^^^ 父父父
 ~3  父父父
