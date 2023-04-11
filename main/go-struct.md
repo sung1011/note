@@ -1,10 +1,27 @@
-# go 结构体
+# 1. go 结构体
 
-## 数据结构
+- [1. go 结构体](#1-go-结构体)
+  - [1.1. 数据结构](#11-数据结构)
+  - [1.2. 创建 初始化 访问](#12-创建-初始化-访问)
+  - [1.3. 构造函数](#13-构造函数)
+  - [1.4. 内存布局](#14-内存布局)
+  - [1.5. 参数传递](#15-参数传递)
+  - [1.6. 是否==](#16-是否)
+  - [1.7. 方法](#17-方法)
+  - [1.8. 包含 \& 组合 \& 重载 \& 内嵌](#18-包含--组合--重载--内嵌)
+  - [1.9. 标签tag](#19-标签tag)
+  - [1.10. 嵌套接口](#110-嵌套接口)
+  - [1.11. 未公开类型的公开字段](#111-未公开类型的公开字段)
+  - [1.12. 空结构体 struct{}{}](#112-空结构体-struct)
+  - [1.13. 导入导出](#113-导入导出)
+  - [1.14. 常用的struct](#114-常用的struct)
+  - [1.15. ref](#115-ref)
+
+## 1.1. 数据结构
 
         TODO
 
-## 创建 初始化 访问
+## 1.2. 创建 初始化 访问
 
 ```go
 type Student struct {// 结构体
@@ -28,7 +45,7 @@ sp2.Scores = map[string]int{"math": 98, "chemistry": 80}
 sp3 := &Student{"Sam", 18} 
 ```
 
-## 构造函数
+## 1.3. 构造函数
 
     作为工厂方法用于构造实例, 返回实例的指针
     特别是可以用来对未导出的字段赋值
@@ -44,7 +61,7 @@ func NewStudent(name string, age int) *Student {
 }
 ```
 
-## 内存布局
+## 1.4. 内存布局
 
     `连续` 结构体和它所包含的数据在内存中是以连续块的形式存在的, 即使结构体中嵌套有其他的结构体
     `对齐` 每个字段至少占用8byte, 字段顺序影响其内存空间占用
@@ -72,16 +89,16 @@ func main() {
 
 ![img](res/go-struct-mem.jpg)
 
-## 参数传递
+## 1.5. 参数传递
 
     一般传递其指针 &struct (ptr 8byte)
     不传指针, 则是结构体本身, 参考内存布局
 
 > [内存布局](go-struct.md#内存布局)
 
-## [是否==](go-type-compare.md#struct)
+## 1.6. [是否==](go-type-compare.md#struct)
 
-## 方法
+## 1.7. 方法
 
     属于结构体的函数
 
@@ -126,9 +143,9 @@ func main() {
 
 > func(recv) 是函数; recv.Method() 是方法
 
-## [包含 & 组合 & 重载 & 内嵌](go-struct-relation.md)
+## 1.8. [包含 & 组合 & 重载 & 内嵌](go-struct-relation.md)
 
-## 标签tag
+## 1.9. 标签tag
 
 ```go
 type Server struct {
@@ -143,15 +160,15 @@ func main() {
 }
 ```
 
-## [嵌套接口](go-interface.md#嵌入类型)
+## 1.10. [嵌套接口](go-interface.md#嵌入类型)
 
-## 未公开类型的公开字段
+## 1.11. 未公开类型的公开字段
 
 ```go
     TODO
 ```
 
-## 空结构体 struct{}{}
+## 1.12. 空结构体 struct{}{}
 
     不占用内存
     地址不变
@@ -165,10 +182,10 @@ func main() {
     ch <-Empty  // 不占用内存, 只作为一种事件信息传递
 ```
 
-## [导入导出](go-import.md#struct)
+## 1.13. [导入导出](go-import.md#struct)
 
-## [常用的struct](go-struct-frequently.md)
+## 1.14. [常用的struct](go-struct-frequently.md)
 
-## ref
+## 1.15. ref
 
 - <https://www.cnblogs.com/myuniverse/p/11595043.html>

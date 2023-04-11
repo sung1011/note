@@ -4,9 +4,9 @@
 
 - `Workspace 工作区` 项目文件夹
 
-- `Index / Stage 暂存区` git add 后, 将内容存入版本库中的暂存区
+- `Index / Stage 暂存区` git add 后; 将内容存入版本库中的暂存区
 
-- `Repository 版本库(本地仓库)` .git文件夹
+- `Repository 版本库(本地仓库)` git commit 后; .git文件夹
 
 - `Remote 远程仓库` 云端
 

@@ -1,8 +1,8 @@
 # git
 
-## [git参考](git-ref.md)
-
 ## [git原理](git-internals.md)
+
+## [git参考](git-ref.md)
 
 ## [git实战](git-ex.md)
 

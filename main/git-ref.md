@@ -392,6 +392,10 @@ git cat-file -p  // 查看对象内容
 
 ### diff-index
 
+```js
+git add -A; git diff-index -q HEAD || (git commit -m 'xx' && git push) // 暂存区有变化就提交
+```
+
 ### for-each-ref
 
 ### hash-object
