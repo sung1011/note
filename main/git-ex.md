@@ -148,14 +148,25 @@ git reflog show --date=iso < branch >
 git log -m -p <merge commit-id> # -p可替换为--name-only / --name-status
 ```
 
-## 当前功能分支的改动
-
-```js
-git checkout feature
-git pull origin develop
-git diff origin/develop
-```
-
 ## 获取指定tree/blob被哪些commit引用了
 
 TODO
+
+## 生成 change_log
+
+```js
+git log $(git describe --tags --abbrev=0)..HEAD  --pretty=format:"%s"
+
+git log --pretty=format:"%s" --no-merges --reverse $(git describe --tags --abbrev=0)...HEAD
+```
+
+## 获取当前最大tag
+
+```js
+
+git describe --tags `git rev-list --tags --max-count=1`
+
+git describe --tags --abbrev=0
+
+git tag -l | sort -V | tail -1
+```
