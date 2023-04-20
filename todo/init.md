@@ -12,7 +12,7 @@
         nvm
         ncdu
         pidof
-        zoxide # zoxide is a smarter cd command, inspired by z and autojump.
+        zoxide // zoxide is a smarter cd command, inspired by z and autojump.
         git-flow
 ```
 
@@ -158,4 +158,5 @@
         - ctrl+cmd+p
     docker
     qq音乐
+    raycast
 ```
