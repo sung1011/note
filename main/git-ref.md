@@ -155,10 +155,15 @@ git stash drop < n >
 ### tag
 
 ```js
-git tag // 查看标签
+git tag // 查看标签列表
 git tag -ln // 标签详情
 git tag < tag-name > // 创建标签
 git tag -d // 删除本地标签
+git ls-remote --tags // 查看远端标签
+git push origin --delete < tag-name > // 删除远端标签
+git push origin < tag-name > // 推送标签到远端
+git push origin --tags // 推送所有标签到远端
+git tag -a < tag-name > -m < msg > // 创建带注释的标签
 ```
 
 ### worktree
