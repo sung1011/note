@@ -170,3 +170,9 @@ git describe --tags --abbrev=0
 
 git tag -l | sort -V | tail -1
 ```
+
+## 暂存区有变化就提交
+
+```js
+git add -A; git diff-index -q HEAD || (git commit -m 'xx' && git push) 
+```
