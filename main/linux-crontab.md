@@ -103,3 +103,7 @@ chkconfig –level 35 crond on #开机自动启动
 …
 * * * * * sleep 57 && ls /tmp
 ```
+
+## ref
+
+- wiki <https://en.wikipedia.org/wiki/Cron>
