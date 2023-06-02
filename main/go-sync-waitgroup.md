@@ -1,5 +1,9 @@
 # go sync.WaitGroup
 
+## 场景
+
+    任务编排: goroutine之间有互相等待or依赖的顺序关系, 按一定规律执行
+
 ```go
 var mu sync.Mutex
 

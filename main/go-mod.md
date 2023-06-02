@@ -1,10 +1,16 @@
-# go 包依赖
+# 1. go 包依赖
 
-    GOPATH
-    vendor
-    go module
+- [1. go 包依赖](#1-go-包依赖)
+  - [1.1. GOPATH](#11-gopath)
+  - [1.2. vendor](#12-vendor)
+  - [1.3. go mod](#13-go-mod)
+    - [1.3.1. 操作](#131-操作)
+    - [1.3.2. ENV](#132-env)
+      - [1.3.2.1. GOPROXY](#1321-goproxy)
+      - [1.3.2.2. GO111MODULE](#1322-go111module)
+    - [1.3.3. go.mod file](#133-gomod-file)
 
-## GOPATH
+## 1.1. GOPATH
 
 ```js
     通过`go get {pkg}@vX.Y.Z`下载包和其依赖到GOPATH
@@ -36,7 +42,7 @@
 
 > `go list -m -versions {pkg}` 查看所有版本
 
-## vendor
+## 1.2. vendor
 
     依赖包都存放在vendor文件夹下
     运行时go优先查找vendor下的依赖
@@ -44,9 +50,9 @@
 
 > `缺点` 项目依然必须放在GOPATH下; 手动管理vendor; 提交代码库影响体积, 速度, 评审等
 
-## go mod
+## 1.3. go mod
 
-### 操作
+### 1.3.1. 操作
 
 ```js
     `初始化`
@@ -69,20 +75,20 @@
 
 ```
 
-### ENV
+### 1.3.2. ENV
 
-#### GOPROXY
+#### 1.3.2.1. GOPROXY
 
     设置代理 默认为GOPROXY="https://goproxy.io,direct"
 
-#### GO111MODULE
+#### 1.3.2.2. GO111MODULE
 
     go mod发布于go1.11, 111 是对 > go1.11 有效的意思
     `on` 所有目录使用`go module` (>= 1.16默认值)
     `off` 禁用`go module`
     `auto` 在GOPATH目录下使用传统`GOPATH`和`vendor`查找依赖, 非GOPATH使用`go module` (>= 1.11默认值)
 
-### go.mod file
+### 1.3.3. go.mod file
 
 ```js
 module github.com/sung1011/testing

@@ -41,6 +41,7 @@
       - `go mod edit -fmt`
 
   - `run`         compile and run Go program
+    - `go run -race`         检测并发bug
   - `test`        test packages
   - `tool`        run specified go tool
   - `version`     print Go version

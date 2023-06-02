@@ -1,6 +1,16 @@
 # go channel
 
+- [chan](src/go/basic/chan_test.go)
+
+## 场景
+
+    消息传递: 不同goroutine之间线程安全的数据交流
+    任务编排: goroutine之间有互相等待or依赖的顺序关系, 按一定规律执行
+
+## 特征
+
     读empty阻塞, 读close空零, 写close异常, 读写nil阻塞
+
 
 ## 数据结构
 

@@ -2,7 +2,7 @@
 
 ## channel  
 
-- [chan](src/go/basic/chan_test.go)
+- [chanel](go-chan.md)
 
 ## sync  
 
@@ -18,7 +18,7 @@
 
 ## atomic
 
-## [并发模式]
+## 并发模式
 
 - runner
 - work

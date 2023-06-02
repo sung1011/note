@@ -1,5 +1,19 @@
 # go sync.Mutex
 
+## 场景
+
+    共享资源: 避免并发的读写共享资源时, 造成数据竞争, 从而导致数据不一致的问题
+
+## 实现机制
+
+### `临界区 critical section`
+
+    Lock()和Unlock()之间的代码段称为资源的临界区, 临界区的代码同时间只有一个goroutine会执行.
+
+### `不关联goroutine`
+
+    可以在goroutine加锁, 另一个goroutine解锁
+
 ## Mutex
 
 ```go
@@ -8,18 +22,23 @@ type Mutex struct {
 	state int32
 	sema uint32
 }
-
-// 常规使用
-//   lock与lock阻塞互斥
-type mytype struct {
-	m   sync.Mutex      // 内置
-	var int
-}
 ```
 
-> `临界区` Lock()和Unlock()之间的代码段称为资源的临界区(critical section), 临界区的代码同时间只有一个goroutine会执行.
+```go
+// 常规使用
+type mytype struct {
+	m sync.Mutex // 内置; 放在保护的字段(i)上面
+	i int
+}
 
-> `不关联goroutine` 可以在goroutine加锁, 另一个goroutine解锁
+func main() {
+    ...
+    mytype.Lock()
+    mytype.i++
+    mytype.Unlock()
+    ...
+}
+```
 
 ## RWMutex
 
