@@ -13,9 +13,10 @@
   - [1.10. 嵌套接口](#110-嵌套接口)
   - [1.11. 未公开类型的公开字段](#111-未公开类型的公开字段)
   - [1.12. 空结构体 struct{}{}](#112-空结构体-struct)
-  - [1.13. 导入导出](#113-导入导出)
-  - [1.14. 常用的struct](#114-常用的struct)
-  - [1.15. ref](#115-ref)
+  - [1.13. clone](#113-clone)
+  - [1.14. 导入导出](#114-导入导出)
+  - [1.15. 常用的struct](#115-常用的struct)
+  - [1.16. ref](#116-ref)
 
 ## 1.1. 数据结构
 
@@ -182,10 +183,14 @@ func main() {
     ch <-Empty  // 不占用内存, 只作为一种事件信息传递
 ```
 
-## 1.13. [导入导出](go-import.md#struct)
+## 1.13. clone
 
-## 1.14. [常用的struct](go-struct-frequently.md)
+    todo
 
-## 1.15. ref
+## 1.14. [导入导出](go-import.md#struct)
+
+## 1.15. [常用的struct](go-struct-frequently.md)
+
+## 1.16. ref
 
 - <https://www.cnblogs.com/myuniverse/p/11595043.html>

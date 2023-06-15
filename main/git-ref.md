@@ -215,13 +215,14 @@ git checkout stash@{0} // 检出stash0的快照
       /
  D---E---F---G *master
 
-git merge --no-ff { branch } // 创建一个merge的commit
-
        A---B---C *topic
       /         \
  D---E---F---G---H *master
 
+git merge --no-ff { branch } // 创建一个merge的commit
+
 git merge --ff { branch } // 合并, 但不创建commit, 仿佛没有topic分支
+
 git merge --ff-only { branch } // 合并, 但不创建commit, 仿佛没有topic分支; 必须当前是远端的最新
 
  D---E---A---F---B---G---C *master

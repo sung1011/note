@@ -57,7 +57,7 @@ m := map[string]int{} // empty map; prt=xxx len=0 cap=0;
 
 // nil ptr map
 // panic: assignment to entry in nil map
-// "panic if written to" -- 没意义; 不能赋值; 可以查找 删除 循环 统计; 需要用上述方法初始化内存再用
+// "panic if written to" -- 不能赋值会报panic; 但可以查找 删除 循环 统计
 var m map[string]int 
 ```
 
