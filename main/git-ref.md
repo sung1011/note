@@ -269,13 +269,15 @@ git stash drop { n }
 ```js
 git tag // 查看标签列表
 git tag -ln // 标签详情
-git tag { tag-name } // 创建标签
+git tag { tag-name } // 创建标签(无msg)
 git tag -d // 删除本地标签
+
 git ls-remote --tags // 查看远端标签
 git push origin --delete { tag-name } // 删除远端标签
-git push origin { tag-name } // 推送标签到远端
+git push origin { tag-name } // 推送指定标签到远端
 git push origin --tags // 推送所有标签到远端
-git tag -a { tag-name } -m { msg } // 创建带注释的标签
+git tag -a { tag-name } -m { msg } // 创建带msg的标签
+git describe --abbrev=0 --tags // 查看最近一个tag
 ```
 
 ### 1.4.9. worktree
@@ -319,6 +321,7 @@ git push -u origin { branch } // 关联分支. 当前与远端
 git push origin --delete { branch } // 删除远端分支
 git push -f // 强制推送 执行前需保证本地是最新(别人没再新的提交)
 git push --tags // 推送附带本地所有tag
+git push origin master // 不论当前是何分支, 推送本地的master分支到远端
 ```
 
 ### 1.5.4. remote
