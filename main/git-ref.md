@@ -132,6 +132,7 @@ git help -w --web #
 
 ```js
 git clone --depth 10 <repo> // 深度.保留最新的10个commit, 更前的commit嫁接(grafted)成一个整体
+git clone --bare <repo> // 克隆裸仓库
 ```
 
 ## 1.3. Basic Snapshotting
@@ -339,6 +340,7 @@ git push origin --delete <branch> // 删除远端分支
 git push -f // 强制推送 执行前需保证本地是最新(别人没再新的提交)
 git push --tags // 推送附带本地所有tag
 git push origin master // 不论当前是何分支, 推送本地的master分支到远端
+git push --mirror <remote-url> // 推送到新的远端仓库; 迁移
 ```
 
 ### 1.5.4. remote
