@@ -131,7 +131,7 @@ git help -w --web #
 ### 1.2.2. clone
 
 ```js
-git clone --depth 10 { repo } // 深度.保留最新的10个commit, 更前的commit嫁接(grafted)成一个整体
+git clone --depth 10 <repo> // 深度.保留最新的10个commit, 更前的commit嫁接(grafted)成一个整体
 ```
 
 ## 1.3. Basic Snapshotting
@@ -145,10 +145,10 @@ git clone --depth 10 { repo } // 深度.保留最新的10个commit, 更前的com
 ```js
 git diff HEAD~3 // HEAD^^^
 git diff --cached // 暂存区 与 HEAD 比较
-git diff origin/{ branch } // 与远端比较 (大多同 --cached)
-git diff { commit1 } { commit2 }
-git diff { branch1 } { branch2 } -- { file }
-git diff --stat ':!{file1}' ':!{file2}' // diff, 但排除 file1 和 file2 ...
+git diff origin/<branch> // 与远端比较 (大多同 --cached)
+git diff <commit1> <commit2>
+git diff <branch1> <branch2> -- <file>
+git diff --stat ':!<file1>' ':!<file2>' // diff, 但排除 file1 和 file2 ...
 git diff --word-diff=plain // 一行内显示diff
 ```
 
@@ -156,7 +156,7 @@ git diff --word-diff=plain // 一行内显示diff
 
 ```js
 git commit --amend // 修改最近一次提交的msg
-git commit -m // --message { msg }
+git commit -m // --message <msg>
 ```
 
 ### 1.3.5. notes
@@ -188,20 +188,20 @@ git branch -vv // 展示HEAD, 分支, oid, message
 git branch -d // 删除分支
 git branch -a --no-merged // 未合入当前分支的(远端)分支
 git branch --merged // 获取已合入当前分支的分支
-git branch --merged { branch } // 已合入{branch}的分支
-git branch -m { new-branch-name } // 分支重命名
-git branch --contains { commit-id } // 列出包含指定commit的分支
+git branch --merged <branch> // 已合入<branch>的分支
+git branch -m <new-branch-name> // 分支重命名
+git branch --contains <commit-id> // 列出包含指定commit的分支
 ```
 
 ### 1.4.2. checkout
 
 ```js
-git checkout -b { new branch } { start_point } // 基于当前分支or某commit 来新建分支
-git checkout -- { filename } // 丢弃工作区指定文件的修改
+git checkout -b <new branch> <start_point> // 基于当前分支or某commit 来新建分支
+git checkout -- <filename> // 丢弃工作区指定文件的修改
 git checkout . // 丢弃工作区当前文件夹的 modified
-git checkout { oid } // 检出某次commit; 新建分支(gco -b)来保存修改后的内容(分离头指针 detached HEAD).
-git checkout { oid } -- { filename } // 检出指定oid 的 指定文件
-git checkout --orphan { new branch } // new unparented branch; 新建无parented分支
+git checkout <oid> // 检出某次commit; 新建分支(gco -b)来保存修改后的内容(分离头指针 detached HEAD).
+git checkout <oid> -- <filename> // 检出指定oid 的 指定文件
+git checkout --orphan <new branch> // new unparented branch; 新建无parented分支
 git checkout stash@{0} // 检出stash0的快照
 ```
 
@@ -219,15 +219,15 @@ git checkout stash@{0} // 检出stash0的快照
       /         \
  D---E---F---G---H *master
 
-git merge --no-ff { branch } // 创建一个merge的commit
+git merge --no-ff <branch> // 创建一个merge的commit
 
-git merge --ff { branch } // 合并, 但不创建commit, 仿佛没有topic分支
+git merge --ff <branch> // 合并, 但不创建commit, 仿佛没有topic分支
 
-git merge --ff-only { branch } // 合并, 但不创建commit, 仿佛没有topic分支; 必须当前是远端的最新
+git merge --ff-only <branch> // 合并, 但不创建commit, 仿佛没有topic分支; 必须当前是远端的最新
 
  D---E---A---F---B---G---C *master
 
-git merge --squash { branch } // 创建一个单独的提交而不是做一次合并
+git merge --squash <branch> // 创建一个单独的提交而不是做一次合并
 
  D---E---F---G---H(ABC) *master
  ```
@@ -239,11 +239,11 @@ git merge --squash { branch } // 创建一个单独的提交而不是做一次�
 ```js
 git log --oneline
 git log --oneline --decorate // 一行 id+msg
-git log -{ num } // -n{ num } 最近n条
+git log -<num> // -n<num> 最近n条
 git log --all // 所有分支
 git log --graph
 git log feature ^master // feature里有, master里没有的commmit
-git log -m -p { commit-id } // 显示merge的内容; -p可替换为--name-only / --name-status
+git log -m -p <commit-id> // 显示merge的内容; -p可替换为--name-only / --name-status
 ```
 
 ### 1.4.7. stash
@@ -252,14 +252,14 @@ git log -m -p { commit-id } // 显示merge的内容; -p可替换为--name-only /
 git stash -u    // 保存一个stash 包含untracked文件
 git stash save  // 保存一个stash
 git stash push  // 暂存一个stash
-git stash pop { n }  // 弹出一个stash, 不保留记录; n 为 stash@{n}的值; 如 git stash pop 2
-git stash apply { n } // 弹出一个stash, 并且保留记录; n 为 stash@{n}的值
+git stash pop <n>  // 弹出一个stash, 不保留记录; n 为 stash@<n>的值; 如 git stash pop 2
+git stash apply <n> // 弹出一个stash, 并且保留记录; n 为 stash@<n>的值
 git stash show
 git stash branch
 git stash clear // 删除所有stash
 git stash list
 git stash list -p
-git stash drop { n }
+git stash drop <n>
 
 # 工作区有modified的文件时进行pull, 同文件会报错; 可以先stash-push + pull + stash-pop, 此时相同line会冲突
 ```
@@ -268,23 +268,40 @@ git stash drop { n }
 
 ```js
 git tag // 查看标签列表
-git tag -ln // 标签详情
-git tag { tag-name } // 创建标签(无msg)
+git tag -a <tag-name> -m <msg> // 创建带msg的标签
+git tag <tag-name> // 创建标签(无msg)
 git tag -d // 删除本地标签
+git tag -ln // 标签详情
 
-git ls-remote --tags // 查看远端标签
-git push origin --delete { tag-name } // 删除远端标签
-git push origin { tag-name } // 推送指定标签到远端
-git push origin --tags // 推送所有标签到远端
-git tag -a { tag-name } -m { msg } // 创建带msg的标签
 git describe --abbrev=0 --tags // 查看最近一个tag
+git ls-remote --tags // 查看远端标签
+git push origin --delete <tag-name> // 删除远端标签
+git push origin <tag-name> // 推送指定标签到远端
+git push origin --tags // 推送所有标签到远端
+git fetch --prune --prune-tags // 同步远端tag到本地, 删除本地不存在于远端tag; 简写 git fetch -p -P
 ```
 
 ### 1.4.9. worktree
 
+```js
+git worktree add ../xxx.worktrees // 上级目录新增xxx.worktrees文件夹, 内容为当前分支的克隆, 新增xxx.worktrees分支; 与当前共享git
+git worktree add ../xxx.worktrees -b xyz // 上级目录新增xxx.worktrees文件夹, 内容为当前分支的克隆, 新增xyz分支; 与当前共享git
+git worktree list
+git worktree lock
+git worktree move
+git worktree prune
+git worktree remove
+git worktree repair
+git worktree unlock
+```
+
 ## 1.5. Sharing and Updating Projects
 
 ### 1.5.1. fetch
+
+```js
+git fetch --prune --prune-tags // 同步远端tag到本地, 删除本地不存在于远端tag; 简写 git fetch -p -P
+```
 
 ### 1.5.2. pull
 
@@ -301,7 +318,7 @@ git pull = git fetch && git merge
       /         \
  D---E---F---G---H *master
 
-# H commit message is "Merge branch 'feature' of { rep }"
+# H commit message is "Merge branch 'feature' of <rep>"
 
 [topic] get pull --rebase origin master // fetch && rebase FETCH_HEAD
 
@@ -317,8 +334,8 @@ D---E---F---G *master
 ### 1.5.3. push
 
 ```js
-git push -u origin { branch } // 关联分支. 当前与远端
-git push origin --delete { branch } // 删除远端分支
+git push -u origin <branch> // 关联分支. 当前与远端
+git push origin --delete <branch> // 删除远端分支
 git push -f // 强制推送 执行前需保证本地是最新(别人没再新的提交)
 git push --tags // 推送附带本地所有tag
 git push origin master // 不论当前是何分支, 推送本地的master分支到远端
@@ -327,8 +344,8 @@ git push origin master // 不论当前是何分支, 推送本地的master分支�
 ### 1.5.4. remote
 
 ```js
-git remote add origin { remote-url } // 创建远程仓库
-git remote set-url origin { remote-url } // 修改远程仓库
+git remote add origin <remote-url> // 创建远程仓库
+git remote set-url origin <remote-url> // 修改远程仓库
 git remote show origin // 远端与本地分支的关系; 远端分支列表 tracked已追踪的 / stale陈旧3month以上
 ```
 
@@ -361,7 +378,7 @@ git remote show origin // 远端与本地分支的关系; 远端分支列表 tra
 ### 1.7.4. rebase
 
 ```js
-[topic] git rebase { 上游主分支 } { 指定分支 }
+[topic] git rebase <上游主分支> <指定分支>
 
 [topic] git rebase master // 变基并改变(移动)topic的commit, 到master HEAD的后面
 [topic] git rebase -i HEAD~20
@@ -393,8 +410,8 @@ D---E---F---G master
 ### 1.7.5. revert
 
 ```js
-git revert { oid } // 提交一个与指定commit内容相反的commit.
-git revert -n { oid } // 内容相反的, 但不提交
+git revert <oid> // 提交一个与指定commit内容相反的commit.
+git revert -n <oid> // 内容相反的, 但不提交
 
 # 若在主分支revert一个功能分支(revert merge commit id), 则该功能分支无法重新merge到主分支, 需要用cherry-pick.
 ```
@@ -407,9 +424,9 @@ git revert -n { oid } // 内容相反的, 但不提交
 ### 1.8.2. blame
 
 ```js
-git blame -L 10,20 { file } // 按行范围进行blame
-git blame -b -w { file } // 显示全文blame. -b show oid; -w ignore whitespace
-g blame -L 14,14 { file }  | awk '{print $1}' | xargs git show // 显示某行的提交log
+git blame -L 10,20 <file> // 按行范围进行blame
+git blame -b -w <file> // 显示全文blame. -b show oid; -w ignore whitespace
+g blame -L 14,14 <file>  | awk '{print $1}' | xargs git show // 显示某行的提交log
 ```
 
 ### 1.8.3. grep
@@ -477,7 +494,7 @@ git clean -df // -f 直接删除Untracked文件; -d 和目录
 ### 1.11.8. filter-branch 重写分支
 
 ```js
-git filter-branch --force --prune-empty --index-filter 'git rm -rf --cached --ignore-unmatch { file }' --tag-name-filter cat -- --all // 彻底删除某文件
+git filter-branch --force --prune-empty --index-filter 'git rm -rf --cached --ignore-unmatch <file>' --tag-name-filter cat -- --all // 彻底删除某文件
 ```
 
 ### 1.11.9. instaweb
@@ -535,8 +552,8 @@ git ls-files -d // 列出删除的文件
 
 ```js
 git rev-list --objects --all // 获取所有对象(commit, tree, blob) 及blob对应的文件, tree对应的目录 (commit 和 tree快照对应的数据第二列显示null);
-git rev-list --objects { oid(tree) } // 获取快照中所有内容(oid, file)
-git rev-list { oid1 }...{ oid2 } // 两次提交之间的所有提交
+git rev-list --objects <oid(tree)> // 获取快照中所有内容(oid, file)
+git rev-list <oid1>...<oid2> // 两次提交之间的所有提交
 ```
 
 ### 1.13.11. rev-parse
@@ -575,7 +592,7 @@ git verify-pack -v .git/objects/pack/pack-*.idx | sort -k 3 -g -r | head -n5 // 
 
 ```js
 HEAD 头指针
-detached HEAD 分离头指针 // git checkout {commit-id}, 即 直接检出obj tree, 而非分支时
+detached HEAD 分离头指针 // git checkout <commit-id>, 即 直接检出obj tree, 而非分支时
 ^   父
 ^^^ 父父父
 ~3  父父父
@@ -584,4 +601,4 @@ detached HEAD 分离头指针 // git checkout {commit-id}, 即 直接检出obj t
 
 ## 1.15. ref
 
-{https://www.atlassian.com/git/tutorials/saving-changes/gitignore}
+- <https://www.atlassian.com/git/tutorials/saving-changes/gitignore>
