@@ -274,7 +274,8 @@ git tag <tag-name> // 创建标签(无msg)
 git tag -d // 删除本地标签
 git tag -ln // 标签详情
 
-git describe --abbrev=0 --tags // 查看最近一个tag
+git describe --tags `git rev-list --tags --max-count=1` // 查看最新一个tag
+git describe --abbrev=0 --tags // 查看当前分支最新一个tag
 git ls-remote --tags // 查看远端标签
 git push origin --delete <tag-name> // 删除远端标签
 git push origin <tag-name> // 推送指定标签到远端
@@ -357,9 +358,9 @@ git remote show origin // 远端与本地分支的关系; 远端分支列表 tra
 
 ### 1.6.1. show
 
-### 1.6.2. [log](#log)
+### 1.6.2. log
 
-### 1.6.3. [diff](#diff)
+### 1.6.3. diff
 
 ### 1.6.4. difftool
 
