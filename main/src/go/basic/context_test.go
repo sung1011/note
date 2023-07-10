@@ -26,7 +26,7 @@ func Test_Context(t *testing.T) {
 		go watchContext(ctx, ch, 222)
 		go watchContext(ctx, ch, 333)
 
-		time.Sleep(2)
+		time.Sleep(2 * time.Second)
 		cancel()
 		bs := make([]int32, 0, 3)
 		for {
