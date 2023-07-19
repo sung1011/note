@@ -141,6 +141,12 @@
 
 ---
 
+## IDE
+
+### [vim](main/vim.md)
+
+---
+
 ## OTHER
 
 ### [dict](main/dict.md)
