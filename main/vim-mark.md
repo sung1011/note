@@ -2,9 +2,12 @@
 
 ## set marks
 
-| cmd         | description                           |
-| ----------- | ------------------------------------- |
-| `m{a-zA-Z}` | set mark a at current cursor location |
+| cmd            | description                           |
+| -------------- | ------------------------------------- |
+| `m{a-zA-Z0-9}` | set mark a at current cursor location |
+
+- `A-Z0-9` are global marks,
+- `a-z` are local to a buffer
 
 ## use marks
 

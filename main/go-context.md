@@ -13,13 +13,10 @@
 type Context interface {
     // 获取设置的超时自动Cancel的时间点
     Deadline() (deadline time.Time, ok bool)
-
-    // parent context发起了取消请求, 信号量可读, 应进行return退出goroutine
+    // ctx发起了取消请求, 信号量可读, 应进行return退出goroutine
     Done() <-chan struct{}
-
-    // 取消请求的原因error
+    // cancel的原因
     Err() error
-
     // 获取ctx上绑定的值
     Value(key interface{}) interface{}
 }
@@ -27,14 +24,16 @@ type Context interface {
 
 ## 方法
 
+产生ctx给子节点, 产生时可附加 主动cancel的方法, 超时, kv
+
 ```go
-// parent衍生ctx, 和CancelFunc
+// parent衍生ctx 和 主动cancel的方法;
 func WithCancel(parent Context) (ctx Context, cancel CancelFunc)
-// parent衍生ctx, 和CancelFunc; 携带超时自动Cancel
+// parent衍生ctx 和 主动cancel的方法; 附加超时自动Cancel
 func WithDeadline(parent Context, deadline time.Time) (Context, CancelFunc)
-// parent衍生ctx, 和CancelFunc; 携带超时自动Cancel
+// parent衍生ctx 和 主动cancel的方法; 附加超时自动Cancel
 func WithTimeout(parent Context, timeout time.Duration) (Context, CancelFunc)
-// parent衍生ctx; 携带k-v
+// parent衍生ctx; 附加k-v
 func WithValue(parent Context, key, val interface{}) Context
 ```
 

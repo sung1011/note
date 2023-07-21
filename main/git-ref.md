@@ -376,6 +376,10 @@ git remote show origin // 远端与本地分支的关系; 远端分支列表 tra
 
 ### 1.7.2. cherry-pick
 
+```js
+git cherry-pick <commit-id> // 将指定commit的内容应用到当前分支; commit-id会变
+```
+
 ### 1.7.3. diff
 
 ### 1.7.4. rebase
