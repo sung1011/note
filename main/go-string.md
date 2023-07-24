@@ -5,36 +5,37 @@
 
 ## 数据结构
 
-```js
-    # 源码
-        var s string = "hello"
-    # 运行时 
-        len: 5
-        data: x10a30e0  --------> [h, e, l, l, o]  # 指向底层array
+```go
+    // $GOROOT/src/reflect/value.go; StringHeader是string的运行时表达
+    // string为值类型, 固定占用16字节 = len8 + ptr8
+    type StringHeader struct {
+        Data uintptr // 指针; 指向底层array被切的第一个元素地址 (切口)
+        Len  int
+    }
 ```
 
-> string为值类型, 值为len+data(ptr)只占用8+8=16byte
-
 ```go
-    // $GOROOT/src/reflect/value.go 
-    // StringHeader是string的运行时表达
-    type StringHeader struct {
-        Data uintptr
-        Len int
-    }
+	var s = "hello"
+	hdr := (*reflect.StringHeader)(unsafe.Pointer(&s)) // 将string类型变量地址显式
+	fmt.Printf("0x%x\n", hdr.Data)                     // 通过反射, 找到底层数组地址 0x10a30e0
+	p := (*[5]byte)(unsafe.Pointer(hdr.Data))          // 获取Data字段所指向的数组的指针
+	sl := (*p)[:]                                      // 赋值给切片
+	for _, b := range sl {
+		fmt.Printf("%c ", b) // [h e l l o ] // 输出底层数组的内容
+	}
 
-    // 通过反射, 找到底层array
-    var s = "hello"
-    hdr := (*reflect.StringHeader)(unsafe.Pointer(&s)) // 将string类型变量地址显式
-    fmt.Printf("0x%x\n", hdr.Data) // 0x10a30e0
-    p := (*[5]byte)(unsafe.Pointer(hdr.Data)) // 获取Data字段所指向的数组的指针
-    arr := (*p)[:]
-    for _, b := range arr {
-        fmt.Printf("%c ", b) // [h e l l o ] // 输出底层数组的内容
-    }
+    // 运行时 
+    len: 5
+    data: x10a30e0  --------> [h, e, l, l, o]  # 指向底层array
+
 ```
 
 ## 操作
+
+### 传参
+
+    传参时, 会复制一份string 16byte
+    不要传递string的指针, 会导致内存泄漏, 因为GC只会处理堆上的数据, 传递指针会导致底层数据逃逸到堆上, 极大增加GC的压力
 
 ### raw string
 
@@ -131,7 +132,7 @@ todo
         }
         return string(buf)
     }
-    // []byte 已知str最终长度; 效率好
+    // []byte 已知str最终长度; 效率高
     func preByteConcat(n int, str string) string {
         buf := make([]byte, 0, n*len(str))
         for i := 0; i < n; i++ {
@@ -150,7 +151,7 @@ todo
     // strings.Builder 已知str最终长度; 效率最好
     // BenchmarkBuilderConcat-8   16855    0.07 ns/op   0.1 MB/op       1 allocs/op
     // BenchmarkPreByteConcat-8   17379    0.07 ms/op   0.2 MB/op       2 allocs/op
-    //  相比preByteConcat少1次内存分配, 少string转换
+    // 相比preByteConcat少1次内存分配, 少string转换
     func builderConcat(n int, str string) string {
         var builder strings.Builder
         builder.Grow(n * len(str))
@@ -170,7 +171,7 @@ todo
 
     先len是否相同
     再ptr是否指向同一个array
-    最后逐个字符对比
+    最后逐个遍历字符对比
 
 ```go
 	var s1, s2 string
@@ -187,6 +188,43 @@ todo
 	fmt.Println(s1 == s2, s1 > s2, s1 < s2) // false false true
 ```
 
+### []byte互相转换
+
+    不需要创建内存, 强制转换
+    这是由于str与[]byte的数据结构相同(只相差一个cap), 故他们的内存布局上是对齐的, 可以直接指针替换
+
+```go
+func StringToBytes(s string) []byte {
+	return *(*[]byte)(unsafe.Pointer(
+		&struct {
+			string
+			Cap int
+		}{s, len(s)},
+	))
+}
+
+func BytesToString(b []byte) string {
+	return *(*string)(unsafe.Pointer(&b))
+}
+
+func main() {
+    s1 := "hello"
+    b1 := StringToBytes(s1)
+    fmt.Println(b1) // [104 101 108 108 111]
+
+    b2 := []byte("hello")
+    s2 := BytesToString(b2)
+    fmt.Println(s2) // hello
+    
+    // 强转的弊端:
+    // 由于string是不可变的, 所以strToBy后, 修改[]byte会发生严重错误, defer+recover也无法捕获
+    s3 := "hello"
+    b3 := StringToBytes(s3)
+    b3[0] = 'H' // error
+}
+```
+
 ## ref
 
 - 字符串拼接 <https://geektutu.com/post/hpg-string-concat.html>
+- 字符串转换[]byte <https://segmentfault.com/a/1190000040289417>

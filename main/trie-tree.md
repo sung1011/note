@@ -43,7 +43,7 @@
               /    \
             v1       v2
            /        / \
-         foo       foo bar
+         foo     login logout
         / \             \
       bar :name          abc
             \
@@ -57,4 +57,19 @@ type node struct {
 // 递归node进行匹配
 // 指定路由的优先级大于通配符(:name)
 // 插入路由时, 检查是否已有
+```
+
+### gin路由 (radix tree)
+
+```js
+// 路由查找 /v2/logout/abc 的api
+                .
+              /    \
+    v1/foo/bar     v2/log
+                    / \
+                   in out
+                        \
+                         abc
+// 压缩树高
+// 创建慢, 查找快
 ```

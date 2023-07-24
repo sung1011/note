@@ -2,18 +2,14 @@
 
 ## 数据结构
 
-```js
-    `len` 切出的元素个数
-    `cap` 从切口到底层array结尾的个数
-    `ptr` 底层array被切的第一个元素地址 (切口)
-
-    # `占用` 固定24字节 = len8 + cap8 + ptr8
-```
-
 ```go
-    t := make([]int, 3, 5)
-	fmt.Printf("%p", t)     // 0xc000036760; 底层ptr
-    print(t)                // [3/5]0xc000036760; [len/cap]底层ptr
+    // $GOROOT/src/reflect/value.go; SliceHeader是slice的运行时表达
+    // slice为引用类型, 固定占用24字节 = len8 + cap8 + ptr8
+    type SliceHeader struct {
+        Data uintptr    // 指针; 指向底层array被切的第一个元素地址 (切口)
+        Len  int        // 长度; 切出的元素个数
+        Cap  int        // 容量; 从切口到底层array结尾的个数
+    }
 ```
 
 ## 创建 初始化 访问
@@ -23,6 +19,7 @@ sl := make([]int, 5) // len=5 cap=5
 sl := make([]int, 3, 5) // len=3 cap=5
 sl := []int{30, 50, 20}
 sl := []string{99: "foo"} // 100个元素
+print(sl)                // [3/5]0xc000036760; [len/cap]底层ptr
 var sl []int
 
 // sl := make([]int) // missing len argument to make([]int)
