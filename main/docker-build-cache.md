@@ -90,6 +90,6 @@ EOF
 ```
 
 ```docker
-RUN deploy.sh
+RUN chmod +x deploy.sh && ./deploy.sh && rm deploy.sh
 ```
 

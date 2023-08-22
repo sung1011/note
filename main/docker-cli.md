@@ -22,6 +22,8 @@ Build an image from a Dockerfile
 Manage builds
 
 ```sh
+docker builder build
+docker builder prune -af # 删除构建时产生的缓存
 ```
 
 ### `checkpoint`
@@ -37,6 +39,8 @@ Create a new image from a container’s changes
 
 ```sh
 ```
+
+> not recommended
 
 ### `config`
 
@@ -64,6 +68,8 @@ Manage contexts
 Copy files/folders between a container and the local filesystem
 
 ```sh
+docker cp <container>:<path> <path> # 从容器拷贝到本地
+docker cp <path> <container>:<path> # 从本地拷贝到容器
 ```
 
 ### `create`
@@ -155,7 +161,10 @@ Kill one or more running containers
 Load an image from a tar archive or STDIN
 
 ```sh
+docker load -i ngx.tar
 ```
+
+> save
 
 ### `login`
 
@@ -283,7 +292,10 @@ docker run -it --rm --name my-nginx -p 8080:80 -v /Users/zhengkai/Downloads:/usr
 Save one or more images to a tar archive (streamed to STDOUT by default)
 
 ```sh
+docker save ngx-app:latest -o ngx.tar
 ```
+
+> load
 
 ### `search`
 

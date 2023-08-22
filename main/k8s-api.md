@@ -87,7 +87,7 @@ kubectl [command] [TYPE] [NAME] [flags]
 | storageclasses                  | sc          | storage.k8s.io               | false      | StorageClass                   |
 | volumeattachments               |             | storage.k8s.io               | false      | VolumeAttachment               |
 
-## 实例
+## Subcommands
 
 ### create
 
@@ -141,3 +141,9 @@ kubectl [command] [TYPE] [NAME] [flags]
 `ks describe <any>`
 `ks edit <any>`
 `ks port-forward <pod name> <local port>:<pod port>` 本地端口映射pod端口
+
+### explain
+
+`ks explain pod`
+`ks explain pod.metadata`
+`ks explain pod.spec`

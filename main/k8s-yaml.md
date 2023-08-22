@@ -3,17 +3,16 @@
 ## POD
 
 ```yaml
-# yaml格式的pod定义文件完整内容: 
-apiVersion: v1       #必选, 版本号, 例如v1
-kind: Pod       #必选, Pod
-metadata:       #必选, 元数据
+apiVersion: v1        #必选, 版本号, 例如v1
+kind: Pod       #必选, 资源对象的类型: Pod/Node/Job/Service
+metadata:       #必选, 元数据, 便于管理
   name: string       #必选, Pod名称
   namespace: string    #必选, Pod所属的命名空间
   labels:      #自定义标签
     - name: string     #自定义标签名字
   annotations:       #自定义注释列表
     - name: string
-spec:         #必选, Pod中容器的详细定义
+spec:           #必选, pod的详细定义, 数组中每个元素表达一个container的详细定义, 声明我们期望的最终状态
   containers:      #必选, Pod中容器列表
   - name: string     #必选, 容器名称
     image: string    #必选, 容器的镜像名称
@@ -59,12 +58,12 @@ spec:         #必选, Pod中容器的详细定义
        successThreshold: 0
        failureThreshold: 0
        securityContext:
-         privileged:false
+         privileged: [true | false]  #是否给容器以特权模式运行, 默认false
     restartPolicy: [Always | Never | OnFailure]#Pod的重启策略, Always表示一旦不管以何种方式终止运行, kubelet都将重启, OnFailure表示只有Pod以非0退出码退出才重启, Nerver表示不再重启该Pod
     nodeSelector: obeject  #设置NodeSelector表示将该Pod调度到包含这个label的node上, 以key: value的格式指定
     imagePullSecrets:    #Pull镜像时使用的secret名称, 以key: secretkey格式指定
     - name: string
-    hostNetwork:false      #是否使用主机网络模式, 默认为false, 如果设置为true, 表示使用宿主机网络
+    hostNetwork: [true | false] #是否使用主机网络模式, 默认为false, 如果设置为true, 表示使用宿主机网络
     volumes:       #在该pod上定义共享存储卷列表
     - name: string     #共享存储卷名称 (volumes类型有很多种)
       emptyDir: {}     #类型为emtyDir的存储卷, 与Pod同生命周期的一个临时目录.为空值
@@ -80,4 +79,12 @@ spec:         #必选, Pod中容器的详细定义
         items:
         - key: string
           path: string
+```
+
+## 实战
+
+### 由对象生成yaml
+
+```sh
+kubectl run ngx --image=nginx:alpine --dry-run=client -o yaml
 ```
