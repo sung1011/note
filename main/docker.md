@@ -1,19 +1,11 @@
 # docker  
 
-## [cmd](docker-cmd.md)
+## [install](docker-install.md)
+
+## [ref](docker-ref.md)
   
 ## [隔离](docker-isolation.md)
 
-## 组成  
+## [架构](docker-arch.md)
 
-- 镜像 image: 构建  
-- 镜像仓库 image repository: 分发  
-- 容器 container: 运行  
-  
-## docker vs VM  
-
-    每个虚拟机会独立虚拟化CPU与kernel
-
-## [Dockerfile](docker-dockerfile.md)
-
-## [Docker tag](docker-tag.md)
+## [构建](docker-build.md)
