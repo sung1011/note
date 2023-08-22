@@ -2,22 +2,28 @@
 
 ## arch
 
-### Master 控制面板  
+### client 管理员客户端
+
+- `kubectl` 命令行工具
+- `dashboard` web管理界面
+- `sdks` 客户端SDK
+
+### Master-node 管理节点  
 
 ![img](res/k8smaster.png)
 
-- `apiserver` 提供了资源操作的唯一入口, 并提供认证、授权、访问控制、API注册和发现等机制
-- `scheduler` 负责调度, 通过apiserver获取当前节点状态, 调度pod, 然后apiserver下发任务给某个节点的kubelet, 令其在该节点上调用container-runner启动容器
-- `controller-manager` 负责维护集群的状态, 通过apiserver获取节点状态, 监控异常并调节恢复, 自动扩展, 滚动更新等
-- `etcd` 保存了整个集群的状态, 只与apiserver通信
+- `etcd` 保存了整个集群的状态, 只与apiserver通信; 分布式数据库
+- `apiserver` 提供了资源操作的唯一入口, 并提供认证、授权、访问控制、API注册和发现等机制; 作为etcd的代理, 无状态, 所有数据都保存在etcd中; 通过订阅通知的方式与其他组件保持通信
+- `scheduler` 负责调度, 当应用发布时, apiserver下发任务给某些空闲节点的kubelet, 令其在该节点上调用container-runner启动容器
+- `controller-manager` 负责维护集群的状态, 监控异常并调节恢复, 自动扩展, 滚动更新等
 
-### Node 工作节点
+### Worker-node 工作节点
 
 ![img](res/k8snode.png)
 
-- `kubelet` , 负责node上的Pod创建、启停等管理工作; 并与master节点的apiserver密切联系, 汇报节点、Pod运行状态等信息
-- `kube-proxy` node的网络通讯代理, 负责为node提供 服务发现和负载均衡
-- `container-runtime` 镜像和容器的运行时, 在kubelet指挥下被创建, 管理pod的生命周期; 可以是docker, 也可以是其他实现了CRI接口的容器技术
+- `kubelet` 订阅apiserver的状态数据, 汇报节点数据给apiserver; node上的Pod创建、启停等的管理工作
+- `container-runtime` 镜像和容器的运行时, 在kubelet指挥下执行创建, 启停等实际工作; 可以是docker, 也可以是其他实现了CRI接口的容器技术
+- `kube-proxy` node的网络通讯代理, 负责为node提供服务发现和负载均衡; 网络通讯的代理转发
 
 ### Add-ons组件
 

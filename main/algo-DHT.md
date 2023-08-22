@@ -82,4 +82,7 @@
 
 ## 实战
 
-- 缓存
+
+- Data partitioning: Amazon DynamoDB, Apache Cassandra, Riak, Voldemort, and others
+- Distribute web content evenly: Akamai, Limelight, and others
+- Distribute persistent: load balancers
