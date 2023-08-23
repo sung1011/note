@@ -1,6 +1,23 @@
 # k8s YAML
 
-## POD
+## 生成yaml模版
+
+参数 `--dry-run=client -o yaml`
+
+```sh
+# configMap
+kubectl create cm info --from-literal=k=v --dry-run=client -o yaml
+# pod
+kubectl run ngx --image=nginx:alpine --dry-run=client -o yaml
+# job
+kubectl create job echo-job --image=busybox --dry-run=client -o yaml
+# secret
+kubectl create secret generic user --from-literal=name=root --dry-run=client -o yaml
+```
+
+## yaml
+
+### Pod
 
 ```yaml
 apiVersion: v1        #必选, 版本号, 例如v1
@@ -20,15 +37,18 @@ spec:           #必选, pod的详细定义, 数组中每个元素表达�
     command: [string]    #容器的启动命令列表, 如不指定, 使用打包时使用的启动命令
     args: [string]     #容器的启动命令参数列表
     workingDir: string     #容器的工作目录
+
     volumeMounts:    #挂载到容器内部的存储卷配置
     - name: string     #引用pod定义的共享存储卷的名称, 需用volumes[]部分定义的的卷名
       mountPath: string    #存储卷在容器内mount的绝对路径, 应少于512字符
       readOnly: boolean    #是否为只读模式
+
     ports:       #需要暴露的端口库号列表
     - name: string     #端口号名称
       containerPort: int   #容器需要监听的端口号
       hostPort: int    #容器所在主机需要监听的端口号, 默认与Container相同
       protocol: string     #端口协议, 支持TCP和UDP, 默认TCP
+
     env:       #容器运行前需设置的环境变量列表
     - name: string     #环境变量名称
       value: string    #环境变量的值
@@ -59,11 +79,14 @@ spec:           #必选, pod的详细定义, 数组中每个元素表达�
        failureThreshold: 0
        securityContext:
          privileged: [true | false]  #是否给容器以特权模式运行, 默认false
+
     restartPolicy: [Always | Never | OnFailure]#Pod的重启策略, Always表示一旦不管以何种方式终止运行, kubelet都将重启, OnFailure表示只有Pod以非0退出码退出才重启, Nerver表示不再重启该Pod
     nodeSelector: obeject  #设置NodeSelector表示将该Pod调度到包含这个label的node上, 以key: value的格式指定
+
     imagePullSecrets:    #Pull镜像时使用的secret名称, 以key: secretkey格式指定
     - name: string
     hostNetwork: [true | false] #是否使用主机网络模式, 默认为false, 如果设置为true, 表示使用宿主机网络
+
     volumes:       #在该pod上定义共享存储卷列表
     - name: string     #共享存储卷名称 (volumes类型有很多种)
       emptyDir: {}     #类型为emtyDir的存储卷, 与Pod同生命周期的一个临时目录.为空值
@@ -81,10 +104,43 @@ spec:           #必选, pod的详细定义, 数组中每个元素表达�
           path: string
 ```
 
-## 实战
+### Job
 
-### 由对象生成yaml
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: echo-job
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - image: busybox
+        name: echo-job
+        imagePullPolicy: IfNotPresent
+        command: ["/bin/echo"]
+        args: ["hello", "world"]
+```
 
-```sh
-kubectl run ngx --image=nginx:alpine --dry-run=client -o yaml
+### CronJob
+
+```yaml
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: echo-cj
+spec:
+  schedule: '*/1 * * * *'
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - image: busybox
+            name: echo-cj
+            imagePullPolicy: IfNotPresent
+            command: ["/bin/echo"]
+            args: ["hello", "world"]
 ```

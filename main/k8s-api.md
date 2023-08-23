@@ -1,8 +1,136 @@
 # k8s API
 
+## subcommands
+
+### create
+
+Create a resource from a file or from stdin
+
+```sh
+kubectl create -f <k8s-yaml-file>
+```
+
+### apply
+
+Apply a configuration to a resource by file name or stdin
+更新资源, 如果不存在则创建, 也可以更新部分资源配置
+
+```sh
+kubectl apply -f <k8s yaml file>
+kubectl apply -f deployment.yaml --patch '{"spec": {"replicas": 3}}' # 更新副本数
+kubectl apply -f service.yaml --patch '{"spec": {"ports": [{"name": "http", "port": 8080, "targetPort": 80}]}}' # 更新服务的端口
+```
+
+### get
+
+Display one or many resources
+
+```sh
+kubectl get <any>
+kubectl get all
+kubectl get pod -w # 实时获取pods状态
+```
+
+### logs
+
+Print the logs for a container in a pod
+
+```sh
+kubectl logs <pod name>
+kubectl logs <pod name> -c <container name>
+```
+
+### label
+
+Update the labels on a resource
+
+```sh
+kubectl get po -l app=ui,rel=beta get
+kubectl label node <node name> gpu=true set
+```
+
+### annotate
+
+Update the annotations on a resource
+
+```sh
+kubectl annotate pod <pod name> foo=bar
+```
+
+### delete
+
+Delete resources by file names, stdin, resources and names, or by resources and label selector
+
+```sh
+kubectl delete po <pod name>
+kubectl delete po -l <label key=val>
+kubectl delete po --all
+kubectl delete all --all
+```
+
+### describe
+
+Show details of a specific resource or group of resources
+
+```sh
+kubectl describe pod <pod name> # 显示特定Pod的详细信息
+kubectl describe service <service name> # 显示特定服务的详细信息
+kubectl describe deployment <deployment name> # 显示特定部署的详细信息
+```
+
+### exec
+
+Execute a command in a container
+
+```sh
+kubectl exec <pod name> -- curl -s http://10.111.249.153
+kubectl exec -it ngx-pod -- sh
+```
+
+### debug
+
+Create debugging sessions for troubleshooting workloads and nodes
+
+```sh
+kubectl get po <pod name> -o yaml 获取pod yaml
+kubectl describe <any>
+kubectl edit <any>
+kubectl port-forward <pod name> <local port>:<pod port> 本地端口映射pod端口
+```
+
+### explain
+
+Get documentation for a resource
+
+```sh
+kubectl explain pod
+kubectl explain pod.metadata
+kubectl explain pod.spec
+```
+
+## action
+
+### replication-controller
+
+```sh
+kubectl scale rc <rc name> --replicas=10
+kubectl delete rc <rc name> # 删除rc并且删除pod
+kubectl delete rc <rc name> --cascade=false # 删除rc但不删除pod
+```
+
+### namespace
+
+```sh
+kubectl create ns <namespace name>
+kubectl get po -n <namespace name>
+kubectl delete ns <namespace name>
+```
+
 ## syntax
 
+```sh
 kubectl [command] [TYPE] [NAME] [flags]
+```
 
 ## Operations
 
@@ -86,64 +214,3 @@ kubectl [command] [TYPE] [NAME] [flags]
 | priorityclasses                 | pc          | scheduling.k8s.io            | false      | PriorityClass                  |
 | storageclasses                  | sc          | storage.k8s.io               | false      | StorageClass                   |
 | volumeattachments               |             | storage.k8s.io               | false      | VolumeAttachment               |
-
-## Subcommands
-
-### create
-
-`k8s create -f <k8s yaml file>`
-
-### get
-
-`ks get <any>`
-`ks get all`
-
-### logs
-
-`ks logs <pod name>`
-`ks logs <pod name> -c <container name>`
-
-### label
-
-`ks get po -l app=ui,rel=beta` get
-`ks label node <node name> gpu=true` set
-
-### annotate
-
-`ks annotate pod <pod name> foo=bar`
-
-### namespace
-
-`ks create ns <namespace name>`
-`ks get po -n <namespace name>`
-`ks delete ns <namespace name>`
-
-### delete
-
-`ks delete po <pod name>`
-`ks delete po -l <label key=val>`
-`ks delete po --all`
-`ks delete all --all`
-
-### replicationcontroller
-
-`ks scale rc <rc name> --replicas=10`
-`ks delete rc <rc name>` 删除rc并且删除pod
-`ks delete rc <rc name> --cascade=false` 删除rc但不删除pod
-
-### exec
-
-`ks exec <pod name> -- curl -s http://10.111.249.153`
-
-### debug
-
-`ks get po <pod name> -o yaml` 获取pod yaml
-`ks describe <any>`
-`ks edit <any>`
-`ks port-forward <pod name> <local port>:<pod port>` 本地端口映射pod端口
-
-### explain
-
-`ks explain pod`
-`ks explain pod.metadata`
-`ks explain pod.spec`
