@@ -14,7 +14,7 @@
 
 - `etcd` 保存了整个集群的状态, 只与apiserver通信; 分布式数据库
 - `apiserver` 提供了资源操作的唯一入口, 并提供认证、授权、访问控制、API注册和发现等机制; 作为etcd的代理, 无状态, 所有数据都保存在etcd中; 通过订阅通知的方式与其他组件保持通信
-- `scheduler` 负责调度, 当应用发布时, apiserver下发任务给某些空闲节点的kubelet, 令其在该节点上调用container-runner启动容器
+- `scheduler` 负责调度pod到可用的node上, 确保pod副本数符合配置
 - `controller-manager` 负责维护集群的状态, 监控异常并调节恢复, 自动扩展, 滚动更新等
 
 ### Worker-node 工作节点

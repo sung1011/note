@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  labels:
+    name: myapp
+spec:
+  volumes:
+    - name: redis-db
+      emptyDir: {}
+    - name: redis-config
+      configMap:
+        name: cm-redis
+        items:
+          - key: redis-config
+            path: redis.conf
+  containers:
+  - name: myapp-redis
+    image: redis:5.0.4
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 6379
+    volumeMounts:
+      - name: redis-db
+        mountPath: /data/db
+      - name: redis-config
+        mountPath: /data/conf
+    command: [ "redis-server", "/data/conf/redis.conf" ]

@@ -2,6 +2,14 @@
 
 ## subcommands
 
+### api-resources
+
+Print the supported API resources on the server
+
+```sh
+kubectl api-resources
+```
+
 ### create
 
 Create a resource from a file or from stdin
@@ -29,7 +37,11 @@ Display one or many resources
 kubectl get <any>
 kubectl get all
 kubectl get pod -w # 实时获取pods状态
+kubectl get pod -l app=nginx,env=dev # 列出标签 app=nginx且env=dev的所有pod
+kubectl get pod -l 'app in (ngx, nginx, ngx-dep)' # 列出标签 app=ngx或nginx或ngx-dep的所有pod
 ```
+
+> pod状态 READY = 当前容器数/总容器数, STATUS = 当前状态, RESTARTS = 重启次数, AGE = 运行时间
 
 ### logs
 

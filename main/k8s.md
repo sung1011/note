@@ -4,9 +4,11 @@
 
 ## [API](k8s-api.md)
 
-## [yaml](k8s-yaml.md)
-
 ## [pod](k8s-pod.md)
+
+## [job](k8s-job.md)
+
+## [cronJob](k8s-cronjob.md)
 
 ## [service](k8s-service.md)
 
@@ -28,10 +30,8 @@
 
 ## Names
 
-## Master-Node通信
+## [deployment](k8s-deployment.md)
 
-## Deployment
-
-## StatefulSets 部署有状态的多副本应用
+## [daemonSet](k8s-daemonset.md)
 
 ## GC
