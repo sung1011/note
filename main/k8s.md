@@ -1,6 +1,6 @@
 # kubernetes
 
-## [arch](k8s-arch.md)]  
+## [arch](k8s-arch.md)
 
 ## [API](k8s-api.md)
 
@@ -12,26 +12,14 @@
 
 ## [service](k8s-service.md)
 
+## [ingress](k8s-ingress.md)
+
 ## [config](k8s-config.md)
-
-## Volume
-
-## Nodes
-
-## Namespaces
-
-## Labels & Selectors
-
-## Annoatations
-
-## 对象
-
-## 组件
-
-## Names
 
 ## [deployment](k8s-deployment.md)
 
 ## [daemonSet](k8s-daemonset.md)
 
-## GC
+## StatefulSet
+
+## PersistentVolume

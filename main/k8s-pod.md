@@ -9,6 +9,10 @@
 
 ### pod
 
+```sh
+kubectl run ngx --image=nginx:alpine --dry-run=client -o yaml
+```
+
 ```yaml
 apiVersion: v1        #必选, 版本号, 例如v1
 kind: Pod       #必选, 资源对象的类型: Pod/Node/Job/Service
@@ -92,13 +96,6 @@ spec:           #必选, pod的详细定义, 数组中每个元素表达�
         items:
         - key: string
           path: string
-```
-
-## usage
-
-```sh
-# pod
-kubectl run ngx --image=nginx:alpine --dry-run=client -o yaml
 ```
 
 ## 共享资源  

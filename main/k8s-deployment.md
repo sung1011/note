@@ -4,6 +4,13 @@
 
 ## yaml
 
+```sh
+kubectl create deploy myapp --image=redis:5.0.4 --replicas=3 --dry-run=client -o yaml > deploy.yaml
+kubectl apply -f deploy.yaml
+
+kubectl get pod -l app=myapp
+```
+
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -28,15 +35,6 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 6379
-```
-
-## usage
-
-```sh
-kubectl create deploy myapp --image=redis:5.0.4 --replicas=3 --dry-run=client -o yaml > deploy.yaml
-kubectl apply -f deploy.yaml
-
-kubectl get pod -l app=myapp
 ```
 
 > `deployment`只能控制自己创建的pod, 不能控制手动创建的pod

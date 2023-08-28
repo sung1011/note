@@ -7,7 +7,7 @@ metadata:
 spec:
   volumes:
     - name: redis-db
-      emptyDir: {}
+      emptyDir: {} #类型为emtyDir的存储卷, 与Pod同生命周期的一个临时目录.为空值
     - name: redis-config
       configMap:
         name: cm-redis

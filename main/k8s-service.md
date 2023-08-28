@@ -1,56 +1,94 @@
 # k8s service
 
-## 创建service
+负载均衡, 服务发现, 服务暴露, 四层转发
 
-    expose
-    yaml
-    服务暴露多端口
-    命名端口
+## 场景
 
-## 服务发现
+pod会被deployment或daemonSet控制器管理, 但是pod的ip是动态变化的, 无法直接访问, 需要通过service来访问
 
-    Env
-    DNS
+## 架构
 
-- K8s集群会内置一个dns服务器, service创建成功后, 会在dns服务器里导入一些记录, 想要访问某个服务, 通过dns服务器解析出对应的ip和port, 从而实现服务访问
+```js
+                apiserver
+                    |
+--------------------------------------------------------
+| `Node`            |                                
+|                   kube-proxy
+|                   |
+|                   clusterIP (iptables)                  
+|                 | | |
+--------------------------------------------------------
+                 |  |  |
+--------------------------------------------------------
+| `Pod` | `Pod` | `Pod` | `Pod` | `Pod` | `Pod` | `Pod` |
+--------------------------------------------------------
+```
 
-## endpoint
+## yaml
 
-    endpoint是k8s集群中的一个资源对象, 存储在etcd中, 用来记录一个service对应的所有pod的访问地址.  
+```sh
+export out="--dry-run=client -o yaml"
+kubectl expose deploy ngx-dep --port=80 --target-port=80 $out
 
-- service配置selector: endpoint controller会自动创建对应的endpoint对象.
+kubectl describe svc ngx-svc
+kubectl get pod -o wide
+```
 
-- service不配置selector: endpoint controller不会生成endpoint对象. 可手动创建endpoint(name必须与svc name相同)
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ngx-svc
+  namespace: my-namespace # 指定命名空间
+  
+spec:
+  selector:
+    app: ngx-dep
+    
+  ports:
+  - port: 80 # 端口
+    targetPort: 80 # 容器端口
+    protocol: TCP
+```
 
-      endpoint controller: 是k8s集群控制器的其中一个组件, 其功能如下:
+> 先创建deployment, 再创建service, service会自动关联deployment (pod, daemonSet同理)
 
-- 负责生成和维护所有endpoint对象的控制器
-- 负责监听service和对应pod的变化
-- 监听到service被删除, 则删除和该service同名的endpoint对象
-- 监听到新的service被创建, 则根据新建service信息获取相关pod列表, 然后创建对应endpoint对象
-- 监听到service被更新, 则根据更新后的service信息获取相关pod列表, 然后更新对应endpoint对象
-- 监听到pod事件, 则更新对应的service的endpoint对象, 将podIp记录到endpoint中
+> kubectl export 而非 create, 可能表达的意思是: 通过service暴露的是已经存在的pod, 而非创建新的pod
 
-## 暴露服务 - ClusterIp
+## 域名 (DNS)
 
-    默认模式, 只能在集群内部访问
+- 域名规则
+  - Pod的DNS名称: `<pod-ip-address>.<pod-name>.<namespace>.pod.cluster.local`
+  - Service的DNS名称: `<service-name>.<namespace>.svc.cluster.local`
+  - Service的端口DNS名称: `<port-name>.<service-name>.<namespace>.svc.cluster.local`
 
-## 暴露服务 - NodePort
+## namespace 名字空间
 
-    通过每个 Node 上的 IP 和静态端口(NodePort)暴露服务.NodePort 服务会路由到 ClusterIP 服务, 这个 ClusterIP 服务会自动创建.通过请求 <  NodeIP >:< NodePort >, 可以从集群的外部访问一个 NodePort 服务.
+```sh
+kubectl create namespace my-namespace
+kubectl get ns
+```
 
-## 暴露服务 - LoadBalancer
+> 默认namespace=default
 
-    使用云提供商的负载局衡器, 可以向外部暴露服务.外部的负载均衡器可以路由到 NodePort 服务和 ClusterIP 服务.
+> 一般是在yaml文件中指定namespace, 也可以在命令行中指定
 
-## 暴露服务 - ExternalName
+## 对外暴露服务
 
-    通过返回 CNAME 和它的值, 可以将服务映射到 externalName 字段的内容(例如,  foo.bar.example.com). 没有任何类型代理被创建, 这只有 Kubernetes 1.7 或更高版本的 kube-dns 才支持.
+### ClusterIp
 
-## Ingress路由到服务
+默认模式, 只能在集群内部访问
 
-## 就绪探针 ReadinessProbe
+### NodePort
 
-## headless发现独立pod
+在每个node生成固定的IP和端口, 任意请求其中一个, kube-proxy会路由到真正的node上, 再由 ClusterIP 转发到pod
 
-## 排除服务故障
+> 缺点: 端口数有限(30000~32767); 暴露的端口是静态的, 不能动态分配; 转发浪费流量
+
+### LoadBalancer
+
+使用云提供商的负载局衡器, 可以向外部暴露服务.外部的负载均衡器可以路由到 NodePort 服务和 ClusterIP 服务.
+
+### ExternalName
+
+通过返回 CNAME 和它的值, 可以将服务映射到 externalName 字段的内容(例如,  foo.bar.example.com). 没有任何类型代理被创建, 这只有 Kubernetes 1.7 或更高版本的 kube-dns 才支持.

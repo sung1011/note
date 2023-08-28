@@ -11,6 +11,10 @@
 
 ## yaml
 
+```sh
+kubectl apply -f ds.yaml
+```
+
 ```yaml
 apiVersion: apps/v1
 kind: DaemonSet
@@ -36,13 +40,7 @@ spec:
         - containerPort: 6379
 ```
 
-> 非常类似于`deployment`, 只是没有replicas属性, (replicas变成了1)
-
-## usage
-
-```sh
-kubectl apply -f ds.yaml
-```
+> 结构非常类似于`deployment`, 只是没有replicas属性, (replicas变成了1)
 
 > `DaemonSet`只能控制自己创建的pod, 不能控制手动创建的pod
 

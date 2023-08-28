@@ -6,6 +6,20 @@
 
 ### yaml
 
+```sh
+# create
+kubectl create cm info --from-literal=k=v --dry-run=client -o yaml > info.yaml
+kubectl apply -f info.yaml
+# get
+kubectl get cm
+kubectl get cm info -o yaml
+kubectl describe cm info
+# update
+kubectl apply -f info.yaml # 修改后重新apply
+# delete
+kubectl delete cm info
+```
+
 ```yaml
 # configMap
 apiVersion: v1
@@ -56,22 +70,6 @@ spec:
                   key: greeting
 ```
 
-### usage
-
-```sh
-# create
-kubectl create cm info --from-literal=k=v --dry-run=client -o yaml > info.yaml
-kubectl apply -f info.yaml
-# get
-kubectl get cm
-kubectl get cm info -o yaml
-kubectl describe cm info
-# update
-kubectl apply -f info.yaml # 修改后重新apply
-# delete
-kubectl delete cm info
-```
-
 > pod需要重启, 才能获取到configMap的新配置
 
 ### e.g
@@ -82,15 +80,13 @@ kubectl delete cm info
 
 密文配置, 涉及敏感信息, 如: 密码, 秘钥, 证书
 
-### usage
+### yaml
 
 ```sh
 # create
 kubectl create secret generic user --from-literal=name=root --dry-run=client -o yaml > test2.yaml
 kubectl apply -f test2.yaml
 ```
-
-### yaml
 
 ```yaml
 # secret
