@@ -1,14 +1,14 @@
 # go const
 
-    const NAME [TYPE] = VALUE
-    TYPE只能是bool, number(int/float/complex), string
+const NAME [TYPE] = VALUE  
+TYPE只能是 bool, string, number(int/float/complex)
 
 ```go
-const Pi = 3.14159
+const Pi float32 = 3.14159
 
 const c = 3+2         
 
-// const d = getNumber()  // error
+// const d = getNumber()  // error; 类型错误
 
 const Ln2= 0.693147180559945309417232121458\    // 可以用\换行
             176568075500134360255254120680009
@@ -21,7 +21,7 @@ const ( // 枚举
     Male = 2
 )
 
-const (
+const ( // iota
 	a    = iota           // 0: 0
 	b                     // 1: 1
 	g    = iota + 5       // 2: 2+5 = 7

@@ -2,19 +2,74 @@
 
 ## 数据结构
 
+```js
+// bucket0
+----------
+k[0] k[1] k[2] k[3] k[4] k[5] k[6] k[7]
+v[0] v[1] v[2] v[3] v[4] v[5] v[6] v[7]
+overflow  // 8个key都填满 且尚未达到扩容条件, 会新建立bucket挂在旧bucket的overflow上, bucket之间成链表状态
+---------
+
+// bucket1
+----------
+k[0] k[1] k[2] k[3] k[4] k[5] k[6] k[7]
+v[0] v[1] v[2] v[3] v[4] v[5] v[6] v[7]
+overflow  
+-------|--
+       |
+        // bucket1-1
+        --------
+        k[0] k[1] k[2] k[3] k[4] k[5] k[6] k[7]
+        v[0] v[1] v[2] v[3] v[4] v[5] v[6] v[7]
+        overflow  
+        --------
+
+
+// key
+v, ok := m[key]
+
+hashcode = Hash(key) = XXXXYYYY   (高位区:XXXX 低位区:YYYY)
+
+低位区 决定bucket的位置, 避免遍历bucket (如bucket1)
+高位区 决定bucket中key的位置, 避免遍历key (如bucket1.k4)
+
+// val
+如: map[int8]int64
+
+    go方案 节约空间
+    8+64 = 72
+    kkkkkkkk vvvvvvvv vvvvvvvv vvvvvvvv ...
+    k占用8 v占用8 v占用8 v占用8
+
+
+    kv紧邻方案 padding浪费空间
+    8*16 = 128
+    k_______ vvvvvvvv k_______ vvvvvvvv k _______vvvvvvvv ...
+    k占用1 pading占用7 v占用8
+
+// 扩容
+`count > loadFactor*2^B`扩容:
+新建一个两倍规模的map, assign和delete时逐步做迁移和排空
+原map会挂在hmap的oldbuckets指针, 全部迁移结束才会被释放
+
+`overflow-bucket 过多` 扩容:
+重建一个规模一样的map, assign和delete时逐步做迁移和排空
+
+```
+
 ```go
 type hmap struct {
-    count     int // 元素的个数
-    flags     uint8 // 标记读写状态，主要是做竞态检测，避免并发读写
-    B         uint8  // 可以容纳 2 ^ N 个bucket
-    noverflow uint16 // 溢出的bucket个数
-    hash0     uint32 // hash 因子
+    count     int    // map的元素的个数; 即len()
+    flags     uint8  // 标记读写状态，主要是做竞态检测，避免并发读写; 定义了4种状态 iterator, oldIterator, HashWriting, sameSizeGrow
+    B         uint8  // 2 ^ B = bucket; bucket数量的以2为底的对数
+    noverflow uint16 // overflow(溢出)的 bucket 个数
+    hash0     uint32 // hash函数种子值
 
-    buckets    unsafe.Pointer // 指向数组buckets的指针
-    oldbuckets unsafe.Pointer // growing 时保存原buckets的指针
-    nevacuate  uintptr        // growing 时已迁移的个数
+    buckets    unsafe.Pointer // 指向数组buckets的指针, 即bmap
+    oldbuckets unsafe.Pointer // growing(扩容阶段) 原指向原buckets的指针
+    nevacuate  uintptr        // growing 已迁移的个数
 
-    extra *mapextra
+    extra *mapextra // 可选字段，用于存储 overflow buckets
 }
 
 type mapextra struct {
@@ -24,25 +79,10 @@ type mapextra struct {
     nextOverflow *bmap
 }
 
-// 桶结构 A bucket for a Go map.
+// 桶结构
 type bmap struct {
-    // tophash generally contains the top byte of the hash value
-    // for each key in this bucket. If tophash[0] < minTopHash,
-    // tophash[0] is a bucket evacuation state instead.
-    tophash [bucketCnt]uint8    // 记录着每个key的高8个bits
-    // Followed by bucketCnt keys and then bucketCnt elems.
-    // NOTE: packing all the keys together and then all the elems together makes the
-    // code a bit more complicated than alternating key/elem/key/elem/... but it allows
-    // us to eliminate padding which would be needed for, e.g., map[int64]int8.
-    // Followed by an overflow pointer.
+    tophash [bucketCnt]uint8    // 8个元素 k:桶数 v:记录着每个key的高8个bits
 }
-```
-
-```go
-	t := make(map[int]int)
-	fmt.Printf("%p\n", t)   // 0xc000090180
-	println(t)              // 0xc000090180
-
 ```
 
 ## 创建 初始化 访问
@@ -99,7 +139,7 @@ func main() {
 
 ## [比较](go-type-compare.md#map)
 
-## 返回值 key是否存在
+## key是否存在
 
 ```go
 m := map[string]int{"a":100, "b":200}
@@ -120,7 +160,22 @@ v, exists2 := m["xxx"] // 0, false
 
 ## 作为参数
 
-        直接传递, 指针的值 (8byte)
+直接传递, 指针的值 (8byte)
+
+```go
+func main() {
+	m := map[string]int{
+		"k1": 1,
+		"k2": 2,
+	}
+	foo(m)
+	fmt.Println("", m) // map[k1:1 k2:222]; 引用传参, 会修改原值
+}
+
+func foo(m map[string]int) {
+	m["k2"] = 222
+}
+```
 
 ## 迭代
 
@@ -137,10 +192,10 @@ for key := range my_map {
 
 ## 并发安全
 
-    同一个变量在多个goroutine中访问需要保证并发安全
+同一个变量在多个goroutine中访问需要保证并发安全
 
 ```go
-// 同步锁
+// 同步锁1
 type RWMap struct {
     m map[string]int
     sync.RWMutex
@@ -155,8 +210,10 @@ func (r RWMap) Set(key string, val int) {
     defer r.Unlock()
     r.m[key] = val
 }
+```
 
-// ---------------------------------
+```go
+// 同步锁2
 func foo() {
     var lock sync.Mutex
     lock.Lock()
@@ -205,8 +262,8 @@ for k, v := range originalMap {
 
 ## delete(), len()
 
-    删除指定key delete(map, key)
-    key的个数 len(map)
+删除指定key delete(map, key)  
+key的个数 len(map)
 
 ```go
 m := make(map[string]int)

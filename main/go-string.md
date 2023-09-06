@@ -188,10 +188,11 @@ todo
 	fmt.Println(s1 == s2, s1 > s2, s1 < s2) // false false true
 ```
 
-### []byte互相转换
+### []byte优化互转
 
-    不需要创建内存, 强制转换
+    不创建内存, 直接强制转换
     这是由于str与[]byte的数据结构相同(只相差一个cap), 故他们的内存布局上是对齐的, 可以直接指针替换
+    制约: string是不可变的, 一旦修改[]byte会发生严重错误, defer+recover也无法捕获
 
 ```go
 func StringToBytes(s string) []byte {

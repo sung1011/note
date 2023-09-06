@@ -23,8 +23,8 @@
 
     变量直接存储值, 内存通常在栈中分配, 栈在函数调用完会被释放
 
-- [array](go-array.md)  `不可== (不同len)`
-- [struct](go-struct.md)  `不可== (含不可比较类型)`
+- [array](go-array.md)  `(不同len)不可==`
+- [struct](go-struct.md)  `(含不可比较类型)不可==`
 - [int](go-int.md)
 - [float](go-float.md)
 - [string](go-string.md)  

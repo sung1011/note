@@ -58,7 +58,7 @@ var sl []int
 	fmt.Println(origin, n)            // {666, 777, 3}; n = 2 (即copy了2个值)
 	// 多覆盖
 	n = copy(origin, []int{666, 777, 888, 999})
-	fmt.Println(origin, n)                      // {666, 777, 888}; n = 3 (即copy了3个值)
+	fmt.Println(origin, n)                      // {666, 777, 888}; n = 3 (即copy了3个值, 不扩容)
 ```
 
 > `copy(dst, src)` go doc builtin copy

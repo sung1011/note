@@ -203,6 +203,8 @@ v, ok := x.(int) // 10, true; 断言x是否为实现了int类型(的实例10)的
 
 // type switch结构
 switch x.(type) {
+    case nil:
+       fmt.Println("is nil")
     case int:
        fmt.Println("is int")
     case string:

@@ -30,7 +30,7 @@ type Student struct {// 结构体
     Age int
     Scores map[string]int
 }
-// 声明; 已初分配内存和初始化. 如: var b bytes.Buffer, var mu sync.Mutex
+// 声明; 已初分配内存和初始化为零值; 零值可用类型. 如: var b bytes.Buffer, var mu sync.Mutex
 var s Student 
 s.Name = "Sam"
 s.Age = 18
