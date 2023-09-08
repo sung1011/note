@@ -417,10 +417,11 @@ D---E---F---G master
 ### 1.7.5. revert
 
 ```js
-git revert <oid> // 提交一个与指定commit内容相反的commit.
+git revert -m 1 <oid> // 提交一个与指定commit内容相反的commit; -m 1 保持主分支 还原合入的分支; -m 2 还原主分支 保持合入的分支
 git revert -n <oid> // 内容相反的, 但不提交
+git revert -m 1 <last_1> <last_2> <last_3> // 从后往前回滚, 避免冲突
 
-# 若在主分支revert一个功能分支(revert merge commit id), 则该功能分支无法重新merge到主分支, 需要用cherry-pick.
+// 若在主分支revert一个功能分支(revert merge commit id), 则该功能分支无法重新merge到主分支, 需要用cherry-pick.
 ```
 
 
