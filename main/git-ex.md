@@ -150,7 +150,9 @@ git log -m -p <merge commit-id> # -p可替换为--name-only / --name-status
 
 ## 获取指定tree/blob被哪些commit引用了
 
+```js
 TODO
+```
 
 ## 生成 change_log
 
@@ -164,11 +166,11 @@ git log --pretty=format:"%s" --no-merges --reverse $(git describe --tags --abbre
 
 ```js
 
-git describe --tags `git rev-list --tags --max-count=1`
+git describe --tags `git rev-list --tags --max-count=1` // 最新
 
 git describe --tags --abbrev=0
 
-git tag -l | sort -V | tail -1
+git tag -l | sort -V | tail -1 // 最大
 ```
 
 ## 暂存区有变化就提交

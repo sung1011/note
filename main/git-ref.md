@@ -509,6 +509,10 @@ git clean -df // -f 直接删除Untracked文件; -d 和目录
 
 ### 1.11.7. reflog
 
+```js
+git reflog show --date=iso < branch > // 分支信息, 创建 / 合并 / 变基 / 重置 / 检出 / 提交 / 恢复 / cherry-pick / rebase / pull / push / stash
+```
+
 ### 1.11.8. filter-branch 重写分支
 
 ```js
