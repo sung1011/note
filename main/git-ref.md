@@ -429,6 +429,16 @@ git revert -m 1 <last_1> <last_2> <last_3> // 从后往前回滚, 避免冲突
 
 ### 1.8.1. bisect
 
+```js
+git bisect start [终点] [起点] // 开始二分查找
+git bisect good // 指定commit是好的, 继续往新前进寻找bug
+git bisect bad // 当前commit是坏的, 继续往旧后退寻找bug
+git bisect reset // 恢复退出bisect
+git bisect log > bisect-log.txt // 查看二分查找的log, 经历哪些commit 这些commit的状态(good bad skip)
+git bisect replay bisect-log.txt // 重放二分查找的log, 重新进行二分查找
+git bisect run <cmd> // 二分查找时, 自动执行cmd, 根据cmd的返回值判断当前commit是good还是bad
+```
+
 ### 1.8.2. blame
 
 ```js
