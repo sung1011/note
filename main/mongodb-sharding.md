@@ -54,6 +54,17 @@
 - `块 chunk` n个doc 每个chunk约64M, 集群间以chunk为单位均衡
 - `分片 shard` n个chunk, 主动增减分片, 自动迁移chunk
 - `集合 cluster` n个shard
+
+## 分片操作
+
+```js
+// 后台创建hash索引
+db.<collection>.createIndex({ "_id" : "hashed" }, { background: true })
+// db启动分片功能
+sh.enableSharding("<database>") 
+// 执行分片 阻塞写操作(增改删) 消耗CPU,带宽
+sh.shardCollection("<database>.<collection>", { <key> : <direction> } )  
+```
   
 ## 分片键 Shard keys  
 
@@ -78,9 +89,9 @@
 
 #### 分片数量
 
-    存储总量 / 单服容量 --- 8TB / 4TB = 4
-    缓存总量 / 单服mongo内存用量 --- 400GB / (256G * 0.6) = 3 MongoDB使用物理机内存的60%
-    并发总量 / 单服并发量 --- 30000 / ( 9000 * 0.7 ) = 6 额外开销系数0.7
+    a: 存储总量 / 单服容量 --- 8TB / 4TB = 4
+    b: 缓存总量 / 单服mongo内存用量 --- 400GB / (256G * 0.6) = 3 MongoDB使用物理机内存的60%
+    c: 并发总量 / 单服并发量 --- 30000 / ( 9000 * 0.7 ) = 6 额外开销系数0.7
 
 > 分片数量 = max(a, b, c) = 6
 

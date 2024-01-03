@@ -30,7 +30,9 @@
 
 - Multikey Index 多key索引 数组值索引  
 
-- Hash 哈希索引 是指按照某个字段的hash值来建立索引, 目前主要用于 MongoDB Sharded Cluster 的Hash分片, hash索引只能满足字段完全匹配的查询, 不能满足范围查询等.  
+- Hash 哈希索引 是指按照某个字段的hash值来建立索引
+  
+      主要用于 MongoDB Sharded Cluster 的Hash分片, hash索引只能满足字段完全匹配的查询, 不能满足范围查询等.  
 
 - Text Index 全文索引 关键词tag查找.  
 
