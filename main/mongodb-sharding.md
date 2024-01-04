@@ -39,11 +39,7 @@
 
       用来保存分片数据, 保证数据的高可用性和一致性. 可以是一个单独的mongod实例, 也可以是一个集群 | >= 3.2; 
 
-> 最多个1024分片
-
-> 硬盘 内存 消耗量大
-
-## 名词
+## 概念
 
 - `片键 shard key` 文档中的一或多个字段
   - 取值基数尽量大 cardinality --- 尽量大(如 ID),避免很大的块出现.可考虑组合片键增加基数(如 uid+time)
@@ -51,19 +47,74 @@
   - 取值分布 --- 尽量均匀
   - 避免单调递增减的片键
 - `文档 doc` 包含shard key的一行数据
-- `块 chunk` n个doc 每个chunk约64M, 集群间以chunk为单位均衡
+- `索引 index` 一般使用hash索引, 索引是分片的前提
+- `块 chunk` n个doc 每个chunk约64M, 集群间通过balancer 以chunk为单位均衡
 - `分片 shard` n个chunk, 主动增减分片, 自动迁移chunk
 - `集合 cluster` n个shard
+- `平衡器 balancer` 一个独立的进程, 用于均衡集群数据, 由mongos启动, 每隔一段时间检查集群状态, 并将chunk数据迁移到合适的shard上
+  - 时间窗口 在每天的指定时间内 进行迁移
 
-## 分片操作
+## shard操作
+
+### balancer
+
+```js
+// 启动平衡器
+
+  sh.startBalancer()
+
+// 编辑时间窗口
+// 示例中, 会在每晚的3~5点进行分片的迁移, 迁移不完就第二天继续
+
+  use config;
+  db.settings.update(
+     { _id: "balancer" },
+     { $set: { activeWindow : { start : "03:00", stop : "05:00" } } }, 
+     { upsert: true }
+  )
+```
+
+### 分块+分片
 
 ```js
 // 后台创建hash索引
-db.<collection>.createIndex({ "_id" : "hashed" }, { background: true })
+// db.<collection>.createIndex({ <field> : <index_type> }, { background: true })
+
+  db.<collection>.createIndex({ "_id" : "hashed" }, { background: true })
+
 // db启动分片功能
-sh.enableSharding("<database>") 
-// 执行分片 阻塞写操作(增改删) 消耗CPU,带宽
-sh.shardCollection("<database>.<collection>", { <key> : <direction> } )  
+// sh.enableSharding("<database>") 
+
+  sh.enableSharding("box_j")  
+
+// 执行分块+分片 阻塞写操作(增改删) 消耗CPU,带宽. 
+// 若已经开启时间窗口, 则只进行分块(很快), 分片会在平衡器(balancer)的时间窗口内执行
+// sh.shardCollection("<database>.<collection>", { <key> : <direction> } )  
+
+  sh.shardCollection("box_j.aide", { "_id" : "hashed" } )  
+```
+
+### 查看分片状态
+
+```js
+sh.status()
+```
+
+```sh
+ # db: box_j; 主分片: d-2zef26faa642d694; 分片状态: 可分片(sh.enableSharding); 版本: 1
+  {  "_id" : "box_j",  "primary" : "d-2zef26faa642d694",  "partitioned" : true,  "version" : {  "uuid" : BinData(4,"vrXFWLXYRZmi8nBdQdguTQ=="),  "lastMod" : 1 } }
+  # table: box_j.aide; 分片键: { "_id" : "hashed" }; 唯一: false; 均衡: true; 块数: 43, 已被均衡分片到2个实例上
+    box_j.aide
+            shard key: { "_id" : "hashed" }
+            unique: false
+            balancing: true
+            chunks:
+                    d-2ze0ade76b82f894	22 # 若`时间窗口`未到, 则43片都在同一实例上
+                    d-2zef26faa642d694	21
+            { "_id" : { "$minKey" : 1 } } -->> { "_id" : NumberLong("-4611686018427387902") } on : d-2ze0ade76b82f894 Timestamp(1, 0)
+            { "_id" : NumberLong("-4611686018427387902") } -->> { "_id" : NumberLong(0) } on : d-2ze0ade76b82f894 Timestamp(1, 1)
+            { "_id" : NumberLong(0) } -->> { "_id" : NumberLong("4611686018427387902") } on : d-2zef26faa642d694 Timestamp(1, 2)
+            { "_id" : NumberLong("4611686018427387902") } -->> { "_id" : { "$maxKey" : 1 } } on : d-2zef26faa642d694 Timestamp(1, 3)
 ```
   
 ## 分片键 Shard keys  
