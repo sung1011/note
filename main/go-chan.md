@@ -74,7 +74,7 @@
 
 ## buffered chan
 
-    sender ch<- 不断发送直到len=cap发生阻塞
+    sender ch<- 不断发送直到len=cap才阻塞
     receiver 按照FIFO顺序出队<-ch, 直到队空阻塞
 
 ```go
@@ -101,30 +101,30 @@
 ## nil chan 阻塞
 
 ```go
-func send(c chan int) {
+func send(ch chan int) {
 	for {
-		c <- rand.Intn(10)
+		ch <- rand.Intn(10)
 	}
 }
 
-func add(c chan int) {
+func add(ch chan int) {
 	sum := 0
 	t := time.NewTimer(1 * time.Second) // 或 t := time.After(1 * time.Second); <-t
 	for {
 		select {
-		case input := <-c:      // 1s内不断执行
+		case input := <-ch:      // 1s内不断执行
 			sum = sum + input
 		case <-t.C:             // 1s后执行
-			c = nil             // 阻塞另一分支
+			ch = nil             // 阻塞另一分支
 			fmt.Println(sum)
 		}
 	}
 }
 
 func main() {
-	c := make(chan int)
-	go add(c)
-	go send(c)
+	ch := make(chan int)
+	go add(ch)
+	go send(ch)
 	time.Sleep(3 * time.Second)
 }
 ```

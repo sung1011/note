@@ -2,13 +2,13 @@
 
 ## channel  
 
-- [chanel](go-chan.md)
+- [chanel 通道](go-chan.md)
 
 ## sync  
 
-- [sync.WaitGroup](go-sync-waitgroup.md)
+- [sync.WaitGroup 并发编排](go-sync-waitgroup.md)
 
-- [sync.Mutex](go-sync-mutex.md)
+- [sync.Mutex 互斥锁](go-sync-mutex.md)
 
 - sync.Map
 
