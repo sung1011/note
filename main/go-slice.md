@@ -138,6 +138,45 @@ fmt.Println(seq) // [a, b, c, d]
       值传递, ptr+len+cap (24byte)
       引用传递, ptr 8byte
 
+```go
+// 值传递, 传递的是slice的副本
+func main() {
+	s := make([]int, 3)
+	modifySlice(s) // s底层array的ptr,len,cap被复制到函数内; 
+	fmt.Println(s) // 输出 [0 123 0]; 
+}
+
+func modifySlice(s []int) {
+	s[1] = 123 // s[1]对应的底层数组元素的指针, 所以能传出去
+}
+```
+
+```go
+// 值传递, 传递的是slice的副本
+func main() {
+    s := make([]int, 0)
+	modifySlice(s) // s底层数组的ptr,len,cap被复制到函数内; 
+    fmt.Println(s) // 输出 []
+}
+
+func modifySlice(s []int) {
+    s = append(s, 1) // 修改(赋值)的是s的副本, 所以传不出去
+}
+```
+
+```go
+// 引用传递, 传递的是slice的指针
+func main() {
+    s := make([]int, 0)
+    modifySlice(&s) 
+    fmt.Println(s) // 输出 [1]
+}
+
+func modifySlice(s *[]int) {
+    *s = append(*s, 1) // 修改(赋值)的是s的指针, 所以能传出去
+}
+```
+
 ## 迭代
 
 ```go

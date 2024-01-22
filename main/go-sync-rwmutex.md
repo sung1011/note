@@ -1,4 +1,4 @@
-# rwmutex
+# go sync.RWMutex
 
 ## data structure
 
