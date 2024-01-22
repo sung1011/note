@@ -6,9 +6,11 @@
 
 ## sync  
 
-- [sync.WaitGroup 并发编排](go-sync-waitgroup.md)
-
 - [sync.Mutex 互斥锁](go-sync-mutex.md)
+
+- [sync.RWMutex 读写锁](go-sync-rwmutex.md)
+
+- [sync.WaitGroup 并发编排](go-sync-waitgroup.md)
 
 - sync.Map
 

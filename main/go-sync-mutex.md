@@ -4,7 +4,7 @@
 
     共享资源: 避免并发的读写共享资源时, 造成数据竞争, 从而导致数据不一致的问题
 
-## 实现机制
+## feature
 
 ### `临界区 critical section`
 
@@ -12,7 +12,7 @@
 
 ### `不关联goroutine`
 
-    可以在goroutine加锁, 另一个goroutine解锁
+    可以在goroutine加锁, 另一个goroutine解锁; 不可重入
 
 ## Mutex
 
@@ -38,27 +38,6 @@ func main() {
     mytype.Unlock()
     ...
 }
-```
-
-## RWMutex
-
-```go
-// 数据结构; 源码
-//   r与r兼容
-//   r与w互斥阻塞
-//   w与w互斥阻塞
-type RWMutex struct {
-	w           Mutex  // held if there are pending writers
-	writerSem   uint32 // 写锁需要等待读锁释放的信号量
-	readerSem   uint32 // 读锁需要等待写锁释放的信号量
-	readerCount int32  // 读锁后面挂起了多少个写锁申请
-	readerWait  int32  // 已释放了多少个读锁
-}
-func (rw *RWMutex) RLocker() Locker
-func (rw *RWMutex) RLock()      // 读锁; rr兼容 rw, ww互斥
-func (rw *RWMutex) RUnlock()    // 读解锁
-func (rw *RWMutex) Lock()       // 锁; lock与lock互斥
-func (rw *RWMutex) Unlock()     // 解锁; 
 ```
 
 ## 易错场景
@@ -93,6 +72,8 @@ func foo(c Counter) {
 }
 ```
 
+> go vet main.go可以检查copy问题
+
 ### 重入
 
 ```go
@@ -100,7 +81,7 @@ func foo(c Counter) {
 func main() {
     var mu sync.Mutex
     mu.Lock()
-    mu.Lock() // 重入
+    mu.Lock() // 重入则报错(deadlock)
     mu.Unlock()
     mu.Unlock()
 }
@@ -109,7 +90,7 @@ func main() {
 #### 改写为可重入
 
 ```go
-// 1. 通过记录goroutine id, 判断是否是同一个goroutine重入
+// 方案1. 通过记录goroutine id, 判断是否是同一个goroutine重入
 // RecursiveMutex 包装一个Mutex,实现可重入
 type RecursiveMutex struct {
 	sync.Mutex
@@ -147,7 +128,7 @@ func (m *RecursiveMutex) Unlock() {
 ```
 
 ```go
-// 2. 通过记录token, 判断是否是同一个goroutine重入
+// 方案2. 通过记录token, 判断是否是同一个goroutine重入
 // Token方式的递归锁
 type TokenRecursiveMutex struct {
 sync.Mutex

@@ -94,6 +94,8 @@
   sh.shardCollection("box_j.aide", { "_id" : "hashed" } )  
 ```
 
+> 分块 分块后, 原数据会以磁盘碎片的形式存在, 所以size几乎翻倍. 操作完可整理 slave 的磁盘空间, 然后主从切换, size就恢复了
+
 ### 查看分片状态
 
 ```js
