@@ -157,7 +157,6 @@ v, exists2 := m["xxx"] // 0, false
     _ := &m["sun"]      // 编译错误: cannot take the address of m1["hello"]
 ```
 
-
 ## 作为参数
 
 直接传递, 指针的值 (8byte)
@@ -195,7 +194,7 @@ for key := range my_map {
 同一个变量在多个goroutine中访问需要保证并发安全
 
 ```go
-// 同步锁1
+// 同步锁
 type RWMap struct {
     m map[string]int
     sync.RWMutex
@@ -210,24 +209,61 @@ func (r RWMap) Set(key string, val int) {
     defer r.Unlock()
     r.m[key] = val
 }
+// delete(), foreach(), len()
 ```
 
 ```go
-// 同步锁2
-func foo() {
-    var lock sync.Mutex
-    lock.Lock()
-    mapList["c"] = 3
-    lock.Unlock()
+// 分片同步锁 (性能)
+var SHARD_COUNT = 32
+
+// 分成SHARD_COUNT个分片的map
+type ConcurrentMap []*ConcurrentMapShared
+
+// 通过RWMutex保护的线程安全的分片，包含一个map
+type ConcurrentMapShared struct {
+	items        map[string]interface{}
+	sync.RWMutex // Read Write mutex, guards access to internal map.
+}
+
+// 创建并发map
+func New() ConcurrentMap {
+	m := make(ConcurrentMap, SHARD_COUNT)
+	for i := 0; i < SHARD_COUNT; i++ {
+		m[i] = &ConcurrentMapShared{items: make(map[string]interface{})}
+	}
+	return m
+}
+
+// 根据key计算分片索引
+func (m ConcurrentMap) GetShard(key string) *ConcurrentMapShared {
+	return m[uint(fnv32(key))%uint(SHARD_COUNT)]
+}
+
+func (m ConcurrentMap) Set(key string, value interface{}) {
+	// 根据key计算出对应的分片
+	shard := m.GetShard(key)
+	shard.Lock() //对这个分片加锁，执行业务操作
+	shard.items[key] = value
+	shard.Unlock()
+}
+
+func (m ConcurrentMap) Get(key string) (interface{}, bool) {
+	// 根据key计算出对应的分片
+	shard := m.GetShard(key)
+	shard.RLock()
+	// 从这个分片读取key的值
+	val, ok := shard.items[key]
+	shard.RUnlock()
+	return val, ok
 }
 ```
 
 ```go
 // 原子锁
-var lock sync.Map
-lock.Store("a", 1)
-lock.Store("b", 2)
-if v,ok:=lock.Load("a");ok{
+var m sync.Map
+m.Store("a", 1)
+m.Store("b", 2)
+if v,ok := m.Load("a");ok{
     fmt.Println(v)
 }
 ```

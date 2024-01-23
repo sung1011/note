@@ -16,7 +16,7 @@
 
 - [sync.Map 并发安全的map](go-sync-map.md)
 
-- [sync.Pool](go-sync-pool.md)
+- [sync.Pool 对象池](go-sync-pool.md)
 
 - [sync.Cond 条件变量](go-sync-cond.md)
 
