@@ -68,6 +68,14 @@
 
 - [令牌桶](algo-token-bucket.md)
 
+- [广度优先算法 Breadth First Search (BFS)](algo-bfs.md)
+
+- [深度优先算法 Deep First Search (DFS)](algo-dfs.md)
+
+- [A*算法](algo-a-star.md)
+
+- [极小极大搜索](algo-minimax.md)
+
 ## ref
 
 [算法](https://cloud.tencent.com/developer/article/1101517)
