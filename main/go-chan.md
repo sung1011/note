@@ -9,13 +9,12 @@
 
 ## 特征
 
-    读empty阻塞, 读close空零, 写close异常, 读写nil阻塞
+    读empty阻塞, 读close空零, 写close异常, nil读写阻塞
 
 
 ## 数据结构
 
-```js
-```
+## 地址
 
 ```go
 	t := make(chan int)
@@ -74,7 +73,7 @@
 
 ## buffered chan
 
-    sender ch<- 不断发送直到len=cap才阻塞
+    sender ch<- 不断发送直到len>=cap才阻塞
     receiver 按照FIFO顺序出队<-ch, 直到队空阻塞
 
 ```go
@@ -115,7 +114,7 @@ func add(ch chan int) {
 		case input := <-ch:      // 1s内不断执行
 			sum = sum + input
 		case <-t.C:             // 1s后执行
-			ch = nil             // 阻塞另一分支
+			ch = nil             // 阻塞该协程
 			fmt.Println(sum)
 		}
 	}
