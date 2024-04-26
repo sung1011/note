@@ -20,7 +20,10 @@
 
 ## compact
 
-## 租约lease && TTL
+## [watch](etcd-watch.md)
+
+## [租约lease && TTL](etcd-lease.md)
 
 ## [issues](etcd-issues.md)
 
+## [compare](tecd-compare.md)

@@ -78,6 +78,8 @@
 
 - [漏桶](algo-leaky-bucket.md)
 
+    一种限流算法，用于控制数据传输速率
+
 - [令牌桶](algo-token-bucket.md)
 
    一种限流算法，用于控制数据传输速率

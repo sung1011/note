@@ -18,7 +18,9 @@
 
 ## 管道 pipeline
 
-## 发布订阅 pub sub
+## [发布订阅 pub sub](redis-pubsub.md)
+
+    发布订阅模式
 
 ## [stream](redis-stream.md)
 
