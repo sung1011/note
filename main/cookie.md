@@ -1,6 +1,7 @@
 # cookie
 
-    S端通过Cookie在C端记录会话状态
+    S端通过http响应头Set-Cookie使客户端更新cookie
+    C端通过Cookie请求头携带cookie给S
 
 ## 用途
 
@@ -12,7 +13,8 @@
 
 ## 方式
 
-    S端可以修改C端的cookie(响应头`Set-Cookie`)
+    S端通过http响应头Set-Cookie使客户端更新cookie
+    C端通过Cookie请求头携带cookie给S
 
 ## 持久化
 
