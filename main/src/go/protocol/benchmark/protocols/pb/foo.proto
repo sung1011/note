@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "./gen";
+
+message TestStruct {
+  string name = 1;
+  int32 age = 2;
+}
+
+message TestArray {
+  repeated int32 numbers = 1;
+}
+
+message TestMap {
+  map<string, int32> entries = 1;
+}
+
+enum TestEnum {
+  UNKNOWN = 0;
+  ONE = 1;
+  TWO = 2;
+}
+
