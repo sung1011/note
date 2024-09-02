@@ -43,6 +43,8 @@
 
 ### [DNS](main/DNS.md)
 
+### [compress](main/compress.md)
+
 ---
 
 ## DATABASE
