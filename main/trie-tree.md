@@ -73,3 +73,69 @@ type node struct {
 // 压缩树高
 // 创建慢, 查找快
 ```
+
+### 敏感词匹配
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+type TrieNode struct {
+	children map[rune]*TrieNode
+	isEnd    bool
+}
+
+type Trie struct {
+	root *TrieNode
+}
+
+func NewTrie() *Trie {
+	return &Trie{root: &TrieNode{children: make(map[rune]*TrieNode)}}
+}
+
+func (t *Trie) Insert(word string) {
+	node := t.root
+	for _, ch := range word {
+		if _, ok := node.children[ch]; !ok {
+			node.children[ch] = &TrieNode{children: make(map[rune]*TrieNode)}
+		}
+		node = node.children[ch]
+	}
+	node.isEnd = true
+}
+
+func (t *Trie) Search(text string) bool {
+	for i := 0; i < len(text); i++ {
+		node := t.root
+		for j := i; j < len(text); j++ {
+			ch := rune(text[j])
+			if _, ok := node.children[ch]; !ok {
+				break
+			}
+			node = node.children[ch]
+			if node.isEnd {
+				return true
+			}
+		}
+	}
+	return false
+}
+
+func main() {
+	trie := NewTrie()
+	sensitiveWords := []string{"badword1", "badword2", "badword3"}
+	for _, word := range sensitiveWords {
+		trie.Insert(word)
+	}
+
+	text := "this is a text with ==badword1== in it"
+	if trie.Search(text) {
+		fmt.Println("Sensitive word found !")
+	} else {
+		fmt.Println("Not found")
+	}
+}
+```
