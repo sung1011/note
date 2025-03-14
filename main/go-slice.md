@@ -46,7 +46,7 @@ var sl []int
 ## 深拷贝 (解引用)
 
 ```go
-	// 深拷贝解引用
+	// 深拷贝解除引用
 	var n int
 	origin := []int{1, 2, 3}
 	new := make([]int, len(origin))
@@ -55,10 +55,10 @@ var sl []int
 	fmt.Println(origin, new) // [1 2 3] [1111 2 3]; 不会同步修改原切片的值
 	// 少覆盖
 	n = copy(origin, []int{666, 777}) 
-	fmt.Println(origin, n)            // {666, 777, 3}; n = 2 (即copy了2个值)
+	fmt.Println(origin, n) // {666, 777, 3}; n = 2 (即copy了2个值)
 	// 多覆盖
 	n = copy(origin, []int{666, 777, 888, 999})
-	fmt.Println(origin, n)                      // {666, 777, 888}; n = 3 (即copy了3个值, 不扩容)
+	fmt.Println(origin, n) // {666, 777, 888}; n = 3 (即copy了3个值, 不扩容)
 ```
 
 > `copy(dst, src)` go doc builtin copy
@@ -97,7 +97,6 @@ a = []int{1, 2, 3}
 a = a[:copy(a, a[1:])] // 删除开头1个元素
 a = a[:copy(a, a[N:])] // 删除开头N个元素
 
-
 // 删除中间
 a = []int{1, 2, 3, ...}
 a = append(a[:i], a[i+1:]...) // 删除中间1个元素
@@ -116,6 +115,10 @@ index := 2
 fmt.Println(seq[:index], seq[index+1:]) // [a, b] [d, e]
 seq = append(seq[:index], seq[index+1:]...)
 fmt.Println(seq) // [a, b, c, d]
+
+// 清空
+a = a[:0]
+
 ```
 
 ## 并发安全
@@ -160,7 +163,7 @@ func main() {
 }
 
 func modifySlice(s []int) {
-    s = append(s, 1) // 修改(赋值)的是s的副本, 所以传不出去
+    s = append(s, 1) // 修改的是s的副本(因为扩容时生成了新底层), 所以传不出去
 }
 ```
 
