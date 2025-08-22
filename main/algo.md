@@ -100,6 +100,10 @@
 
     一种博弈树搜索算法，用于寻找最优解
 
+- [鸟群算法](algo-boid.md)
+
+    一种基于鸟群行为的优化算法，用于群体移动
+
 ## ref
 
 [算法](https://cloud.tencent.com/developer/article/1101517)

@@ -170,3 +170,5 @@
 ### [exp 经验教训](main/exp.md)
 
 ### [spike 秒杀](main/spike.md)
+
+### [game-dev 游戏开发秘籍](main/game-dev.md)
