@@ -39,8 +39,6 @@ type Item struct {
     TemplateID string
     Name       string
     Type       string
-    Rarity     string
-    Attributes map[string]interface{}
     GBitmask   uint64 // 位图存储词条
 }
 
@@ -54,6 +52,17 @@ func (i *Item) HasAttribute(attr string) bool {
         return i.GBitmask&MASK_ACCURACY != 0
     default:
         return false
+    }
+}
+
+func (i *Item) SetAttribute(attr string, value interface{}) {
+    switch attr {
+    case "damage":
+        i.GBitmask |= MASK_DAMAGE
+    case "range":
+        i.GBitmask |= MASK_RANGE
+    case "accuracy":
+        i.GBitmask |= MASK_ACCURACY
     }
 }
 ```
